@@ -1,0 +1,102 @@
+\documentclass[a4paper]{article}
+
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Documenti SWE da fare per RR}
+\author{paulio ekerlio}
+
+\begin{document}
+\maketitle
+mi sono basato su documentazione di gruppi vecchi trovata su github ad esempio \href{https://github.com/DigitalCookiesGroup/Documents}{qui} 
+
+
+\section{Documenti interni/esterni per RR}
+Per la RR (Revisione dei Requisiti), il "punto d'entrata" al progetto vanno presentati ai docenti sia documenti interni(si mostrano solo ai docenti) che esterni(si mostrano sia ai docenti che ai "clienti").
+I documenti interni sono:
+\begin{itemize}
+\item Norme di progetto
+\item Studio di fattibilità
+\end{itemize}
+Quelli esterni:
+\begin{itemize}
+\item Analisi dei requisiti
+\item Glossario
+\item Piano di progetto
+\item Piano di qualifica
+\end{itemize}
+
+
+\section{Interni}
+
+\subsection{Norme di progetto}
+
+il docuemnto "norme di progetto" deve definire regole, strumenti e convenzioni adottate durante lo svolgimento del progetto. È il primo documento che va fatto in quanto contiene anche le regole che andranno usate per stilare gli altri documenti.
+Alcune delle cose che contiene:
+\begin{itemize}
+\item Come si andranno ad organizzare riunioni per stilari documenti successivi, chi li stilerà e cosa questi andranno a contenere.
+\item \emph{Documentazione:} processo di approvazione documenti, template utilizzati(es: come scrivere prima pagina, indice), come registrare modifiche, versionamento, in che modo usare grassetto/corsivo per garantire consistenza, convenzioni per orari/date/nomi, sigle utilizzate, come fare tabelle, strumenti utilizzati.
+\item \emph{Verificazione:} in cosa consiste il processo di verificazione, test che verranno utilizzati, strumenti utilizzati,   
+\item \emph{Processi organizzativi:} i vari ruoli, come si comunicherà all'interno (es: con slack), all'esterno, come si organizzeranno incontir interni/esterni, strumenti che verranno utilizzati, norme per versionamento(come chiamare file, come descrivere commit...), 
+\end{itemize}
+
+
+\subsection{Studio di fattibilità}
+
+Contiene una descrizione e informazioni generiche sul capitolato scelto. Uno studio del dominio ( in cosa consiste, che tecnologie sono richieste) e perchè è stato scelto. Vanno anche descritti i capitolati "respinti" spiegando perchè non sono stati scelti.
+
+\section{Esterni}
+
+\subsection{Analisi dei requisti}
+Individua \emph{senza ambiguità} tutti i requisiti del capitolato attingendo da svariate fonti: capitolato, riunioni interne/esterne, casi d'uso ecc.
+Si descrivono i casi d'uso e la loro codifica. 
+
+\subsection{Piano di progetto}
+\subsubsection{Analisi rischi}
+Contiene l'analisi dei rischi che si corrono a vari livelli:
+\begin{itemize}
+\item Rischi Tecnologici 
+\item Rischi Personali
+\item Rischi Organizzativi
+\item Rischi Strumentali
+\item Rischi dei requisiti
+\end{itemize}
+
+Ogni rischio va identificato, descritto, calcolata la probabilità di occorrenza, il livello di gravità, strategie per rilevarlo e possibili contromisure.
+
+\subsubsection{Pianificazione}
+In che parti e come si intende suddividere il lavoro: ad esempio nel caso dei digital cookies
+\begin{itemize}
+\item Analisi dei Requisiti di Massima
+\item Analisi dei Requisiti di Dettaglio
+\item Progettazione Architetturale
+\item Progettazione di Dettaglio
+\item Codifica
+\item Verifica e Validazione
+\end{itemize}
+
+Ogni fase va poi descritta minuziosamente spiegando in cosa consistono e quali sottoparti sono state organizzate. 
+
+\subsubsection{Preventivo}
+Bisogna descrivere per ogni fase quante ore ogni componente ha rivestito un certo ruolo. Moltiplicando tutto il monte ore per il costo orario di ogni ruolo si ottiene preventivo.
+
+\subsubsection{Consuntivo}
+Si confrontano le ore spese per effettuare l'analisi dei requisiti (a questo punto del progetto è l'unica attività svolta) con quelle preventivate.
+
+\section{Piano di qualifica}
+Illustra strategie per verifica e validazione che il gruppo intende adottare per garantire al prodotto una certa qualità.
+Vanno elencate le metriche che si utilizzeranno per misurare la qualità. (es: per i documenti esiste l'indice di Gulpease per misurare la leggibilità di un documento, per il codice si possono ad esempio contare i metodi che un package contiene ecc...)
+
+\section{Glossario}
+
+\end{document}
