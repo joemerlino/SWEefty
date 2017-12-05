@@ -1,0 +1,135 @@
+\select@language {italian}
+\select@language {italian}
+\contentsline {section}{\numberline {1}Introduzione}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Scopo del documento}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Scopo del prodotto}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Ambiguit\IeC {\`a}}{2}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Riferimenti}{2}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Normativi}{2}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}Informatici}{2}{subsubsection.1.4.2}
+\contentsline {section}{\numberline {2}Processi primari}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Fornitura}{2}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Scopo}{2}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Aspettative}{2}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Descrizione}{2}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}Attivit\IeC {\`a}}{2}{subsubsection.2.1.4}
+\contentsline {paragraph}{\numberline {2.1.4.1}Studio di fattibilit\IeC {\`a}}{2}{paragraph.2.1.4.1}
+\contentsline {paragraph}{\numberline {2.1.4.2}Piano di Progetto}{2}{paragraph.2.1.4.2}
+\contentsline {paragraph}{\numberline {2.1.4.3}Piano di Qualifica}{2}{paragraph.2.1.4.3}
+\contentsline {subsection}{\numberline {2.2}Sviluppo}{2}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Scopo}{2}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Aspettative}{2}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Descrizione}{2}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Attivit\IeC {\`a}}{2}{subsubsection.2.2.4}
+\contentsline {paragraph}{\numberline {2.2.4.1}Analisi dei requisiti}{2}{paragraph.2.2.4.1}
+\contentsline {subparagraph}{\numberline {2.2.4.1.1}Scopo}{2}{subparagraph.2.2.4.1.1}
+\contentsline {subparagraph}{\numberline {2.2.4.1.2}Aspettative}{2}{subparagraph.2.2.4.1.2}
+\contentsline {subparagraph}{\numberline {2.2.4.1.3}Descrizione}{2}{subparagraph.2.2.4.1.3}
+\contentsline {subparagraph}{\numberline {2.2.4.1.4}Casi d'uso}{3}{subparagraph.2.2.4.1.4}
+\contentsline {subparagraph}{\numberline {2.2.4.1.5}Codice identificativo}{3}{subparagraph.2.2.4.1.5}
+\contentsline {subparagraph}{\numberline {2.2.4.1.6}Requisiti}{3}{subparagraph.2.2.4.1.6}
+\contentsline {subparagraph}{\numberline {2.2.4.1.7}Codice identificativo}{3}{subparagraph.2.2.4.1.7}
+\contentsline {subparagraph}{\numberline {2.2.4.1.8}UML}{3}{subparagraph.2.2.4.1.8}
+\contentsline {paragraph}{\numberline {2.2.4.2}Progettazione}{3}{paragraph.2.2.4.2}
+\contentsline {subparagraph}{\numberline {2.2.4.2.1}Scopo}{3}{subparagraph.2.2.4.2.1}
+\contentsline {subparagraph}{\numberline {2.2.4.2.2}Aspettative}{3}{subparagraph.2.2.4.2.2}
+\contentsline {subparagraph}{\numberline {2.2.4.2.3}Descrizione}{3}{subparagraph.2.2.4.2.3}
+\contentsline {subparagraph}{\numberline {2.2.4.2.4}Specifica Tecnica}{3}{subparagraph.2.2.4.2.4}
+\contentsline {subparagraph}{\numberline {2.2.4.2.5}Definizione di Prodotto}{3}{subparagraph.2.2.4.2.5}
+\contentsline {paragraph}{\numberline {2.2.4.3}Codifica}{3}{paragraph.2.2.4.3}
+\contentsline {subparagraph}{\numberline {2.2.4.3.1}Scopo}{3}{subparagraph.2.2.4.3.1}
+\contentsline {subparagraph}{\numberline {2.2.4.3.2}Aspettative}{3}{subparagraph.2.2.4.3.2}
+\contentsline {subparagraph}{\numberline {2.2.4.3.3}Descrizione}{3}{subparagraph.2.2.4.3.3}
+\contentsline {subparagraph}{\numberline {2.2.4.3.4}Stile di codifica}{3}{subparagraph.2.2.4.3.4}
+\contentsline {subparagraph}{\numberline {2.2.4.3.5}Intestazione}{3}{subparagraph.2.2.4.3.5}
+\contentsline {subparagraph}{\numberline {2.2.4.3.6}Versionamento}{3}{subparagraph.2.2.4.3.6}
+\contentsline {subparagraph}{\numberline {2.2.4.3.7}Ricorsione}{3}{subparagraph.2.2.4.3.7}
+\contentsline {subsubsection}{\numberline {2.2.5}Strumenti}{3}{subsubsection.2.2.5}
+\contentsline {paragraph}{\numberline {2.2.5.1}Trender}{3}{paragraph.2.2.5.1}
+\contentsline {paragraph}{\numberline {2.2.5.2}Astah}{4}{paragraph.2.2.5.2}
+\contentsline {paragraph}{\numberline {2.2.5.3}IntelliJ IDEA}{4}{paragraph.2.2.5.3}
+\contentsline {section}{\numberline {3}Processi Organizzativi}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Gestione}{4}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Scopo}{4}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Aspettative}{4}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Descrizione}{4}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}Ruoli di progetto}{4}{subsubsection.3.1.4}
+\contentsline {paragraph}{\numberline {3.1.4.1}Amministratore di Progetto}{4}{paragraph.3.1.4.1}
+\contentsline {paragraph}{\numberline {3.1.4.2}Responsabile di Progetto}{4}{paragraph.3.1.4.2}
+\contentsline {paragraph}{\numberline {3.1.4.3}Analista}{4}{paragraph.3.1.4.3}
+\contentsline {paragraph}{\numberline {3.1.4.4}Progettista}{4}{paragraph.3.1.4.4}
+\contentsline {paragraph}{\numberline {3.1.4.5}Verificatore}{4}{paragraph.3.1.4.5}
+\contentsline {paragraph}{\numberline {3.1.4.6}Programmatore}{4}{paragraph.3.1.4.6}
+\contentsline {subsubsection}{\numberline {3.1.5}Procedure}{4}{subsubsection.3.1.5}
+\contentsline {paragraph}{\numberline {3.1.5.1}Gestione delle comunicazioni}{4}{paragraph.3.1.5.1}
+\contentsline {subparagraph}{\numberline {3.1.5.1.1}Comunicazioni interne}{4}{subparagraph.3.1.5.1.1}
+\contentsline {subparagraph}{\numberline {3.1.5.1.2}Comunicazioni esterne}{4}{subparagraph.3.1.5.1.2}
+\contentsline {paragraph}{\numberline {3.1.5.2}Gestione degli incontri}{4}{paragraph.3.1.5.2}
+\contentsline {subparagraph}{\numberline {3.1.5.2.1}Incontri interni}{4}{subparagraph.3.1.5.2.1}
+\contentsline {subparagraph}{\numberline {3.1.5.2.2}Incontri esterni}{4}{subparagraph.3.1.5.2.2}
+\contentsline {paragraph}{\numberline {3.1.5.3}Gestione degli strumenti di coordinamento}{4}{paragraph.3.1.5.3}
+\contentsline {subparagraph}{\numberline {3.1.5.3.1}Ticketing}{5}{subparagraph.3.1.5.3.1}
+\contentsline {paragraph}{\numberline {3.1.5.4}Gestione degli strumenti di versionamento}{5}{paragraph.3.1.5.4}
+\contentsline {subparagraph}{\numberline {3.1.5.4.1}Repository}{5}{subparagraph.3.1.5.4.1}
+\contentsline {subparagraph}{\numberline {3.1.5.4.2}Struttura del repository}{5}{subparagraph.3.1.5.4.2}
+\contentsline {subparagraph}{\numberline {3.1.5.4.3}Tipi di file e .gitignore}{5}{subparagraph.3.1.5.4.3}
+\contentsline {subparagraph}{\numberline {3.1.5.4.4}Norme sui commit}{5}{subparagraph.3.1.5.4.4}
+\contentsline {paragraph}{\numberline {3.1.5.5}Gestione dei rischi}{5}{paragraph.3.1.5.5}
+\contentsline {subsubsection}{\numberline {3.1.6}Strumenti}{5}{subsubsection.3.1.6}
+\contentsline {paragraph}{\numberline {3.1.6.1}Sistema Operativo}{5}{paragraph.3.1.6.1}
+\contentsline {paragraph}{\numberline {3.1.6.2}Slack}{5}{paragraph.3.1.6.2}
+\contentsline {paragraph}{\numberline {3.1.6.3}Telegram}{5}{paragraph.3.1.6.3}
+\contentsline {paragraph}{\numberline {3.1.6.4}Wrike}{5}{paragraph.3.1.6.4}
+\contentsline {paragraph}{\numberline {3.1.6.5}Git}{5}{paragraph.3.1.6.5}
+\contentsline {paragraph}{\numberline {3.1.6.6}Github}{5}{paragraph.3.1.6.6}
+\contentsline {section}{\numberline {4}Processi di Supporto}{5}{section.4}
+\contentsline {subsection}{\numberline {4.1}Documentazione}{5}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Scopo}{5}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Aspettative}{5}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}Descrizione}{5}{subsubsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.4}Procedure}{5}{subsubsection.4.1.4}
+\contentsline {paragraph}{\numberline {4.1.4.1}Approvazione dei documenti}{5}{paragraph.4.1.4.1}
+\contentsline {subsubsection}{\numberline {4.1.5}Template}{6}{subsubsection.4.1.5}
+\contentsline {subsubsection}{\numberline {4.1.6}Struttura dei documenti}{6}{subsubsection.4.1.6}
+\contentsline {paragraph}{\numberline {4.1.6.1}Prima pagina}{6}{paragraph.4.1.6.1}
+\contentsline {paragraph}{\numberline {4.1.6.2}Registro delle modifiche}{6}{paragraph.4.1.6.2}
+\contentsline {paragraph}{\numberline {4.1.6.3}Indice}{6}{paragraph.4.1.6.3}
+\contentsline {paragraph}{\numberline {4.1.6.4}Contenuto principale}{6}{paragraph.4.1.6.4}
+\contentsline {paragraph}{\numberline {4.1.6.5}Note a pi\IeC {\`e} di pagina}{6}{paragraph.4.1.6.5}
+\contentsline {subsubsection}{\numberline {4.1.7}Versionamento}{6}{subsubsection.4.1.7}
+\contentsline {subsubsection}{\numberline {4.1.8}Norme tipografiche}{6}{subsubsection.4.1.8}
+\contentsline {paragraph}{\numberline {4.1.8.1}Stile del testo}{6}{paragraph.4.1.8.1}
+\contentsline {paragraph}{\numberline {4.1.8.2}Elenchi puntati}{6}{paragraph.4.1.8.2}
+\contentsline {paragraph}{\numberline {4.1.8.3}Formati comuni}{6}{paragraph.4.1.8.3}
+\contentsline {paragraph}{\numberline {4.1.8.4}Sigle}{6}{paragraph.4.1.8.4}
+\contentsline {subsubsection}{\numberline {4.1.9}Elementi grafici}{6}{subsubsection.4.1.9}
+\contentsline {paragraph}{\numberline {4.1.9.1}Tabelle}{6}{paragraph.4.1.9.1}
+\contentsline {paragraph}{\numberline {4.1.9.2}Immagini}{6}{paragraph.4.1.9.2}
+\contentsline {subsubsection}{\numberline {4.1.10}Classificazione dei documenti}{6}{subsubsection.4.1.10}
+\contentsline {paragraph}{\numberline {4.1.10.1}Documenti informali}{6}{paragraph.4.1.10.1}
+\contentsline {paragraph}{\numberline {4.1.10.2}Documenti formali}{6}{paragraph.4.1.10.2}
+\contentsline {paragraph}{\numberline {4.1.10.3}Verbali}{6}{paragraph.4.1.10.3}
+\contentsline {subsubsection}{\numberline {4.1.11}Strumenti}{6}{subsubsection.4.1.11}
+\contentsline {paragraph}{\numberline {4.1.11.1}\LaTeX }{6}{paragraph.4.1.11.1}
+\contentsline {paragraph}{\numberline {4.1.11.2}TexStudio}{6}{paragraph.4.1.11.2}
+\contentsline {paragraph}{\numberline {4.1.11.3}Lucidchart}{7}{paragraph.4.1.11.3}
+\contentsline {subsection}{\numberline {4.2}Verifica}{7}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Scopo}{7}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Aspettative}{7}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Descrizione}{7}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Attivit\IeC {\`a}}{7}{subsubsection.4.2.4}
+\contentsline {paragraph}{\numberline {4.2.4.1}Analisi}{7}{paragraph.4.2.4.1}
+\contentsline {subparagraph}{\numberline {4.2.4.1.1}Analisi Statica}{7}{subparagraph.4.2.4.1.1}
+\contentsline {subparagraph}{\numberline {4.2.4.1.2}Analisi dinamica}{7}{subparagraph.4.2.4.1.2}
+\contentsline {paragraph}{\numberline {4.2.4.2}Test}{7}{paragraph.4.2.4.2}
+\contentsline {subparagraph}{\numberline {4.2.4.2.1}Test di unit\IeC {\`a}}{7}{subparagraph.4.2.4.2.1}
+\contentsline {subparagraph}{\numberline {4.2.4.2.2}Test di integrazione}{7}{subparagraph.4.2.4.2.2}
+\contentsline {subparagraph}{\numberline {4.2.4.2.3}Test di sistema}{7}{subparagraph.4.2.4.2.3}
+\contentsline {subparagraph}{\numberline {4.2.4.2.4}Test di regressione}{7}{subparagraph.4.2.4.2.4}
+\contentsline {subparagraph}{\numberline {4.2.4.2.5}Test di accettazione}{7}{subparagraph.4.2.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.5}Strumenti}{7}{subsubsection.4.2.5}
+\contentsline {paragraph}{\numberline {4.2.5.1}Verifica ortografica}{7}{paragraph.4.2.5.1}
+\contentsline {paragraph}{\numberline {4.2.5.2}Validazione W3C}{7}{paragraph.4.2.5.2}
+\contentsline {paragraph}{\numberline {4.2.5.3}Analisi statica}{7}{paragraph.4.2.5.3}
+\contentsline {paragraph}{\numberline {4.2.5.4}Analisi dinamica}{7}{paragraph.4.2.5.4}
+\contentsline {paragraph}{\numberline {4.2.5.5}Metriche}{7}{paragraph.4.2.5.5}
