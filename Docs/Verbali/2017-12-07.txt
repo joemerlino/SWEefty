@@ -4,7 +4,20 @@
 2 setup nuovi strumenti: dropbox
 3 verifica che tutti possiedano strumenti scorso incontro (gitkraken + latex + texstudio + trello)
 4 spiegazione di come è organizzato workspace di trello e relativa apertura
-5 assegnaro il compito di trovare uno strumento per disegno di uml (diagrammi di sequenza)
+5 assegnato il compito di trovare uno strumento per disegno di uml (diagrammi di sequenza)
 6 spiegazione del diario
 7 spartizione compiti di scrittura
 8 spiegazione dell organizzazione di dropbox e inserimento di email nel relativo documento
+
+
+
+# SOLUZIONI #
+0 scelto modulo B (4 a 3), valutare con l'azienda se poter avere dei requisiti "misti"
+1 scelto di usare slack, con canale #general per comunicare informalmente, #incontri per approvare e avere informazioni sugli incontri e #todo in cui viene aggiungo ogni punto di un qualche documento dove qualcuno ha aggiunto #todo per far si che qualcuno completi quella parte
+2 creato account Dropbox per esempi, tutorial, file di grandi dimensioni non di primaria importanza per il progetto che altrimenti occuperebbero troppo spazio su git
+3 OK!
+4 Nuova bacheca "Stesura documenti", con: 
+	- Completamento documenti (elenco documenti da realizzare con relativa data in cui completare la stesura, milestone), 	- Elenco parti da stendere per ogni documento, da segnare come completato e/o verificato e con relativi sottotask per ogni macro area assegnata ad un solo componente del gruppo.
+5 si guarda e si deciderà cosa usare
+6 Per ogni modifica (major) a documenti  bisogna completare il diario con autore, ruolo, data e versione (con soli due decimali)
+7 Processi primari (Alberto, Lisa ed Elia), processi di supporto (Giuseppe, Paolo e Davide) e processi organizzativi (Freppo)
