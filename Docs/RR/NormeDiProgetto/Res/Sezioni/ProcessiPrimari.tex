@@ -3,7 +3,7 @@
 \subsection{Fornitura}
 	
 	\subsubsection{Scopo}
-		Lo scopo di questo $processo_Gs$ (aggiungere pedice  G ?) e' di trattare i termini e le norme, dalle piu' triviali alle piu' importanti, che tutti i componenti del gruppo SWEefty sono tenuti a rispettare per diventare fornitori dell'azienda IKS e dei committenti Prof. Tullio Vardanega e Prod. Riccardo Cardin
+		Lo scopo di questo $processo_G$ (aggiungere pedice  G ?) e' di trattare i termini e le norme, dalle piu' triviali alle piu' importanti, che tutti i componenti del gruppo SWEefty sono tenuti a rispettare per diventare fornitori dell'azienda IKS s.r.l e dei committenti Prof. Tullio Vardanega e Prod. Riccardo Cardin
 	\subsubsection{Aspettative}
 	Nel corso dell'[intero progetto il gruppo intende instaurare con IKS in particolare nelle figure dei referente Stefano Bertolin e Stefano Lazzaro un rapporto di costante collaborazione al fine di:
 	\begin{itemize}
@@ -41,9 +41,52 @@
 			\subparagraph{Definizione di Prodotto}
 		\paragraph{Codifica}
 			\subparagraph{Scopo}
+			Questa attivita' ha come scopo l'effettiva implementazione del prodotto software richiesto. In questa fase dunque si concretizzano attraverso la codifica le funzionalita' previste dai requisiti concordati.
 			\subparagraph{Aspettative}
+			Obiettivo dell'attivita' e' la creazione di un prodotto software confome alle richieste del proponente
 			\subparagraph{Descrizione}
+			L'attivita' deve rispettare qunado imposto dai documentiv \textit{Definizione di prodotto} e \textit{Piano di Qualifica}
 			\subparagraph{Stile di codifica}
+			Al fine di garantire uniformita'all'intera $codebase_G$, ciascun membro del gruppo e' obbligato a rispettare le sequenti norme:
+			\begin{itemize}
+			\item Formattazione: e' richiesto l'uso di uno spazio (" ") ove possibile per rendere il codice di facile comprensione.
+			Di seguito alcuni  esempi di buona e cattiva formattazione
+			\begin{lstlisting}
+				int a=3; // BAD
+				int a = 3; // GOOD
+				int a = 3,b = 5; // BAD
+				int a = 3, b = 4; // GOOD
+
+				getFoo(a,b,c,d) // BAD
+				getFoo(a, b, c, d) // GOOD
+
+				if(a==5){ // BAD
+				if (a == 5) { // GOOD
+			\end{lstlisting}
+			
+			\item Indentazione: una tabulazione, inoltre non sono permessi spazi biachi o tabulazioni a fine riga
+			
+			\item Nomi: i nomi delle funzioni e delle variabili devono essere significativi e devono seguire la notazione $camelCase_G$. I nomi delle classi devono avere la prima lettera maiuscola.
+			
+			\item Strutture di controllo (if, switch, for, etc...): le parentesi graffe per i costrutti che le prevedono devono essere in linea con il costrutto stesso
+			\begin{lstlisting}
+				if (...) { // GOOD
+ 				   // CODICE
+				} else {
+				    // CODICE
+				}
+	
+
+				if (...) // BAAAAD
+				{
+					 // CODE
+				}
+				else 
+				{
+				  // CODE
+				}
+			\end{lstlisting}
+			\end{itemize}
 			\subparagraph{Intestazione}
 			\subparagraph{Versionamento}
 			\subparagraph{Ricorsione}
