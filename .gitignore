@@ -1,4 +1,14 @@
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.log
+*.fls
+*.out
+*.toc
+*.fdb_latexmk
+*.dvi
 
-Docs/RR/PianoDiQualifica/Res/Sezioni/\.ProcessiPrimari\.tex\.swp
-._*
+## unix swap files:
+*.swp
+
+## OSX ds_store files:
 *.DS_Store
