@@ -1,0 +1,10 @@
+# ORDINE DEL GIORNO #
+0 discussione su modulo A/B del capitolato
+1 chiarimento su strumento di comunicazione interna (preferirei slack)
+2 setup nuovi strumenti: dropbox
+3 verifica che tutti possiedano strumenti scorso incontro (gitkraken + latex + texstudio + trello)
+4 spiegazione di come è organizzato workspace di trello e relativa apertura
+5 assegnaro il compito di trovare uno strumento per disegno di uml (diagrammi di sequenza)
+6 spiegazione del diario
+7 spartizione compiti di scrittura
+8 spiegazione dell organizzazione di dropbox e inserimento di email nel relativo documento
