@@ -93,43 +93,45 @@
 \contentsline {subsubsection}{\numberline {4.1.6}Struttura dei documenti}{9}{subsubsection.4.1.6}
 \contentsline {paragraph}{\numberline {4.1.6.1}Prima pagina}{9}{paragraph.4.1.6.1}
 \contentsline {paragraph}{\numberline {4.1.6.2}Registro delle modifiche}{10}{paragraph.4.1.6.2}
-\contentsline {paragraph}{\numberline {4.1.6.3}Indice}{10}{paragraph.4.1.6.3}
-\contentsline {paragraph}{\numberline {4.1.6.4}Contenuto principale}{10}{paragraph.4.1.6.4}
+\contentsline {paragraph}{\numberline {4.1.6.3}Indici}{10}{paragraph.4.1.6.3}
+\contentsline {paragraph}{\numberline {4.1.6.4}Formattazione generale delle pagine}{10}{paragraph.4.1.6.4}
+\contentsline {subparagraph}{\numberline {4.1.6.4.1}Intestazione ->da concordare<-}{10}{subparagraph.4.1.6.4.1}
+\contentsline {subparagraph}{\numberline {4.1.6.4.2}Pi\IeC {\`e} di pagina ->da concordare<-}{10}{subparagraph.4.1.6.4.2}
 \contentsline {paragraph}{\numberline {4.1.6.5}Note a pi\IeC {\`e} di pagina}{10}{paragraph.4.1.6.5}
-\contentsline {subsubsection}{\numberline {4.1.7}Versionamento}{10}{subsubsection.4.1.7}
-\contentsline {subsubsection}{\numberline {4.1.8}Norme tipografiche}{10}{subsubsection.4.1.8}
-\contentsline {paragraph}{\numberline {4.1.8.1}Stile del testo}{10}{paragraph.4.1.8.1}
-\contentsline {paragraph}{\numberline {4.1.8.2}Elenchi puntati}{10}{paragraph.4.1.8.2}
-\contentsline {paragraph}{\numberline {4.1.8.3}Formati comuni}{10}{paragraph.4.1.8.3}
-\contentsline {paragraph}{\numberline {4.1.8.4}Sigle}{10}{paragraph.4.1.8.4}
-\contentsline {subsubsection}{\numberline {4.1.9}Elementi grafici}{10}{subsubsection.4.1.9}
-\contentsline {paragraph}{\numberline {4.1.9.1}Tabelle}{10}{paragraph.4.1.9.1}
-\contentsline {paragraph}{\numberline {4.1.9.2}Immagini}{11}{paragraph.4.1.9.2}
-\contentsline {subsubsection}{\numberline {4.1.10}Classificazione dei documenti}{11}{subsubsection.4.1.10}
-\contentsline {paragraph}{\numberline {4.1.10.1}Documenti informali}{11}{paragraph.4.1.10.1}
-\contentsline {paragraph}{\numberline {4.1.10.2}Documenti formali}{11}{paragraph.4.1.10.2}
-\contentsline {paragraph}{\numberline {4.1.10.3}Verbali}{11}{paragraph.4.1.10.3}
-\contentsline {subsubsection}{\numberline {4.1.11}Strumenti}{11}{subsubsection.4.1.11}
-\contentsline {paragraph}{\numberline {4.1.11.1}\LaTeX }{11}{paragraph.4.1.11.1}
-\contentsline {paragraph}{\numberline {4.1.11.2}TexStudio}{11}{paragraph.4.1.11.2}
-\contentsline {paragraph}{\numberline {4.1.11.3}Lucidchart}{11}{paragraph.4.1.11.3}
-\contentsline {subsection}{\numberline {4.2}Verifica}{11}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Scopo}{11}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}Aspettative}{11}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}Descrizione}{11}{subsubsection.4.2.3}
-\contentsline {subsubsection}{\numberline {4.2.4}Attivit\IeC {\`a}}{11}{subsubsection.4.2.4}
-\contentsline {paragraph}{\numberline {4.2.4.1}Analisi}{11}{paragraph.4.2.4.1}
-\contentsline {subparagraph}{\numberline {4.2.4.1.1}Analisi Statica}{11}{subparagraph.4.2.4.1.1}
-\contentsline {subparagraph}{\numberline {4.2.4.1.2}Analisi dinamica}{11}{subparagraph.4.2.4.1.2}
-\contentsline {paragraph}{\numberline {4.2.4.2}Test}{11}{paragraph.4.2.4.2}
-\contentsline {subparagraph}{\numberline {4.2.4.2.1}Test di unit\IeC {\`a}}{11}{subparagraph.4.2.4.2.1}
-\contentsline {subparagraph}{\numberline {4.2.4.2.2}Test di integrazione}{11}{subparagraph.4.2.4.2.2}
-\contentsline {subparagraph}{\numberline {4.2.4.2.3}Test di sistema}{11}{subparagraph.4.2.4.2.3}
-\contentsline {subparagraph}{\numberline {4.2.4.2.4}Test di regressione}{11}{subparagraph.4.2.4.2.4}
-\contentsline {subparagraph}{\numberline {4.2.4.2.5}Test di accettazione}{11}{subparagraph.4.2.4.2.5}
-\contentsline {subsubsection}{\numberline {4.2.5}Strumenti}{12}{subsubsection.4.2.5}
-\contentsline {paragraph}{\numberline {4.2.5.1}Verifica ortografica}{12}{paragraph.4.2.5.1}
-\contentsline {paragraph}{\numberline {4.2.5.2}Validazione W3C}{12}{paragraph.4.2.5.2}
-\contentsline {paragraph}{\numberline {4.2.5.3}Analisi statica}{12}{paragraph.4.2.5.3}
-\contentsline {paragraph}{\numberline {4.2.5.4}Analisi dinamica}{12}{paragraph.4.2.5.4}
-\contentsline {paragraph}{\numberline {4.2.5.5}Metriche}{12}{paragraph.4.2.5.5}
+\contentsline {subsubsection}{\numberline {4.1.7}Versionamento}{11}{subsubsection.4.1.7}
+\contentsline {subsubsection}{\numberline {4.1.8}Norme tipografiche}{11}{subsubsection.4.1.8}
+\contentsline {paragraph}{\numberline {4.1.8.1}Stile del testo}{11}{paragraph.4.1.8.1}
+\contentsline {paragraph}{\numberline {4.1.8.2}Elenchi puntati}{11}{paragraph.4.1.8.2}
+\contentsline {paragraph}{\numberline {4.1.8.3}Formati comuni}{11}{paragraph.4.1.8.3}
+\contentsline {paragraph}{\numberline {4.1.8.4}Sigle}{11}{paragraph.4.1.8.4}
+\contentsline {subsubsection}{\numberline {4.1.9}Elementi grafici}{12}{subsubsection.4.1.9}
+\contentsline {paragraph}{\numberline {4.1.9.1}Tabelle}{12}{paragraph.4.1.9.1}
+\contentsline {paragraph}{\numberline {4.1.9.2}Immagini}{12}{paragraph.4.1.9.2}
+\contentsline {subsubsection}{\numberline {4.1.10}Classificazione dei documenti}{12}{subsubsection.4.1.10}
+\contentsline {paragraph}{\numberline {4.1.10.1}Documenti informali}{12}{paragraph.4.1.10.1}
+\contentsline {paragraph}{\numberline {4.1.10.2}Documenti formali}{12}{paragraph.4.1.10.2}
+\contentsline {paragraph}{\numberline {4.1.10.3}Verbali}{12}{paragraph.4.1.10.3}
+\contentsline {subsubsection}{\numberline {4.1.11}Strumenti}{12}{subsubsection.4.1.11}
+\contentsline {paragraph}{\numberline {4.1.11.1}\LaTeX }{12}{paragraph.4.1.11.1}
+\contentsline {paragraph}{\numberline {4.1.11.2}TexStudio}{12}{paragraph.4.1.11.2}
+\contentsline {paragraph}{\numberline {4.1.11.3}Lucidchart}{12}{paragraph.4.1.11.3}
+\contentsline {subsection}{\numberline {4.2}Verifica}{12}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Scopo}{12}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Aspettative}{12}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Descrizione}{12}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Attivit\IeC {\`a}}{12}{subsubsection.4.2.4}
+\contentsline {paragraph}{\numberline {4.2.4.1}Analisi}{12}{paragraph.4.2.4.1}
+\contentsline {subparagraph}{\numberline {4.2.4.1.1}Analisi Statica}{12}{subparagraph.4.2.4.1.1}
+\contentsline {subparagraph}{\numberline {4.2.4.1.2}Analisi dinamica}{12}{subparagraph.4.2.4.1.2}
+\contentsline {paragraph}{\numberline {4.2.4.2}Test}{13}{paragraph.4.2.4.2}
+\contentsline {subparagraph}{\numberline {4.2.4.2.1}Test di unit\IeC {\`a}}{13}{subparagraph.4.2.4.2.1}
+\contentsline {subparagraph}{\numberline {4.2.4.2.2}Test di integrazione}{13}{subparagraph.4.2.4.2.2}
+\contentsline {subparagraph}{\numberline {4.2.4.2.3}Test di sistema}{13}{subparagraph.4.2.4.2.3}
+\contentsline {subparagraph}{\numberline {4.2.4.2.4}Test di regressione}{13}{subparagraph.4.2.4.2.4}
+\contentsline {subparagraph}{\numberline {4.2.4.2.5}Test di accettazione}{13}{subparagraph.4.2.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.5}Strumenti}{13}{subsubsection.4.2.5}
+\contentsline {paragraph}{\numberline {4.2.5.1}Verifica ortografica}{13}{paragraph.4.2.5.1}
+\contentsline {paragraph}{\numberline {4.2.5.2}Validazione W3C}{13}{paragraph.4.2.5.2}
+\contentsline {paragraph}{\numberline {4.2.5.3}Analisi statica}{13}{paragraph.4.2.5.3}
+\contentsline {paragraph}{\numberline {4.2.5.4}Analisi dinamica}{13}{paragraph.4.2.5.4}
+\contentsline {paragraph}{\numberline {4.2.5.5}Metriche}{13}{paragraph.4.2.5.5}
