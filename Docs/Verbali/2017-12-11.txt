@@ -1,4 +1,5 @@
 # ORDINE DEL GIORNO #
+# COSE RIGUARDANTI RR #
 0. a che punto siamo arrivati
 	0.1 se qualcuno ha finito procediamo con i merge
 1. mostrare i comandi per colorare di rosso testo che deve essere aggiunto e per riferimenti, footnote
@@ -7,5 +8,9 @@
 4. rivedere i prossimi documenti da stilare e magari mettere delle nuove date
 	4.1 questione glossario (che ci va..? come ci va? uno script?)
 5. parlare delle parti che a ciascuno di noi mancano e dove possibile trovare una soluzione
+
+# COSE RIGUARDANTI FUTURO ( SE SI HA TEMPO ) #
+6. capire come muoversi per casi d'uso: visto che nessuno di noi ha idea di cosa si può fare su kibana al momento e su quali dati si può lavorare sarebbe meglio discuterne insieme per decidere se affidarci ai due Stefani oppure proporre qualcosa noi.
+
 
 # SOLUZIONI #
