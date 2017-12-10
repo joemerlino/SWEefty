@@ -4,22 +4,72 @@
 \subsection{Gestione}
 
 	\subsubsection{Scopo}
+	Questo $processo_G$ ha come scopo la redazione del documento \emph{Piano di Progetto}.\textcolor{red}{forse}
 	\subsubsection{Aspettative}
-	\subsubsection{Descrizione}
-	\subsubsection{Ruoli di progetto}
-		\paragraph{Amministratore di Progetto}
-		\paragraph{Responsabile di Progetto}
-		\paragraph{Analista}
-		\paragraph{Progettista}
-		\paragraph{Verificatore}
-		\paragraph{Programmatore}
+	Ci si aspetta di \textcolor{red}{non ne ho idea, servono altri esempi}
+	\subsubsection{Descrizione} 
+	\textcolor{red}{non ne ho idea, servono altri esempi}
+	\subsubsection{Ruoli di progetto} 
+	I ruoli di progetto rappresentano le figure professionali che lavoreranno al progetto.  Ogni membro dovrà ricoprire ciascun ruolo almeno una volta. Come ciò sarà pianificato e verificato verrà specificato nel documento \emph{Piano di Progetto v1.0.0}. I ruoli sono:
+		\paragraph{Amministratore di Progetto} \mbox{} \\
+		L'\emph{Amministratore di Progetto} è la figura professionale che si deve occupare di gestire l'ambiente di lavoro del gruppo. Nello specifico deve
+		\begin{itemize}
+			\item Ricercare nuovi strumenti che migliorino la produttività del gruppo
+			\item Imparare ad utilizzare adeguatamente gli strumenti utilizzati
+			\item Se necessario spiegare agli altri componenti del gruppo come utilizzare correttamente tali strumenti
+			\item Occuparsi del controllo di versione del prodotto 
+			\item Occuparsi della configurazione del prodotto
+		\end{itemize}
+		è presente per tutta la durata del progetto.
+		\paragraph{Analista} \mbox{} \\
+		L'\emph{Analista} è la figura professionale che si occupa dell'analisi dei requisiti del prodotto e del dominio applicativo. Deve
+		\begin{itemize}
+			\item Analizzare i requisiti del prodotto. Per fare ciò dovrà parlare in prima persona con il committente
+			\item Analizzare i requisiti di dominio
+			\item Redigere il documento \emph{Studio di Fattibilità}
+			\item Redigere il documento \emph{Analisi dei Requisiti}
+		\end{itemize}
+		è presente solamente nella fase iniziale del progetto.
+		\paragraph{Progettista} \mbox{} \\
+		Il\emph{Progettista} è la figura professionale che si occupa della progettazione del prodotto. Deve
+		\begin{itemize}
+			\item Comprendere a fondo i requisiti nel documento \emph{Analisi dei Requisiti}
+			\item Progettare un'$architettura_G$ per il prodotto
+			\item Scegliere le tecnologie che si utilizzeranno per realizzare il prodotto, in modo tale che essere permettano di soddisfare i requisiti
+			\item Redigere il documento \emph{Specifica Tecnica}
+			\item Redigere il documento \emph{Definizione di prodotto} \textcolor{red}{ATTEZIONE: questi due documenti esistono ancora?}
+		\end{itemize}
+		è presente nella fase di progettazione del prodotto software e \emph{può} seguire il progetto fino al termine.
+		\paragraph{Verificatore} \mbox{} \\
+		Il \emph{Verificatore} è la figura professionale che si occupa dell'attività di verifica. Deve
+		\begin{itemize}
+			\item Verificare che ciascuna attività svolta sia conforme alle norme stabilite nel progetto
+			\item Redigere il documento \emph{Piano di Qualifica}
+		\end{itemize}
+		è presente per l'intera durata del progetto.
+		\paragraph{Programmatore} \mbox{} \\
+		Il \emph{Programmatore} è la figura professionale che si occupa della codifica del prodotto. Deve
+		\begin{itemize}
+			\item Scrivere il codice  del prodotto software che rispetti le decisioni del \emph{Progettista}
+			\item Redigere il documento \emph{Manuale Utente}
+		\end{itemize}
+		è presente durante la fase di codifica del prodotto.
+		\paragraph{Project Manager} \mbox{} \\
+		Il \emph{Project Manager} è la figura professionale funge da punto di riferimento per il gruppo, il fornitore e il $committente_G$ in merito al progetto che amministra. Deve
+		\begin{itemize}
+			\item Organizzare incontri interni ed esterni
+			\item Pianificare le attività svolte dal gruppo, suddividendole in compiti
+			\item Individuare per ciascun compito un membro del gruppo per svolgerlo
+			\item Analizzare, monitorare e gestire i rischi
+		\end{itemize}
+		è presente per l'intera durata del progetto.
 	\subsubsection{Procedure}
 		\paragraph{Gestione delle comunicazioni}
 			\subparagraph{Comunicazioni interne} \mbox{} \\
 			\label{comInterne}
 			Le comunicazioni interne sono gestite con la piattaforma $Slack_G$. Essa rende possibile creare un $workspace_G$ comune al gruppo suddiviso in più $canali \text{ } di \text{ } comunicazione_G$, ad ognuno dei quali sono associati uno scopo ed un sottoinsieme dei membri del gruppo. \emph{Slack} permette anche a due componenti del gruppo di mandarsi messaggi privati. Il maggiore vantaggio rispetto all'utilizzo di un'applicazione di messaggistica come $Telegram_G$ o $Whatsapp_G$ sta nel poter creare uno spazio di comunicazione condiviso che permetta di gestire più categorie di comunicazioni in un singolo \emph{workspace}. % questo riguardalo
 			\subparagraph{Comunicazioni esterne} \mbox{} \\
-			 La gestione delle comunicazioni esterne è compito del $Project$ $Manager_G$. Egli deve utilizzare l'indirizzo di posta elettronica:
+			 La gestione delle comunicazioni esterne è compito del $Project$ $Manager$. Egli deve utilizzare l'indirizzo di posta elettronica:
 			$$\textbf{sweeftyteam@gmail.com}$$
 			Il \emph{Project manager} se lo riterrà opportuno potrà informare i membri del gruppo delle eventuali comunicazioni esterne tramite il canale Slack \emph{email}.
 			
@@ -40,9 +90,10 @@
 				Tale decisione dovrà prendere in considereazione i benefici che porterebbe organizzare un incontro con tre o quattro membri e gli svantaggi che si avrebbero posticipando l'incontro.
 				Se le conferme saranno meno di tre sarà necessario tornare al punto 1 cambiando i parametri data e/o ora ed eventualmente luogo
 				
-				\item Nel caso in cui l'incontro venga confermato, stilare in un file nella cartella della repository \texttt{Docs/Verbali} l'ordine del giorno \color{red}{qui spiega meglio quando avrai materiale}
+				\item Nel caso in cui l'incontro venga confermato, stilare in un file nella cartella della repository \texttt{Docs/Verbali} l'ordine del giorno. Il file deve avere come nome la data in cui si terrà l'incontro, scritta nel formato indicato in \ref{dataFormato} \textcolor{red}{dove sta sta data?}. Nello stesso file dovrà essere verbalizzato ciò di cui si è discusso durante l'incontro nelle modalità descritte alla fine di questo paragrafo
 			\end{enumerate}
-			Tutti i membri del team possono chiedere di organizzare un incontro al \emph{Project Manager}, specificando una motivazione. Se quest'ultima verrà ritenuta sufficiente per organizzare un incontro si procederà ad avviare la procedura sopra descritta. \\Inoltre ad ogni incontro un membro del gruppo verrà scelto dal \emph{Project Manager} per stilare il verbale anche qui se dop parli deii verbali rimanda da qui
+			Tutti i membri del team possono chiedere di organizzare un incontro al \emph{Project Manager}, specificando una motivazione. Se quest'ultima verrà ritenuta sufficiente per organizzare un incontro si procederà ad avviare la procedura sopra descritta. 
+			\\Inoltre, ad ogni incontro, un membro del gruppo verrà scelto dal \emph{Project Manager} per stilare il verbale. Egli dovrà inserire nello stesso file creato dal \emph{Project Manager} contenente l'ordine del giorno un riassunto scritto di ciò di cui si è discusso e ciò che è stato deciso.
 			
 			\subparagraph{Incontri esterni} \mbox{} \\
 			 Gli incontri esterni dovranno essere organizzati dal \emph{Project Manager}. Sarà suo compito mettersi in contatto con il committente o il proponente tramite email e determinare data, ora e luogo dell'incontro. Quando ciò sarà definito dovrà avvisare i membri del gruppo sul canale Slack \emph{incontri}. Anche per gli incontri esterni ciascun membro del gruppo può richiedere che venga organizzato un incontro con il committente o il proponente, specificandone la motivazione. Se essa sarà giudicata adeguata dal \emph{Project Manager} egli dovrà procedere ad organizzare tale incontro. Sarà anche suo compito incaricare uno dei presenti di redigere un verbale scritto.
@@ -106,13 +157,18 @@
 				\item \texttt{Code} è la directory dove verrà inserita l'implementazione del codice
 				\item \texttt{CommonImages} contiene le immagini comuni a tutti i documenti, per esempio il logo del gruppo
 				\item \texttt{Template} contiene i files che compongono la struttura comune a tutti i documenti che verranno redatti
-				\item \texttt{Verbali} contiene i files dei verbali degli incontri interni. Il nome di ogni file è identificato dalla data in cui è stata fatta la riunione del gruppo nel formato descritto in \ref{formatoData} \color{red}{dove sta sto formato data?}
+				\item \texttt{Verbali} contiene i files dei verbali degli incontri interni. Il nome di ogni file è identificato dalla data in cui è stata fatta la riunione del gruppo nel formato descritto in \ref{formatoData} \textcolor{red}{dove sta sto formato data?}
 				\item \texttt{RR} contiene tutti i documenti da consegnare per la Revisione dei Requisiti
 				\item \texttt{RP} contiene tutti i documenti da consegnare per la Revisione di Progettazione
 				\item \texttt{RQ} contiene tutti i documenti da consegnare per la Revisione di Qualifica
 				\item \texttt{RA} contiene tutti i documenti da consegnare per la Revisione di Accettazione
 				  				
 			\end{itemize}
+			
+			\subparagraph{Norme sui nomi dei files} \mbox{} \\
+			Ciascun file dovrà essere denominato seguendo la codifica:
+					$$\text{\texttt{NomeDelFile.ext}}$$
+			Dove NomeDelFile rappresenta il nome del file e ciascuna parola che compone tale nome è identificata da una lettera maiuscola. Ext rappresenta l'estesione del file. Nel caso in cui dovrebbero essere presenti lettere accentate nel nome, l'accento dovrà essere ignorato e sarà presente semplicemente la lettera non accetata. Per esempio il file sorgente .tex del documento \emph{Studio di Fattibilità} verrà denominato \texttt{StudioDiFattibilita.tex}. \textcolor{red}{Ci mettiamo il controllo di versione nel nome? io non lo farei..forse}
 			
 			\subparagraph{Files e .gitignore}\mbox{} \\
 			I file che si troveranno effettivamente nella directory \texttt{Docs} saranno solamente immagini .jpg e .png, file sorgente \LaTeX $\text{ }$ .tex e file .pdf. Tutti i prodotti intermedi del programma per la compilazione di file .tex \texttt{pdflatex} .aux, .dvi, .fls, .log, .out, .toc verranno inseriti nel file \texttt{.gitignore} che renderà la loro presenza trasparente a Git.
@@ -129,9 +185,10 @@
 		\paragraph{Sistema Operativo} \mbox{} \\
 		I sistemi operativi utilizzati dai membri del gruppo sono:
 		\begin{itemize}
-			\item Ubuntu GNOME 16.10 x64
+			\item Ubuntu GNOME 17.10 x64
+			\item Ubuntu 17.10 x64
 			\item Windows 10 Home x64
-			\item macOS High Sierra versione 10.13.1 x64
+			\item MacOS High Sierra x64
 		\end{itemize}
 		
 		\paragraph{Slack}\mbox{} \\

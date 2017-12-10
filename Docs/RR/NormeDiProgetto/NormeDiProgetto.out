@@ -53,11 +53,11 @@
 \BOOKMARK [3][-]{subsubsection.3.1.3}{Descrizione}{subsection.3.1}% 53
 \BOOKMARK [3][-]{subsubsection.3.1.4}{Ruoli di progetto}{subsection.3.1}% 54
 \BOOKMARK [4][-]{paragraph.3.1.4.1}{Amministratore di Progetto}{subsubsection.3.1.4}% 55
-\BOOKMARK [4][-]{paragraph.3.1.4.2}{Responsabile di Progetto}{subsubsection.3.1.4}% 56
-\BOOKMARK [4][-]{paragraph.3.1.4.3}{Analista}{subsubsection.3.1.4}% 57
-\BOOKMARK [4][-]{paragraph.3.1.4.4}{Progettista}{subsubsection.3.1.4}% 58
-\BOOKMARK [4][-]{paragraph.3.1.4.5}{Verificatore}{subsubsection.3.1.4}% 59
-\BOOKMARK [4][-]{paragraph.3.1.4.6}{Programmatore}{subsubsection.3.1.4}% 60
+\BOOKMARK [4][-]{paragraph.3.1.4.2}{Analista}{subsubsection.3.1.4}% 56
+\BOOKMARK [4][-]{paragraph.3.1.4.3}{Progettista}{subsubsection.3.1.4}% 57
+\BOOKMARK [4][-]{paragraph.3.1.4.4}{Verificatore}{subsubsection.3.1.4}% 58
+\BOOKMARK [4][-]{paragraph.3.1.4.5}{Programmatore}{subsubsection.3.1.4}% 59
+\BOOKMARK [4][-]{paragraph.3.1.4.6}{Project Manager}{subsubsection.3.1.4}% 60
 \BOOKMARK [3][-]{subsubsection.3.1.5}{Procedure}{subsection.3.1}% 61
 \BOOKMARK [4][-]{paragraph.3.1.5.1}{Gestione delle comunicazioni}{subsubsection.3.1.5}% 62
 \BOOKMARK [5][-]{subparagraph.3.1.5.1.1}{Comunicazioni interne}{paragraph.3.1.5.1}% 63
@@ -71,64 +71,65 @@
 \BOOKMARK [4][-]{paragraph.3.1.5.4}{Gestione degli strumenti di versionamento}{subsubsection.3.1.5}% 71
 \BOOKMARK [5][-]{subparagraph.3.1.5.4.1}{Repository}{paragraph.3.1.5.4}% 72
 \BOOKMARK [5][-]{subparagraph.3.1.5.4.2}{Struttura del repository}{paragraph.3.1.5.4}% 73
-\BOOKMARK [5][-]{subparagraph.3.1.5.4.3}{Files e .gitignore}{paragraph.3.1.5.4}% 74
-\BOOKMARK [5][-]{subparagraph.3.1.5.4.4}{Norme su commit}{paragraph.3.1.5.4}% 75
-\BOOKMARK [4][-]{paragraph.3.1.5.5}{Gestione dei rischi}{subsubsection.3.1.5}% 76
-\BOOKMARK [3][-]{subsubsection.3.1.6}{Strumenti}{subsection.3.1}% 77
-\BOOKMARK [4][-]{paragraph.3.1.6.1}{Sistema Operativo}{subsubsection.3.1.6}% 78
-\BOOKMARK [4][-]{paragraph.3.1.6.2}{Slack}{subsubsection.3.1.6}% 79
-\BOOKMARK [4][-]{paragraph.3.1.6.3}{Trello}{subsubsection.3.1.6}% 80
-\BOOKMARK [4][-]{paragraph.3.1.6.4}{Github}{subsubsection.3.1.6}% 81
-\BOOKMARK [4][-]{paragraph.3.1.6.5}{Git}{subsubsection.3.1.6}% 82
-\BOOKMARK [4][-]{paragraph.3.1.6.6}{Gitkraken}{subsubsection.3.1.6}% 83
-\BOOKMARK [1][-]{section.4}{Processi di Supporto}{}% 84
-\BOOKMARK [2][-]{subsection.4.1}{Documentazione}{section.4}% 85
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Scopo}{subsection.4.1}% 86
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Aspettative}{subsection.4.1}% 87
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Descrizione}{subsection.4.1}% 88
-\BOOKMARK [3][-]{subsubsection.4.1.4}{Procedure}{subsection.4.1}% 89
-\BOOKMARK [4][-]{paragraph.4.1.4.1}{Approvazione dei documenti}{subsubsection.4.1.4}% 90
-\BOOKMARK [3][-]{subsubsection.4.1.5}{Template}{subsection.4.1}% 91
-\BOOKMARK [3][-]{subsubsection.4.1.6}{Struttura dei documenti}{subsection.4.1}% 92
-\BOOKMARK [4][-]{paragraph.4.1.6.1}{Prima pagina}{subsubsection.4.1.6}% 93
-\BOOKMARK [4][-]{paragraph.4.1.6.2}{Registro delle modifiche}{subsubsection.4.1.6}% 94
-\BOOKMARK [4][-]{paragraph.4.1.6.3}{Indice}{subsubsection.4.1.6}% 95
-\BOOKMARK [4][-]{paragraph.4.1.6.4}{Contenuto principale}{subsubsection.4.1.6}% 96
-\BOOKMARK [4][-]{paragraph.4.1.6.5}{Note a pi\350 di pagina}{subsubsection.4.1.6}% 97
-\BOOKMARK [3][-]{subsubsection.4.1.7}{Versionamento}{subsection.4.1}% 98
-\BOOKMARK [3][-]{subsubsection.4.1.8}{Norme tipografiche}{subsection.4.1}% 99
-\BOOKMARK [4][-]{paragraph.4.1.8.1}{Stile del testo}{subsubsection.4.1.8}% 100
-\BOOKMARK [4][-]{paragraph.4.1.8.2}{Elenchi puntati}{subsubsection.4.1.8}% 101
-\BOOKMARK [4][-]{paragraph.4.1.8.3}{Formati comuni}{subsubsection.4.1.8}% 102
-\BOOKMARK [4][-]{paragraph.4.1.8.4}{Sigle}{subsubsection.4.1.8}% 103
-\BOOKMARK [3][-]{subsubsection.4.1.9}{Elementi grafici}{subsection.4.1}% 104
-\BOOKMARK [4][-]{paragraph.4.1.9.1}{Tabelle}{subsubsection.4.1.9}% 105
-\BOOKMARK [4][-]{paragraph.4.1.9.2}{Immagini}{subsubsection.4.1.9}% 106
-\BOOKMARK [3][-]{subsubsection.4.1.10}{Classificazione dei documenti}{subsection.4.1}% 107
-\BOOKMARK [4][-]{paragraph.4.1.10.1}{Documenti informali}{subsubsection.4.1.10}% 108
-\BOOKMARK [4][-]{paragraph.4.1.10.2}{Documenti formali}{subsubsection.4.1.10}% 109
-\BOOKMARK [4][-]{paragraph.4.1.10.3}{Verbali}{subsubsection.4.1.10}% 110
-\BOOKMARK [3][-]{subsubsection.4.1.11}{Strumenti}{subsection.4.1}% 111
-\BOOKMARK [4][-]{paragraph.4.1.11.1}{LaTeX}{subsubsection.4.1.11}% 112
-\BOOKMARK [4][-]{paragraph.4.1.11.2}{TexStudio}{subsubsection.4.1.11}% 113
-\BOOKMARK [4][-]{paragraph.4.1.11.3}{Lucidchart}{subsubsection.4.1.11}% 114
-\BOOKMARK [2][-]{subsection.4.2}{Verifica}{section.4}% 115
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Scopo}{subsection.4.2}% 116
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Aspettative}{subsection.4.2}% 117
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Descrizione}{subsection.4.2}% 118
-\BOOKMARK [3][-]{subsubsection.4.2.4}{Attivit\340}{subsection.4.2}% 119
-\BOOKMARK [4][-]{paragraph.4.2.4.1}{Analisi}{subsubsection.4.2.4}% 120
-\BOOKMARK [5][-]{subparagraph.4.2.4.1.1}{Analisi Statica}{paragraph.4.2.4.1}% 121
-\BOOKMARK [5][-]{subparagraph.4.2.4.1.2}{Analisi dinamica}{paragraph.4.2.4.1}% 122
-\BOOKMARK [4][-]{paragraph.4.2.4.2}{Test}{subsubsection.4.2.4}% 123
-\BOOKMARK [5][-]{subparagraph.4.2.4.2.1}{Test di unit\340}{paragraph.4.2.4.2}% 124
-\BOOKMARK [5][-]{subparagraph.4.2.4.2.2}{Test di integrazione}{paragraph.4.2.4.2}% 125
-\BOOKMARK [5][-]{subparagraph.4.2.4.2.3}{Test di sistema}{paragraph.4.2.4.2}% 126
-\BOOKMARK [5][-]{subparagraph.4.2.4.2.4}{Test di regressione}{paragraph.4.2.4.2}% 127
-\BOOKMARK [5][-]{subparagraph.4.2.4.2.5}{Test di accettazione}{paragraph.4.2.4.2}% 128
-\BOOKMARK [3][-]{subsubsection.4.2.5}{Strumenti}{subsection.4.2}% 129
-\BOOKMARK [4][-]{paragraph.4.2.5.1}{Verifica ortografica}{subsubsection.4.2.5}% 130
-\BOOKMARK [4][-]{paragraph.4.2.5.2}{Validazione W3C}{subsubsection.4.2.5}% 131
-\BOOKMARK [4][-]{paragraph.4.2.5.3}{Analisi statica}{subsubsection.4.2.5}% 132
-\BOOKMARK [4][-]{paragraph.4.2.5.4}{Analisi dinamica}{subsubsection.4.2.5}% 133
-\BOOKMARK [4][-]{paragraph.4.2.5.5}{Metriche}{subsubsection.4.2.5}% 134
+\BOOKMARK [5][-]{subparagraph.3.1.5.4.3}{Norme sui nomi dei files}{paragraph.3.1.5.4}% 74
+\BOOKMARK [5][-]{subparagraph.3.1.5.4.4}{Files e .gitignore}{paragraph.3.1.5.4}% 75
+\BOOKMARK [5][-]{subparagraph.3.1.5.4.5}{Norme su commit}{paragraph.3.1.5.4}% 76
+\BOOKMARK [4][-]{paragraph.3.1.5.5}{Gestione dei rischi}{subsubsection.3.1.5}% 77
+\BOOKMARK [3][-]{subsubsection.3.1.6}{Strumenti}{subsection.3.1}% 78
+\BOOKMARK [4][-]{paragraph.3.1.6.1}{Sistema Operativo}{subsubsection.3.1.6}% 79
+\BOOKMARK [4][-]{paragraph.3.1.6.2}{Slack}{subsubsection.3.1.6}% 80
+\BOOKMARK [4][-]{paragraph.3.1.6.3}{Trello}{subsubsection.3.1.6}% 81
+\BOOKMARK [4][-]{paragraph.3.1.6.4}{Github}{subsubsection.3.1.6}% 82
+\BOOKMARK [4][-]{paragraph.3.1.6.5}{Git}{subsubsection.3.1.6}% 83
+\BOOKMARK [4][-]{paragraph.3.1.6.6}{Gitkraken}{subsubsection.3.1.6}% 84
+\BOOKMARK [1][-]{section.4}{Processi di Supporto}{}% 85
+\BOOKMARK [2][-]{subsection.4.1}{Documentazione}{section.4}% 86
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Scopo}{subsection.4.1}% 87
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Aspettative}{subsection.4.1}% 88
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Descrizione}{subsection.4.1}% 89
+\BOOKMARK [3][-]{subsubsection.4.1.4}{Procedure}{subsection.4.1}% 90
+\BOOKMARK [4][-]{paragraph.4.1.4.1}{Approvazione dei documenti}{subsubsection.4.1.4}% 91
+\BOOKMARK [3][-]{subsubsection.4.1.5}{Template}{subsection.4.1}% 92
+\BOOKMARK [3][-]{subsubsection.4.1.6}{Struttura dei documenti}{subsection.4.1}% 93
+\BOOKMARK [4][-]{paragraph.4.1.6.1}{Prima pagina}{subsubsection.4.1.6}% 94
+\BOOKMARK [4][-]{paragraph.4.1.6.2}{Registro delle modifiche}{subsubsection.4.1.6}% 95
+\BOOKMARK [4][-]{paragraph.4.1.6.3}{Indice}{subsubsection.4.1.6}% 96
+\BOOKMARK [4][-]{paragraph.4.1.6.4}{Contenuto principale}{subsubsection.4.1.6}% 97
+\BOOKMARK [4][-]{paragraph.4.1.6.5}{Note a pi\350 di pagina}{subsubsection.4.1.6}% 98
+\BOOKMARK [3][-]{subsubsection.4.1.7}{Versionamento}{subsection.4.1}% 99
+\BOOKMARK [3][-]{subsubsection.4.1.8}{Norme tipografiche}{subsection.4.1}% 100
+\BOOKMARK [4][-]{paragraph.4.1.8.1}{Stile del testo}{subsubsection.4.1.8}% 101
+\BOOKMARK [4][-]{paragraph.4.1.8.2}{Elenchi puntati}{subsubsection.4.1.8}% 102
+\BOOKMARK [4][-]{paragraph.4.1.8.3}{Formati comuni}{subsubsection.4.1.8}% 103
+\BOOKMARK [4][-]{paragraph.4.1.8.4}{Sigle}{subsubsection.4.1.8}% 104
+\BOOKMARK [3][-]{subsubsection.4.1.9}{Elementi grafici}{subsection.4.1}% 105
+\BOOKMARK [4][-]{paragraph.4.1.9.1}{Tabelle}{subsubsection.4.1.9}% 106
+\BOOKMARK [4][-]{paragraph.4.1.9.2}{Immagini}{subsubsection.4.1.9}% 107
+\BOOKMARK [3][-]{subsubsection.4.1.10}{Classificazione dei documenti}{subsection.4.1}% 108
+\BOOKMARK [4][-]{paragraph.4.1.10.1}{Documenti informali}{subsubsection.4.1.10}% 109
+\BOOKMARK [4][-]{paragraph.4.1.10.2}{Documenti formali}{subsubsection.4.1.10}% 110
+\BOOKMARK [4][-]{paragraph.4.1.10.3}{Verbali}{subsubsection.4.1.10}% 111
+\BOOKMARK [3][-]{subsubsection.4.1.11}{Strumenti}{subsection.4.1}% 112
+\BOOKMARK [4][-]{paragraph.4.1.11.1}{LaTeX}{subsubsection.4.1.11}% 113
+\BOOKMARK [4][-]{paragraph.4.1.11.2}{TexStudio}{subsubsection.4.1.11}% 114
+\BOOKMARK [4][-]{paragraph.4.1.11.3}{Lucidchart}{subsubsection.4.1.11}% 115
+\BOOKMARK [2][-]{subsection.4.2}{Verifica}{section.4}% 116
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Scopo}{subsection.4.2}% 117
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Aspettative}{subsection.4.2}% 118
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Descrizione}{subsection.4.2}% 119
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Attivit\340}{subsection.4.2}% 120
+\BOOKMARK [4][-]{paragraph.4.2.4.1}{Analisi}{subsubsection.4.2.4}% 121
+\BOOKMARK [5][-]{subparagraph.4.2.4.1.1}{Analisi Statica}{paragraph.4.2.4.1}% 122
+\BOOKMARK [5][-]{subparagraph.4.2.4.1.2}{Analisi dinamica}{paragraph.4.2.4.1}% 123
+\BOOKMARK [4][-]{paragraph.4.2.4.2}{Test}{subsubsection.4.2.4}% 124
+\BOOKMARK [5][-]{subparagraph.4.2.4.2.1}{Test di unit\340}{paragraph.4.2.4.2}% 125
+\BOOKMARK [5][-]{subparagraph.4.2.4.2.2}{Test di integrazione}{paragraph.4.2.4.2}% 126
+\BOOKMARK [5][-]{subparagraph.4.2.4.2.3}{Test di sistema}{paragraph.4.2.4.2}% 127
+\BOOKMARK [5][-]{subparagraph.4.2.4.2.4}{Test di regressione}{paragraph.4.2.4.2}% 128
+\BOOKMARK [5][-]{subparagraph.4.2.4.2.5}{Test di accettazione}{paragraph.4.2.4.2}% 129
+\BOOKMARK [3][-]{subsubsection.4.2.5}{Strumenti}{subsection.4.2}% 130
+\BOOKMARK [4][-]{paragraph.4.2.5.1}{Verifica ortografica}{subsubsection.4.2.5}% 131
+\BOOKMARK [4][-]{paragraph.4.2.5.2}{Validazione W3C}{subsubsection.4.2.5}% 132
+\BOOKMARK [4][-]{paragraph.4.2.5.3}{Analisi statica}{subsubsection.4.2.5}% 133
+\BOOKMARK [4][-]{paragraph.4.2.5.4}{Analisi dinamica}{subsubsection.4.2.5}% 134
+\BOOKMARK [4][-]{paragraph.4.2.5.5}{Metriche}{subsubsection.4.2.5}% 135
