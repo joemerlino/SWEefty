@@ -8,9 +8,10 @@
 4. rivedere i prossimi documenti da stilare e magari mettere delle nuove date
 	4.1 questione glossario (che ci va..? come ci va? uno script?)
 5. parlare delle parti che a ciascuno di noi mancano e dove possibile trovare una soluzione
+6. norme tipografiche: (ad es: quanto spazio verticale inserire in paragraph/subparagraph )
 
 # COSE RIGUARDANTI FUTURO ( SE SI HA TEMPO ) #
-6. capire come muoversi per casi d'uso: visto che nessuno di noi ha idea di cosa si può fare su kibana al momento e su quali dati si può lavorare sarebbe meglio discuterne insieme per decidere se affidarci ai due Stefani oppure proporre qualcosa noi.
+7. capire come muoversi per casi d'uso: visto che nessuno di noi ha idea di cosa si può fare su kibana al momento e su quali dati si può lavorare sarebbe meglio discuterne insieme per decidere se affidarci ai due Stefani oppure proporre qualcosa noi.
 
 
 # SOLUZIONI #
