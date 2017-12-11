@@ -5,25 +5,24 @@
 	
 	\subsubsection{Scopo}
 	Questo processo include e descrive le modalità di redazione e manutenzione dei documenti e le convenzioni 
-	adottate per la scrittura di questi durante il ciclo di vita del prodotto software.
+	adottate per la scrittura di questi, durante il ciclo di vita del prodotto software.
 	
 	\subsubsection{Aspettative}
 	I risultati che ci aspettiamo di ottenere da una corretta implementazione di questo processo sono:
 	\begin{itemize}  
-		\item una visione precisa ed univoca dei documenti che vanno redatti durante il ciclo di vita del software;
-		\item la stesura di documenti formali e coerenti.
-		\item l’individuazione di una collezione di norme e convenzioni per la redazione di documentazione coerente e valida;
+		\item una concezione attenta ed univoca dei documenti che vanno redatti durante il ciclo di vita del software;
+		\item la scrittura di documenti precisi, coerenti e conformi a delle regole;
+		\item l’individuazione di una collezione di norme e convenzioni per la redazione di documentazione coerente e valida.
 	\end{itemize}
 
 	\subsubsection{Descrizione}
-	In questa sezione devono essere indicate tutte le norme e le convenzioni adottate dal
-	gruppo, per consentire la stesura di una documentazione valida e coerente.
+	In questa sezione devono essere indicate tutte le norme e le convenzioni adottate dal gruppo, per consentire la stesura di una documentazione valida e coerente.
 	
 	\subsubsection{Procedure}
-	Per la redazione della documentazione il gruppo ha utilizzato il linguaggio di markup {\LaTeX}.
+	Il gruppo si è servito del linguaggio di markup {\LaTeX} per la stesura della documentazione.
 	
 		\paragraph{Approvazione dei documenti} \mbox{} \\
-		Ogni documento non formale in corrispondenza del completamento della stesura dovrà essere sottoposto al \textit{Responsabile di Progetto}, che dovrà delegare ai \textit{Verificatori} il controllo del contenuto e della forma. Nel caso tali \textit{Verificatori} rilevino degli errori, sarà loro compito riportarli al \textit{Responsabile di Progetto}, che a sua volta incaricherà il redattore del documento di correggerli. Questo ciclo va ripetuto fino a che il documento non è reputato completamente corretto dai  \textit{Verificatori}. In caso di assenso sulla correttezza e sulla qualità il documento può essere considerato come un documento formale. In caso contrario il \textit{Responsabile di Progetto} dovrà comunicare le motivazioni per cui il documento non è stato approvato, esplicitando le modifiche da apportare.
+		Ogni documento non formale in corrispondenza del completamento della sua stesura dovrà essere sottoposto al \textit{Responsabile di Progetto}, che dovrà delegare ai \textit{Verificatori} il controllo del contenuto e della forma. Nel caso gli anzidetti \textit{Verificatori} rilevino degli errori, sarà loro compito notificarli al \textit{Responsabile di Progetto}, che a sua volta affiderà il redattore del documento il compito di correggerli. Questo ciclo va eseguito fino a quando il documento non viene considerato completamente corretto dai  \textit{Verificatori}. In caso di assenso sulla correttezza e sulla qualità il documento può essere reputato un documento formale. In caso contrario spetta al \textit{Responsabile di Progetto} comunicare le ragione per cui il documento non è stato giudicato corretto, esplicitando le modifiche da apportare.
 		
 	\subsubsection{Template}
 	Per agevolare la redazione della documentazione è stato creato un template \LaTeX contenente tutte le impostazioni stilistiche e grafiche citate in questo documento.
@@ -59,12 +58,12 @@
 		La tabella contenente le modifiche è ordinata per data in ordine decrescente, affinchè la prima riga contenga la versione attuale del documento.
 		
 		\paragraph{Indici} \mbox{} \\
-		In ogni documento, esclusi i verbali, è presente un indice delle sezioni, un indice delle figure e un indice delle tabelle. Nel caso non siano presenti figure o tabelle i rispettivi indici verranno omessi.
+		In ogni documento, esclusi i verbali, è presente un indice delle sezioni, un indice delle figure e un indice delle tabelle. Nel caso non siano presenti figure o tabelle i rispettivi indici verranno omessi. La notazione numerica di ogni indice deve partire da 1 e le sottosezioni devono essere separate da un punto. Anche la notazione della sottosezione parte da 1.
 		
 		\paragraph{Formattazione generale delle pagine} \mbox{} \\
-		I margini orizzontali e verticali previsti dal template devono essere rispettati in ogni pagina. Ad eccezione della prima, tutte le pagine devono contenere un’intestazione ed un piè di pagina. 
+		Il template prevede dei margini orizzontali e verticali che devono essere rispettati in ogni pagina. Ad esclusione della prima, tutte le pagine contengono un’intestazione ed un piè di pagina. 
 			
-			\subparagraph{Intestazione ->da concordare<-} \mbox{} \\
+			\subparagraph{Intestazione} \mbox{} \\
 			L’intestazione è così strutturata:
 			\begin{itemize}
 				\item Logo del gruppo posto a sinistra;
@@ -72,7 +71,7 @@
 				\item Ruolo dell’autore;
 			\end{itemize}
 			
-			\subparagraph{Piè di pagina ->da concordare<-} \mbox{} \\
+			\subparagraph{Piè di pagina} \mbox{} \\
 			Il piè di pagina è così strutturato:
 			\begin{itemize}
 				\item Nome e versione del documento corrente, posti a sinistra;
@@ -83,6 +82,33 @@
 		In caso di presenza in una pagina interna di note da esplicare, esse vanno indicate nella pagina corrente, in basso a sinistra. Ogni nota deve riportare un numero e una	descrizione.
 		
 	\subsubsection{Versionamento}
+	Tutti i documento, esclusi i verbali, devono essere versionati, affinchè si possa in ogni momento conoscerne la storia. Ogni versione di un documento deve essere appuntata nel Registro delle Modifiche. Si deve adottare il seguente formato per registrare ogni modifica: 
+	\textbf{v{X}.{Y}.{Z}}
+	dove:
+	\begin{itemize}
+		\item \texbf{X}
+		\begin{itemize}
+			\item Parte da 0;
+			\item Viene incrementato dal \textit{Responsabile di Progetto} in concomitanza con l'approvazione del documento;
+			\item Arriva fino al numero di revisioni a cui è sottoposto il docuemnto.
+		\end{itemize}
+		
+		\item \texbf{Y}
+		\begin{itemize}
+			\item Parte da 0;
+			\item Viene incrementato dal \textit{$Verificatore_G$} in concomitanza di ogni verifica;
+			\item Quando X viene incrementato Y ritorna a 0.
+		\end{itemize}
+		
+		\item \texbf{Z}
+		\begin{itemize}
+			\item Parte da 0;
+			\item Viene incrementato dal \textit{Redattore} in concomitanza di ogni modifica;
+			\item Quando Y viene incrementato Z	 ritorna a 0.
+		\end{itemize}
+		
+	\end{itemize}
+	
 	\subsubsection{Norme tipografiche} Per la redazione della documentazione bisogna attenersi a queste norme.
 		
 		\paragraph{Stile del testo} \mbox{} \\
@@ -110,6 +136,32 @@
 		Ogni punto dell’elenco deve terminare con un punto e virgola,tranne l’ultimo che deve terminare con un punto. La prima parola deve avere la lettera maiuscola, a meno di casi particolari (es. nome di un file);
 		
 		\paragraph{Formati comuni}
+		Per rappresentare le seguenti entità vanno usate le seguenti modalità:
+		\begin{itemize}
+			
+			\item \textbf{Orari:}
+			\textbf{HH:MM}
+				\begin{itemize}
+					\item \textbf{HH:} va da 0 a 23 e rappresenta l'ora;
+					\item \textbf{MM:} va da 0 a 59 e rappresenta i minuti.
+				\end{itemize}
+			
+			\item \textbf{Date:}
+			\textbf{AAAA-MM-GG}
+				\begin{itemize}
+					\item \textbf{AAAA:} rappresenta l'anno;
+					\item \textbf{MM:} rappresenta il mese;
+					\item \textbf{GG:} rappresenta il giorno.
+				\end{itemize}
+			
+			\item \textbf{Termini ricorrenti:}
+			\begin{itemize}
+				\item \textbf{Nomi proprio:} ogni nome proprio va scritto con il formalismo \textit{Nome Cognome};
+				\item \textbf{Ruoli di progetto:} ogni ruolo va scritto con l'iniziale maiuscola e in corsivo;
+				\item \textbf{Nomi dei documenti:} ogni documenti va scritto con l'iniziale maiuscola e in corsivo.
+			\end{itemize}
+			
+		\end{itemize}
 		
 		\paragraph{Sigle} \mbox{} \\
 		È previsto l’utilizzo delle seguenti sigle:
