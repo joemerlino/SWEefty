@@ -5,12 +5,12 @@
 	\subsubsection{Scopo}
 		Lo scopo di questo $processo_G$ è di trattare i termini e le norme, dalle piu' triviali alle piu' importanti, che tutti i componenti del gruppo SWEefty sono tenuti a rispettare per diventare fornitori dell'azienda IKS s.r.l e dei committenti Prof. Tullio Vardanega e Prod. Riccardo Cardin
 	\subsubsection{Aspettative}
-	Nel corso dell'[intero progetto il gruppo intende instaurare con IKS in particolare nelle figure dei referente Stefano Bertolin e Stefano Lazzaro un rapporto di costante collaborazione al fine di:
-	\begin{itemize}
-	\item Determinare aspetti chiave per soddisfare i bisogni del proponente
-	\item determinare i vincoli sui processi e sui requisiti
-	\item stimare i costi 
-	\item concordare la qualifica del prodotto
+	Nel corso dell'intero progetto il gruppo intende instaurare con IKS in particolare nelle figure dei referente Stefano Bertolin e Stefano Lazzaro un rapporto di costante collaborazione al fine di:
+    \begin{itemize}
+	\item Stimare i costi del prodotto finale
+	\item Concordare la qualifica del prodotto 
+	\item Determinare vincoli su processi e requisiti
+	\item Determinare aspetti fondamentali al fine di soddisfare la necessità del proponente
 	\end{itemize}
 	\subsubsection{Descrizione}
 	Il gruppo intende mantenere un constante dialogo con il proponente in modo da poter avere un riscontro sull'efficacia del lavoro svolto e sull'applicazione delle tecnologie conivolte
@@ -18,16 +18,6 @@
 		\paragraph{Studio di fattibilità}
 		\paragraph{Piano di Progetto}
 		\paragraph{Piano di Qualifica}
-=======
-	Questa sezione ha lo scopo di trattare norme e termini che il nostro gruppo "SWEefty" è tenuto a rispettare per fornire il prodotto proposto dalla proponente IKS Srl denominato OpenAPM.
-	\subsubsection{Aspettative}
-	Durante il progetto il nostro team intende instaurare un rapporto con IKS Srl al fine di:
-    \begin{itemize}
-    	\item Stimare i costi del prodotto finale
-    	\item Concordare la qualifica del prodotto 
-    	\item Determinare vincoli su processi e requisiti
-    	\item Determinare aspetti fondamentali al fine di soddisfare la necessità del proponente
-    \end{itemize}
 	\subsubsection{Descrizione}
 	Intendiamo mantenere un costante rapporto con il proponente in modo tale da rivecere un $feedback_G$ costante sul lavoro svolto.
 	\subsubsection{Attività} 
@@ -121,12 +111,12 @@
 			\subparagraph{Aspettative}
 			Obiettivo dell'attività è la creazione di un prodotto software confome alle richieste del proponente
 			\subparagraph{Descrizione}
-			L'attività deve rispettare qunado imposto dai documentiv \textit{Definizione di prodotto} e \textit{Piano di Qualifica}
+			L'attività deve rispettare quando imposto dai documenti \textit{Definizione di prodotto} e \textit{Piano di Qualifica}
 			\subparagraph{Stile di codifica}
-			Al fine di garantire uniformità all'intera $codebase_G$, ciascun membro del gruppo è obbligato a rispettare le sequenti norme:
+			Al fine di garantire uniformità all'intera $codebase_G$, ciascun membro del gruppo è obbligato a rispettare le seguenti norme:
 			\begin{itemize}
 			\item Formattazione: è richiesto l'uso di uno spazio (" ") ove possibile per rendere il codice di facile comprensione.
-			Di seguito alcuni  esempi di buona e cattiva formattazione
+			Di seguito alcuni  esempi di buona e cattiva formattazione.
 \begin{lstlisting}
 	int a=3; // BAD
 	int a = 3; // GOOD
@@ -140,11 +130,22 @@
 	if (a == 5) { // GOOD
 \end{lstlisting}
 			
-			\item Indentazione: una tabulazione, inoltre non sono permessi spazi biachi o tabulazioni a fine riga
+			\item Indentazione: sono richiesti 4 spazi (si consiglia di impostare adeguatamente il proprio $IDE_G$), inoltre non sono permessi spazi bianchi o tabulazioni a fine riga.
 			
-			\item Nomi: i nomi delle funzioni e delle variabili devono essere significativi e devono seguire la notazione $camelCase_G$. I nomi delle classi devono avere la prima lettera maiuscola.
+			\item Lunghezza linee di codice: una riga di codice non deve superare i 100 caratteri, in caso contrario spezzare la riga di codice andando a capo
 			
-			\item Strutture di controllo (if, switch, for, etc...): le parentesi graffe per i costrutti che le prevedono devono essere in linea con il costrutto stesso
+			\item Nomi: i nomi delle funzioni e delle variabili devono essere significativi e devono cominciare con la lettera minuscola e seguire la notazione $camelCase_G$. I nomi delle classi devono avere la prima lettera maiuscola mentre i nomi delle costanti devono essere scritti interamente in maiuscolo.
+\begin{lstlisting}
+var foo; // BAD
+var profiledata // BAD
+var profileData // GOOD
+\end{lstlisting}
+			
+			\item Lingua: i nomi delle variabili i metodi le funzioni e i commenti vanno scritti in inglese.
+			
+			\item Lunghezza metodi e funzioni: i corpo dei metodi e delle funzioni non deve superare le 40 linee e i due gradi di indentazione. Superare tali limiti è chiaro segno che la funzione / metodo necessita di essere spezzata. A volte però può risultare preferibile mantenere tutta la logica su un solo metodo per facilitarne la comprensibilità. 
+			
+			\item Strutture di controllo (if, switch, for, etc...): le parentesi graffe per i costrutti che le prevedono devono essere in linea con il costrutto stesso. E' prevista l'omissione delle graffe soltanto quando il corpo della struttura è di una sola riga.
 \begin{lstlisting}
 	if (...) { // GOOD
 		// CODICE
@@ -162,6 +163,30 @@
 		// CODE
 	}
 \end{lstlisting}
+
+			\item Commenti: i commenti devono essere esaustivi e non prolissi in modo da aiutare il lettore a comprendere al meglio ciò che si sta leggendo.
+			
+			
+			E' inoltre consentito l'utilizzo di particolari tipi di commento con lo scopo di aiutare la stesura del codice. Vi sono:
+			\begin{itemize}
+				\item TODO: soluzione temporanee, memento di ogni tipo o zone che necessitano di un'implementazione.
+				\begin{lstlisting}
+				// TODO: this solution stinks
+				// TODO: Write that query
+				\end{lstlisting}
+				
+				\item HOW: per segnalare che non si ha capito l'implementazione o il funzionamento di una porzione di codice e che si necessita di uno studio più approfondito
+				\begin{lstlisting}
+				// HOW: need to study this API call, I'm puzzled
+				\end{lstlisting}
+				
+				\item FIX: quando una particolare implementazione necessita di essere riparata o sistemata.
+				\begin{lstlisting}
+				// FIX: this implementation doesn't work with IE
+				\end{lstlisting}
+				Questi commenti vanno scritti tutti in maiuscolo e seguiti da due punti (:), questa sintassi favorisce la loro individuazione da particolari $tool_G$ che ne permetto una consultazione agevolata.
+			\end{itemize}
+
 			\end{itemize}
 			\subparagraph{Intestazione}
 			Ogni $file_G$ contenente codice sorgente deve avere la seguente intestazione:
@@ -187,7 +212,16 @@
 				*/
 			\end{lstlisting}
 			\subparagraph{Versionamento}
+			Il versionamento dei file segue la filosofia "Change Significance". La versione di un file è espressa secondo la notazione X.Y.Z, ogni volta che si modifica un file va modificata anche la versione corrente seguendo questa logica:			
+			\begin{itemize}
+				\item X: major release, l'incremento di questo numero significa che sono state aggiunte funzionalità importanti
+				\item Y: minor improvement, bugfix, va incrementato in caso di implementazione di funzionalità più piccole
+				\item Z: incrementato in caso di $typos_G$, errori nei commenti o piccoli bug
+			\end{itemize}
+			Quando un file raggiunge la versione 1.0.0 significa che sono state implementate le funzionalità obbligatorie e quindi si può cominciare a testare il codice.
+
 			\subparagraph{Ricorsione}
+			E' caldamente sconsigliato l'utilizzo di ricorsione, esistono però dei casi in cui la soluzione ricorsiva rende il problema triviale, in tal caso è richiesta la verifica di correttezza e di terminazione della ricorsione.
 	\subsubsection{Strumenti}
 		\paragraph{Trender}
 		\paragraph{Astah}
