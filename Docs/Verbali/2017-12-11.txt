@@ -8,7 +8,6 @@
 4. rivedere i prossimi documenti da stilare e magari mettere delle nuove date
 	4.1 questione glossario (che ci va..? come ci va? uno script?)
 5. parlare delle parti che a ciascuno di noi mancano e dove possibile trovare una soluzione
-6. norme tipografiche: (ad es: quanto spazio verticale inserire in paragraph/subparagraph )
 6. wrike o non wrike?
 
 # COSE RIGUARDANTI FUTURO ( SE SI HA TEMPO ) #
@@ -16,3 +15,18 @@
 
 
 # SOLUZIONI #
+-1. non serve scrivere a iks per comunicare il funzionamento dell'esame di swe, ci saranno incontri separati per i 2 diversi gruppi visto che sono stati scelti due moduli diversi.
+0. ognuno ha fatto la sua parte ma vanno definiti i vari strumenti.
+1. visto il comando footnote.
+   visto il comando ref e label.
+   visto il comando textcolor.
+2. viene stilata la checklist che verrà inserita nel repository.
+3. Francesco Parolini sarà il verificatore per le Norme Di Progetto.
+4.I prossimi documenti saranno lo studio di fattibilità e comincieremo a fare il glossario, al prossimo incontro ci divideremo in sottogruppi per questi documenti.
+4.1 Giuseppe si informerà sulla continuos integration e ne discuteremo nella prossima riunione.
+5 viene discusso se vogliamo usare programmi di tracciamento come trender e swego.
+Per i diagrammi UML verrà scelto asta o starUML. 
+Strumenti per la verifica: Aspel per il controllo sugli errori ortografici.
+proveremo ad usare sonarqube per le metriche.
+per i test ci proponiamo di usare jest.
+
