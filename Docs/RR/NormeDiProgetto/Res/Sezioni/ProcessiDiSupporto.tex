@@ -86,21 +86,21 @@
 	\textbf{v{X}.{Y}.{Z}}
 	dove:
 	\begin{itemize}
-		\item \texbf{X}
+		\item \textbf{X}
 		\begin{itemize}
 			\item Parte da 0;
 			\item Viene incrementato dal \textit{Responsabile di Progetto} in concomitanza con l'approvazione del documento;
 			\item Arriva fino al numero di revisioni a cui è sottoposto il docuemnto.
 		\end{itemize}
 		
-		\item \texbf{Y}
+		\item \textbf{Y}
 		\begin{itemize}
 			\item Parte da 0;
 			\item Viene incrementato dal \textit{$Verificatore_G$} in concomitanza di ogni verifica;
 			\item Quando X viene incrementato Y ritorna a 0.
 		\end{itemize}
 		
-		\item \texbf{Z}
+		\item \textbf{Z}
 		\begin{itemize}
 			\item Parte da 0;
 			\item Viene incrementato dal \textit{Redattore} in concomitanza di ogni modifica;
@@ -210,25 +210,25 @@
 			\begin{itemize}
 				\item \textbf{Walkthrough}: \mbox{} \\
 				consiste nel leggere il documento/codice cercando anomalie senza avere un'idea chiara di che tipo di errori possono essere trovati, è un'attività onerosa e non efficiente ma necessaria durante le prime fasi di progetto dove sarà la principale forma di verifica adottata, in quanto non è chiaro fin dall'inizio che tipo di errori si possono fare.
-				Questo metodo è utile per stilare una $lista di controllo_G$ dove verranno archiviati gli errori più comuni.
-				vista la sua scarsa efficacia normalmente viene effettuata da più persone.
+				Questo metodo è utile per stilare una $checklist_G$ dove verranno archiviati gli errori più comuni.
+				Vista la sua scarsa efficacia normalmente viene effettuata da più persone.
 				\item \textbf{Inspection}: \mbox{} \\
-				consiste nella lettura mirata del documento/codice per localizzare possibili errori specificati dalla lista di controllo. Ha un basso costo e diventa più efficace con l'esperienza e l'estensione della lista di controllo, per questo normalmente viene effettuata da una persona sola.
+				consiste nella lettura mirata del documento/codice per localizzare possibili errori specificati dalla lista di controllo. Ha un basso costo e diventa più efficace con l'esperienza e l'estensione della lista di controllo, per questo può essere effettuata da una persona sola.
 			\end{itemize}
-		    Ogni errore rilevato va discusso con l'autore allo scopo si concordare una modifica.
+		    Ogni errore rilevato va discusso con l'autore allo scopo di concordare una modifica.
 			\subparagraph{Analisi dinamica} \mbox{} \\
-			L'analisi dinamica è una forma di analisi del software che richiede l'esecuzione dello stesso. Viene effettuata tramite dei test che verificano il corretto funzionamento del prodotto, in caso di anomalie questi test aiutano ad identificare l'errore.
-			I test devono essere ripetibili ovvero con lo stesso input, nello stesso ambiente devo essere in grado di ottenere sempre lo stesso output. Per ogni test sono quindi definiti i seguenti parametri:
+			L'analisi dinamica è una forma di analisi del software che richiede l'esecuzione del codice sorgente. Viene effettuata tramite dei test che verificano il corretto funzionamento del prodotto, in caso di anomalie questi test aiutano ad identificare l'errore.
+			I test devono essere ripetibili ovvero con lo stesso input e nello stesso ambiente devo essere in grado di ottenere sempre lo stesso output. Per ogni test sono quindi definiti i seguenti parametri:
 			\begin{itemize}
 				\item \textbf{Ambiente}: Sistema hardware e software sul quale si svolgerà il test.
 				\item \textbf{Stato iniziale}
 				\item \textbf{Input}
 				\item \textbf{Output}
-				\item \textbf{Istruzioni aggiuntive(da vedere)}: istruzioni su come va eseguito il test e su come vanno interpretati gli output
+				\item \textbf{Istruzioni aggiuntive}: istruzioni su come va eseguito il test e su come vanno interpretati gli output
 			\end{itemize}
 		\paragraph{Test}
 			\subparagraph{Test di unità} \mbox{} \\
-			I test di unità verificano che le singole $unità_G$ di prodotto software funzionino correttamente, le unità non possono passare al test di integrazione se non passano questo test.
+			I test di unità verificano che le singole $unita'_G$ di prodotto software funzionino correttamente, le unità non possono passare al test di integrazione se non passano questo test.
 			Comunemente per i test di unità vengono utilizzati $driver_G$ e $stub_G$ che simulano il chiamante e un unità chiamata.
 			\subparagraph{Test di integrazione} \mbox{} \\
 			I test di integrazione sono il passo successivo ai test di unità servono a verificare che due o più unità, precedentemente verificate, funzionino correttamente una volta combinate.
@@ -237,13 +237,17 @@
 			\subparagraph{Test di sistema} \mbox{} \\
 			I test di sistema validano il prodotto software ovvero si accertano che rispettino i requisiti concordati, vengono effettuati quando si ritiene che il prodotto abbia raggiunto una versione definitiva.
 			\subparagraph{Test di regressione}	\mbox{} \\
-			I test di regressione devono essere fatti ogni volta che viene fatta una modifica a una componente software, consistono nel rifare i test di unità e integrazione necessari per accertarsi che tale modifica non causi errori nella componente in cui è stata fatta o in parti del software collegate.				
+			I test di regressione devono essere fatti ogni volta che viene fatta una modifica a una componente software, consistono nel rifare i test di unità e integrazione necessari per accertarsi che tale modifica non causi errori nella componente in cui è stata fatta o in parti del software collegate.
+			Un buon incapsulamento limita il numero di test da effettuare in questa fase.				
 			\subparagraph{Test di accettazione} \mbox{} \\
-			Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto potrà essere rilasciato.
+			Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto può essere rilasciato.
 	\subsubsection{Strumenti}
 			\paragraph{Verifica ortografica}
-			\paragraph{Validazione W3C}
+			Viene utilizzato \textbf{GNU Aspell}, uno spell checker open source in grado di gestire più dizionari contemporaneamente.
 			\paragraph{Analisi statica}
+			Per l'analisi statica del codice JavaScript viene utilizzato \textbf{SonarSource}, questo prodotto è in grado di rilevare bug e problemi di sicurezza, è inoltre disponibile su vari $IDE_G$ come Eclipse e IntelliJ.
 			\paragraph{Analisi dinamica}
+		    Viene utilizzato \textbf{Jest} come piattaforma per l'esecuzione di test su codice JavaScript, comodo per la sua semplicità di utilizzo.
 			\paragraph{Metriche}
+			per il calcolo delle metriche viene utilizzato \textbf{SonarQube}, software che permette di stabilire un grado di qualità che tutto il gruppo deve rispettare, inoltre permette di visualizzare grafici per controllare la qualità del progetto nel periodo di sviluppo.
 			
