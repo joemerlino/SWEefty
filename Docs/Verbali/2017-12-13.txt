@@ -1,0 +1,17 @@
+# ORDINE DEL GIORNO #
+0. cosa manca ancora da fare ad ognuno
+1.eliminiamo lo scopo, aspettative etc dai documenti?
+2. decisione finale: le parole del glossario hanno la G o no? (sono ancora indeciso)
+3. merge di ciò che abbiamo(con attenzione al diario)
+4.1 strumenti scelti
+	4.1 zio merlins
+	4.2 zio gallins
+	4.3 ricordare di usare il disegno di uml per la propria parte
+5. esposizione del nuovo calendario
+6. suddivisione dei compiti per i nuovi documenti
+	6.1 studio di fattibilità
+	6.2 glossario
+7. questione logo + immagine nel template della pagina
+8. wrike(se pronto)
+
+# SOLUZIONI #
