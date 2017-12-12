@@ -1,13 +1,16 @@
 # ORDINE DEL GIORNO #
-0. cosa manca ancora da fare ad ognuno
-1. eliminiamo lo scopo, aspettative etc dai documenti?
-2. decisione finale: le parole del glossario hanno la G o no? (sono ancora indeciso)
-3. merge di ciò che abbiamo(con attenzione al diario)
-4.1 strumenti scelti
+
+0. GIT: decidiamo delle norme comuni: prossimamente ogni sottogruppo aprirà suo branch oppure no?
+1. LaTeX: cosa si pusha? .pdf e .tex oppure tutte altre scorie compilazione?
+3. cosa manca ancora da fare ad ognuno
+4. eliminiamo lo scopo, aspettative etc dai documenti?
+5. decisione finale: le parole del glossario hanno la G o no? (sono ancora indeciso)
+6. merge di ciò che abbiamo(con attenzione al diario)
+7.1 strumenti scelti
 	4.1 zio merlins
 	4.2 zio gallins
-5. esposizione del nuovo calendario (simpatico foglio svolazzante)
-6. suddivisione dei compiti per i nuovi documenti e istanziazione dei relativi
-7. questione logo + immagine nel template della pagina
+8. esposizione del nuovo calendario (simpatico foglio svolazzante)
+9. suddivisione dei compiti per i nuovi documenti e istanziazione dei relativi
+10. questione logo + immagine nel template della pagina
 
 # SOLUZIONI #
