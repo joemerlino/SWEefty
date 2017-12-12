@@ -9,15 +9,19 @@
 \fancypagestyle{plain}{
   % cancella tutti i campi di intestazione e piè di pagina
   \fancyhf{}
-
+  
+  \lhead{\includegraphics[width=4cm]{../CommonImages/logo.jpg}}
+  
+  \rhead{sweeftyteam@gmail.com}
+  
   \lfoot{ %piè di pagina
     \Titolo{} \ - \textit{\Gruppo{}}
   }
   \rfoot{Pagina \thepage{} di \pageref{LastPage}} %es: pag: 4 di 10
 
   %linea orizzontale alle posizioni top e bottom della pagina
-  \renewcommand{\headrulewidth}{0pt}  
-  \renewcommand{\footrulewidth}{0.3pt}
+  \renewcommand{\headrulewidth}{0.2	pt}  
+  \renewcommand{\footrulewidth}{0.2pt}
 }
 \pagestyle{plain}
 

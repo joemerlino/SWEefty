@@ -1,7 +1,0 @@
-\select@language {italian}
-\select@language {italian}
-\contentsline {section}{\numberline {1}Sezione di prova}{3}{section.1}
-\contentsline {subsection}{\numberline {1.1}Sottosezione di prova}{3}{subsection.1.1}
-\contentsline {subsubsection}{\numberline {1.1.1}Sottosottosezione}{3}{subsubsection.1.1.1}
-\contentsline {paragraph}{\numberline {1.1.1.1}Paragrafo}{3}{paragraph.1.1.1.1}
-\contentsline {subparagraph}{\numberline {1.1.1.1.1}Sottoparagrafo}{3}{subparagraph.1.1.1.1.1}

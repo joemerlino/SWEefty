@@ -11,17 +11,17 @@
   \fancyhf{}
   
   \lhead{\includegraphics[width=3cm]{../../CommonImages/logo.jpg}}
-	
+  
   \rhead{sweeftyteam@gmail.com}
-
+  
   \lfoot{ %piè di pagina
     \Titolo{} \ - \textit{\Gruppo{}}
   }
   \rfoot{Pagina \thepage{} di \pageref{LastPage}} %es: pag: 4 di 10
 
   %linea orizzontale alle posizioni top e bottom della pagina
-  \renewcommand{\headrulewidth}{0.3pt}  
-  \renewcommand{\footrulewidth}{0.3pt}
+  \renewcommand{\headrulewidth}{0.2	pt}  
+  \renewcommand{\footrulewidth}{0.2pt}
 }
 \pagestyle{plain}
 
@@ -41,12 +41,6 @@
 \usepackage{rotating} %permette di ruotare le immagini
 %\usepackage{changepage} %utile se c'è bisogno di aggiustare margini per centrare figure
 
-% package utili per tabelle(\thead in particolare)
-\usepackage{array, booktabs, caption}
-\usepackage{makecell}
-\renewcommand\theadfont{\bfseries}
-\usepackage{boldline}
-
 %package utili per la math mode ( $ ... $ o \[ ... \] )
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -54,6 +48,12 @@
 %\usepackage{euler}    %font 'ams euler', lo stesso di 'Concrete Mathematics' di Knuth
 \usepackage{amsthm}
 \usepackage{mathtools}
+
+% package utili per tabelle(\thead in particolare)
+\usepackage{array, booktabs, caption}
+\usepackage{makecell}
+\renewcommand\theadfont{\bfseries}
+\usepackage{boldline}
 
 \usepackage{listings} %permette di inserire degli spezzoni di codice
 
