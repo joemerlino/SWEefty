@@ -1,4 +1,4 @@
-## Core latex/pdflatex auxiliary files:
+
 *.aux
 *.log
 *.fls
@@ -6,9 +6,9 @@
 *.toc
 *.fdb_latexmk
 *.dvi
+*.pdf
 
-## unix swap files:
 *.swp
 
-## OSX ds_store files:
+
 *.DS_Store
