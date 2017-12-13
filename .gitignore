@@ -9,6 +9,7 @@
 *.pdf
 
 *.swp
+*.synctex.gz
 
 
 *.DS_Store
