@@ -1,7 +1,7 @@
 # ORDINE DEL GIORNO #
 
 0. GIT: decidiamo delle norme comuni: prossimamente ogni sottogruppo aprirà suo branch oppure no?
-1. LaTeX: cosa si pusha? .pdf e .tex oppure tutte altre scorie compilazione?
+1. LaTeX: cosa si pusha? .pdf e .tex oppure tutte altre scorie compilazione
 3. cosa manca ancora da fare ad ognuno
 4. eliminiamo lo scopo, aspettative etc dai documenti?
 5. decisione finale: le parole del glossario hanno la G o no? (sono ancora indeciso)
@@ -14,3 +14,30 @@
 10. questione logo + immagine nel template della pagina
 
 # SOLUZIONI #
+
+0. 
+freppo aggiunge la sezione branch etc. nei processi organizzativi
+(documenti stanno sul master mentre il codice andrà branchato)
+1.
+solo tex (puntatore per i pdf @freppo)
+3.
+supporto: strumenti, screenshot, cavolatine da sistemare entro domani
+primari: strumenti e ref
+organizzativi: uso dei branch git e wrike
+4.
+teniamo scopo del processo
+5.
+Solo la prima occorrenza, script da testare per eliminazione delle occorrenze successive
+6.
+completato
+7.1
+joe:	usiamo staruml, swego, travis ci
+albe:	usiamo hunspell e sonarcube/sonarjs
+8.
+completato
+9.
+lisa ed elia 						studio fattibilità 												15-19
+freppo 								verifica di norme di progetto + instanziazione glossario		15-19
+alberto, joe, davide, paolo 		piano di qualifica												15-undefined
+10.
+completato
