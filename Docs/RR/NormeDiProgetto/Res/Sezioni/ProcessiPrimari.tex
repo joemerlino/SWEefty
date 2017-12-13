@@ -93,10 +93,61 @@
 			I diagrammi UML devono essere realizzati usando la versione del linguaggio \textit{v2.0}
 		\paragraph{Progettazione}
 			\subparagraph{Scopo}
+			\mbox{}\\
+			L'attività di Progettazione, svolta dal \emph{$Progettista_G$}, ha lo scopo di definire e descrivere la progettazione ad alto livello dell'architettura del prodotto richiesto e specificarla descrivendo la progettazione di dettaglio.
 			\subparagraph{Aspettative}
+			\mbox{}\\
+			Il risultato di questo processo è la stesura della \texttt{Specifica Tecnica} e della \texttt{Definizione di Prodotto} in funzione dei requisiti delineati nell'\texttt{Analisi dei Requisiti} in modo da permettere di definire le linee guida da seguire durante l'attività di codifica.
 			\subparagraph{Descrizione}
+			\mbox{}\\
+			I responsabili di questa attività sono i \emph{Progettisti} che per redarre la \texttt{Specifica Tecnica} e la \texttt{Definizione di Prodotto} devono avere una profonda conoscenza dell'intero processo di sviluppo del software.
+			Solo in questo modo possono:
+			\begin{itemize}
+				\item progettare un software con le caratteristiche di qualità specificate nella fase di nalisi e specifica dei requisiti;
+				\item effettuare modifiche senza che la struttura del software già costruita debba essere messa nuovamente in discussione;
+				\item soddisfare i requisiti di qualità fissati dal committente.
+			\end{itemize}
 			\subparagraph{Specifica Tecnica}
+			\mbox{}\\
+			Questo documento deve descrivere la progettazione ad alto livello dell'architettura del software richiesto dal proponente. Inoltre deve provvedere alla progettazione di sistemi di integrazione. 
+			Per fare ciò si useranno i seguenti strumenti:
+				\begin{itemize}
+					\item Diagrammi $UML_G$\\
+					Essi forniscono una rappresentazione molto chiara e compatta dell'intera struttura dell'applicazione che si andrà ad analizzare. In particolare devono essere realizzati i seguenti diagrammi:
+					\begin{itemize}
+						\item[-] Diagrammi delle classi: illustrano una collezione di elementi dichiarativi di un modello come classi e tipi, assieme ai loro contenuti e alle loro relazioni;
+						\item[-] Diagrammi dei $package_G$:  reggruppamento di classi in una unità di livello più alto;
+						\item[-] Diagrammi di attività: illustrano il flusso di operazioni relativo ad un'attività. Utilizzati soprattutto per descrivere la logica di un algoritmo;
+						\item[-] Diagrammi di sequenza: descrivono una determinata sequenza di azioni dove tutte le scelte sono già affettuate. In pratica nel diagramma non compaiono scelte ne flussi alternativi.
+					\end{itemize}
+					\item $Design Pattern_G$\\
+					Devono essere descritti tramite descrizione e diagramma i design pattern utilizzati.
+					\item Tracciamento delle componenti:\\
+					Ogni requisito deve riferirsi al componente che lo soddisfa. TODO Utilizzare RACheL/Trender  per generare tabelle di tracciamento.
+					\item Test di integrazione:\\
+					I Progettisti devono definire delle classi di verifica per verificare che i componenti del sistema funzionino nella maniera prevista.	
+				\end{itemize}
 			\subparagraph{Definizione di Prodotto}
+			\mbox{}\\
+			Questo documento deve descrivere la progettazione in dettaglio del sistema, utilizzando i seguenti strumenti:
+				\begin{itemize}
+					\item Diagrammi $UML_G$\\
+					Devono essere realizzati i seguenti diagrammi:
+					\begin{itemize}
+						\item[-] Diagrammi delle classi;
+						\item[-] Diagrammi dei $package_G$;
+						\item[-] Diagrammi di attività;
+						\item[-] Diagrammi di sequenza.
+					\end{itemize}
+					\item Definizione delle classi\\ 
+					Ogni $classe_G$ progettata deve essere descritta con una spiegazione sullo scopo della classe e deve specificare quale funzionalità essa modella. 
+					\item Tracciamento classi:\\
+					Ogni requisito deve essere tracciato alle classi che lo soddisfano. TODO Utilizzare RACheL/Trender  per generare tabelle di tracciamento.
+					\item Test di unità:\\
+					I Progettisti devono definire i test di unità necessari per verificare che i componenti del sistema funzionino nel modo previsto.
+				\end{itemize}
+			
+			
 		\paragraph{Codifica}
 			\subparagraph{Scopo}
 			Questa attività ha come scopo l'effettiva implementazione del prodotto software richiesto. In questa fase dunque si concretizzano attraverso la codifica le funzionalità previste dai requisiti concordati.
@@ -207,8 +258,7 @@ var profileData // GOOD
 			\subparagraph{Ricorsione}
 			E' caldamente sconsigliato l'utilizzo di ricorsione, esistono però dei casi in cui la soluzione ricorsiva rende il problema triviale, in tal caso è richiesta la verifica di correttezza e di terminazione della ricorsione.
 	\subsubsection{Strumenti}
-		\paragraph{Trender}
-		\paragraph{Astah}
-		\paragraph{IntelliJ IDEA}
+	TODO: scegliere e descrivere gli strumenti come RACheL/Trender  per generare tabelle di tracciamento, Astah per realizzare gli UML, Intellij,ecc
+
 			
 			
