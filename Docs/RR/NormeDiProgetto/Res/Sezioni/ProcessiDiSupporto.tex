@@ -2,25 +2,190 @@
 
 
 \subsection{Documentazione}
-
+	
 	\subsubsection{Scopo}
+	Questo processo include e descrive le modalità di redazione e manutenzione dei documenti e le convenzioni 
+	adottate per la scrittura di questi, durante il ciclo di vita del prodotto software.
+	
 	\subsubsection{Aspettative}
+	I risultati che ci aspettiamo di ottenere da una corretta implementazione di questo processo sono:
+	\begin{itemize}  
+		\item una concezione attenta ed univoca dei documenti che vanno redatti durante il ciclo di vita del software;
+		\item la scrittura di documenti precisi, coerenti e conformi a delle regole;
+		\item l’individuazione di una collezione di norme e convenzioni per la redazione di documentazione coerente e valida.
+	\end{itemize}
+
 	\subsubsection{Descrizione}
+	In questa sezione devono essere indicate tutte le norme e le convenzioni adottate dal gruppo, per consentire la stesura di una documentazione valida e coerente.
+	
 	\subsubsection{Procedure}
-		\paragraph{Approvazione dei documenti}
+	Il gruppo si è servito del linguaggio di markup {\LaTeX} per la stesura della documentazione.
+	
+		\paragraph{Approvazione dei documenti} \mbox{} \\
+		Ogni documento non formale in corrispondenza del completamento della sua stesura dovrà essere sottoposto al \textit{Responsabile di Progetto}, che dovrà delegare ai \textit{Verificatori} il controllo del contenuto e della forma. Nel caso gli anzidetti \textit{Verificatori} rilevino degli errori, sarà loro compito notificarli al \textit{Responsabile di Progetto}, che a sua volta affiderà il redattore del documento il compito di correggerli. Questo ciclo va eseguito fino a quando il documento non viene considerato completamente corretto dai  \textit{Verificatori}. In caso di assenso sulla correttezza e sulla qualità il documento può essere reputato un documento formale. In caso contrario spetta al \textit{Responsabile di Progetto} comunicare le ragione per cui il documento non è stato giudicato corretto, esplicitando le modifiche da apportare.
+		
 	\subsubsection{Template}
+	Per agevolare la redazione della documentazione è stato creato un template \LaTeX contenente tutte le impostazioni stilistiche e grafiche citate in questo documento.
+	
 	\subsubsection{Struttura dei documenti}
-		\paragraph{Prima pagina}
-		\paragraph{Registro delle modifiche}
-		\paragraph{Indice}
-		\paragraph{Contenuto principale}
-		\paragraph{Note a piè di pagina}
+	
+		\paragraph{Prima pagina}\mbox{} \\
+		Ogni documento è caratterizzato da una prima pagina che contiene le seguenti informazioni sul documento:
+		\begin{itemize}
+			\item Logo del gruppo;
+			\item Titolo del documento;
+			\item Nome del gruppo;
+			\item Nome del progetto;
+			\item Versione del documento;
+			\item Cognome e nome dei redattori del documento;
+			\item Cognome e nome dei verificatori del documento;
+			\item Cognome e nome del responsabile approvatore del documento;
+			\item Destinazione d’uso del documento;
+			\item Lista di distribuzione del documento;
+			\item Una breve descrizione del documento.
+		\end{itemize}
+	
+		\paragraph{Registro delle modifiche} \mbox{} \\
+		La seconda pagina di ogni documento contiene il diario delle modifiche del documento.
+		Ogni riga del diario delle modifiche contiene:
+		\begin{itemize}
+			\item Un breve sommario delle modifiche svolte;
+			\item Cognome e nome dell’autore;
+			\item Ruolo dell’autore;
+			\item Data della modifica;
+			\item Versione del documento dopo la modifica.
+		\end{itemize}
+		La tabella contenente le modifiche è ordinata per data in ordine decrescente, affinchè la prima riga contenga la versione attuale del documento.
+		
+		\paragraph{Indici} \mbox{} \\
+		In ogni documento, esclusi i verbali, è presente un indice delle sezioni, un indice delle figure e un indice delle tabelle. Nel caso non siano presenti figure o tabelle i rispettivi indici verranno omessi. La notazione numerica di ogni indice deve partire da 1 e le sottosezioni devono essere separate da un punto. Anche la notazione della sottosezione parte da 1.
+		
+		\paragraph{Formattazione generale delle pagine} \mbox{} \\
+		Il template prevede dei margini orizzontali e verticali che devono essere rispettati in ogni pagina. Ad esclusione della prima, tutte le pagine contengono un’intestazione ed un piè di pagina. 
+			
+			\subparagraph{Intestazione} \mbox{} \\
+			L’intestazione è così strutturata:
+			\begin{itemize}
+				\item Logo del gruppo posto a sinistra;
+				\item Indirizzo di posta elettronica del gruppo posto a destra;
+				\item Ruolo dell’autore;
+			\end{itemize}
+			
+			\subparagraph{Piè di pagina} \mbox{} \\
+			Il piè di pagina è così strutturato:
+			\begin{itemize}
+				\item Nome e versione del documento corrente, posti a sinistra;
+				\item Numerazione progressiva della pagina rispetto al totale posta a destra.
+			\end{itemize}
+		
+		\paragraph{Note a piè di pagina} \mbox{} \\
+		In caso di presenza in una pagina interna di note da esplicare, esse vanno indicate nella pagina corrente, in basso a sinistra. Ogni nota deve riportare un numero e una	descrizione.
+		
 	\subsubsection{Versionamento}
-	\subsubsection{Norme tipografiche}
-		\paragraph{Stile del testo}
-		\paragraph{Elenchi puntati}
+	Tutti i documento, esclusi i verbali, devono essere versionati, affinchè si possa in ogni momento conoscerne la storia. Ogni versione di un documento deve essere appuntata nel Registro delle Modifiche. Si deve adottare il seguente formato per registrare ogni modifica: 
+	\textbf{v{X}.{Y}.{Z}}
+	dove:
+	\begin{itemize}
+		\item \textbf{X}
+		\begin{itemize}
+			\item Parte da 0;
+			\item Viene incrementato dal \textit{Responsabile di Progetto} in concomitanza con l'approvazione del documento;
+			\item Arriva fino al numero di revisioni a cui è sottoposto il docuemnto.
+		\end{itemize}
+		
+		\item \textbf{Y}
+		\begin{itemize}
+			\item Parte da 0;
+			\item Viene incrementato dal \textit{$Verificatore_G$} in concomitanza di ogni verifica;
+			\item Quando X viene incrementato Y ritorna a 0.
+		\end{itemize}
+		
+		\item \textbf{Z}
+		\begin{itemize}
+			\item Parte da 0;
+			\item Viene incrementato dal \textit{Redattore} in concomitanza di ogni modifica;
+			\item Quando Y viene incrementato Z	 ritorna a 0.
+		\end{itemize}
+		
+	\end{itemize}
+	
+	\subsubsection{Norme tipografiche} Per la redazione della documentazione bisogna attenersi a queste norme.
+		
+		\paragraph{Stile del testo} \mbox{} \\
+		\begin{itemize}
+		\item \textbf{Grassetto:} il grassetto può essere utilizzato nei seguenti casi:
+			\begin{itemize}
+			\item \textbf{Elenchi puntati:} in questi casi può essere utilizzato il grassetto per evidenziare il concetto sviluppato nella continuazione del punto;
+			\item \textbf{Altri casi:} per evidenziare particolari passaggi o parole chiave.
+			\end{itemize}
+		
+		\item \textbf{Corsivo:} il corsivo deve essere utilizzato nei seguenti casi:
+			\begin{itemize}
+				\item \textbf{Citazioni:} quando si deve citare una frase questa va scritta in corsivo;
+				\item \textbf{Abbreviazioni:} quando possibile si deve preferire una parola completa ad un’abbreviazione;
+				\item \textbf{Nomi particolari:} il corsivo deve essere utilizzato quando si parla di figure particolari (es. \textit{Progettista});
+				\item \textbf{Documenti:} il corsivo deve essere utilizzato quando si parla di documenti (es.\textit{Glossario});
+				\item \textbf{Altri casi:} in altre situazione, il corsivo va utilizzato per mettere in rilievo passaggi o parole significativi, evidenziare riferimenti ai documenti interni o esterni.
+			\end{itemize}
+		
+		\item \textbf{Maiuscolo:} l’utilizzo di parole completamente in maiuscolo è riservato solo agli acronimi.
+		
+		\end{itemize}
+		
+		\paragraph{Elenchi puntati} \mbox{} \\
+		Ogni punto dell’elenco deve terminare con un punto e virgola,tranne l’ultimo che deve terminare con un punto. La prima parola deve avere la lettera maiuscola, a meno di casi particolari (es. nome di un file);
+		
 		\paragraph{Formati comuni}
-		\paragraph{Sigle}
+		Per rappresentare le seguenti entità vanno usate le seguenti modalità:
+		\begin{itemize}
+			
+			\item \textbf{Orari:}
+			\textbf{HH:MM}
+				\begin{itemize}
+					\item \textbf{HH:} va da 0 a 23 e rappresenta l'ora;
+					\item \textbf{MM:} va da 0 a 59 e rappresenta i minuti.
+				\end{itemize}
+			
+			\item \textbf{Date:}
+			\textbf{AAAA-MM-GG}
+				\begin{itemize}
+					\item \textbf{AAAA:} rappresenta l'anno;
+					\item \textbf{MM:} rappresenta il mese;
+					\item \textbf{GG:} rappresenta il giorno.
+				\end{itemize}
+			
+			\item \textbf{Termini ricorrenti:}
+			\begin{itemize}
+				\item \textbf{Nomi proprio:} ogni nome proprio va scritto con il formalismo \textit{Nome Cognome};
+				\item \textbf{Ruoli di progetto:} ogni ruolo va scritto con l'iniziale maiuscola e in corsivo;
+				\item \textbf{Nomi dei documenti:} ogni documenti va scritto con l'iniziale maiuscola e in corsivo.
+			\end{itemize}
+			
+		\end{itemize}
+		
+		\paragraph{Sigle} \mbox{} \\
+		È previsto l’utilizzo delle seguenti sigle:
+		\begin{itemize}
+			\item AR: \textit{Analisi dei Requisiti};
+			\item PP: \textit{Piano di Progetto};
+			\item NP: \textit{Norme di Progetto};
+			\item SF: \textit{Studio di Fattibilità};
+			\item PQ: \textit{Piano di Qualifica};
+			\item ST: \textit{Specifica Tecnica};
+			\item MU: \textit{$Manuale utente_G$};	
+			\item DP: \textit{Definizione di Prodotto};
+			\item RR: Revisione dei requisiti;
+			\item RP: Revisione di progettazione;
+			\item RQ: Revisione di qualifica;
+			\item RA: Revisione di accettazione;
+			\item Re: \textit{Responsabile} di Progetto;
+			\item Am: \textit{Amministratore di Progetto} (o Project manager?);
+			\item An: \textit{Analista};
+			\item Pt: \textit{Progettista};
+			\item Pr: \textit{$Programmatore_G$};
+			\item Ve: \textit{Verificatore}.
+		\end{itemize}
+		
 	\subsubsection{Elementi grafici}
 		\paragraph{Tabelle}
 		\paragraph{Immagini}
@@ -40,18 +205,49 @@
 	\subsubsection{Descrizione}
 	\subsubsection{Attività}
 		\paragraph{Analisi}
-			\subparagraph{Analisi Statica}
-			\subparagraph{Analisi dinamica}
+			\subparagraph{Analisi Statica} \mbox{} \\
+			L'analisi statica è una tecnica utilizzata per identificare errori all'interno di documenti e del codice sorgente, senza la necessità eseguirlo, è applicabile durante tutto il loro ciclo di vita in due diverse modalità:
+			\begin{itemize}
+				\item \textbf{Walkthrough}: \mbox{} \\
+				consiste nel leggere il documento/codice cercando anomalie senza avere un'idea chiara di che tipo di errori possono essere trovati, è un'attività onerosa e non efficiente ma necessaria durante le prime fasi di progetto dove sarà la principale forma di verifica adottata, in quanto non è chiaro fin dall'inizio che tipo di errori si possono fare.
+				Questo metodo è utile per stilare una $checklist_G$ dove verranno archiviati gli errori più comuni.
+				Vista la sua scarsa efficacia normalmente viene effettuata da più persone.
+				\item \textbf{Inspection}: \mbox{} \\
+				consiste nella lettura mirata del documento/codice per localizzare possibili errori specificati dalla lista di controllo. Ha un basso costo e diventa più efficace con l'esperienza e l'estensione della lista di controllo, per questo può essere effettuata da una persona sola.
+			\end{itemize}
+		    Ogni errore rilevato va discusso con l'autore allo scopo di concordare una modifica.
+			\subparagraph{Analisi dinamica} \mbox{} \\
+			L'analisi dinamica è una forma di analisi del software che richiede l'esecuzione del codice sorgente. Viene effettuata tramite dei test che verificano il corretto funzionamento del prodotto, in caso di anomalie questi test aiutano ad identificare l'errore.
+			I test devono essere ripetibili ovvero con lo stesso input e nello stesso ambiente devo essere in grado di ottenere sempre lo stesso output. Per ogni test sono quindi definiti i seguenti parametri:
+			\begin{itemize}
+				\item \textbf{Ambiente}: Sistema hardware e software sul quale si svolgerà il test.
+				\item \textbf{Stato iniziale}
+				\item \textbf{Input}
+				\item \textbf{Output}
+				\item \textbf{Istruzioni aggiuntive}: istruzioni su come va eseguito il test e su come vanno interpretati gli output
+			\end{itemize}
 		\paragraph{Test}
-			\subparagraph{Test di unità}
-			\subparagraph{Test di integrazione}
-			\subparagraph{Test di sistema}
-			\subparagraph{Test di regressione}					
-			\subparagraph{Test di accettazione}
+			\subparagraph{Test di unità} \mbox{} \\
+			I test di unità verificano che le singole $unita'_G$ di prodotto software funzionino correttamente, le unità non possono passare al test di integrazione se non passano questo test.
+			Comunemente per i test di unità vengono utilizzati $driver_G$ e $stub_G$ che simulano il chiamante e un unità chiamata.
+			\subparagraph{Test di integrazione} \mbox{} \\
+			I test di integrazione sono il passo successivo ai test di unità servono a verificare che due o più unità, precedentemente verificate, funzionino correttamente una volta combinate.
+			Questo tipo di test verifica la corretta collaborazione tra le varie unità e aiuta a trovare eventuali errori non rilevati nei test precedenti.
+			L'obbiettivo finale di questi test è arrivare a testare l'intero prodotto costituito accorpando tutte le singole unità.
+			\subparagraph{Test di sistema} \mbox{} \\
+			I test di sistema validano il prodotto software ovvero si accertano che rispettino i requisiti concordati, vengono effettuati quando si ritiene che il prodotto abbia raggiunto una versione definitiva.
+			\subparagraph{Test di regressione}	\mbox{} \\
+			I test di regressione devono essere fatti ogni volta che viene fatta una modifica a una componente software, consistono nel rifare i test di unità e integrazione necessari per accertarsi che tale modifica non causi errori nella componente in cui è stata fatta o in parti del software collegate.
+			Un buon incapsulamento limita il numero di test da effettuare in questa fase.				
+			\subparagraph{Test di accettazione} \mbox{} \\
+			Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto può essere rilasciato.
 	\subsubsection{Strumenti}
 			\paragraph{Verifica ortografica}
-			\paragraph{Validazione W3C}
+			Viene utilizzato \textbf{GNU Aspell}, uno spell checker open source in grado di gestire più dizionari contemporaneamente.
 			\paragraph{Analisi statica}
+			Per l'analisi statica del codice JavaScript viene utilizzato \textbf{SonarSource}, questo prodotto è in grado di rilevare bug e problemi di sicurezza, è inoltre disponibile su vari $IDE_G$ come Eclipse e IntelliJ.
 			\paragraph{Analisi dinamica}
+		    Viene utilizzato \textbf{Jest} come piattaforma per l'esecuzione di test su codice JavaScript, comodo per la sua semplicità di utilizzo.
 			\paragraph{Metriche}
+			per il calcolo delle metriche viene utilizzato \textbf{SonarQube}, software che permette di stabilire un grado di qualità che tutto il gruppo deve rispettare, inoltre permette di visualizzare grafici per controllare la qualità del progetto nel periodo di sviluppo.
 			
