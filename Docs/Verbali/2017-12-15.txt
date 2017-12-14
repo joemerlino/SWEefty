@@ -1,6 +1,7 @@
-# ORDINE DEL GIORNO #
+﻿# ORDINE DEL GIORNO #
 0. skype e incontri durante le vacanze
     0.1 fatevi skype
+    0.2 fatevi Discord che Skype è deprecato
 1. esposizione di come avverrà la verifica: ciò che compete e ciò che non compete al verificatore e modalità di correzione
 2. integrazione delle parti
 3. riusciamo ad impostare il glossario?
