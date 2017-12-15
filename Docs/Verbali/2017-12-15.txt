@@ -10,3 +10,26 @@
 6. suddivisione dei ruoli nei nuovi documenti
 
 # SOLUZIONI #
+
+0. Usiamo Discord, scaricatelo e mettete il vostro ID nel groupinfo di dropbox
+
+1. Alcune cose importanti LaTeX:
+-differenza \texttt e \textit: il primo è teletype(macchina da scrivere) e si usa per i nomi dei file (NormeDiProgetto.text).
+				\textit{} è italic e si usa per riferitsi a documenti, ruoli di progetto ecc.. Alternativamente si può usare \emph{}
+-parole del glossario: se CONTENGONO SPAZI vanno scritte così: $Norme\text{ }di\text{ }Progetto_G$  altrimenti si mangia spazio.
+-non andare a capo in elenchi puntati!
+-alla fine di un elemento in un elencto puntato va ";", alla fine dell'ultimo punto va "."
+
+2. manca parte elia
+
+3. fatto
+
+4. no, ci pensa Merlins entro mercoledì (guardare wrike)
+
+5. fatto
+
+6. Lisa & Elia --> Studio di fattibilità
+   David, Alberto & Paulio --> Piano di qualifica
+   Frensis --> verifica NdP
+   Giuseppe --> si occupa di Glossario intanto
+ 
