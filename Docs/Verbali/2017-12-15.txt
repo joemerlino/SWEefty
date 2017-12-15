@@ -4,8 +4,9 @@
     0.2 fatevi Discord che Skype è deprecato
 1. esposizione di come avverrà la verifica: ciò che compete e ciò che non compete al verificatore e modalità di correzione
 2. integrazione delle parti
-3. riusciamo ad impostare il glossario?
-4. stesura scheletro nuovi documenti
-5. suddivisione dei ruoli nei nuovi documenti
+3. implementare il comando spazio 
+4. riusciamo ad impostare il glossario?
+5. stesura scheletro nuovi documenti
+6. suddivisione dei ruoli nei nuovi documenti
 
 # SOLUZIONI #
