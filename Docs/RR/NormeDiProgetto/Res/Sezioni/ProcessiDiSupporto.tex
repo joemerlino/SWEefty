@@ -230,12 +230,28 @@
 			\subparagraph{Test di accettazione} \mbox{} \\
 			Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto può essere rilasciato.
 	\subsubsection{Strumenti}
-			\paragraph{Verifica ortografica}
-			Viene utilizzato \textbf{GNU Aspell}, uno spell checker open source in grado di gestire più dizionari contemporaneamente.
-			\paragraph{Analisi statica}
-			Per l'analisi statica del codice JavaScript viene utilizzato \textbf{SonarSource}, questo prodotto è in grado di rilevare bug e problemi di sicurezza, è inoltre disponibile su vari $IDE_G$ come Eclipse e IntelliJ.
-			\paragraph{Analisi dinamica}
-		    Viene utilizzato \textbf{Jest} come piattaforma per l'esecuzione di test su codice JavaScript, comodo per la sua semplicità di utilizzo.
-			\paragraph{Metriche}
-			per il calcolo delle metriche viene utilizzato \textbf{SonarQube}, software che permette di stabilire un grado di qualità che tutto il gruppo deve rispettare, inoltre permette di visualizzare grafici per controllare la qualità del progetto nel periodo di sviluppo.
+			\paragraph{Verifica ortografica} \mbox{} \\
+			Viene utilizzato \textbf{GNU Aspell}, uno spell checker open source in grado di gestire più dizionari contemporaneamente che segnala gli errori all'interno di un documento mentre durante la scrittura viene utilizzato il controllo ortografico integrato in \textbf{TeXstudio} che segnala le parole errate sottolineandole in rosso.
+			\paragraph{Analisi statica} \mbox{} \\
+			Per l'analisi statica del codice JavaScript viene utilizzato \textbf{SonarJS}, modulo di \textbf{SonarQube} in grado di rilevare bug e problemi di sicurezza, è inoltre disponibile su vari $IDE_G$ come Eclipse e IntelliJ.
+			\paragraph{Analisi dinamica} \mbox{} \\
+			Per l'analisi dinamica vengono utilizzati i seguenti software:
+			\begin{itemize}
+				\item  \textbf{Jest}: piattaforma per l'esecuzione di test su codice JavaScript, comodo per la sua semplicità di utilizzo.
+				\item \textbf{Travis CI}: software usato per l' $integrazione\text{ }continua_G$, una volta sincronizzato con la nostra repository GitHub è in grado di eseguire automaticamente i test di integrazione, da noi creati, su ogni commit in modo che si possa eseguire il comando push solo su codice che compila e ha passato i test.
+			\end{itemize}
+			\paragraph{Metriche} \mbox{} \\
+			per il calcolo delle metriche viene utilizzato \textbf{SonarQube}, software che permette di stabilire un grado di qualità che tutto il gruppo deve rispettare (come si vede in figura \ref{qualità}), inoltre permette di visualizzare grafici per controllare la qualità del progetto nel periodo di sviluppo (come si vede in figura \ref{graficobello}).
+			\begin{figure}[h] 
+				\centering 
+				\includegraphics[width=0.9\textwidth]{images/enforce-quality-gate.png} 
+				\caption{}
+				\label{qualità}
+			\end{figure}
+		    \begin{figure}[h]
+		    	\centering 
+		    	\includegraphics[width=0.9\textwidth]{images/project-history.png}
+		    	\caption{}
+		    	\label{graficobello} 
+		    \end{figure}
 			
