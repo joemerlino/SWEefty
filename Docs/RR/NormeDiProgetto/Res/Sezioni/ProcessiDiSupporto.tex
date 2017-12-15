@@ -176,24 +176,24 @@
 		
 	\subsubsection{Elementi grafici}
 		\paragraph{Tabelle}\mbox{} \\
-		Le tabelle presenti all'interno del documento devono essere centrate orizzontalmente nella pagina e devono presentare una didascalia sottostante avente un indice identificativo univoco incrementale per agevolarne il tracciamento, oltre che una breve descrizione del loro contenuto.
+		Le tabelle presenti all'interno del documento devono essere centrate orizzontalmente nella pagina e devono presentare una didascalia sottostante avente un indice identificativo univoco incrementale per agevolarne il tracciamento, oltre che una breve descrizione del loro contenuto.\\
 		Le tabelle del registro delle modifiche invece non hanno alcuna descrizione.
 Qualora il redattore lo ritenesse necessario per aumentare la leggibilità è possibile anche l'uso di colori di sfondo scegliendone uno specifico per l'intestazione e due che verranno alternati per le righe sottostanti.
 
 		\paragraph{Immagini}\mbox{} \\
-		Le immagini inserite nel documento sono nel formato $PNG_G$. Ognuna di esse deve essere accompagnata da una didascalia analoga a quella descritta per le tabelle. 
-		Ogni immagine deve inoltre essere centrata orizzontalmente mantenendo una separazione netta dai paragrafi che seguono e precedono, marcando quindi un distacco tra grafica e testo migliorando di conseguenza la leggibilità. 
+		Le immagini inserite nel documento sono nel formato $PNG_G$. Ognuna di esse deve essere accompagnata da una didascalia analoga a quella descritta per le tabelle. \\
+		Ogni immagine deve inoltre essere centrata orizzontalmente mantenendo una separazione netta dai paragrafi che seguono e precedono, marcando quindi un distacco tra grafica e testo migliorando di conseguenza la leggibilità. \\
 		I diagrammi UML vengono inseriti nei documenti sotto forma di immagine.
 	\subsubsection{Classificazione dei documenti}
 		\paragraph{Documenti informali}\mbox{} \\
-		Tutti i documenti sono informali dalla loro creazione fino all'approvazione da parte del project manager ed in quanto tali sono considerati esclusivamente ad uso interno.
+		Tutti i documenti sono informali dalla loro creazione fino all'approvazione da parte del \emph{Project Manager} ed in quanto tali sono considerati esclusivamente ad uso interno.
 		\paragraph{Documenti formali}\mbox{} \\
-		Una volta avvenuta l'approvazione da parte del project manager il documento viene ritenuto formale ed è quindi distribuibile all'esterno del gruppo.
-		Per raggiungere tale stato inoltre, il documento deve aver già superato la fase di verifica e validazione. 
-Ogni modifica effettuata produrrà una nuova versione del documento da considerarsi informale e rimarrà tale fino ad una successiva approvazione da parte del project manager.
+		Una volta avvenuta l'approvazione da parte del \emph{Project Manager} il documento viene ritenuto formale ed è quindi distribuibile all'esterno del gruppo.\\
+		Per raggiungere tale stato inoltre, il documento deve aver già superato la fase di verifica e validazione. \\
+Ogni modifica effettuata produrrà una nuova versione del documento da considerarsi informale e rimarrà tale fino ad una successiva approvazione da parte del \emph{Project Manager}.
 		\paragraph{Verbali}\mbox{} \\
-		Dopo ogni incontro interno o esterno spetta al segretario verbalizzante redigere il documento. I verbali non sono soggetti a versionamento poiché non subiscono modifiche successive alla loro prima redazione. 
-		Ogni verbale deve essere approvato dal project manager e deve avere un codice univoco identificativo con la seguente struttura: 
+		Dopo ogni incontro interno o esterno spetta al segretario verbalizzante redigere il documento. I verbali non sono soggetti a versionamento poiché non subiscono modifiche successive alla loro prima redazione. \\
+		Ogni verbale deve essere approvato dal \emph{Project Manager} e deve avere un codice univoco identificativo con la seguente struttura: 
 		\newline
 		\centerline{V[data]} 
 		dove: 
@@ -206,16 +206,25 @@ Dovrà presentare le seguenti informazioni nell'ordine in cui sono elencate:
 \item partecipanti presenti, assenti, il nome di chi presiede e quello del segretario verbalizzante;
 \item l'ordine del giorno.
 \end{itemize}
-Tali informazioni devono essere contenute nel primo paragrafo \textit{Informazioni Generali}, che deve specificare anche gli argomenti trattati durante l'incontro.
-Il secondo paragrafo \textit{Riassunto Incontro} deve esplicitare in dettaglio le decisioni prese o i problemi irrisolti.
+Tali informazioni devono essere contenute nel primo paragrafo \textit{Informazioni Generali}, che deve specificare anche gli argomenti trattati durante l'incontro.\\
+Il secondo paragrafo \textit{Riassunto Incontro} deve esplicitare in dettaglio le decisioni prese o i problemi irrisolti.\\
 Nel caso l'incontro abbia partecipanti esterni deve essere presente una sezione  \textit{Domande e Risposte} dove vengono riportate le domande poste, seguite dalle risposte date.
 	\subsubsection{Strumenti}
 		\paragraph{\LaTeX}\mbox{} \\
-		
+		Per redigere i documenti viene utilizzato il linguaggio di markup \LaTeX. La possibilità di definire delle variabili all'interno dei fogli di stile consente di automatizzare l'aggiornamento di tutti i riferimenti presenti all'interno dei diversi documenti.\\
+		Inoltre permette la creazione di documenti formali e divisi in sezioni molto velocemente, potendo separare il contenuto dalla formattazione tramite un file template separato e condiviso da tutti i documenti.\\
+		Infine grazie all'elevato numero di librerie, permette di avere un'alta personalizzazione del documento.
 		\paragraph{TexStudio}\mbox{} \\
 		L'editor scelto per sviluppare i documenti in \LaTeX\text{ } è\text{ } $TexStudio_G$ nella versione 2.12.6. 
 		Lo strumento integra un compilatore e un visualizzatore PDF, fornendo anche suggerimenti per completare i comandi \LaTeX.
-		
+		\newline
+		\textcolor{red}{link texstudio centrato con href}
+		\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{Images/texstudio.png}
+				\caption{TexStudio in versione desktop per Mac OSX}
+			\end{figure}
+			
 \subsection{Verifica}
 
 	\subsubsection{Scopo}
