@@ -8,6 +8,7 @@
 4. riusciamo ad impostare il glossario?
 5. stesura scheletro nuovi documenti
 6. suddivisione dei ruoli nei nuovi documenti
+7. nuovi comandi
 
 # SOLUZIONI #
 

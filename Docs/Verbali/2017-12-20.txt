@@ -1,0 +1,29 @@
+# ORDINE DEL GIORNO #
+
+0. check degli id di discord su dropbox(groupinfo.txt)
+1. usiamo la versione nel nome del documento (NormeDiProgetto_v1.0.0.tex)? -> direi di si
+2. visionamento della verifica
+    2.1 assegnazione delle parti da correggere
+3. far mettere in bella copia i verbali -> attività
+    3.1 istanziare documenti latex per verbali
+        3.1.1 decidere se usare un template semplificato (per me soluzione intelligente)
+            3.1.1.1 se si, creazione di tale
+4. (joe) glossario-> come si usa? daccene un'esempio
+    4.1 identificare qualcuno che metta a posto con il nuovo tag le norme di progetto
+5. a che punto siamo con il piano di qualifica?
+    5.1 nuovi strumenti?
+    5.2 nuove metriche?
+    5.3 problemi?
+    5.4 qualcosa che dovremmo sapere tutti?
+    5.5 attenzione alle scadenze
+6. a che punto siamo con lo studio di fattibilità?
+    6.1 se finito identifichiamo un verificatore per tale documento
+7. inizio dell'analisi dei requisiti
+    7.1 suddivisione delle parti 
+    7.2 assegnazione su wrike di tali
+
+ultimo. prossimo incontro
+    (propongo venerdì mattina dopo lab di p3)
+
+
+# SOLUZIONI #
