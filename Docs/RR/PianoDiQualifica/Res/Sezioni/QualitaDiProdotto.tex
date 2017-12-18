@@ -1,19 +1,59 @@
 \section{Qualità di Prodotto}
-	\subsection{Functionality}
+Per quantificare e valutare la qualità del prodotto software che il gruppo \textit{SWEefty} ha deciso di attenersi allo standard $ISO/IEC\text{ }25010_G$, conosciuto anche come SQuaRE, che individua e definisce otto caratteristiche da considerare per costruire un prodotto software con un elevato livello di qualità. Ognuna di queste caratteristiche viene suddivisa in varie sottocaratteristiche(31 in totale), le quali, attraverso dei parametri misurabili  permettono una valutazione oggettiva del grado di conseguimento della caratteristica considerata.
+\textcolor{red}{PORTABILITY, SECURITY E COMPATIBILITY}
+ 
+	\subsection{Functional Suitability}
+	Con functional suitability si intende il livello di soffisfacimento dei bisogni espliciti o impliciti, raggiunto dal prodotto attraverso le sue funzionalità quando utilizzato sotto determinate condizioni.
 		\subsubsection{Obiettivi}
+			\begin{itemize}
+				\item {\textbf{Functional completeness:} livello fino al quale l'insieme di funzioni copre tutti i compiti specificati e gli obbietivi dell'utente.}
+				\item {\textbf{Functional correctness:} livello fino al quale un prodotto fornisce risultati corretti con il livello di precisione richiesto.}
+			\end{itemize}
 		\subsubsection{Metriche}
-			\paragraph{Completezza dell'implementazione funzionale}
+			\paragraph{Completezza dell'implementazione funzionale:} misura la quantità in percentuale di requisiti funzionali soffisfatti dalla corrente implementazione.
+			\begin{itemize}
+				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Range ottimale:} 100;}
+				\item {\textbf{Range accettazione:} 100.}
+			\end{itemize} 
 
 	\subsection{Reliability}
+		Con reliability si intende il livello di performance mantenuto da specifiche funzioni di un prodotto in specifiche condizione per uno specifico periodo di tempo.
 		\subsubsection{Obiettivi}
+		\begin{itemize}
+			\item {\textbf{Maturity:} livello fino al quale un prodotto garantisce Reliability durante un utilizzo normale.}
+			\item {\textbf{Fault Tolerance:} livello fino al quale un prodotto riesce ad operare come previsto in presenza di $fault_G$ di natura hardware o software.}
+		\end{itemize}
 		\subsubsection{Metriche}
-			\paragraph{Densità di failure}
+			\paragraph{Densità di failure:} misura la quantità percentuale di test che si sono conclusi con una failure.
+			\begin{itemize}
+				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Range ottimale:} 0;}
+				\item {\textbf{Range accettazione:} 0-10.}
+			\end{itemize} 
 			
 	\subsection{Usability}
+		Con usability si intende il livello a cui il prodotto può essere utilizzato da degli utenti specifici per raggiungere specifici obbiettivi con efficacia, efficienza e soddisfazione in uno specifico contesto d'uso.  
 		\subsubsection{Obiettivi}
+		\begin{itemize}
+			\item {\textbf{Appropriateness Recognizability:} livello a cui gli utenti riescono a riconoscere se il prodotto è adeguato per i loro bisogni;}
+			\item {\textbf{Learnability:} livello di facilità con cui il prodotto può essere appreso dagli utenti per portare a termine determinati obiettivi con efficacia, efficienza, sicurezza e soddisfazione;} 
+			\item {\textbf{User Interface Aesthetics:} livello a cui un interfaccia utente risulta piacevole per l'utente che la utilizza. }
+			
+		\end{itemize}
 		\subsubsection{Metriche}
-			\paragraph{Comprensibilità delle funzionalità offerte}
-			\paragraph{Facilità di apprendimento}
+			\paragraph{Comprensibilità delle funzionalità offerte:} misura la quantità in percentuale di operazioni comprese dall'utente che non richiedono la consultazione del manuale.
+			\begin{itemize}
+				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Range ottimale:} 90-100;}
+				\item {\textbf{Range accettazione:} 70-10.}
+			\end{itemize} 
+			\paragraph{Facilità di apprendimento} misura il tempo medio che occorre ad un utente per imparare ad usare in maniera corretta una certa funzionalità.
+			\begin{itemize}
+				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Range ottimale:} 0-10;}
+				\item {\textbf{Range accettazione:} 0-20.}
+			\end{itemize} 
 			
 	\subsection{Efficency}
 		\subsubsection{Metriche}
