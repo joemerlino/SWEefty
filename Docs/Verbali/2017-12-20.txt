@@ -2,9 +2,10 @@
 
 0. check degli id di discord su dropbox(groupinfo.txt)
 1. usiamo la versione nel nome del documento (NormeDiProgetto_v1.0.0.tex)? -> direi di si
+    1.1 in tal caso mettere a posto ciò che non va bene
 2. visionamento della verifica
     2.1 assegnazione delle parti da correggere
-3. far mettere in bella copia i verbali -> attività
+3. far mettere in bella copia i verbali -> attività. Porre particolare attenzione alla sezione delle norme di progetto sul come fare ciò(fin'ora non lo abbiamo fatto)!
     3.1 istanziare documenti latex per verbali
         3.1.1 decidere se usare un template semplificato (per me soluzione intelligente)
             3.1.1.1 se si, creazione di tale
