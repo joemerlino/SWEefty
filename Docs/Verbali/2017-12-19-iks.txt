@@ -1,16 +1,20 @@
+** ESEMPI **
+DEMO APPDYNAMICS: https://www.youtube.com/watch?v=2wsqGtxhdiw
+
+
 ** RICHIESTE **
 Sono richiesti 2 plugin: mappa dell'applicazione + analisi di chiamate di metodi java
     MAPPA DELL'APPLICAZIONE:
         mappa: ci devono essere varie icone per ogni componente, per esempio web server, database etc. Tutte queste informazioni stanno all'interno di ES
          come funziona:
-            angular fa chiamate ad elastic search che rrecupera una chiamta. è fatta di "pezzi". abbiamo queste informazioni sotto forma di pezzi. noi dobbiamo fare che ogni pezzetto diventi un'icona.
+            angular fa chiamate ad elastic search che recupera una chiamata. è fatta di "pezzi". abbiamo queste informazioni sotto forma di pezzi. noi dobbiamo fare in modo che ogni pezzetto diventi un'icona.
 
         (SPUNTI)
-        evidenzia frecce critiche in rosso. le freccie si animano sul sito che ci ha fatto vedere. fa vedere sulle freccie roba tipo protocollo, tempo di risposta e roba così. tutto questa dentro elastisearch. posso uovere i nodi come voglio, anche farglieli riposizionare in automatico. 
+        evidenzia frecce critiche in rosso. le freccie si animano sul sito che ci ha fatto vedere. fa vedere sulle freccie roba tipo protocollo, tempo di risposta e roba così. tutto questa dentro elastisearch. posso muovere i nodi come voglio, anche farglieli riposizionare in automatico. 
 
-        CLUSTER: facendo funzionar eun'applicazione in un'azienda non istallo l applciazione solamente in un solo server(pensa a netflix). quindi viene messo insieme un sistema per duplicare questi server ed erogare un servizio in parallelo. 
+        CLUSTER: facendo funzionare un'applicazione in un'azienda non istallo l'applicazione solamente in un solo server(pensa a netflix). quindi viene messo insieme un sistema per duplicare questi server ed erogare un servizio in parallelo. 
 
-        i "numerini sui tondini" nie nodi solo il numero di server nel cluster. sarebbe un'informazione utile. è una roba immagino desiderabile.
+        i "numerini sui tondini" nei nodi solo il numero di server nel cluster. sarebbe un'informazione utile. è una roba immagino desiderabile.
 
         (DESIDERABILE)
         per realizzzare la mappa si dovranno leggere i dati da es. quindi l applicazione diventa dipendente molto dai dati: ma questa cosa è male poichè si deve disaccoppiare la rappresentazione dalla visualizzazione. vorrei che se cambio la forma dei dati: dovremmo usare un modo inun COMPOMENTE SPECIFICO per descrivere i dati. cambiano solo quella componente la mappa dovrebbe funzionare comunque cambiando la forma dei dati (usa facade, command pattern).
@@ -65,6 +69,7 @@ quindi : fai query a es, estrai le trace e in base a quella costruisci la mappa.
 
 
 ** ALTRO **
+
 i plugin possono essere di due tipi: o stanno a sx nella home page di kiabana oppure stanno in una scheda , è una visualization.
 usaremo AWS come server cloud.
 FAVORE RICHIESTO: servistrarsi su aws e fare robe per avere crediti da dare looro per pagare le macchine. 
@@ -92,3 +97,4 @@ COSE DA CHIARIRE SE NON CHIARE
 - consigli su use case da usare?
 
 - che portiamo alla proof of concept?
+
