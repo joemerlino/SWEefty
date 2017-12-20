@@ -19,9 +19,11 @@
     5.5 attenzione alle scadenze
 6. a che punto siamo con lo studio di fattibilità?
     6.1 se finito identifichiamo un verificatore per tale documento
-7. inizio dell'analisi dei requisiti
-    7.1 suddivisione delle parti 
-    7.2 assegnazione su wrike di tali
+7. vediamo come funziona kibana
+8. inizio dell'analisi dei requisiti
+    8.1 suddivisione delle parti 
+    8.2 assegnazione su wrike di tali
+
 
 ultimo. prossimo incontro
     (propongo venerdì mattina dopo lab di p3)

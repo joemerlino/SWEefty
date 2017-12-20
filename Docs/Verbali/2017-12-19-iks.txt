@@ -1,0 +1,94 @@
+** RICHIESTE **
+Sono richiesti 2 plugin: mappa dell'applicazione + analisi di chiamate di metodi java
+    MAPPA DELL'APPLICAZIONE:
+        mappa: ci devono essere varie icone per ogni componente, per esempio web server, database etc. Tutte queste informazioni stanno all'interno di ES
+         come funziona:
+            angular fa chiamate ad elastic search che rrecupera una chiamta. è fatta di "pezzi". abbiamo queste informazioni sotto forma di pezzi. noi dobbiamo fare che ogni pezzetto diventi un'icona.
+
+        (SPUNTI)
+        evidenzia frecce critiche in rosso. le freccie si animano sul sito che ci ha fatto vedere. fa vedere sulle freccie roba tipo protocollo, tempo di risposta e roba così. tutto questa dentro elastisearch. posso uovere i nodi come voglio, anche farglieli riposizionare in automatico. 
+
+        CLUSTER: facendo funzionar eun'applicazione in un'azienda non istallo l applciazione solamente in un solo server(pensa a netflix). quindi viene messo insieme un sistema per duplicare questi server ed erogare un servizio in parallelo. 
+
+        i "numerini sui tondini" nie nodi solo il numero di server nel cluster. sarebbe un'informazione utile. è una roba immagino desiderabile.
+
+        (DESIDERABILE)
+        per realizzzare la mappa si dovranno leggere i dati da es. quindi l applicazione diventa dipendente molto dai dati: ma questa cosa è male poichè si deve disaccoppiare la rappresentazione dalla visualizzazione. vorrei che se cambio la forma dei dati: dovremmo usare un modo inun COMPOMENTE SPECIFICO per descrivere i dati. cambiano solo quella componente la mappa dovrebbe funzionare comunque cambiando la forma dei dati (usa facade, command pattern).
+        non vogliamo che il plugin si leghi ad esempio il campo che si chiama esattamente "user", ma serve una facciata. REQUISITO DESIDERABILE. possiamo anche creare dei fake data che tramite stub mettano a prova il disaccoppiamento del componente di traduzione. 
+
+        (OPZIONALE)
+        la mappa drag and drop
+
+    TRACE (ANALISI DI CHIAMATA DEI METODI JAVA):
+        L'INTERFACCIA DI RICERCA È UNA TABELLA. ci sono tasti che permettono di selezionare dei filtri(non so, per esempio la chiamata ad uno specifico server). posso aprire la singola trace. Idea per qualcosa di desideragile: query più lente e roba avanzata. NECESSARIA: alberatura dei metodi java che sono stati eseguiti. per ognuno: sono stati spesi xyz secondi, millisecondi e robe così e ha fatto una chiamata a qualcuno. se clicco tipo un'altra tab mostra le query fatte al db piuttosto che tutti i metodi java chiamati. quest'ultimo potrebbe essere desiderabile.
+
+** CONSIGLI E METRIALE **
+        KIBANA È DA INSTALLARE IN LOCALE
+
+        App che andremo a monitorare concretamente:
+            stagemonitor-demo.isys-software.de
+
+        altraroba desiderabile: accattivante.
+
+** REQ. OBBLIGATORI **
+    DISACCIPPIAMENTO FRA LOGICA APPLCIATIVA E TECNOLOGIE USATE: se mi interfaccio con una sorgente dati chiamo una classe che mi estragga il dato. la classe non ritorna il dato grezzo, ma ritorna qualcosa di standardizzato. così se un giorno cambia la base di dati basta modificare tipo un parametro e la mappa o quel che è funziona uguale a prima. guardare disegno di elia.
+    
+    Kibana -- contiene --> Plugin(nostro) -- richiede dati elaborati --> Query executor(classe fra il plugin ed elastic search) -- richiede(e dopo elabora) dati --> elastisearch
+
+    questo si fa con i design patten(usare tipo facade).
+
+use case: realizzo un'interfaccia di quello che dovrò andare a fare. altro: tipo il verde è ok, oppure permette di spostare robe.
+
+**  LIVELLO LOGICO ECCO COSA DOVREMMO FARE **
+- supponiamo dentro ES ci sono due trace(solo due utenti hanno fatto delle chiamate): trace=richieste utente
+Trace1
+    -homepage(.jsf)
+    -responsetime: 200ms
+    -query: "select...."
+    -query response time: 100ms
+
+Trace2
+    -homepace.jsf
+    -responsetime: 300ms
+    -query: "select...."
+    -query response time: 150ms
+
+la mappa topologica dell'applicazione sarà composta da un server dove è installata lapplicazione e da un database. deduco GRAZIE ALLE QUERIES che la topogia è questa: ho scoperto che ci sono dei collegamenti. voglio per esempio rappresentare sopra questo tondino il tempo medio di risposta: 200+300/2= 250ms tempo di risposta medio sopra il tondino. poi sopra il pallno del db metto per esempio 150+100/2. Potrei vedere anche tutta la mappa dell'applicazione filtrata per il tempo di risposta. 
+
+** USE CASE** 
+PUNTO DI VISTA: utente che clicca sul plugin e fa robe. 
+
+**altro sulla interfaccia di ricerca della trace - QUESTO PUÒ ENTRARE NELL'USE CASE **
+dettaglio delle trace: realizzo una dashboard dove metto il campo di ricerca(che viene da kibana). mi viene ritornata una lista di trace. cliccando sulla singola posso vedere i dettagli della singola trace. 
+
+quindi : fai query a es, estrai le trace e in base a quella costruisci la mappa.
+
+
+** ALTRO **
+i plugin possono essere di due tipi: o stanno a sx nella home page di kiabana oppure stanno in una scheda , è una visualization.
+usaremo AWS come server cloud.
+FAVORE RICHIESTO: servistrarsi su aws e fare robe per avere crediti da dare looro per pagare le macchine. 
+
+COSE DA CHIARIRE SE NON CHIARE
+
+- potremmo avere dei dati da vedere? perchè dovremmo mettere nei requisiti desiderabili roba tipo come filtrare e li serve sapere che dati mettere nei filtri. poi possono tornare utili
+
+-stack tecnologico: come interagiscono le tecnologie? quali sono obbligatorie?
+    ANS: non abbiamo aprticoalri vincoli, se non quelli che mette kibana. necessario: KIBANA/ES (almeno) versione 6. Guardare sul tutorial nelle slides per approfondire.
+
+- req obbligatori: tutti e due i plugin + disaccoppiamento
+- req desiderabili: 
+- req opzionali: 
+
+- requisiti funzionali (che deve fare?)
+- requisiti prestazionali (entro quanto deve rispondere?)
+- requisiti di qualità (es manuale utente? amministratore? si chiama amministratore?)
+    suggerimenti?
+- requisiti di vincolo (che tecnologie sono supportate/devono essere usate)
+    tecnologie richieste?
+
+- chiedere per il server etc
+- consigli su ide e robe varie?
+- consigli su use case da usare?
+
+- che portiamo alla proof of concept?
