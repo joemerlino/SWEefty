@@ -5,7 +5,7 @@
     1.1 in tal caso mettere a posto ciò che non va bene
 2. visionamento della verifica
     2.1 assegnazione delle parti da correggere
-3. far mettere in bella copia i verbali -> attività. Porre particolare attenzione alla sezione delle norme di progetto sul come fare ciò(fin'ora non lo abbiamo fatto)!
+3. far mettere in bella copia i verbali -> attività. Porre particolare attenzione alla sezione delle norme di progetto sul come fare ciò(finora non lo abbiamo fatto)!
     3.1 istanziare documenti latex per verbali
         3.1.1 decidere se usare un template semplificato (per me soluzione intelligente)
             3.1.1.1 se si, creazione di tale
@@ -30,3 +30,43 @@ ultimo. prossimo incontro
 
 
 # SOLUZIONI #
+0. manca Elia e Lisa
+1. approvata la nomenclatura: NomeDelDocumento_vX.Y.Z, es:
+	"NormeDiProgetto_v1.0.0"
+ Cambiamo ora i nomi di tutti i documenti finora redatti.
+2. 
+- aggiunte list of figures, list of tables
+- aggiunta sezione "Riferimenti" nei documenti, discriminati in "Normativi" ed "Informativi". Vanno aggiunti i documenti di riferimento utilizzati durante le redazione del documento
+- chiarito il significato di alcune sezioni, controllate le vostre parti e cercate gli "hint" delle correzioni. Occhio specialmente alle sezioni "Scopo" e "Fornitura" sono spesso sbagliate
+- Responsabile di progetto -> Project Manager 
+- da completare la sezione Progettazione, in particolare bisogna parlare di ciò che andrà consegnato a Cardin, da rivedere
+- sezione Codifica, da aggiungere alcune regole in più (no classi con più di 5 metodi). Da rifare le sezione Versionamento
+- Sezione Strumenti, più dettagliate le descrizioni di alcuni strumenti 
+- quando ci si riferisce ai documenti vanno scritti in emph e non va inclusa la versione, es: Norme di Progetto e non NormeDiProgetto_vX.Y.Z. La versione non va citata nel testo e nelle note di piè di pagina.
+- 4.1.1 da eliminare
+- rimuovere documenti citati che non verranno redatti
+3. Elia è l'addetto alla conversione dei verbali, di seguito i verbali che necessitano della conversione:
+	1) verbale dell'incontro con IKS del 19-12-2017
+	2)
+Paolo / Joe provvederà a creare un template LaTeX per i verbali.
+4. D'ora in poi i termini da glossarizzare non andranno più segnati direttamente nei documenti. Le parole da glossarizzare andranno inserite nel file terminiGLossario.txt nella cartella script, in una nuova riga.
+5. entro il 26 sarà tutto fatto. Idea: proporre deadline più stringenti perché tanto il lavoro viene sempre fatto il giorno prima. Il PdQ ha delle dipendenze con AdR, aggiungere le dipendenza sui TODO su Slack
+6. praticamente completato, Lisa si occuperà di comunicare ad Elia ciò che è stato detto.
+7. niente
+8. niente
+MEMENTO PER JOE
+1) togliere i dollari dai documenti
+2) fare lo sciptino per aggiunger i vocaboli dal txt al documento text
+3) istanza il glossario.tex
+
+MEMENTO PER FREPPO
+1) aggiungere la cartella "Script" in NdP
+
+
+
+
+
+
+
+
+
