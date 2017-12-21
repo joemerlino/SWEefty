@@ -148,7 +148,7 @@ if(a==5){ // BAD
 if (a == 5) { // GOOD
 \end{lstlisting}
 			
-			\item \textbf{Indentazione:}\textcolor{red}{CORRETTO: prima si "consigliava " di impostare gli spazi nell'IDE, invece deve essere una norma, nessuno deve fare altrimenti. } vengono utilizzati quattro spazi. L'$IDE_G$ utilizzato deve essere adeguatamento impostato per l'inserimento automatico di quattro spazi. Inoltre non sono permessi spazi bianchi o tabulazioni a fine riga;
+			\item \textbf{Indentazione:} vengono utilizzati quattro spazi. L'$IDE_G$ utilizzato deve essere adeguatamente impostato per l'inserimento automatico di quattro spazi. Inoltre non sono permessi spazi bianchi o tabulazioni a fine riga;
 			
 			\item \textbf{Lunghezza linee di codice:} una riga di codice non deve superare i 100 caratteri, in caso contrario spezzare la riga di codice andando a capo;
 			
@@ -162,6 +162,8 @@ var profileData // GOOD
 			\item \textbf{Lingua:} i nomi delle variabili i metodi le funzioni e i commenti vanno scritti in inglese;
 			
 			\item \textbf{Lunghezza metodi e funzioni:} il corpo dei metodi e delle funzioni non deve superare le 40 linee e i due gradi di indentazione. Se si superano tali limiti è un chiaro segno che la funzione / metodo necessita di essere riformattata in più funzioni. Gli unici metodi o funzioni ai quali è permesso ignorare questa norma sono quelli che contengono una componente logica troppo complicata per poter essere ulteriormente suddivisa in altri metodi o funzioni;
+			
+			\item \textbf{Numero di parametri per funzione: } una funzione non deve avere più di sei parametri;
 			
 			\item \textbf{Strutture di controllo:} le parentesi graffe per i costrutti che le prevedono devono essere sulle stessa linea del costrutto stesso. È prevista l'omissione delle graffe soltanto quando il corpo della struttura è di una sola riga;
 \begin{lstlisting}
@@ -180,7 +182,17 @@ else
 {
 	// CODE
 }
+
 \end{lstlisting}
+			\item \textbf{If annidati:} non sono ammessi più di due if annidati in modo da non compromettere la leggibilità del codice;
+			\item \textbf{Numero condizioni per if: } non sono ammesse più di tre condizioni per If, in caso contrario è necessario raggruppare le condizioni in eccesso in funzioni con nomi che iniziano con la clausola "is";
+\begin{lstlisting}
+function isEven() { /*   */}
+
+if (condizione && condizione && isEven()) { /*  */}
+
+\end{lstlisting}
+
 			\item \textbf{Commenti:} i commenti devono essere esaustivi e non prolissi in modo da aiutare il lettore a comprendere al meglio ciò che si sta leggendo. I commenti devono essere scritti in italiano.
 			
 			È inoltre consentito l'utilizzo di particolari tipi di commento con lo scopo di aiutare la stesura del codice. Vi sono:
@@ -228,12 +240,28 @@ else
 */
 			\end{lstlisting}
 			\subparagraph{Versionamento} \Spazio
-			\textcolor{red}{DA CORREGGERE: devi rifarti ad \ref{versionamento}, scopiazza ma ricorda che li si parla di documenti e qui di codice.}
 			Il versionamento dei file segue la filosofia $Change\textbf{ }Significance_G$. La versione di un file è espressa secondo la notazione $$X.Y.Z$$ I valori sono ordinati per importanza decrescente, partendo da sinistra. L'aumento di un parametro comporta l'azzeramento di tutti i parametri alla sua destra. Ogni volta che un file viene modificato deve essere propriamente aggiornata anche la versione. Il parametro da incrementare è:
 			\begin{itemize}
-				\item \textbf{X:} se sono stati introdotti dei $major\text{ }improvement_G$, l'incremento di questo numero significa che sono state aggiunte funzionalità importanti \textcolor{red}{DA CORREGGERE: esempi?}
-				\item \textbf{Y:} se sono stati introdotti dei $minor\text{ }improvement_G$, $bugfix_G$. Va incrementato in caso di implementazione di funzionalità più piccole \textcolor{red}{DA CORREGGERE: esempi?}
-				\item \textbf{Z:} se sono stati corretti $typos_G$, introdotti errori nei commenti o risolti piccoli $bug_G$
+				\item \textbf{X:} 
+					\begin{itemize}
+						\item Parte da 0;
+						\item Se sono stati introdotti dei $major\text{ }improvement_G$, l'incremento di questo numero significa che sono state aggiunte funzionalità importanti. E.g: aggiunta di nuove classi / moduli;
+						\item Solo il \emph{Verificatore} più aggiornare questo numero
+					\end{itemize}
+				
+				\item \textbf{Y:} 
+					\begin{itemize}
+						\item Parte da 0;
+						\item Se sono stati introdotti dei $minor\text{ }improvement_G$, $bugfix_G$. Va incrementato in caso di implementazione di funzionalità più piccole. E.g: aggiunti singoli metodi, interfacce
+						\item Solo il \emph{Verificatore} più aggiornare questo numero
+					\end{itemize}
+
+				\item \textbf{Z:}
+					\begin{itemize}
+						\item Parte da 0
+						\item se sono stati corretti $typos_G$, introdotti errori nei commenti o risolti piccoli $bug_G$
+						\item anche il \emph{Programmatore} più modificare questo numero
+					\end{itemize}
 			\end{itemize}
 			I parametri X,Y e Z non hanno un limite superiore e possono raggiungere anche valori maggiori di 9.
 			Quando un file raggiunge la versione 1.0.0 significa che sono state implementate le funzionalità obbligatorie e quindi si può cominciare a testare il codice.
@@ -284,11 +312,10 @@ else
 	
 	\paragraph{Atom}
 	\label{sec:Atom}
-	\Spazio
-	\textcolor{red}{DA CORREGGERE: sezione da approfondire molto: due punti principalmente, 1 - come si integra con le tecnologie che utilizziamo? 2 - quali sono questi plugin? perchè piacciono al gruppo? }
+	\Spazio	
 	Atom è un IDE di ultima generazione, sviluppato da GitHub. È un editor potente,
-	$crossplatform_G$ e si integra perfettamente con tutte le tecnologie e strumenti che si utilizzano per lo sviluppo del prodotto. 
-	Offre inoltre un vastissimo numero di $plugin_G$ grazie al grande supporto della comunità open source che lo sviluppa.
+	$crossplatform_G$ e si integra perfettamente con tutte le tecnologie e strumenti che si utilizzano per lo sviluppo del prodotto. Infatti questo IDE mette a disposizione l'highlighting del codice per permettere una stesura ed una lettura agevolata. 
+	Offre inoltre un vastissimo numero di $plugin_G$ grazie al grande supporto della comunità open source che lo sviluppa. Tra i plugin che il team utilizzerà vi è SonarJs, che permette l'analisi statica del codice, questo tool infatti proviene dalla suite SonarQube che SWeefty ha scelto come strumento principale per l'analisi statica del codice in quanto fornisce meccanismi avanzati per questo tipo di attività.
 	
 	\begin{figure}[H]
 		\label{Atom}
