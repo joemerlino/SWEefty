@@ -1,6 +1,6 @@
 \section{Qualità di Prodotto}
 Per quantificare e valutare la qualità del prodotto software che il gruppo \textit{SWEefty} ha deciso di attenersi allo standard $ISO/IEC\text{ }25010_G$, conosciuto anche come SQuaRE, che individua e definisce otto caratteristiche da considerare per costruire un prodotto software con un elevato livello di qualità. Ognuna di queste caratteristiche viene suddivisa in varie sottocaratteristiche(31 in totale), le quali, attraverso dei parametri misurabili  permettono una valutazione oggettiva del grado di conseguimento della caratteristica considerata.
-\textcolor{red}{PORTABILITY, SECURITY E COMPATIBILITY}
+\textcolor{red}{PORTABILITY E COMPATIBILITY}
  
 	\subsection{Functional Suitability}
 	Con functional suitability si intende il livello di soffisfacimento dei bisogni espliciti o impliciti, raggiunto dal prodotto attraverso le sue funzionalità quando utilizzato sotto determinate condizioni.
@@ -46,7 +46,7 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 			\begin{itemize}
 				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
 				\item {\textbf{Range ottimale:} 90-100;}
-				\item {\textbf{Range accettazione:} 70-10.}
+				\item {\textbf{Range accettazione:} 70-100.}
 			\end{itemize} 
 			\paragraph{Facilità di apprendimento} misura il tempo medio che occorre ad un utente per imparare ad usare in maniera corretta una certa funzionalità.
 			\begin{itemize}
@@ -63,7 +63,7 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 				\item {\textbf{Resource behaviour:} livello con cui la quantità e il tipo di risorse utilizzate da un prodotto durante l'esecuzione soddisfano certi requisiti.}
 			\end{itemize}
 		\subsubsection{Metriche}
-			\paragraph{Tempo di risposta:} misura la differenza media di tempo trascorsa tra dall’esecuzione di una funzionalità e la restituzione dell’eventuale risultato.
+			\paragraph{Tempo di risposta:} misura la differenza media di tempo trascorsa dall’esecuzione di una funzionalità e la restituzione dell’eventuale risultato.
 			\begin{itemize}
 				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
 				\item {\textbf{Range ottimale:} 0-3;}
@@ -75,9 +75,21 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 		\subsubsection{Obiettivi}
 		\begin{itemize}
 			\item {\textbf{Analysability:} livello di efficacia ed efficienza con cui è possibile quantificare l'impatto di modifiche intenzionali. È anche la capacità di diagnosticare mancanze e cause di failures all'interno del prodotto; }
-			\item{\textbf{Modifiability:} }
-			\item{\textbf{Testability:} }
+			\item{\textbf{Modifiability:} livello di efficacia ed efficienza con cui un prodotto può essere modificato senza introdurre difetti e degrafare le qualità del prodotto già presenti;}
+			\item{\textbf{Testability:} livello di efficacia ed efficienza con cui si possono essere creati dei test per valutare il prodotto.}
 		\end{itemize}
 		\subsubsection{Metriche}
 			\paragraph{Capacità di analisi failure}
+			Misura la quantità in percentuale di failures incontrate di cui sono state tracciate le cause.
+			\begin{itemize}
+				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Range ottimale:} 80-100;}
+				\item {\textbf{Range accettazione:} 60-100.}
+			\end{itemize} 
 			\paragraph{Impatto delle modifiche}
+			Misura la quantità in percentuale di modiche introdotte per risolvere failures che hanno introdotto nuove failures nel prodotto.
+			\begin{itemize}
+				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Range ottimale:} 0-10;}
+				\item {\textbf{Range accettazione:} 0-20.}
+			\end{itemize} 
