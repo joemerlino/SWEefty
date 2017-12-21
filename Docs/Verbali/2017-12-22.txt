@@ -1,0 +1,13 @@
+# ORDINE DEL GIORNO #
+
+-1. demo di discord
+0. (joe) Controllo del lavoro (istanziazione script+glossario+rimozione dei dollari nelle ndp)
+1. spigazione ad elisa di che deve fare
+    1.1 attenzione al template a pagina singola
+2. studio di fattibilità
+    2.1 dovrebbe esseer finito ma...?
+3. a che punto siamo sul piano di qualifica?
+4. mettersi d'accordo per quando e come incontrarsi nelle vacanze
+5. continuiamo con l'analisi dei requisiti
+
+# SOLUZIONI #
