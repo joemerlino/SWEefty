@@ -1,0 +1,58 @@
+architettura
+Bot
+bug
+bugfix
+camel Case
+canali di comunicazione
+Change Significance
+classe
+codebase
+committente
+crossplatform
+Design Pattern
+diagramma di Gantt
+driver
+Dropbox
+file
+feature
+feedback
+git
+GitHub
+Gitkraken
+GNU Aspell
+hosting
+IDE
+integrazione continua
+issues
+Javascript
+Kibana
+major features
+major improvement
+Mercurial
+minor improvement
+multipiattaforma
+package
+plugin
+PNG
+processo
+prodotto
+Progettista
+progetto
+Simple Poll
+Slack
+SonarJS
+SonarQube
+stub
+tasks
+Telegram
+TexStudio
+tool
+typos
+UML
+Unità
+validazione
+verifica
+Verificatore
+Whatsapp
+workspace
+Wrike

@@ -14,3 +14,7 @@
 
 *.DS_Store
 *.gz
+
+*.lof
+
+*.lot

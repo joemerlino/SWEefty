@@ -90,7 +90,7 @@
 		\item \textbf{Y}
 		\begin{itemize}
 			\item Parte da 0;
-			\item Viene incrementato dal \textit{$Verificatore_G$} in concomitanza di ogni verifica;
+			\item Viene incrementato dal Verificatore in concomitanza di ogni verifica;
 			\item Quando X viene incrementato Y ritorna a 0.
 		\end{itemize}
 		
@@ -185,7 +185,7 @@
 Qualora il redattore lo ritenesse necessario per aumentare la leggibilità è possibile anche l'uso di colori di sfondo scegliendone uno specifico per l'intestazione e due che verranno alternati per le righe sottostanti.
 
 		\paragraph{Immagini}\Spazio
-		Le immagini inserite nel documento sono nel formato $PNG_G$. Ognuna di esse deve essere accompagnata da una didascalia analoga a quella descritta per le tabelle. \\
+		Le immagini inserite nel documento sono nel formato PNG. Ognuna di esse deve essere accompagnata da una didascalia analoga a quella descritta per le tabelle. \\
 		Ogni immagine deve inoltre essere centrata orizzontalmente mantenendo una separazione netta dai paragrafi che seguono e precedono, marcando quindi un distacco tra grafica e testo migliorando di conseguenza la leggibilità. \\
 		I diagrammi UML vengono inseriti nei documenti sotto forma di immagine.
 	\subsubsection{Classificazione dei documenti}
@@ -218,7 +218,7 @@ Nel caso l'incontro abbia partecipanti esterni deve essere presente una sezione 
 		Inoltre permette la creazione di documenti formali e divisi in sezioni molto velocemente, potendo separare il contenuto dalla formattazione tramite un file template separato e condiviso da tutti i documenti.\\
 		Infine grazie all'elevato numero di librerie, permette di avere un'alta personalizzazione del documento.
 		\paragraph{TexStudio}\Spazio
-		L'editor scelto per sviluppare i documenti in \LaTeX\text{ } è\text{ } $TexStudio_G$ nella versione 2.12.6. 
+		L'editor scelto per sviluppare i documenti in \LaTeX\text{ } è TexStudio nella versione 2.12.6. 
 		Lo strumento multipiattaforma integra un compilatore e un visualizzatore PDF, fornendo anche suggerimenti per completare i comandi \LaTeX.
 		\newline
 		\textcolor{red}{DA CORREGGERE: mettere link texstudio centrato con href}
@@ -258,8 +258,8 @@ Nel caso l'incontro abbia partecipanti esterni deve essere presente una sezione 
 			\end{itemize}
 		\paragraph{Test}
 			\subparagraph{Test di unità} \Spazio
-			I test di unità verificano che le singole $unit\grave{a}_G$ di prodotto software funzionino correttamente, le unità non possono passare al test di integrazione se non passano questo test.
-			Comunemente per i test di unità vengono utilizzati $driver_G$ e $stub_G$ che simulano il chiamante e un unità chiamata.
+			I test di unità verificano che le singole Unità di prodotto software funzionino correttamente, le unità non possono passare al test di integrazione se non passano questo test.
+			Comunemente per i test di unità vengono utilizzati driver e stub che simulano il chiamante e un unità chiamata.
 			\subparagraph{Test di integrazione} \Spazio
 			I test di integrazione sono il passo successivo ai test di unità servono a verificare che due o più unità, precedentemente verificate, funzionino correttamente una volta combinate.
 			Questo tipo di test verifica la corretta collaborazione tra le varie unità e aiuta a trovare eventuali errori non rilevati nei test precedenti.
@@ -273,14 +273,14 @@ Nel caso l'incontro abbia partecipanti esterni deve essere presente una sezione 
 			Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto può essere rilasciato.
 	\subsubsection{Strumenti}
 			\paragraph{Verifica ortografica} \Spazio
-			Viene utilizzato $GNU\text{ }Aspell_G$, uno spell checker open source in grado di gestire più dizionari contemporaneamente che segnala gli errori all'interno di un documento mentre durante la scrittura viene utilizzato il controllo ortografico integrato in TeXstudio che segnala le parole errate sottolineandole in rosso.
+			Viene utilizzato GNU Aspell, uno spell checker open source in grado di gestire più dizionari contemporaneamente che segnala gli errori all'interno di un documento mentre durante la scrittura viene utilizzato il controllo ortografico integrato in TeXstudio che segnala le parole errate sottolineandole in rosso.
 			\paragraph{Analisi statica} \Spazio
-			Per l'analisi statica del codice JavaScript viene utilizzato $SonarJS_G$, modulo di $SonarQube_G$ in grado di rilevare bug e problemi di sicurezza, è inoltre disponibile su vari IDE come Eclipse e IntelliJ.
+			Per l'analisi statica del codice JavaScript viene utilizzato SonarJS, modulo di SonarQube in grado di rilevare bug e problemi di sicurezza, è inoltre disponibile su vari IDE come Eclipse e IntelliJ.
 			\paragraph{Analisi dinamica} \Spazio
 			Per l'analisi dinamica vengono utilizzati i seguenti software:
 			\begin{itemize}
 				\item  \textbf{Jest}: piattaforma per l'esecuzione di test su codice JavaScript, comodo per la sua semplicità di utilizzo.
-				\item \textbf{Travis CI}: software usato per l' $integrazione\text{ }continua_G$, una volta sincronizzato con la repository GitHub è in grado di eseguire automaticamente i test di integrazione, creati creati appositamente, su ogni commit in modo che si possa eseguire il comando push solo su codice che compila ed ha passato i test.
+				\item \textbf{Travis CI}: software usato per l' integrazione continua, una volta sincronizzato con la repository GitHub è in grado di eseguire automaticamente i test di integrazione, creati creati appositamente, su ogni commit in modo che si possa eseguire il comando push solo su codice che compila ed ha passato i test.
 			\end{itemize}
 			\paragraph{Metriche} \Spazio
 			Per il calcolo delle metriche viene utilizzato SonarQube, software che permette di stabilire un grado di qualità che tutto il gruppo deve rispettare (come si vede in figura \ref{qualità}), inoltre permette di visualizzare grafici per controllare la qualità del progetto nel periodo di sviluppo (come si vede in figura \ref{graficobello}).
