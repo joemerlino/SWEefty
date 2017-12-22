@@ -1,36 +1,72 @@
+Apache Nutch
+Apache SolR
+APM
 architettura
+backend
+big data
+blockchain
 Bot
 bug
 bugfix
 camel Case
 canali di comunicazione
+CanvasJS
+capitolato
 Change Significance
+Chart.js
 classe
 codebase
 committente
+criptovaluta
 crossplatform
+CSS
+Dapp
+dashboard
 Design Pattern
 diagramma di Gantt
+diagramma di robustezza
 driver
 Dropbox
+D3.js
+editor
+Elastic Search
+entità persistenti
+ESLint
+Ethereum
+Ethereum Virtual Machine
+Etherscan.io
 file
 feature
 feedback
+framework
+frontend
 git
 GitHub
 Gitkraken
 GNU Aspell
+Google Cloud Platform
+Google SQL
 hosting
+HTML
 IDE
 integrazione continua
+interfacce
 issues
+Java
 Javascript
+JSON
 Kibana
+Logstash
 major features
 major improvement
 Mercurial
 minor improvement
+MongoDB
 multipiattaforma
+Natural Language Api
+Node.js
+NoSQL
+open source
 package
 plugin
 PNG
@@ -38,21 +74,32 @@ processo
 prodotto
 Progettista
 progetto
+proponente
+React
+SCSS
 Simple Poll
 Slack
+smart contracs
 SonarJS
 SonarQube
+Speech To Text
+SQL
+standup
 stub
 tasks
 Telegram
 TexStudio
+TomCat
 tool
+Truffle
 typos
 UML
 Unità
+Uniweb
 validazione
 verifica
 Verificatore
+XML
 Whatsapp
 workspace
 Wrike
