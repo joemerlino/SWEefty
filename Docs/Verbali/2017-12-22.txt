@@ -2,7 +2,7 @@
 
 -1. demo di discord
 0. (joe) Controllo del lavoro (istanziazione script+glossario+rimozione dei dollari nelle ndp)
-1. spigazione ad elisa di che deve fare
+1. spigazione ad elia di che deve fare
     1.1 attenzione al template a pagina singola
 2. studio di fattibilità
     2.1 dovrebbe esseer finito ma...?
@@ -11,3 +11,14 @@
 5. continuiamo con l'analisi dei requisiti
 
 # SOLUZIONI #
+
+-1. Creato un server per il gruppo in cui ci siamo aggiunti tramite il link https://discord.gg/3dwch2H. In università non va :'(
+0. Fatto scheletro glossario, senza indice. Dentro le sezione ci sarà un .tex per ogni lettera del glossario, ovviamente solo le lettere con cui iniziano parole da inserire nel glossario saranno stanziate nel documento. Lo script per metterle in ordine alfabetico è ancora in sviluppo. 
+Per glossarizzare una parola la aggiungiamo in ordine alfabetico in TerminiGlossario.txt sulla cartella Script. Poi si va nella parte di Glossario sulla repo e aggiungiamo sul file letteracorrispondente.tex la parola e la relativa descrizione.
+Si è deciso che se ci sono due parole che significano la stessa cosa ma, per esempio, in italiano e in inglese, si tengono entrambe nel glossario ed una rimanderà nell'altra.
+Nei documenti si scrive come bisogna scrivere (lettera maiuscola o minuscola) mentre nel file del glossario si riporta la parola in maiuscolo.
+1. Elia è incaricato di redarre alcuni verbali in latex (sicuramente quello esterno del 19/12, si deciderà in seguito quali altri) sistemando i file .txt con i template che creerà il buon Paolo.  Dentro ogni cartella riguardante una revisione ci sarà la cartella "Verbali" con al suo interno la divisione tra Interni ed Esterni. 
+2. Per completarlo bisogna sistemare alcuni aspetti positivi ed alcuni lati negativi dei primi capitolati e sistemare la copertina.
+3. Si è a buon punto ma mancano alcune parti per cui serve procedere con l'Analisi dei Requisiti. Si procederà più avanti con la verifica seria da parte di un Verificatore e per ora ognuno tenta di sistemare al meglio la propria parte.
+4. Ci troveremo su discord. Per continuare l'analisi dei requisiti è quasi obbligato trovarsi mentre per  il Piano di Qualifica si lascia massima scelta di Alberto e Paolo. Per il 27/28 ci si troverà tutti su Discord.
+Modificate date di scadenza per i vari documenti (guardare Wrike).
