@@ -8,6 +8,7 @@ blockchain
 Bot
 bug
 bugfix
+call tree
 camel Case
 canali di comunicazione
 CanvasJS
@@ -15,6 +16,7 @@ capitolato
 Change Significance
 Chart.js
 classe
+cluster
 codebase
 committente
 criptovaluta
@@ -22,6 +24,7 @@ crossplatform
 CSS
 Dapp
 dashboard
+database
 Design Pattern
 diagramma di Gantt
 diagramma di robustezza
@@ -59,6 +62,7 @@ Kibana
 Logstash
 major features
 major improvement
+mappa topologica
 Mercurial
 minor improvement
 MongoDB
@@ -77,6 +81,7 @@ progetto
 proponente
 React
 SCSS
+server
 Simple Poll
 Slack
 smart contracs
@@ -91,6 +96,7 @@ Telegram
 TexStudio
 TomCat
 tool
+trace
 Truffle
 typos
 UML
