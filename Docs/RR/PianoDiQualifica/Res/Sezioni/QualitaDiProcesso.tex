@@ -127,50 +127,162 @@ La metodologia che SWEefty seguirà per assicurarsi che gli obiettivi vengano ri
 	\subsection{System Requirements Analysis Process}
 \subsubsection{Obiettivi}
 \begin{itemize}
-	\item
+	\item Individuare i requisiti di sistema;
+	\item associare ad ogni requisito un test che verifichi il suo soddisfacimento; 
+	\item tracciare ogni requisito in modo da poter risalire alle modifiche fatte ad esso durante lo sviluppo del prodotto;
+	\item ogni requisito deve essere approvato dal committente.
 \end{itemize}
 \subsubsection{Strategie}
+I requisiti vengono tracciati utilizzando SWEgo.
 \subsubsection{Metriche}
 \paragraph{Requisiti obbligatori soffisfatti}
 \begin{itemize}
-	\item
+	\item \textbf{Misurazione:} $P=100\times\frac{N_S}{N_O}$ dove $N_S$ sono i requisiti soddisfatti, $N_O$ sono i requisiti obbligatori mentre $P$ è la percentuale dei requisiti obbligatori soddisfatti;
+	\item \textbf{Range ottimale:} 100\%;
+	\item \textbf{Range accettato:} 100\%.
 \end{itemize}
 
 	\subsection{System Architectural Design Process}
 		\subsubsection{Obiettivi}
+		\begin{itemize}
+			\item associare ai requisiti una o più componenti del sistema;
+			\item ogni componente dovrà essere associata ad un requisito, ciò la rende tracciabile;
+			\item ottenere un sistema finale semplice con basso accoppiamento ed alta coesione;
+			\item ottenere componenti basandosi sui buoni principi della programmazione ad oggetti come il riuso del codice,l'incapsulamento e la modularizzazione.
+		\end{itemize}
 		\subsubsection{Strategie}
+		\textcolor{red} {TODO: che strategia usiamo qui?}
 		\subsubsection{Metriche}
-			\paragraph{Structural Fan-In - SFIN}
+			\paragraph{Structural Fan-In - SFIN} 
+			Indice di utilità da massimizzare, misura il numero di componenti che utilizzano un dato modulo, un valore alto denota un alto riutilizzo del codice.
+			\begin{itemize}
+				\item \textbf{Range ottimale:} $\geq 2$;
+				\item \textbf{Range accettato:} $\geq 0$.
+			\end{itemize}
 			\paragraph{Structural Fan-Out - SFOUT}
-
+			Indice di dipendenza da minimizzare, misura quante componenti vengono utilizzate dalla componente in esame, un valore alto denota un alto accoppiamento
+			\begin{itemize}
+				\item \textbf{Range ottimale:} 0-1;
+				\item \textbf{Range accettato:} 0-5.
+			\end{itemize}
+            
 
 	\subsection{System Detailed Design Process}
 		\subsubsection{Obiettivi}
+		\begin{itemize}
+			\item fornire una progettazione di dettaglio del prodotto che andrà ad implementare i requisiti individuati;
+			\item il grado di dettaglio deve dare informazioni sufficienti alla codifica e il testing senza bisogno di ulteriori informazioni.
+		\end{itemize}
 		\subsubsection{Strategie}
+		Le componenti individuate durante l'analisi verranno suddivise in piccole unità codificabili e testabili.
 		\subsubsection{Metriche}
 			\paragraph{Metodi per classe}
+			Indica il numero di metodi definiti in una classe.
+			\begin{itemize}
+				\item \textbf{Range ottimale:} 1-7; 
+				\item \textbf{Range accettato:} 1-10.
+			\end{itemize}
 			\paragraph{Parametri per metodo}
-
+			Indica il numero di parametri passati ad un metodo.
+			\begin{itemize}
+				\item \textbf{Range ottimale:} 0-4;
+				\item \textbf{Range accettato:} 0-8.
+			\end{itemize}
+			
 	\subsection{System Construction Process}
 		\subsubsection{Obiettivi}
+		\begin{itemize}
+			\item definire le attività principali per la produzione di unità software;
+			\item ottenere codice codice di bassa complessità per facilitarne la comprensibilità e la verifica;
+			\item ottenere codice manutenibile;
+			\item minimizzare gli sdoppiamenti di flusso.
+		\end{itemize}
 		\subsubsection{Strategie}
+		Mantenere una bassa complessità del codice durante la stesura ed implementare al più presto dei test che ne verifichino il corretto funzionamento.
 		\subsubsection{Metriche}
 			\paragraph{Complessità ciclomatica}
+			Metrica software utilizzata per misurare la complessità di un programma,misura il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso.
+			\begin{itemize}
+				\item \textbf{Range ottimale:} 1-10;
+				\item \textbf{Range accettato:} 1-15.
+			\end{itemize}
 			\paragraph{Linee di codice per linee di commento}
+			Misura la percentuale di linee di commento presenti all'interno del codice di un programma.
+			\begin{itemize}
+				\item \textbf{Misurazione:} $P=100\times\frac{N_C}{N_{SLOC}}$ dove $N_C$ è il numero di linee di commento e $N_{SLOC}$ è il numero di linee di codice prodotte;
+				\item \textbf{Range ottimale:} $\geq30$;
+				\item \textbf{Range accettato:} $\geq25$.
+			\end{itemize}
 			\paragraph{Halstead Difficulty per-function}
+			Misura la complessità di una funzione.
+			\begin{itemize}
+				\item \textbf{Misurazione:} $D=\frac{N_{UOP}}{2}\times\frac{N_{OD}}{N_{UOD}}$ dove $N_{UOP}$ e i l numero di operatori distinti, $N_{OD}$ è il numero totale di operandi mentre $N_{UOD}$ è il numero di operandi distinti;
+				\item \textbf{Range ottimale:} 0-15;
+				\item \textbf{Range accettato:} 0-25.
+			\end{itemize}
 			\paragraph{Halstead Volume per-function}
+			Misura la dimensione dell'implementazione di un algoritmo basandosi sul numero di operazioni eseguite e sugli operandi di una funzione.
+			\begin{itemize}
+				\item \textbf{Misurazione:} $V=(N_{OP} + N_{OD})\times log_2(N_{UOP} + N_{UOD})$  dove $N_{OP}$ è il numero totale di operatori, $N_{OD}$ `e il numero totale di operandi, $N_{UOP}$ è
+				il numero di operatori distinti e $N_{UOD}$ è il numero di operandi distinti;
+			\item \textbf{Range ottimale:} 20-1000;
+			\item \textbf{Range accettato:} 20-1500.
+			\end{itemize}
 			\paragraph{Halstead Effort per-function}
-			\paragraph{Indice di manutenibilità}
+			rappresenta il costo necessario a scrivere il codice di una funzione.
+			\begin{itemize}
+				\item \textbf{Misurazione:} $E=D\times V$ dove $D$ è l'Halstead Difficulty e $V$ è l' Halstead Volume per-function;
+				\item \textbf{Range ottimale:} 0-300;
+				\item \textbf{Range accettato:} 0-400.
+			\end{itemize}
+			\paragraph{Indice di manutenibilità} 
+			Questo indice da una misura di quanto il codice prodotto è manutenibile.
+			\begin{itemize}
+				\item \textbf{Misurazione}:$MI=171-3.42\times ln(E)-0.23\times ln(C)-16.2\times ln(LOC)$ dove $E$  l'Halstead Effort medio per modulo, $C$ è la complessità ciclomatica media per modulo mentre LOC è il numero medio di linee di codice per modulo;
+				\item \textbf{Range ottimale:} 120-171;
+				\item \textbf{Range accettato:} 100-171.
+			\end{itemize}
 
 	\subsection{Software Documentation Management Process}
 		\subsubsection{Obiettivi}
+		\begin{itemize}
+			\item Produrre e manutenere le informazioni sul software prodotto;
+			\item ottenere una documentazione comprensibile;
+			\item mantenere la documentazione aggiornata allo stato attuale del progetto.
+		\end{itemize}
 		\subsubsection{Strategie}
+		Mantenere un diario delle modifiche e la versione del documento, inoltre per semplificare la comprensione dei documenti viene fornito un glossario che spiega il significato dei termini tecnici. 
 		\subsubsection{Metriche}
 			\paragraph{Indice Gulpease}
+			L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana, per il suo calcolo vengono considerate due variabili linguistiche: la lunghezza delle parole e la lunghezza delle frasi rispetto al numero delle lettere.
+			\begin{itemize}
+				\item \textbf{Misurazione:} $G=89+\frac{300\times N_F-10\times N_L}{N_P}$ dove $N_F$ è il numero delle frasi, $N_L$ è il numero di lettere e $N_P$ è il numero di parole nel testo;
+				\item \textbf{Range ottimale:} 50-100;
+				\item \textbf{Range accettato:} 40-100.
+			\end{itemize}
 
 	\subsection{Software Verification Process}
 		\subsubsection{Obiettivi}
+		\begin{itemize}
+			\item Verificare che tutte le componenti del sistema;
+			\item verificare che le varie componenti abbiano il comportamento desiderato;
+			\item utilizzare l'inspection per la verifica del codice;
+			\item automatizzare il più possibile i test dinamici.
+		\end{itemize}
 		\subsubsection{Strategie}
+		Stilare una checklist per poi effettuare inspection su documenti e codice.
 		\subsubsection{Metriche}
-			\paragraph{Branch Coverage}
-			\paragraph{Code Coverage}
+			\paragraph{Branch Coverage} 
+			Misura della percentuale di rami decisionali percorsi dai test dinamici.
+			\begin{itemize}
+			\item \textbf{Misurazione:} $BC=\frac{R_P}{R_T}\times 100$ dove $R_P$ è il numero di rami decisionali percorsi dai test mentre $R_T$ è il numeri di rami decisionali totali presenti nel software;
+			\item \textbf{Range ottimale:} 70\%-100\%;
+			\item \textbf{Range accettato:} 50\%-100\%.
+		    \end{itemize}
+			\paragraph{Statement Coverage}
+			Misura la percentuale linee di codice eseguite almeno una volta dai test dinamici.
+				\begin{itemize}
+				\item \textbf{Misurazione:} $SC=\frac{L_E}{L_T}\times 100$ dove $L_E$ è il numero di linee di codice eseguite almeno una volta dai test mentre $L_T$ è il numero di linee di codice totali all'interno del software.
+				\item \textbf{Range ottimale:} 70\%-100\%;
+				\item \textbf{Range accettato:} 50\%-100\%.
+		    	\end{itemize}
