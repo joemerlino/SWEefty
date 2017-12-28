@@ -1,3 +1,4 @@
+AngularJS
 Apache Nutch
 Apache SolR
 APM
@@ -22,6 +23,7 @@ committente
 criptovaluta
 crossplatform
 CSS
+Cytoscape.js
 Dapp
 dashboard
 database
@@ -72,6 +74,7 @@ Node.js
 NoSQL
 open source
 package
+Plotly.js
 plugin
 PNG
 processo
