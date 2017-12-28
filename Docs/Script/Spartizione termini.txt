@@ -1,0 +1,10 @@
+Scrivete le defizioni dei termini compresi nei due range che vi sono stati assegnati, 
+se vengono inseriti nuovi termini nel vostro range, è vostra responabilità scriverne la definizione
+   Alberto: apache Nutch - change significance
+   Joe: chart.js - dropbox
+   Paolo: D3 - GNu aspell
+   Freppo: Googel cloud platform - mercurial
+   Lisa: minor improvement - react
+   Davide: scss - trace
+   Elia: truffle - wrike
+   
