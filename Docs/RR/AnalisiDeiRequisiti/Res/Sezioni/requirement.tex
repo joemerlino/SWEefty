@@ -1,0 +1,66 @@
+\section{Requisiti}
+\subsection{Requisiti Funzionali}
+\normalsize
+\begin{longtable}{|c|>{\centering}m{7cm}|c|}
+\hline
+\textbf{Id Requisito} & \textbf{Descrizione} & \textbf{Fonte}\\
+\hline
+\endhead
+\hypertarget{R0F1}{R0F1} & Deve essere possibile visualizzare una mappa topologica dell'applicazione monitorata. & Verbale esterno 2017-12-19 \\ \hline 
+\hypertarget{R0F2}{R0F2} & Deve essere possibile visualizzare una lista delle trace dell'applicazione monitorata.
+ & Verbale esterno 2017-12-19 \\ \hline 
+\hypertarget{R0F2.1}{R0F2.1} & Deve essere possibile, per ogni trace, visualizzare la call tree. & Verbale esterno 2017-12-19 \\ \hline 
+\hypertarget{R1F1.1}{R1F1.1} & Deve essere possibile visualizzare il numero di server che compongono un cluster. & Verbale esterno 2017-12-19 \\ \hline 
+\hypertarget{R1F1.2}{R1F1.2} & Ogni tipologia di componente dell'applicazione monitorata deve essere rappresenta graficamente in modo diverso dalle altre. & Verbale esterno 2017-12-19 \\ \hline 
+\hypertarget{R1F1.2.1}{R1F1.2.1} & I server devono essere rappresentati sotto forma di cerchi. & Interno \\ \hline 
+\hypertarget{R1F1.2.2}{R1F1.2.2} & I database devono essere rappresentati sotto forma di cilindri. & Interno \\ \hline 
+\hypertarget{R1F1.3}{R1F1.3} & Deve essere possibile visualizzare i dati riguardanti i tempi di risposta medi fra due componenti dell'applicazione. & Verbale esterno 2017-12-19 \\ \hline 
+\hypertarget{R1F1.7}{R1F1.7} & Ciauzzone. & Interno \\ \hline 
+\hypertarget{R1F2.1.2}{R1F2.1.2} & Per ogni metodo invocato deve essere possibile visualizzarne il total execution time. & Interno \\ \hline 
+\hypertarget{R1F2.1.3}{R1F2.1.3} & Per ogni metodo invocato deve essere possibile visualizzarne il self execution time. & Interno \\ \hline 
+\hypertarget{R1F2.2}{R1F2.2} & Deve essere possibile visualizzare la lista delle sole queries eseguite rispetto ad un insieme di traces. & Verbale esterno 2017-12-19 \\ \hline 
+\hypertarget{R1F2.3}{R1F2.3} & Per ogni trace deve essere possibile visualizzarne il tempo di esecuzione. & Interno \\ \hline 
+\hypertarget{R2F1.2.3}{R2F1.2.3} & Deve essere possibile visualizzare il linguaggio d'implementazione dei server tramite un rettangolo informativo vicino al componente. & Interno \\ \hline 
+\hypertarget{R2F1.2.4}{R2F1.2.4} & I componenti esterni all'applicazione devono essere rappresentati sotto forma di nuvole. & Interno \\ \hline 
+\hypertarget{R2F1.4}{R2F1.4} & Deve essere possibile riposizionare le componenti della mappa. & Verbale esterno 2017-12-19 \\ \hline 
+\hypertarget{R2F1.5}{R2F1.5} & Deve essere possibile riposizionare in modo automatico i componenti all'interno della mappa. & Verbale esterno 2017-12-19 \\ \hline 
+\hypertarget{R2F1.6}{R2F1.6} & Al cambiare il livello di performance dell'applicazione monitorata, il colore degli archi che uniscono due componenti deve variare. & Interno \\ \hline 
+\hypertarget{R2F2.1.1}{R2F2.1.1} & Deve essere possibile visualizzare la lista delle sole queries eseguite rispetto ad una trace. & Interno \\ \hline 
+\caption[Requisiti Funzionali]{Requisiti Funzionali
+\label{tabella:req0}
+\end{longtable}
+\clearpage
+\subsection{Requisiti Di Qualità}
+\normalsize
+\begin{longtable}{|c|>{\centering}m{7cm}|c|}
+\hline
+\textbf{Id Requisito} & \textbf{Descrizione} & \textbf{Fonte}\\
+\hline
+\endhead
+\hypertarget{R0Q1}{R0Q1} & La logica applicativa deve essere indipendente dalla rappresentazione dei dati nel database. & Verbale esterno 2017-12-19 \\ \hline 
+\caption[Requisiti Di Qualità]{Requisiti Di Qualità
+\label{tabella:req1}
+\end{longtable}
+\clearpage
+\subsection{Requisiti Di Vincolo}
+\normalsize
+\begin{longtable}{|c|>{\centering}m{7cm}|c|}
+\hline
+\textbf{Id Requisito} & \textbf{Descrizione} & \textbf{Fonte}\\
+\hline
+\endhead
+\hypertarget{R0V1}{R0V1} & Il codice sorgente prodotto deve essere rilasciato in un repository pubblico con licenza open source che ne permetta l'utilizzo a scopi commerciali. & Capitolato  \\ \hline 
+\hypertarget{R0V2}{R0V2} & Il plugin sviluppato deve poter essere compatibile con Kibana. & Capitolato  \\ \hline 
+\hypertarget{R0V3}{R0V3} & Il plugin deve utilizzare JavaScript. & Capitolato  \\ \hline 
+\hypertarget{R0V4}{R0V4} & **  & Verbale esterno 2017-12-19 \\ \hline 
+\hypertarget{R1V3.1}{R1V3.1} & Il plugin può utilizzare la libreria D3.js. & Capitolato  \\ \hline 
+\hypertarget{R1V3.2}{R1V3.2} & Il plugin può utilizzare la libreria Canvas.js. & Capitolato  \\ \hline 
+\hypertarget{R1V3.3}{R1V3.3} & Il plugin può utilizzare la libreria Chart.js. & Capitolato  \\ \hline 
+\hypertarget{R1V3.4}{R1V3.4} & Il plugin può utilizzare la libreria Plottly.js. & Capitolato  \\ \hline 
+\hypertarget{R1V3.5}{R1V3.5} & Il plugin può utilizzare la libreria Cytoscape.js. & Capitolato  \\ \hline 
+\hypertarget{R1V3.6}{R1V3.6} & Il plugin può utilizzare Node.js. & Interno \\ \hline 
+\hypertarget{R1V3.7}{R1V3.7} & Il plugin può utilizzare il framework AngularJS. & Verbale esterno 2017-12-19 \\ \hline 
+\caption[Requisiti Di Vincolo]{Requisiti Di Vincolo
+\label{tabella:req3}
+\end{longtable}
+\clearpage
