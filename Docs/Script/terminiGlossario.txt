@@ -1,4 +1,4 @@
-AngularJS
+﻿AngularJS
 Apache Nutch
 Apache SolR
 APM
@@ -92,6 +92,7 @@ SonarJS
 SonarQube
 Speech To Text
 SQL
+stack trace
 standup
 stub
 tasks

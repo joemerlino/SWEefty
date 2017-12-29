@@ -1,13 +1,10 @@
 \section{Qualità di processo}
 La capacità di raggiungere gli obiettivi prefissati è fortemente influenzata dalla qualità dei processi che portano al loro raggiungimento. Il gruppo SWEefty utilizzerà la normativa ISO/IEC 15504 (conosciuta anche come SPICE) la quale fornisce un modello per poter giudicare lo stato di maturità di un processo.
 Lo standard prevede sei diversi livelli di maturità di un processo. Di seguito vengono riportati soltanto quelli ritenuti necessari e ragionevoli per le dimensioni del progetto da svolgere.
-\begin{itemize}
-	\item \textbf{Level 0 - Incomplete Process:}
-	il processo non è implementato o non raggiunge  gli  obiettivi  prefissati,  gli  output  del  processo  sono  pochi  o	inesistenti.  
-	Non sono previsti attributi di processo per questo livello. 
+\begin{itemize} 
 	\item \textbf{Level 1 - Performed process:}
 		il  processo  viene  attuato  e  raggiunge  gli
-		obiettivi prefissati, tuttavia non viene scrupolosamente controllato.  Gli
+		obiettivi prefissati ma non viene controllato rigidamente.  Gli
 		attributi di tale processo sono:
 		\begin{itemize}
 			\item \textbf{P.A. 1.1 - Process performance:}
@@ -15,15 +12,15 @@ Lo standard prevede sei diversi livelli di maturità di un processo. Di seguito 
 			obiettivi e produrre output identificabili.
 		\end{itemize}
 	\item \textbf{Level 2 - Managed process:}
-		il processo viene attuato, controllato, tracciato e gli output prodotti raggiungono standard prefissati.  Gli attributi di tale processo sono:
+		il processo è implementato, controllato, tracciato e gli output prodotti sono controllati, manutenuti e raggiungono standard prefissati.  Gli attributi di tale processo sono:
 		\begin{itemize}
 			\item \textbf{P.A. 2.1 - Performance management:}
 				capacità  di  produrre  output che raggiungano gli obiettivi prefissati;
 			\item \textbf{P.A. 2.2 - Work product management:}
-				capacit`a di produrre output controllato e tracciato.
+				capacità di produrre output controllato e tracciato.
 		\end{itemize}
 	\item \textbf{Level 3 - Established process:}
-		il processo viene attuato e controllato seguendo  i  principi  dell’ingegneria  del  software.   Gli  attributi  di  tale processo sono:
+		il processo viene attuato e controllato utilizzando un processo definito in grado di raggiungere gli output previsti. Gli  attributi  di  tale processo sono:
 		\begin{itemize}
 			\item \textbf{P.A. 3.1 - Process definition:}
 			capacità  di  produrre  output  che  si
@@ -33,7 +30,7 @@ Lo standard prevede sei diversi livelli di maturità di un processo. Di seguito 
 			mente utilizzando una quantità di risorse ragionevole.
 		\end{itemize}
 	\item \textbf{Level 4 - Predictable process:}
-		il processo viene attuato con vincoli determinati  e  raggiunge  gli  obiettivi  previsti.   Il  processo  risulta  essere ben collaudato nella pratica.  Gli attributi di tale processo sono:
+		il processo viene attuato con vincoli determinati  e  raggiunge  gli  obiettivi  previsti. Il processo è ben collaudato. Gli attributi di tale processo sono:
 		\begin{itemize}
 			\item \textbf{P.A. 4.1 - Process measurement:}
 			capacità  di  utilizzare  le  misure ottenute durante l’esecuzione del processo per verificare in futuro il raggiungimento degli obiettivi prefissati;
@@ -41,7 +38,7 @@ Lo standard prevede sei diversi livelli di maturità di un processo. Di seguito 
 			capacità  di  modificare  l’esecuzione  del processo in seguito ai dati raccolti.
 		\end{itemize}
 	\item \textbf{Level 5 - Optimizing process:}
-		il  processo  ha  una  certa  consistenza nel raggiungere i propri obiettivi, viene ottimizzato per adempiere al meglio	agli obiettivi correnti e futuri.  
+		il processo raggiunge stabilmente i propri obiettivi ed è continuamente ottimizzato per raggiungere i futuri obiettivi.
 		Gli attributi di tale processo sono:
 		\begin{itemize}
 			\item \textbf{P.A. 5.1 - Process change:}
@@ -50,7 +47,7 @@ Lo standard prevede sei diversi livelli di maturità di un processo. Di seguito 
 			capacità di implementare le modifiche applicate.
 		\end{itemize}
 
-		Per tutti gli attributi di processo, SPICE fornisce un metro di valutazione per misurare il loro raggiungimento:
+		Per gli attributi di processo, SPICE fornisce una scala di valutazione per misurare il loro raggiungimento:
 		\begin{itemize}
 			\item \textbf{N:} non posseduto (0\% - 15\%);
 			\item \textbf{P:} parzialmente posseduto (16\% - 50\%);
@@ -59,18 +56,19 @@ Lo standard prevede sei diversi livelli di maturità di un processo. Di seguito 
 		\end{itemize}
 \end{itemize}
 	SWEefty decide di utilizzare il miglioramento continuo e trova nel ciclo PCDA la migliore tecnica per realizzare tale intento.
-	Grazie al PDCA è possibile controllare costantemente i processi, tale ciclo è composto da:
+	Grazie al PDCA è possibile controllare costantemente i processi, tale ciclo è composto da quattro fasi:
 	\begin{itemize}
-		\item \textbf{Plan:} in questa fase si decidono gli obiettivi e i risultati desiderati;
-		\item \textbf{Do:} si mettono in atto il piano deciso nella fase precedente;	
+		\item \textbf{Plan:} in questa fase si decidono gli obiettivi e i risultati che si vogliono ottenere;
+		\item \textbf{Do:} si mette in atto il piano deciso nella fase precedente;	
 		\item \textbf{Check:} si controllano i risultati ottenuti dalla fase Do con i risultati previsti;
 		\item \textbf{Act:} si individuano le cause che possono aver interferito con il raggiungimento degli obiettivi e si decidono le azioni da intraprendere per migliorare il processo.
 	\end{itemize}
 
 	\subsection{Project Assessment and Control Process}
-		Questo processo ha l'obiettivo di determinare lo stato del lavoro svolto e assicurare che tutte le attività stiano rispettando i piani e i limiti  imposti	\subsubsection{Obiettivi}
+		Questo processo ha lo scopo di determinare lo stato del progetto e di pianificare la sua esecuzione in maniera tale che tutte le attività procedano secondo la pianificazione e rispettino i budget imposti.
+		\subsubsection{Obiettivi}
 			\begin{itemize}
-				\item Ogni elemento del gruppo dovrà svoglere il task(glossario) assegnatogli entro i limiti di tempo stabiliti;
+				\item Ogni elemento del gruppo dovrà svoglere il task assegnatogli entro i limiti di tempo stabiliti;
 				\item Le risorse utilizzate dovranno rispettare i limiti prestabiliti.
 			\end{itemize}
 	\subsubsection{Strategie}
@@ -79,20 +77,20 @@ Lo standard prevede sei diversi livelli di maturità di un processo. Di seguito 
 		\paragraph{Schedule Variance:}
 		fornisce una misura di quanto lo stato del progetto è in ritardo o in anticipo rispetto alla pianificazione delle attività.
 		\begin{itemize}
-			\item  \textbf{Misurazione: } SV =  BCWP - BCWS dove il minuendo indica le attività svolte finora ed il sottraendo le attività che dovrebbero essere svolte finora;
-			\item Valore ottimale: $\geq$ 0;
-			\item Valore accettato: $\geq$ 0.
+			\item  \textbf{Misurazione: }$SV = BCWP - BCWS$ dove il minuendo indica le attività svolte finora ed il sottraendo le attività che dovrebbero essere svolte finora;
+			\item \textbf{Range ottimale: }$\geq$ 0;
+			\item \textbf{Range accettato: }$\geq$ 0.
 		\end{itemize}
 		\paragraph{Cost Variance:}
 		indica se si è speso più o meno di quanto è stato previsto
 		\begin{itemize}
-			\item \textbf{Misurazione: } CV = BCWS - ACWP, il minuendo indica il costo pianificato delle attività svolte ad una certa data ed il sottrando il costo effettivo delle attività svolte a tale data;
-			\item Valore ottimale $\geq$ 0;
-			\item Valore accettato $\geq$ 0.
+			\item \textbf{Misurazione: }$CV = BCWS - ACWP$, il minuendo indica il costo pianificato delle attività svolte ad una certa data ed il sottrando il costo effettivo delle attività svolte a tale data;
+			\item \textbf{Range ottimale: }$\geq$ 0;
+			\item \textbf{Range accettato: }$\geq$ 0.
 		\end{itemize}
 
 	\subsection{Risk Management Process}
-Questo processo ha lo scopo di identificare, analizzare, valutare, gestire e monitorare i rischi durante la durata del processo.
+Questo processo ha lo scopo di identificare, analizzare, valutare, gestire e monitorare i rischi durante la durata del progetto.
 \subsubsection{Obiettivi}
 \begin{itemize}
 	\item Identificare tutti i possibili rischi che posso compromettere l'esito del progetto;
@@ -101,30 +99,53 @@ Questo processo ha lo scopo di identificare, analizzare, valutare, gestire e mon
 \subsubsection{Strategie}
 La metodologia che \textit{SWEefty} seguirà per assicurarsi che gli obiettivi vengano rispettati è riassumibile in cinque punti:
 \begin{itemize}
-	\item \textbf{Identificazione del rischio:} i membri del gruppo individuano tutti i possibili tutti rischi che potenzialmente posso interferire con il progetto ed i suoi output(glossario). Tutti i rischi individuati verranno registrati;
+	\item \textbf{Identificazione del rischio:} i membri del gruppo individuano tutti i possibili rischi che potenzialmente posso interferire con il progetto ed i suoi output. Tutti i rischi individuati verranno registrati;
 
-	\item \textbf{Analisi dei rischi: } per ogni rischio si determina la probabilità di avvenimento e le conseguenze derivate;
+	\item \textbf{Analisi dei rischi:} per ogni rischio si determina la probabilità di avvenimento e le conseguenze derivate;
 
-	\item \textbf{Valutazione del rischio: } ad ogni rischio viene assegnato un indice calcolato in base ai dati ricavati dall'attività precedente. Tale indice rappresenta quanto gravemente un rischio può intaccare gli esiti del progetto;
+	\item \textbf{Valutazione del rischio:} ad ogni rischio viene assegnate una classe calcolata in base ai dati ricavati dall'attività precedente. Tale classe rappresenta quanto gravemente un rischio può intaccare gli esiti del progetto;
 
-	\item \textbf{Trattamento del rischio: } l'indice precedentemente calcolato permette di stilare una classifica di gravità dei rischi. Il Project Manager, a partire dai rischi con indice maggiore, pianifica una strategia finalizzata a minimizzare i rischi o a riportare gli indici a valori accettabili. Completata questa attività il Project Manager avrà elaborato un piano per la mitigazione dei rischi ed il contenimento degli effetti collaterali;
+	\item \textbf{Trattamento del rischio:} la valutazione precedentemente calcolato permette di stilare una classifica di gravità dei rischi. Il \emph{Project Manager}, a partire dai rischi con indice maggiore, pianifica una strategia finalizzata a minimizzare i rischi o a riportarli a valori accettabili. Completata questa attività il \emph{Project Manager} avrà elaborato un piano per la mitigazione dei rischi ed il contenimento degli effetti collaterali;
 
-	\item \textbf{Controllo e revisione dei rischi: } si monitorano e si revisionano i rischi finchè il progetto procede.
+	\item \textbf{Controllo e revisione dei rischi:} si monitorano e si revisionano i rischi finchè il progetto procede.
 
-	\textcolor{red} {TODO: ricordati di parlare della scala di valutazione dei rischi, come dai i voti? Da 1 a 5, 1 a 10? Fai delle ricerche}
 \end{itemize}
+	La scala di valutazione dei rischi è composta da cinque classi: Irrilevante, Tollerabile, Moderato, Effettivo, Intollerabile. Ad un rischio viene assegnata una classe incrociando le conseguenze e la probabilità di avvenimento secondo questa tabella:
+	
+	\begin{table}
+		\center
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			~             & Poco probabile & Probabile   & Molto probabile \\ \hline
+			Poco Dannoso  & Irrilevante    & Tollerabile & Moderato        \\ \hline
+			Dannoso       & Tollerabile    & Moderato    & Effettivo       \\ \hline
+			Molto dannoso & Moderato       & Effettivo   & Intollerabile   \\
+			\hline
+		\end{tabular}
+	\end{table}
+
+	\begin{itemize}
+		\item \textbf{Irrilevante: }Nessuna azione e documentazione è richiesta;
+		
+ 		\item \textbf{Tollerabile:} Non sono richieste ulteriori azioni di controllo. Si possono ricercare miglioramenti che non comportino l'impiego di risorse significative. Il monitoraggio è richiesto per garantire che i controlli siano mantenuti;		
+		\item \textbf{Moderato:} Sforzi devono essere fatti per ridurre il rischio valutando nel contempo i costi della prevenzione. Misure per ridurre il rischio dovrebbero essere effettuate in un tempo determinato. Dove il rischio moderato è associato a conseguenze estremamente dannose, un'ulteriore stima è richiesta per stabilire più precisamente la probabilità di accadimento come base per fissare le necessarie azioni di controllo da intraprendere;
+		
+		\item \textbf{Effettivo:} Il lavoro non dovrebbe essere svolto finché il rischio non è stato ridotto. Devono essere impegnate con urgenza le risorse necessarie al fine di ridurre il rischio;
+		
+		\item \textbf{Intollerabile:} Il lavoro non deve essere svolto finché il rischio non è stato ridotto. Se non è possibile ridurre il rischio anche con l'impiego di risorse elevate, il lavoro deve essere proibito.
+	\end{itemize}
 \subsubsection{Metriche}
 \paragraph{Rischi non individuati:}
 indice del numero di rischi non individuati nella fase di analisi:
 	\begin{itemize}
-		\item Misurazione: SV = BCWP - BCWS, il minuendo indica le attività svolte finora ed il sottraendo le attività che dovrebbero essere state svolte finora;
-		\item Valore ottimale: 0;
-		\item Valore accettato: 0 - 4.
+		\item Misurazione: $SV = BCWP - BCWS$, il minuendo indica le attività svolte finora ed il sottraendo le attività che dovrebbero essere state svolte finora;
+		\item \textbf{Range ottimale: } 0;
+		\item \textbf{Range accettato: } 0 - 4.
 	\end{itemize}
 
 
 \subsection{System Requirements Analysis Process}
-Questo processo ha lo scopo di inviduare i requisiti del sistema.
+Questo processo ha lo scopo di individuare i requisiti del sistema.
 \subsubsection{Obiettivi}
 \begin{itemize}
 	\item Individuare i requisiti di sistema;
