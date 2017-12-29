@@ -12,7 +12,7 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 		\subsubsection{Metriche}
 			\paragraph{Completezza dell'implementazione funzionale:} misura la quantità in percentuale di requisiti funzionali soffisfatti dalla corrente implementazione.
 			\begin{itemize}
-				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Misurazione:}  $BC=1-\frac{N_FM}{N_FI}\times 100$, dove $N_FM$  è il numero di funzionalità mancanti nell'implementazione e $N_FI$ è il numero di funzionalità individuate nell'attività di analisi;
 				\item {\textbf{Range ottimale:} 100;}
 				\item {\textbf{Range accettazione:} 100.}
 			\end{itemize} 
@@ -27,7 +27,7 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 		\subsubsection{Metriche}
 			\paragraph{Densità di failure:} misura la quantità percentuale di test che si sono conclusi con una failure.
 			\begin{itemize}
-				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Misurazione:} $F=\frac{N_FR}{N_TE}\times 100$, dove $N_FR$ è il numero di failure rilevati durante l'attività di testing e $N_TE$ è il numero di test-case eseguiti;
 				\item {\textbf{Range ottimale:} 0;}
 				\item {\textbf{Range accettazione:} 0-10.}
 			\end{itemize} 
@@ -44,13 +44,13 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 		\subsubsection{Metriche}
 			\paragraph{Comprensibilità delle funzionalità offerte:} misura la quantità in percentuale di operazioni comprese dall'utente che non richiedono la consultazione del manuale.
 			\begin{itemize}
-				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Misurazione:} $C=\frac{N_FC}{N_FO}\times 100$, dove $N_FC$ è il numero di funzionalità comprese in modo immediato dall'utente e $N_FO$ è il numero di funzionalità totali offerte dal sistema;
 				\item {\textbf{Range ottimale:} 90-100;}
 				\item {\textbf{Range accettazione:} 70-100.}
 			\end{itemize} 
 			\paragraph{Facilità di apprendimento} misura il tempo medio che occorre ad un utente per imparare ad usare in maniera corretta una certa funzionalità.
 			\begin{itemize}
-				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Misurazione:} indice dei minuti impeigati mediamente da un utente per apprendere una funzionalità offerta dal prodotto;
 				\item {\textbf{Range ottimale:} 0-10;}
 				\item {\textbf{Range accettazione:} 0-20.}
 			\end{itemize} 
@@ -65,7 +65,8 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 		\subsubsection{Metriche}
 			\paragraph{Tempo di risposta:} misura la differenza media di tempo trascorsa dall’esecuzione di una funzionalità e la restituzione dell’eventuale risultato.
 			\begin{itemize}
-				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Misurazione:} 
+				$T_RISP=\frac{\sum{\limits_{i=1}^n T_i }}{n}$, dove $T_i$ è il tempo (in secondi) trascorso dalla richiesta di una funzionalità ed il completamento di questa con un eventuale restituzione del risultato;
 				\item {\textbf{Range ottimale:} 0-3;}
 				\item {\textbf{Range accettazione:} 0-8.}
 			\end{itemize} 
@@ -82,14 +83,14 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 			\paragraph{Capacità di analisi failure}
 			Misura la quantità in percentuale di failures incontrate di cui sono state tracciate le cause.
 			\begin{itemize}
-				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Misurazione:} $I=frac{N_FI}{N_FR}\times 100 $, dove $N_FI$ è il numero di failure delle quali sono state individuate le cause e $N_FR$ è il numero di failures rilevate;
 				\item {\textbf{Range ottimale:} 80-100;}
 				\item {\textbf{Range accettazione:} 60-100.}
 			\end{itemize} 
 			\paragraph{Impatto delle modifiche}
 			Misura la quantità in percentuale di modiche introdotte per risolvere failures che hanno introdotto nuove failures nel prodotto.
 			\begin{itemize}
-				\item {\textbf{Misurazione:} \textcolor{red}{FORMULA}}
+				\item {\textbf{Misurazione:} $I=frac{N_FRE}{N_FR}\times 100 $, dove $N_FRE$ è il numero di failure risolte introducendo nuove failure e $N_FR$ è il numero di failures risolte;
 				\item {\textbf{Range ottimale:} 0-10;}
 				\item {\textbf{Range accettazione:} 0-20.}
 			\end{itemize} 
