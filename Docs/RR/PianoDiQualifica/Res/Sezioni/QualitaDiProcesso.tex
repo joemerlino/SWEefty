@@ -1,5 +1,5 @@
 \section{Qualità di processo}
-La capacità di raggiungere gli obiettivi prefissati è fortemente influenzata dalla qualità dei processi che portano al loro raggiungimento. Il gruppo SWEefty utilizzerà la normativa ISO/IEC 15504 (conosciuta anche come SPICE) la quale fornisce un modello per poter giudicare lo stato di maturità di un processo.
+La capacità di raggiungere gli obiettivi prefissati è fortemente influenzata dalla qualità dei processi che portano al loro raggiungimento. Il gruppo \textit{SWEefty} utilizzerà la normativa ISO/IEC 15504 (conosciuta anche come SPICE) la quale fornisce un modello per poter giudicare lo stato di maturità di un processo.
 Lo standard prevede sei diversi livelli di maturità di un processo. Di seguito vengono riportati soltanto quelli ritenuti necessari e ragionevoli per le dimensioni del progetto da svolgere.
 \begin{itemize} 
 	\item \textbf{Level 1 - Performed process:}
@@ -68,29 +68,29 @@ Lo standard prevede sei diversi livelli di maturità di un processo. Di seguito 
 		Questo processo ha lo scopo di determinare lo stato del progetto e di pianificare la sua esecuzione in maniera tale che tutte le attività procedano secondo la pianificazione e rispettino i budget imposti.
 		\subsubsection{Obiettivi}
 			\begin{itemize}
-				\item Ogni elemento del gruppo dovrà svoglere il task assegnatogli entro i limiti di tempo stabiliti;
+				\item Ogni elemento del gruppo dovrà svolgere il task assegnatogli entro i limiti di tempo stabiliti;
 				\item Le risorse utilizzate dovranno rispettare i limiti prestabiliti.
 			\end{itemize}
 	\subsubsection{Strategie}
-	Il \textit{Project Manager} dovrà mantenere un rapporto di costante dialogo con gli esecutori di task in modo da rilevare prontamente eventuali ritardi e/o eccedenze nell'utilizzo delle risorse in modo da poter risolvere il problema tempestivamente.
+	Il \emph{Project Manager} dovrà mantenere un rapporto di costante dialogo con gli esecutori di task in modo da rilevare prontamente eventuali ritardi e/o eccedenze nell'utilizzo delle risorse in modo da poter risolvere il problema tempestivamente.
 	\subsubsection{Metriche}
-		\paragraph{Schedule Variance:}
-		fornisce una misura di quanto lo stato del progetto è in ritardo o in anticipo rispetto alla pianificazione delle attività.
+		\paragraph{Schedule Variance} \Spazio
+		Fornisce una misura di quanto lo stato del progetto è in ritardo o in anticipo rispetto alla pianificazione delle attività.
 		\begin{itemize}
 			\item  \textbf{Misurazione: }$SV = BCWP - BCWS$ dove il minuendo indica le attività svolte finora ed il sottraendo le attività che dovrebbero essere svolte finora;
 			\item \textbf{Range ottimale: }$\geq$ 0;
 			\item \textbf{Range accettato: }$\geq$ 0.
 		\end{itemize}
-		\paragraph{Cost Variance:}
-		indica se si è speso più o meno di quanto è stato previsto
+		\paragraph{Cost Variance} \Spazio
+		Indica se si è speso più o meno di quanto è stato previsto.
 		\begin{itemize}
-			\item \textbf{Misurazione: }$CV = BCWS - ACWP$, il minuendo indica il costo pianificato delle attività svolte ad una certa data ed il sottrando il costo effettivo delle attività svolte a tale data;
+			\item \textbf{Misurazione: }$CV = BCWS - ACWP$, il minuendo indica il costo pianificato delle attività svolte ad una certa data ed il sottraendo il costo effettivo delle attività svolte a tale data;
 			\item \textbf{Range ottimale: }$\geq$ 0;
 			\item \textbf{Range accettato: }$\geq$ 0.
 		\end{itemize}
 
 	\subsection{Risk Management Process}
-Questo processo ha lo scopo di identificare, analizzare, valutare, gestire e monitorare i rischi durante la durata del progetto.
+Questo processo ha lo scopo di identificare, analizzare, valutare, gestire e monitorare i rischi per tutta la durata del progetto.
 \subsubsection{Obiettivi}
 \begin{itemize}
 	\item Identificare tutti i possibili rischi che posso compromettere l'esito del progetto;
@@ -105,7 +105,7 @@ La metodologia che \textit{SWEefty} seguirà per assicurarsi che gli obiettivi v
 
 	\item \textbf{Valutazione del rischio:} ad ogni rischio viene assegnate una classe calcolata in base ai dati ricavati dall'attività precedente. Tale classe rappresenta quanto gravemente un rischio può intaccare gli esiti del progetto;
 
-	\item \textbf{Trattamento del rischio:} la valutazione precedentemente calcolato permette di stilare una classifica di gravità dei rischi. Il \emph{Project Manager}, a partire dai rischi con indice maggiore, pianifica una strategia finalizzata a minimizzare i rischi o a riportarli a valori accettabili. Completata questa attività il \emph{Project Manager} avrà elaborato un piano per la mitigazione dei rischi ed il contenimento degli effetti collaterali;
+	\item \textbf{Trattamento del rischio:} le valutazioni precedentemente calcolate permettono di stilare una classifica di gravità dei rischi. Il \emph{Project Manager}, a partire dai rischi con gravità maggiore, pianifica una strategia finalizzata a minimizzare i rischi o a riportarli a valori accettabili. Completata questa attività il \emph{Project Manager} avrà elaborato un piano per la mitigazione dei rischi ed il contenimento degli effetti collaterali;
 
 	\item \textbf{Controllo e revisione dei rischi:} si monitorano e si revisionano i rischi finchè il progetto procede.
 
@@ -125,22 +125,22 @@ La metodologia che \textit{SWEefty} seguirà per assicurarsi che gli obiettivi v
 	\end{table}
 
 	\begin{itemize}
-		\item \textbf{Irrilevante: }Nessuna azione e documentazione è richiesta;
+		\item \textbf{Irrilevante: }nessuna azione e documentazione è richiesta;
 		
- 		\item \textbf{Tollerabile:} Non sono richieste ulteriori azioni di controllo. Si possono ricercare miglioramenti che non comportino l'impiego di risorse significative. Il monitoraggio è richiesto per garantire che i controlli siano mantenuti;		
-		\item \textbf{Moderato:} Sforzi devono essere fatti per ridurre il rischio valutando nel contempo i costi della prevenzione. Misure per ridurre il rischio dovrebbero essere effettuate in un tempo determinato. Dove il rischio moderato è associato a conseguenze estremamente dannose, un'ulteriore stima è richiesta per stabilire più precisamente la probabilità di accadimento come base per fissare le necessarie azioni di controllo da intraprendere;
+ 		\item \textbf{Tollerabile:} non sono richieste ulteriori azioni di controllo. Si possono ricercare miglioramenti che non comportino l'impiego di risorse significative. Il monitoraggio è richiesto per garantire che i controlli siano mantenuti;		
+		\item \textbf{Moderato:} sforzi devono essere fatti per ridurre il rischio valutando nel contempo i costi della prevenzione. Misure per ridurre il rischio dovrebbero essere effettuate in un tempo determinato. Dove il rischio moderato è associato a conseguenze estremamente dannose, un'ulteriore stima è richiesta per stabilire più precisamente la probabilità di accadimento come base per fissare le necessarie azioni di controllo da intraprendere;
 		
-		\item \textbf{Effettivo:} Il lavoro non dovrebbe essere svolto finché il rischio non è stato ridotto. Devono essere impegnate con urgenza le risorse necessarie al fine di ridurre il rischio;
+		\item \textbf{Effettivo:} il lavoro non dovrebbe essere svolto finché il rischio non è stato ridotto. Devono essere impegnate con urgenza le risorse necessarie al fine di ridurre il rischio;
 		
-		\item \textbf{Intollerabile:} Il lavoro non deve essere svolto finché il rischio non è stato ridotto. Se non è possibile ridurre il rischio anche con l'impiego di risorse elevate, il lavoro deve essere proibito.
+		\item \textbf{Intollerabile:} il lavoro non deve essere svolto finché il rischio non è stato ridotto. Se non è possibile ridurre il rischio anche con l'impiego di risorse elevate, il lavoro deve essere proibito.
 	\end{itemize}
 \subsubsection{Metriche}
-\paragraph{Rischi non individuati:}
-indice del numero di rischi non individuati nella fase di analisi:
+\paragraph{Rischi non individuati} \Spazio
+Indice del numero di rischi non individuati nella fase di analisi:
 	\begin{itemize}
-		\item Misurazione: $SV = BCWP - BCWS$, il minuendo indica le attività svolte finora ed il sottraendo le attività che dovrebbero essere state svolte finora;
-		\item \textbf{Range ottimale: } 0;
-		\item \textbf{Range accettato: } 0 - 4.
+		\item \textbf{Misurazione: }$SV = BCWP - BCWS$, il minuendo indica le attività svolte finora ed il sottraendo le attività che dovrebbero essere state svolte finora;
+		\item \textbf{Range ottimale: }0;
+		\item \textbf{Range accettato: }0 - 4.
 	\end{itemize}
 
 
@@ -156,15 +156,16 @@ Questo processo ha lo scopo di individuare i requisiti del sistema.
 \subsubsection{Strategie}
 I requisiti vengono tracciati utilizzando SWEgo.
 \subsubsection{Metriche}
-\paragraph{Requisiti obbligatori soffisfatti}
+\paragraph{Requisiti obbligatori soddisfatti} \Spazio
+Indica quanti requisiti obbligatori sono stati soddisfatti.
 \begin{itemize}
-	\item \textbf{Misurazione:} $P=100\times\frac{N_S}{N_O}$ dove $N_S$ sono i requisiti soddisfatti, $N_O$ sono i requisiti obbligatori mentre $P$ è la percentuale dei requisiti obbligatori soddisfatti;
+	 \item \textbf{Misurazione:} $P=100\times\frac{N_S}{N_O}$ dove $N_S$ sono i requisiti soddisfatti, $N_O$ sono i requisiti obbligatori mentre $P$ è la percentuale dei requisiti obbligatori soddisfatti;
 	\item \textbf{Range ottimale:} 100\%;
 	\item \textbf{Range accettato:} 100\%.
 \end{itemize}
 
 \subsection{System Architectural Design Process}
-\textcolor{red} { [paolo]niente "introduzione" qui? in 2.1 e 2.2 c'era. in 2.3 la ho aggiunta io. Però sarebbe da decidere se metetrla in tutte oppure no }
+\textcolor{red} { [paolo]niente "introduzione" qui? in 2.1 e 2.2 c'era. in 2.3 la ho aggiunta io. Però sarebbe da decidere se metterla in tutte oppure no }
 		\subsubsection{Obiettivi}
 		\begin{itemize}
 			\item Associare ai requisiti una o più componenti del sistema;
@@ -175,13 +176,13 @@ I requisiti vengono tracciati utilizzando SWEgo.
 		\subsubsection{Strategie}
 		\textcolor{red} {TODO: che strategia usiamo qui? [paolo] sonarqube non calcolaa in fan-in e fanout?}
 		\subsubsection{Metriche}
-			\paragraph{Structural Fan-In - SFIN} 
+			\paragraph{Structural Fan-In - SFIN} \Spazio
 			Indice di utilità da massimizzare, misura il numero di componenti che utilizzano un dato modulo, un valore alto denota un alto riutilizzo del codice.
 			\begin{itemize}
 				\item \textbf{Range ottimale:} $\geq 2$;
 				\item \textbf{Range accettato:} $\geq 0$.
 			\end{itemize}
-			\paragraph{Structural Fan-Out - SFOUT}
+			\paragraph{Structural Fan-Out - SFOUT} \Spazio
 			Indice di dipendenza da minimizzare, misura quante componenti vengono utilizzate dalla componente in esame, un valore alto denota un alto accoppiamento
 			\begin{itemize}
 				\item \textbf{Range ottimale:} 0-1;
@@ -198,13 +199,13 @@ I requisiti vengono tracciati utilizzando SWEgo.
 		\subsubsection{Strategie}
 		Le componenti individuate durante l'analisi verranno suddivise in piccole unità codificabili e testabili.
 		\subsubsection{Metriche}
-			\paragraph{Metodi per classe}
+			\paragraph{Metodi per classe} \Spazio
 			Indica il numero di metodi definiti in una classe.
 			\begin{itemize}
 				\item \textbf{Range ottimale:} 1-7; 
 				\item \textbf{Range accettato:} 1-10.
 			\end{itemize}
-			\paragraph{Parametri per metodo}
+			\paragraph{Parametri per metodo} \Spazio
 			Indica il numero di parametri passati ad un metodo.
 			\begin{itemize}
 				\item \textbf{Range ottimale:} 0-4;
@@ -222,42 +223,42 @@ I requisiti vengono tracciati utilizzando SWEgo.
 		\subsubsection{Strategie}
 		Mantenere una bassa complessità del codice durante la stesura ed implementare al più presto dei test che ne verifichino il corretto funzionamento.
 		\subsubsection{Metriche}
-			\paragraph{Complessità ciclomatica}
+			\paragraph{Complessità ciclomatica} \Spazio
 			Metrica software utilizzata per misurare la complessità di un programma,misura il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso.
 			\begin{itemize}
 				\item \textbf{Range ottimale:} 1-10;
 				\item \textbf{Range accettato:} 1-15.
 			\end{itemize}
-			\paragraph{Linee di codice per linee di commento}
+			\paragraph{Linee di codice per linee di commento} \Spazio
 			Misura la percentuale di linee di commento presenti all'interno del codice di un programma.
 			\begin{itemize}
 				\item \textbf{Misurazione:} $P=100\times\frac{N_C}{N_{SLOC}}$ dove $N_C$ è il numero di linee di commento e $N_{SLOC}$ è il numero di linee di codice prodotte;
 				\item \textbf{Range ottimale:} $\geq30$;
 				\item \textbf{Range accettato:} $\geq25$.
 			\end{itemize}
-			\paragraph{Halstead Difficulty per-function}
+			\paragraph{Halstead Difficulty per-function} \Spazio
 			Misura la complessità di una funzione.
 			\begin{itemize}
 				\item \textbf{Misurazione:} $D=\frac{N_{UOP}}{2}\times\frac{N_{OD}}{N_{UOD}}$ dove $N_{UOP}$ e i l numero di operatori distinti, $N_{OD}$ è il numero totale di operandi mentre $N_{UOD}$ è il numero di operandi distinti;
 				\item \textbf{Range ottimale:} 0-15;
 				\item \textbf{Range accettato:} 0-25.
 			\end{itemize}
-			\paragraph{Halstead Volume per-function}
+			\paragraph{Halstead Volume per-function} \Spazio
 			Misura la dimensione dell'implementazione di un algoritmo basandosi sul numero di operazioni eseguite e sugli operandi di una funzione.
 			\begin{itemize}
-				\item \textbf{Misurazione:} $V=(N_{OP} + N_{OD})\times log_2(N_{UOP} + N_{UOD})$  dove $N_{OP}$ è il numero totale di operatori, $N_{OD}$ `e il numero totale di operandi, $N_{UOP}$ è
+				\item \textbf{Misurazione:} $V=(N_{OP} + N_{OD})\times log_2(N_{UOP} + N_{UOD})$  dove $N_{OP}$ è il numero totale di operatori, $N_{OD}$ è il numero totale di operandi, $N_{UOP}$ è
 				il numero di operatori distinti e $N_{UOD}$ è il numero di operandi distinti;
 			\item \textbf{Range ottimale:} 20-1000;
 			\item \textbf{Range accettato:} 20-1500.
 			\end{itemize}
-			\paragraph{Halstead Effort per-function}
-			rappresenta il costo necessario a scrivere il codice di una funzione.
+			\paragraph{Halstead Effort per-function} \Spazio
+			Rappresenta il costo necessario a scrivere il codice di una funzione.
 			\begin{itemize}
 				\item \textbf{Misurazione:} $E=D\times V$ dove $D$ è l'Halstead Difficulty e $V$ è l' Halstead Volume per-function;
 				\item \textbf{Range ottimale:} 0-300;
 				\item \textbf{Range accettato:} 0-400.
 			\end{itemize}
-			\paragraph{Indice di manutenibilità} 
+			\paragraph{Indice di manutenibilità}  \Spazio
 			Questo indice da una misura di quanto il codice prodotto è manutenibile.
 			\begin{itemize}
 				\item \textbf{Misurazione}:$MI=171-3.42\times ln(E)-0.23\times ln(C)-16.2\times ln(LOC)$ dove $E$  l'Halstead Effort medio per modulo, $C$ è la complessità ciclomatica media per modulo mentre LOC è il numero medio di linee di codice per modulo;
@@ -275,7 +276,7 @@ I requisiti vengono tracciati utilizzando SWEgo.
 		\subsubsection{Strategie}
 		Mantenere un diario delle modifiche e la versione del documento, inoltre per semplificare la comprensione dei documenti viene fornito un glossario che spiega il significato dei termini tecnici. 
 		\subsubsection{Metriche}
-			\paragraph{Indice Gulpease}
+			\paragraph{Indice Gulpease} \Spazio
 			L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana, per il suo calcolo vengono considerate due variabili linguistiche: la lunghezza delle parole e la lunghezza delle frasi rispetto al numero delle lettere.
 			\begin{itemize}
 				\item \textbf{Misurazione:} $G=89+\frac{300\times N_F-10\times N_L}{N_P}$ dove $N_F$ è il numero delle frasi, $N_L$ è il numero di lettere e $N_P$ è il numero di parole nel testo;
@@ -293,18 +294,18 @@ I requisiti vengono tracciati utilizzando SWEgo.
 		\end{itemize}
 		\subsubsection{Strategie}
 		Stilare una checklist per poi effettuare inspection su documenti e codice.
-		\subsubsection{Metriche}
-			\paragraph{Branch Coverage} 
+		\subsubsection{}
+			\paragraph{Branch Coverage}  \Spazio
 			Misura della percentuale di rami decisionali percorsi dai test dinamici.
 			\begin{itemize}
 				\item \textbf{Misurazione:} $BC=\frac{R_P}{R_T}\times 100$ dove $R_P$ è il numero di rami decisionali percorsi dai test mentre $R_T$ è il numeri di rami decisionali totali presenti nel software;
 				\item \textbf{Range ottimale:} 70\%-100\%;
 				\item \textbf{Range accettato:} 50\%-100\%.
 		    \end{itemize}
-			\paragraph{Statement Coverage}
+			\paragraph{Statement Coverage} \Spazio
 			Misura la percentuale linee di codice eseguite almeno una volta dai test dinamici.
 				\begin{itemize}
-					\item \textbf{Misurazione:} $SC=\frac{L_E}{L_T}\times 100$ dove $L_E$ è il numero di linee di codice eseguite almeno una volta dai test mentre $L_T$ è il numero di linee di codice totali all'interno del software.
+					\item \textbf{Misurazione:} $SC=\frac{L_E}{L_T}\times 100$ dove $L_E$ è il numero di linee di codice eseguite almeno una volta dai test mentre $L_T$ è il numero di linee di codice totali all'interno del software;
 					\item \textbf{Range ottimale:} 70\%-100\%;
 					\item \textbf{Range accettato:} 50\%-100\%.
 		    	\end{itemize}

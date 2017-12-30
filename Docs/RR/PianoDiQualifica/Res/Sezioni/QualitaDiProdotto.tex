@@ -1,17 +1,17 @@
 \section{Qualità di Prodotto}
-Per quantificare e valutare la qualità del prodotto software che il gruppo \textit{SWEefty} ha deciso di attenersi allo standard $ISO/IEC\text{ }25010_G$, conosciuto anche come SQuaRE, che individua e definisce otto caratteristiche da considerare per costruire un prodotto software con un elevato livello di qualità. Ognuna di queste caratteristiche viene suddivisa in varie sottocaratteristiche(31 in totale), le quali, attraverso dei parametri misurabili  permettono una valutazione oggettiva del grado di conseguimento della caratteristica considerata.
+Per quantificare e valutare la qualità del prodotto software che il gruppo \textit{SWEefty} ha deciso di attenersi allo standard ISO/IEC 25010, conosciuto anche come SQuaRE, che individua e definisce otto caratteristiche da considerare per costruire un prodotto software con un elevato livello di qualità. Ognuna di queste caratteristiche viene suddivisa in varie sottocaratteristiche(31 in totale), le quali, attraverso dei parametri misurabili  permettono una valutazione oggettiva del grado di conseguimento della caratteristica considerata.
 \textcolor{red}{PORTABILITY E COMPATIBILITY}
  
 	\subsection{Functional Suitability}
-	Con functional suitability si intende il livello di soffisfacimento dei bisogni espliciti o impliciti, raggiunto dal prodotto attraverso le sue funzionalità quando utilizzato sotto determinate condizioni.
+	Con functional suitability si intende il livello di soddisfacimento dei bisogni espliciti o impliciti, raggiunto dal prodotto attraverso le sue funzionalità quando utilizzato sotto determinate condizioni.
 		\subsubsection{Obiettivi}
 			\begin{itemize}
-				\item {\textbf{Functional completeness:} livello fino al quale l'insieme di funzioni copre tutti i compiti specificati e gli obbietivi dell'utente.}
+				\item {\textbf{Functional completeness:} livello fino al quale l'insieme di funzioni copre tutti i compiti specificati e gli obiettivi dell'utente;}
 				\item {\textbf{Functional correctness:} livello fino al quale un prodotto fornisce risultati corretti con il livello di precisione richiesto.}
 			\end{itemize}
 		\subsubsection{Metriche}
 			\paragraph{Completezza dell'implementazione funzionale}\Spazio
-			 Misura la quantità in percentuale di requisiti funzionali soffisfatti dalla corrente implementazione.
+			 Misura la quantità in percentuale di requisiti funzionali soddisfatti dalla corrente implementazione.
 			\begin{itemize}
 				\item {\textbf{Misurazione:}  $BC=1-\frac{N_FM}{N_FI}\times 100$, dove $N_FM$  è il numero di funzionalità mancanti nell'implementazione e $N_FI$ è il numero di funzionalità individuate nell'attività di analisi};
 				\item {\textbf{Range ottimale:} 100;}
@@ -22,8 +22,8 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 		Con reliability si intende il livello di performance mantenuto da specifiche funzioni di un prodotto in specifiche condizione per uno specifico periodo di tempo.
 		\subsubsection{Obiettivi}
 		\begin{itemize}
-			\item {\textbf{Maturity:} livello fino al quale un prodotto garantisce Reliability durante un utilizzo normale.}
-			\item {\textbf{Fault Tolerance:} livello fino al quale un prodotto riesce ad operare come previsto in presenza di $fault_G$ di natura hardware o software.}
+			\item {\textbf{Maturity:} livello fino al quale un prodotto garantisce Reliability durante un utilizzo normale;}
+			\item {\textbf{Fault Tolerance:} livello fino al quale un prodotto riesce ad operare come previsto in presenza di fault di natura hardware o software.}
 		\end{itemize}
 		\subsubsection{Metriche}
 			\paragraph{Densità di failure} \Spazio
@@ -35,7 +35,7 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 			\end{itemize} 
 			
 	\subsection{Usability}
-		Con usability si intende il livello a cui il prodotto può essere utilizzato da degli utenti specifici per raggiungere specifici obbiettivi con efficacia, efficienza e soddisfazione in uno specifico contesto d'uso.  
+		Con usability si intende il livello a cui il dotto può essere utilizzato da degli utenti specifici per raggiungere specifici obbiettivi con efficacia, efficienza e soddisfazione in uno specifico contesto d'uso.  
 		\subsubsection{Obiettivi}
 		\begin{itemize}
 			\item {\textbf{Appropriateness Recognizability:} livello a cui gli utenti riescono a riconoscere se il prodotto è adeguato per i loro bisogni;}
@@ -54,7 +54,7 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 			\paragraph{Facilità di apprendimento} \Spazio 
 			Misura il tempo medio che occorre ad un utente per imparare ad usare in maniera corretta una certa funzionalità.
 			\begin{itemize}
-				\item {\textbf{Misurazione:} indice dei minuti impeigati mediamente da un utente per apprendere una funzionalità offerta dal prodotto};
+				\item {\textbf{Misurazione:} indice dei minuti impiegati mediamente da un utente per apprendere una funzionalità offerta dal prodotto};
 				\item {\textbf{Range ottimale:} 0-10;}
 				\item {\textbf{Range accettazione:} 0-20.}
 			\end{itemize} 
@@ -77,11 +77,11 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 			\end{itemize} 
 			
 	\subsection{Maintainability}
-		Con maintainability si intende il livello di efficacia e di effcienza con cui un prodotto può essere modificato dai manutentori incaricati.
+		Con maintainability si intende il livello di efficacia e di efficienza con cui un prodotto può essere modificato dai manutentori incaricati.
 		\subsubsection{Obiettivi}
 		\begin{itemize}
 			\item {\textbf{Analysability:} livello di efficacia ed efficienza con cui è possibile quantificare l'impatto di modifiche intenzionali. È anche la capacità di diagnosticare mancanze e cause di failures all'interno del prodotto; }
-			\item{\textbf{Modifiability:} livello di efficacia ed efficienza con cui un prodotto può essere modificato senza introdurre difetti e degrafare le qualità del prodotto già presenti;}
+			\item{\textbf{Modifiability:} livello di efficacia ed efficienza con cui un prodotto può essere modificato senza introdurre difetti e degradare le qualità del prodotto già presenti;}
 			\item{\textbf{Testability:} livello di efficacia ed efficienza con cui si possono essere creati dei test per valutare il prodotto.}
 		\end{itemize}
 		\subsubsection{Metriche}
