@@ -1,0 +1,74 @@
+\subsection{Caso d'uso UC1: Visualizzazione mappa topologica}
+\begin{itemize}
+\item \textbf{Attori}: Utente
+\item \textbf{Descrizione}: L'attore intende visualizzare la mappa topologica dell'applicazione monitorata.
+\item \textbf{Precondizione}: Kibana deve avere una dashboard che contenga il plugin della mappa.
+\item \textbf{Flusso principale degli eventi}: L'utente richiede di visualizzare la mappa dell'applicazione monitorata 
+Il plugin carica ed elabora i dati relativi all'applicazione monitorata
+Il plugin mostra la mappa topologica dell'applicazione monitorata
+\item \textbf{Postcondizione}: Viene mostrata la mappa topologica associata all'applicazione monitorata.
+\end{itemize}
+\subsection{Caso d'uso UC2: Visualizzazione stack trace}
+\begin{itemize}
+\item \textbf{Attori}: Utente
+\item \textbf{Descrizione}: L'utente intende visualizzare la lista delle trace dell'applicazione monitorata. 
+\item \textbf{Precondizione}: Kibana deve avere una dashboard che contenga il plugin della stack trace.
+\item \textbf{Flusso principale degli eventi}: L'utente richiede a Kibana di visualizzare la lista delle trace dell'applicazione monitorata
+Il plugin carica ed elabora i dati relativi alle traces
+Il plugin mostra all'utente la lista delle traces
+\item \textbf{Postcondizione}: Viene mostrato l'elenco delle traces.
+\end{itemize}
+\subsection{Caso d'uso UC3: Call tree}
+\begin{itemize}
+\item \textbf{Attori}: Utente
+\item \textbf{Descrizione}: L'attore intende visualizzare il call tree di una trace.
+\item \textbf{Precondizione}: Deve essere stato caricato da Kibana il plugin della lista delle traces.
+\item \textbf{Flusso principale degli eventi}: L'attore seleziona una trace dalla lista di quelle disponibili nella lista delle traces
+Viene visualizzata la call tree della trace
+\item \textbf{Postcondizione}: Viene visualizzato il call tree della trace.
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Visualizzazione stack trace (UC2)
+\end{itemize}
+\end{itemize}
+\subsection{Caso d'uso UC4: Queries di tutte le traces}
+\begin{itemize}
+\item \textbf{Attori}: Utente
+\item \textbf{Descrizione}: L'attore intende visualizzare la lista delle queries eseguite dall'applicazione monitorata ai databases.
+\item \textbf{Precondizione}: Deve essere stato caricato da Kibana il plugin della lista delle traces.
+\item \textbf{Flusso principale degli eventi}: L'attore richiede di visualizzare la lista delle queries eseguite dall'applicazione monitorata
+Vengono visualizzate tutte le queries eseguite
+\item \textbf{Scenari alternativi}: Se non sono presenti queries viene visualizzato un messaggio che informi l'attore del fatto che non sono presenti queries.
+\item \textbf{Postcondizione}: Viene visualizzata la lista delle queries eseguite dalle traces ai databases.
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Visualizzazione stack trace (UC2)
+\end{itemize}
+\end{itemize}
+\subsection{Caso d'uso UC5: Queries singolo call tree}
+\begin{itemize}
+\item \textbf{Attori}: Utente
+\item \textbf{Descrizione}: L'attore intende visualizzare le queries eseguite in un call tree.
+\item \textbf{Precondizione}: Deve essere stato caricato da Kibana il call tree di una trace.
+\item \textbf{Flusso principale degli eventi}: L'attore richiede di visualizzare la lista delle queries eseguire all'interno di un call tree
+La lista delle queries ai databases eseguiti dal call tree viene visualizzato
+\item \textbf{Scenari alternativi}: Se non sono presenti queries viene visualizzato un messaggio che informi l'attore del fatto che non sono presenti queries.
+\item \textbf{Postcondizione}: Viene visualizzato l'elenco delle queries eseguite all'interno di un call tree.
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Call tree (UC3)
+\end{itemize}
+\end{itemize}
+\subsection{Caso d'uso UC6: Riposizionamento componente}
+\begin{itemize}
+\item \textbf{Attori}: Utente
+\item \textbf{Descrizione}: L'attore intende spostare un componente all'interno della mappa topologica dell'applicazione monitorata.
+\item \textbf{Precondizione}: Deve essere stato caricato da Kibana il plugin della mappa topologica dell'applicazione.
+\item \textbf{Flusso principale degli eventi}: L'attore trascina un componente della mappa topologica con il puntatore
+Il componente trascinato viene riposizionato
+\item \textbf{Postcondizione}: Il componente trascinato viene riposizionato
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Visualizzazione mappa topologica (UC1)
+\end{itemize}
+\end{itemize}
