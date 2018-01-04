@@ -1,4 +1,4 @@
-AngularJS
+﻿AngularJS
 Apache Nutch
 Apache SolR
 APM
@@ -99,6 +99,7 @@ stub
 tasks
 Telegram
 TexStudio
+Ticket
 TomCat
 tool
 trace

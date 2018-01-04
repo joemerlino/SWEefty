@@ -1,1 +1,107 @@
 \section{Analisi dei Rischi}
+I rischi rappresentano una minaccia in grado di interferire con lo svolgimento del progetto, è fondamentale quindi avere un sistema per la gestione e la mitigazione degli stessi.
+La metodologia che \textit{SWEefty} seguirà per assicurarsi che i rischi vengano trattati nel migliore dei modi è riassumibile in cinque punti:
+\begin{itemize}
+	\item \textbf{Identificazione del rischio:} i membri del gruppo individuano tutti i possibili rischi che potenzialmente posso interferire con il progetto ed i suoi output. Tutti i rischi individuati verranno registrati;
+	
+	\item \textbf{Analisi dei rischi:} per ogni rischio si determina la probabilità di avvenimento e le conseguenze derivate;
+	
+	\item \textbf{Valutazione del rischio:} ad ogni rischio viene assegnate una classe calcolata in base ai dati ricavati dall'attività precedente. Tale classe rappresenta quanto gravemente un rischio può intaccare gli esiti del progetto;
+	
+	\item \textbf{Trattamento del rischio:} le valutazioni precedentemente calcolate permettono di stilare una classifica di gravità dei rischi. Il \emph{Project Manager}, a partire dai rischi con gravità maggiore, pianifica una strategia finalizzata a minimizzare i rischi o a riportarli a valori accettabili. Completata questa attività il \emph{Project Manager} avrà elaborato un piano per la mitigazione dei rischi ed il contenimento degli effetti collaterali;
+	
+	\item \textbf{Controllo e revisione dei rischi:} si monitorano e si revisionano i rischi finchè il progetto procede.
+\end{itemize}
+
+Ogni rischio verrà identificato con:
+\begin{itemize}
+	\item id;
+	\item nome;
+	\item descrizione;
+	\item probabilità di occorrenza;
+	\item gravità;
+	\item classe di gravità;
+	\item strategia di rilevazione;
+	\item contromisure.
+\end{itemize}
+
+Inoltre i rischi vengono classificati in cinque tipologie:
+\begin{itemize}
+	\item \textbf{T:} tecnologici;
+	\item \textbf{P:} personali;
+	\item \textbf{S:} strumentali;
+	\item \textbf{O:} organizzativi;
+	\item \textbf{R:} requisiti.
+\end{itemize}
+
+Nel documento \emph{Norme di Progetto v.1.0.0} è spiegata la nomenclatura utilizzata per identificare i rischi.
+
+\subsection{Classi di gravità}
+Al fine di fornire uno strumento per la valutazione dei rischi che sia immediato e riassuntivo della gravità del rischio SWEefty ha elaborato una scala di valutazione dei rischi composta da cinque classi: Irrilevante, Tollerabile, Moderato, Effettivo, Intollerabile. Ad un rischio viene assegnata una classe incrociando le conseguenze e la probabilità di avvenimento secondo questa tabella:
+\begin{table}
+	\center
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		~             & Poco probabile & Probabile   & Molto probabile \\ \hline
+		Poco Dannoso  & Irrilevante    & Tollerabile & Moderato        \\ \hline
+		Dannoso       & Tollerabile    & Moderato    & Effettivo       \\ \hline
+		Molto dannoso & Moderato       & Effettivo   & Intollerabile   \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{itemize}
+	\item \textbf{Irrilevante: }nessuna azione e documentazione è richiesta;
+	
+	\item \textbf{Tollerabile:} non sono richieste ulteriori azioni di controllo. Si possono ricercare miglioramenti che non comportino l'impiego di risorse significative. Il monitoraggio è richiesto per garantire che i controlli siano mantenuti;		
+	\item \textbf{Moderato:} sforzi devono essere fatti per ridurre il rischio valutando nel contempo i costi della prevenzione. Misure per ridurre il rischio dovrebbero essere effettuate in un tempo determinato. Dove il rischio moderato è associato a conseguenze estremamente dannose, un'ulteriore stima è richiesta per stabilire più precisamente la probabilità di accadimento come base per fissare le necessarie azioni di controllo da intraprendere;
+	
+	\item \textbf{Effettivo:} il lavoro non dovrebbe essere svolto finché il rischio non è stato ridotto. Devono essere impegnate con urgenza le risorse necessarie al fine di ridurre il rischio;
+	
+	\item \textbf{Intollerabile:} il lavoro non deve essere svolto finché il rischio non è stato ridotto. Se non è possibile ridurre il rischio anche con l'impiego di risorse elevate, il lavoro deve essere proibito.
+\end{itemize}
+
+
+
+\subsection{Descrizione dei rischi}
+
+\begin{table}
+	\centering
+	\begin{tabular}{p{0.044\columnwidth}p{0.123\columnwidth}p{0.627\columnwidth}p{0.054\columnwidth}p{0.046\columnwidth}p{0.056\columnwidth}} \toprule
+		Codice & Nome  & Descrizione  & Probabilità\\ & Gravità & Classe         \\
+		RT1    & Inseperiezna tecnologica\\                   & Le tecnologie adottate sono sconosciute alla maggior parte del gruppo, ciò potrebbe interferire con lo svolgimento delle attività\\                                                                                                                             & Alta          & Alta    & Intollerabile  \\
+		RT2    & Probilematiche hardware\\                    & I computer utilizzati dai membri del gruppo potrebbero guarstarsi o subire dei malfunzionamente impedendo di proseguire con il progetto\\                                                                                                                       & Bassa         & Media   & Tollerabile    \\
+		RT3    & Problematiche software\\                     & Il gurppo farà affidamento di software di terze parti e piattaforme online. Eventuali malfunzionamenti potrebbero causare gravi perdite di dati.\\                                                                                                              & Bassa         & Alta    & Moderato       \\
+		RP1    & Problematiche fra i~ componenti\\            & Nessun componente del gruppo ha mai lavorato in un gruppo così grande, questo potrebbe causare l'insorgere di incomprensioni trai i membri ed eventuali ritardi\\                                                                                               & Bassa         & Alta    & Moderato\\     \\
+		RP2    & Problematiche personali dei componenti\\     & Ogni membro del gruppo ha impengni personali legati alla propria sfera privata. Inoltre vi è uno studente lavoratore. Ciò potrebbe risultare in indisponibilità in determinati momenti\\                                                                        & Media         & Media\\ & Moderato       \\
+		RO1    & Costi delle attività\\                       & Essendo tutti alle prime armi, alcune valutazione dei costi per le attività potrebbero essere errati\\                                                                                                                                                          & Media         & Alta    & Effettivo      \\
+		RS1    & Inesperienza del team\\                      & Alcune conoscenze richieste potrebbero richiedere molto~ tempo per essere assunte. Inoltre per ogni membro è la prima esperienza con questo metoodo di lavoro. Sono richieste capacità di pianificazione, progettazione ed analisi che il gruppo non possiede\\ & Media         & Alta\\  & Effettivo      \\
+		RR1    & Comprensione dei requisiti\\                 & Essendo tencologie completamente nuove la compresione dei requisiti potrebbe risultare erronea o non sufficente. Questo può portare a divergenze tra il nostro operato e le aspettative del fornitore\\                                                         & Media         & Media   & Moderato       \\
+		RR2    & Modica dei requisiti\\                       & Il settore del software APM è giovane ed in crescente evoluzione, ciò potrebbe portare alla modifica di alucuni requisiti in modo da poter rendere il prodotto software da produrre più al passo con i tempi.\\                                                 & Bassa         & Alta    & Moderato\\     \\
+		RO2    & Problematiche nella rilevazione dei rischi\\ & Sebbene la rilevazione dei rischi venga effettuata scrupolosamente è plausibile pensare che qualche rischio non venga rilevato con conseguenze potenzialmente gravi nello sviluppo del progetto.\\                                                              & Bassa         & Alta    & Moderato       \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+\subsection{Rilevazione e contromisure}
+
+\begin{table}
+	\centering
+	\begin{tabular}{l|l|l}
+		Rischio & Strategie per la rilevazione  & Contromisure  \\
+		RT1     & Il \emph{Project Manager}ha il compito di verificare il grado di conoscenza delle tecnologie da utilizzare di ciascun membro del gruppo\\                                                                                           & Ciascun componente del gruppo si documenterà in maniera automoma sulle tencologie da utilizzare. Inoltre i membri che già conoscono le tecnologie terranno delle brevi lezioni sul loro utilizzo.\\                                                                                                                                                                                                                                                                                  \\
+		RT2     & I membri del gruppo dovranno aver cura dei propri strumenti ed effettuare dei controlli periodici sul loro corretto funzionamento\\                                                                                                              & I guasti hardware non possono prevedibili tranne alcune rare eccezioni. Tutti i membri del gruppo hanno a disposizione un computer secondario per proseguire il loro lavoro. Sono inoltre disponibili i computer dei laboratori come soluzione temporanea ai guasti dei pc del gruppo\\                                                                                                                                                                                             \\
+		RT3     & I malfunzionamenti di software di terze parti non sono rilevabili. Tuttavia, data l'affidabilità dei serivizi alla quale ci affidiamo, questo tipo di rischio può essere trascurato\\                                                            & Ogni utente del gruppo dovrà effettuare periodicamente un copia di backup del progetto su un dispositivo esterno. Push sul server di Github dovranno essere effettuati frequentemente ed ogni volta che si effettua una modifica sulla codebase                                                                                                                                                                                                                                      \\
+		RP1     & I membri del gruppo si impegnano a comunicare tempestivamente i propri impegni personali al \emph{Project Manager}\\                                                                                                               & Dopo aver ricevuto l'avviso il \emph{Project Manager} si occuperà di ripianificare le attività ed eventualmente ridistribuire il carico di lavoro ad altri membi\\                                                                                                                                                                                                                                                                                                     \\
+		RP2     & È compito del \emph{Project Manager} assicurarsi che all'interno del gruppo vi sia un ambiente sereno ed armonioso in cui poter lavorare. Inoltre i membri del gruppo sono tenuti a riferire prontamente qualsiasi problematica.\\ & È compito del \emph{Project Manager} mediare le animosità che possono intercorrere trai i componenti, ponendosi come mediatore e cercando di risolvere la situazione. I caso di problemi irrisolvibili sarà il \emph{Project Manager} a ricollocare i membri in modo da minimizzare il contatto tra gli membri critici. Sono incentivate inoltre attività ricreative al di fuori del tempo di lavoro per rafforzare i rapporti tra i membri del gruppo\\  \\
+		RO1     & Ai membri del gruppo è imposto l'utilizzo di ticket. Il \emph{Project Manager} controllerà periodicamente il loro stato in modo da evitare ritardi nello svolgimento delle attività\\                                              & Ogni attività è seguita da un breve periodo di slack in modo da poter ammortizzare eventuali ritardi nel loro svolgimento e non influenzare la durata del progetto. In caso di ritardi molto grandi, il \emph{Project Manager} ridistribuirà il carico di lavoro\\                                                                                                                                                                                                     \\
+		RS1     & Il \emph{Project Manager} valuterà di volta in volta il grado di conoscenza dei membri sugli strumenti. Ogni membro dovrà inoltre comunicare eventuali perplessità sul loro funzionamento.\\                                        & Ogni membro del gruppo si impegna a studiare i concetti e le tecnologie richieste per affrontare il progetto. Ogni membro del gruppo sfrutterà i periodo di basso carico lavorativo per ampliare la sua conoscenza riguardo ciò che non conosce o non ha capito\\                                                                                                                                                                                                                    \\
+		RR1     & Durante l'attività di Analisi dei Requisiti di Massima, verranno effettuati gli incontri con il proponente con lo scopo di ridurre al minimo le incomprensioni e di costruire un prodotto che sia congruente con le aspettative del fornitore\\  & Il proponente ha fornito una email alla quale poter rivolgere qualsiasi tipo di domanda. Inoltre il gruppo stabilirà un rapporto di costante dialogo con il proponente in modo da poter eliminare qualsiasi tipo di errore o incomprensione. Se ritenuto necessario verranno organizzai degli incontri con il fornitore\\                                                                                                                                                               \\
+		RR2     & Il fornitore comunicherà prontamente eventuali modiche dei requisiti attraverso l'email da noi fornita. \\                                                                                                                                       & Sarà compito del \emph{Project Manager} riorganizzare le attività per affrontare i cambiamenti. In caso di modiche massime il gruppo dovrà discutere con il fornitore per trovare un punto di accordo\\                                                                                                                                                                                                                                                                \\
+		RO2     & Il \emph{Project Manager} controllerà costantemente l'andamento delle attività al fine di predire eventuali problemi che potrebbero insorgere\\                                                                                   & In caso di avvenimento di rischi non calcolati il \emph{Project Manager} dovrà ripianificare le attività ed eventualmente ridistribuire il carico di lavoro in modo da minimizzare l'impatto sulla durata complessiva del progetto\\                                                                                                                                                                                                                                  
+	\end{tabular}
+\end{table}
+
+
+
+
+
