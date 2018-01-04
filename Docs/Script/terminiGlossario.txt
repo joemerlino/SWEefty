@@ -83,6 +83,7 @@ prodotto
 Progettista
 progetto
 proponente
+Push
 React
 SCSS
 server
