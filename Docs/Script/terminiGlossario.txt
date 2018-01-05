@@ -85,11 +85,12 @@ progetto
 proponente
 Push
 React
+runtime environment
 SCSS
 server
 Simple Poll
 Slack
-smart contracs
+smart contract
 SonarJS
 SonarQube
 Speech To Text
