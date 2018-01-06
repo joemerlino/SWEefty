@@ -1,4 +1,4 @@
-AngularJS
+﻿AngularJS
 Apache Nutch
 Apache SolR
 APM
@@ -83,12 +83,14 @@ prodotto
 Progettista
 progetto
 proponente
+Push
 React
+runtime environment
 SCSS
 server
 Simple Poll
 Slack
-smart contracs
+smart contract
 SonarJS
 SonarQube
 Speech To Text
@@ -99,6 +101,7 @@ stub
 tasks
 Telegram
 TexStudio
+Ticket
 TomCat
 tool
 trace
