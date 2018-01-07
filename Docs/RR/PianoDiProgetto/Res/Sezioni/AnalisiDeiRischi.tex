@@ -15,14 +15,14 @@ La metodologia che \textit{SWEefty} seguirà per assicurarsi che i rischi vengan
 
 Ogni rischio verrà identificato con:
 \begin{itemize}
-	\item id;
-	\item nome;
-	\item descrizione;
-	\item probabilità di occorrenza;
-	\item gravità;
-	\item classe di gravità;
-	\item strategia di rilevazione;
-	\item contromisure.
+	\item Id;
+	\item Nome;
+	\item Descrizione;
+	\item Probabilità di occorrenza;
+	\item Gravità;
+	\item Classe di gravità;
+	\item Strategia di rilevazione;
+	\item Contromisure.
 \end{itemize}
 
 Inoltre i rischi vengono classificati in cinque tipologie:
@@ -33,6 +33,10 @@ Inoltre i rischi vengono classificati in cinque tipologie:
 	\item \textbf{O:} organizzativi;
 	\item \textbf{R:} requisiti.
 \end{itemize}
+
+
+\textcolor{red}{non mi risulta che nelle norme di progetto vi sia una parte che spiega la nomenclatura dei rischi}
+
 
 Nel documento \emph{Norme di Progetto v.1.0.0} è spiegata la nomenclatura utilizzata per identificare i rischi.
 
@@ -61,27 +65,35 @@ Al fine di fornire uno strumento per la valutazione dei rischi che sia immediato
 \item \textbf{Intollerabile:} il lavoro non deve essere svolto finché il rischio non è stato ridotto. Se non è possibile ridurre il rischio anche con l'impiego di risorse elevate, il lavoro deve essere proibito.
 \end{itemize}
 
-
-\subsection{Descrizione dei rischi}
-
 \begin{longtable}[h]{|l|p{2.5cm}|p{4.4cm}|p{2.2cm}|l|l|}
-
-		\hline
-		\textbf{Codice} & \textbf{Nome}  & \textbf{Descrizione} & \textbf{Probabilità} & \textbf{Gravità} & \textbf{Classe} \\
-		\hline
-		RT1    & Inseperienza tecnologica & Le tecnologie adottate sono sconosciute alla maggior parte del gruppo, ciò potrebbe interferire con lo svolgimento delle  attività & Alta\& Alta    & Intollerabile  \	\hline
-		RT2    & Problematiche hardware & I computer utilizzati dai membri del gruppo potrebbero guartarsi o subire dei malfunzionamentie impedendo di prosegure con il progetto\\                     a   & Toll\\                                                                                                                              	\hline   \\
-		RT3    & Problematiche software & Il gurppo farà affidamento di software di terze parti e piattaforme online. Eventuali malfunzionamenti potrebbero causare gravi perdite di dati. & Bassa & Alta    & Moderato \\      \hline      \\
-		RP1    & Problematiche fra i componenti & Nessun componente del gruppo ha mai lavorato in un gruppo così grande, questo potrebbe causare l'insorgere di incomprensioni trai i membri ed eventuali ritardi\& Bassa         & Altaderato \\                                                                                              \hline\\     \\
-		RP2    & Problematiche personali dei componenti & Ogni membro del gruppo ha impengni personali legati alla propria sfera privata. Inoltre vi è uno studente lavoratore. Ciò potrebbe risultare in indisponibilità in determinati momenti& Media & Media\\ & Merato \\
-		\hline
-		RO1    & Costi delle attività & Essendo tutti alle prime armi, alcune valutazione dei costi per le attività potrebbero essere errati  & Media         & Alta    & Effe                                                                                                                                                                 \hline     \\
-		RS1    & Inesperienza del team & Alcune conoscenze richieste potrebbero richiedere molto tempo per essere acquisissunte. Inoltre per ognmponentemembralla prima esperien questo metoodo di lavoro. Sono richieste caacità di pianificazione, progettazione ed analisi che il gruppo non possiede\\ & Media         & Alta\\  & Effetti \\       e     \\RR1    & Comprensione dei requisiti\\                 & Essendo tecncologie completamente nuove la compresione dei requisiti potrebbe risultare erratonea o non sufficente. Questo può portare a divergenze tra il nostro operato e le aspettative del fornitore\\                                                         & Media         & Media   & Moderato \\
-		\hline
-		RR2    & Modifica dei requisiti & Il settore del software APM è giovane ed in crescente evoluzione, ciò potrebbe portare alla modifica di alucuni requisiti in modo da poter rendere il prodotto software da sviluppare più al passo con i tempi.\\                         & Moderato \ne                                                       RO2 & Problematiche nella rilevazione dei rischi\\ & Sebbene la rilevazione dei rischi venga effettuata scrupolosamente è plausibile pensare che qualche rischio non venga rilevato con conseguenze potenzialmente gravi nello sviluppo del progetto.\\                                                              & Bassa         & Alta    & Moderato \\
-		\hline
-		\caption{Descrizione dei rischi con probabilità, gravità e classe.}	
+	
+	\hline
+	\textbf{Codice} & \textbf{Nome}  & \textbf{Descrizione} & \textbf{Probabilità} & \textbf{Gravità} & \textbf{Classe} \\
+	\hline
+	RT1 & Inseperienza tecnologica & Le tecnologie adottate sono sconosciute alla maggior parte del gruppo, ciò potrebbe interferire con lo svolgimento delle  attività & Alta & Alta & Intollerabile  \\
+	\hline
+	RT2 & Problematiche hardware & I computer utilizzati dai membri del gruppo potrebbero guastarsi o subire dei malfunzionamenti impedendo di prosegure con il progetto & Bassa & Media & Tollerabile \\
+	\hline
+	RT3 & Problematiche software & Il gruppo farà affidamento a software di terze parti e piattaforme online. Eventuali malfunzionamenti potrebbero causare gravi perdite di dati. & Bassa & Alta & Moderato \\
+	\hline
+	RP1 & Problematiche fra i componenti & Nessun componente del gruppo ha mai lavorato in un gruppo così grande, questo potrebbe causare l'insorgere di incomprensioni tra i membri ed eventuali ritardi & Bassa & Alta & Moderato \\
+	\hline
+	RP2 & Problematiche personali dei componenti & Ogni membro del gruppo ha impegni personali legati alla propria sfera privata. Inoltre vi è uno studente lavoratore. Ciò potrebbe determinare in indisponibilità in determinati momenti & Media & Media & Moderato \\
+	\hline
+	RO1 & Costi delle attività & Essendo tutti alle prime armi, alcune valutazione dei costi per le attività potrebbero essere errati  & Media & Alta & Effettivo \\
+	\hline
+	RS1 & Inesperienza del team & Alcune conoscenze richieste potrebbero richiedere molto tempo per essere assunte. Inoltre per tutti i componenti è la prima esperienza con questo metodo di lavoro. Sono richieste capacità di pianificazione, progettazione ed analisi che il gruppo non possiede & Media & Alta & Effettiva \\
+	\hline
+	RR1    & Comprensione dei requisiti & Essendo tecncologie completamente nuove la comprensione dei requisiti potrebbe risultare errata o non sufficente. Questo può portare a divergenze tra il nostro operato e le aspettative del fornitore & Media & Media & Moderato \\
+	\hline
+	RR2    & Modifica dei requisiti & Il settore del software APM è giovane ed in crescente evoluzione, ciò potrebbe portare alla modifica di alucuni requisiti in modo da poter rendere il prodotto software da sviluppare più al passo con i tempi & Bassa & Alta & Moderato \\ 
+	\hline
+	RO2 & Problematiche nella rilevazione dei rischi & Sebbene la rilevazione dei rischi venga effettuata scrupolosamente è plausibile pensare che qualche rischio non venga rilevato con conseguenze potenzialmente gravi nello sviluppo del progetto. & Bassa & Alta & Moderato \\
+	\hline
+	\caption{Descrizione dei rischi con probabilità, gravità e classe.}    
 \end{longtable}
+
+
 
 \subsection{Rilevazione e contromisure}
 
@@ -93,23 +105,23 @@ Al fine di fornire uno strumento per la valutazione dei rischi che sia immediato
 		\hline
 		RT2     & I membri del gruppo dovranno aver cura dei propri strumenti ed effettuare dei controlli periodici sul loro corretto funzionamento & I guasti hardware non possono prevedibili tranne alcune rare eccezioni. Tutti i membri del gruppo hanno a disposizione un computer secondario per proseguire il loro lavoro. Sono inoltre disponibili i computer dei laboratori come soluzione temporanea ai guasti dei pc del gruppo\\
 		\hline
-		RT3     & I malfunzionamenti di software di terze parti non sono rilevabili. Tuttavia, data l'affidabilità dei serivizi alla quale ci affidiamo, questo tipo di rischio può essere trascurato & Ogni utente del gruppo dovrà effettuare periodicamente un copia di backup del progetto su un dispositivo esterno. Push sul server di Github dovranno essere effettuati frequentemente ed ogni volta che si effettua una modifica sulla codebase \\
+		RT3     & I malfunzionamenti di software di terze parti non sono prevedibili e rilevabili. Tuttavia, data l'affidabilità dei serivizi alla quale ci affidiamo, questo tipo di rischio può essere trascurato & Ogni utente del gruppo dovrà effettuare periodicamente un copia di backup del progetto su un dispositivo esterno. Push sul server di Github dovranno essere effettuati frequentemente ed ogni volta che si effettua una modifica sulla codebase \\
 		\hline
 		RP1     & I membri del gruppo si impegnano a comunicare tempestivamente i propri impegni personali al \emph{Project Manager} & Dopo aver ricevuto l'avviso il \emph{Project Manager} si occuperà di ripianificare le attività ed eventualmente ridistribuire il carico di lavoro ad altri membri \\
 		\hline
-		RP2     & È compito del \emph{Project Manager} assicurarsi che all'interno del gruppo vi sia un ambiente sereno ed armonioso in cui poter lavorare. Inoltre i membri del gruppo sono tenuti a riferire prontamente qualsiasi problematica. & È compito del \emph{Project Manager} mediare le animosità che possono intercorrere trai i componenti, ponendosi come mediatore e cercando di risolvere la situazione. I caso di problemi irrisolvibili sarà il \emph{Project Manager} a ricollocare i membri in modo da minimizzare il contatto tra gli membri critici. Sono incentivate inoltre attività ricreative al di fuori del tempo di lavoro per rafforzare i rapporti tra i membri del gruppo\\
+		RP2     & È compito del \emph{Project Manager} assicurarsi che all'interno del gruppo vi sia un ambiente sereno ed armonioso in cui poter lavorare. Inoltre i membri del gruppo sono tenuti a riferire prontamente qualsiasi problematica. & È compito del \emph{Project Manager} mediare le animosità che possono intercorrere tra i componenti, ponendosi come mediatore e cercando di risolvere la situazione. I caso di problemi irrisolvibili sarà il \emph{Project Manager} a ricollocare i membri in modo da minimizzare il contatto tra i componenti critici. Sono incentivate inoltre attività ricreative al di fuori del tempo di lavoro per rafforzare i rapporti tra i membri del gruppo\\
 		\hline
 		RO1     & Ai membri del gruppo è imposto l'utilizzo di ticket. Il \emph{Project Manager} controllerà periodicamente il loro stato in modo da evitare ritardi nello svolgimento delle attività & Ogni attività è seguita da un breve periodo di slack in modo da poter ammortizzare eventuali ritardi nel loro svolgimento e non influenzare la durata del progetto. In caso di ritardi molto grandi, il \emph{Project Manager} ridistribuirà il carico di lavoro\\  
 		\hline
 		RS1     & Il \emph{Project Manager} valuterà di volta in volta il grado di conoscenza dei membri sugli strumenti. Ogni membro dovrà inoltre comunicare eventuali perplessità sul loro funzionamento. & Ogni membro del gruppo si impegna a studiare i concetti e le tecnologie richieste per affrontare il progetto. Ogni membro del gruppo sfrutterà i periodo di basso carico lavorativo per ampliare la sua conoscenza riguardo ciò che non conosce o non ha capito\\
 		\hline
-		RR1     & Durante l'attività di Analisi dei Requisiti di Massima, verranno effettuati gli incontri con il proponente con lo scopo di ridurre al minimo le incomprensioni e di costruire un prodotto che sia congruente con le aspettative del fornitore  & Il proponente ha fornito un indirizzo email alla quale è possibilepoivolgere qualsiasi tipo di domanda. Inoltre il gruppo stabilirà un rapporto di costante dialogo con il proponente in modo da poter eliminare qualsiasi tipo di errore o incomprensione. Se ritenuto necessario verranno organizzai degli incontri con il fornitore\\
+		RR1     & Durante l'attività di Analisi dei Requisiti di Massima, verranno effettuati gli incontri con il proponente con lo scopo di ridurre al minimo le incomprensioni e di costruire un prodotto che sia congruente con le aspettative del fornitore  & Il proponente ha fornito un indirizzo email alla quale è possibilepoivolgere qualsiasi tipo di domanda. Inoltre il gruppo stabilirà un rapporto di costante dialogo con il proponente in modo da poter eliminare qualsiasi tipo di errore o incomprensione. Se ritenuto necessario verranno organizzati degli incontri con il fornitore\\
 		\hline
-		RR2 & Il fornitore comunicherà prontamente eventuali modiche dei requisiti attraverso l'email da noi fornita. & Sarà compito del \emph{Project Manager} riorganizzare le attività per affrontare i cambiamenti. In caso di modiche massime il gruppo dovrà discutere con il fornitore per trovare un punto di accordo\\
+		RR2 & Il fornitore comunicherà prontamente eventuali modifiche ai requisiti attraverso l'email da noi fornita. & Sarà compito del \emph{Project Manager} riorganizzare le attività per affrontare i cambiamenti. In caso di modifiche massicce il gruppo dovrà discutere con il fornitore per trovare un punto di accordo\\
 		\hline                                                                                                                           
 		RO2 & Il \emph{Project Manager} controllerà costantemente l'andamento delle attività al fine di predire eventuali problemi che potrebbero insorgere & In caso di avvenimento di rischi non calcolati il \emph{Project Manager} dovrà ripianificare le attività ed eventualmente ridistribuire il carico di lavoro in modo da minimizzare l'impatto sulla durata complessiva del progetto\\
 		\hline
-		\caption{Strategie per rilevazione dei rischi e contromisure.}
+		\caption{Strategie per la rilevazione dei rischi e contromisure.}
 \end{longtable}
 
 
