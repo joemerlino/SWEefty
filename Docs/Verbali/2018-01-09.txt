@@ -1,0 +1,30 @@
+** ORDINE DEL GIORNO **
+
+a che punto siamo?
+
+    (davide) riuscito a fare i gantt? devono essere coerenti a ciò che abbiamo fatto e tutti i diari -> probabilmente da rifare su wrike per renderli consistenti
+
+    mettere a posto entro domani le seguenti voci in TUTTI i documenti
+        titolo
+        descrizione
+        redazione
+        verifica
+        mettere a posto il diario di tutti (congruentemente alla redazione e alla verifica!)
+
+identificazione di verificatori dei documenti (usare checklist)
+    pdp
+    pdq
+    sdf
+    ndp
+    glossario -> particolare attenzione, ci sarà parecchio da correggere
+    (adr non avrà verificatori perchè finiamo tardi)
+
+identificare qualcuno che controlli che ciò che c'è scritto nei verbali esterni sia coerente a quello che c è su swego (e lo corregga eventualmente)
+
+è possibile avere una visualizzazione migliore del glossario?
+questione maiuscole-minuscole glossario
+questione singolare-plurale (major features)
+proviamo a dare una compilata dello script 
+    problema che la mia mente malata ha individuato
+
+** SOLUZIONI **
