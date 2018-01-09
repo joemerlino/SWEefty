@@ -11,33 +11,30 @@
 % - "INSERT DOMANDE E RISPOSTE" (intanto lo strutturiamo così, con domande e rispose, se servono altri tipi di struttura cambieremo)
 
 % - "INSERT TITOLO" (verosimilmente sarà una cosa tipo "Verbale Esterno/Interno del xx/yy") 
-\newcommand{\Titolo}{Template}
+\newcommand{\Titolo}{Verbale riunione 20 Dicembre 2017}
 
 \newcommand{\Gruppo}{SWEefty}
 
 \newcommand{\Versione}{1.0.0}
 
-\newcommand{\Redazione}{Alberto Galinaro,Davide Zago,Elia Montecchio,Francesco Parolini,Giuseppe Merlino,Lisa Parma,Paolo Eccher}
+\newcommand{\Redazione}{Elia Montecchio}
 
-\newcommand{\ACapoRedazione}{Alberto Galinaro \newline Davide Zago \newline Elia Montecchio \newline Francesco Parolini \newline Giuseppe Merlino \newline Lisa Parma \newline Paolo Eccher}
+\newcommand{\ACapoRedazione}{Elia Montecchio}
 
-\newcommand{\Verifica}{XXX}
-
-\newcommand{\Approvazione}{YYY}
 
 \newcommand{\Distribuzione}{Prof.Tullio Vardanega \newline Prof.Riccardo Cardin \newline SWEefty}
 
-\newcommand{\InformazioniDocumento}{da mettere... o da non mettere...}
+\newcommand{\InformazioniDocumento}{}
 % - "INSERT USO (INTERNO/ESTERNO)"
-\newcommand{\Uso}{Interno/esterno}
+\newcommand{\Uso}{Interno}
 % - "INSERT DATA"
-\newcommand{\Data}{da mettere}
+\newcommand{\Data}{23 Dicembre 2017}
 % - "INSERT DESCRIZIONE"
-\newcommand{\DescrizioneDoc}{da mettere}
+\newcommand{\DescrizioneDoc}{Questo documento riporta in modo formale il riassunto della rinuione tenutasi nella data sopra riportata.  }
 
 
 
-\documentclass[a4paper, oneside, openany,12pt]{article}
+\documentclass[a4paper, oneside, openany]{article}
 
 \usepackage{graphbox}
 % permette di modificare i margini
@@ -233,8 +230,7 @@ backgroundcolor=\color{lbcolor},
 			\multicolumn{2}{c}{\textbf{\InformazioniDocumento{}} } \\ \hline
 			Versione &  \Versione{}\\
 			Redazione & \ACapoRedazione{} \\
-			Verifica & \Verifica{} \\ 
-			Approvazione & \Approvazione{} \\
+
 			Uso & \Uso \\
 			Distribuzione & \Distribuzione{}
 		\end{tabular}
@@ -256,18 +252,38 @@ backgroundcolor=\color{lbcolor},
 		\subsection{Informazioni incontro}
 			% - INSERT INFORMAZIONI INCONTRO
 			\begin{itemize}
-				\item { \textbf{Luogo:}  }
-				\item { \textbf{Data:} }
-				\item { \textbf{Ora:} }
-				\item { \textbf{Partecipanti del gruppo:} }
-				\item { \textbf{Partecipanti esterni:} }
+				\item { \textbf{Luogo:} Azienda IKS Srl  }
+				\item { \textbf{Data:} 19 Dicembre 2017 }
+				\item { \textbf{Ora:} 15.00 }
+				\item { \textbf{Partecipanti del gruppo:} Gruppo al completo }
+				\item { \textbf{Partecipanti esterni:} Nessuno }
 			\end{itemize}
 		
-		\subsection{Argomenti}
-			% - INSERT ARGOMENTI
 	
-	\section{Domande e Risposte}
-			% - INSERT DOMANDE E RISPOSTE
+	\subsection{Argomenti affrontati}
+    Nel corso della riunione sono stati approfonditi i seguenti punti stilati dal responsabile di progetto:
+    
+   
+    \begin{itemize}
+    \item { \textbf{Visionamento verifica del documento:} il documento
+    \emph{NormeDiProgetto} è stato verificato dall'incaricato. Durante la riunione sono stati evidenziati i vari errori e le sezioni da sistemare/riformulare;}
+	\item { \textbf{Discord:} strumento che il team utilizzerà per confrontarsi e per le riunioni durante il periodo delle vancaze natalizie, il quale è molto interessante in quanto permette anche di condividere tra i vari partecipanti lo schermo del proprio pc;}
+	\item { \textbf{Versione documento:} Si è deciso di inserire per ogni documento la versione dopo il suo titolo per esempio: \textit{NormeDiProgetto DA MOD};}
+	\item { \textbf{Verbali:} si è deciso di riscrivere i verbali in modo formale all'interno di un documento. Sarà dunque necessario realizzare un template da utilizzare per scrivere i verbali. Il task è stato assegnato a Joe Merlino. Per quanta riguarda la stesura dei verbali, se ne occuperanno Elia Montecchio e }
+	\item { \textbf{Glossario:} si è deciso di glossarizzare i termini in modo automatico mediante uno script.
+	I termini da glossarizzare non vanno più inseriti all'interno del documento, ma all'interno di un file denominato \textit{terminiGLossario.txt}. Ogni termine dev'essere inserito in ordine alfabetico. Inoltre, è stata realizzata una lista di file chiamati come le lettere dell'alfabeto, che rappresentano il nostro dizionario. E' necessario, dunque, inserire la parola all'interno del file chiamato con la lettere iniziale della parola in questione aggiungendo anche una descrizione del termine.}
+     \end{itemize}
+ 
+ 
+  
+ 
+	
+		
+		
+		
+		
+		
+			
 	
 	
 	
