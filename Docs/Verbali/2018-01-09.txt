@@ -28,3 +28,14 @@ proviamo a dare una compilata dello script
     problema che la mia mente malata ha individuato
 
 ** SOLUZIONI **
+
+
+- a che punto siamo? 
+  -> Elia sistemare Piano di qualifica, sistemare verbale con SWEgo, fare parte del glossario  
+  -> Davide ha il compito di fare i diari e gantt 
+  -> Alberto rilegge PDQ- Paolo rilegge PDP - Freppo rilegge NDP - Elia rilegge SDF - rilegge il glossario Lisa (siano presenti tutte quelle parole presenti dello script, stile di descrizione dichiarativo, lettera maiuscola, le parole al plurale nello script vanno scritte anche al singolare, nei tex tenere solo singolare)
+  -> Glossario (Preso dall'ADR) e scopo del prodotto (preso da PDP) devono essere gli stessi in tutti i file 
+  -> Paolo -> Eliminare versione da TUTTI i verbali 
+  -> Davide si occupa si sistemare l'intestazione dei documenti
+  -> Joe -> Modificare visualizzazione del Glossario (DA FARE ENTRO 12/01), mettere il comando GL in tutti gli stili dei documenti
+  ->
