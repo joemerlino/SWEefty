@@ -276,12 +276,16 @@ backgroundcolor=\color{lbcolor},
 				\item { \textbf{Mappa dell'applicazione:} è un plugin che permette di rappresentare in modo grafico i dati raccolti nell'applicazione. In particolare si vuole disegnare i vari componenti che compongono l'applicazione monitorata, far visualizzare all'utilizzatore i tempi medi di risposta nell'effettuare una richiesta da un nodo all'altro.
 				I nodi devono essere collegati da una linea contenente una freccia che mediante il verso indica la direzione della richiesta da un nodo all'altro, il colore della freccia deve cambiare diventando rossa se il tempo delle richieste in quel punto della piattaforma e superiore alla norma, verde altrimenti.
 				I componenti della mappa devono poter essere riposizionabili sia in modo manuale che automatico.
+				Per quanto riguarda il modo manuale, l'idea è quella di poter muovere mediante click del mouse i vari componenti disegnati sulla mappa, mentre automaticamente, dev'essere presente un apposti bottone, che una volta cliccato, fa ritornare in una posizione grafica di default tutti i nodi della piattaforma. 
 				Inoltre, visto che un'applicazione aziendale non è installata in un solo server, dev'essere possibile visualizzare il numero di server che compongono un cluster.
 				Il plugin dev'essere sviluppato in linguaggio AngularJs.	
 				}
 				\item { \textbf{Call Tree:} è un plugin che rappresenta in modo grafico e gerarchico i metodi chiamati dall'applicazione quando viene effettuata una richiesta.
-				L'idea è di rappresentare i metodi da quello radice fino alla query che viene eseguita nel database per ottenere i dati necessari per fornire una risposta all'utente. 
-			    Per ogni metodo è stato richiesto che vi sia presente anche il tempo di esecuzione dello stesso.}
+				L'idea è di rappresentare i metodi da quello radice fino alla query che viene eseguita nel database così da ottenere i dati necessari per fornire una risposta all'utente. 
+			    Per ogni metodo è stato richiesto che vi sia presente anche il tempo di esecuzione dello stesso.
+		        Per quanto riguarda la lista delle query eseguite (traces) dev'essere possibile visualizzarle in ordine cronologico di esecuzione e dev'essere presente l'identificativo associato ad ognuna.
+		         
+	    }
 		
 			\end{itemize}
 		

@@ -71,11 +71,27 @@
 		    Quest'ultimo è steso dagli \emph{Analisti} e contiene una lista dei requisiti e dei casi d'uso.
 		    In questo modo sarà possibile effettuare e definire dei test di superamento del software. 
 
-			\subparagraph{Casi d'uso}
-			\subparagraph{Codice identificativo}
+				\subparagraph{Casi d'uso}
+			\subparagraph{Codice identificativo} \Spazio
+			Ogni caso d'uso è identificato da un codice, ed è rappresentato nel seguente modo:
+			%\textbf{U {codice_padre}.{codice_figlio}  }
+			
+			\begin{itemize}
+				\item Il codice padre è un numero univoco che identifica un caso d'uso;
+				\item Il codice figlio è un numero progressivo che identifica i sottocasi;
+			\end{itemize}
 			\subparagraph{Requisiti}
-			\subparagraph{Codice identificativo}
-			\subparagraph{UML}
+			\subparagraph{Codice identificativo} \Spazio
+			Ogni requisito è identificato da un codice, ed è rappresentato nel seguente modo:
+			%\textbf{R {importanza}{tipo}{numero_vincolo} }
+			
+			\begin{itemize}
+				\item Il primo valore è l'abbreviazione di requisito;
+				\item Il primo valore rappresenza l'importanza: 0 se il requisito è obbligatorio, 1 se è desiderabile, 2 per gli opzionali;
+				\item Il terzo valore indica il tipo: F per i requisiti funzinali, Q per quelli di qualità, P se prestazionale, V se di vincolo;
+				\item L'ultimo numero indica il numero del vincolo;
+			\end{itemize}
+			\subparagraph{UML} \Spazio
 			I diagrammi UML devono essere realizzati usando la versione del linguaggio \textit{v2.0}
 			
 			
