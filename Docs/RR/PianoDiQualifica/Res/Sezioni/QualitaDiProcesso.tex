@@ -140,7 +140,6 @@ Indice del numero di rischi non individuati nella fase di analisi:
 Questo processo ha lo scopo di individuare i requisiti del sistema.
 \subsubsection{Obiettivi}
 \begin{itemize}
-	\item Individuare i requisiti di sistema;
 	\item Associare ad ogni requisito un test che verifichi il suo soddisfacimento; 
 	\item Tracciare ogni requisito in modo da poter risalire alle modifiche fatte ad esso durante lo sviluppo del prodotto;
 	\item Ogni requisito deve essere approvato dal committente.
@@ -157,16 +156,15 @@ Indica quanti requisiti obbligatori sono stati soddisfatti.
 \end{itemize}
 
 \subsection{System Architectural Design Process}
-\textcolor{red} { [paolo]niente "introduzione" qui? in 2.1 e 2.2 c'era. in 2.3 la ho aggiunta io. Però sarebbe da decidere se metterla in tutte oppure no }
+Lo scopo di questo processo è quello di associare ai requisiti del sistema una o più componenti del sistema.
 		\subsubsection{Obiettivi}
 		\begin{itemize}
-			\item Associare ai requisiti una o più componenti del sistema;
 			\item Ogni componente dovrà essere associata ad un requisito, ciò la rende tracciabile;
 			\item Ottenere un sistema finale semplice con basso accoppiamento ed alta coesione;
 			\item Ottenere componenti basandosi sui buoni principi della programmazione ad oggetti come il riuso del codice,l'incapsulamento e la modularizzazione.
 		\end{itemize}
 		\subsubsection{Strategie}
-		\textcolor{red} {TODO: che strategia usiamo qui? [paolo] sonarqube non calcolaa in fan-in e fanout?}
+		Mantenere una tabella che associa ad ogni modulo un indice di utilità e un indice di dipendenza.
 		\subsubsection{Metriche}
 			\paragraph{Structural Fan-In - SFIN} \Spazio
 			Indice di utilità da massimizzare, misura il numero di componenti che utilizzano un dato modulo, un valore alto denota un alto riutilizzo del codice.
@@ -183,9 +181,9 @@ Indica quanti requisiti obbligatori sono stati soddisfatti.
             
 
 \subsection{System Detailed Design Process}
+Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che andrà ad implementare i requisiti individuati.
 		\subsubsection{Obiettivi}
 		\begin{itemize}
-			\item Fornire una progettazione di dettaglio del prodotto che andrà ad implementare i requisiti individuati;
 			\item Il grado di dettaglio deve dare informazioni sufficienti alla codifica e il testing senza bisogno di ulteriori informazioni.
 		\end{itemize}
 		\subsubsection{Strategie}
@@ -204,10 +202,10 @@ Indica quanti requisiti obbligatori sono stati soddisfatti.
 				\item \textbf{Range accettato:} 0-8.
 			\end{itemize}
 			
-	\subsection{System Construction Process}
+	\subsection{Software Construction Process}
+	Lo scopo del processo è definire le attività principali per la produzione di unità software.
 		\subsubsection{Obiettivi}
 		\begin{itemize}
-			\item Definire le attività principali per la produzione di unità software;
 			\item Ottenere codice di bassa complessità per facilitarne la comprensibilità e la verifica;
 			\item Ottenere codice manutenibile;
 			\item Minimizzare gli sdoppiamenti di flusso.
@@ -259,9 +257,9 @@ Indica quanti requisiti obbligatori sono stati soddisfatti.
 			\end{itemize}
 
 	\subsection{Software Documentation Management Process}
+	Lo scopo del processo è quello di produrre e manutenere le informazioni sul software.
 		\subsubsection{Obiettivi}
 		\begin{itemize}
-			\item Produrre e manutenere le informazioni sul software prodotto;
 			\item Ottenere una documentazione comprensibile;
 			\item Mantenere la documentazione aggiornata allo stato attuale del progetto.
 		\end{itemize}
@@ -277,9 +275,9 @@ Indica quanti requisiti obbligatori sono stati soddisfatti.
 			\end{itemize}
 
 	\subsection{Software Verification Process}
+	Lo scopo del processo è di verificare che tutte le componenti del sistema soddisfino completamente i requisiti ad esse correlate.
 		\subsubsection{Obiettivi}
 		\begin{itemize}
-			\item Verificare che tutte le componenti del sistema;
 			\item Verificare che le varie componenti abbiano il comportamento desiderato;
 			\item Utilizzare l'inspection per la verifica del codice;
 			\item Automatizzare il più possibile i test dinamici.
