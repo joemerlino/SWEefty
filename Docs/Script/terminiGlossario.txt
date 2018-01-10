@@ -65,6 +65,7 @@ Kibana
 Logstash
 major features
 major improvement
+management
 mappa topologica
 Mercurial
 minor improvement
@@ -74,6 +75,7 @@ Natural Language Api
 Node.js
 NoSQL
 open source
+overhead
 package
 Plotly.js
 plugin

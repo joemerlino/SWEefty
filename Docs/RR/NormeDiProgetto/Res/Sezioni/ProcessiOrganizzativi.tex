@@ -92,12 +92,10 @@
 					\item Tornare al punto 1 cambiando i parametri data e/o ora ed eventualmente luogo.
 				\end{itemize}
 				Tale decisione deve prendere in considerazione i benefici che porterebbe organizzare un incontro con tre o quattro membri e gli svantaggi che si avrebbero posticipando l'incontro.
-				Se le conferme sono meno di tre sarà necessario tornare al punto 1 cambiando i parametri data e/o ora ed eventualmente luogo;
-				
-				\item Nel caso in cui l'incontro venga confermato, stilare in un file nella cartella della repository \texttt{Docs/Verbali} l'ordine del giorno. Il file deve avere come nome la data in cui si terrà l'incontro, scritta nel formato indicato in \ref{formati}. Nello stesso file dovrà essere verbalizzato ciò di cui si è discusso durante l'incontro nelle modalità descritte alla fine di questo paragrafo.
+				Se le conferme sono meno di tre sarà necessario tornare al punto 1 cambiando i parametri data e/o ora ed eventualmente luogo.
 			\end{enumerate}
 			Tutti i membri del team possono chiedere di organizzare un incontro al \emph{Project Manager}, specificando una motivazione. Se quest'ultima è ritenuta sufficiente per organizzare un incontro si procede ad avviare la procedura sopra descritta. 
-			\\Inoltre, ad ogni incontro, un membro del gruppo viene scelto dal \emph{Project Manager} per stilare il verbale. Egli deve inserire nello stesso file creato dal \emph{Project Manager} contenente l'ordine del giorno un riassunto scritto di ciò di cui si è discusso e ciò che è stato deciso.
+			\\Inoltre, ad ogni incontro, un membro del gruppo viene scelto dal \emph{Project Manager} per stilare il verbale. Egli deve creare un file contenente un riassunto scritto di ciò di cui si è discusso e ciò che è stato deciso, secondo le modalità riportate in \ref{verbali}.
 			
 			\begin{figure}
 				\centering
@@ -152,7 +150,6 @@
 					[Docs
 						[CommonImages]
 						[Template]
-						[Verbali]
 						[RR]
 						[RP]
 						[RQ]
@@ -169,7 +166,6 @@
 				\item \texttt{Code} è la directory dove è inserito il codice;
 				\item \texttt{CommonImages} contiene le immagini comuni a tutti i documenti, per esempio il logo del gruppo;
 				\item \texttt{Template} contiene i files che compongono la struttura comune a tutti i documenti che verranno redatti;
-				\item \texttt{Verbali} contiene i files dei verbali degli incontri interni. Il nome di ogni file è identificato dalla data in cui è stata fatta la riunione del gruppo nel formato descritto in \ref{formati};
 				\item \texttt{RR} contiene tutti i documenti da consegnare per la Revisione dei Requisiti;
 				\item \texttt{RP} contiene tutti i documenti da consegnare per la Revisione di Progettazione;
 				\item \texttt{RQ} contiene tutti i documenti da consegnare per la Revisione di Qualifica;
@@ -182,7 +178,7 @@
 					\begin{center}
 						\texttt{NomeDelFile[\char`_vX.Y.Z].ext}
 					\end{center}
-			Dove NomeDelFile rappresenta il nome del file e ciascuna parola che compone tale nome è identificata da una lettera maiuscola. Ext rappresenta l'estesione del file. La parte all'interno delle parentesi quadre è quella che indica la versione in cui il file si trova e X,Y e Z rappresentano la specifica versione. E' opzionale in quanto non tutti i documenti hanno un controllo di versione, per esempio i verbali. Nel caso in cui dovessero essere presenti lettere accentate nel nome, l'accento deve essere ignorato e inserita semplicemente la lettera non accetata. Per esempio il file sorgente .tex del documento \emph{Studio di Fattibilità v1.0.0} è denominato \texttt{StudioDiFattibilita\_v1.0.0.tex}.
+			Dove NomeDelFile rappresenta il nome del file e ciascuna parola che compone tale nome è identificata da una lettera maiuscola. Ext rappresenta l'estesione del file. La parte all'interno delle parentesi quadre è quella che indica la versione in cui il file si trova e X,Y e Z rappresentano la specifica versione. È opzionale in quanto non tutti i documenti hanno un controllo di versione, per esempio i verbali. Nel caso in cui dovessero essere presenti lettere accentate nel nome, l'accento deve essere ignorato e inserita semplicemente la lettera non accetata. Per esempio il file sorgente .tex del documento \emph{Studio di Fattibilità v1.0.0} è denominato \texttt{StudioDiFattibilita\_v1.0.0.tex}.
 			
 			\subparagraph{Estensioni ammesse} \Spazio
 			I file che si trovano effettivamente nella directory \texttt{Docs} sono solamente immagini .jpg e .png, file sorgente \LaTeX $\text{ }$ .tex . Tutti i file.pdf compilati e i prodotti intermedi del programma per la compilazione di file .tex \texttt{pdflatex} .aux, .dvi, .fls, .log, .out, .toc verranno inseriti nel file \texttt{.gitignore} che rende la loro presenza trasparente a Git.
@@ -199,7 +195,7 @@
 			\subparagraph{Norme su commit}\Spazio
 			Ogni volta che viene effettuata una modifica significativa ad un file oppure una serie di modifiche strettamente correlate su più files, va utilizzato il comando \texttt{commit} di git. In esso di deve specificare un messaggio che descriva brevemente ciò che è stato fatto. I caratteri di questo messaggio non devono essere più di 80. Deve seguire la semantica
 			$$\text{[sigla file] breve descrizione}$$
-			Per esempio l'aggiunta della sezione "XYZ" al file \texttt{NormeDiProgetto\_v1.0.0.tex} comporterebbe scrivere come messaggio informativo "[NDP] Aggiunta sezione XYZ". Prima di eseguire una \texttt{commit} va aggiornato il registro delle modifiche come descritto in \ref{registroModifiche}
+			Per esempio l'aggiunta della sezione "XYZ" al file \texttt{NormeDiProgetto\_v1.0.0.tex} comporterebbe scrivere come messaggio informativo "[NDP] Aggiunta sezione XYZ". Prima di eseguire una \texttt{commit} va aggiornato il Diario delle Modifiche come descritto in \ref{registroModifiche}
 			
 		\paragraph{Gestione dei rischi} \Spazio
 		La gestione dei rischi è compito del \emph{Project Manager}. Egli li deve identificare, inserirli nel $Piano\text{ }di\text{ }Progetto$ e valutare una strategia per affrontarli. Nel caso in cui si presentassero nuovi rischi non osservati sarà sempre compito del \emph{Project Manager} inserirli nel \emph{Piano di Progetto}. Durante tutta la durata del progetto deve inoltre monitorare tali rischi e, solo se necessario, ridefinire le strategie di progetto.
