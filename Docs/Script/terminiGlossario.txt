@@ -78,6 +78,7 @@ Natural Language Api
 Node.js
 NoSQL
 open source
+Opera
 overhead
 package
 Plotly.js
@@ -118,7 +119,7 @@ Uniweb
 validazione
 verifica
 Verificatore
-XML
 Whatsapp
 workspace
 Wrike
+XML
