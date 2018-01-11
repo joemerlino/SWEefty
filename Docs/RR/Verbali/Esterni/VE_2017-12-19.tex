@@ -15,7 +15,6 @@
 
 \newcommand{\Gruppo}{SWEefty}
 
-\newcommand{\Versione}{1.0.0}
 
 \newcommand{\Redazione}{Elia Montecchio}
 
@@ -228,7 +227,6 @@ backgroundcolor=\color{lbcolor},
 		\centering
 		\begin{tabular}{c|L{5cm}}
 			\multicolumn{2}{c}{\textbf{\InformazioniDocumento{}} } \\ \hline
-			Versione &  \Versione{}\\
 			Redazione & \ACapoRedazione{} \\
 
 			Uso & \Uso \\
@@ -256,7 +254,7 @@ backgroundcolor=\color{lbcolor},
 				\item { \textbf{Data:} 19 Dicembre 2017 }
 				\item { \textbf{Ora:} 15.00 }
 				\item { \textbf{Partecipanti del gruppo:} Gruppo al completo }
-				\item { \textbf{Partecipanti esterni:} Iks Srl }
+				\item { \textbf{Partecipanti esterni:} IKS Srl }
 			\end{itemize}
 		
 	
@@ -265,38 +263,39 @@ backgroundcolor=\color{lbcolor},
     In particolare, è stato affrontato:
 
     \begin{itemize}
-	\item { Requisiti obbligatori,opzionali e desiderabili }
-	\item { Funzionamento delle trace }
-	\item { Use case }
+	\item { Affinamento dei requisiti }
+	\item { Spiegazione contenuto trace }
 	\item { Tecnologie obbligatorie per il progetto}
      \end{itemize}
- 
-	Nella riunione è stato specificato che il capitolato è composto da due parti principali da realizzare:
-			\begin{itemize}
-				\item { \textbf{Mappa dell'applicazione:} è un plugin che permette di rappresentare in modo grafico i dati raccolti nell'applicazione. In particolare si vuole disegnare i vari componenti che compongono l'applicazione monitorata, far visualizzare all'utilizzatore i tempi medi di risposta nell'effettuare una richiesta da un nodo all'altro.
-				I nodi devono essere collegati da una linea contenente una freccia che mediante il verso indica la direzione della richiesta da un nodo all'altro, il colore della freccia deve cambiare diventando rossa se il tempo delle richieste in quel punto della piattaforma e superiore alla norma, verde altrimenti.
-				I componenti della mappa devono poter essere riposizionabili sia in modo manuale che automatico.
-				Per quanto riguarda il modo manuale, l'idea è quella di poter muovere mediante click del mouse i vari componenti disegnati sulla mappa, mentre automaticamente, dev'essere presente un apposti bottone, che una volta cliccato, fa ritornare in una posizione grafica di default tutti i nodi della piattaforma. 
-				Inoltre, visto che un'applicazione aziendale non è installata in un solo server, dev'essere possibile visualizzare il numero di server che compongono un cluster.
-				Il plugin dev'essere sviluppato in linguaggio AngularJs.	
-				}
-				\item { \textbf{Call Tree:} è un plugin che rappresenta in modo grafico e gerarchico i metodi chiamati dall'applicazione quando viene effettuata una richiesta.
-				L'idea è di rappresentare i metodi da quello radice fino alla query che viene eseguita nel database così da ottenere i dati necessari per fornire una risposta all'utente. 
-			    Per ogni metodo è stato richiesto che vi sia presente anche il tempo di esecuzione dello stesso.
-		        Per quanto riguarda la lista delle query eseguite (traces) dev'essere possibile visualizzarle in ordine cronologico di esecuzione e dev'essere presente l'identificativo associato ad ognuna.
-		         
-	    }
-		
-			\end{itemize}
-		
-		E' stato richiesto che vi sia un disaccoppiamento fra logica applicativa e le tecnologie utilizzate, in questo modo è possibile cambiare, per esempio, la base di dati dove le informazioni vengono memorizzate senza dover rivoluzionare il software.
-		
-		
-		
-		
-		
-			
 	
+	\subsubsection{Affinamento dei requisiti Mappa Topologica}
+	Per quanto riguarda il plugin che visualizza la mappa topologica dell'applicazione sono state concordate le aggiunte che seguono.
 	
+	Per quanto riguarda la visualizzazione dei componenti:
+	\begin{itemize}
+		\item Deve essere possibile visualizzare sulla mappa il nome di ogni componente;
+		\item Se un componente è un server bisogna mostrarne il linguaggio di implementazione;
+		\item Se un nodo dell'applicazione è composto da più server (è un cluster) deve essere possibile visualizzarne il numero.
+	\end{itemize}
 	
+	Per quanto riguarda la visualizzazione delle interazioni tra componenti:
+	\begin{itemize}
+		\item Deve essere possibile visualizzare il tempo medio di risposta che esiste tra due componenti che interagiscono;
+		\item Deve essere possibile distinguere il tipo di richieste che avvengono tra i componenti, che potrebbero ad esempio essere richieste HTTP.
+	\end{itemize}
+	
+	In aggiunta ci è stato richiesto di poter interagire con la mappa. Deve essere possibile riposizionare i componenti nello spazio e deve essere presenta la funzionalità per ridisporli nella posizione di partenza.
+	
+	\subsubsection{Affinamento dei requisiti Stack Trace}
+	
+	Per l'altro plugin da realizzare ovvero quello per visualizzare la lista delle trace è stato concordato che la visualizzazione da realizzare deve essere riordinabile in base a dei parametri significativi.
+	
+    Per quanto riguarda la visualizzazione del call tree relativo ad una singola stack trace ci è stata richiesta la visualizzazione nel call tree delle queries a database effettuate da ogni metodo.
+
+	Inoltre, per ogni call tree, deve essere visualizzata una lista di tutte le queries effettuate.
+	
+	\subsubsection{Requisiti generali}
+	È stato richiesto che vi sia un disaccoppiamento fra logica applicativa e le tecnologie utilizzate, in questo modo potrà essere possibile cambiare, per esempio, la base di dati dove le informazioni vengono memorizzate senza dover rivoluzionare il software.
+		
+
 \end{document}

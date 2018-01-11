@@ -15,8 +15,6 @@
 
 \newcommand{\Gruppo}{SWEefty}
 
-\newcommand{\Versione}{1.0.0}
-
 \newcommand{\Redazione}{Elia Montecchio}
 
 \newcommand{\ACapoRedazione}{Elia Montecchio}
@@ -228,7 +226,6 @@ backgroundcolor=\color{lbcolor},
 		\centering
 		\begin{tabular}{c|L{5cm}}
 			\multicolumn{2}{c}{\textbf{\InformazioniDocumento{}} } \\ \hline
-			Versione &  \Versione{}\\
 			Redazione & \ACapoRedazione{} \\
 
 			Uso & \Uso \\
@@ -253,7 +250,7 @@ backgroundcolor=\color{lbcolor},
 			% - INSERT INFORMAZIONI INCONTRO
 			\begin{itemize}
 				\item { \textbf{Luogo:} Azienda IKS Srl  }
-				\item { \textbf{Data:} 19 Dicembre 2017 }
+				\item { \textbf{Data:} 20 Dicembre 2017 }
 				\item { \textbf{Ora:} 15.00 }
 				\item { \textbf{Partecipanti del gruppo:} Gruppo al completo }
 				\item { \textbf{Partecipanti esterni:} Nessuno }
@@ -261,30 +258,22 @@ backgroundcolor=\color{lbcolor},
 		
 	
 	\subsection{Argomenti affrontati}
-    Nel corso della riunione sono stati approfonditi i seguenti punti stilati dal responsabile di progetto:
+    Nel corso della riunione sono stati discusse questioni inerenti all'organizzazione del gruppo e lo stato del lavoro in corso. Sono anche stati discussi i requisiti del progetto facendo anche riferimento alla riunione con IKS del 19 dicembre.
     
-   
+	\subsubsection{Organizzazione e stato del lavoro}
     \begin{itemize}
-    \item { \textbf{Visionamento verifica del documento:} il documento
-    \emph{NormeDiProgetto\_v1.0.0} è stato verificato dall'incaricato. Durante la riunione sono stati evidenziati i vari errori e le sezioni da sistemare/riformulare;}
+    \item { \textbf{Visionamento verifica del documento:} il documento \emph{NormeDiProgetto\_v1.0.0} è stato verificato dall'incaricato. Durante la riunione sono stati evidenziati i vari errori e le sezioni da sistemare/riformulare;}
 	\item { \textbf{Discord:} strumento che il team utilizzerà per confrontarsi e per le riunioni durante il periodo delle vancaze natalizie, il quale è molto interessante in quanto permette anche di condividere tra i vari partecipanti lo schermo del proprio pc;}
-	\item { \textbf{Versione documento:} Si è deciso di inserire per ogni documento la versione dopo il suo titolo per esempio: \textit{NormeDiProgetto DA MOD};}
-	\item { \textbf{Verbali:} si è deciso di riscrivere i verbali in modo formale all'interno di un documento. Sarà dunque necessario realizzare un template da utilizzare per scrivere i verbali. Il task è stato assegnato a Joe Merlino. Per quanta riguarda la stesura dei verbali, se ne occuperanno Elia Montecchio e }
+	\item { \textbf{Versione documento:} Si è deciso di inserire per ogni documento la versione dopo il suo titolo per esempio: \textit{NormeDiProgetto\_v1.0.0};}
 	\item { \textbf{Glossario:} si è deciso di glossarizzare i termini in modo automatico mediante uno script.
 	I termini da glossarizzare non vanno più inseriti all'interno del documento, ma all'interno di un file denominato \textit{terminiGLossario.txt}. Ogni termine dev'essere inserito in ordine alfabetico. Inoltre, è stata realizzata una lista di file chiamati come le lettere dell'alfabeto, che rappresentano il nostro dizionario. E' necessario, dunque, inserire la parola all'interno del file chiamato con la lettere iniziale della parola in questione aggiungendo anche una descrizione del termine.}
-     \end{itemize}
+    \end{itemize}
  
+	\subsubsection{Requisiti}
+	Abbiamo discusso ed approvato che il plugin riguardante la mappa topologica deve prevedere la possibilità di visualizzare a schermo intero il suo contenuto.
  
-  
- 
-	
+	Per quanto riguarda il plugin riguardante la visualizzazione delle stack trace è stato deciso di realizzare l'ordinamento richiesto in base al tempo di esecuzione e al momento in cui è iniziata l'esecuzione della trace. Entrambe devono poter avvenire in ordine crescente e decrescente.
 		
-		
-		
-		
-		
-			
-	
-	
+	Abbiamo inoltre discusso della visualizzazione della lista delle queries di un call tree. Di esse dovranno essere mostrate le istruzioni che le compongono. Anche esse devono poter essere riordinabili per tempo di esecuzione e momento di inizio.
 	
 \end{document}
