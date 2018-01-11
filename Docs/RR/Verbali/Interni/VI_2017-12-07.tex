@@ -11,29 +11,26 @@
 % - "INSERT DOMANDE E RISPOSTE" (intanto lo strutturiamo così, con domande e rispose, se servono altri tipi di struttura cambieremo)
 
 % - "INSERT TITOLO" (verosimilmente sarà una cosa tipo "Verbale Esterno/Interno del xx/yy") 
-\newcommand{\Titolo}{Verbale riunione 19 Dicembre 2017}
+\newcommand{\Titolo}{Verbale riunione 07 Dicembre 2017}
 
 \newcommand{\Gruppo}{SWEefty}
 
 \newcommand{\Versione}{1.0.0}
 
-\newcommand{\Redazione}{Alberto Galinaro,Davide Zago,Elia Montecchio,Francesco Parolini,Giuseppe Merlino,Lisa Parma,Paolo Eccher}
+\newcommand{\Redazione}{Paolo Eccher}
 
-\newcommand{\ACapoRedazione}{Alberto Galinaro \newline Davide Zago \newline Elia Montecchio \newline Francesco Parolini \newline Giuseppe Merlino \newline Lisa Parma \newline Paolo Eccher}
+\newcommand{\ACapoRedazione}{Paolo Eccher}
 
-\newcommand{\Verifica}{XXX}
-
-\newcommand{\Approvazione}{YYY}
 
 \newcommand{\Distribuzione}{Prof.Tullio Vardanega \newline Prof.Riccardo Cardin \newline SWEefty}
 
-\newcommand{\InformazioniDocumento}{da mettere... o da non mettere...}
+\newcommand{\InformazioniDocumento}{}
 % - "INSERT USO (INTERNO/ESTERNO)"
-\newcommand{\Uso}{Interno/esterno}
+\newcommand{\Uso}{Interno}
 % - "INSERT DATA"
-\newcommand{\Data}{da mettere}
+\newcommand{\Data}{12 Dicembre 2017}
 % - "INSERT DESCRIZIONE"
-\newcommand{\DescrizioneDoc}{da mettere}
+\newcommand{\DescrizioneDoc}{Questo documento riporta in modo formale il riassunto della rinuione tenutasi nella data sopra riportata.  }
 
 
 
@@ -233,8 +230,7 @@ backgroundcolor=\color{lbcolor},
 			\multicolumn{2}{c}{\textbf{\InformazioniDocumento{}} } \\ \hline
 			Versione &  \Versione{}\\
 			Redazione & \ACapoRedazione{} \\
-			Verifica & \Verifica{} \\ 
-			Approvazione & \Approvazione{} \\
+
 			Uso & \Uso \\
 			Distribuzione & \Distribuzione{}
 		\end{tabular}
@@ -265,28 +261,36 @@ backgroundcolor=\color{lbcolor},
 		
 	
 	\subsection{Argomenti affrontati}
-    Nel corso della riunione sono stati approfonditi i punti fondamentali per la realizzazione del progetto.
-    In particolare, è stato affrontato:
-
+    Nel corso della riunione sono stati approfonditi e discussi i seguenti punti:
+    
+   
     \begin{itemize}
-	\item { Requisiti obbligatori,opzionali e desiderabili }
-	\item { Funzionamento delle trace }
-	\item { Use case }
-	\item { Tecnologie obbligatorie per il progetto}
+    \item { \textbf{Modulo A/B del capitolato:} Il capitolato propone due sottoparti ognuna delle quali sarà implementata da due team differenti. Durante l'incontro è stato deciso che il nostro team si occuperà di sviluppare il modulo B;}
+	\item { \textbf{Strumenti di comunicazione team:} Si è deciso che lo strumento che il team utilizzerà per le comunicazioni sarà \textit{Slack}. Lo strumento sarà suddiviso in diversi canali:	
+		\begin{itemize}
+			\item { \textbf{general:} Per le comunicazioni informali;}
+			\item { \textbf{incontri:} Per approvare e avere informazioni sugli incontri;}
+			\item { \textbf{todo:} Canale dove verranno riportati i vari punti lasciati in sospeso dei documenti;}
+		\end{itemize}
+		}
+	\item { \textbf{Dropbox} Si è deciso di creare un account dropbox così da poter aggiungere materiale di vario genere utile per i membri del team come per esempio guide, tutorial e file di grandi dimensioni;}
+	\item { \textbf{Diario:} Nell'intestazione del documento sarà presente il diario, nel quale verranno segnate in modo formale le modifice apportate al documento da ogni membro del gruppo.
+	Per effettuare ogni modifica è necessario riportare autore,ruolo,data e versione del documento;}
+	\item { \textbf{Diagrammi UML:} Nel corso della riunione è stato assegnato a Joe Merlino di cercare, per poi discutere nella prossima riunione un software per disegnare questo tipo di diagrammi;}
+	\item { \textbf{Stesura Norme di Progetto:} Si è deciso di iniziare a stendere questo documento. La suddivisione delle sezioni da scrivere è stata suddivisa nel seguente modo: }
+		\begin{itemize}
+		\item { \textbf{Processi Primari:} Alberto Gallinaro, Lisa Parma ed Elia Montecchio;}
+		\item { \textbf{Processi di Supporto} Giuseppe Merlino,Paolo Eccher e Davide Zago;}
+		\item { \textbf{Processi Organizzativi:} Francesco Parolini;}
+	\end{itemize}
+
+  
      \end{itemize}
  
-	Nella riunione è stato specificato che il capitolato è composto da due parti principali da realizzare:
-			\begin{itemize}
-				\item { \textbf{Mappa dell'applicazione:} è un plugin che permette di rappresentare in modo grafico i dati raccolti nell'applicazione. In particolare si vuole disegnare i vari nodi che compongono la piattaforma, far visualizzare all'utilizzatore i tempi medi di risposta nell'effettuare una richiesta da un nodo all'altro.
-				I nodi devono essere collegati da una linea contenente una freccia che mediante il verso indica la direzione della richiesta da un nodo all'altro, inoltre il colore della freccia deve cambiare diventando rossa se il tempo delle richieste in quel punto della piattaforma e superiore alla norma, verde altrimenti.	
-				}
-				\item { \textbf{Call Tree:} è un plugin che rappresenta in modo grafico e gerarchico i metodi chiamati dall'applicazione quando viene effettuata una richiesta.
-				L'idea è di rappresentare i metodi da quello radice fino alla query che viene eseguita nel database per ottenere i dati necessari per fornire una risposta all'utente. 
-			    Per ogni metodo è stato richiesto che vi sia presente anche il tempo di esecuzione dello stesso.}
-		
-			\end{itemize}
-		
-		E' stato richiesto che vi sia un disaccoppiamento fra logica applicativa e le tecnologie utilizzate, in questo modo è possibile cambiare, per esempio, la base di dati dove le informazioni vengono memorizzate senza dover rivoluzionare il software.
+ 
+  
+ 
+	
 		
 		
 		

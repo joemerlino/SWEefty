@@ -7,7 +7,7 @@
 	L'attività di documentazione consiste nella redazione di documenti durante tutto il ciclo di vita del prodotto software. Il gruppo si impegna a rispettare ed applicare le norme e gli strumenti adottati, con l'obietivo di garantire una stesura senza ambiguità di una documentazione valida, coerente e conforme a delle precise regole.
 	
 	\subsection{Approvazione dei documenti}
-	Ogni documento non formale in corrispondenza del completamento della sua stesura dovrà essere sottoposto al \textit{Project Manager}, che dovrà delegare ai \textit{Verificatori} il controllo del contenuto e della forma. Nel caso gli anzidetti \textit{Verificatori} rilevino degli errori, sarà loro compito notificarli al \textit{Project Manager}, che a sua volta affiderà il redattore del documento il compito di correggerli. Questo ciclo va eseguito fino a quando il documento non viene considerato completamente corretto dai  \textit{Verificatori}. In caso di assenso sulla correttezza e sulla qualità il documento può essere reputato un documento formale. In caso contrario spetta al \textit{Project Manager} comunicare le ragione per cui il documento non è stato giudicato corretto, esplicitando le modifiche da apportare.
+	Ogni documento non formale in corrispondenza del completamento della sua stesura dovrà essere sottoposto al \textit{Project Manager}, che dovrà delegare ai \textit{Verificatori} il controllo del contenuto e della forma. Nel caso gli anzidetti \textit{Verificatori} rilevino degli errori, sarà loro compito notificarli al \textit{Project Manager}, che a sua volta affiderà al redattore del documento il compito di correggerli. Questo ciclo va eseguito fino a quando il documento non viene considerato completamente corretto dai  \textit{Verificatori}. In caso di assenso sulla correttezza e sulla qualità il documento può essere reputato un documento formale. In caso contrario spetta al \textit{Project Manager} comunicare le ragione per cui il documento non è stato giudicato corretto, esplicitando le modifiche da apportare.
 		
 	\subsubsection{Template}
 	Per agevolare la redazione della documentazione è stato creato un template \LaTeX\text{ } contenente tutte le impostazioni stilistiche e grafiche citate in questo documento.
@@ -15,16 +15,16 @@
 	\subsubsection{Struttura dei documenti}
 	
 		\paragraph{Prima pagina}\Spazio
-		Ogni documento è caratterizzato da una prima pagina che contiene le seguenti informazioni sul documento:
+		Ogni documento, esclusi i verbali, è caratterizzato da una prima pagina che contiene le seguenti informazioni sul documento:
 		\begin{itemize}
 			\item Logo del gruppo;
 			\item Titolo del documento;
 			\item Nome del gruppo;
 			\item Nome del progetto;
 			\item Versione del documento;
-			\item Cognome e nome dei redattori del documento;
-			\item Cognome e nome dei verificatori del documento;
-			\item Cognome e nome del responsabile approvatore del documento;
+			\item Nome e cognome dei redattori del documento;
+			\item Nome e cognomedei verificatori del documento;
+			\item Nome e cognome del responsabile approvatore del documento;
 			\item Destinazione d’uso del documento;
 			\item Lista di distribuzione del documento;
 			\item Una breve descrizione del documento.
@@ -36,7 +36,7 @@
 		Ogni riga del registro delle modifiche contiene:
 		\begin{itemize}
 			\item Un breve sommario delle modifiche svolte;
-			\item Cognome e nome dell’autore;
+			\item Nome e cognome dell’autore;
 			\item Ruolo dell’autore;
 			\item Data della modifica;
 			\item Versione del documento dopo la modifica.
@@ -44,7 +44,6 @@
 		La tabella contenente le modifiche è ordinata per data in ordine decrescente, affinchè la prima riga contenga la versione attuale del documento.
 		
 		\paragraph{Indici} \Spazio
-		\textcolor{red}{DA CORREGGERE: (da correggere in altri documenti non qui)qui messo che ci sarà un indice  delle tabelle e delle figure: farlo presente agli altri. si usa il comando}
 		In ogni documento, esclusi i verbali, è presente un indice delle sezioni, un indice delle figure e un indice delle tabelle. Nel caso non siano presenti figure o tabelle i rispettivi indici verranno omessi. La notazione numerica di ogni indice deve partire da 1 e le sottosezioni devono essere separate da un punto. Anche la notazione della sottosezione parte da 1.
 		
 		\paragraph{Formattazione generale delle pagine} \Spazio
@@ -60,7 +59,7 @@
 			\subparagraph{Piè di pagina} \Spazio
 			Il piè di pagina è così strutturato:
 			\begin{itemize}
-				\item Nome del documento corrente, posti a sinistra;
+				\item Nome del documento corrente, posto a sinistra;
 				\item Numerazione progressiva della pagina rispetto al totale posta a destra.
 			\end{itemize}
 		
@@ -69,7 +68,7 @@
 		
 	\subsubsection{Versionamento}
 	\label{versionamento}
-	Tutti i documento, esclusi i verbali, devono essere versionati, affinchè si possa in ogni momento conoscerne la storia. Ogni versione di un documento deve essere appuntata nel Registro delle Modifiche. Si deve adottare il seguente formato per registrare ogni modifica: 
+	Tutti i documenti, esclusi i verbali, devono essere versionati, affinchè si possa in ogni momento conoscerne la storia. Ogni versione di un documento deve essere appuntata nel Diario delle Modifiche. Si deve adottare il seguente formato per registrare ogni modifica: 
 	\textbf{v{X}.{Y}.{Z}}
 	dove:
 	\begin{itemize}
@@ -83,14 +82,14 @@
 		\item \textbf{Y}
 		\begin{itemize}
 			\item Parte da 0;
-			\item Viene incrementato dal Verificatore in concomitanza di ogni verifica;
+			\item Viene incrementato dal \emph{Verificatore} in concomitanza di ogni verifica oppure dal \emph{Redattore} in concomitanza con la stesura di una modifica corposa, come l'aggiunta di una sezione;
 			\item Quando X viene incrementato Y ritorna a 0.
 		\end{itemize}
 		
 		\item \textbf{Z}
 		\begin{itemize}
 			\item Parte da 0;
-			\item Viene incrementato dal \textit{Redattore} in concomitanza di ogni modifica;
+			\item Viene incrementato dal \textit{Redattore} in concomitanza di ogni modifica di piccolo volume, come la correzione di alcuni errori;
 			\item Quando Y viene incrementato Z	 ritorna a 0.
 		\end{itemize}
 		
@@ -162,12 +161,10 @@
 			\item PQ: \textit{Piano di Qualifica};
 			\item TB: \emph{Technology Baseline};
 			\item PB: \emph{Produce Baseline}.
-			
-			
-\item RR: Revisione dei requisiti;
-			\item RP: Revisione di progettazione;
-			\item RQ: Revisione di qualifica;
-			\item RA: Revisione di accettazione;
+			\item RR: \emph{Revisione dei requisiti};
+			\item RP: \emph{Revisione di progettazione};
+			\item RQ: \emph{Revisione di qualifica};
+			\item RA: \emph{Revisione di accettazione};
 		\end{itemize}
 		
 	\subsubsection{Elementi grafici}
@@ -177,7 +174,7 @@
 Qualora il redattore lo ritenesse necessario per aumentare la leggibilità è possibile anche l'uso di colori di sfondo scegliendone uno specifico per l'intestazione e due che verranno alternati per le righe sottostanti.
 
 		\paragraph{Immagini}\Spazio
-		Le immagini inserite nel documento sono nel formato PNG. Ognuna di esse deve essere accompagnata da una didascalia analoga a quella descritta per le tabelle. \\
+		Le immagini inserite nel documento devono essere nel formato PNG. Ognuna di esse deve essere accompagnata da una didascalia analoga a quella descritta per le tabelle. \\
 		Ogni immagine deve inoltre essere centrata orizzontalmente mantenendo una separazione netta dai paragrafi che seguono e precedono, marcando quindi un distacco tra grafica e testo migliorando di conseguenza la leggibilità. \\
 		I diagrammi UML vengono inseriti nei documenti sotto forma di immagine.
 	\subsubsection{Classificazione dei documenti}
@@ -185,25 +182,26 @@ Qualora il redattore lo ritenesse necessario per aumentare la leggibilità è po
 		Tutti i documenti sono informali dalla loro creazione fino all'approvazione da parte del \emph{Project Manager} ed in quanto tali sono considerati esclusivamente ad uso interno.
 		\paragraph{Documenti formali}\Spazio
 		Una volta avvenuta l'approvazione da parte del \emph{Project Manager} il documento viene ritenuto formale ed è quindi distribuibile all'esterno del gruppo.\\
-		Per raggiungere tale stato inoltre, il documento deve aver già superato la fase di verifica e validazione. \\
+		Per raggiungere tale stato inoltre, il documento deve aver già superato la fase di verifica. \\
 Ogni modifica effettuata produrrà una nuova versione del documento da considerarsi informale e rimarrà tale fino ad una successiva approvazione da parte del \emph{Project Manager}.
 		\paragraph{Verbali}\Spazio
+		\label{verbali}
 		Dopo ogni incontro interno o esterno spetta al segretario verbalizzante redigere il documento. I verbali non sono soggetti a versionamento poiché non subiscono modifiche successive alla loro prima redazione. Deve avere un codice univoco identificativo con la seguente struttura: 
 		\newline
-		\centerline{[data]} 
+		\centerline{V*\_[data]} 
 		dove: 
     \begin{itemize} 
-\item \textbf{data} è la data della riunione alla quale il verbale fa riferimento nel formato descritto in \ref{formati}. 
+\item \textbf{data} è la data della riunione alla quale il verbale fa riferimento nel formato descritto in \ref{formati}; 
+\item \textbf{*} è o la lettera I se il verbale è interno, oppure la lettera E se il verbale è esterno.
 \end{itemize}
 Dovrà presentare le seguenti informazioni nell'ordine in cui sono elencate:
 \begin{itemize}
-\item data, ora e luogo dell'incontro;
-\item partecipanti presenti, assenti, il nome di chi presiede e quello del segretario verbalizzante;
-\item l'ordine del giorno.
+\item luogo dell'incontro, data e ora;
+\item partecipanti presenti, assenti, il nome di chi presiede e quello del segretario verbalizzante.
 \end{itemize}
 Tali informazioni devono essere contenute nel primo paragrafo \textit{Informazioni Generali}, che deve specificare anche gli argomenti trattati durante l'incontro.\\
-Il secondo paragrafo \textit{Riassunto Incontro} deve esplicitare in dettaglio le decisioni prese o i problemi irrisolti.\\
-Nel caso l'incontro abbia partecipanti esterni deve essere presente una sezione  \textit{Domande e Risposte} dove vengono riportate le domande poste, seguite dalle risposte date.
+Il secondo paragrafo \textit{Argomenti Affrontati} deve esplicitare in dettaglio le decisioni prese o i problemi irrisolti.\\
+Nel caso l'incontro abbia partecipanti esterni e fosse stata eseguita una serie sessione di domande e risposte deve essere presente una sezione  \textit{Domande e Risposte} dove vengono riportate le domande poste, seguite dalle risposte date.
 	\subsubsection{Strumenti}
 		\paragraph{\LaTeX}\Spazio
 		Per redigere i documenti viene utilizzato il linguaggio di markup \LaTeX. La possibilità di definire delle variabili all'interno dei fogli di stile consente di automatizzare l'aggiornamento di tutti i riferimenti presenti all'interno dei diversi documenti.\\
@@ -239,7 +237,6 @@ Nel caso l'incontro abbia partecipanti esterni deve essere presente una sezione 
 			\subparagraph{Analisi dinamica} \Spazio
 			L'analisi dinamica è una forma di analisi del software che richiede l'esecuzione del codice sorgente. Viene effettuata tramite dei test che verificano il corretto funzionamento del prodotto, in caso di anomalie questi test aiutano ad identificare l'errore.
 			I test devono essere ripetibili ovvero con lo stesso input e nello stesso ambiente devo essere in grado di ottenere sempre lo stesso output. Per ogni test sono quindi definiti i seguenti parametri:
-			\textcolor{red}{DA CORRREGGERE: anche qui sotto da completare}
 			\begin{itemize}
 				\item \textbf{Ambiente}: sistema hardware e software sul quale si svolgerà il test;
 				\item \textbf{Stato iniziale}: insieme dei valori assunti dalle variabili dinamiche prima dello svolgimento dei test;

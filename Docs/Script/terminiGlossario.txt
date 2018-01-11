@@ -50,6 +50,7 @@ git
 GitHub
 Gitkraken
 GNU Aspell
+Google Chrome
 Google Cloud Platform
 Google SQL
 hosting
@@ -57,6 +58,7 @@ HTML
 IDE
 integrazione continua
 interfacce
+Internet Explorer
 issues
 Java
 Javascript
@@ -65,15 +67,18 @@ Kibana
 Logstash
 major features
 major improvement
+management
 mappa topologica
 Mercurial
 minor improvement
 MongoDB
+Mozilla Firefox
 multipiattaforma
 Natural Language Api
 Node.js
 NoSQL
 open source
+overhead
 package
 Plotly.js
 plugin
