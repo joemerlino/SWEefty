@@ -71,6 +71,7 @@ management
 mappa topologica
 Mercurial
 minor improvement
+modello incrementale
 MongoDB
 Mozilla Firefox
 multipiattaforma
