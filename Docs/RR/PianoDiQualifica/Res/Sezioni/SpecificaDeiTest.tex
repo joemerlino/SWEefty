@@ -1,7 +1,7 @@
 \section{Specifica dei test}
 Per produrre software di qualità, il gruppo SWEefty definirà dei test per assicurarsi che le unità prodotte funzionino in maniera corretta. Il tracciamento dei test ed il loro esito verrà riportato in questo documento.
 	\subsection{Tipi di test}
-	SWEefty ha individuato quattro tipologie di test:
+	SWEefty ha individuato quattro tipologie di test: \Spazio
 	\begin{itemize}
 		\item {\textbf{Test di Unità [TU]:} lo scopo di questa tipologia di test è quello di verificare la più piccola parte di lavoro prodotta da un programmatore. Questo significa tendenzialmente verificare i metodi e le funzioni scritte; }
 		\item {\textbf{Test di Integrazione [TI]:} lo scopo di questa tipologia di test è quello di verificare le componenti di sistema. Più	precisamente, l’obiettivo è quello di testare il funzionamento dei vari package prodotti, sia singolarmente che nel loro insieme; }
@@ -10,9 +10,9 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
 	\end{itemize} 
 		
 	\subsubsection{Test di Unità}
-	I test di unità saranno descritti nel modo seguente:
+	I test di unità saranno descritti nel modo seguente: \Spazio
 
-	\textbf{TU[idTest]}
+	\centerline{\textbf{TU[idTest]}}
 	
 	dove:
 	\begin{itemize}
@@ -21,11 +21,11 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
 	
 	\subsubsection{Test di Integrazione}
 	I test di integrazione saranno descritti nel modo seguente: \Spazio
-	\centerline{\textbf{TI}[idComponente]}
+	\centerline{\textbf{TI}[IdComponente]}
 	
 	dove:
 	\begin{itemize}
-		\item \textbf{idComponente:} rappresenta il codice identificativo crescente del componente considerato.
+		\item \textbf{IdComponente:} rappresenta il codice identificativo crescente del componente considerato.
 	\end{itemize}
 		
 		
@@ -35,7 +35,7 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
 	
 	dove:
 	\begin{itemize}
-		\item \textbf{tipoRequisito:} può assumere valori tra:
+		\item \textbf{TipoRequisito:} può assumere valori tra:
 		\begin{itemize}
 			\item F per i requisiti funzionali;
 			\item Q per i requisiti di qualità;
@@ -43,21 +43,21 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
 			\item P per i requisiti prestazionali.
 		\end{itemize}
 	
-		\item \textbf{ImportanzaRequisito: può assumere valori tra:}
+		\item \textbf{ImportanzaRequisito:} può assumere valori tra:
 		\begin{itemize}
 			\item D per i requisiti desiderabili;
-			\item O per i requisiti di obbligatori;
-			\item F per i requisiti di facoltativi.
+			\item O per i requisiti obbligatori;
+			\item F per i requisiti facoltativi.
 		\end{itemize}
 	
-		\item \textbf{idRequisito: può assumere un valore gerarchico che identifica il singolo requisito.}
+		\item \textbf{IdRequisito:} può assumere un valore gerarchico che identifica il singolo requisito.
 	\end{itemize}
 	
 		
 	\subsubsection{Test di Validazione}
 	I test di validazione saranno organizzati nel modo seguente:\Spazio
 	
-    \centerline{\textbf{TV}[TipoRequisito][ImportanzaRequisito][idRequisito]}
+    \centerline{\textbf{TV}[TipoRequisito][ImportanzaRequisito][IdRequisito]}
 
 	dove:
 	\begin{itemize}
@@ -71,8 +71,8 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
 		\item \textbf{ImportanzaRequisito:} può assumere valori tra:
 		\begin{itemize}
 			\item D per i requisiti desiderabili;		
-			\item O per i requisiti di obbligatori;
-			\item F per i requisiti di facoltativi.
+			\item O per i requisiti obbligatori;
+			\item F per i requisiti facoltativi.
 		\end{itemize}
 
 		\item \textbf{IdRequisito:} assume un valore gerarchico che identifica il singolo requisito.
