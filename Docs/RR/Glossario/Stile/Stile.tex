@@ -161,6 +161,8 @@ backgroundcolor=\color{lbcolor},
 }
 
 \newcommand{\lettera}[1]{
+  \newpage
+  \invisiblesection{#1}
   \begin{center}
     {\Huge #1}\\
   \end{center}
@@ -169,14 +171,14 @@ backgroundcolor=\color{lbcolor},
 }
 
 \newcommand\invisiblesection[1]{%
-  \refstepcounter{section}%
-  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \refstepcounter{section}
+  \addcontentsline{toc}{section}{\protect\numberline{}#1}%
   \sectionmark{#1}
 }
 
 \newcommand\invisiblesubsection[1]{%
   \refstepcounter{subsection}%
-  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}%
+  \addcontentsline{toc}{subsection}{\protect\numberline{}#1}%
   \sectionmark{#1}
 }
 
