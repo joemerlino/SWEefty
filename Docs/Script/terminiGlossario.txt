@@ -1,4 +1,4 @@
-﻿AngularJS
+AngularJS
 Apache Nutch
 Apache SolR
 APM
@@ -6,7 +6,7 @@ architettura
 backend
 big data
 blockchain
-Bot
+bot
 bug
 bugfix
 call tree
@@ -16,7 +16,6 @@ CanvasJS
 capitolato
 Change Significance
 Chart.js
-classe
 cluster
 codebase
 committente
@@ -27,7 +26,7 @@ Cytoscape.js
 Dapp
 dashboard
 database
-Design Pattern
+design Pattern
 diagramma di Gantt
 diagramma di robustezza
 driver
@@ -35,7 +34,6 @@ Dropbox
 D3.js
 editor
 Elastic Search
-entità persistenti
 ESLint
 Ethereum
 Ethereum Virtual Machine
@@ -50,13 +48,14 @@ git
 GitHub
 Gitkraken
 GNU Aspell
+Google Chrome
 Google Cloud Platform
 Google SQL
 hosting
 HTML
 IDE
 integrazione continua
-interfacce
+Internet Explorer
 issues
 Java
 Javascript
@@ -69,12 +68,15 @@ management
 mappa topologica
 Mercurial
 minor improvement
+modello incrementale
 MongoDB
+Mozilla Firefox
 multipiattaforma
 Natural Language Api
 Node.js
 NoSQL
 open source
+Opera
 overhead
 package
 Plotly.js
@@ -85,7 +87,7 @@ prodotto
 Progettista
 progetto
 proponente
-Push
+push
 React
 runtime environment
 SCSS
@@ -100,6 +102,7 @@ SQL
 stack trace
 standup
 stub
+task
 tasks
 Telegram
 TexStudio
@@ -110,12 +113,11 @@ trace
 Truffle
 typos
 UML
-Unità
 Uniweb
 validazione
 verifica
-Verificatore
-XML
+verificatore
 Whatsapp
 workspace
 Wrike
+XML

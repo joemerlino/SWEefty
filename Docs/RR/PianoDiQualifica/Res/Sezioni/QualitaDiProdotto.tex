@@ -1,5 +1,5 @@
 \section{Qualità di Prodotto}
-Per quantificare e valutare la qualità del prodotto software che il gruppo \textit{SWEefty} ha deciso di attenersi allo standard ISO/IEC 25010, conosciuto anche come SQuaRE, che individua e definisce otto caratteristiche da considerare per costruire un prodotto software con un elevato livello di qualità. Ognuna di queste caratteristiche viene suddivisa in varie sottocaratteristiche(31 in totale), le quali, attraverso dei parametri misurabili  permettono una valutazione oggettiva del grado di conseguimento della caratteristica considerata.
+Per quantificare e valutare la qualità del prodotto software il gruppo \textit{SWEefty} ha deciso di attenersi allo standard ISO/IEC 25010, conosciuto anche come SQuaRE, che individua e definisce otto caratteristiche da considerare per costruire un prodotto software con un elevato livello di qualità. Ognuna di queste caratteristiche viene suddivisa in varie sottocaratteristiche(31 in totale), le quali, attraverso dei parametri misurabili  permettono una valutazione oggettiva del grado di conseguimento della caratteristica considerata.
 \textcolor{red}{PORTABILITY E COMPATIBILITY}
  
 	\subsection{Functional Suitability}
@@ -13,7 +13,7 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 			\paragraph{Completezza dell'implementazione funzionale}\Spazio
 			 Misura la quantità in percentuale di requisiti funzionali soddisfatti dalla corrente implementazione.
 			\begin{itemize}
-				\item {\textbf{Misurazione:}  $BC=1-\frac{N_FM}{N_FI}\times 100$, dove $N_FM$  è il numero di funzionalità mancanti nell'implementazione e $N_FI$ è il numero di funzionalità individuate nell'attività di analisi};
+				\item {\textbf{Misurazione:}  $BC=1-\frac{N_{FM}}{N_{FI}}\times 100$, dove $N_{FM}$  è il numero di funzionalità mancanti nell'implementazione e $N_FI$ è il numero di funzionalità individuate nell'attività di analisi};
 				\item {\textbf{Range ottimale:} 100;}
 				\item {\textbf{Range accettazione:} 100.}
 			\end{itemize} 
@@ -29,13 +29,13 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 			\paragraph{Densità di failure} \Spazio
 			Misura la quantità percentuale di test che si sono conclusi con una failure.
 			\begin{itemize}
-				\item {\textbf{Misurazione:} $F=\frac{N_FR}{N_TE}\times 100$, dove $N_FR$ è il numero di failure rilevati durante l'attività di testing e $N_TE$ è il numero di test-case eseguiti};
+				\item {\textbf{Misurazione:} $F=\frac{N_{FR}}{N_{TE}}\times 100$, dove $N_{FR}$ è il numero di failure rilevati durante l'attività di testing e ${N_TE}$ è il numero di test-case eseguiti};
 				\item {\textbf{Range ottimale:} 0;}
 				\item {\textbf{Range accettazione:} 0-10.}
 			\end{itemize} 
 			
 	\subsection{Usability}
-		Con usability si intende il livello a cui il dotto può essere utilizzato da degli utenti specifici per raggiungere specifici obbiettivi con efficacia, efficienza e soddisfazione in uno specifico contesto d'uso.  
+		Con usability si intende il livello a cui il prodotto può essere utilizzato da degli utenti specifici per raggiungere specifici obbiettivi con efficacia, efficienza e soddisfazione in uno specifico contesto d'uso.  
 		\subsubsection{Obiettivi}
 		\begin{itemize}
 			\item {\textbf{Appropriateness Recognizability:} livello a cui gli utenti riescono a riconoscere se il prodotto è adeguato per i loro bisogni;}
@@ -47,7 +47,7 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 			\paragraph{Comprensibilità delle funzionalità offerte} \Spazio 
 			Misura la quantità in percentuale di operazioni comprese dall'utente che non richiedono la consultazione del manuale.
 			\begin{itemize}
-				\item {\textbf{Misurazione:} $C=\frac{N_FC}{N_FO}\times 100$, dove $N_FC$ è il numero di funzionalità comprese in modo immediato dall'utente e $N_FO$ è il numero di funzionalità totali offerte dal sistema};
+				\item {\textbf{Misurazione:} $C=\frac{N_{FC}}{N_{FO}}\times 100$, dove $N_{FC}$ è il numero di funzionalità comprese in modo immediato dall'utente e $N_{FO}$ è il numero di funzionalità totali offerte dal sistema};
 				\item {\textbf{Range ottimale:} 90-100;}
 				\item {\textbf{Range accettazione:} 70-100.}
 			\end{itemize} 
@@ -60,7 +60,7 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 			\end{itemize} 
 			
 	\subsection{Performance Efficency}
-		Con performance efficiency si intende il livello di performance relativo all'ammontare di risorse usate sotto determinate condizioni. \textcolor{red}{specificare risorsa}
+		Con performance efficiency si intende il livello di performance relativo all'ammontare di risorse usate sotto determinate condizioni. 
 		\subsubsection{Obiettivi}
 			\begin{itemize}
 				\item {\textbf{Time behaviour:} livello con cui il tempo di risposta e di processamento di un prodotto soddisfano certi requisiti durante l'esecuzione delle loro funzionalità;}
@@ -88,41 +88,14 @@ Per quantificare e valutare la qualità del prodotto software che il gruppo \tex
 			\paragraph{Capacità di analisi failure} \Spazio
 			Misura la quantità in percentuale di failures incontrate di cui sono state tracciate le cause.
 			\begin{itemize}
-				\item {\textbf{Misurazione:} $I=frac{N_FI}{N_FR}\times 100 $, dove $N_FI$ è il numero di failure delle quali sono state individuate le cause e $N_FR$ è il numero di failures rilevate};
+				\item {\textbf{Misurazione:} $I=\frac{N_{FI}}{N_{FR}}\times 100 $, dove $N_{FI}$ è il numero di failure delle quali sono state individuate le cause e $N_{FR}$ è il numero di failures rilevate};
 				\item {\textbf{Range ottimale:} 80-100;}
 				\item {\textbf{Range accettazione:} 60-100.}
 			\end{itemize} 
 			\paragraph{Impatto delle modifiche} \Spazio
 			Misura la quantità in percentuale di modiche introdotte per risolvere failures che hanno introdotto nuove failures nel prodotto.
 			\begin{itemize}
-				\item {\textbf{Misurazione:} $I=frac{N_FRE}{N_FR}\times 100 $, dove $N_FRE$ è il numero di failure risolte introducendo nuove failure e $N_FR$ è il numero di failures risolte};
+				\item {\textbf{Misurazione:} $I=\frac{N_{FRE}}{N_{FR}}\times 100 $, dove $N_{FRE}$ è il numero di failure risolte introducendo nuove failure e $N_{FR}$ è il numero di failures risolte};
 				\item {\textbf{Range ottimale:} 0-10;}
 				\item {\textbf{Range accettazione:} 0-20.}
 			\end{itemize} 
-
-\begin{longtable}[H]{|C{5cm}|C{3.5cm}|C{3.5cm}|}
-		\hline
-		Metrica & Range ottimale & Range accettato  \\ \hline
-		Rischi non individuati & 0 & 0-4 \\ \hline
-		Requisiti obbligatori soddisfatti & 100\% & 100\% \\ \hline
-		SFIN & $\geq 2$ & $\geq 0$ \\ \hline
-		SFOUT & 0-1 & 0-5 \\ \hline
-		Metodi per classe & 1-7 & 1-10 \\ \hline
-		Parametri per metodo & 0-4 & 0-8 \\ \hline
-		Complessita' ciclomatica & 1-10 & 1-15 \\ \hline
-		Linee di codice / Linee di commento & $\geq30$ & $\geq25$ \\ \hline
-		Halstead difficulty per function & 0-15 & 0-25 \\ \hline
-		Halstead Volume per-function & 20-1000 &  20-1500 \\ \hline
-		Halstead Effort per-function & 0-300 & 0-400 \\ \hline
-		Indice di manutenibilta' & 120-171 & 100-171 \\ \hline
-		Indice di Gulpease & 50-100 & 40-100 \\ \hline
-		Branch Coverage & 70\%-100\% & 50\%-100\% \\ \hline
-		Statement Coverage & 70\%-100\% & 50\%-100\% \\ \hline
-		Completezza dell'implementazione funzionale & 100 & 100 \\ \hline
-		Densità di failure & 0 & 0-10 \\ \hline
-		Comprensibilità delle funzionalità offerte & 90-100 & 70-100 \\ \hline
-		Facilità di apprendimento & 0-10 & 0-20 \\ \hline
-		Tempo di risposta & 0-3 & 0-8 \\ \hline
-		Capacità di analisi failure & 80-100 & 60-100 \\ \hline
-		Impatto delle modifiche & 0-10 & 0-20 \\ \hline
-\end{longtable}

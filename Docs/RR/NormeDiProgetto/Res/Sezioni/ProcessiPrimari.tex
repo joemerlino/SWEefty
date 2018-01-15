@@ -4,7 +4,7 @@
 	
 	\subsubsection{Scopo}
 	Lo scopo di questa attività è quello di fornire concretamente il prodotto software proposto dall'azienda IKS s.r.l. e avente come committenti il Prof. Tullio Vardanega e il Prof. Riccardo Cardin.
-	In questa sezione vengono trattate le norme, dalle più triviali alle più importanti, inerenti alla progettazione, lo sviluppo e la consegna del prodotto "Set di plugins per Kibana".
+	In questa sezione vengono trattate le norme, dalle più triviali alle più importanti, inerenti alla progettazione, lo sviluppo e la consegna del prodotto \textcolor{red}{"Set di plugins per Kibana"}.
 	Al fine di perseguire nel miglior modo questo traguardo intendiamo collaborare con i referenti dell'azienda, affrontando diversi punti fondamentali così da produrre un software completo e conforme alle richieste. Nello specifico è necessario:
     \begin{itemize}
 	\item Stimare i costi del prodotto finale;
@@ -46,9 +46,9 @@
 	\begin{itemize}
 		\item Realizzare un prodotto conforme alle richieste del proponente;
 		\item Realizzare un prodotto conforme ai test di validazione e verifica;
-		\item Fissare degli obiettivi di sviluppo;
+		\item Fissare degli obiettivi di sviluppo.
 	\end{itemize}
-     Il processo di sviluppo si svolge secondo lo standard ISO/IEC 12207. E' composto quindi, dalle seguenti attività:
+     Il processo di sviluppo si svolge secondo lo standard ISO/IEC 12207. È composto quindi, dalle seguenti attività:
      	\begin{itemize}
      	\item Analisi dei requisiti;
      	\item Progettazione;
@@ -71,26 +71,60 @@
 		    Quest'ultimo è steso dagli \emph{Analisti} e contiene una lista dei requisiti e dei casi d'uso.
 		    In questo modo sarà possibile effettuare e definire dei test di superamento del software. 
 
-				\subparagraph{Casi d'uso}
+			\subparagraph{Casi d'uso} \Spazio
+			Ogni caso d'uso è descritto dalla seguente struttura:
+			\begin{itemize}
+				\item Nome;
+				\item Descrizione;
+				\item Precondizione;
+				\item Postcondizione;
+				\item Inclusioni (se presenti);
+				\item Estensioni (se presenti);
+				\item Attori;
+			\end{itemize}
+
 			\subparagraph{Codice identificativo} \Spazio
 			Ogni caso d'uso è identificato da un codice, ed è rappresentato nel seguente modo:
-			\textbf{U \{codice\_padre\}.\{codice\_figlio\}  }
+			
+		    $$ \textbf{UC \{codice\_padre\}.\{codice\_figlio\}  } $$
 			
 			\begin{itemize}
+				\item Le prime due lettere identificano che si tratta di un caso d'uso;
 				\item Il codice padre è un numero univoco che identifica un caso d'uso;
 				\item Il codice figlio è un numero progressivo che identifica i sottocasi;
 			\end{itemize}
-			\subparagraph{Requisiti}
+		Vi sono al massimo sei livelli di annidamento, la struttura numerica è completamente gerarchica.
+		Consideriamo questo esempio:
+		\begin{itemize}
+			\item \textbf{UC1} Identifica il caso d'uso con numero univoco 1;
+			\item \textbf{UC1.1} Identifica un nuovo livello figlio del numero 1;
+			\item \textbf{UC1.1.1} Identifica un nuovo livello di annidamento gerarchicamente figlio del numero 1.1.
+		\end{itemize}
+	    Per ogni livello i numeri partono dal numero uno e non hanno limite massimo. 
+			\subparagraph{Requisiti} \Spazio
+			Ogni requisito è strutturato come segue:
+			\begin{itemize}
+				\item Nome;
+				\item Tipo;
+				\item Importanza;
+				\item Stato implementazione;
+				\item Fonti;
+			\end{itemize}
+			
+			
 			\subparagraph{Codice identificativo} \Spazio
 			Ogni requisito è identificato da un codice, ed è rappresentato nel seguente modo:
-			\textbf{R \{importanza\}\{tipo\}\{numero\_vincolo\} }
+			$$ \textbf{R \{importanza\}\{tipo\}\{numero\_vincolo\} } $$
 			
 			\begin{itemize}
-				\item Il primo valore è l'abbreviazione di requisito;
+				\item La R sta per requisito ed è presente in tutti i codici;
 				\item Il primo valore rappresenza l'importanza: 0 se il requisito è obbligatorio, 1 se è desiderabile, 2 per gli opzionali;
-				\item Il terzo valore indica il tipo: F per i requisiti funzinali, Q per quelli di qualità, P se prestazionale, V se di vincolo;
-				\item L'ultimo numero indica il numero del vincolo;
+				\item Il terzo valore indica il tipo: F per i requisiti funzionali, Q per quelli di qualità, P se prestazionale, V se di vincolo;
+				\item L'ultimo numero indica il numero del vincolo. La struttura numerica di quest'ultimo rispetta le stesse regole dei Casi D'Uso.
 			\end{itemize}
+		
+	        
+		    
 			\subparagraph{UML} \Spazio
 			I diagrammi UML devono essere realizzati usando la versione del linguaggio \textit{v2.0}
 			
@@ -202,7 +236,7 @@ else
 
 \end{lstlisting}
 			\item \textbf{If annidati:} non sono ammessi più di due if annidati in modo da non compromettere la leggibilità del codice;
-			\item \textbf{Numero condizioni per if: } non sono ammesse più di tre condizioni per If, in caso contrario è necessario raggruppare le condizioni in eccesso in funzioni con nomi che iniziano con la clausola "is";
+			\item \textbf{Numero condizioni per if: } non sono ammesse più di tre condizioni per If, in caso contrario è necessario raggruppare le condizioni in eccesso in funzioni con nomi che iniziano con la clausola "if";
 \begin{lstlisting}
 function isEven() { /*   */}
 

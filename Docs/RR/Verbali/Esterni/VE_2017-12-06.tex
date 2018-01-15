@@ -15,8 +15,6 @@
 
 \newcommand{\Gruppo}{SWEefty}
 
-\newcommand{\Versione}{1.0.0}
-
 \newcommand{\Redazione}{Elia Montecchio}
 
 \newcommand{\ACapoRedazione}{Elia Montecchio}
@@ -228,7 +226,6 @@ backgroundcolor=\color{lbcolor},
 		\centering
 		\begin{tabular}{c|L{5cm}}
 			\multicolumn{2}{c}{\textbf{\InformazioniDocumento{}} } \\ \hline
-			Versione &  \Versione{}\\
 			Redazione & \ACapoRedazione{} \\
 
 			Uso & \Uso \\
@@ -256,21 +253,38 @@ backgroundcolor=\color{lbcolor},
 				\item { \textbf{Data:} 06 Dicembre 2017 }
 				\item { \textbf{Ora:} 15.00 }
 				\item { \textbf{Partecipanti del gruppo:} Gruppo al completo }
-				\item { \textbf{Partecipanti esterni:} Iks Srl }
+				\item { \textbf{Partecipanti esterni:} IKS Srl }
 			\end{itemize}
 		
 	
 	\subsection{Argomenti affrontati}
-     Nel corso della riunione è stato approfondito il capitolato, presentando le diverse tecnologie da apprendere per poterlo sviluppare.
+     Nel corso della riunione è stato approfondito lo scopo del progetto e sono state presentate e discusse le diverse tecnologie da apprendere per poterlo sviluppare.
      
-     Gli argomenti principali discussi sono:
+			
+	\subsubsection{Scopo del progetto}
+	È stato concordato che lo scopo del progetto sarà quello di realizzare due plugin per Kibana per il monitoraggio di applicazioni. In particolare andrà sviluppata una mappa topologica e un plugin per la visualizzazione della lista delle trace dell'applicazione da monitorare. In particolare, per quanto riguarda la mappa topologica, è richiesta la possibilità di visualizzare i componenti dell'applicazione monitorata che possono essere server o database. Tali componenti devono essere rappresentati come nodi di un grafo.
+	Inoltre è stata richiesta la possibilità di visualizzare sulla mappa le richieste che avvengono tra i componenti suddetti. Questa relazione deve essere rappresentata come archi di un grafo.
+	Per quanto riguarda invece il plugin per la visualizzazione della lista delle trace ci sono state richieste le seguenti cose:
+	\begin{itemize}
+		\item{Deve essere possibile visualizzare il tempo di esecuzione, il momento in cui sono state eseguite le trace e lo status code con un eventuale messaggio di errore nel caso la richiesta HTTP fallisse;}
+		\item{Deve essere possibile visualizzare un identificativo per ogni trace corrispondente alla richiesta HTTP;}
+		\item{Deve essere possibile visualizzare il call tree relativo ad una determinata trace;}
+		\item{In questo call tree deve essere possibile visualizzare il nome di ogni metodo presente, indentato in base alla sua "profondità";}
+		\item{Deve essere possibile interagire con il call tree per agevolarne la comprensibilità;}
+		
+	\end{itemize}
+	
+	
+	\subsubsection{Tecnologie}
      \begin{itemize}
-     	\item { \textbf{Kibana:} è stata presentata la piattaforma e ne sono state analizzate le diverse funzionalità.
-     	Questa è la piattaforma open source progettata per rappresentare in modo grafico i dati ottenuti dopo averli richiesti al database.
-        L'obiettivo del nostro team sarà appunto quello di realizzare un plugin che permetta di visualizzare all'interno di questa piattaforma dei dati di monitoraggio di un'applicazione.}
-     	\item { \textbf{ElasticSearch:} è stato presentato questo nuovo tipo di database, che sarà il luogo nel quale vengono memorizzate le informazioni monitorate dall'applicazione. Sarà possibile ricercarle e raggrupparle mediante query.
-     	Sono state affrontate le diversità di questa base di dati rispetto ad un database relazionale, ed è quindi stato spiegato in che modo le informazioni vergono organizzate all'interno di questo database.
-        Dalla riunione è emerso inoltre, che le informazioni vengono gestite come documenti JSON. E' stato illustrato questo tipo di formato Javascript, ne sono stati fatti alcuni esempi inerenti al capitolato spiegandone l'utilità.}
+     	\item { \textbf{Elasticsearch:} è stato presentata questa tecnologia che farà parte del progetto. Attraverso esso potremmo ottenere le informazioni dell'applicazione monitorata che andranno visualizzate. Sarà possibile ricercarle e raggrupparle mediante interrogazioni.
+     	Sono state discusse le differenze che esistono tra Elasticsearch e i comuni database relazionale, ed è quindi stato spiegato in che modo le informazioni vergono organizzate all'interno di questo database.}
+     	
+     	\item { \textbf{Kibana:} è stata sucessivamente presentata questa piattaforma e ne sono state analizzate le diverse funzionalità.
+     	Kibana è un tool open source progettato per rappresentare in modo grafico i dati presenti su Elasticsearch.
+        L'obiettivo del nostro team sarà appunto quello di realizzare due plugin che permetta di visualizzare all'interno di questa piattaforma dei dati che riguardano il monitoraggio di un'applicazione.}
+    
+     
      \end{itemize}
      
 		
