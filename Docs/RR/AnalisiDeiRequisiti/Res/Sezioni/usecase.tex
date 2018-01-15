@@ -1,5 +1,10 @@
 \section{Casi d'uso}
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.45]{./UC/UC.png}
+\caption{Visualizzazione di tutti gli usecase padre}\label{}
 \subsection{Caso d'uso UC1: Visualizzazione mappa topologica}
+\end{figure}
 \begin{figure} [H]
 \centering
 \includegraphics[scale=0.45]{./UC/UC1.png}
@@ -160,7 +165,7 @@
 \item \textbf{Attori}: Utente
 \item \textbf{Descrizione}: L'attore intende visualizzare il nome identificativo di ciascun database presente all'interno della mappa topologica.
 \item \textbf{Precondizione}: Kibana deve avere una dashboard che contenga il plugin della mappa.
-\item \textbf{Flusso principale degli eventi}: L'attore intende visualizzare il nome identificativo di ogni database presente nella mappa topologica tramite il peer server corrispondente ad ognuno di essi.
+\item \textbf{Flusso principale degli eventi}: L'attore intende visualizzare il nome identificativo di ogni database presente nella mappa topologica tramite il peer service corrispondente ad ognuno di essi.
 \item \textbf{Postcondizione}: Viene visualizzato vicino ad ogni database il proprio nome identificativo sotto forma testuale rappresentato dal campo peer service.
 \end{itemize}
 \subsection{Caso d'uso UC1.4: Visualizzazione informazioni degli insiemi di richieste fra coppie di componenti}
@@ -477,7 +482,7 @@ Le componenti che sono state spostate vengono riposizionate nella loro posizione
 \begin{itemize}
 \item \textbf{Attori}: Utente
 \item \textbf{Descrizione}: L'attore intende visualizzare la mappa a schemo intero.
-\item \textbf{Precondizione}: Deve essere statata caricata la mappa topologica dell'applicazione monitorata.
+\item \textbf{Precondizione}: Deve essere stata caricata la mappa topologica dell'applicazione monitorata.
 \item \textbf{Flusso principale degli eventi}: L'attore preme sul componente grafico dedicato all'attivazione della modalità a schermo interro ed essa viene visualizzata  schermo intero.
 \item \textbf{Postcondizione}: La mappa topologica viene visualizzata a schermo intero.
 \end{itemize}
@@ -496,7 +501,7 @@ Le componenti che sono state spostate vengono riposizionate nella loro posizione
 \item \textbf{Flusso principale degli eventi}: L'attore intende riordinare la stack trace e questa viene riordinata.
 \begin{itemize}
 \item Riordinamento dello stack trace per momento di inizio dell'esecuzione (UC7.1)
-\item Riordinamento dello stack trace per tempo di esecuzione. (UC7.2)
+\item Riordinamento dello stack trace per tempo di esecuzione (UC7.2)
 \end{itemize}
 \item \textbf{Postcondizione}: La stack trace viene riordinata. 
 \end{itemize}
@@ -533,11 +538,11 @@ Le componenti che sono state spostate vengono riposizionate nella loro posizione
 \item \textbf{Flusso principale degli eventi}: L'attore vuole riordinare la stack trace in base al momento di inizio dell'esecuzione decrescente e questo avviene in seguito all'interazione con un componente grafico.
 \item \textbf{Postcondizione}: La stack trace viene riordinata in base al momento di inizio dell'esecuzione crescente
 \end{itemize}
-\subsection{Caso d'uso UC7.2: Riordinamento dello stack trace per tempo di esecuzione.}
+\subsection{Caso d'uso UC7.2: Riordinamento dello stack trace per tempo di esecuzione}
 \begin{figure} [H]
 \centering
 \includegraphics[scale=0.45]{./UC/UC7-2.png}
-\caption{Riordinamento dello stack trace per tempo di esecuzione.}\label{}
+\caption{Riordinamento dello stack trace per tempo di esecuzione}\label{}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Utente
@@ -546,7 +551,7 @@ Le componenti che sono state spostate vengono riposizionate nella loro posizione
 \item \textbf{Flusso principale degli eventi}: L'attore vuole riordinare la stack trace in base al tempo di esecuzione e questo avviene in seguito all'interazione con un componente grafico.
 \begin{itemize}
 \item Riordinamento dello stack trace per tempo di esecuzione decrescente (UC7.2.1)
-\item Riordinamento dello stack trace per tempo di esecuzione crescente. (UC7.2.2)
+\item Riordinamento dello stack trace per tempo di esecuzione crescente (UC7.2.2)
 \end{itemize}
 \item \textbf{Postcondizione}: La stack trace viene riordinata in base al tempo di esecuzione.
 \end{itemize}
@@ -558,7 +563,7 @@ Le componenti che sono state spostate vengono riposizionate nella loro posizione
 \item \textbf{Flusso principale degli eventi}: L'attore vuole riordinare la stack trace in base al tempo di esecuzione decrescente e questo avviene in seguito all'interazione con un componente grafico.
 \item \textbf{Postcondizione}: La stack trace viene riordinata in base al tempo di esecuzione decrescente.
 \end{itemize}
-\subsection{Caso d'uso UC7.2.2: Riordinamento dello stack trace per tempo di esecuzione crescente.}
+\subsection{Caso d'uso UC7.2.2: Riordinamento dello stack trace per tempo di esecuzione crescente}
 \begin{itemize}
 \item \textbf{Attori}: Utente
 \item \textbf{Descrizione}: L'attore vuole riordinare lo stack trace per tempo di esecuzione crescente.
@@ -669,7 +674,7 @@ Le sottochiamate vengono nascoste
 \item \textbf{Precondizione}: Devono essere state nascoste le sottochiamate
 \item \textbf{Flusso principale degli eventi}: L'attore clicca su un pulsante corrispondente alla chiamata della quale vuole mostrare le sottochiamate
 Le sottochiamate vengono mostrate
-\item \textbf{Postcondizione}: Vegono mostrate le sottochiamate di una chiamata
+\item \textbf{Postcondizione}: Vengono mostrate le sottochiamate di una chiamata
 \end{itemize}
 \subsection{Caso d'uso UC10: Riordinamento delle queries di una singola trace}
 \begin{figure} [H]
@@ -684,7 +689,7 @@ Le sottochiamate vengono mostrate
 \item \textbf{Flusso principale degli eventi}: L'attore intende riordinare le queries di una singola trace e queste viene riordinata.
 \begin{itemize}
 \item Riordinamento delle queries per momento di inizio dell'esecuzione (UC10.1)
-\item Riordinamento delle queries per tempo di esecuzione. (UC10.2)
+\item Riordinamento delle queries per tempo di esecuzione (UC10.2)
 \end{itemize}
 \item \textbf{Postcondizione}: La lista di queries relative ad una singola trace viene riordinata.
 \end{itemize}
@@ -700,12 +705,12 @@ Le sottochiamate vengono mostrate
 \item \textbf{Precondizione}: Deve essere stata visualizzata la lista di queries di una singola trace.
 \item \textbf{Flusso principale degli eventi}: L'attore vuole riordinare la lista di queries di una singola trace in base al momento di inizio dell'esecuzione e questo avviene in seguito all'interazione con un componente grafico.
 \begin{itemize}
-\item Riordinamento delle queries per momento di inizio dell'esecuzione crescente. (UC10.1.1)
+\item Riordinamento delle queries per momento di inizio dell'esecuzione crescente (UC10.1.1)
 \item Riordinamento delle queries per momento di inizio dell'esecuzione decrescente (UC10.1.2)
 \end{itemize}
 \item \textbf{Postcondizione}: La lista di queries di una singola trace viene riordinata in base al momento di inizio dell'esecuzione.
 \end{itemize}
-\subsection{Caso d'uso UC10.1.1: Riordinamento delle queries per momento di inizio dell'esecuzione crescente.}
+\subsection{Caso d'uso UC10.1.1: Riordinamento delle queries per momento di inizio dell'esecuzione crescente}
 \begin{itemize}
 \item \textbf{Attori}: Utente
 \item \textbf{Descrizione}: L'attore vuole riordinare la lista delle queries di una singola trace in base al momento di inizio dell'esecuzione crescente.
@@ -721,11 +726,11 @@ Le sottochiamate vengono mostrate
 \item \textbf{Flusso principale degli eventi}: L'attore vuole riordinare la lista delle queries di una singola trace in base al momento di inizio dell'esecuzione decrescente e questo avviene in seguito all'interazione con un componente grafico.
 \item \textbf{Postcondizione}: La lista delle queries di una singola trace viene riordinata in base al momento di inizio dell'esecuzione decrescente.
 \end{itemize}
-\subsection{Caso d'uso UC10.2: Riordinamento delle queries per tempo di esecuzione.}
+\subsection{Caso d'uso UC10.2: Riordinamento delle queries per tempo di esecuzione}
 \begin{figure} [H]
 \centering
 \includegraphics[scale=0.45]{./UC/UC10-2.png}
-\caption{Riordinamento delle queries per tempo di esecuzione.}\label{}
+\caption{Riordinamento delle queries per tempo di esecuzione}\label{}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Utente
@@ -733,12 +738,12 @@ Le sottochiamate vengono mostrate
 \item \textbf{Precondizione}: Deve essere stata visualizzata la lista di queries di una singola trace.
 \item \textbf{Flusso principale degli eventi}: L'attore vuole riordinare la lista di queries di una singola trace in base al tempo di esecuzione e questo avviene in seguito all'interazione con un componente grafico.
 \begin{itemize}
-\item Riordinamento delle queries per tempo di esecuzione crescente. (UC10.2.1)
+\item Riordinamento delle queries per tempo di esecuzione crescente (UC10.2.1)
 \item Riordinamento delle queries per tempo di esecuzione decrescente (UC10.2.2)
 \end{itemize}
 \item \textbf{Postcondizione}: La lista di queries di una singola trace viene riordinata in base al tempo di esecuzione.
 \end{itemize}
-\subsection{Caso d'uso UC10.2.1: Riordinamento delle queries per tempo di esecuzione crescente.}
+\subsection{Caso d'uso UC10.2.1: Riordinamento delle queries per tempo di esecuzione crescente}
 \begin{itemize}
 \item \textbf{Attori}: Utente
 \item \textbf{Descrizione}: L'attore vuole riordinare la lista delle queries di una singola trace in base al tempo di esecuzione crescente.
