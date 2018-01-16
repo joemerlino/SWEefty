@@ -1,34 +1,34 @@
 \newpage
 \section{Capitolato scelto: C7 - OpenAPM}
 	\subsection{Descrizione}
-	Il capitolato d'appalto \emph{OpenAPM: cruscotto di Application Performance Management},  proposto dall'azienda IKS S.r.l., ha come obbiettivo la realizzazione di uno strumento APM basato su tecnologie Open Source. In particolare si vuole utilizzare Elastic Search e Kibana per:
+	Il capitolato d'appalto \emph{OpenAPM: cruscotto di Application Performance Management},  proposto dall'azienda IKS S.r.l., ha come obbiettivo la realizzazione di uno strumento \gl{APM} basato su tecnologie \gl{open source}. In particolare si vuole utilizzare \gl{Elastic Search} e \gl{Kibana} per:
 	\begin{itemize}
-		\item realizzare dashboard di monitoraggio  basate sulle view standard Kibana per il check in tempo reale delle performance applicative;
-		\item realizzare plugin aggiuntivi per Kibana sviluppando widget e funzionalità aggiuntive legate allo use case APM. 
+		\item realizzare \gl{dashboard} di monitoraggio  basate sulle view standard Kibana per il check in tempo reale delle performance applicative;
+		\item realizzare \gl{plugin} aggiuntivi per Kibana sviluppando widget e funzionalità aggiuntive legate allo use case APM. 
 	\end{itemize}
 	
 	\subsection{Studio del Dominio}
 		\subsubsection{Dominio applicativo}
-		Il progetto si colloca nell'ambito dell'Application Performance Management (APM) e dei Big Data. Si vuole individuare e diagnosticare in modo semplice problematiche complesse che impattano sul servizio erogato dell'applicazione attraverso l'analisi di grandi moli di dati.
+		Il progetto si colloca nell'ambito dell'Application Performance Management (APM) e dei \gl{big data}. Si vuole individuare e diagnosticare in modo semplice problematiche complesse che impattano sul servizio erogato dell'applicazione attraverso l'analisi di grandi moli di dati.
 		\subsubsection{Dominio tecnologico}
 		Per la comprensione del dominio applicativo e per lo sviluppo di dashboard di monitoraggio e plugin aggiuntivi per Kibana, si chiede al gruppo la conoscenza delle seguenti tecnologie:
 		\begin{itemize}
-			\item Elastic Search: server di ricerca, con supporto ad architetture distribuite. \MakeUppercase{è} strutturato ad indici e le informazioni sono gestite come in un database NoSQL;
-			\item JSON: formato standard dei dati gestiti da Elastic Search;
+			\item Elastic Search: \gl{server} di ricerca, con supporto ad architetture distribuite. \MakeUppercase{è} strutturato ad indici e le informazioni sono gestite come in un \gl{database} \gl{NoSQL};
+			\item \gl{JSON}: formato standard dei dati gestiti da Elastic Search;
 			\item Kibana: applicazione web che presenta i dati salvati su Elastic Search;
-			\item JavaScript: per la creazione di grafica 2d o 3d con l'aiuto di librerie come:
+			\item \gl{Javascript}: per la creazione di grafica 2d o 3d con l'aiuto di librerie come:
 			\begin{itemize}
-				\item[-] D3.js;
-				\item[-] CanvasJS;
-				\item[-] Chart.js.
+				\item[-] \gl{D3.js};
+				\item[-] \gl{CanvasJS};
+				\item[-] \gl{Chart.js}.
 			\end{itemize}
-			\item Java: per l'elaborazione su ElasticSearch dei dati grezzi provenienti dall'applicazione da analizzare.
+			\item \gl{Java}: per l'elaborazione su ElasticSearch dei dati grezzi provenienti dall'applicazione da analizzare.
 		\end{itemize}
 	\subsection{Motivazioni della scelta}
 		\subsubsection{Aspetti positivi}
 			\begin{itemize}
-				\item Interesse nel lavorare con software open source (Elastic Search, Logstash e Kibana) e di grande utilizzo nel mondo aziendale;
-				\item Interesse verso il dominio applicativo del prodotto;
+				\item Interesse nel lavorare con software open source (Elastic Search, \gl{Logstash} e Kibana) e di grande utilizzo nel mondo aziendale;
+				\item Interesse verso il dominio applicativo del \gl{prodotto};
 				\item Alcuni componenti del gruppo hanno già familiarità con le tecnologie richieste;
 				\item Interesse per la realizzazione di un prodotto open source.
 			\end{itemize}

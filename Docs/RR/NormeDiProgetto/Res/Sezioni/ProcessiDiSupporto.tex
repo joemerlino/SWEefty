@@ -174,7 +174,7 @@
 Qualora il redattore lo ritenesse necessario per aumentare la leggibilità è possibile anche l'uso di colori di sfondo scegliendone uno specifico per l'intestazione e due che verranno alternati per le righe sottostanti.
 
 		\paragraph{Immagini}\Spazio
-		Le immagini inserite nel documento devono essere nel formato PNG. Ognuna di esse deve essere accompagnata da una didascalia analoga a quella descritta per le tabelle. \\
+		Le immagini inserite nel documento devono essere nel formato \gl{PNG}. Ognuna di esse deve essere accompagnata da una didascalia analoga a quella descritta per le tabelle. \\
 		Ogni immagine deve inoltre essere centrata orizzontalmente mantenendo una separazione netta dai paragrafi che seguono e precedono, marcando quindi un distacco tra grafica e testo migliorando di conseguenza la leggibilità. \\
 		I diagrammi UML vengono inseriti nei documenti sotto forma di immagine.
 	\subsubsection{Classificazione dei documenti}
@@ -246,7 +246,7 @@ Nel caso l'incontro abbia partecipanti esterni e fosse stata eseguita una serie 
 		\paragraph{Test}
 			\subparagraph{Test di unità} \Spazio
 			I test di unità verificano che le singole Unità di prodotto software funzionino correttamente, le unità non possono passare al test di integrazione se non passano questo test.
-			Comunemente per i test di unità vengono utilizzati driver e stub che simulano il chiamante e un unità chiamata.
+			Comunemente per i test di unità vengono utilizzati \gl{driver} e \gl{stub} che simulano il chiamante e un unità chiamata.
 			\subparagraph{Test di integrazione} \Spazio
 			I test di integrazione sono il passo successivo ai test di unità servono a verificare che due o più unità, precedentemente verificate, funzionino correttamente una volta combinate.
 			Questo tipo di test verifica la corretta collaborazione tra le varie unità e aiuta a trovare eventuali errori non rilevati nei test precedenti.
@@ -260,21 +260,21 @@ Nel caso l'incontro abbia partecipanti esterni e fosse stata eseguita una serie 
 			Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto può essere rilasciato.
 	\subsubsection{Strumenti}
 			\paragraph{Verifica ortografica} \Spazio
-			Viene utilizzato GNU Aspell, uno spell checker open source in grado di gestire più dizionari contemporaneamente che segnala gli errori all'interno di un documento mentre durante la scrittura viene utilizzato il controllo ortografico integrato in TeXstudio che segnala le parole errate sottolineandole in rosso.
+			Viene utilizzato \gl{GNU Aspell}, uno spell checker open source in grado di gestire più dizionari contemporaneamente che segnala gli errori all'interno di un documento mentre durante la scrittura viene utilizzato il controllo ortografico integrato in TeXstudio che segnala le parole errate sottolineandole in rosso.
 			\paragraph{Analisi statica} \Spazio
 			Per l'analisi statica del codice JavaScript viene utilizzato SonarJS, modulo di SonarQube in grado di rilevare bug e problemi di sicurezza, è inoltre disponibile su vari IDE come Eclipse e IntelliJ.
 			\paragraph{Analisi dinamica} \Spazio
 			Per l'analisi dinamica vengono utilizzati i seguenti software:
 			\begin{itemize}
 				\item  \textbf{Jest}: piattaforma per l'esecuzione di test su codice JavaScript, comodo per la sua semplicità di utilizzo.
-				\item \textbf{Travis CI}: software usato per l' integrazione continua, una volta sincronizzato con la repository GitHub è in grado di eseguire automaticamente i test di integrazione, creati creati appositamente, su ogni commit in modo che si possa eseguire il comando push solo su codice che compila ed ha passato i test.
+				\item \textbf{Travis CI}: software usato per l' \gl{integrazione continua}, una volta sincronizzato con la repository GitHub è in grado di eseguire automaticamente i test di integrazione, creati creati appositamente, su ogni commit in modo che si possa eseguire il comando \gl{push} solo su codice che compila ed ha passato i test.
 			\end{itemize}
 			\paragraph{Metriche} \Spazio
 			Per il calcolo delle metriche viene utilizzato SonarQube, software che permette di stabilire un grado di qualità che tutto il gruppo deve rispettare (come si vede in figura \ref{qualità}), inoltre permette di visualizzare grafici per controllare la qualità del progetto nel periodo di sviluppo (come si vede in figura \ref{graficobello}).
 			\begin{figure}[h] 
 				\centering 
 				\includegraphics[width=0.9\textwidth]{images/enforce-quality-gate.png} 
-				\caption{Dashboard con parametri di SonarQube}
+				\caption{dashboard con parametri di SonarQube}
 				\label{qualità}
 			\end{figure}
 		    \begin{figure}[h]

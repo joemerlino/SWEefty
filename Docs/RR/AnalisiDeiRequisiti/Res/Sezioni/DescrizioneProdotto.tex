@@ -5,26 +5,26 @@
 	\subsection{Funzioni del prodotto}
 	I due plugin utilizzano ed elaborano i dati sullo stato e sull'andamento dell'applicazione da monitorare per ottenere:
 	\begin{itemize}
-		\item 	\textbf{Una mappa topologica}: in essa vengono visualizzati i vari tipi di componenti attivi con le relative interazioni e delle informazioni (tempi medi di risposta, richieste HTTP e numero componenti di un server cluster) che aiutano a capire lo stato complessivo dell'applicazione. Inoltre è possibile interagire con la mappa modificando a piacimento la posizione dei componenti e la loro dimensione per renderla più accomodante ai bisogni dell'utente.
+		\item 	\textbf{Una mappa topologica}: in essa vengono visualizzati i vari tipi di componenti attivi con le relative interazioni e delle informazioni (tempi medi di risposta, richieste HTTP e numero componenti di un server \gl{cluster}) che aiutano a capire lo stato complessivo dell'applicazione. Inoltre è possibile interagire con la mappa modificando a piacimento la posizione dei componenti e la loro dimensione per renderla più accomodante ai bisogni dell'utente.
 		\item \textbf{Una stack trace}: in essa vengono visualizzate tutte le richieste che sono state fatte da parte degli utenti dell'applicazione da monitorare visualizzandone lo stato e il relativo tempo di risposta. La lista può essere riordinata in base alle proprietà visualizzate.
 		Inoltre, per ogni richiesta, è possibile visualizzare il relativo call tree: un albero delle funzioni e delle proprie sottochiamate che vengono eseguite dall'applicazione monitorata durante quella specifica richiesta. Per ogni call tree può essere visualizzata la lista delle sole queries eseguite dai metodi presenti e, anch'essa, può essere riorganizzata in base ai bisogni dell'utente.
 	\end{itemize} 
 	\subsection{Caratteristiche degli utenti}
 	Il prodotto si rivolge essenzialmente a due categorie di utenti:
 	\begin{itemize}
-		\item \textbf{Utente sviluppatore}: utilizza il prodotto implementandolo in una dashboard personalizzata in base alle esigenze di una determinata applicazione da monitorare. Si deve preoccupare dell'installazione dei plugin su Kibana;
+		\item \textbf{Utente sviluppatore}: utilizza il prodotto implementandolo in una \gl{dashboard} personalizzata in base alle esigenze di una determinata applicazione da monitorare. Si deve preoccupare dell'installazione dei plugin su Kibana;
 		\item \textbf{Utente finale}: utilizza il prodotto integrato in una dashboard Kibana organizzata appositamente per il monitoraggio di una specifica applicazione. Devono comunque avere una conoscenza di base sul funzionamento tecnico della loro applicazione per poter interpretare correttamente i dati e le informazioni.
 	\end{itemize}
 	\subsection{Vincoli generali}
 	I plugin sviluppati devono essere compatibili  Kibana v.6.
 	Per quanto riguarda i browser Kibana v.6 risulta compatibile con: 
 	\begin{itemize}
-		\item Google Chrome v.55;
+		\item \gl{Google Chrome} v.55;
 		\item Mozilla Firefix v.50;
 		\item Safari v.10;
-		\item Internet Explorer v.11.
+		\item \gl{Internet Explorer} v.11.
 	\end{itemize}
-	Dato che Kibana è sviluppato in JavaScript i relativi plugin hanno come vincolo lo sviluppo attraverso lo stesso linguaggio.
+	Dato che Kibana è sviluppato in \gl{Javascript} i relativi plugin hanno come vincolo lo sviluppo attraverso lo stesso linguaggio.
 	
 	\subsection{Assunzioni e dipendenze}
 	Per utilizzare il prodotto deve essere installato Kibana con i due plugin sviluppati. 
