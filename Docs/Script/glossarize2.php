@@ -1,4 +1,3 @@
-
 <?php
 /*
 * Autore: InfiniTech
@@ -39,10 +38,11 @@ $glossarizzato=false;
 
 $docs = array(
   /*'Glo' => 'Glossario/sezioni/',*/
-  'NdP' => 'NormeDiProgetto/Res/Sezioni/'/*,
+  'NdP' => 'NormeDiProgetto/',
   'PdP' => 'PianoDiProgetto/',
-  'AdR' => 'AnalisiDeiRequisiti/sezioni/',
-  'PdQ' => 'PianoDiQualifica/',
+  'AdR' => 'AnalisiDeiRequisiti/',
+  'SdF' => 'StudioDiFattibilita/',
+  'PdQ' => 'PianoDiQualifica/'/*,
   'DdP' => 'DefinizioneDiProdotto/'
   //'LdP' => 'LetteraDiPresentazione/'*/
 );
@@ -71,7 +71,6 @@ echo <<< EOF
 
 EOF;
 
-
 function glossarizeDoc($path) {
   //$var_dump($argv);
   if (isset($path)) {
@@ -89,7 +88,6 @@ function glossarizeDoc($path) {
    * Apertura del documento e dell'elenco delle voci di glossario
    */
   $filename = $path;
-  $file = fopen($filename, 'r');
   $voci = fopen('terminiGlossario.txt', 'r');
 
   /**
@@ -99,7 +97,7 @@ function glossarizeDoc($path) {
    */
    $linesToIgnore = "/^((\\\section)|(\\\subsection)|(\\\subsubsection)|(\\\parola)|(\\\url)|(\\\modifica)|" .
                     "(\\\paragraph)|(\\\subparagraph)|(\\\caption)|(\\\url)|(\\\parola)|(\\\modifica)|" .
-                    "(\\\myparagraph)|(\\\mysubparagraph)|(\\\\texttt)|(\\\parola)|(\\\url)|(\\\modifica)|" .
+                    "(.*\\\href)|(\\\includegraphics)|(\\\\texttt)|(\\\parola)|(\\\url)|(\\\modifica)|" .
                     "(\\\\ref)|(\\\label)|(\\\def\\\input@path))/";
 
   /**
@@ -108,80 +106,82 @@ function glossarizeDoc($path) {
   while (!feof($voci)) {
     $glo_or_deglo=$_SERVER[ "argv" ][1];
     $voce =trim(fgets($voci));
-    $lineNumber = 0;
-    rewind($file);
-
-    /**
-     * ...scorre il documento in cerca di essa...
-     */
-    while (!feof($file)) {
-
-      $line = fgets($file);
-      $lineNumber++;
-
-      /**
-       * ...e la (de)glossarizza!
-       */
-       // Alcuni file non dovrebbero essere glossarizzati (tipo quelli che contengono solo tabelle di tracciamento)
-      if (preg_match("/\b$voce\b/", $line) && $voce!="") {
-        if (empty(preg_grep($linesToIgnore, explode("\n", $line)))) { // glo
-          //echo $path." ".$voce."\n";
-          //echo $filename."-".$voce."\n";
-          if($voce=="casi d'uso" || $voce=="Casi d'uso"){
-            $Vvoce=$voce;
-            $file_contents = file_get_contents($filename);
-            $file_contents = str_replace($Vvoce,"casi duso",$file_contents);
-            file_put_contents($filename,$file_contents);
-            $voce="casi duso";
-          }
-          ///* Attivare qui per GLOSSARIZZARE ----
-
-          if($glo_or_deglo!="-d"){
-              $file_contents = file_get_contents($filename);
-              $file_contents = preg_replace("/$voce/","\gl{".$voce."}",$file_contents,1);
-              file_put_contents($filename,$file_contents);
-          }
-          //-----*/
-          //if(preg_match("/\\\\gl{".$voce."}/",$file_contents)) echo $voce."\n";
-
-          // Attivare qui per DEGLOSSARIZZARE, togliere il break sotto.
-          // ----.-----------------------------
-          //echo "[".$argv[1]."]\n";
-          else{
-              $file_contents = file_get_contents($filename);
-              $file_contents = str_replace("\gl{".$voce."}","$voce",$file_contents);
-              file_put_contents($filename,$file_contents);
-          }
-          //*/
-          // -----------------------------------------
-          /*
-           * $test= "prodotto prodotto prodotto Prodotto progetto progetto progetto";
-             $test=preg_replace("/Prodotto/i", " gl{prodotto } ", $test, 1);
-             echo $test;
-           */
-          //shell_exec("sed -r -i '$lineNumber!b;s/(\\\gl\{\<$voce\>\})|(\<$voce\>)/\\\gl\{$voce\}/g' $filename") . "\n";
-          if($voce=="casi duso"){
-            $file_contents = file_get_contents($filename);
-            $file_contents = str_replace("casi duso",$Vvoce,$file_contents);
-            file_put_contents($filename,$file_contents);
-            $voce=$Vvoce;
-          }
-          if($glo_or_deglo!="-d") break;
-        //  echo "\033[33;32m>  riga $lineNumber:\tglossarizzato '$voce'\n";
-          //echo "";
-        } else { // deglo
-        //  echo $linesToIgnore." ".$voce."\n";
-        //  shell_exec("sed -r -i '$lineNumber!b;s/(\\\gl\{\<$voce\>\})/$voce/g' $filename") . "\n";
-      //    echo $path." \n";
+    $filesections = fopen($filename, 'r');  //APRE SEZIONI TEX
+    $trovato = false;
+    while (!feof($filesections) && !$trovato) {
+      $line = fgets($filesections);
+      if (preg_match('/.tex/', $line)) {
+        $filepath = substr($filename, 0, -15) . substr($line, 7, -2);
+        echo $filepath."\n";
+        $file = fopen($filepath, 'r');  //APRE SEZIONI TEX
+        $lineNumber = 0;
+        rewind($file);/*
+        $data = file($file); // reads an array of lines
+        function replace_a_line($data) {
+           if (preg_match("/\b$voce\b/i", $data) && $voce!="") {
+              $trovato = true;
+              return preg_replace("/\b$voce\b/i","\gl{".$voce."}",$data,1);
+           }
+           return $data;
         }
-      }
+        $data = array_map('replace_a_line',$data);
+        file_put_contents('myfile', implode('', $data));
+        */
+        //cicla ogni file del sezioni.tex
+        while (!feof($file) && !$trovato) {
+
+          $line = fgets($file);
+          $lineNumber++;
+          /**
+           * ...e la (de)glossarizza!
+           */
+           // Alcuni file non dovrebbero essere glossarizzati (tipo quelli che contengono solo tabelle di tracciamento)
+          if (preg_match("/\b$voce\b/i", $line) && $voce!="") {
+            if (empty(preg_grep($linesToIgnore, explode("\n", $line)))) { // glo
+              //echo $line."\n";
+              //echo $path." ".$voce."\n";
+              //echo $filename."-".$voce."\n";
+              if($voce=="casi d'uso" || $voce=="Casi d'uso"){
+                $Vvoce=$voce;
+                $file_contents = file_get_contents($filename);
+                $file_contents = str_replace($Vvoce,"casi duso",$file_contents);
+                file_put_contents($filename,$file_contents);
+                $voce="casi duso";
+              }
+              ///* Attivare qui per GLOSSARIZZARE ----
+
+              if($glo_or_deglo!="-d"){
+                $trovato = true;
+                echo "Glossarizzato: ".$voce." linea: ".$lineNumber."\ncontenuto: ".$line."\n";
+                $file_contents = file_get_contents($filepath);
+                $file_contents = preg_replace("/\b$voce\b/i","\gl{".$voce."}",$file_contents,1);
+                
+                //fwrite($file, $file_contents); 
+                file_put_contents($filepath, $file_contents);
+                //file_put_contents($filename,$file_contents);
+              }
+              else{
+                  $file_contents = file_get_contents($filepath);
+                  $file_contents = str_replace("\gl{".$voce."}","$voce",$file_contents);
+                  file_put_contents($filepath,$file_contents);
+              }
+              if($voce=="casi duso"){
+                $file_contents = file_get_contents($filename);
+                $file_contents = str_replace("casi duso",$Vvoce,$file_contents);
+                file_put_contents($filename,$file_contents);
+                $voce=$Vvoce;
+              }
+              if($glo_or_deglo!="-d") break;
+            } //else {}
+          }
+        }
+        fclose($file);
+      }//if controllo .tex
     }
+    fclose($filesections);
   }
-
-  //echo "\e[0m\nGlossarizzazione di <" . $filename . "> terminata con (in)successo!\n";
-  //echo "\e[0m\nInfiniTech si solleva da ogni responsabilità.\n";
-
-  fclose($file);
+  
+  fclose($voci);
 
 }
 
@@ -199,26 +199,8 @@ function median($array) {
 
  //echo "Glossarizzazione di: \n";
 foreach ($docs as $doc => $dir) {
-  if (file_exists($rev . $dir)) $root = $rootE;
-  else
-  	if (file_exists($rev . $dir)) $root = $rootI;
-    $files = scandir($rev . $root . $dir);
-    foreach ($files as $file) {
-      if (preg_match('/.tex$/', $file)) {
-        $path = $rev . $root . $dir . $file;
-        //echo "\n$path\n";
-        if (file_exists($path)) {
-
-          // qui si glossarizza
-            $correggilatex = file_get_contents($path);
-            $correggilatex = str_replace("\\\\gl{LaTeX}","\\LaTeX{}",$correggilatex);
-            file_put_contents($path,$correggilatex);
-            glossarizeDoc($path);
-        //  $glossarizzato=true;
-        //  echo $path."\n";
-      }// else $glossarizzato=false;
-      }
-    }
+    echo $rev . $dir . "Res/Sezioni.tex\n";
+    glossarizeDoc($rev . $root . $dir . "Res/Sezioni.tex");
     if($_SERVER[ "argv" ][1]!="-d") $phrases="   Glossarizzato";
     else $phrases="DE-Glossarizzato";
     if(file_exists($rev.$root.$dir)){
