@@ -1,0 +1,80 @@
+\section{Specifica dei test}
+Per produrre software di qualità, il gruppo SWEefty definirà dei test per assicurarsi che le unità prodotte funzionino in maniera corretta. Il tracciamento dei test ed il loro esito verrà riportato in questo documento.
+	\subsection{Tipi di test}
+	SWEefty ha individuato quattro tipologie di test:
+	\begin{itemize}
+		\item {\textbf{Test di Unità [TU]:} lo scopo di questa tipologia di test è quello di verificare la più piccola parte di lavoro prodotta da un programmatore. Questo significa tendenzialmente verificare i metodi e le funzioni scritte; }
+		\item {\textbf{Test di Integrazione [TI]:} lo scopo di questa tipologia di test è quello di verificare le componenti di sistema. Più	precisamente, l’obiettivo è quello di testare il funzionamento dei vari \gl{package} prodotti, sia singolarmente che nel loro insieme; }
+		\item {\textbf{Test di Sistema [TS]:} lo scopo di questa tipologia di test è quello di verificare che il comportamento e il funzionamento dell’\gl{architettura} siano corretti;}
+		\item {\textbf{Test di Validazione [TV]:} lo scopo di questa tipologia di test è quello di verificare che il lavoro prodotto soddisfi quanto richiesto dal proponente. }
+	\end{itemize} 
+		
+	\subsubsection{Test di Unità}
+	I test di unità saranno descritti nel modo seguente: \Spazio
+
+	\centerline{\textbf{TU[idTest]}}
+	
+	dove:
+	\begin{itemize}
+		\item \textbf{idTest:} rappresenta il codice identificativo crescente dell’unità considerata.
+	\end{itemize}
+	
+	\subsubsection{Test di Integrazione}
+	I test di integrazione saranno descritti nel modo seguente: \Spazio
+	\centerline{\textbf{TI}[IdComponente]}
+	
+	dove:
+	\begin{itemize}
+		\item \textbf{IdComponente:} rappresenta il codice identificativo crescente del componente considerato.
+	\end{itemize}
+		
+		
+	\subsubsection{Test di Sistema}
+	I test di sistema saranno descritti nel modo seguente: \Spazio
+	\centerline{\textbf{TS}[TipoRequisito][ImportanzaRequisito][idRequisito]}
+	
+	dove:
+	\begin{itemize}
+		\item \textbf{TipoRequisito:} può assumere valori tra:
+		\begin{itemize}
+			\item F per i requisiti funzionali;
+			\item Q per i requisiti di qualità;
+			\item V per i requisiti di vincolo;
+			\item P per i requisiti prestazionali.
+		\end{itemize}
+	
+		\item \textbf{ImportanzaRequisito:} può assumere valori tra:
+		\begin{itemize}
+			\item D per i requisiti desiderabili;
+			\item O per i requisiti obbligatori;
+			\item F per i requisiti facoltativi.
+		\end{itemize}
+	
+		\item \textbf{IdRequisito:} può assumere un valore gerarchico che identifica il singolo requisito.
+	\end{itemize}
+	
+		
+	\subsubsection{Test di Validazione}
+	I test di validazione saranno organizzati nel modo seguente:\Spazio
+	
+    \centerline{\textbf{TV}[TipoRequisito][ImportanzaRequisito][IdRequisito]}
+
+	dove:
+	\begin{itemize}
+		\item \textbf{TipoRequisito:} può assumere valori tra:
+		\begin{itemize}
+			\item F per i requisiti funzionali;
+			\item Q per i requisiti di qualità;
+			\item V per i requisiti di vincolo;
+			\item P per i requisiti prestazionali.
+		\end{itemize}
+		\item \textbf{ImportanzaRequisito:} può assumere valori tra:
+		\begin{itemize}
+			\item D per i requisiti desiderabili;		
+			\item O per i requisiti obbligatori;
+			\item F per i requisiti facoltativi.
+		\end{itemize}
+
+		\item \textbf{IdRequisito:} assume un valore gerarchico che identifica il singolo requisito.
+	
+	\end{itemize}

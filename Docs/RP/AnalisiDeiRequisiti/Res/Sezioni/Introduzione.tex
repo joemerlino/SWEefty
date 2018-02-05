@@ -1,0 +1,40 @@
+\section{Introduzione}
+	\subsection{Scopo del documento}
+	Il presente documento nasce con l'intento di analizzare, specificare e classificare i requisiti e i casi d'uso che sono stati individuati grazie all'analisi del \gl{capitolato} d'appalto C7 "OpenAPM" e agli incontri con il \gl{proponente}, l'azienda IKS.\\
+	Questo documento rappresenta un vincolo tra il fornitore, che si impegna a sviluppare un software conforme alle caratteristiche riportate di seguito, e il proponente, che riconosce tali requisiti come le caratteristiche ricercate.\\
+	In fase di collaudo la conformità ai requisiti concordati costituirà il criterio per l'accettazione del \gl{prodotto} da parte del \gl{committente}.
+
+	\subsection{Scopo del prodotto}
+	Il prodotto che SWEefty è tenuto a realizzare consiste in una coppia di \gl{plugin} per \gl{Kibana} che devono fornire due funzionalità fondamentali:
+	\begin{itemize}
+		\item \textbf{Visualizzazione \gl{mappa topologica} del sistema:} il plugin deve visualizzare in maniera chiara ed intuitiva come le componenti del sistema interagiscono tra di loro, con annesse informazioni utili;
+		\item \textbf{Visualizzazione della \gl{stack trace}:} vengono visualizzate sotto forma di lista le interazioni fra i componenti e le richieste HTTP effettuate ai \gl{server}. Per ogni trace della lista inoltre verrà visualizzata la rispettiva \gl{call tree} e le queries effettuate ai \gl{database}.
+	\end{itemize}
+
+	\subsection{Glossario}
+		Volendo evitare incomprensioni  ed equivoci per rendere la lettura del documento più semplice e chiara viene allegato il \emph{Glossario v1.0.0} nel quale sono contenute le definizioni dei termini tecnici, dei vocaboli ambigui, degli acronimi e delle abbreviazioni. Questi termini sono evidenziati nel presente documento con una g al pedice (esempio: $Glossario_{g}$).
+	\subsection{Riferimenti}
+	\subsubsection{Normativi}
+	\begin{itemize}
+		\item \textbf{Norme di progetto:} \emph{Norme di Progetto v1.0.0};
+		\item \textbf{IEEE Std 830-1998} - IEEE Recommended Practice for Software Requirements Specifications;
+		\item \textbf{Capitolato d'appalto C7:} OpenAPM: cruscotto di Application Performance \gl{management} \\ \url{http://www.math.unipd.it/~tullio/IS-1/2017/Progetto/C7.pdf} (ultima consultazione effettuata in data 2017-12-20);
+		\item \textbf{Verbali di incontro esterni} con il proponente IKS: \begin{itemize}
+			\item \emph{VE\textunderscore2017-12-06};
+			\item \emph{VE\textunderscore2017-12-19}.
+		\end{itemize}
+		\item \textbf{Verbali di incontro interni} con i componenti del gruppo:
+		\begin{itemize}
+			\item \emph{VI\textunderscore2017-12-07};
+			\item \emph{VI\textunderscore2017-12-20}.
+		\end{itemize}
+	\end{itemize}
+	
+	\subsubsection{Informativi}
+	\begin{itemize}
+		\item \textbf{Seminario tecnologico da parte dell'azienda IKS:} Data analysis con ElasticSearch e Kibana \\ \url{http://www.math.unipd.it/~tullio/IS-1/2017/Dispense/P03.pdf}(ultima consultazione effettuata in data 2017-12-20);
+		\item \textbf{\gl{APM} con Elastic Stack:} \url{https://www.elastic.co/guide/en/apm/get-started/current/overview.html} (ultima consultazione effettuata in data 2017-12-20);
+		\item \textbf{Kibana User Guide:} \url{https://www.elastic.co/guide/en/kibana/current/index.html}(ultima consultazione effettuata in data 2017-12-20).
+	
+	\end{itemize}
+	
