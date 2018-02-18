@@ -1,6 +1,16 @@
 \section{Requisiti}
-\newcolumntype{H}{>{\centering\arraybackslash}m{7cm}}
+\subsection{Codici identificativi requisiti}
+Ogni requisito è identificato da un codice, ed è rappresentato nel seguente modo:
+$$ \textbf{R \{importanza\}\{tipo\}\{numero\_vincolo\} } $$
+
+\begin{itemize}
+	\item La R sta per requisito ed è presente in tutti i codici;
+	\item Il primo valore rappresenta l'importanza: 0 se il requisito è obbligatorio, 1 se è desiderabile, 2 per gli opzionali;
+	\item Il terzo valore indica il tipo: F per i requisiti funzionali, Q per quelli di qualità, P se prestazionale, V se di vincolo;
+	\item L'ultimo numero indica il numero del vincolo. La struttura numerica di quest'ultimo rispetta le stesse regole dei Casi D'Uso.
+\end{itemize}
 \subsection{Requisiti Funzionali}
+\newcolumntype{H}{>{\centering\arraybackslash}m{7cm}}
 \normalsize
 \begin{longtable}{|c|H|c|}
 \hline

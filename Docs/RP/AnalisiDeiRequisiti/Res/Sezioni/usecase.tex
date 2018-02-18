@@ -1,4 +1,17 @@
 \section{Casi d'uso}
+Ogni caso d'uso identificato dall'analisi del capitolato C7, dagli incontri esterni con l'azienda IKS e dalle riunioni interne viene riportato in questa sezione attraverso un codice univoco gerarchico nella forma:
+ $$ \textbf{UC \{codice\_padre\}.\{codice\_figlio\}  } $$
+\begin{itemize}
+	\item Le prime due lettere identificano che si tratta di un caso d'uso;
+	\item Il codice padre è un numero univoco che identifica un caso d'uso;
+	\item Il codice figlio è un numero progressivo che identifica i sottocasi;
+\end{itemize}
+\subsection{Attori}
+Gli attori che interagiscono con il sistema sono:
+\begin{itemize}
+	\item \textbf{Utente}: ci si riferisce ad un utente generico che utilizza i due plugin già integrati su Kibana per monitorare ed analizzare le prestazioni di una determinata applicazione. 
+	\item \textbf{Kibana}: piattaforma con cui i plugin devono interagire per reperire i dati da visualizzare in una forma specifica in seguito ad una richiesta da parte dell'utente.
+\end{itemize}
 \begin{figure} [H]
 \centering
 \includegraphics[scale=0.45]{./UC/UC.png}
