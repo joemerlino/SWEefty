@@ -103,6 +103,10 @@
 
 \usepackage{breakurl}%\url{...} può continare alla linea successiva. (si può andare a capo)
 
+%per fare colonne centrate ora si può usare P
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
 
 \usepackage[colorlinks=true]{hyperref}
 \hypersetup{
