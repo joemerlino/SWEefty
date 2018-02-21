@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ListControlEditor 1`] = `
+<div>
+  <IndexPatternSelect
+    getIndexPatterns={[Function]}
+    onChange={[Function]}
+    value="indexPattern1"
+  />
+  <FieldSelect
+    filterField={[Function]}
+    getIndexPattern={[Function]}
+    indexPatternId="indexPattern1"
+    onChange={[Function]}
+    value="keywordField"
+  />
+  <EuiFormRow
+    fullWidth={false}
+    hasEmptyLabelSpace={false}
+    id="multiselect-0"
+  >
+    <EuiSwitch
+      checked={true}
+      data-test-subj="listControlMultiselectInput"
+      label="Multiselect"
+      onChange={[Function]}
+    />
+  </EuiFormRow>
+  <EuiFormRow
+    fullWidth={false}
+    hasEmptyLabelSpace={false}
+    id="size-0"
+    label="Size"
+  >
+    <EuiFieldNumber
+      data-test-subj="listControlSizeInput"
+      fullWidth={false}
+      isLoading={false}
+      min={1}
+      onChange={[Function]}
+      value={10}
+    />
+  </EuiFormRow>
+</div>
+`;
