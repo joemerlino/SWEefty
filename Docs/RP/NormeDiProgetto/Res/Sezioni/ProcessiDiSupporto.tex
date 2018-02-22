@@ -4,24 +4,16 @@
 \subsection{Documentazione}
 	
 	\subsubsection{Scopo}
-	L'attività di documentazione consiste nella redazione di documenti durante tutto il ciclo di vita del prodotto software. Il gruppo si impegna a rispettare ed applicare le norme e gli strumenti adottati, con l'obiettivo di garantire una stesura senza ambiguità di una documentazione valida, coerente e conforme a delle precise regole.
+	L'attività di documentazione consiste nella redazione di documenti durante tutto il ciclo di vita del prodotto software. Il gruppo si impegna a rispettare ed applicare le norme e gli strumenti adottati, con l'obietivo di garantire una stesura senza ambiguità di una documentazione valida, coerente e conforme a delle precise regole.
 	
-	\subsubsection{Attività}
-	
-	\paragraph{Stesura} \Spazio
-	I documenti vengono redatti secondo le norme definite nella sezione \ref{struttura}
-	
-	\paragraph{Approvazione dei documenti} \Spazio
+	\subsection{Approvazione dei documenti}
 	Ogni documento non formale in corrispondenza del completamento della sua stesura dovrà essere sottoposto al \textit{Project Manager}, che dovrà delegare ai \textit{Verificatori} il controllo del contenuto e della forma. Nel caso gli anzidetti \textit{Verificatori} rilevino degli errori, sarà loro compito notificarli al \textit{Project Manager}, che a sua volta affiderà al redattore del documento il compito di correggerli. Questo ciclo va eseguito fino a quando il documento non viene considerato completamente corretto dai  \textit{Verificatori}. In caso di assenso sulla correttezza e sulla qualità il documento può essere reputato un documento formale. In caso contrario spetta al \textit{Project Manager} comunicare le ragione per cui il documento non è stato giudicato corretto, esplicitando le modifiche da apportare.
-	
-	\paragraph{Aggiornamento} \Spazio
-	I documenti prodotti non possono essere completi fin dall'inizio per questo essi vanno aggiornati in concomitanza con lo sviluppo del progetto, in particolare il documento \textit{Norme di Progetto} deve essere incrementato al fine di normare tutte le attività non previste o le cui norme precedentemente individuate non si adattino alle esigenze del gruppo e del progetto.
 		
 	\subsubsection{Template}
 	Per agevolare la redazione della documentazione è stato creato un template \LaTeX\text{ } contenente tutte le impostazioni stilistiche e grafiche citate in questo documento.
 	
 	\subsubsection{Struttura dei documenti}
-	    \label{struttura}
+	
 		\paragraph{Prima pagina}\Spazio
 		Ogni documento, esclusi i verbali, è caratterizzato da una prima pagina che contiene le seguenti informazioni sul documento:
 		\begin{itemize}
@@ -251,7 +243,7 @@ Nel caso l'incontro abbia partecipanti esterni e fosse stata eseguita una serie 
 				\item \textbf{Output}: esito decidibile verificato rispetto a un comportamento atteso;
 				\item \textbf{Istruzioni aggiuntive}: istruzioni su come va eseguito il test e su come vanno interpretati gli output.
 			\end{itemize}
-		\subsubsection{Test}
+		\paragraph{Test}
 			\subparagraph{Test di unità} \Spazio
 			I test di unità verificano che le singole Unità di prodotto software funzionino correttamente, le unità non possono passare al test di integrazione se non passano questo test.
 			Comunemente per i test di unità vengono utilizzati \gl{driver} e \gl{stub} che simulano il chiamante e un unità chiamata.
@@ -259,9 +251,13 @@ Nel caso l'incontro abbia partecipanti esterni e fosse stata eseguita una serie 
 			I test di integrazione sono il passo successivo ai test di unità servono a verificare che due o più unità, precedentemente verificate, funzionino correttamente una volta combinate.
 			Questo tipo di test verifica la corretta collaborazione tra le varie unità e aiuta a trovare eventuali errori non rilevati nei test precedenti.
 			L'obbiettivo finale di questi test è arrivare a testare l'intero prodotto costituito accorpando tutte le singole unità.
+			\subparagraph{Test di sistema} \Spazio
+			I test di sistema validano il prodotto software ovvero si accertano che rispettino i requisiti concordati, vengono effettuati quando si ritiene che il prodotto abbia raggiunto una versione definitiva.
 			\subparagraph{Test di regressione}	\Spazio
 			I test di regressione devono essere fatti ogni volta che viene fatta una modifica a una componente software, consistono nel rifare i test di unità e integrazione necessari per accertarsi che tale modifica non causi errori nella componente in cui è stata fatta o in parti del software collegate.
 			Un buon incapsulamento limita il numero di test da effettuare in questa fase.				
+			\subparagraph{Test di accettazione} \Spazio
+			Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto può essere rilasciato.
 	\subsubsection{Strumenti}
 			\paragraph{Verifica ortografica} \Spazio
 			Viene utilizzato \gl{GNU Aspell}, uno spell checker open source in grado di gestire più dizionari contemporaneamente che segnala gli errori all'interno di un documento mentre durante la scrittura viene utilizzato il controllo ortografico integrato in TeXstudio che segnala le parole errate sottolineandole in rosso.
@@ -287,19 +283,4 @@ Nel caso l'incontro abbia partecipanti esterni e fosse stata eseguita una serie 
 		    	\caption{Grafico prodotto da SonarQube}
 		    	\label{graficobello} 
 		    \end{figure}
-	    
-\subsection{Validazione}
-
-            \subsubsection{Scopo}
-            Il processo di validazione ha lo scopo di determinare se il prodotto realizzato è conforme alle attese e viene effettuato, solo quando il prodotto è completo, in seguito a molteplici verifiche per evitare di ottenere un risultato negativo.
-            \subsubsection{Attività}
-            \paragraph{Analisi Dinamica} \Spazio
-            Il \textit{verificatore} ha il compito di rieseguire i test per la verifica, eseguire i test validazione e comunicare i risultati ottenuti al \textit{project manager} che deciderà se eseguire ulteriori test.
-            \subsubsection{Test}
-            \subparagraph{Test di sistema} \Spazio
-            I test di sistema validano il prodotto software ovvero si accertano che rispettino i requisiti concordati, vengono effettuati quando si ritiene che il prodotto abbia raggiunto una versione definitiva.
-            \subparagraph{Test di accettazione} \Spazio
-            Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto può essere rilasciato.
-            
-            
 			
