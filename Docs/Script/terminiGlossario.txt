@@ -114,6 +114,7 @@ Truffle
 typos
 UML
 Uniweb
+URL
 validazione
 verifica
 verificatore
