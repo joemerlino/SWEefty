@@ -45,9 +45,34 @@ Tutti i pacchetti che installi, insieme alle informazioni basilari del tuo progr
 #### ES6
 E' l'ultima versione di js implementata (al 99%) da nodejs. Permette di scrivere javascript in maniera molto più semplice ed intutitiva rispetto al plain Javascript. ES6 ha introdotto diverse novità che hanno rivoluzionato js.
 
+#### Promises
+L'asincronia è un aspetto fondamentale di Nodejs in quanto è single threaded. Ciò comporta che tutte le chiamate a servizi web diventerebbero bloccanti, cioè l'esecuzione si blocca fino a che non viene fornita una risposta e poi si continua, le promise dunque sono la soluzione che fornisce la scappatoia alle chiamate bloccanti. Le promise sono oggetti particolari alla quale viene fornito un compito da fare e poi loro si occuperanno di fornire una risposta (resolve o reject) a seconda se il compito è andato a buon fine o non e nel frattempo il tuo programma continua nella sua esecuzione.
+
+
 ### LINK UTILI
 * [Novità di ES6](https://webapplog.com/es6/)
 * [Npm, comandi principali](https://docs.npmjs.com/)
 * [Decisamente la migliore guida per Javascript, spiega meglio di Ballan](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
 
 Per qualsiasi domanda o dubbio scrivetemi senza problemi
+
+
+
+
+
+### STRUTTURA PLUGIN
+
+#### Index.js
+Entry point del plugin, qui viene ritornato a Kibana una reference al plugin che si sta creando così poi Kibana lo include in se stesso. Qui si può decidere quali reference invece Kibana manderà al nostro plugin, ad esempio, se il nostro plugin utilizzerà elasticsearch allora Kibana fornirà una reference di elastic al nostro plugin.
+
+#### public/
+Contiene tutti i file che vengono spediti al browser dell'utente quando visualizzano il plugin, quindi i css la pahina vera e propria in html ed il js che la gestisce.
+
+#### public/app.js
+Logica del plugin qui vengono gestite le richieste che vengono fatte al plugin e si istanziano i controller che gestiscono la pagina vera e propria.
+
+#### server/
+Qui vengono gestite le route, quando si vuole effettuare una richiesta (e.g. query ad elasticsearch) questa va gestita in server/routes/examples.js
+
+#### package.json
+informazioni utili del nostro plugin, lista dependencies, comandi, etc...
