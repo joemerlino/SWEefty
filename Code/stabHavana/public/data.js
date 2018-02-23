@@ -1,4 +1,4 @@
-{
+var data = {
   "nodes": [
     {"id": "Myriel", "group": 1},
     {"id": "Napoleon", "group": 1},
@@ -335,3 +335,5 @@
     {"source": "Mme.Hucheloup", "target": "Enjolras", "value": 1}
   ]
 }
+
+module.exports = data;
