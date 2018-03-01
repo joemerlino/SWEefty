@@ -258,18 +258,30 @@ I test devono essere ripetibili ovvero con lo stesso input e nello stesso ambien
 \subsection{Test}
 \subparagraph{Test di unità} \Spazio
 I test di unità verificano che le singole Unità di prodotto software funzionino correttamente, le unità non possono passare al test di integrazione se non passano questo test.
-Comunemente per i test di unità vengono utilizzati \gl{driver} e \gl{stub} che simulano il chiamante e un unità chiamata.
+Comunemente per i test di unità vengono utilizzati \gl{driver} e \gl{stub} che simulano il chiamante e un unità chiamata.\newline
+I test di unità saranno descritti nel modo seguente: \Spazio
+
+\centerline{\textbf{TU}[idTest]}
+
+dove:
+\begin{itemize}
+	\item \textbf{idTest:} rappresenta il codice identificativo crescente dell’unità considerata.
+\end{itemize}
 \subparagraph{Test di integrazione} \Spazio
 I test di integrazione sono il passo successivo ai test di unità servono a verificare che due o più unità, precedentemente verificate, funzionino correttamente una volta combinate.
 Questo tipo di test verifica la corretta collaborazione tra le varie unità e aiuta a trovare eventuali errori non rilevati nei test precedenti.
-L'obbiettivo finale di questi test è arrivare a testare l'intero prodotto costituito accorpando tutte le singole unità.
-\subparagraph{Test di sistema} \Spazio
-I test di sistema validano il prodotto software ovvero si accertano che rispettino i requisiti concordati, vengono effettuati quando si ritiene che il prodotto abbia raggiunto una versione definitiva.
+L'obbiettivo finale di questi test è arrivare a testare l'intero prodotto costituito accorpando tutte le singole unità.\newline
+I test di integrazione saranno descritti nel modo seguente: \Spazio
+\centerline{\textbf{TI}[IdComponente]}
+
+dove:
+\begin{itemize}
+	\item \textbf{IdComponente:} rappresenta il codice identificativo crescente del componente considerato.
+\end{itemize}
+
 \subparagraph{Test di regressione}	\Spazio
 I test di regressione devono essere fatti ogni volta che viene fatta una modifica a una componente software, consistono nel rifare i test di unità e integrazione necessari per accertarsi che tale modifica non causi errori nella componente in cui è stata fatta o in parti del software collegate.
 Un buon incapsulamento limita il numero di test da effettuare in questa fase.
-\subparagraph{Test di accettazione} \Spazio
-Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto può essere rilasciato.
 \subsubsection{Strumenti}
 \paragraph{Verifica ortografica} \Spazio
 Viene utilizzato \gl{GNU Aspell}, uno spell checker open source in grado di gestire più dizionari contemporaneamente che segnala gli errori all'interno di un documento mentre durante la scrittura viene utilizzato il controllo ortografico integrato in TeXstudio che segnala le parole errate sottolineandole in rosso.
@@ -283,28 +295,73 @@ Per l'analisi dinamica vengono utilizzati i seguenti software:
 \end{itemize}
 \paragraph{Metriche} \Spazio
 Per il calcolo delle metriche viene utilizzato SonarQube, software che permette di stabilire un grado di qualità che tutto il gruppo deve rispettare (come si vede in figura \ref{qualità}), inoltre permette di visualizzare grafici per controllare la qualità del progetto nel periodo di sviluppo (come si vede in figura \ref{graficobello}).
-\begin{figure}[h]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.9\textwidth]{images/enforce-quality-gate.png}
 	\caption{dashboard con parametri di SonarQube}
 	\label{qualità}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/project-history2.png}
 	\caption{Grafico prodotto da SonarQube}
 	\label{graficobello}
 \end{figure}
-
+\newpage
 \subsection{Validazione}
 
 \subsubsection{Scopo}
 Il processo di validazione ha lo scopo di determinare se il prodotto realizzato è conforme alle attese e viene effettuato, solo quando il prodotto è completo, in seguito a molteplici verifiche per evitare di ottenere un risultato negativo.
 \subsubsection{Attività}
 \paragraph{Analisi Dinamica} \Spazio
-Il \textit{verificatore} ha il compito di rieseguire i test per la verifica, eseguire i test validazione e comunicare i risultati ottenuti al \textit{project manager} che deciderà se eseguire ulteriori test.
+Il \textit{verificatore} ha il compito di rieseguire i test per la verifica per controllare che non vi siano errori non rilevati precedentemente, eseguire i test validazione per accertarsi che il prodotto sia conforme alle attese e comunicare i risultati ottenuti al \textit{project manager} che deciderà se eseguire ulteriori test.
 \subsubsection{Test}
 \subparagraph{Test di sistema} \Spazio
-I test di sistema validano il prodotto software ovvero si accertano che rispettino i requisiti concordati, vengono effettuati quando si ritiene che il prodotto abbia raggiunto una versione definitiva.
+I test di sistema validano il prodotto software ovvero si accertano che rispettino i requisiti concordati, vengono effettuati quando si ritiene che il prodotto abbia raggiunto una versione definitiva.\newline
+I test di sistema saranno descritti nel modo seguente: \Spazio
+\centerline{\textbf{TS}[TipoRequisito][ImportanzaRequisito][idRequisito]}
+
+dove:
+\begin{itemize}
+	\item \textbf{TipoRequisito:} può assumere valori tra:
+	\begin{itemize}
+		\item F per i requisiti funzionali;
+		\item Q per i requisiti di qualità;
+		\item V per i requisiti di vincolo;
+		\item P per i requisiti prestazionali.
+	\end{itemize}
+	
+	\item \textbf{ImportanzaRequisito:} può assumere valori tra:
+	\begin{itemize}
+		\item 0 per i requisiti obbligatori;
+		\item 1 per i requisiti desiderabili;
+		\item 2 per i requisiti facoltativi.
+	\end{itemize}
+	
+	\item \textbf{IdRequisito:} può assumere un valore gerarchico che identifica il singolo requisito.
+\end{itemize}
 \subparagraph{Test di accettazione} \Spazio
-Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto può essere rilasciato.
+Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto può essere rilasciato.\newline
+	I test di validazione saranno organizzati nel modo seguente:\Spazio
+
+\centerline{\textbf{TA}[TipoRequisito][ImportanzaRequisito][IdRequisito]}
+
+dove:
+\begin{itemize}
+	\item \textbf{TipoRequisito:} può assumere valori tra:
+	\begin{itemize}
+		\item F per i requisiti funzionali;
+		\item Q per i requisiti di qualità;
+		\item V per i requisiti di vincolo;
+		\item P per i requisiti prestazionali.
+	\end{itemize}
+	\item \textbf{ImportanzaRequisito:} può assumere valori tra:
+	\begin{itemize}
+		\item 0 per i requisiti obbligatori;
+		\item 1 per i requisiti desiderabili;		
+		\item 2 per i requisiti facoltativi.
+	\end{itemize}
+	
+	\item \textbf{IdRequisito:} assume un valore gerarchico che identifica il singolo requisito.
+	
+\end{itemize}
