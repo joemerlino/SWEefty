@@ -17,13 +17,12 @@ Gli attori che interagiscono con il sistema sono:
 \subsection{Caso d'uso UC1: Visualizzazione mappa topologica}
 \begin{figure} [H]
 	\centering
-	\includegraphics[scale=0.45]{./UC/UC1.png}
+	\includegraphics[scale=0.40]{./UC/UC1.png}
 	\caption{Visualizzazione mappa topologica}\label{}
 \end{figure}
 \begin{itemize}
 	\item \textbf{Attori}: Utente
 	\item \textbf{Descrizione}: L'attore intende visualizzare la mappa topologica dell'applicazione monitorata.
-	
 	\item \textbf{Precondizione}: Kibana deve avere una dashboard che contenga il plugin della mappa.
 	\item \textbf{Flusso principale degli eventi}: L'attore richiede di visualizzare la mappa dell'applicazione monitorata, il plugin carica ed elabora i dati relativi all'applicazione monitorata, il plugin mostra la mappa topologica dell'applicazione monitorata.
 	\begin{itemize}
@@ -35,12 +34,22 @@ Gli attori che interagiscono con il sistema sono:
 		\item Visualizzazione database (UC1.6)
 		\item Visualizzazione componenti server cluster (UC1.7)
 	\end{itemize}
+	\item 	\textbf{Estensioni}:
+	\begin{itemize}
+		\item UC4: Fallimento caricamento dati della mappa topologica
+	\end{itemize}
 	\item \textbf{Postcondizione}: Viene mostrata la mappa topologica associata all'applicazione monitorata.
 \end{itemize}
 \subsection{Caso d'uso UC1.1: Visualizzazione componenti}
 \begin{itemize}
 	\item \textbf{Attori}: Utente
 	\item \textbf{Descrizione}: L'attore intende visualizzare i componenti dell'applicazione monitorata.
+	\item 	\textbf{Generalizzazione di}:
+	\begin{itemize}
+		\item Visualizzazione server (UC1.5)
+		\item Visualizzazione database (UC1.6)
+		\item Visualizzazione componenti server cluster (UC1.7)
+	\end{itemize}
 	\item \textbf{Precondizione}: Kibana deve avere una dashboard che contenga il plugin della mappa.
 	\item \textbf{Flusso principale degli eventi}: L'attore intende visualizzare i componenti dell'applicazione nella mappa, quindi essi vengono disegnati all'interno di essa.
 	\item \textbf{Postcondizione}: I componenti vengono visualizzati all'interno della mappa.
@@ -81,7 +90,7 @@ Gli attori che interagiscono con il sistema sono:
 \subsection{Caso d'uso UC1.3: Visualizzazione degli insiemi di richieste fra componenti}
 \begin{figure} [H]
 	\centering
-	\includegraphics[scale=0.45]{./UC/UC1-3.png}
+	\includegraphics[scale=0.40]{./UC/UC1-3.png}
 	\caption{Visualizzazione degli insiemi di richieste fra componenti}\label{}
 \end{figure}
 \begin{itemize}
@@ -103,6 +112,11 @@ Gli attori che interagiscono con il sistema sono:
 \begin{itemize}
 	\item \textbf{Attori}: Utente
 	\item \textbf{Descrizione}: L'attore intende visualizzare l'arco in base al tipo di richiesta eseguita fra le coppie di componenti dell'applicazione monitorata.
+	\item 	\textbf{Generalizzazione di}:
+	\begin{itemize}
+		\item Visualizzazione delle richieste HTTP (UC1.3.3)
+		\item Visualizzazione delle richieste ai database (UC1.3.4)
+	\end{itemize}
 	\item \textbf{Precondizione}: Kibana deve avere una dashboard che contenga il plugin della mappa.
 	\item \textbf{Flusso principale degli eventi}: L'attore intende visualizzare gli archi in base al tipo di richiesta fra coppie di componenti dell'applicazione nella mappa, quindi essi vengono disegnati all'interno di essa.
 	\item \textbf{Postcondizione}: Vengono visualizzati gli archi in base al tipo di richiesta eseguita fra le coppie di componenti all'interno della mappa.
@@ -111,8 +125,12 @@ Gli attori che interagiscono con il sistema sono:
 \begin{itemize}
 	\item \textbf{Attori}: Utente
 	\item \textbf{Descrizione}: L'attore intende visualizzare gli insiemi di richieste fra le coppie di componenti dell'applicazione monitorata con colori diversi in base al loro tempo di esecuzione medio.
+	\item 	\textbf{Generalizzazione di}:
+	\begin{itemize}
+		\item Colorazione degli archi corrispondenti a tempi di risposta critici (UC1.3.5)
+		\item Colorazione degli archi corrispondenti a tempi di risposta regolari  (UC1.3.6)
+	\end{itemize}
 	\item \textbf{Precondizione}: Kibana deve avere una dashboard che contenga il plugin della mappa.
-	
 	\item \textbf{Flusso principale degli eventi}: L'attore intende visualizzare gli insiemi di richieste fra coppie di componenti con colori diversi in base al loro tempo medio di esecuzione, quindi essi vengono disegnati all'interno della mappa sotto forma di archi con il rispettivo colore.
 	\item \textbf{Postcondizione}: Gli insiemi di richieste fra coppie di componenti vengono visualizzate all'interno della mappa sotto forma di archi di colore diverso in base al loro tempo di esecuzione medio.
 \end{itemize}
@@ -384,6 +402,10 @@ Gli attori che interagiscono con il sistema sono:
 	\begin{itemize}
 		\item Visualizzazione dettagli singola trace (UC5.1)
 	\end{itemize}
+	\item 	\textbf{Estensioni}:
+	\begin{itemize}
+		\item UC9: Fallimento caricamento dati della stack trace
+	\end{itemize}
 	\item \textbf{Postcondizione}: Viene mostrato l'elenco delle trace.
 \end{itemize}
 \subsection{Caso d'uso UC5.1: Visualizzazione dettagli singola trace}
@@ -472,6 +494,11 @@ Gli attori che interagiscono con il sistema sono:
 \begin{itemize}
 	\item \textbf{Attori}: Utente
 	\item \textbf{Descrizione}: L'attore intende manipolare l'ordinamento dello stack trace.
+	\item 	\textbf{Generalizzazione di}:
+	\begin{itemize}
+		\item Riordinamento stack trace per momento di inizio esecuzione (UC7)
+		\item Riordinamento stack trace per tempo di esecuzione (UC8)
+	\end{itemize}
 	\item \textbf{Precondizione}: Deve essere stata visualizzata all'interno del plugin la stack trace.
 	\item \textbf{Flusso principale degli eventi}: L'attore intende riordinare la stack trace e questa viene riordinata.
 	
@@ -709,6 +736,11 @@ Gli attori che interagiscono con il sistema sono:
 \begin{itemize}
 	\item \textbf{Attori}: Utente
 	\item \textbf{Descrizione}: L'attore intende manipolare l'ordinamento delle query di una singola trace.
+	\item 	\textbf{Generalizzazione di}:
+	\begin{itemize}
+		\item Riordinamento delle query per momento di inizio esecuzione (UC14)
+		\item Riordinamento delle query per tempo di esecuzione (UC15)
+	\end{itemize}
 	\item \textbf{Precondizione}: Deve essere stata visualizzata la lista di query di una singola trace.
 	\item \textbf{Flusso principale degli eventi}: L'attore intende riordinare le query di una singola trace e queste viene riordinata.
 	\begin{itemize}
