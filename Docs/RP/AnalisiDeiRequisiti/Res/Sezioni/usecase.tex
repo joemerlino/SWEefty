@@ -4,14 +4,56 @@ Ogni caso d'uso identificato dall'analisi del capitolato C7, dagli incontri este
 \begin{itemize}
 	\item Le prime due lettere identificano che si tratta di un caso d'uso;
 	\item Il codice padre è un numero univoco che identifica un caso d'uso;
-	\item Il codice figlio è un numero progressivo che identifica i sottocasi;
+	\item Il codice figlio è un numero progressivo che identifica i sottocasi;\\
 \end{itemize}
 
+Inoltre sono stati descritti due casi d'uso generali (UCG1 e UCG2) la cui nomenclatura non segue quella appena riportata. Essi rappresentano gli use case principali con cui un utente può interagire con il prodotto. \\ Dato che il prodotto consiste di due diversi plugin per Kibana è stato deciso di suddividere gli use case riguardanti il plugin per la mappa topologia (UCG1) con quelli riguardanti il plugin per la stack trace (UCG2) per una maggior chiarezza nella descrizione.
 \subsection{Attori}
-Gli attori che interagiscono con il sistema sono:
+L'attore che può interagire con il prodotto è soltanto uno:
 \begin{itemize}
 	\item \textbf{Utente}: ci si riferisce ad un utente generico che utilizza i due plugin già integrati su Kibana per monitorare ed analizzare le prestazioni di una determinata applicazione. 
-	\item \textbf{Kibana}: piattaforma con cui i plugin devono interagire per reperire i dati da visualizzare in una forma specifica in seguito ad una richiesta da parte dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso generale  UCG1: Plugin mappa topologica}
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=0.40]{./UC/UCG1.png}
+	\caption{Plugin mappa topologica}\label{}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori}: Utente
+	\item \textbf{Descrizione}: L'attore intende utilizzare il plugin mappa topologica per Kibana per usufruire delle sue funzionalità.
+	\item \textbf{Precondizione}: Kibana deve avere una dashboard che contenga il plugin della mappa topologica.
+	\item \textbf{Flusso principale degli eventi}: 
+	L'attore vuole utilizzare tutte le funzionalità che il plugin mette a disposizione e lo utilizza per monitorare un'applicazione mappando ogni sua componente e scambio d'informazioni tra di esse.
+	\begin{itemize}
+		\item Visualizzazione mappa topologica (UC1)
+		\item Riposizionamento componenti della mappa topologica (UC2)
+		\item Ridimensionamento della mappa topologica (UC3)
+		\item Fallimento caricamento dati della mappa topologica(UC4)
+	\end{itemize}
+	\item \textbf{Postcondizione}: Viene utilizzato il plugin per Kibana che permette di analizzare un'applicazione mappando le componenti e le interazioni che avvengono tra di esse.
+\end{itemize}
+
+\subsection{Caso d'uso generale  UCG2: Plugin stack trace}
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=0.37]{./UC/UCG2.png}
+	\caption{Plugin stack trace}\label{}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attori}: Utente
+	\item \textbf{Descrizione}: L'attore intende utilizzare il plugin stack trace per Kibana per usufruire delle sue funzionalità.
+	\item \textbf{Precondizione}: Kibana deve avere una dashboard che contenga il plugin della stack trace.
+	\item \textbf{Flusso principale degli eventi}: 
+	L'attore vuole utilizzare tutte le funzionalità che il plugin mette a disposizione e lo utilizza per monitorare un'applicazione tenendo sotto controllo la stack trace di un determinato periodo.
+	\begin{itemize}
+		\item Visualizzazione componenti (UC1.1)
+		\item Visualizzazione informazioni componenti (UC1.2)
+		\item Visualizzazione degli insiemi di richieste fra componenti (UC1.3)
+		\item Visualizzazione informazioni degli insiemi di richieste fra coppie di componenti (UC1.4)
+	\end{itemize}
+	\item \textbf{Postcondizione}: Viene utilizzato il plugin per Kibana che permette di analizzare un'applicazione tenendo sotto controllo le richieste che vengono fatte al sistema.
 \end{itemize}
 
 \subsection{Caso d'uso UC1: Visualizzazione mappa topologica}
