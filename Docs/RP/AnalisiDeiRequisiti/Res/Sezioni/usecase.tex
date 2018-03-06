@@ -8,12 +8,13 @@ Ogni caso d'uso identificato dall'analisi del capitolato C7, dagli incontri este
 \end{itemize}
 
 Inoltre sono stati descritti due casi d'uso generali (UCG1 e UCG2) la cui nomenclatura non segue quella appena riportata. Essi rappresentano gli use case principali con cui un utente può interagire con il prodotto. \\ Dato che il prodotto consiste di due diversi plugin per Kibana è stato deciso di suddividere gli use case riguardanti il plugin per la mappa topologia (UCG1) con quelli riguardanti il plugin per la stack trace (UCG2) per una maggior chiarezza nella descrizione.
-\subsection{Attori}
+\subsection{Attori} \label{attori}
 L'attore che può interagire con il prodotto è soltanto uno:
 \begin{itemize}
 	\item \textbf{Utente}: ci si riferisce ad un utente generico che utilizza i due plugin già integrati su Kibana per monitorare ed analizzare le prestazioni di una determinata applicazione. 
 \end{itemize}
 
+ \hypertarget{UCG1}{}
 \subsection{Caso d'uso generale  UCG1: Plugin mappa topologica}
 \begin{figure} [H]
 	\centering
@@ -35,6 +36,7 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\item \textbf{Postcondizione}: Viene utilizzato il plugin per Kibana che permette di analizzare un'applicazione mappando le componenti e le interazioni che avvengono tra di esse.
 \end{itemize}
 
+ \hypertarget{UCG2}{}
 \subsection{Caso d'uso generale  UCG2: Plugin stack trace}
 \begin{figure} [H]
 	\centering
@@ -56,6 +58,7 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\item \textbf{Postcondizione}: Viene utilizzato il plugin per Kibana che permette di analizzare un'applicazione tenendo sotto controllo le richieste che vengono fatte al sistema.
 \end{itemize}
 
+ \hypertarget{UC1}{}
 \subsection{Caso d'uso UC1: Visualizzazione mappa topologica}
 \begin{figure} [H]
 	\centering
@@ -82,6 +85,8 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\end{itemize}
 	\item \textbf{Postcondizione}: Viene mostrata la mappa topologica associata all'applicazione monitorata.
 \end{itemize}
+
+ \hypertarget{UC1.1}{}
 \subsection{Caso d'uso UC1.1: Visualizzazione componenti}
 \begin{itemize}
 	\item \textbf{Attori}: Utente
@@ -113,6 +118,8 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\end{itemize}
 	\item \textbf{Postcondizione}: Le informazioni relative ad ogni componente vengono visualizzate sotto forma testuale accanto ad ognuno di essi.
 \end{itemize}
+
+ \hypertarget{UC1.2.1}{}
 \subsection{Caso d'uso UC1.2.1: Visualizzazione del nome identificativo dei componenti}
 \begin{itemize}
 	\item \textbf{Attori}: Utente
@@ -129,6 +136,8 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\item \textbf{Flusso principale degli eventi}: L'attore intende visualizzare il linguaggio di implementazione dei server presenti nella mappa topologica dell'applicazione, dunque essi vengono mostrati vicino al relativo server.
 	\item \textbf{Postcondizione}: Viene visualizzato il linguaggio d'implementazione dei server presenti nella mappa topologica accanto ad ognuno di essi.
 \end{itemize}
+
+ \hypertarget{UC1.3}{}
 \subsection{Caso d'uso UC1.3: Visualizzazione degli insiemi di richieste fra componenti}
 \begin{figure} [H]
 	\centering
@@ -163,6 +172,8 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\item \textbf{Flusso principale degli eventi}: L'attore intende visualizzare gli archi in base al tipo di richiesta fra coppie di componenti dell'applicazione nella mappa, quindi essi vengono disegnati all'interno di essa.
 	\item \textbf{Postcondizione}: Vengono visualizzati gli archi in base al tipo di richiesta eseguita fra le coppie di componenti all'interno della mappa.
 \end{itemize}
+
+ \hypertarget{UC1.3.2}{}
 \subsection{Caso d'uso UC1.3.2: Colorazione degli archi corrispondenti a tempi di risposta}
 \begin{itemize}
 	\item \textbf{Attori}: Utente
@@ -346,6 +357,8 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\item \textbf{Flusso principale degli eventi}: L'attore intende visualizzare il numero di server che compongono ciascun server cluster presente nell'applicazione monitorata, dunque per ciascuno di essi viene disegnato il numero di server di cui è composto.
 	\item \textbf{Postcondizione}: Per ogni server cluster presente nella mappa viene visualizzato il relativo numero di server che lo compongono.
 \end{itemize}
+
+ \hypertarget{UC2}{}
 \subsection{Caso d'uso UC2: Riposizionamento componenti della mappa topologica}
 \begin{figure} [H]
 	\centering
@@ -371,6 +384,7 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\item \textbf{Flusso principale degli eventi}: L'attore trascina un componente della mappa topologica con il puntatore Il componente trascinato viene riposizionato.
 	\item \textbf{Postcondizione}: Il componente trascinato viene riposizionato.
 \end{itemize}
+
 \subsection{Caso d'uso UC2.2: Riposizionamento automatico componenti}
 \begin{itemize}
 	\item \textbf{Attori}: Utente
@@ -397,6 +411,8 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\end{itemize}
 	\item \textbf{Postcondizione}: La mappa topologica viene ridimensionata.
 \end{itemize}
+
+ \hypertarget{UC3.1}{}
 \subsection{Caso d'uso UC3.1: Ingrandimento della mappa topologica}
 \begin{itemize}
 	\item \textbf{Attori}: Utente
@@ -421,15 +437,18 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\item \textbf{Flusso principale degli eventi}: L'attore preme sul componente grafico dedicato all'attivazione della modalità a schermo interro ed essa viene visualizzata schermo intero.
 	\item \textbf{Postcondizione}: La mappa topologica viene visualizzata a schermo intero.
 \end{itemize}
+
+ \hypertarget{UC4}{}
 \subsection{Caso d'uso UC4: Fallimento caricamento dati della mappa topologica}
 \begin{itemize}
 	\item \textbf{Attori}: Utente
 	\item \textbf{Descrizione}: I dati relativi alla mappa topologica non possono essere caricati per un errore interno.
-	
 	\item \textbf{Precondizione}: Si verifica un errore nel caricamento dei dati.
 	\item \textbf{Flusso principale degli eventi}: La richiesta dei dati relativi alla mappa topologica dell'applicazione monitorata non può essere soddisfatta, dunque viene visualizzato un messaggio di errore al posto della mappa.
 	\item \textbf{Postcondizione}: Al posto della mappa topologica viene visualizzato un messaggio di errore.
 \end{itemize}
+
+ \hypertarget{UC5}{}
 \subsection{Caso d'uso UC5: Visualizzazione stack trace}
 \begin{figure} [H]
 	\centering
@@ -450,6 +469,8 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\end{itemize}
 	\item \textbf{Postcondizione}: Viene mostrato l'elenco delle trace.
 \end{itemize}
+
+ \hypertarget{UC5.1}{}
 \subsection{Caso d'uso UC5.1: Visualizzazione dettagli singola trace}
 \begin{figure} [H]
 	\centering
@@ -527,6 +548,8 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	
 	\item \textbf{Postcondizione}: Per ogni trace la cui richiesta HTTP è fallita viene visualizzato un dettaglio dell'errore.
 \end{itemize}
+
+ \hypertarget{UC6}{}
 \subsection{Caso d'uso UC6: Riordinamento della stack trace}
 \begin{figure} [H]
 	\centering
@@ -606,6 +629,8 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\end{itemize}
 	\item \textbf{Postcondizione}: Viene visualizzato il call tree della trace selezionata.
 \end{itemize}
+
+ \hypertarget{UC10.1}{}
 \subsection{Caso d'uso UC10.1: Visualizzazione dettagli singolo metodo}
 \begin{figure} [H]
 	\centering
@@ -708,6 +733,8 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\end{itemize}
 	\item \textbf{Postcondizione}: Viene visualizzato l'elenco di tutte le query eseguite da una trace.
 \end{itemize}
+
+ \hypertarget{UC12.1}{}
 \subsection{Caso d'uso UC12.1: Visualizzazione dettagli di una singola query}
 \begin{figure} [H]
 	\centering
@@ -769,6 +796,8 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\item \textbf{Flusso principale degli eventi}: L'attore intende visualizzare il tempo di esecuzione di ogni query ed esso viene rappresentato sotto forma di testo.
 	\item \textbf{Postcondizione}: Per ogni query presente nella lista viene visualizzato il proprio tempo di esecuzione.
 \end{itemize}
+
+ \hypertarget{UC13}{}
 \subsection{Caso d'uso UC13: Riordinamento delle query di una singola trace}
 \begin{figure} [H]
 	\centering
@@ -816,6 +845,8 @@ L'attore che può interagire con il prodotto è soltanto uno:
 	\item \textbf{Flusso principale degli eventi}: L'attore vuole riordinare la lista di query di una singola trace in base al momento di inizio dell'esecuzione e questo avviene in seguito all'interazione con un componente grafico.
 	\item \textbf{Postcondizione}: La lista di query di una singola trace viene riordinata in base al momento di inizio dell'esecuzione.
 \end{itemize}
+
+ \hypertarget{UC15}{}
 \subsection{Caso d'uso UC15: Riordinamento delle query per tempo di esecuzione}
 \begin{itemize}
 	\item \textbf{Attori}: Utente
