@@ -10,10 +10,66 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
 		
 		
 	\subsubsection{Test di Sistema}
-	Questo tipo di test serve per verificare che il comportamento dinamico del sistema sia conforme ai requisiti specificati nel documento \textit{Analisi dei Requisiti v2.0.0}.
+	Questo tipo di test serve per verificare che il comportamento dinamico del sistema sia conforme ai requisiti specificati nel documento \textit{Analisi dei Requisiti\_v2.0.0}.
+	\newcolumntype{H}{>{\centering\arraybackslash}m{7cm}}
+	\normalsize
+	\begin{longtable}{|c|H|c|}
+		\hline
+		\textbf{Id Test} & \textbf{Descrizione} & \textbf{Stato}\\
+		\hline
+		\endhead
+		TS0F1.1&Viene verificato che sia possibile visualizzare le varie componenti del sistema.& Non implementato\\ \hline
+		TS0F1.1.1&Vene verificato che sia possibile visualizzare i server nella mappa.&Non implementato \\ \hline
+		TS0F1.1.2&Viene verificato che sia possibile visualizzare nella mappa i database dell'applicazione monitorata.&Non implementato \\ \hline
+		TS0F1.1.3&Viene verificato che sia possibile visualizzare nella mappa i server cluster dell'applicazione monitorata.&Non implementato \\ \hline
+		TS1F1.2&Viene verificato che ogni componente dell'applicazione venga visualizzato in modo differente.&Non implementato \\ \hline
+		TS1F1.2.1&Viene verificato che i server siano rappresentati sotto forma di cerchi.&Non implementato \\ \hline
+		TS1F1.2.2&Viene verificato che i database siano rappresentati sotto forma di cilindri.&Non implementato \\ \hline
+		TS1F1.2.3&Viene verificato che sia possibile visualizzare il numero di server che compongono un cluster.&Non implementato \\ \hline
+		TS1F1.3&Viene verificato che sia possibile visualizzare le informazioni riguardanti i componenti della mappa topologica dell'applicazione.&Non implementato \\ \hline
+		TS2F1.3.1&Viene verificato che sia possibile visualizzare il linguaggio d'implementazione dei server tramite un rettangolo informativo vicino al componente.&Non implementato \\ \hline
+		TS1F1.3.2&Viene verificato che sia possibile visualizzare vicino ad ogni componente dell'applicazione monitorata un identificativo per tale entità.&Non implementato \\ \hline
+		TS1F1.4&Viene verificato ch l'utente possa riposizionare i componenti all'interno della mappa topologica.&Non implementato \\ \hline
+		TS2F1.4.1&Viene verificato che sia possibile riposizionare ogni componente della mappa trascinando con il puntatore.&Non implementato \\ \hline
+		TS2F1.4.2&Viene verificato che sia possibile riposizionare automaticamente i componenti all'interno della mappa.&Non implementato \\ \hline
+		TS0F1.5&Viene verificato che sia possibile visualizzare ciascun insieme di richieste fra due componenti della mappa topologica sotto forma di arco tra i due.&Non implementato \\ \hline
+		TS2F1.5.1&Viene verificato che il colore degli archi cambi in base al tempo medio di un insieme di richieste fra due componenti dell'applicazione monitorata.&Non implementato \\ \hline
+		TS2F1.5.1.1&Viene verificato che se il tempo di esecuzione medio di un insieme di richieste fra due componenti dell'applicazione monitorata sale oltre i 3 secondi l'arco che li unisce diventi rosso.&Non implementato \\ \hline
+		TS2F1.5.1.2&Viene verificato che se il tempo di esecuzione medio di un
+		insieme di richieste fra due componenti dell'applicazione monitorata è inferiore o uguale a 3 secondi l'arco che li unisce sia nero.&Non implementato \\ \hline
+		TS0F1.5.2&Viene verificato che sia possibile visualizzare gli archi in base al tipo di richiesta eseguita fra due componenti della mappa topologica.&Non implementato \\ \hline
+		TS0F1.5.2.1&Viene verificato che sia possibile visualizzare sotto forma di arco un insieme di richieste fra un server e un database.&Non implementato \\ \hline
+		TS0F1.5.2.2&Viene verificato che sia possibile visualizzare sotto forma di arco un insieme di richieste HTTP fra due server.&Non implementato \\ \hline
+		TS1F1.6&Viene verificato che sia possibile visualizzare informazioni sull'insieme di richieste fra due componenti dell'applicazione.&Non implementato \\ \hline
+		TS1F1.6.1&Viene verificato che sia possibile visualizzare il tempo medio di risposta di un insieme di richieste fra due componenti dell'applicazione monitorata.&Non implementato \\ \hline
+		TS1F1.6.2&Viene verificato che sia possibile visualizzare sotto forma di etichetta il tipo dell'insieme di richieste fatte fra due componenti.&Non implementato \\ \hline
+		TS1F1.6..2.1&Viene verificato che sia possibile visualizzare delle etichette con la scritta "DB" sugli archi che presentano delle richieste fra server e database.&Non implementato \\ \hline
+		TS1F1.6.2.2&Viene verificato che sia possibile visualizzare delle etichette con la scritta "HTTP" sugli archi che rappresentano delle richieste HTTP fra server e server.&Non implementato \\ \hline
+		TS2F1.7&Viene verificato che sia possibile ridimensionare la grandezza della mappa topologica.&Non implementato \\ \hline
+		TS2F1.7.1&Viene verificato che sia possibile ingrandire i componenti della mappa topologica.&Non implementato \\ \hline
+		TS21.7.2&Viene verificato che sia possibile restringere la dimensione dei componenti della mappa.&Non implementato \\ \hline
+		TS2F1.7.3&Viene verificato che sia possibile visualizzare la mappa topologica in modalità a schermo intero.&Non implementato \\ \hline
+		TS1F1.8&Viene verificato che nel caso in cui ci sia un errore nel caricamento dei dati della mappa topologica venga visualizzato un messaggio d'errore. &Non implementato \\ \hline
+		TS0F2&Viene verificato che sia possibile visualizzare una lista delle trace dell'applicazione monitorata.&Non implementato \\ \hline
+		TS02.1&Viene verificato che sia possibile visualizzare i dettagli relativi ad ogni singola trace.&Non implementato \\ \hline
+		TS&&Non implementato \\ \hline
+		TS&&Non implementato \\ \hline
+		TS&&Non implementato \\ \hline
+		TS&&Non implementato \\ \hline
+		TS&&Non implementato \\ \hline
+		TS&&Non implementato \\ \hline
+		
+	\end{longtable}
 	
 		
 	\subsubsection{Test di Accettazione}
 	Questi test vengono utilizzati durante il collaudo finale in presenza del committente.
+	
+	\begin{longtable}{|c|H|c|}
+		\hline
+		\textbf{Id Test} & \textbf{Descrizione} & \textbf{Stato}\\
+		\hline
+		
+	\end{longtable}
 	
 	
