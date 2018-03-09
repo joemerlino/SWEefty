@@ -5,9 +5,31 @@
 	\subsection{Funzioni del prodotto}
 	I due plugin utilizzano ed elaborano i dati sullo stato e sull'andamento dell'applicazione da monitorare per ottenere:
 	\begin{itemize}
-		\item 	\textbf{Una mappa topologica}: in essa vengono visualizzati i vari tipi di componenti attivi con le relative interazioni e delle informazioni (tempi medi di risposta, richieste HTTP e numero componenti di un server \gl{cluster}) che aiutano a capire lo stato complessivo dell'applicazione. Inoltre è possibile interagire con la mappa modificando a piacimento la posizione dei componenti e la loro dimensione per renderla più accomodante ai bisogni dell'utente.
+		\item 	\textbf{Una mappa topologica}: in essa vengono visualizzati i vari tipi di componenti attivi come server e database con le relative interazioni ed informazioni come: 
+		\begin{itemize}
+					\item nome identificativo del componente
+					\item linguaggio d'implementazione dei server
+					\item tempi medi di risposta con colorazione in base alla criticità
+					\item richieste HTTP e ai database
+					\item numero componenti di un server \gl{cluster}
+		\end{itemize}
+		che aiutano a capire lo stato complessivo dell'applicazione. \\
+		Inoltre è possibile interagire con la mappa modificando a piacimento:
+		\begin{itemize}
+					\item la posizione dei singoli componenti
+					\item renderizzazione fullscreen dell'intera visualizzazione
+					\item la dimensione della mappa tramite controlli di ingrandimento/restringimento		
+		\end{itemize}
 		\item \textbf{Una stack trace}: in essa vengono visualizzate tutte le richieste che sono state fatte da parte degli utenti dell'applicazione da monitorare visualizzandone lo stato e il relativo tempo di risposta. La lista può essere riordinata in base alle proprietà visualizzate.
-		Inoltre, per ogni richiesta, è possibile visualizzare il relativo call tree: un albero delle funzioni e delle proprie sottochiamate che vengono eseguite dall'applicazione monitorata durante quella specifica richiesta. Per ogni call tree può essere visualizzata la lista delle sole queries eseguite dai metodi presenti e, anch'essa, può essere riorganizzata in base ai bisogni dell'utente.
+		Per ogni richiesta, è possibile visualizzare il relativo call tree: un albero delle funzioni e delle proprie sottochiamate che vengono eseguite dall'applicazione monitorata durante quella specifica richiesta. \\
+		Per ogni call tree può essere visualizzato un elenco dei metodi eseguiti con relative informazioni come:
+		\begin{itemize}
+			\item nome del metodo invocato
+			\item execution time dell'invocazione
+			\item tempo di esecuzione totale
+			\item numero di query relative al metodo invocato
+		\end{itemize}
+		 Inoltre è possibile visualizzare una lista delle query eseguite da tutti i metodi presenti e, anch'essa, può essere riorganizzata in base ai bisogni dell'utente.
 	\end{itemize} 
 	\subsection{Caratteristiche degli utenti}
 	Il prodotto si rivolge essenzialmente a due categorie di utenti:
