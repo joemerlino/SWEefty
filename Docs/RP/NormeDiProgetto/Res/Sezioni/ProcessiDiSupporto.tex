@@ -319,23 +319,23 @@ Il \textit{verificatore} ha il compito di rieseguire i test per la verifica per 
 \subparagraph{Test di sistema} \Spazio
 I test di sistema validano il prodotto software ovvero si accertano che rispettino i requisiti concordati, vengono effettuati quando si ritiene che il prodotto abbia raggiunto una versione definitiva.\newline
 I test di sistema saranno descritti nel modo seguente: \Spazio
-\centerline{\textbf{TS}[TipoRequisito][ImportanzaRequisito][idRequisito]}
+\centerline{\textbf{TS}[ImportanzaRequisito][TipoRequisito][idRequisito]}
 
 dove:
 \begin{itemize}
+		\item \textbf{ImportanzaRequisito:} può assumere valori tra:
+	\begin{itemize}
+		\item 0 per i requisiti obbligatori;
+		\item 1 per i requisiti desiderabili;
+		\item 2 per i requisiti facoltativi.
+	\end{itemize}
+
 	\item \textbf{TipoRequisito:} può assumere valori tra:
 	\begin{itemize}
 		\item F per i requisiti funzionali;
 		\item Q per i requisiti di qualità;
 		\item V per i requisiti di vincolo;
 		\item P per i requisiti prestazionali.
-	\end{itemize}
-	
-	\item \textbf{ImportanzaRequisito:} può assumere valori tra:
-	\begin{itemize}
-		\item 0 per i requisiti obbligatori;
-		\item 1 per i requisiti desiderabili;
-		\item 2 per i requisiti facoltativi.
 	\end{itemize}
 	
 	\item \textbf{IdRequisito:} può assumere un valore gerarchico che identifica il singolo requisito.
@@ -344,22 +344,23 @@ dove:
 Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto può essere rilasciato.\newline
 	I test di validazione saranno organizzati nel modo seguente:\Spazio
 
-\centerline{\textbf{TA}[TipoRequisito][ImportanzaRequisito][IdRequisito]}
+\centerline{\textbf{TA}[ImportanzaRequisito][TipoRequisito][IdRequisito]}
 
 dove:
 \begin{itemize}
+		\item \textbf{ImportanzaRequisito:} può assumere valori tra:
+	\begin{itemize}
+		\item 0 per i requisiti obbligatori;
+		\item 1 per i requisiti desiderabili;		
+		\item 2 per i requisiti facoltativi.
+	\end{itemize}
+
 	\item \textbf{TipoRequisito:} può assumere valori tra:
 	\begin{itemize}
 		\item F per i requisiti funzionali;
 		\item Q per i requisiti di qualità;
 		\item V per i requisiti di vincolo;
 		\item P per i requisiti prestazionali.
-	\end{itemize}
-	\item \textbf{ImportanzaRequisito:} può assumere valori tra:
-	\begin{itemize}
-		\item 0 per i requisiti obbligatori;
-		\item 1 per i requisiti desiderabili;		
-		\item 2 per i requisiti facoltativi.
 	\end{itemize}
 	
 	\item \textbf{IdRequisito:} assume un valore gerarchico che identifica il singolo requisito.
