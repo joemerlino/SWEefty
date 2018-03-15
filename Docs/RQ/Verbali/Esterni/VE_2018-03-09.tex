@@ -1,0 +1,281 @@
+% - PER STILARE QUESTO DOCUMENTO VANNO INSERITI I DATI.
+% - VISTO CHE IL FILE È LUNGO ED INTRICATO PER SEMPLIFICARE HO MESSO DEI COMMENTI
+% - CHE INDICANO I PUNTI DOVE INSERIRE LE INFORMAZIONI CHE MANCANO.
+% - INSERISCILI IN CORRISPONDENZA DEI COMMENTI:
+
+% - "INSERT TITOLO"
+% - "INSERT USO"
+% - "INSERT DATA"
+% - "INSERT DESCRIZIONE"
+% - "INSERT INFORMAZIONI INCONTRO"
+% - "INSERT DOMANDE E RISPOSTE" (intanto lo strutturiamo così, con domande e rispose, se servono altri tipi di struttura cambieremo)
+
+% - "INSERT TITOLO" (verosimilmente sarà una cosa tipo "Verbale Esterno/Interno del xx/yy") 
+\newcommand{\Titolo}{Verbale riunione 9 Marzo 2018}
+
+\newcommand{\Gruppo}{SWEefty}
+
+
+\newcommand{\Redazione}{Elia Montecchio}
+
+\newcommand{\ACapoRedazione}{Elia Montecchio}
+
+
+\newcommand{\Distribuzione}{Prof.Tullio Vardanega \newline Prof.Riccardo Cardin \newline SWEefty \newline IKS S.r.l.}
+
+\newcommand{\InformazioniDocumento}{}
+% - "INSERT USO (INTERNO/ESTERNO)"
+\newcommand{\Uso}{Esterno}
+% - "INSERT DATA"
+\newcommand{\Data}{09 Marzo 2018}
+% - "INSERT DESCRIZIONE"
+\newcommand{\DescrizioneDoc}{Questo documento riporta in modo formale il riassunto della rinuione tenutasi nella data sopra riportata.  }
+
+
+
+\documentclass[a4paper, oneside, openany]{article}
+
+\usepackage{graphbox}
+% permette di modificare i margini
+\usepackage[top=3.1cm, bottom=3.1cm, left=2.2cm, right=2.2cm]{geometry}
+
+\usepackage{lastpage} %info sul # dell'ultima pagina del documento
+\usepackage{fancyhdr} %per modificare dimensioni,margini, intestazioni e righe a piè di pagina
+\fancypagestyle{plain}{
+  % cancella tutti i campi di intestazione e piè di pagina
+  \fancyhf{}
+  
+  \lhead{\includegraphics[width=3cm]{../../../CommonImages/logo.jpg}}
+  
+  \rhead{sweeftyteam@gmail.com}
+  
+  \lfoot{ %piè di pagina
+   {\Titolo} \ - \textit{{\Gruppo}}
+  }
+  \rfoot{Pagina \thepage{} di \pageref{LastPage}} %es: pag: 4 di 10
+
+  %linea orizzontale alle posizioni top e bottom della pagina
+  \renewcommand{\headrulewidth}{0.2	pt}  
+  \renewcommand{\footrulewidth}{0.2pt}
+}
+\pagestyle{plain}
+
+%Comando Spazio
+\newcommand{\Spazio}{\mbox{} \\ \mbox{} \\ }  
+
+
+%\usepackage{calc} %introduce la notazione infissa per le op. aritmetiche interne a LaTeX
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel} %il documento è in italiano
+%\usepackage{textcomp} %The pack­age sup­ports the Text Com­pan­ion fonts, which pro­vide many text sym­bols
+%(such as baht, bul­let, copy­right, mu­si­cal­note, onequar­ter, sec­tion, and yen), in the TS1 en­cod­ing.
+
+\usepackage{graphicx}       %permette di inserire delle immagini
+\usepackage{caption}        %numerazione figure e loro descrizione testuale
+\usepackage{subcaption}     %sottofigure numerabili
+\usepackage{float}  %permette di inserire un # qualsiasi di figure fluttuanti
+\usepackage{xcolor}
+\usepackage{rotating} %permette di ruotare le immagini
+%\usepackage{changepage} %utile se c'è bisogno di aggiustare margini per centrare figure
+
+%package utili per la math mode ( $ ... $ o \[ ... \] )
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+%\usepackage{euler}    %font 'ams euler', lo stesso di 'Concrete Mathematics' di Knuth
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+% package utili per tabelle(\thead in particolare)
+\usepackage{array, booktabs, caption}
+\usepackage{makecell}
+\renewcommand\theadfont{\bfseries}
+\usepackage{boldline}
+
+\usepackage{listings} %permette di inserire degli spezzoni di codice
+
+\usepackage{tikz} %disegno di immagini vettoriali a schermo. Utile per grafi
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{graphs}
+\usetikzlibrary{arrows}
+%\usepackage{tikz-uml} %serve per disgnare l'UML, fantastica guida:
+%https://perso.ensta-paristech.fr/~kielbasi/tikzuml/var/files/doc/tikzumlmanual.pdf
+%download package: http://perso.ensta-paristech.fr/~kielbasi/tikzuml/
+
+%package per le tabelle
+\usepackage{booktabs} %permette di poter usare delle liste nelle tabelle
+\usepackage{tabularx} 
+\usepackage{longtable} %una tabella può continuare su più pagine
+\usepackage{multirow} %utile per visualizzare una cella su più righe
+%\usepackage{multicolumn} %cella su più colonne
+%\usepackage[table]{xcolor} %rende disponibile l'utilizzo di un colore per lo sfondo
+                        %delle celle di una tabella
+
+%crea una cella per le tabelle in grado di andare a capo con \newline
+%https://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+%indice con i puntini
+\usepackage{tocloft}
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+
+%http://ctan.mirror.garr.it/mirrors/CTAN/macros/latex/contrib/appendix/appendix.pdf
+\usepackage{appendix} %aggiunge dei comandi per l'appendice
+\usepackage{parskip} %aiuta LaTeX a trovare il miglior stile per i page break
+\setcounter{secnumdepth}{5} % numera i sottoparagrafi
+\setcounter{tocdepth}{5} %aggiunge all'indice i sottoparagrafi
+%\usepackage{titlesec} %\begin{paragraph} si può usare come subsubsubsection!
+
+
+\usepackage{breakurl}%\url{...} può continare alla linea successiva. (si può andare a capo)
+
+\definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black, % colore dei link interni
+    urlcolor=Maroon  % colore dei link interniesterni
+}
+
+%impostazioni per il codice che deve finire dentro a
+%\begin{lstlisting}
+
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{
+backgroundcolor=\color{lbcolor},
+    tabsize=4,    
+%   rulecolor=,
+    language=[GNU]C++,
+    basicstyle=\scriptsize,
+    upquote=true,
+    aboveskip={1.5\baselineskip},
+    columns=fixed,
+    showstringspaces=false,
+    extendedchars=true,
+    inputencoding=utf8,
+    breaklines=true,
+    prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=single,
+    numbers=left,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    identifierstyle=\ttfamily,
+    keywordstyle=\color[rgb]{0,0,1},
+    commentstyle=\color[rgb]{0.026,0.112,0.095},
+    stringstyle=\color[rgb]{0.627,0.126,0.941},
+    numberstyle=\color[rgb]{0.205, 0.142, 0.73},
+%        \lstdefinestyle{C++}{language=C++,style=numbers}’.
+}
+\lstset{
+  backgroundcolor=\color{lbcolor},
+  tabsize=4,
+  language=C++,
+  captionpos=b,
+  tabsize=3,
+  frame=lines,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=5pt,
+  breaklines=true,
+  showstringspaces=false,
+  basicstyle=\footnotesize,
+  identifierstyle=\color{magenta},
+  keywordstyle=\color[rgb]{0,0,1},
+  commentstyle=\color{orange},
+  stringstyle=\color{red}
+}
+
+
+ \newgeometry{top=4cm}
+
+\begin{document}
+\begin{titlepage}
+	\begin{center}
+		
+		\begin{center}
+			%% qui metteteci l'immagine di copertina. Io ho messo quella dell'uni,
+			%voi mettete quella del vostro grupo
+			\centerline{\includegraphics[scale=0.24]{../../../CommonImages/logo.jpg}}
+		\end{center}
+		
+		\vspace{1cm}
+		
+		\begin{Huge}
+			\textbf{\Titolo{}} \\
+		\end{Huge}
+		
+		\vspace{9pt}  
+		
+		\begin{large}
+			\Gruppo{}\ - \Data{}
+		\end{large}	  
+		
+		\vspace{15pt}
+		
+		\bgroup
+		\def\arraystretch{1.3}
+		\centering
+		\begin{tabular}{c|L{5cm}}
+			\multicolumn{2}{c}{\textbf{\InformazioniDocumento{}} } \\ \hline
+			Redazione & \ACapoRedazione{} \\
+
+			Uso & \Uso \\
+			Distribuzione & \Distribuzione{}
+		\end{tabular}
+		\egroup
+		
+		\vspace{15pt}
+		
+		\begin{center}
+			\textbf{Descrizione\\}
+			\DescrizioneDoc{}
+		\end{center}
+		
+	\end{center}
+\end{titlepage}
+
+\restoregeometry
+	
+	\section{Informazioni generali}
+		\subsection{Informazioni incontro}
+			% - INSERT INFORMAZIONI INCONTRO
+			\begin{itemize}
+				\item { \textbf{Luogo:} Torre Archimede  }
+				\item { \textbf{Data:} 9 Marzo 2018 }
+				\item { \textbf{Ora inizio:} 14.33 }
+				\item { \textbf{Ora fine:} 14.51 }
+				\item { \textbf{Partecipanti del gruppo:} Gruppo al completo }
+				\item { \textbf{Partecipanti esterni:} IKS Srl }
+			\end{itemize}
+		
+	
+	\subsection{Argomenti affrontati}
+    Nel corso della riunione effettuata mediante Skype, è stato mostrato all'azienda lo stato del Proof of Concept. Inoltre, sono state discusse varie problematiche emerse durante la programmazione della demo.
+    Nello specifico:
+
+    \begin{itemize}
+	\item { Sono state illustrate al proponente le due demo riguardanti la stack trace e il plugin della mappa topologica. La mappa topologica attualmente presenta una piattaforma comprensiva di 4 nodi: due database e due server.  É stato mostrato inoltre che il plugin è in grado di comunicare con ElasticSearch effettuando una richiesta per ottenere i dati e che il JSON risultante viene interpretato ed elaborato graficamente in modo corretto. 
+	Per quanto riguarda la stack trace, viene rappresentata una tabella contenente tutti i nomi dei metodi di una trace e il rispettivo tempo di esecuzione. Inoltre, è possibile visualizzare nella tabella il tempo di esecuzione totale della trace.}
+	\item { Il team ha spiegato all'azienda che è stato necessario addottare delle pratiche di reverse engineering per poter comprendere le meccaniche di comunicazione tra Kibana ed Elastic Search a causa della poca documentazione messa a disposizione dal team di sviluppo di Kibana. Inoltre, le istruzioni per l'installazione e lo sviluppo dei plugin generati tramite il template ufficiale non erano complete ed aggionate pertanto è stato necessario un approfondimento autonomo da parte del gruppo su come interagire con Kibana.}
+	\item { 01/VE\_2018-03-09 É stato deciso di utilizzare la libreria Javascript chiamata D3.js per rappresentare graficamente i componenti nella mappa topologia del plugin. }
+	\item { Si è discusso inoltre di quale versione di Kibana sia opportuno installare nei server ufficiali di test e produzione, in quanto il team ha trovato difficoltà a sviluppare con la versione development di Kibana 6.2.2(stabile) preferendo utilizzare la versione 6.2.3. Dopo un breve confronto 02/VE\_2018-03-09 si è deciso di installare nel server la versione stabile di Kibana, effettuando dunque un rollback di quanto fatto finora in modo da renderlo compatibile con la versione precedente.}
+	\item { L'azienda ci ha comunicato, che entro la giornata odierna, provvederà a comunicarci le credenziali ed il metodo per interagire con i server Amazon Web Services, che ci vengono messi a dispozione dal proponente per il test e la produzione.}
+     \end{itemize}
+	
+	
+	
+	
+
+		
+
+\end{document}
