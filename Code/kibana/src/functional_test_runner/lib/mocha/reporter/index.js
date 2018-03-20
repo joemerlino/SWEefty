@@ -1,1 +1,0 @@
-export { MochaReporterProvider } from './reporter';
