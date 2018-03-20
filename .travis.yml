@@ -11,6 +11,7 @@ before_install:
 - sudo apt-get install texlive-base
 - sudo apt-get install texlive-lang-italian
 - sudo apt-get install texlive-latex-extra
+- sudo mkdir /home/travis/texmf
 - sudo tlmgr init-usertree
 - sudo tlmgr install index
 # - sudo apt-get install texlive-full
