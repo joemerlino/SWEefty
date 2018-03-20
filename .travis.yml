@@ -10,6 +10,7 @@ before_install:
 - sudo apt-get install texlive-base
 - sudo apt-get install texlive-lang-italian
 - sudo apt-get install texlive-latex-extra
+- sudo tlmgr install graphbox
 # - sudo apt-get install texlive-full
 - rvm install 2.2.6
 - gem install dropbox-deployment
