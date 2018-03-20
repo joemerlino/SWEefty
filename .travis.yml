@@ -1,3 +1,5 @@
+sudo: required
+dist: trusty
 notifications:
 - email:false
 env:
@@ -5,17 +7,18 @@ env:
 before_install:
 - sudo apt-get update
 # - sudo tlmgr install graphbox
-- sudo apt-get install texlive-latex-recommended
-- sudo apt-get install texlive-fonts-recommended
-- sudo apt-get install texlive-latex-base
-- sudo apt-get install texlive-base
-- sudo apt-get install texlive-lang-italian
-- sudo apt-get install texlive-latex-extra
-- sudo apt-get install xzdec
-- sudo mkdir /home/travis/texmf
-- sudo tlmgr init-usertree
-- sudo tlmgr install graphbox
+# - sudo apt-get install texlive-latex-recommended
+# - sudo apt-get install texlive-fonts-recommended
+# - sudo apt-get install texlive-latex-base
+# - sudo apt-get install texlive-base
+# - sudo apt-get install texlive-lang-italian
+# - sudo apt-get install texlive-latex-extra
+# - sudo apt-get install xzdec
+# - sudo mkdir /home/travis/texmf
+# - sudo tlmgr init-usertree
+# - sudo tlmgr install graphbox
 # - sudo apt-get install texlive-full
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
 - rvm install 2.2.6
 # - gem install dropbox-deployment
 script:
