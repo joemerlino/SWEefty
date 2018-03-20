@@ -16,9 +16,13 @@ before_install:
 script:
 - mkdir Docs
 - mkdir Docs/RP
-- cd RP
-- cd AnalisiDeiRequisiti
+
+- cd ./RP/AnalisiRequisiti/
+
+# - cd RP
+# - cd AnalisiDeiRequisiti
 - pwd
+- ls
 - pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v2.0.0.tex
 - pwd
 - mv AnalisiDeiRequisiti_v2.0.0.pdf ../../Docs/RP
