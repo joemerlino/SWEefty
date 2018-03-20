@@ -14,10 +14,10 @@ before_install:
 - sudo apt-get install xzdec
 - sudo mkdir /home/travis/texmf
 - sudo tlmgr init-usertree
-- sudo tlmgr install index
+- sudo tlmgr install graphbox
 # - sudo apt-get install texlive-full
 - rvm install 2.2.6
-- gem install dropbox-deployment
+# - gem install dropbox-deployment
 script:
 - mkdir Docs
 - mkdir Docs/RP
