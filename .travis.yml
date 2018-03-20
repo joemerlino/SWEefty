@@ -22,22 +22,25 @@ before_install:
 - gem install dropbox-deployment
 script:
 - mkdir Docs
-- mkdir Docs/RP
+- mkdir Docs/RQ
+- mkdir Docs/RQ/Interni
+- mkdir Docs/RQ/Esterni
 
 # ANALISI DEI REQUISITI
-- cd ./RP/AnalisiDeiRequisiti/
-- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v2.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v2.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v2.0.0.tex
-- mv AnalisiDeiRequisiti_v2.0.0.pdf ../../Docs/RP
+- cd ./RQ/AnalisiDeiRequisiti/
+- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
+- mv AnalisiDeiRequisiti_v3.0.0.pdf ../../Docs/RQ/Esterni
 - cd ../..
 
-# PAINO DI PROGETTO
-- cd ./RP/PianoDiProgetto/
-- pdflatex -interaction=nonstopmode -halt-on-error PianoDiProgetto_v2.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error PianoDiProgetto_v2.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error PianoDiProgetto_v2.0.0.tex
-- mv PianoDiProgetto_v2.0.0.pdf ../../Docs/RP
+# GLOSSARIO
+- cd ./RQ/Glossario/
+- pdflatex -interaction=nonstopmode -halt-on-error Glossario_v3.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error Glossario_v3.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error Glossario_v3.0.0.tex
+- mv Glossario_v3.0.0.pdf ../../Docs/RQ/Esterni
 - cd ../..
+
 after_success:
 - dropbox-deployment
