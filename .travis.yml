@@ -19,17 +19,15 @@ before_install:
 # - sudo apt-get install texlive-full
 - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
 - rvm install 2.2.6
-# - gem install dropbox-deployment
+- gem install dropbox-deployment
 script:
 - mkdir Docs
 - mkdir Docs/RP
 - cd ./RP/AnalisiDeiRequisiti/
-# - cd RP
-# - cd AnalisiDeiRequisiti
 - pwd
 - ls
 - pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v2.0.0.tex
 - pwd
 - mv AnalisiDeiRequisiti_v2.0.0.pdf ../../Docs/RP
-# after_success:
-# - dropbox-deployment
+after_success:
+- dropbox-deployment
