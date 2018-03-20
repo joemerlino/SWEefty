@@ -12,12 +12,6 @@ before_install:
 - sudo apt-get install texlive-base
 - sudo apt-get install texlive-lang-italian
 - sudo apt-get install texlive-latex-extra
-# - sudo apt-get install xzdec
-# - sudo mkdir /home/travis/texmf
-# - sudo tlmgr init-usertree
-# - sudo tlmgr install graphbox
-# - sudo apt-get install texlive-full
-# - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-full
 - rvm install 2.2.6
 - gem install dropbox-deployment
 script:
@@ -25,6 +19,7 @@ script:
 - mkdir Docs/RQ
 - mkdir Docs/RQ/Interni
 - mkdir Docs/RQ/Esterni
+# aggiungere i verbali
 
 # ANALISI DEI REQUISITI
 - cd ./RQ/AnalisiDeiRequisiti/
@@ -55,7 +50,7 @@ script:
 - pdflatex -interaction=nonstopmode -halt-on-error PianoDiProgetto_v3.0.0.tex
 - pdflatex -interaction=nonstopmode -halt-on-error PianoDiProgetto_v3.0.0.tex
 - pdflatex -interaction=nonstopmode -halt-on-error PianoDiProgetto_v3.0.0.tex
-- mv PianoDiProgetto_v3.0.0.pdf ../../Docs/RQ/Interni
+- mv PianoDiProgetto_v3.0.0.pdf ../../Docs/RQ/Esterni
 - cd ../..
 
 # PIANO DI QUALIFICA
@@ -63,7 +58,7 @@ script:
 - pdflatex -interaction=nonstopmode -halt-on-error PianoDiQualifica_v3.0.0.tex
 - pdflatex -interaction=nonstopmode -halt-on-error PianoDiQualifica_v3.0.0.tex
 - pdflatex -interaction=nonstopmode -halt-on-error PianoDiQualifica_v3.0.0.tex
-- mv PianoDiQualifica_v3.0.0.pdf ../../Docs/RQ/Interni
+- mv PianoDiQualifica_v3.0.0.pdf ../../Docs/RQ/Esterni
 - cd ../..
 
 after_success:

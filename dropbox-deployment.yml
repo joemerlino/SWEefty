@@ -1,6 +1,4 @@
 deploy:
-  # dropbox_path:  # The path to the folder on Dropbox where the files will go
-  # dropbox_path: /Applicazioni/formule_fisica
   dropbox_path: /pdf
-  artifacts_path: Docs # can be a single file, or a path
-  debug: true # if you want to see more logs
+  artifacts_path: Docs 
+  debug: true 
