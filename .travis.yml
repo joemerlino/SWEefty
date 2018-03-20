@@ -4,26 +4,26 @@ env:
 - DROPBOX_OAUTH_BEARER="ajiHnDF-gfAAAAAAAAAAWrPPCDW77zh9g5UwjsZ6UrNes9Ldm9inK5mxul0FXqD3"
 before_install:
 - sudo apt-get update
-- sudo apt-get install texlive-latex-recommended
+# - sudo apt-get install texlive-latex-recommended
 # - sudo apt-get install texlive-fonts-recommended
 # - sudo apt-get install texlive-latex-base
 # - sudo apt-get install texlive-base
 # - sudo apt-get install texlive-lang-italian
 # - sudo apt-get install texlive-latex-extra
-# - sudo apt-get install texlive-full
+- sudo apt-get install texlive-full
 - rvm install 2.2.6
 - gem install dropbox-deployment
 script:
 - mkdir Docs
 - mkdir Docs/RP
-- cd ./RP/AnalisiDeiRequisiti/
+- cd ./RP/Glossario/
 # - cd RP
 # - cd AnalisiDeiRequisiti
 - pwd
 - ls
 # - pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v2.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti.tex
-- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti.tex
+- pdflatex -interaction=nonstopmode -halt-on-error Glossario_v2.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error Glossario_v2.0.0.tex
 - pwd
 - mv AnalisiDeiRequisiti_v2.0.0.pdf ../../Docs/RP
 after_success:
