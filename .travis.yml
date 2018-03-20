@@ -10,20 +10,21 @@ before_install:
 - sudo apt-get install texlive-base
 - sudo apt-get install texlive-lang-italian
 - sudo apt-get install texlive-latex-extra
+- sudo apt-get install texlive-extras
 # - sudo apt-get install texlive-full
 - rvm install 2.2.6
 - gem install dropbox-deployment
 script:
 - mkdir Docs
 - mkdir Docs/RP
-
-- cd ./RP/AnalisiRequisiti/
-
+- cd ./RP/AnalisiDeiRequisiti/
 # - cd RP
 # - cd AnalisiDeiRequisiti
 - pwd
 - ls
-- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v2.0.0.tex
+# - pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v2.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti.tex
+- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti.tex
 - pwd
 - mv AnalisiDeiRequisiti_v2.0.0.pdf ../../Docs/RP
 after_success:
