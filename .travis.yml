@@ -4,13 +4,13 @@ env:
 - DROPBOX_OAUTH_BEARER="ajiHnDF-gfAAAAAAAAAAWrPPCDW77zh9g5UwjsZ6UrNes9Ldm9inK5mxul0FXqD3"
 before_install:
 - sudo apt-get update
-# - sudo apt-get install texlive-latex-recommended
+- sudo apt-get install texlive-latex-recommended
 # - sudo apt-get install texlive-fonts-recommended
 # - sudo apt-get install texlive-latex-base
 # - sudo apt-get install texlive-base
 # - sudo apt-get install texlive-lang-italian
 # - sudo apt-get install texlive-latex-extra
-- sudo apt-get install texlive-full
+# - sudo apt-get install texlive-full
 - rvm install 2.2.6
 - gem install dropbox-deployment
 script:
