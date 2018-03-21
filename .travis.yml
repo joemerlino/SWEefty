@@ -1,7 +1,7 @@
 sudo: required
 dist: trusty
 notifications:
-- slack:'sweeftyworkspace:B9YcyvwLNREWLqxH08sBAwzz'
+- slack:sweeftyworkspace:B9YcyvwLNREWLqxH08sBAwzz
 - on_success:always
 
 - email:false
