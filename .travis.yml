@@ -1,7 +1,7 @@
 sudo: required
 dist: trusty
 notifications:
-- slack:sweeftyworkspace:o18TKWuofRJA7nWk0xVAo6V1
+- slack:'sweeftyworkspace:o18TKWuofRJA7nWk0xVAo6V1'
 - email:false
 env:
 - DROPBOX_OAUTH_BEARER="ajiHnDF-gfAAAAAAAAAAWrPPCDW77zh9g5UwjsZ6UrNes9Ldm9inK5mxul0FXqD3"
