@@ -3,7 +3,7 @@ dist: trusty
 notifications:
   slack:
     rooms:
-      - sweeftyworkspace:B9YcyvwLNREWLqxH08sBAwzz
+    - sweeftyworkspace:B9YcyvwLNREWLqxH08sBAwzz
   email:false
 env:
 - DROPBOX_OAUTH_BEARER="ajiHnDF-gfAAAAAAAAAAWrPPCDW77zh9g5UwjsZ6UrNes9Ldm9inK5mxul0FXqD3"
