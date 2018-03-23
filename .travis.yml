@@ -96,12 +96,12 @@ script:
 - pdflatex -interaction=nonstopmode -halt-on-error VE_2017-12-06.tex
 - pdflatex -interaction=nonstopmode -halt-on-error VE_2017-12-06.tex
 - mv VE_2017-12-06.pdf ../../../Docs/RQ/Esterni/Verbali
-##
-#- pdflatex -interaction=nonstopmode -halt-on-error VE_2017-12-19.tex
-#- pdflatex -interaction=nonstopmode -halt-on-error VE_2017-12-19.tex
-#- pdflatex -interaction=nonstopmode -halt-on-error VE_2017-12-19.tex
-#- mv VE_2017-12-19.pdf ../../../Docs/RQ/Esterni/Verbali
-## 
+#
+- pdflatex -interaction=nonstopmode -halt-on-error VE_2017-12-19.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VE_2017-12-19.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VE_2017-12-19.tex
+- mv VE_2017-12-19.pdf ../../../Docs/RQ/Esterni/Verbali
+# 
 #- pdflatex -interaction=nonstopmode -halt-on-error VE_2018-03-09.tex
 #- pdflatex -interaction=nonstopmode -halt-on-error VE_2018-03-09.tex
 #- pdflatex -interaction=nonstopmode -halt-on-error VE_2018-03-09.tex
