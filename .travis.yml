@@ -74,10 +74,10 @@ script:
 # VERBALI INTERNI
 - cd ./RQ/Verbali/Interni
 #
-# - pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-07.tex
-# - pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-07.tex
-# - pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-07.tex
-# - mv VI_2017-12-07.pdf ../../Docs/RQ/Interni/Verbali
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-07.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-07.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-07.tex
+- mv VI_2017-12-07.pdf ../../../Docs/RQ/Interni/Verbali
 # #
 # - pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-20.tex
 # - pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-20.tex
