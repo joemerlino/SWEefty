@@ -1,16 +1,10 @@
 \section{Specifica dei test}
 Per produrre software di qualità, il gruppo SWEefty definirà dei test per assicurarsi che le unità prodotte funzionino in maniera corretta. Il tracciamento dei test ed il loro esito verrà riportato in questo documento.
 	\subsection{Tipi di test}
-		
-	\subsubsection{Test di unità}
-    Lo scopo di questa tipologia di test è di verificare la più piccola parte di lavoro prodotta da un programmatore. Questo significa tendenzialmente verificare i metodi e le funzioni scritte, questi test verranno implementati durante la progettazione architetturale.
 	
-	\subsubsection{Test di integrazione}
-	Lo scopo di questa tipologia di test è di verificare le componenti di sistema. Più	precisamente, l’obiettivo è di testare il funzionamento dei vari \gl{package} prodotti, sia singolarmente che nel loro insieme, questi test verranno implementati assieme durante la progettazione architetturale.
-		
-		
-	\subsubsection{Test di sistema}
-	Questo tipo di test serve per verificare che il comportamento dinamico del sistema sia conforme ai requisiti specificati nel documento \textit{Analisi dei Requisiti\_v2.0.0}.
+		\subsubsection{Test di accettazione}
+	Questi test vengono utilizzati durante il collaudo finale in presenza del committente.
+	
 	\newcolumntype{H}{>{\centering\arraybackslash}m{7cm}}
 	\normalsize
 	\begin{longtable}{|c|H|c|}
@@ -18,104 +12,336 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
 		\textbf{Id Test} & \textbf{Descrizione} & \textbf{Stato}\\
 		\hline
 		\endhead
-		TS0F1.1&Viene verificato che sia possibile visualizzare le varie componenti del sistema.& Non implementato\\ \hline
-		TS0F1.1.1&Vene verificato che sia possibile visualizzare i server nella mappa.&Non implementato \\ \hline
-		TS0F1.1.2&Viene verificato che sia possibile visualizzare nella mappa i database dell'applicazione monitorata.&Non implementato \\ \hline
-		TS0F1.1.3&Viene verificato che sia possibile visualizzare nella mappa i server cluster dell'applicazione monitorata.&Non implementato \\ \hline
-		TS1F1.2&Viene verificato che ogni componente dell'applicazione venga visualizzato in modo differente.&Non implementato \\ \hline
-		TS1F1.2.1&Viene verificato che i server siano rappresentati sotto forma di cerchi.&Non implementato \\ \hline
-		TS1F1.2.2&Viene verificato che i database siano rappresentati sotto forma di cilindri.&Non implementato \\ \hline
-		TS1F1.2.3&Viene verificato che sia possibile visualizzare il numero di server che compongono un cluster.&Non implementato \\ \hline
-		TS1F1.3&Viene verificato che sia possibile visualizzare le informazioni riguardanti i componenti della mappa topologica dell'applicazione.&Non implementato \\ \hline
-		TS2F1.3.1&Viene verificato che sia possibile visualizzare il linguaggio d'implementazione dei server tramite un rettangolo informativo vicino al componente.&Non implementato \\ \hline
-		TS1F1.3.2&Viene verificato che sia possibile visualizzare vicino ad ogni componente dell'applicazione monitorata un identificativo per tale entità.&Non implementato \\ \hline
-		TS1F1.4&Viene verificato ch l'utente possa riposizionare i componenti all'interno della mappa topologica.&Non implementato \\ \hline
-		TS2F1.4.1&Viene verificato che sia possibile riposizionare ogni componente della mappa trascinando con il puntatore.&Non implementato \\ \hline
-		TS2F1.4.2&Viene verificato che sia possibile riposizionare automaticamente i componenti all'interno della mappa.&Non implementato \\ \hline
-		TS0F1.5&Viene verificato che sia possibile visualizzare ciascun insieme di richieste fra due componenti della mappa topologica sotto forma di arco tra i due.&Non implementato \\ \hline
-		TS2F1.5.1&Viene verificato che il colore degli archi cambi in base al tempo medio di un insieme di richieste fra due componenti dell'applicazione monitorata.&Non implementato \\ \hline
-		TS2F1.5.1.1&Viene verificato che se il tempo di esecuzione medio di un insieme di richieste fra due componenti dell'applicazione monitorata sale oltre i 3 secondi l'arco che li unisce diventi rosso.&Non implementato \\ \hline
-		TS2F1.5.1.2&Viene verificato che se il tempo di esecuzione medio di un
-		insieme di richieste fra due componenti dell'applicazione monitorata è inferiore o uguale a 3 secondi l'arco che li unisce sia nero.&Non implementato \\ \hline
-		TS0F1.5.2&Viene verificato che sia possibile visualizzare gli archi in base al tipo di richiesta eseguita fra due componenti della mappa topologica.&Non implementato \\ \hline
-		TS0F1.5.2.1&Viene verificato che sia possibile visualizzare sotto forma di arco un insieme di richieste fra un server e un database.&Non implementato \\ \hline
-		TS0F1.5.2.2&Viene verificato che sia possibile visualizzare sotto forma di arco un insieme di richieste HTTP fra due server.&Non implementato \\ \hline
-		TS1F1.6&Viene verificato che sia possibile visualizzare informazioni sull'insieme di richieste fra due componenti dell'applicazione.&Non implementato \\ \hline
-		TS1F1.6.1&Viene verificato che sia possibile visualizzare il tempo medio di risposta di un insieme di richieste fra due componenti dell'applicazione monitorata.&Non implementato \\ \hline
-		TS1F1.6.2&Viene verificato che sia possibile visualizzare sotto forma di etichetta il tipo dell'insieme di richieste fatte fra due componenti.&Non implementato \\ \hline
-		TS1F1.6..2.1&Viene verificato che sia possibile visualizzare delle etichette con la scritta "DB" sugli archi che presentano delle richieste fra server e database.&Non implementato \\ \hline
-		TS1F1.6.2.2&Viene verificato che sia possibile visualizzare delle etichette con la scritta "HTTP" sugli archi che rappresentano delle richieste HTTP fra server e server.&Non implementato \\ \hline
-		TS2F1.7&Viene verificato che sia possibile ridimensionare la grandezza della mappa topologica.&Non implementato \\ \hline
-		TS2F1.7.1&Viene verificato che sia possibile ingrandire i componenti della mappa topologica.&Non implementato \\ \hline
-		TS2F1.7.2&Viene verificato che sia possibile restringere la dimensione dei componenti della mappa.&Non implementato \\ \hline
-		TS2F1.7.3&Viene verificato che sia possibile visualizzare la mappa topologica in modalità a schermo intero.&Non implementato \\ \hline
-		TS1F1.8&Viene verificato che nel caso in cui ci sia un errore nel caricamento dei dati della mappa topologica venga visualizzato un messaggio d'errore. &Non implementato \\ \hline
-		TS0F2&Viene verificato che sia possibile visualizzare una lista delle trace dell'applicazione monitorata.&Non implementato \\ \hline
-		TS0F2.1&Viene verificato che sia possibile visualizzare i dettagli relativi ad ogni singola trace.&Non implementato \\ \hline
-		TS1F2.1.1&Viene verificato che sia possibile visualizzare ogni voce nella lista delle trace associata ad un numero univoco incrementale.&Non implementato \\ \hline
-		TS0F2.1.2&Viene verificato che sia possibile visualizzare per ogni voce della lista delle trace l’identificativo ad essa associato corrispondente alla richiesta HTTP effettuata. &Non implementato \\ \hline
-		TS1F2.1.3&Viene verificato che sia possibile visualizzare data e orario del momento in cui è iniziata l'esecuzione di ogni trace. &Non implementato \\ \hline
-		TS1F2.1.4&Viene verificato che sia possibile visualizzare il tempo di esecuzione di ogni trace. &Non implementato \\ \hline
-		TS1F2.1.5&Viene verificato che sia possibile visualizzare il codice di stato della richiesta HTTP corrispondente ad ogni singola trace della lista.&Non implementato \\ \hline
-		TS1F2.1.5.1&Viene verificato che sia possibile visualizzare il dettaglio dell'errore avvenuto in forma testuale. &Non implementato \\ \hline
-		TS1F2.2&Viene verificato che sia possibile riordinare la lista delle trace. &Non implementato \\ \hline
-		TS1F2.2.1&Viene verificato che sia possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione. &Non implementato \\ \hline
-		TS1F2.2.1.1&Viene verificato che sia possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione in modo crescente. &Non implementato \\ \hline
-		TS1F2.2.1.2&Viene verificato che sia possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione in modo decrescente. &Non implementato \\ \hline
-		TS1F2.2.2&Viene verificato che sia possibile riordinare la lista delle trace in base al tempo di esecuzione. &Non implementato \\ \hline
-		TS1F2.2.2.1&Viene verificato che sia possibile riordinare la lista delle trace in base al tempo di esecuzione in modo crescente. &Non implementato \\ \hline
-		TS1F2.2.2.2&Viene verificato che sia possibile riordinare la lista delle trace in base al tempo di esecuzione in modo decrescente. &Non implementato \\ \hline
-		TS0F2.3&Viene verificato che la lista delle trace sia caricata in ordine decrescente rispetto all'ordine cronologico di esecuzione. &Non implementato \\ \hline
-		TS1F2.4&Viene verificato che sia visualizzato un messaggio di errore nel caso in cui ci sia un errore nel caricamento dei dati della lista delle trace.&Non implementato \\ \hline
-		TS0F3&Viene verificato che sia possibile visualizzare il call tree di ogni trace. &Non implementato \\ \hline
-		TS0F3.1&Viene verificato che sia possibile visualizzare dei dettagli riguardati ogni singolo metodo. &Non implementato \\ \hline
-		TS0F3.1.1&Viene verificato che sia possibile, per ogni metodo invocato, visualizzarene il nome. &Non implementato \\ \hline
-		TS1F3.1.2&Viene verificato che sia possibile, per ogni metodo invocato, visualizzare il self execution time.&Non implementato \\ \hline
-		TS1F3.1.3&Viene verificato che sia possibile, per ogni metodo invocato, visualizzare il total execution time.&Non implementato \\ \hline
-		TS2F3.1.4&Viene verificato che sia possibile,per ogni metodo invocato, visualizzare le query da esso effettuate.&Non implementato \\ \hline
-		TS2F3.2&Viene verificato che sia possibile raggruppare gerarchicamente le sottochiamate di un metodo del call tree. &Non implementato \\ \hline
-		TS2F3.2.1&Viene verificato che sia possibile nascondere le sottochiamate eseguite dal metodo. &Non implementato \\ \hline
-		TS1F3.2.2&Viene verificato che sia possibile visualizzare le sottochiamate eseguite dal metodo. &Non implementato \\ \hline
-		TS1F3.3&Viene verificato che Ogni livello di annidamento delle sottochiamate nel call tree deve avere essere mostrato con un livello di indentazione rispetto al precedente. &Non implementato \\ \hline
-		TS1F3.4&Viene verificato che al momento del caricamento tutte le sottochiamate di un call tree devono essere visualizzate.&Non implementato\\ \hline
-		TS1F4&Viene verificato che sia possibile visualizzare la lista delle query eseguite in una singola trace. &Non implementato \\ \hline
-		TS1F4.1&Viene verificato che sia possibile visualizzare dei dettagli riguardati ogni singola query.&Non implementato \\ \hline
-		TS1F4.1.1&Viene verificato che sia possibile visualizzare ogni voce nella lista delle query associata ad un numero univoco incrementale. &Non implementato \\ \hline
-		TS1F4.1.2&Viene verificato che sia possibile visualizzare il testo di tutte le query di una singola trace.&Non implementato \\ \hline
-		TS1F4.1.3&Viene verificato che sia possibile visualizzare l'identificativo del database interrogato da ogni query.&Non implementato \\ \hline
-		TS1F4.1.4&Viene verificato che sia possibile visualizzare data e orario del momento in cui è iniziata l' esecuzione di ogni query.&Non implementato \\ \hline
-		TS1F4.1.5&Viene verificato che sia possibile visualizzare il tempo di esecuzione di ogni query. &Non implementato \\ \hline
-		TS1F4.2&Viene verificato che sia possibile riordinare la lista delle query relativa ad una singola trace. &Non implementato \\ \hline
-		TS1F4.2.1&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione. &Non implementato \\ \hline
-		TS1F4.2.1.1&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione in modo crescente. &Non implementato \\ \hline
-		TS1F4.2.1.2&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione in modo decrescente. &Non implementato \\ \hline
-		TS1F4.2.2&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione. &Non implementato \\ \hline
-		TS1F4.2.2.1&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione in modo crescente. &Non implementato \\ \hline
-		TS1F4.2.2.2&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione in modo decrescente. &Non implementato \\ \hline
-		TS1F4.3&Viene verificato che la lista delle query di una singola trace sia caricata in ordine decrescente rispetto all'ordine cronologico di esecuzione. &Non implementato \\ \hline
-		
-		TS0Q1&Viene verificato che siano state seguite le norme stabilite nel documento \emph{Norme di progetto}. &Non implementato \\ \hline
-		TS0Q2&Viene verificato che tutti i documenti e il codice prodotto rispettino le metriche riportate nel documento \emph{Piano di qualifica}. &Non implementato \\ \hline
-		TS0Q3&Viene verificato che sia stato prodotto un manuale utente. &Non implementato \\ \hline
-		TS0Q4&Viene verificato che sia stato prodotto un manuale sviluppatore. &Non implementato \\ \hline
-		TS0Q5&Viene verificato che il codice sorgente prodotto sia stato rilasciato in un repository pubblico con licenza open source che ne permetta l’utilizzo a scopi commerciali. &Non implementato \\ \hline
-		TS0Q6&Viene verificato che sia presente un'interfaccia che gestisca i dati fornendo alla logica applicativa le stesse funzionalità indipendentemente dalla rappresentazione dei dati all’interno del database. &Non implementato \\ \hline
-		
-		TS0V1&Viene verificato che i plugin sviluppati siano utilizzabili nell’ambiente Kibana v6.1. &Non implementato \\ \hline
-		TS0V2&Viene verificato che i plugin utilizzino JavaScript ES6. &Non implementato \\ \hline
-		TS1V2.1&Viene verificato che i plugin possano aver utilizzato Node.js.  &Non implementato \\ \hline
-		TS1V2.2&Viene verificato che i plugin possano aver utilizzato il framework AngularJS..  &Non implementato \\ \hline
-		TS1V2.3&Viene verificato che i plugin possano aver utilizzato la libreria D3.js. &Non implementato \\ \hline
-		TS1V2.4&Viene verificato che i plugin possano aver utilizzato la libreria Canvas.js.  &Non implementato \\ \hline
-		TS1V2.5&Viene verificato che i plugin possano aver utilizzato la libreria Chart.js.  &Non implementato \\ \hline
-		TS1V2.6&Viene verificato che i plugin possano aver utilizzato la libreria Plottly.js.  &Non implementato \\ \hline
-		TS1V2.7&Viene verificato che i plugin possano aver utilizzato la libreria Cytoscape.js.  &Non implementato \\ \hline
-		TS0V3&Viene verificato che il prodotto sia compatibile con il browser Google Chrome v. 55.x.  &Non implementato \\ \hline
-		TS0V4&Viene verificato che il prodotto sia compatibile con il browser Mozilla Firefix v. 50.x. &Non implementato \\ \hline
-		TS0V5&Viene verificato che il prodotto sia compatibile con il browser Safari v. 10.x.&Non implementato \\ \hline
-		TS0V6&Viene verificato che il prodotto sia compatibile con il browser Internet Explorer v. 11.x.&Non implementato \\ \hline
+		TA0F1.1&L'utente intende visualizzare i componenti dell'applicazione sotto forma di mappa topologica. All'utente è richiesto di:\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana}.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F1.1.1&L'utente vuole verificare che vengano visualizzati nella mappa topologica i server dell'applicazione monitorata. All'utente è richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
+			\item verificare che i server vengano visualizzati.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F1.1.2&L'utente intende verificare che vengano visualizzati nella mappa topologica i database dell'applicazione monitorata. All'utente è richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
+			\item verificare che i database vengano visualizzati.
+		\end{itemize}&Non implementato \\ \hline
+		TA1.1.3&L'utente intende verificare che vengano visualizzati nella mappa topologica i server cluster. All'utente e richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
+			\item verificare che i server cluster vengano visualizzati.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F1.2&L'utente intende verificare che ogni tipologia di componente dell'applicazione monitorata venga rappresentata graficamente in modo diverso dalle altre. All'utente è richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
+			\item verificare che le varie componenti vengano visualizzate in modo diverso.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F1.3&L'utente vuole verificare che vengano visualizzate le informazioni riguardanti i componenti dell'applicazione. All'utente è richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
+			\item verificare che vengano visualizzate le informazioni dei vari componenti.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F1.4&L' utente vuole riposizionare i componenti all'interno della mappa topologica. All'utente è richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
+			\item cliccare e trascinare i vari componenti della mappa.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F1.5&L'utente vuole verificare che venga visualizzato sotto forma di arco ciascun insieme di richieste fra due componenti della mappa. All'utente è richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
+			\item verificare che ciascun insieme di richieste fra due componenti sia visualizzato sotto forma di arco.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F1.5.2.1&L'utente vuole verificare che venga visualizzato sotto forma di arco ciascun insieme di richieste fra un server ed un database. All'utente è richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
+			\item verificare che ciascun insieme di richieste fra un server ed un database venga visualizzato come un arco.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F1.5.2.2&L'utente vuole verificare che venga visualizzato sotto forma di arco ciascun insieme di richieste HTTP fra due server. All'utente è richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
+			\item verificare che ciascun insieme di richieste HTTP venga visualizzato come un arco.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F1.6&L'utente vuole verificare che vengano visualizzate informazioni sull'insieme di richieste fra due componenti dell'applicazione monitorata. All'utente è richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
+			\item verificare che vengano visualizzate informazioni su ciascun insieme di richieste fra due componenti.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F1.6.1&L'utente vuole verificare che vengono visualizzati i tempi medi di risposta di ciascun insieme di richieste fra due componenti. All'utente è richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
+			\item verificare che vengano visualizzati i tempi medi di risposta.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F1.6.2&L'utente vuole verificare che venga visualizzato sotto forma di etichetta il tipo dell'insieme di richieste fatte fra due componenti. All'utente è richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
+			\item verificare che vicino a ciascun arco ci sia un'etichetta che identifica il tipo dell'insieme di richieste.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F1.8&L'utente vuole visualizzare un messaggio d'errore nel caso in cui ci sia un errore nel caricamento della mappa topologica. All'utente è richiesto di:
+		\begin{itemize}
+			\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana} in assenza di connessione;
+			\item verificare che venga visualizzato l'errore.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F2&L'utente vuole visualizzare la lista delle tace dell'applicazione monitorata. All'utente viene chiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item verificare che la lista venga visualizzata correttamente.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F2.1&L'utente vuole visualizzare i dettagli relativi ad una singola trace. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item selezionare una trace cliccando due volte su di una riga;
+			\item verificare che i dettagli vengano visualizzati correttamente.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F2.1.1&L'utente vuole verificare che ogni voce nella lista delle trace sia numerata in modi incrementale a partire da 1. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item verificare che le voci della list siano numerate correttamente.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F2.1.2&L'utente vuole verificare che per ogni voce della lista delle trace venga visualizzato l'identificativo ad essa associato corrispondente alla richiesta HTTP effettuata. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item verificare che a ogni voce sia associato l'identificativo esatto.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F2.1.3&L'utente vuole visualizzare data e ora di inizio di una trace. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item verificare che sia presente la voce data e ora nella lista.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F2.1.4&L'utente vuole visualizzare il tempo di esecuzione di una trace.All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di    \emph{kibana};
+			\item verificare il tempo di esecuzione della trace.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F2.1.5&L'utente vuole visualizzare il codice di stato della richiesta HTTP corrispondente ad una trace. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item verificare che il codice di stato della richiesta HTTP corrispondente ad una trace sia visualizzato correttamente.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F2.2&L'utente vuole riordinare la lista delle trace. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item cliccare sul titolo della colonna a seconda della quale si vogliono ordinare le trace.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F2.3&L'utente vuole verificare che la lista delle trace sia inizialmente ordinata in modo decrescente rispetto all'ordine cronologico di esecuzione. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item verificare che le trace siano nell'ordine corretto.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F2.4&L'utente vuole verificare che nel caso ci sia un errore nel caricamento dei dati della lista delle trace venga visualizzato un messaggio d'errore. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana} senza una connessione al database;
+			\item verificare che venga visualizzato il messaggio d'errore.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F3&L'utente vuole visualizzare il call tree di una trace. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item cliccare sulla riga della trace di cui si vuole avere il call tree;
+			\item verificare che il call tree venga visualizzato correttamente.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F3.1&L'utente vuole visualizzare i dettagli ogni singolo metodo di una trace. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item cliccare sulla riga della trace di cui si vogliono conoscere i dettagli sui metodi;
+			\item verificare che vengano visualizzati i dettagli sui metodi.
+		\end{itemize}&Non implementato \\ \hline
+		TA0F3.1.1&L'utente vuole visualizzare il nome di ogni singolo metodo invocato all'interno di una trace. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item cliccare sulla riga della trace di cui si vogliono conoscere i nomi dei metodi;
+			\item verificare che vengano visualizzati i nomi dei metodi.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F3.1.2&L'utente vuole visualizzare il self execution time di un metodo. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item cliccare sulla riga della trace che contiene il metodo di cui si vuole conoscere il self execution time;
+			\item verificare che venga visualizzato il self execution time del metodo.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F3.1.3&L'utente vuole visualizzare il total execution time di un metodo. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item cliccare sulla riga della trace che contiene il metodo di cui si vuole conoscere il total execution time;
+			\item verificare che venga visualizzato il total execution time del metodo.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F3.4&L'utente vuole verificare che al momento del caricamento vengano visualizzate tutte le sottochiamate di un call tree. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item verificare che vengano visualizzate tutte le sottochiamate di un call tree.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F4&L'utente vuole visualizzare la lista delle query eseguite in una singola trace. All' utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item cliccare sulla riga della trace di interesse;
+			\item verificare che venga visualizzata la lista delle query eseguite.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F4.1&L'utente vuole visualizzare dei dettagli riguardanti una singola query. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item cliccare sulla riga della trace di interesse;
+			\item verificare che vengano visualizzati i dettagli di ogni singola query.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F4.2&L'utente vuole riordinare la lista delle query relativa ad una singola trace. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item cliccare sulla riga della trace di interesse;
+			\item cliccare sul titolo della colonna a seconda della quale si vogliono ordinare le query.
+		\end{itemize}&Non implementato \\ \hline
+		TA1F4.3&L'utente vuole verificare che la lista delle query in una singola trace venga inizialmente visualizzata in ordine decrescente rispetto all'ordine cronologico di esecuzione. All'utente è richiesto di:
+		\begin{itemize}
+			\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
+			\item cliccare sulla riga della trace di interesse;
+			\item verificare che la lista delle query sia nell'ordine giusto.
+		\end{itemize}&Non implementato \\ \hline
+	\end{longtable}
+	
+	\MakeUppercase{è} possibile che i test in questa sezione verranno aumentati e modificati per essere resi più precisi durante la progettazione architetturale. 
+	
+	\paragraph{Tracciamento} \Spazio
+	
+	\begin{longtable}{|c|c|}
+		\hline
+		\textbf{Id Test} & \textbf{Id Requisito}\\
+		\hline
+		\endhead
+		TA0F1.1&R0F1.1 \\ \hline
+		TA0F1.1.1&R0F1.1.1 \\ \hline
+		TA0F1.1.2&R0F1.1.2 \\ \hline
+		TA1.1.3&R1.1.3 \\ \hline
+		TA1F1.2&R1F1.2 \\ \hline
+		TA1F1.3&R1F1.3 \\ \hline
+		TA1F1.4&R1F1.4 \\ \hline
+		TA0F1.5&R0F1.5 \\ \hline
+		TA0F1.5.2.1&R0F1.5.2.1 \\ \hline
+		TA0F1.5.2.2&R0F1.5.2.2 \\ \hline
+		TA1F1.6&R1F1.6 \\ \hline
+		TA1F1.6.1&R1F1.6.1 \\ \hline
+		TA1F1.6.2&R1F1.6.2 \\ \hline
+		TA1F1.8&R1F1.8 \\ \hline
+		TA0F2&R0F2 \\ \hline
+		TA0F2.1&R0F2.1 \\ \hline
+		TA1F2.1.1&R1F2.1.1 \\ \hline
+		TA0F2.1.2&R0F2.1.2 \\ \hline
+		TA1F2.1.3&R1F2.1.3 \\ \hline
+		TA1F2.1.4&R1F2.1.4 \\ \hline
+		TA0F2.1.5&R0F2.1.5 \\ \hline
+		TA1F2.2&R1F2.2 \\ \hline
+		TA0F2.3&R0F2.3 \\ \hline
+		TA1F2.4&R1F2.4 \\ \hline
+		TA0F3&R0F3 \\ \hline
+		TA0F3.1&R0F3.1 \\ \hline
+		TA0F3.1.1&R0F3.1.1 \\ \hline
+		TA1F3.1.2&R1F3.1.2 \\ \hline
+		TA1F3.1.3&R1F3.1.3 \\ \hline
+		TA1F3.4&R1F3.4 \\ \hline
+		TA1F4&R1F4 \\ \hline
+		TA1F4.1&R1F4.1 \\ \hline
+		TA1F4.2&R1F4.2 \\ \hline
+		TA1F4.3&R1F4.3 \\ \hline
 	\end{longtable}
 
+    \subsubsection{Test di sistema}
+    Questo tipo di test serve per verificare che il comportamento dinamico del sistema sia conforme ai requisiti specificati nel documento \textit{Analisi dei Requisiti\_v2.0.0}.
+    \begin{longtable}{|c|H|c|}
+    	\hline
+    	\textbf{Id Test} & \textbf{Descrizione} & \textbf{Stato}\\
+    	\hline
+    	\endhead
+    	TS0F1.1&Viene verificato che sia possibile visualizzare le varie componenti del sistema.& Non implementato\\ \hline
+    	TS0F1.1.1&Vene verificato che sia possibile visualizzare i server nella mappa.&Non implementato \\ \hline
+    	TS0F1.1.2&Viene verificato che sia possibile visualizzare nella mappa i database dell'applicazione monitorata.&Non implementato \\ \hline
+    	TS0F1.1.3&Viene verificato che sia possibile visualizzare nella mappa i server cluster dell'applicazione monitorata.&Non implementato \\ \hline
+    	TS1F1.2&Viene verificato che ogni componente dell'applicazione venga visualizzato in modo differente.&Non implementato \\ \hline
+    	TS1F1.2.1&Viene verificato che i server siano rappresentati sotto forma di cerchi.&Non implementato \\ \hline
+    	TS1F1.2.2&Viene verificato che i database siano rappresentati sotto forma di cilindri.&Non implementato \\ \hline
+    	TS1F1.2.3&Viene verificato che sia possibile visualizzare il numero di server che compongono un cluster.&Non implementato \\ \hline
+    	TS1F1.3&Viene verificato che sia possibile visualizzare le informazioni riguardanti i componenti della mappa topologica dell'applicazione.&Non implementato \\ \hline
+    	TS2F1.3.1&Viene verificato che sia possibile visualizzare il linguaggio d'implementazione dei server tramite un rettangolo informativo vicino al componente.&Non implementato \\ \hline
+    	TS1F1.3.2&Viene verificato che sia possibile visualizzare vicino ad ogni componente dell'applicazione monitorata un identificativo per tale entità.&Non implementato \\ \hline
+    	TS1F1.4&Viene verificato ch l'utente possa riposizionare i componenti all'interno della mappa topologica.&Non implementato \\ \hline
+    	TS2F1.4.1&Viene verificato che sia possibile riposizionare ogni componente della mappa trascinando con il puntatore.&Non implementato \\ \hline
+    	TS2F1.4.2&Viene verificato che sia possibile riposizionare automaticamente i componenti all'interno della mappa.&Non implementato \\ \hline
+    	TS0F1.5&Viene verificato che sia possibile visualizzare ciascun insieme di richieste fra due componenti della mappa topologica sotto forma di arco tra i due.&Non implementato \\ \hline
+    	TS2F1.5.1&Viene verificato che il colore degli archi cambi in base al tempo medio di un insieme di richieste fra due componenti dell'applicazione monitorata.&Non implementato \\ \hline
+    	TS2F1.5.1.1&Viene verificato che se il tempo di esecuzione medio di un insieme di richieste fra due componenti dell'applicazione monitorata sale oltre i 3 secondi l'arco che li unisce diventi rosso.&Non implementato \\ \hline
+    	TS2F1.5.1.2&Viene verificato che se il tempo di esecuzione medio di un
+    	insieme di richieste fra due componenti dell'applicazione monitorata è inferiore o uguale a 3 secondi l'arco che li unisce sia nero.&Non implementato \\ \hline
+    	TS0F1.5.2&Viene verificato che sia possibile visualizzare gli archi in base al tipo di richiesta eseguita fra due componenti della mappa topologica.&Non implementato \\ \hline
+    	TS0F1.5.2.1&Viene verificato che sia possibile visualizzare sotto forma di arco un insieme di richieste fra un server e un database.&Non implementato \\ \hline
+    	TS0F1.5.2.2&Viene verificato che sia possibile visualizzare sotto forma di arco un insieme di richieste HTTP fra due server.&Non implementato \\ \hline
+    	TS1F1.6&Viene verificato che sia possibile visualizzare informazioni sull'insieme di richieste fra due componenti dell'applicazione.&Non implementato \\ \hline
+    	TS1F1.6.1&Viene verificato che sia possibile visualizzare il tempo medio di risposta di un insieme di richieste fra due componenti dell'applicazione monitorata.&Non implementato \\ \hline
+    	TS1F1.6.2&Viene verificato che sia possibile visualizzare sotto forma di etichetta il tipo dell'insieme di richieste fatte fra due componenti.&Non implementato \\ \hline
+    	TS1F1.6..2.1&Viene verificato che sia possibile visualizzare delle etichette con la scritta "DB" sugli archi che presentano delle richieste fra server e database.&Non implementato \\ \hline
+    	TS1F1.6.2.2&Viene verificato che sia possibile visualizzare delle etichette con la scritta "HTTP" sugli archi che rappresentano delle richieste HTTP fra server e server.&Non implementato \\ \hline
+    	TS2F1.7&Viene verificato che sia possibile ridimensionare la grandezza della mappa topologica.&Non implementato \\ \hline
+    	TS2F1.7.1&Viene verificato che sia possibile ingrandire i componenti della mappa topologica.&Non implementato \\ \hline
+    	TS2F1.7.2&Viene verificato che sia possibile restringere la dimensione dei componenti della mappa.&Non implementato \\ \hline
+    	TS2F1.7.3&Viene verificato che sia possibile visualizzare la mappa topologica in modalità a schermo intero.&Non implementato \\ \hline
+    	TS1F1.8&Viene verificato che nel caso in cui ci sia un errore nel caricamento dei dati della mappa topologica venga visualizzato un messaggio d'errore. &Non implementato \\ \hline
+    	TS0F2&Viene verificato che sia possibile visualizzare una lista delle trace dell'applicazione monitorata.&Non implementato \\ \hline
+    	TS0F2.1&Viene verificato che sia possibile visualizzare i dettagli relativi ad ogni singola trace.&Non implementato \\ \hline
+    	TS1F2.1.1&Viene verificato che sia possibile visualizzare ogni voce nella lista delle trace associata ad un numero univoco incrementale.&Non implementato \\ \hline
+    	TS0F2.1.2&Viene verificato che sia possibile visualizzare per ogni voce della lista delle trace l’identificativo ad essa associato corrispondente alla richiesta HTTP effettuata. &Non implementato \\ \hline
+    	TS1F2.1.3&Viene verificato che sia possibile visualizzare data e orario del momento in cui è iniziata l'esecuzione di ogni trace. &Non implementato \\ \hline
+    	TS1F2.1.4&Viene verificato che sia possibile visualizzare il tempo di esecuzione di ogni trace. &Non implementato \\ \hline
+    	TS1F2.1.5&Viene verificato che sia possibile visualizzare il codice di stato della richiesta HTTP corrispondente ad ogni singola trace della lista.&Non implementato \\ \hline
+    	TS1F2.1.5.1&Viene verificato che sia possibile visualizzare il dettaglio dell'errore avvenuto in forma testuale. &Non implementato \\ \hline
+    	TS1F2.2&Viene verificato che sia possibile riordinare la lista delle trace. &Non implementato \\ \hline
+    	TS1F2.2.1&Viene verificato che sia possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione. &Non implementato \\ \hline
+    	TS1F2.2.1.1&Viene verificato che sia possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione in modo crescente. &Non implementato \\ \hline
+    	TS1F2.2.1.2&Viene verificato che sia possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione in modo decrescente. &Non implementato \\ \hline
+    	TS1F2.2.2&Viene verificato che sia possibile riordinare la lista delle trace in base al tempo di esecuzione. &Non implementato \\ \hline
+    	TS1F2.2.2.1&Viene verificato che sia possibile riordinare la lista delle trace in base al tempo di esecuzione in modo crescente. &Non implementato \\ \hline
+    	TS1F2.2.2.2&Viene verificato che sia possibile riordinare la lista delle trace in base al tempo di esecuzione in modo decrescente. &Non implementato \\ \hline
+    	TS0F2.3&Viene verificato che la lista delle trace sia caricata in ordine decrescente rispetto all'ordine cronologico di esecuzione. &Non implementato \\ \hline
+    	TS1F2.4&Viene verificato che sia visualizzato un messaggio di errore nel caso in cui ci sia un errore nel caricamento dei dati della lista delle trace.&Non implementato \\ \hline
+    	TS0F3&Viene verificato che sia possibile visualizzare il call tree di ogni trace. &Non implementato \\ \hline
+    	TS0F3.1&Viene verificato che sia possibile visualizzare dei dettagli riguardati ogni singolo metodo. &Non implementato \\ \hline
+    	TS0F3.1.1&Viene verificato che sia possibile, per ogni metodo invocato, visualizzarene il nome. &Non implementato \\ \hline
+    	TS1F3.1.2&Viene verificato che sia possibile, per ogni metodo invocato, visualizzare il self execution time.&Non implementato \\ \hline
+    	TS1F3.1.3&Viene verificato che sia possibile, per ogni metodo invocato, visualizzare il total execution time.&Non implementato \\ \hline
+    	TS2F3.1.4&Viene verificato che sia possibile,per ogni metodo invocato, visualizzare le query da esso effettuate.&Non implementato \\ \hline
+    	TS2F3.2&Viene verificato che sia possibile raggruppare gerarchicamente le sottochiamate di un metodo del call tree. &Non implementato \\ \hline
+    	TS2F3.2.1&Viene verificato che sia possibile nascondere le sottochiamate eseguite dal metodo. &Non implementato \\ \hline
+    	TS1F3.2.2&Viene verificato che sia possibile visualizzare le sottochiamate eseguite dal metodo. &Non implementato \\ \hline
+    	TS1F3.3&Viene verificato che Ogni livello di annidamento delle sottochiamate nel call tree deve avere essere mostrato con un livello di indentazione rispetto al precedente. &Non implementato \\ \hline
+    	TS1F3.4&Viene verificato che al momento del caricamento tutte le sottochiamate di un call tree devono essere visualizzate.&Non implementato\\ \hline
+    	TS1F4&Viene verificato che sia possibile visualizzare la lista delle query eseguite in una singola trace. &Non implementato \\ \hline
+    	TS1F4.1&Viene verificato che sia possibile visualizzare dei dettagli riguardati ogni singola query.&Non implementato \\ \hline
+    	TS1F4.1.1&Viene verificato che sia possibile visualizzare ogni voce nella lista delle query associata ad un numero univoco incrementale. &Non implementato \\ \hline
+    	TS1F4.1.2&Viene verificato che sia possibile visualizzare il testo di tutte le query di una singola trace.&Non implementato \\ \hline
+    	TS1F4.1.3&Viene verificato che sia possibile visualizzare l'identificativo del database interrogato da ogni query.&Non implementato \\ \hline
+    	TS1F4.1.4&Viene verificato che sia possibile visualizzare data e orario del momento in cui è iniziata l' esecuzione di ogni query.&Non implementato \\ \hline
+    	TS1F4.1.5&Viene verificato che sia possibile visualizzare il tempo di esecuzione di ogni query. &Non implementato \\ \hline
+    	TS1F4.2&Viene verificato che sia possibile riordinare la lista delle query relativa ad una singola trace. &Non implementato \\ \hline
+    	TS1F4.2.1&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione. &Non implementato \\ \hline
+    	TS1F4.2.1.1&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione in modo crescente. &Non implementato \\ \hline
+    	TS1F4.2.1.2&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione in modo decrescente. &Non implementato \\ \hline
+    	TS1F4.2.2&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione. &Non implementato \\ \hline
+    	TS1F4.2.2.1&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione in modo crescente. &Non implementato \\ \hline
+    	TS1F4.2.2.2&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione in modo decrescente. &Non implementato \\ \hline
+    	TS1F4.3&Viene verificato che la lista delle query di una singola trace sia caricata in ordine decrescente rispetto all'ordine cronologico di esecuzione. &Non implementato \\ \hline
+    	
+    	TS0Q1&Viene verificato che siano state seguite le norme stabilite nel documento \emph{Norme di progetto}. &Non implementato \\ \hline
+    	TS0Q2&Viene verificato che tutti i documenti e il codice prodotto rispettino le metriche riportate nel documento \emph{Piano di qualifica}. &Non implementato \\ \hline
+    	TS0Q3&Viene verificato che sia stato prodotto un manuale utente. &Non implementato \\ \hline
+    	TS0Q4&Viene verificato che sia stato prodotto un manuale sviluppatore. &Non implementato \\ \hline
+    	TS0Q5&Viene verificato che il codice sorgente prodotto sia stato rilasciato in un repository pubblico con licenza open source che ne permetta l’utilizzo a scopi commerciali. &Non implementato \\ \hline
+    	TS0Q6&Viene verificato che sia presente un'interfaccia che gestisca i dati fornendo alla logica applicativa le stesse funzionalità indipendentemente dalla rappresentazione dei dati all’interno del database. &Non implementato \\ \hline
+    	
+    	TS0V1&Viene verificato che i plugin sviluppati siano utilizzabili nell’ambiente Kibana v6.1. &Non implementato \\ \hline
+    	TS0V2&Viene verificato che i plugin utilizzino JavaScript ES6. &Non implementato \\ \hline
+    	TS1V2.1&Viene verificato che i plugin possano aver utilizzato Node.js.  &Non implementato \\ \hline
+    	TS1V2.2&Viene verificato che i plugin possano aver utilizzato il framework AngularJS..  &Non implementato \\ \hline
+    	TS1V2.3&Viene verificato che i plugin possano aver utilizzato la libreria D3.js. &Non implementato \\ \hline
+    	TS1V2.4&Viene verificato che i plugin possano aver utilizzato la libreria Canvas.js.  &Non implementato \\ \hline
+    	TS1V2.5&Viene verificato che i plugin possano aver utilizzato la libreria Chart.js.  &Non implementato \\ \hline
+    	TS1V2.6&Viene verificato che i plugin possano aver utilizzato la libreria Plottly.js.  &Non implementato \\ \hline
+    	TS1V2.7&Viene verificato che i plugin possano aver utilizzato la libreria Cytoscape.js.  &Non implementato \\ \hline
+    	TS0V3&Viene verificato che il prodotto sia compatibile con il browser Google Chrome v. 55.x.  &Non implementato \\ \hline
+    	TS0V4&Viene verificato che il prodotto sia compatibile con il browser Mozilla Firefix v. 50.x. &Non implementato \\ \hline
+    	TS0V5&Viene verificato che il prodotto sia compatibile con il browser Safari v. 10.x.&Non implementato \\ \hline
+    	TS0V6&Viene verificato che il prodotto sia compatibile con il browser Internet Explorer v. 11.x.&Non implementato \\ \hline
+    \end{longtable}
+    
     \paragraph{Tracciamento} \Spazio
     
     \begin{longtable}{|c|c|}
@@ -219,238 +445,16 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
     	TS0V6&R0V6 \\ \hline
     \end{longtable}
 	
-		
-	\subsubsection{Test di accettazione}
-	Questi test vengono utilizzati durante il collaudo finale in presenza del committente.
+	\subsubsection{Test di integrazione}
+	Lo scopo di questa tipologia di test è di verificare le componenti di sistema. Più	precisamente, l’obiettivo è di testare il funzionamento dei vari \gl{package} prodotti, sia singolarmente che nel loro insieme, questi test verranno implementati assieme durante la progettazione architetturale.
 	
-	 \begin{longtable}{|c|H|c|}
-	 	\hline
-	 	\textbf{Id Test} & \textbf{Descrizione} & \textbf{Stato}\\
-	 	\hline
-	    \endhead
-	    TA0F1.1&L'utente intende visualizzare i componenti dell'applicazione sotto forma di mappa topologica. All'utente è richiesto di:\begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana}.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA0F1.1.1&L'utente vuole verificare che vengano visualizzati nella mappa topologica i server dell'applicazione monitorata. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
-	    	\item verificare che i server vengano visualizzati.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA0F1.1.2&L'utente intende verificare che vengano visualizzati nella mappa topologica i database dell'applicazione monitorata. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
-	    	\item verificare che i database vengano visualizzati.
-	    	\end{itemize}&Non implementato \\ \hline
-	    TA1.1.3&L'utente intende verificare che vengano visualizzati nella mappa topologica i server cluster. All'utente e richiesto di:
-	    \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
-	    	\item verificare che i server cluster vengano visualizzati
-	    	\end{itemize}&Non implementato \\ \hline
-	    TA1F1.2&L'utente intende verificare che ogni tipologia di componente dell'applicazione monitorata venga rappresentata graficamente in modo diverso dalle altre. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
-	    	\item verificare che le varie componenti vengano visualizzate in modo diverso.
-	    	\end{itemize}&Non implementato \\ \hline
-	    TA1F1.3&L'utente vuole verificare che vengano visualizzate le informazioni riguardanti i componenti dell'applicazione. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
-	    	\item verificare che vengano visualizzate le informazioni dei vari componenti.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F1.4&L' utente vuole riposizionare i componenti all'interno della mappa topologica. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
-	    	\item cliccare e trascinare i vari componenti della mappa.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA0F1.5&L'utente vuole verificare che venga visualizzato sotto forma di arco ciascun insieme di richieste fra due componenti della mappa. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
-	    	\item verificare che ciascun insieme di richieste fra due componenti sia visualizzato sotto forma di arco.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA0F1.5.2.1&L'utente vuole verificare che venga visualizzato sotto forma di arco ciascun insieme di richieste fra un server ed un database. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
-	    	\item verificare che ciascun insieme di richieste fra un server ed un database venga visualizzato come un arco.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA0F1.5.2.2&L'utente vuole verificare che venga visualizzato sotto forma di arco ciascun insieme di richieste HTTP fra due server. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
-	    	\item verificare che ciascun insieme di richieste HTTP venga visualizzato come un arco.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F1.6&L'utente vuole verificare che vengano visualizzate informazioni sull'insieme di richieste fra due componenti dell'applicazione monitorata. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
-	    	\item verificare che vengano visualizzate informazioni su ciascun insieme di richieste fra due componenti.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F1.6.1&L'utente vuole verificare che vengono visualizzati i tempi medi di risposta di ciascun insieme di richieste fra due componenti. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
-	    	\item verificare che vengano visualizzati i tempi medi di risposta.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F1.6.2&L'utente vuole verificare che venga visualizzato sotto forma di etichetta il tipo dell'insieme di richieste fatte fra due componenti. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana};
-	    	\item verificare che vicino a ciascun arco ci sia un'etichetta che identifica il tipo dell'insieme di richieste.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F1.8&L'utente vuole visualizzare un messaggio d'errore nel caso in cui ci sia un errore nel caricamento della mappa topologica. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item premere sulla voce \emph{Mappa topologica} nel menù di \emph{kibana} in assenza di connessione;
-	    	\item verificare che venga visualizzato l'errore.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA0F2&L'utente vuole visualizzare la lista delle tace dell'applicazione monitorata. All'utente viene chiesto di:
-	    \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item verificare che la lista venga visualizzata correttamente.
-   	    \end{itemize}&Non implementato \\ \hline
-	    TA0F2.1&L'utente vuole visualizzare i dettagli relativi ad una singola trace. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item selezionare una trace cliccando due volte su di una riga;
-	    	\item verificare che i dettagli vengano visualizzati correttamente.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F2.1.1&L'utente vuole verificare che ogni voce nella lista delle trace sia numerata in modi incrementale a partire da 1. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item verificare che le voci della list siano numerate correttamente.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA0F2.1.2&L'utente vuole verificare che per ogni voce della lista delle trace venga visualizzato l'identificativo ad essa associato corrispondente alla richiesta HTTP effettuata. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item verificare che a ogni voce sia associato l'identificativo esatto.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F2.1.3&L'utente vuole visualizzare data e ora di inizio di una trace. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item verificare che sia presente la voce data e ora nella lista.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F2.1.4&L'utente vuole visualizzare il tempo di esecuzione di una trace.All'utente è richiesto di:
-	     \begin{itemize}
-	        \item cliccare sulla voce \emph{stack trace} nel menù di    \emph{kibana};
-	    	\item verificare il tempo di esecuzione della trace.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA0F2.1.5&L'utente vuole visualizzare il codice di stato della richiesta HTTP corrispondente ad una trace. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item verificare che il codice di stato della richiesta HTTP corrispondente ad una trace sia visualizzato correttamente.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F2.2&L'utente vuole riordinare la lista delle trace. All'utente è richiesto di:
-	     \begin{itemize}
-	        \item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item cliccare sul titolo della colonna a seconda della quale si vogliono ordinare le trace.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA0F2.3&L'utente vuole verificare che la lista delle trace sia inizialmente ordinata in modo decrescente rispetto all'ordine cronologico di esecuzione. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item verificare che le trace siano nell'ordine corretto.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F2.4&L'utente vuole verificare che nel caso ci sia un errore nel caricamento dei dati della lista delle trace venga visualizzato un messaggio d'errore. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana} senza una connessione al database;
-	    	\item verificare che venga visualizzato il messaggio d'errore.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA0F3&L'utente vuole visualizzare il call tree di una trace. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item cliccare sulla riga della trace di cui si vuole avere il call tree;
-	    	\item verificare che il call tree venga visualizzato correttamente.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA0F3.1&L'utente vuole visualizzare i dettagli ogni singolo metodo di una trace. All'utente è richiesto di:
-	     \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item cliccare sulla riga della trace di cui si vogliono conoscere i dettagli sui metodi;
-	    	\item verificare che vengano visualizzati i dettagli sui metodi.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA0F3.1.1&L'utente vuole visualizzare il nome di ogni singolo metodo invocato all'interno di una trace. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item cliccare sulla riga della trace di cui si vogliono conoscere i nomi dei metodi;
-	    	\item verificare che vengano visualizzati i nomi dei metodi.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F3.1.2&L'utente vuole visualizzare il self execution time di un metodo. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item cliccare sulla riga della trace che contiene il metodo di cui si vuole conoscere il self execution time;
-	    	\item verificare che venga visualizzato il self execution time del metodo.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F3.1.3&L'utente vuole visualizzare il total execution time di un metodo. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item cliccare sulla riga della trace che contiene il metodo di cui si vuole conoscere il total execution time;
-	    	\item verificare che venga visualizzato il total execution time del metodo.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F3.4&L'utente vuole verificare che al momento del caricamento vengano visualizzate tutte le sottochiamate di un call tree. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item verificare che vengano visualizzate tutte le sottochiamate di un call tree.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F4&L'utente vuole visualizzare la lista delle query eseguite in una singola trace. All' utente è richiesto di:
-	    \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item cliccare sulla riga della trace di interesse;
-	    	\item verificare che venga visualizzata la lista delle query eseguite.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F4.1&L'utente vuole visualizzare dei dettagli riguardanti una singola query. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item cliccare sulla riga della trace di interesse;
-	    	\item verificare che vengano visualizzati i dettagli di ogni singola query.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F4.2&L'utente vuole riordinare la lista delle query relativa ad una singola trace. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item cliccare sulla riga della trace di interesse;
-	    	\item cliccare sul titolo della colonna a seconda della quale si vogliono ordinare le query.
-	    \end{itemize}&Non implementato \\ \hline
-	    TA1F4.3&L'utente vuole verificare che la lista delle query in una singola trace venga inizialmente visualizzata in ordine decrescente rispetto all'ordine cronologico di esecuzione. All'utente è richiesto di:
-	    \begin{itemize}
-	    	\item cliccare sulla voce \emph{stack trace} nel menù di \emph{kibana};
-	    	\item cliccare sulla riga della trace di interesse;
-	    	\item verificare che la lista delle query sia nell'ordine giusto.
-	    \end{itemize}&Non implementato \\ \hline
-	 \end{longtable}
-     
-     \MakeUppercase{è} possibile che i test in questa sezione verranno aumentati e modificati per essere resi più precisi durante la progettazione architetturale. 
-    
-     \paragraph{Tracciamento} \Spazio
-     
-     \begin{longtable}{|c|c|}
-     	\hline
-     	\textbf{Id Test} & \textbf{Id Requisito}\\
-     	\hline
-     	\endhead
-     	TA0F1.1&R0F1.1 \\ \hline
-     	TA0F1.1.1&R0F1.1.1 \\ \hline
-     	TA0F1.1.2&R0F1.1.2 \\ \hline
-     	TA1.1.3&R1.1.3 \\ \hline
-     	TA1F1.2&R1F1.2 \\ \hline
-     	TA1F1.3&R1F1.3 \\ \hline
-     	TA1F1.4&R1F1.4 \\ \hline
-     	TA0F1.5&R0F1.5 \\ \hline
-     	TA0F1.5.2.1&R0F1.5.2.1 \\ \hline
-     	TA0F1.5.2.2&R0F1.5.2.2 \\ \hline
-     	TA1F1.6&R1F1.6 \\ \hline
-     	TA1F1.6.1&R1F1.6.1 \\ \hline
-     	TA1F1.6.2&R1F1.6.2 \\ \hline
-     	TA1F1.8&R1F1.8 \\ \hline
-     	TA0F2&R0F2 \\ \hline
-     	TA0F2.1&R0F2.1 \\ \hline
-     	TA1F2.1.1&R1F2.1.1 \\ \hline
-     	TA0F2.1.2&R0F2.1.2 \\ \hline
-     	TA1F2.1.3&R1F2.1.3 \\ \hline
-     	TA1F2.1.4&R1F2.1.4 \\ \hline
-     	TA0F2.1.5&R0F2.1.5 \\ \hline
-     	TA1F2.2&R1F2.2 \\ \hline
-     	TA0F2.3&R0F2.3 \\ \hline
-     	TA1F2.4&R1F2.4 \\ \hline
-     	TA0F3&R0F3 \\ \hline
-     	TA0F3.1&R0F3.1 \\ \hline
-     	TA0F3.1.1&R0F3.1.1 \\ \hline
-     	TA1F3.1.2&R1F3.1.2 \\ \hline
-     	TA1F3.1.3&R1F3.1.3 \\ \hline
-     	TA1F3.4&R1F3.4 \\ \hline
-     	TA1F4&R1F4 \\ \hline
-     	TA1F4.1&R1F4.1 \\ \hline
-     	TA1F4.2&R1F4.2 \\ \hline
-     	TA1F4.3&R1F4.3 \\ \hline
-     \end{longtable}
+	\subsubsection{Test di unità}
+	Lo scopo di questa tipologia di test è di verificare la più piccola parte di lavoro prodotta da un programmatore. Questo significa tendenzialmente verificare i metodi e le funzioni scritte, questi test verranno implementati durante la progettazione architetturale.
+		
+		
+	
+	
+		
+
 	
 	
