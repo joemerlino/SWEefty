@@ -5,7 +5,8 @@ notifications:
     rooms:
     - sweeftyworkspace:B9YcyvwLNREWLqxH08sBAwzz
     template:
-    - "Il signor down %{author} ha rotto tutto"
+    - "Il figlio di una puttana sieropositiva %{author} ha rotto tutto il lavoro frutto di sudore e sangue del collettivo autistico SWEefty."
+    - "%{repository_slug}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
     on_success: never # default: always
     on_failure: always # default: always
 
