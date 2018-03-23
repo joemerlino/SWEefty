@@ -11,22 +11,23 @@
 % - "INSERT DOMANDE E RISPOSTE" (intanto lo strutturiamo così, con domande e rispose, se servono altri tipi di struttura cambieremo)
 
 % - "INSERT TITOLO" (verosimilmente sarà una cosa tipo "Verbale Esterno/Interno del xx/yy") 
-\newcommand{\Titolo}{Verbale riunione 31 Gennaio 2018}
+\newcommand{\Titolo}{Verbale riunione 19 Dicembre 2017}
 
 \newcommand{\Gruppo}{SWEefty}
+
 
 \newcommand{\Redazione}{Elia Montecchio}
 
 \newcommand{\ACapoRedazione}{Elia Montecchio}
 
 
-\newcommand{\Distribuzione}{Prof.Tullio Vardanega \newline Prof.Riccardo Cardin \newline SWEefty}
+\newcommand{\Distribuzione}{Prof.Tullio Vardanega \newline Prof.Riccardo Cardin \newline SWEefty \newline IKS S.r.l.}
 
 \newcommand{\InformazioniDocumento}{}
 % - "INSERT USO (INTERNO/ESTERNO)"
-\newcommand{\Uso}{Interno}
+\newcommand{\Uso}{Esterno}
 % - "INSERT DATA"
-\newcommand{\Data}{31 Gennaio 2018}
+\newcommand{\Data}{22 Dicembre 2017}
 % - "INSERT DESCRIZIONE"
 \newcommand{\DescrizioneDoc}{Questo documento riporta in modo formale il riassunto della rinuione tenutasi nella data sopra riportata.  }
 
@@ -34,7 +35,7 @@
 
 \documentclass[a4paper, oneside, openany]{article}
 
-% \usepackage{graphbox}
+\usepackage{graphbox}
 % permette di modificare i margini
 \usepackage[top=3.1cm, bottom=3.1cm, left=2.2cm, right=2.2cm]{geometry}
 
@@ -95,10 +96,10 @@
 
 \usepackage{listings} %permette di inserire degli spezzoni di codice
 
-% \usepackage{tikz} %disegno di immagini vettoriali a schermo. Utile per grafi
-% \usetikzlibrary{arrows.meta}
-% \usetikzlibrary{graphs}
-% \usetikzlibrary{arrows}
+\usepackage{tikz} %disegno di immagini vettoriali a schermo. Utile per grafi
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{graphs}
+\usetikzlibrary{arrows}
 %\usepackage{tikz-uml} %serve per disgnare l'UML, fantastica guida:
 %https://perso.ensta-paristech.fr/~kielbasi/tikzuml/var/files/doc/tikzumlmanual.pdf
 %download package: http://perso.ensta-paristech.fr/~kielbasi/tikzuml/
@@ -249,60 +250,52 @@ backgroundcolor=\color{lbcolor},
 		\subsection{Informazioni incontro}
 			% - INSERT INFORMAZIONI INCONTRO
 			\begin{itemize}
-				\item { \textbf{Luogo:} Torre Archimede }
-				\item { \textbf{Data:} 31 Gennaio 2018 }
-				\item { \textbf{Ora Inizio:} 15.30 }
-					\item { \textbf{Ora Fine:} 17.15 }
+				\item { \textbf{Luogo:} Azienda IKS S.r.l.  }
+				\item { \textbf{Data:} 19 Dicembre 2017 }
+				\item { \textbf{Ora:} 15.00 }
 				\item { \textbf{Partecipanti del gruppo:} Gruppo al completo }
-				\item { \textbf{Partecipanti esterni:} Nessuno }
+				\item { \textbf{Partecipanti esterni:} IKS Srl }
 			\end{itemize}
 		
 	
 	\subsection{Argomenti affrontati}
-    Nel corso della riunione sono state affrontate le varie problematiche emerse dopo la correzione dei documenti presentati alla prima revisione del progetto. È stato pertanto necessario organizzare il lavoro in modo tale da porre rimedio alle lacune evidenziate dal docente.
-    
-	\subsubsection{Organizzazione del lavoro}
+    Nel corso della riunione sono stati approfonditi i punti fondamentali per la realizzazione del progetto.
+    In particolare, è stato affrontato:
+
     \begin{itemize}
-    \item  \textbf{Norme di Progetto:} Riguardo alle lacune evidenziate nel documento \emph{NormeDiProgetto v1.0.0} si è deciso di:
-    	\begin{itemize}
-    	\item  \textbf{ 01/VI\_2018-01-31 } Aggiungere l'attività di Pianificazione descrivendola e di inserire all'interno Piano di progetto e di qualifica, task assegnato ad Elia Montecchio;
-    	
-    	\item  \textbf{ 02/VI\_2018-01-31 } Ampliare la sezione dei processi organizzativi e di supporto inserendo validazione,manutezione dei processi e formazione, task assegnato a Francesco Parolini;
-    	
-    	\item  \textbf{ 03/VI\_2018-01-31 } Trasformare l'attività di documentazione in un processo aggiungendo l'attività di stesura e aggiornamento di un documento, task assegnato a Davide Zago;
-    		
-       \end{itemize}
-   
-   
-    \item  \textbf{Analisi dei Requisiti:} Riguardo alle lacune evidenziate nel documento \emph{AnalisiDeiRequisiti v1.0.0} si è deciso di:
-   \begin{itemize}
-   	\item  \textbf{ 04/VI\_2018-01-31 } Rivedere i casi d'uso segnalati in modo da ricrearli opportunamente,
-   	 aggiungendo casi d'uso generali infine è stato ritenuto oppurturno riordinarli. Il compito è assegnato a Lisa Parma e Joe Merlino;
-   	
-   	
-   \end{itemize}
-
-
-    \item  \textbf{Piano di progetto:} Riguardo alle lacune evidenziate nel documento \emph{PianoDiProgetto v1.0.0} si è deciso di:
-     \begin{itemize}
-    	\item  \textbf{ 05/VI\_2018-01-31 } Rivedere le sezioni del documento che presentavano difetti correggendole in modo opportuno, rivedere la pianificazione futura in modo da inserire le ore di codifica necessarie per sviluppare il Proof of concept. Il task è stato assegnato a Paolo Eccher;
-    	
+	\item { Affinamento dei requisiti }
+	\item { Spiegazione contenuto trace }
+	\item { Tecnologie obbligatorie per il progetto}
+     \end{itemize}
 	
-      \end{itemize}
-  
-   \item  \textbf{ 06/VI\_2018-01-31 } Si è deciso di riorganizzare il diario secondo le segnalazioni del docente, task assegnato ad Elia Montecchio.
-   
-    \item  \textbf{ 07/VI\_2018-01-31 } È necessario introdurre nel documento \emph{NormeDiProgetto v2.0.0} il codice dei verbali che verrà assegnato per ogni decisione dei verbali.
-   
-   \item  \textbf{ 08/VI\_2018-01-31 } Si dovrà realizzare una piccola demo del plugin per poi illustrarne il funzionamento agli altri membri del team. Se ne occuperanno Alberto Gallinaro e Paolo Eccher.
-   
-   \item  \textbf{ 09/VI\_2018-01-31 } È prevista, per ogni membro del gruppo, un'attività di formazione autonoma seguendo dei video messi a disposizione, inerenti le tecnologie necessarie per lo sviluppo del progetto.
-   
-   
-    
-
-    \end{itemize}
- 
-
+	\subsubsection{Affinamento dei requisiti Mappa Topologica}
+	Per quanto riguarda il plugin che visualizza la mappa topologica dell'applicazione sono state concordate le aggiunte che seguono.
 	
+	Per quanto riguarda la visualizzazione dei componenti:
+	\begin{itemize}
+		\item Deve essere possibile visualizzare sulla mappa il nome di ogni componente;
+		\item Se un componente è un server bisogna mostrarne il linguaggio di implementazione;
+		\item Se un nodo dell'applicazione è composto da più server (è un cluster) deve essere possibile visualizzarne il numero.
+	\end{itemize}
+	
+	Per quanto riguarda la visualizzazione delle interazioni tra componenti:
+	\begin{itemize}
+		\item Deve essere possibile visualizzare il tempo medio di risposta che esiste tra due componenti che interagiscono;
+		\item Deve essere possibile distinguere il tipo di richieste che avvengono tra i componenti, che potrebbero ad esempio essere richieste HTTP.
+	\end{itemize}
+	
+	In aggiunta ci è stato richiesto di poter interagire con la mappa. Deve essere possibile riposizionare i componenti nello spazio e deve essere presenta la funzionalità per ridisporli nella posizione di partenza.
+	
+	\subsubsection{Affinamento dei requisiti Stack Trace}
+	
+	Per l'altro plugin da realizzare ovvero quello per visualizzare la lista delle trace è stato concordato che la visualizzazione da realizzare deve essere riordinabile in base a dei parametri significativi.
+	
+    Per quanto riguarda la visualizzazione del call tree relativo ad una singola stack trace ci è stata richiesta la visualizzazione nel call tree delle queries a database effettuate da ogni metodo.
+
+	Inoltre, per ogni call tree, deve essere visualizzata una lista di tutte le queries effettuate.
+	
+	\subsubsection{Requisiti generali}
+	È stato richiesto che vi sia un disaccoppiamento fra logica applicativa e le tecnologie utilizzate, in questo modo potrà essere possibile cambiare, per esempio, la base di dati dove le informazioni vengono memorizzate senza dover rivoluzionare il software.
+		
+
 \end{document}

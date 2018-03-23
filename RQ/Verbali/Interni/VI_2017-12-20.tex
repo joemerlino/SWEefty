@@ -1,4 +1,38 @@
-\documentclass[a4paper, oneside, openany,12pt]{article}
+% - PER STILARE QUESTO DOCUMENTO VANNO INSERITI I DATI.
+% - VISTO CHE IL FILE È LUNGO ED INTRICATO PER SEMPLIFICARE HO MESSO DEI COMMENTI
+% - CHE INDICANO I PUNTI DOVE INSERIRE LE INFORMAZIONI CHE MANCANO.
+% - INSERISCILI IN CORRISPONDENZA DEI COMMENTI:
+
+% - "INSERT TITOLO"
+% - "INSERT USO"
+% - "INSERT DATA"
+% - "INSERT DESCRIZIONE"
+% - "INSERT INFORMAZIONI INCONTRO"
+% - "INSERT DOMANDE E RISPOSTE" (intanto lo strutturiamo così, con domande e rispose, se servono altri tipi di struttura cambieremo)
+
+% - "INSERT TITOLO" (verosimilmente sarà una cosa tipo "Verbale Esterno/Interno del xx/yy") 
+\newcommand{\Titolo}{Verbale riunione 20 Dicembre 2017}
+
+\newcommand{\Gruppo}{SWEefty}
+
+\newcommand{\Redazione}{Elia Montecchio}
+
+\newcommand{\ACapoRedazione}{Elia Montecchio}
+
+
+\newcommand{\Distribuzione}{Prof.Tullio Vardanega \newline Prof.Riccardo Cardin \newline SWEefty}
+
+\newcommand{\InformazioniDocumento}{}
+% - "INSERT USO (INTERNO/ESTERNO)"
+\newcommand{\Uso}{Interno}
+% - "INSERT DATA"
+\newcommand{\Data}{23 Dicembre 2017}
+% - "INSERT DESCRIZIONE"
+\newcommand{\DescrizioneDoc}{Questo documento riporta in modo formale il riassunto della rinuione tenutasi nella data sopra riportata.  }
+
+
+
+\documentclass[a4paper, oneside, openany]{article}
 
 % \usepackage{graphbox}
 % permette di modificare i margini
@@ -10,12 +44,12 @@
   % cancella tutti i campi di intestazione e piè di pagina
   \fancyhf{}
   
-  \lhead{\includegraphics[width=4cm]{../../CommonImages/logo.jpg}}
+  \lhead{\includegraphics[width=3cm]{../../../CommonImages/logo.jpg}}
   
   \rhead{sweeftyteam@gmail.com}
   
   \lfoot{ %piè di pagina
-    \Titolo{} \ - \textit{\Gruppo{}}
+   {\Titolo} \ - \textit{{\Gruppo}}
   }
   \rfoot{Pagina \thepage{} di \pageref{LastPage}} %es: pag: 4 di 10
 
@@ -24,7 +58,6 @@
   \renewcommand{\footrulewidth}{0.2pt}
 }
 \pagestyle{plain}
-
 
 %Comando Spazio
 \newcommand{\Spazio}{\mbox{} \\ \mbox{} \\ }  
@@ -101,14 +134,14 @@
 
 \usepackage{breakurl}%\url{...} può continare alla linea successiva. (si può andare a capo)
 
-
+\definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}
 \usepackage[colorlinks=true]{hyperref}
 \hypersetup{
     colorlinks=true,
     citecolor=black,
     filecolor=black,
     linkcolor=black, % colore dei link interni
-    urlcolor=blue  % colore dei link interniesterni
+    urlcolor=Maroon  % colore dei link interniesterni
 }
 
 %impostazioni per il codice che deve finire dentro a
@@ -160,3 +193,87 @@ backgroundcolor=\color{lbcolor},
   commentstyle=\color{orange},
   stringstyle=\color{red}
 }
+
+
+ \newgeometry{top=4cm}
+
+\begin{document}
+\begin{titlepage}
+	\begin{center}
+		
+		\begin{center}
+			%% qui metteteci l'immagine di copertina. Io ho messo quella dell'uni,
+			%voi mettete quella del vostro grupo
+			\centerline{\includegraphics[scale=0.24]{../../../CommonImages/logo.jpg}}
+		\end{center}
+		
+		\vspace{1cm}
+		
+		\begin{Huge}
+			\textbf{\Titolo{}} \\
+		\end{Huge}
+		
+		\vspace{9pt}  
+		
+		\begin{large}
+			\Gruppo{}\ - \Data{}
+		\end{large}	  
+		
+		\vspace{15pt}
+		
+		\bgroup
+		\def\arraystretch{1.3}
+		\centering
+		\begin{tabular}{c|L{5cm}}
+			\multicolumn{2}{c}{\textbf{\InformazioniDocumento{}} } \\ \hline
+			Redazione & \ACapoRedazione{} \\
+
+			Uso & \Uso \\
+			Distribuzione & \Distribuzione{}
+		\end{tabular}
+		\egroup
+		
+		\vspace{15pt}
+		
+		\begin{center}
+			\textbf{Descrizione\\}
+			\DescrizioneDoc{}
+		\end{center}
+		
+	\end{center}
+\end{titlepage}
+
+\restoregeometry
+	
+	\section{Informazioni generali}
+		\subsection{Informazioni incontro}
+			% - INSERT INFORMAZIONI INCONTRO
+			\begin{itemize}
+				\item { \textbf{Luogo:} Torre Archimede }
+				\item { \textbf{Data:} 20 Dicembre 2017 }
+				\item { \textbf{Ora:} 15.00 }
+				\item { \textbf{Partecipanti del gruppo:} Gruppo al completo }
+				\item { \textbf{Partecipanti esterni:} Nessuno }
+			\end{itemize}
+		
+	
+	\subsection{Argomenti affrontati}
+    Nel corso della riunione sono stati discusse questioni inerenti all'organizzazione del gruppo e lo stato del lavoro in corso. Sono anche stati discussi i requisiti del progetto facendo anche riferimento alla riunione con IKS del 19 dicembre.
+    
+	\subsubsection{Organizzazione e stato del lavoro}
+    \begin{itemize}
+    \item { \textbf{Visionamento verifica del documento:} il documento \emph{NormeDiProgetto v1.0.0} è stato verificato dall'incaricato. Durante la riunione sono stati evidenziati i vari errori e le sezioni da sistemare/riformulare;}
+	\item { \textbf{Discord:} strumento che il team utilizzerà per confrontarsi e per le riunioni durante il periodo delle vancaze natalizie, il quale è molto interessante in quanto permette anche di condividere tra i vari partecipanti lo schermo del proprio pc;}
+	\item { \textbf{Versione documento:} Si è deciso di inserire per ogni documento la versione dopo il suo titolo per esempio: \textit{NormeDiProgetto v1.0.0};}
+	\item { \textbf{Glossario:} si è deciso di glossarizzare i termini in modo automatico mediante uno script.
+	I termini da glossarizzare non vanno più inseriti all'interno del documento, ma all'interno di un file denominato \textit{terminiGLossario.txt}. Ogni termine dev'essere inserito in ordine alfabetico. Inoltre, è stata realizzata una lista di file chiamati come le lettere dell'alfabeto, che rappresentano il nostro dizionario. E' necessario, dunque, inserire la parola all'interno del file chiamato con la lettere iniziale della parola in questione aggiungendo anche una descrizione del termine.}
+    \end{itemize}
+ 
+	\subsubsection{Requisiti}
+	Abbiamo discusso ed approvato che il plugin riguardante la mappa topologica deve prevedere la possibilità di visualizzare a schermo intero il suo contenuto.
+ 
+	Per quanto riguarda il plugin riguardante la visualizzazione delle stack trace è stato deciso di realizzare l'ordinamento richiesto in base al tempo di esecuzione e al momento in cui è iniziata l'esecuzione della trace. Entrambe devono poter avvenire in ordine crescente e decrescente.
+		
+	Abbiamo inoltre discusso della visualizzazione della lista delle queries di un call tree. Di esse dovranno essere mostrate le istruzioni che le compongono. Anche esse devono poter essere riordinabili per tempo di esecuzione e momento di inizio.
+	
+\end{document}

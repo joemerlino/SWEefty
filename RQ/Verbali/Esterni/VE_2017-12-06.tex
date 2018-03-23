@@ -11,7 +11,7 @@
 % - "INSERT DOMANDE E RISPOSTE" (intanto lo strutturiamo così, con domande e rispose, se servono altri tipi di struttura cambieremo)
 
 % - "INSERT TITOLO" (verosimilmente sarà una cosa tipo "Verbale Esterno/Interno del xx/yy") 
-\newcommand{\Titolo}{Verbale riunione 31 Gennaio 2018}
+\newcommand{\Titolo}{Verbale riunione 6 Dicembre 2017}
 
 \newcommand{\Gruppo}{SWEefty}
 
@@ -20,21 +20,21 @@
 \newcommand{\ACapoRedazione}{Elia Montecchio}
 
 
-\newcommand{\Distribuzione}{Prof.Tullio Vardanega \newline Prof.Riccardo Cardin \newline SWEefty}
+\newcommand{\Distribuzione}{Prof.Tullio Vardanega \newline Prof.Riccardo Cardin \newline SWEefty \newline IKS S.r.l.}
 
 \newcommand{\InformazioniDocumento}{}
 % - "INSERT USO (INTERNO/ESTERNO)"
-\newcommand{\Uso}{Interno}
+\newcommand{\Uso}{Esterno}
 % - "INSERT DATA"
-\newcommand{\Data}{31 Gennaio 2018}
+\newcommand{\Data}{12 Dicembre 2017}
 % - "INSERT DESCRIZIONE"
-\newcommand{\DescrizioneDoc}{Questo documento riporta in modo formale il riassunto della rinuione tenutasi nella data sopra riportata.  }
+\newcommand{\DescrizioneDoc}{Questo documento riporta in modo formale il riassunto della rinuione tenutasi nella data sopra riportata. }
 
 
 
 \documentclass[a4paper, oneside, openany]{article}
 
-% \usepackage{graphbox}
+\usepackage{graphbox}
 % permette di modificare i margini
 \usepackage[top=3.1cm, bottom=3.1cm, left=2.2cm, right=2.2cm]{geometry}
 
@@ -95,10 +95,10 @@
 
 \usepackage{listings} %permette di inserire degli spezzoni di codice
 
-% \usepackage{tikz} %disegno di immagini vettoriali a schermo. Utile per grafi
-% \usetikzlibrary{arrows.meta}
-% \usetikzlibrary{graphs}
-% \usetikzlibrary{arrows}
+\usepackage{tikz} %disegno di immagini vettoriali a schermo. Utile per grafi
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{graphs}
+\usetikzlibrary{arrows}
 %\usepackage{tikz-uml} %serve per disgnare l'UML, fantastica guida:
 %https://perso.ensta-paristech.fr/~kielbasi/tikzuml/var/files/doc/tikzumlmanual.pdf
 %download package: http://perso.ensta-paristech.fr/~kielbasi/tikzuml/
@@ -249,60 +249,51 @@ backgroundcolor=\color{lbcolor},
 		\subsection{Informazioni incontro}
 			% - INSERT INFORMAZIONI INCONTRO
 			\begin{itemize}
-				\item { \textbf{Luogo:} Torre Archimede }
-				\item { \textbf{Data:} 31 Gennaio 2018 }
-				\item { \textbf{Ora Inizio:} 15.30 }
-					\item { \textbf{Ora Fine:} 17.15 }
+				\item { \textbf{Luogo:} Azienda IKS S.r.l.  }
+				\item { \textbf{Data:} 06 Dicembre 2017 }
+				\item { \textbf{Ora:} 15.00 }
 				\item { \textbf{Partecipanti del gruppo:} Gruppo al completo }
-				\item { \textbf{Partecipanti esterni:} Nessuno }
+				\item { \textbf{Partecipanti esterni:} IKS Srl }
 			\end{itemize}
 		
 	
 	\subsection{Argomenti affrontati}
-    Nel corso della riunione sono state affrontate le varie problematiche emerse dopo la correzione dei documenti presentati alla prima revisione del progetto. È stato pertanto necessario organizzare il lavoro in modo tale da porre rimedio alle lacune evidenziate dal docente.
-    
-	\subsubsection{Organizzazione del lavoro}
-    \begin{itemize}
-    \item  \textbf{Norme di Progetto:} Riguardo alle lacune evidenziate nel documento \emph{NormeDiProgetto v1.0.0} si è deciso di:
-    	\begin{itemize}
-    	\item  \textbf{ 01/VI\_2018-01-31 } Aggiungere l'attività di Pianificazione descrivendola e di inserire all'interno Piano di progetto e di qualifica, task assegnato ad Elia Montecchio;
-    	
-    	\item  \textbf{ 02/VI\_2018-01-31 } Ampliare la sezione dei processi organizzativi e di supporto inserendo validazione,manutezione dei processi e formazione, task assegnato a Francesco Parolini;
-    	
-    	\item  \textbf{ 03/VI\_2018-01-31 } Trasformare l'attività di documentazione in un processo aggiungendo l'attività di stesura e aggiornamento di un documento, task assegnato a Davide Zago;
-    		
-       \end{itemize}
-   
-   
-    \item  \textbf{Analisi dei Requisiti:} Riguardo alle lacune evidenziate nel documento \emph{AnalisiDeiRequisiti v1.0.0} si è deciso di:
-   \begin{itemize}
-   	\item  \textbf{ 04/VI\_2018-01-31 } Rivedere i casi d'uso segnalati in modo da ricrearli opportunamente,
-   	 aggiungendo casi d'uso generali infine è stato ritenuto oppurturno riordinarli. Il compito è assegnato a Lisa Parma e Joe Merlino;
-   	
-   	
-   \end{itemize}
-
-
-    \item  \textbf{Piano di progetto:} Riguardo alle lacune evidenziate nel documento \emph{PianoDiProgetto v1.0.0} si è deciso di:
-     \begin{itemize}
-    	\item  \textbf{ 05/VI\_2018-01-31 } Rivedere le sezioni del documento che presentavano difetti correggendole in modo opportuno, rivedere la pianificazione futura in modo da inserire le ore di codifica necessarie per sviluppare il Proof of concept. Il task è stato assegnato a Paolo Eccher;
-    	
+     Nel corso della riunione è stato approfondito lo scopo del progetto e sono state presentate e discusse le diverse tecnologie da apprendere per poterlo sviluppare.
+     
+			
+	\subsubsection{Scopo del progetto}
+	È stato concordato che lo scopo del progetto sarà quello di realizzare due plugin per Kibana per il monitoraggio di applicazioni. In particolare andrà sviluppata una mappa topologica e un plugin per la visualizzazione della lista delle trace dell'applicazione da monitorare. In particolare, per quanto riguarda la mappa topologica, è richiesta la possibilità di visualizzare i componenti dell'applicazione monitorata che possono essere server o database. Tali componenti devono essere rappresentati come nodi di un grafo.
+	Inoltre è stata richiesta la possibilità di visualizzare sulla mappa le richieste che avvengono tra i componenti suddetti. Questa relazione deve essere rappresentata come archi di un grafo.
+	Per quanto riguarda invece il plugin per la visualizzazione della lista delle trace ci sono state richieste le seguenti cose:
+	\begin{itemize}
+		\item{Deve essere possibile visualizzare il tempo di esecuzione, il momento in cui sono state eseguite le trace e lo status code con un eventuale messaggio di errore nel caso la richiesta HTTP fallisse;}
+		\item{Deve essere possibile visualizzare un identificativo per ogni trace corrispondente alla richiesta HTTP;}
+		\item{Deve essere possibile visualizzare il call tree relativo ad una determinata trace;}
+		\item{In questo call tree deve essere possibile visualizzare il nome di ogni metodo presente, indentato in base alla sua "profondità";}
+		\item{Deve essere possibile interagire con il call tree per agevolarne la comprensibilità;}
+		
+	\end{itemize}
 	
-      \end{itemize}
-  
-   \item  \textbf{ 06/VI\_2018-01-31 } Si è deciso di riorganizzare il diario secondo le segnalazioni del docente, task assegnato ad Elia Montecchio.
-   
-    \item  \textbf{ 07/VI\_2018-01-31 } È necessario introdurre nel documento \emph{NormeDiProgetto v2.0.0} il codice dei verbali che verrà assegnato per ogni decisione dei verbali.
-   
-   \item  \textbf{ 08/VI\_2018-01-31 } Si dovrà realizzare una piccola demo del plugin per poi illustrarne il funzionamento agli altri membri del team. Se ne occuperanno Alberto Gallinaro e Paolo Eccher.
-   
-   \item  \textbf{ 09/VI\_2018-01-31 } È prevista, per ogni membro del gruppo, un'attività di formazione autonoma seguendo dei video messi a disposizione, inerenti le tecnologie necessarie per lo sviluppo del progetto.
-   
-   
+	
+	\subsubsection{Tecnologie}
+     \begin{itemize}
+     	\item { \textbf{Elasticsearch:} è stato presentata questa tecnologia che farà parte del progetto. Attraverso esso potremmo ottenere le informazioni dell'applicazione monitorata che andranno visualizzate. Sarà possibile ricercarle e raggrupparle mediante interrogazioni.
+     	Sono state discusse le differenze che esistono tra Elasticsearch e i comuni database relazionale, ed è quindi stato spiegato in che modo le informazioni vergono organizzate all'interno di questo database.}
+     	
+     	\item { \textbf{Kibana:} è stata sucessivamente presentata questa piattaforma e ne sono state analizzate le diverse funzionalità.
+     	Kibana è un tool open source progettato per rappresentare in modo grafico i dati presenti su Elasticsearch.
+        L'obiettivo del nostro team sarà appunto quello di realizzare due plugin che permetta di visualizzare all'interno di questa piattaforma dei dati che riguardano il monitoraggio di un'applicazione.}
     
-
-    \end{itemize}
- 
-
+     
+     \end{itemize}
+     
+		
+		
+		
+		
+		
+			
+	
+	
 	
 \end{document}
