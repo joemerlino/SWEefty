@@ -25,16 +25,18 @@ script:
 - mkdir Docs
 - mkdir Docs/RQ
 - mkdir Docs/RQ/Interni
+- mkdir Docs/RQ/Interni/Verbali
 - mkdir Docs/RQ/Esterni
+- mkdir Docs/RQ/Esterni/Verbali
 # aggiungere i verbali
 
 # ANALISI DEI REQUISITI
-- cd ./RQ/AnalisiDeiRequisiti/
-- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
-- mv AnalisiDeiRequisiti_v3.0.0.pdf ../../Docs/RQ/Esterni
-- cd ../..
+#- cd ./RQ/AnalisiDeiRequisiti/
+#- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
+#- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
+#- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
+#- mv AnalisiDeiRequisiti_v3.0.0.pdf ../../Docs/RQ/Esterni
+#- cd ../..
 
 # GLOSSARIO
 - cd ./RQ/Glossario/
@@ -54,10 +56,10 @@ script:
 
 # PIANO DI PROGETTO
 - cd ./RQ/PianoDiProgetto/
-- pdflatex -interaction=nonstopmode -halt-on-error PianoDiProgetto_v3.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error PianoDiProgetto_v3.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error PianoDiProgetto_v3.0.0.tex
-- mv PianoDiProgetto_v3.0.0.pdf ../../Docs/RQ/Esterni
+- pdflatex -interaction=nonstopmode -halt-on-error PianoDiProgetto_v4.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error PianoDiProgetto_v4.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error PianoDiProgetto_v4.0.0.tex
+- mv PianoDiProgetto_v4.0.0.pdf ../../Docs/RQ/Esterni
 - cd ../..
 
 # PIANO DI QUALIFICA
@@ -67,6 +69,25 @@ script:
 - pdflatex -interaction=nonstopmode -halt-on-error PianoDiQualifica_v3.0.0.tex
 - mv PianoDiQualifica_v3.0.0.pdf ../../Docs/RQ/Esterni
 - cd ../..
+
+# VERBALI INTERNI
+- cd ./RQ/Verbali/Interni
+#
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-07.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-07.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-07.tex
+- mv VI_2017-12-07.pdf ../../Docs/RQ/Interni/Verbali
+#
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-20.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-20.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2017-12-20.tex
+- mv VI_2017-12-20.pdf ../../Docs/RQ/Interni/Verbali
+#
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2018-01-31.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2018-01-31.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2018-01-31.tex
+- mv VI_2018-01-31.pdf ../../Docs/RQ/Interni/Verbali
+
 
 after_success:
 - dropbox-deployment
