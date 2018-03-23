@@ -1,39 +1,6 @@
-% - PER STILARE QUESTO DOCUMENTO VANNO INSERITI I DATI.
-% - VISTO CHE IL FILE È LUNGO ED INTRICATO PER SEMPLIFICARE HO MESSO DEI COMMENTI
-% - CHE INDICANO I PUNTI DOVE INSERIRE LE INFORMAZIONI CHE MANCANO.
-% - INSERISCILI IN CORRISPONDENZA DEI COMMENTI:
+\documentclass[a4paper, oneside, openany,12pt]{article}
 
-% - "INSERT TITOLO"
-% - "INSERT USO"
-% - "INSERT DATA"
-% - "INSERT DESCRIZIONE"
-% - "INSERT INFORMAZIONI INCONTRO"
-% - "INSERT DOMANDE E RISPOSTE" (intanto lo strutturiamo così, con domande e rispose, se servono altri tipi di struttura cambieremo)
-
-% - "INSERT TITOLO" (verosimilmente sarà una cosa tipo "Verbale Esterno/Interno del xx/yy") 
-\newcommand{\Titolo}{Verbale riunione 19 Dicembre 2017}
-
-\newcommand{\Gruppo}{SWEefty}
-
-
-\newcommand{\Redazione}{Elia Montecchio}
-
-\newcommand{\ACapoRedazione}{Elia Montecchio}
-
-
-\newcommand{\Distribuzione}{Prof.Tullio Vardanega \newline Prof.Riccardo Cardin \newline SWEefty \newline IKS S.r.l.}
-
-\newcommand{\InformazioniDocumento}{}
-% - "INSERT USO (INTERNO/ESTERNO)"
-\newcommand{\Uso}{Esterno}
-% - "INSERT DATA"
-\newcommand{\Data}{22 Dicembre 2017}
-% - "INSERT DESCRIZIONE"
-\newcommand{\DescrizioneDoc}{Questo documento riporta in modo formale il riassunto della rinuione tenutasi nella data sopra riportata.  }
-
-
-
-\documentclass[a4paper, oneside, openany]{article}
+\usepackage{eurosym}
 
 % \usepackage{graphbox}
 % permette di modificare i margini
@@ -45,12 +12,12 @@
   % cancella tutti i campi di intestazione e piè di pagina
   \fancyhf{}
   
-  \lhead{\includegraphics[width=3cm]{../../../CommonImages/logo.jpg}}
+  \lhead{\includegraphics[width=4cm]{../../CommonImages/logo.jpg}}
   
   \rhead{sweeftyteam@gmail.com}
   
   \lfoot{ %piè di pagina
-   {\Titolo} \ - \textit{{\Gruppo}}
+    \Titolo{} \ - \textit{\Gruppo{}}
   }
   \rfoot{Pagina \thepage{} di \pageref{LastPage}} %es: pag: 4 di 10
 
@@ -59,6 +26,7 @@
   \renewcommand{\footrulewidth}{0.2pt}
 }
 \pagestyle{plain}
+
 
 %Comando Spazio
 \newcommand{\Spazio}{\mbox{} \\ \mbox{} \\ }  
@@ -135,14 +103,18 @@
 
 \usepackage{breakurl}%\url{...} può continare alla linea successiva. (si può andare a capo)
 
-\definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}
+%per fare colonne centrate ora si può usare P
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+
 \usepackage[colorlinks=true]{hyperref}
 \hypersetup{
     colorlinks=true,
     citecolor=black,
     filecolor=black,
     linkcolor=black, % colore dei link interni
-    urlcolor=Maroon  % colore dei link interniesterni
+    urlcolor=blue  % colore dei link interniesterni
 }
 
 %impostazioni per il codice che deve finire dentro a
@@ -194,108 +166,3 @@ backgroundcolor=\color{lbcolor},
   commentstyle=\color{orange},
   stringstyle=\color{red}
 }
-
-
- \newgeometry{top=4cm}
-
-\begin{document}
-\begin{titlepage}
-	\begin{center}
-		
-		\begin{center}
-			%% qui metteteci l'immagine di copertina. Io ho messo quella dell'uni,
-			%voi mettete quella del vostro grupo
-			\centerline{\includegraphics[scale=0.24]{../../../CommonImages/logo.jpg}}
-		\end{center}
-		
-		\vspace{1cm}
-		
-		\begin{Huge}
-			\textbf{\Titolo{}} \\
-		\end{Huge}
-		
-		\vspace{9pt}  
-		
-		\begin{large}
-			\Gruppo{}\ - \Data{}
-		\end{large}	  
-		
-		\vspace{15pt}
-		
-		\bgroup
-		\def\arraystretch{1.3}
-		\centering
-		\begin{tabular}{c|L{5cm}}
-			\multicolumn{2}{c}{\textbf{\InformazioniDocumento{}} } \\ \hline
-			Redazione & \ACapoRedazione{} \\
-
-			Uso & \Uso \\
-			Distribuzione & \Distribuzione{}
-		\end{tabular}
-		\egroup
-		
-		\vspace{15pt}
-		
-		\begin{center}
-			\textbf{Descrizione\\}
-			\DescrizioneDoc{}
-		\end{center}
-		
-	\end{center}
-\end{titlepage}
-
-\restoregeometry
-	
-	\section{Informazioni generali}
-		\subsection{Informazioni incontro}
-			% - INSERT INFORMAZIONI INCONTRO
-			\begin{itemize}
-				\item { \textbf{Luogo:} Azienda IKS S.r.l.  }
-				\item { \textbf{Data:} 19 Dicembre 2017 }
-				\item { \textbf{Ora:} 15.00 }
-				\item { \textbf{Partecipanti del gruppo:} Gruppo al completo }
-				\item { \textbf{Partecipanti esterni:} IKS Srl }
-			\end{itemize}
-		
-	
-	\subsection{Argomenti affrontati}
-    Nel corso della riunione sono stati approfonditi i punti fondamentali per la realizzazione del progetto.
-    In particolare, è stato affrontato:
-
-    \begin{itemize}
-	\item { Affinamento dei requisiti }
-	\item { Spiegazione contenuto trace }
-	\item { Tecnologie obbligatorie per il progetto}
-     \end{itemize}
-	
-	\subsubsection{Affinamento dei requisiti Mappa Topologica}
-	Per quanto riguarda il plugin che visualizza la mappa topologica dell'applicazione sono state concordate le aggiunte che seguono.
-	
-	Per quanto riguarda la visualizzazione dei componenti:
-	\begin{itemize}
-		\item Deve essere possibile visualizzare sulla mappa il nome di ogni componente;
-		\item Se un componente è un server bisogna mostrarne il linguaggio di implementazione;
-		\item Se un nodo dell'applicazione è composto da più server (è un cluster) deve essere possibile visualizzarne il numero.
-	\end{itemize}
-	
-	Per quanto riguarda la visualizzazione delle interazioni tra componenti:
-	\begin{itemize}
-		\item Deve essere possibile visualizzare il tempo medio di risposta che esiste tra due componenti che interagiscono;
-		\item Deve essere possibile distinguere il tipo di richieste che avvengono tra i componenti, che potrebbero ad esempio essere richieste HTTP.
-	\end{itemize}
-	
-	In aggiunta ci è stato richiesto di poter interagire con la mappa. Deve essere possibile riposizionare i componenti nello spazio e deve essere presenta la funzionalità per ridisporli nella posizione di partenza.
-	
-	\subsubsection{Affinamento dei requisiti Stack Trace}
-	
-	Per l'altro plugin da realizzare ovvero quello per visualizzare la lista delle trace è stato concordato che la visualizzazione da realizzare deve essere riordinabile in base a dei parametri significativi.
-	
-    Per quanto riguarda la visualizzazione del call tree relativo ad una singola stack trace ci è stata richiesta la visualizzazione nel call tree delle queries a database effettuate da ogni metodo.
-
-	Inoltre, per ogni call tree, deve essere visualizzata una lista di tutte le queries effettuate.
-	
-	\subsubsection{Requisiti generali}
-	È stato richiesto che vi sia un disaccoppiamento fra logica applicativa e le tecnologie utilizzate, in questo modo potrà essere possibile cambiare, per esempio, la base di dati dove le informazioni vengono memorizzate senza dover rivoluzionare il software.
-		
-
-\end{document}
