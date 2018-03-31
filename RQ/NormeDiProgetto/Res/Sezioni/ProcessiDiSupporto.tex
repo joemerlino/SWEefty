@@ -255,8 +255,112 @@ I test devono essere ripetibili ovvero con lo stesso input e nello stesso ambien
 	\item \textbf{Output}: esito decidibile verificato rispetto a un comportamento atteso;
 	\item \textbf{Istruzioni aggiuntive}: istruzioni su come va eseguito il test e su come vanno interpretati gli output.
 \end{itemize}
-\subsection{Test}
-\subparagraph{Test di unità} \Spazio
+\subsubsection{Metriche}
+\label{sec:metriche}
+Per garantire la qualità del lavoro di gruppo in questa sezione vengono identificate delle metriche che verranno utilizzate per mantenere sotto controllo la qualità del progetto mentre i correlati obbiettivi di qualità vengono riportati in \textit{Piano di Qualifica v3.0.0} 
+\paragraph{Metriche per la qualità di processo} \Spazio
+Queste metriche vengono utilizzate per mantenere sotto controllo le variabili critiche del progetto ovvero tempi e costi, e per controllare che la codifica segua alcuni principi di base. 
+
+\subparagraph{Schedule Variance} \Spazio
+Fornisce una misura di quanto lo stato del progetto è in ritardo o in anticipo rispetto alla pianificazione delle attività.
+
+\textbf{Misurazione: }$SV = BCWP - BCWS$ dove il minuendo indica le attività svolte finora ed il sottraendo le attività che dovrebbero essere svolte finora.
+
+
+\subparagraph{Cost Variance} \Spazio
+Indica se si è speso più o meno di quanto è stato previsto.
+
+ \textbf{Misurazione: }$CV = BCWS - ACWP$, il minuendo indica il costo pianificato delle attività svolte ad una certa data ed il sottraendo il costo effettivo delle attività svolte a tale data.
+
+\subparagraph{Rischi non individuati} \Spazio
+Indice del numero di rischi non individuati nella fase di analisi:
+\textbf{Misurazione: }$SV = BCWP - BCWS$, il minuendo indica le attività svolte finora ed il sottraendo le attività che dovrebbero essere state svolte finora.
+
+\subparagraph{Requisiti obbligatori soddisfatti} \Spazio
+Indica quanti requisiti obbligatori sono stati soddisfatti.
+
+\textbf{Misurazione:} $P=100\times\frac{N_S}{N_O}$ dove $N_S$ sono i requisiti soddisfatti, $N_O$ sono i requisiti obbligatori mentre $P$ è la percentuale dei requisiti obbligatori soddisfatti.
+
+\subparagraph{Structural Fan-In - SFIN} \Spazio
+Indice di utilità da massimizzare, misura il numero di componenti che utilizzano un dato modulo, un valore alto denota un alto riutilizzo del codice.
+
+\subparagraph{Structural Fan-Out - SFOUT} \Spazio
+Indice di dipendenza da minimizzare, misura quante componenti vengono utilizzate dalla componente in esame, un valore alto denota un alto accoppiamento.
+
+\subparagraph{Metodi per classe} \Spazio
+Indica il numero di metodi definiti in una classe.
+
+\subparagraph{Parametri per metodo} \Spazio
+Indica il numero di parametri passati ad un metodo.
+
+\subparagraph{Complessità ciclomatica} \Spazio
+Metrica software utilizzata per misurare la complessità di un programma, misura il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso.
+
+\subparagraph{Linee di codice per linee di commento} \Spazio
+Misura la percentuale di linee di commento presenti all'interno del codice di un programma.
+\textbf{Misurazione:} $P=100\times\frac{N_C}{N_{SLOC}}$ dove $N_C$ è il numero di linee di commento e $N_{SLOC}$ è il numero di linee di codice prodotte.
+
+\subparagraph{Halstead Difficulty per-function} \Spazio
+Misura la complessità di una funzione.
+\textbf{Misurazione:} $D=\frac{N_{UOP}}{2}\times\frac{N_{OD}}{N_{UOD}}$ dove $N_{UOP}$ e i l numero di operatori distinti, $N_{OD}$ è il numero totale di operandi mentre $N_{UOD}$ è il numero di operandi distinti.
+
+\subparagraph{Halstead Volume per-function} \Spazio
+Misura la dimensione dell'implementazione di un algoritmo basandosi sul numero di operazioni eseguite e sugli operandi di una funzione.
+\textbf{Misurazione:} $V=(N_{OP} + N_{OD})\times log_2(N_{UOP} + N_{UOD})$  dove $N_{OP}$ è il numero totale di operatori, $N_{OD}$ è il numero totale di operandi, $N_{UOP}$ è il numero di operatori distinti e $N_{UOD}$ è il numero di operandi distinti.
+	
+\subparagraph{Halstead Effort per-function} \Spazio
+Rappresenta il costo necessario a scrivere il codice di una funzione.
+\textbf{Misurazione:} $E=D\times V$ dove $D$ è l'Halstead Difficulty e $V$ è l' Halstead Volume per-function.
+	
+\subparagraph{Indice di manutenibilità}  \Spazio
+Questo indice da una misura di quanto il codice prodotto è manutenibile.
+\textbf{Misurazione}:$MI=171-3.42\times ln(E)-0.23\times ln(C)-16.2\times ln(LOC)$ dove $E$  l'Halstead Effort medio per modulo, $C$ è la complessità ciclomatica media per modulo mentre LOC è il numero medio di linee di codice per modulo.
+
+\subparagraph{Indice Gulpease} \Spazio
+L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana, per il suo calcolo vengono considerate due variabili linguistiche: la lunghezza delle parole e la lunghezza delle frasi rispetto al numero delle lettere.
+\textbf{Misurazione:} $G=89+\frac{300\times N_F-10\times N_L}{N_P}$ dove $N_F$ è il numero delle frasi, $N_L$ è il numero di lettere e $N_P$ è il numero di parole nel testo.
+
+\subparagraph{Branch Coverage}  \Spazio
+Misura della percentuale di rami decisionali percorsi dai test dinamici.
+\textbf{Misurazione:} $BC=\frac{R_P}{R_T}\times 100$ dove $R_P$ è il numero di rami decisionali percorsi dai test mentre $R_T$ è il numeri di rami decisionali totali presenti nel software.
+
+\subparagraph{Statement Coverage} \Spazio
+Misura la percentuale linee di codice eseguite almeno una volta dai test dinamici.
+\textbf{Misurazione:} $SC=\frac{L_E}{L_T}\times 100$ dove $L_E$ è il numero di linee di codice eseguite almeno una volta dai test mentre $L_T$ è il numero di linee di codice totali all'interno del software.
+
+\paragraph{Metriche per la qualità di prodotto}	\Spazio
+Le metriche contenute in questa sezione vengono utilizzate dal gruppo per tenere sotto controllo la qualità del prodotto sviluppato.
+
+\subparagraph{Completezza dell'implementazione funzionale}\Spazio
+Misura la quantità in percentuale di requisiti funzionali soddisfatti dalla corrente implementazione.
+\textbf{Misurazione:}  $BC=1-\frac{N_{FM}}{N_{FI}}\times 100$, dove $N_{FM}$  è il numero di funzionalità mancanti nell'implementazione e $N_FI$ è il numero di funzionalità individuate nell'attività di analisi.
+
+\subparagraph{Densità di failure} \Spazio
+Misura la quantità percentuale di test che si sono conclusi con una failure.
+\textbf{Misurazione:} $F=\frac{N_{FR}}{N_{TE}}\times 100$, dove $N_{FR}$ è il numero di failure rilevati durante l'attività di testing e ${N_TE}$ è il numero di test-case eseguiti.
+
+\subparagraph{Comprensibilità delle funzionalità offerte} \Spazio 
+Misura la quantità in percentuale di operazioni comprese dall'utente che non richiedono la consultazione del manuale.
+\textbf{Misurazione:} $C=\frac{N_{FC}}{N_{FO}}\times 100$, dove $N_{FC}$ è il numero di funzionalità comprese in modo immediato dall'utente e $N_{FO}$ è il numero di funzionalità totali offerte dal sistema.
+ 
+\subparagraph{Facilità di apprendimento} \Spazio 
+Misura il tempo medio che occorre ad un utente per imparare ad usare in maniera corretta una certa funzionalità.
+\textbf{Misurazione:} indice dei minuti impiegati mediamente da un utente per apprendere una funzionalità offerta dal prodotto.
+
+\subparagraph{Tempo di risposta} \Spazio
+Misura la differenza media di tempo trascorsa dall’esecuzione di una funzionalità e la restituzione dell’eventuale risultato.
+\textbf{Misurazione:} $T_RISP=\frac{\sum\limits_{i=1}^n {T_i }}{n}$, dove $T_i$ è il tempo (in secondi) trascorso dalla richiesta di una funzionalità ed il completamento di questa con un eventuale restituzione del risultato.
+
+\subparagraph{Capacità di analisi failure} \Spazio
+Misura la quantità in percentuale di failures incontrate di cui sono state tracciate le cause.
+\textbf{Misurazione:} $I=\frac{N_{FI}}{N_{FR}}\times 100 $, dove $N_{FI}$ è il numero di failure delle quali sono state individuate le cause e $N_{FR}$ è il numero di failures rilevate.
+
+\subparagraph{Impatto delle modifiche} \Spazio
+Misura la quantità in percentuale di modiche introdotte per risolvere failures che hanno introdotto nuove failures nel prodotto.
+\textbf{Misurazione:} $I=\frac{N_{FRE}}{N_{FR}}\times 100 $, dove $N_{FRE}$ è il numero di failure risolte introducendo nuove failure e $N_{FR}$ è il numero di failures risolte. 
+	
+\subsubsection{Test}
+\paragraph{Test di unità} \Spazio
 I test di unità verificano che le singole Unità di prodotto software funzionino correttamente, le unità non possono passare al test di integrazione se non passano questo test.
 Comunemente per i test di unità vengono utilizzati \gl{driver} e \gl{stub} che simulano il chiamante e un unità chiamata.\newline
 I test di unità saranno descritti nel modo seguente: \Spazio
@@ -267,7 +371,7 @@ dove:
 \begin{itemize}
 	\item \textbf{idTest:} rappresenta il codice identificativo crescente dell’unità considerata.
 \end{itemize}
-\subparagraph{Test di integrazione} \Spazio
+\paragraph{Test di integrazione} \Spazio
 I test di integrazione sono il passo successivo ai test di unità servono a verificare che due o più unità, precedentemente verificate, funzionino correttamente una volta combinate.
 Questo tipo di test verifica la corretta collaborazione tra le varie unità e aiuta a trovare eventuali errori non rilevati nei test precedenti.
 L'obbiettivo finale di questi test è arrivare a testare l'intero prodotto costituito accorpando tutte le singole unità.\newline
@@ -279,7 +383,7 @@ dove:
 	\item \textbf{IdComponente:} rappresenta il codice identificativo crescente del componente considerato.
 \end{itemize}
 
-\subparagraph{Test di regressione}	\Spazio
+\paragraph{Test di regressione}	\Spazio
 I test di regressione devono essere fatti ogni volta che viene fatta una modifica a una componente software, consistono nel rifare i test di unità e integrazione necessari per accertarsi che tale modifica non causi errori nella componente in cui è stata fatta o in parti del software collegate.
 Un buon incapsulamento limita il numero di test da effettuare in questa fase.
 \subsubsection{Strumenti}

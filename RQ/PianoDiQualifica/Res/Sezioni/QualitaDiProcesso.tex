@@ -102,16 +102,12 @@ Dal punto di vista pratico il processo di miglioramento continuo che SWEefty uti
 	Il \emph{Project Manager} dovrà mantenere un rapporto di costante dialogo con gli esecutori di task così da rilevare prontamente eventuali ritardi e/o eccedenze nell'utilizzo delle risorse e risolvere il problema tempestivamente.
 	\subsubsection{Metriche}
 		\paragraph{Schedule Variance} \Spazio
-		Fornisce una misura di quanto lo stato del progetto è in ritardo o in anticipo rispetto alla pianificazione delle attività.
 		\begin{itemize}
-			\item  \textbf{Misurazione: }$SV = BCWP - BCWS$ dove il minuendo indica le attività svolte finora ed il sottraendo le attività che dovrebbero essere svolte finora;
 			\item \textbf{Range ottimale: }$\geq$ 0;
 			\item \textbf{Range accettato: }$\geq$ 0.
 		\end{itemize}
 		\paragraph{Cost Variance} \Spazio
-		Indica se si è speso più o meno di quanto è stato previsto.
 		\begin{itemize}
-			\item \textbf{Misurazione: }$CV = BCWS - ACWP$, il minuendo indica il costo pianificato delle attività svolte ad una certa data ed il sottraendo il costo effettivo delle attività svolte a tale data;
 			\item \textbf{Range ottimale: }$\geq$ 0;
 			\item \textbf{Range accettato: }$\geq$ 0.
 		\end{itemize}
@@ -128,13 +124,17 @@ SWEefty terrà sotto costante controllo tutti i rischi individuati, come specifi
 
 \subsubsection{Metriche}
 \paragraph{Rischi non individuati} \Spazio
-Indice del numero di rischi non individuati nella fase di analisi:
 	\begin{itemize}
-		\item \textbf{Misurazione: }$SV = BCWP - BCWS$, il minuendo indica le attività svolte finora ed il sottraendo le attività che dovrebbero essere state svolte finora;
 		\item \textbf{Range ottimale: }0;
 		\item \textbf{Range accettato: }0 - 4.
 	\end{itemize}
-
+    \subparagraph{Misurazioni}
+    \begin{figure}[H]
+    	\centering 
+    	\includegraphics[width=0.7\textwidth]{images/rischiNI.png}
+    	\caption{Serie storica dei rischi non individuati}
+    	\label{rischi} 
+    \end{figure}
 
 \subsection{System Requirements Analysis Process}
 Questo processo ha lo scopo di individuare i requisiti del sistema.
@@ -148,12 +148,17 @@ Questo processo ha lo scopo di individuare i requisiti del sistema.
 I requisiti vengono tracciati utilizzando lo strumento SWEgo.
 \subsubsection{Metriche}
 \paragraph{Requisiti obbligatori soddisfatti} \Spazio
-Indica quanti requisiti obbligatori sono stati soddisfatti.
 \begin{itemize}
-	 \item \textbf{Misurazione:} $P=100\times\frac{N_S}{N_O}$ dove $N_S$ sono i requisiti soddisfatti, $N_O$ sono i requisiti obbligatori mentre $P$ è la percentuale dei requisiti obbligatori soddisfatti;
 	\item \textbf{Range ottimale:} 100\%;
 	\item \textbf{Range accettato:} 100\%.
 \end{itemize}
+\subparagraph{Misurazioni}
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=0.7\textwidth]{images/obbl.png}
+	\caption{Serie storica dei requisiti obbligatori soddisfatti}
+	\label{obbl} 
+\end{figure}
 
 \subsection{System Architectural Design Process}
 Lo scopo di questo processo è quello di associare ai requisiti del sistema una o più componenti del sistema.
@@ -167,13 +172,11 @@ Lo scopo di questo processo è quello di associare ai requisiti del sistema una 
 		Mantenere una tabella che associa ad ogni modulo un indice di utilità e un indice di dipendenza.
 		\subsubsection{Metriche}
 			\paragraph{Structural Fan-In - SFIN} \Spazio
-			Indice di utilità da massimizzare, misura il numero di componenti che utilizzano un dato modulo, un valore alto denota un alto riutilizzo del codice.
 			\begin{itemize}
 				\item \textbf{Range ottimale:} $\geq 2$;
 				\item \textbf{Range accettato:} $\geq 0$.
 			\end{itemize}
 			\paragraph{Structural Fan-Out - SFOUT} \Spazio
-			Indice di dipendenza da minimizzare, misura quante componenti vengono utilizzate dalla componente in esame, un valore alto denota un alto accoppiamento
 			\begin{itemize}
 				\item \textbf{Range ottimale:} 0-1;
 				\item \textbf{Range accettato:} 0-5.
@@ -190,13 +193,11 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 		Le componenti individuate durante l'analisi verranno suddivise in piccole unità codificabili e testabili.
 		\subsubsection{Metriche}
 			\paragraph{Metodi per classe} \Spazio
-			Indica il numero di metodi definiti in una classe.
 			\begin{itemize}
 				\item \textbf{Range ottimale:} 1-7; 
 				\item \textbf{Range accettato:} 1-10.
 			\end{itemize}
 			\paragraph{Parametri per metodo} \Spazio
-			Indica il numero di parametri passati ad un metodo.
 			\begin{itemize}
 				\item \textbf{Range ottimale:} 0-4;
 				\item \textbf{Range accettato:} 0-8.
@@ -215,44 +216,60 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 		Mantenere una bassa complessità del codice durante la stesura ed implementare al più presto dei test che ne verifichino il corretto funzionamento.
 		\subsubsection{Metriche}
 			\paragraph{Complessità ciclomatica} \Spazio
-			Metrica software utilizzata per misurare la complessità di un programma, misura il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso.
 			\begin{itemize}
 				\item \textbf{Range ottimale:} 1-10;
 				\item \textbf{Range accettato:} 1-15.
 			\end{itemize}
 			\paragraph{Linee di codice per linee di commento} \Spazio
-			Misura la percentuale di linee di commento presenti all'interno del codice di un programma.
 			\begin{itemize}
-				\item \textbf{Misurazione:} $P=100\times\frac{N_C}{N_{SLOC}}$ dove $N_C$ è il numero di linee di commento e $N_{SLOC}$ è il numero di linee di codice prodotte;
 				\item \textbf{Range ottimale:} $\geq30$;
 				\item \textbf{Range accettato:} $\geq25$.
 			\end{itemize}
+		    \subparagraph{Misurazioni}
+		    \begin{figure}[H]
+		   	\centering 
+		    	\includegraphics[width=0.7\textwidth]{images/comm.png}
+		    	\caption{Serie storica delle linee di codice per linee di commento}
+		    	\label{comm} 
+		    \end{figure}
 			\paragraph{Halstead Difficulty per-function} \Spazio
-			Misura la complessità di una funzione.
 			\begin{itemize}
-				\item \textbf{Misurazione:} $D=\frac{N_{UOP}}{2}\times\frac{N_{OD}}{N_{UOD}}$ dove $N_{UOP}$ e i l numero di operatori distinti, $N_{OD}$ è il numero totale di operandi mentre $N_{UOD}$ è il numero di operandi distinti;
 				\item \textbf{Range ottimale:} 0-15;
 				\item \textbf{Range accettato:} 0-25.
 			\end{itemize}
+		\subparagraph{Misurazioni}
+		\begin{figure}[H]
+			\centering 
+			\includegraphics[width=0.7\textwidth]{images/H-difficulty.png}
+			\caption{Serie storica del Halstead Difficulty per-function}
+			\label{diff} 
+		\end{figure}
 			\paragraph{Halstead Volume per-function} \Spazio
-			Misura la dimensione dell'implementazione di un algoritmo basandosi sul numero di operazioni eseguite e sugli operandi di una funzione.
 			\begin{itemize}
-				\item \textbf{Misurazione:} $V=(N_{OP} + N_{OD})\times log_2(N_{UOP} + N_{UOD})$  dove $N_{OP}$ è il numero totale di operatori, $N_{OD}$ è il numero totale di operandi, $N_{UOP}$ è
-				il numero di operatori distinti e $N_{UOD}$ è il numero di operandi distinti;
 			\item \textbf{Range ottimale:} 20-1000;
 			\item \textbf{Range accettato:} 20-1500.
 			\end{itemize}
+		    \subparagraph{Misurazioni}
+		    \begin{figure}[H]
+		    	\centering 
+		    	\includegraphics[width=0.7\textwidth]{images/H-volume.png}
+		    	\caption{Serie storica del Halstead Volume per-function}
+		    	\label{vol} 
+		    \end{figure}
 			\paragraph{Halstead Effort per-function} \Spazio
-			Rappresenta il costo necessario a scrivere il codice di una funzione.
 			\begin{itemize}
-				\item \textbf{Misurazione:} $E=D\times V$ dove $D$ è l'Halstead Difficulty e $V$ è l' Halstead Volume per-function;
 				\item \textbf{Range ottimale:} 0-300;
 				\item \textbf{Range accettato:} 0-400.
 			\end{itemize}
+		\subparagraph{Misurazioni}
+		\begin{figure}[H]
+			\centering 
+			\includegraphics[width=0.7\textwidth]{images/H-effort.png}
+			\caption{Serie storica del Halstead effort per-function}
+			\label{eff} 
+		\end{figure}
 			\paragraph{Indice di manutenibilità}  \Spazio
-			Questo indice da una misura di quanto il codice prodotto è manutenibile.
 			\begin{itemize}
-				\item \textbf{Misurazione}:$MI=171-3.42\times ln(E)-0.23\times ln(C)-16.2\times ln(LOC)$ dove $E$  l'Halstead Effort medio per modulo, $C$ è la complessità ciclomatica media per modulo mentre LOC è il numero medio di linee di codice per modulo;
 				\item \textbf{Range ottimale:} 120-171;
 				\item \textbf{Range accettato:} 100-171.
 			\end{itemize}
@@ -270,13 +287,17 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 		Mantenere un diario delle modifiche e la versione del documento, inoltre per semplificare la comprensione dei documenti viene fornito un glossario che spiega il significato dei termini tecnici. 
 		\subsubsection{Metriche}
 			\paragraph{Indice Gulpease} \Spazio
-			L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana, per il suo calcolo vengono considerate due variabili linguistiche: la lunghezza delle parole e la lunghezza delle frasi rispetto al numero delle lettere.
 			\begin{itemize}
-				\item \textbf{Misurazione:} $G=89+\frac{300\times N_F-10\times N_L}{N_P}$ dove $N_F$ è il numero delle frasi, $N_L$ è il numero di lettere e $N_P$ è il numero di parole nel testo;
 				\item \textbf{Range ottimale:} 50-100;
 				\item \textbf{Range accettato:} 40-100.
 			\end{itemize}
-
+            \subparagraph{Misurazioni}
+            \begin{figure}[H]
+            	\centering 
+            	\includegraphics[width=0.7\textwidth]{images/Gulpease.png}
+            	\caption{Serie storica dell'indice di gulpease medio}
+            	\label{gul} 
+            \end{figure}
 	\subsection{Software Verification Process}
 	Lo scopo del processo è di verificare che tutte le componenti del sistema soddisfino completamente i requisiti ad esse correlate.
 		\subsubsection{Obiettivi}
@@ -289,16 +310,12 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 		Stilare una checklist per poi effettuare inspection su documenti e codice.
 		\subsubsection{Metriche}
 			\paragraph{Branch Coverage}  \Spazio
-			Misura della percentuale di rami decisionali percorsi dai test dinamici.
 			\begin{itemize}
-				\item \textbf{Misurazione:} $BC=\frac{R_P}{R_T}\times 100$ dove $R_P$ è il numero di rami decisionali percorsi dai test mentre $R_T$ è il numeri di rami decisionali totali presenti nel software;
 				\item \textbf{Range ottimale:} 70\%-100\%;
 				\item \textbf{Range accettato:} 50\%-100\%.
 		    \end{itemize}
 			\paragraph{Statement Coverage} \Spazio
-			Misura la percentuale linee di codice eseguite almeno una volta dai test dinamici.
 				\begin{itemize}
-					\item \textbf{Misurazione:} $SC=\frac{L_E}{L_T}\times 100$ dove $L_E$ è il numero di linee di codice eseguite almeno una volta dai test mentre $L_T$ è il numero di linee di codice totali all'interno del software;
 					\item \textbf{Range ottimale:} 70\%-100\%;
 					\item \textbf{Range accettato:} 50\%-100\%.
 		    	\end{itemize}
