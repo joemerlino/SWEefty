@@ -69,6 +69,14 @@ script:
 - mv PianoDiQualifica_v3.0.0.pdf ../../Docs/RQ/Esterni
 - cd ../..
 
+# PRODUCTBASELINE
+- cd ./RQ/ProductBaseline/
+- pdflatex -interaction=nonstopmode -halt-on-error ProductBaseline_v1.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ProductBaseline_v1.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ProductBaseline_v1.0.0.tex
+- mv ProductBaseline_v1.0.0.pdf ../../Docs/RQ/Esterni
+- cd ../..
+
 # VERBALI INTERNI
 - cd ./RQ/Verbali/Interni
 #
