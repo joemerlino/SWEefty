@@ -1,0 +1,116 @@
+\section{Requisiti di sistema}
+\subsection{Broswer Supportati}
+
+Di seguito viene fornito un breve elenco delle versioni minime dei browser sui quali il funzionamento del nostro plugin è garantito:
+\begin{itemize}
+	
+	\item Google Chrome v.55
+	\item Mozilla Firefox v.50
+	\item Safari v.10
+	\item Internet Explorer v.11
+	
+\end{itemize}
+
+Per un funzionamento corretto del plugin è necessario che sia abilitato Javascript.
+
+
+\section{Manuale Utente}
+\subsection{Mappa Topologica}
+\subsubsection{Interfaccia}
+Questo plugin si presenta come una mappa nella quale vengono rappresentati i nodi di cui è composto il sistema.
+I nodi vengono disegnati graficamente con due icone a seconda del tipo di componente che rappresenta. I componenti server sono costituiti da un'icona circolare di colore rosso, mentre i componenti database sono costituiti dall'icona che rappresenta un cluster di database di colore blu e nero. Ogni nodo è affiancato dal nome del componente.
+
+\subsubsection{Funzionalità}
+    \paragraph {Drag and Drop} \Spazio
+Questa funzionalità permette di spostare i nodi della mappa nella posizione desiderata purchè sia all'interno dell'area del plugin il cui perimetro è evidenziato da un rettangolo di colore grigio.
+Per spostare un nodo è necessario: 
+\begin{enumerate}
+	
+	\item Portare il cursore del mouse sopra al nodo che si intende muovere;
+	\item Cliccare e tenere premuto sul nodo;
+	\item Spostare il nodo nella posizione desiderata.
+	
+\end{enumerate}
+
+\paragraph{Zoom} \Spazio
+Questà funzionalità permette all'utente di effettuare le operazioni di ingrandimento e rimpicciolimento delle dimensioni di visualizzazione della mappa. In particolare, è possibile ingrandire una specifica area della mappa.
+Per effettuare questa operazione è necessario:
+
+\begin{enumerate}
+	
+	\item Portare il cursore del mouse nel punto in cui si vuole effettuare l'operazione di zoom, all'interno del perimetro della mappa, evidenziato mediante una linea di colore grigio;
+	\item Muovere la rotellina del mouse in avanti se si intende ingrandire, all'indietro se si intede rimpicciolire. Nel caso non si disponga della rotellina sul mouse, utilizzare le funzionalità presenti nella tastiera per effettuare lo zoom.
+	
+\end{enumerate}
+
+\paragraph{Tempo di risposta} \Spazio
+Questà funzionalità permette di visualizzare il tempo media di risposta impiegato per effettuare richieste tra due nodi del sistema.
+E' possibile visualizzarlo in corrispondenza della linea che collega due componenti.
+Nel caso in cui il numero sia colorato di rosso, significa che il tempo medio di risposta è superiore rispetto ad una soglia standard definita.
+
+
+
+
+\subsection{Stack Trace}
+\subsubsection{Interfaccia}
+Questo plugin è rappresentanto mediante una tabella nella quale sono presenti tutte le richieste effettuate dal sistema. Per ogni richiesta si possono visualizzare diverse informazioni, nello specifico:
+   
+    \begin{itemize}
+    	
+    	\item \textbf{Numero della richiesta:} Numero progressivo associato alla richiesta;
+    	\item \textbf{Richiesta:} Nome della richiesta;
+    	\item \textbf{Execution Time:} Tempo totale di esecuzione della richiesta;
+    	\item \textbf{Timestamp:} Indica l'istante temporale in cui è stata effettuata la richiesta;
+    	\item \textbf{Errore:} Indica se durante l'esecuzione della richiesta si è presentato qualche errore.
+    	
+    	\end{itemize}
+
+\subsubsection{Funzionalità}
+\paragraph {Dettaglio richiesta} \Spazio
+Questa funzionalità permette di raggiungere un maggiore grado di dettaglio rispetto alle informazioni inizialmente rappresentate sulla tabella nella riga corrispondente alla richiesta di nostro interesse.
+Per visualizzare maggiori informazioni riguardo una richiesta, l'utente deve cliccare sulla riga corrispondente.
+Nel popup che appare è possibile, mediante il pulsante "switch", navigare nella \emph{Call Tree} o nella \emph{Query List} a seconda delle necessità.
+
+\subparagraph {Call Tree} \Spazio
+Rappresenta tutte le funzioni chiamate dal sistema per effettuare la richiesta dell'utente.
+Ogni funzione è rappresentata nel seguente modo:
+
+$$ \textbf{Funzione\_padre.figlio  } $$
+
+\begin{itemize}
+	\item La prima parola indica il nome della funzione;
+	\item Il carattere \emph{ <<\_>> } serve per separare i numeri sucessivi dal nome della funzione;
+	\item Il padre è un numero che identifica la funzione all'interno della richiesta;
+	\item Il figlio è un numero progressivo che identifica le funzioni annidate chiamate in modo sequenziale dalla funzione padre;
+\end{itemize}
+La struttura numerica è completamente gerarchica, per ogni livello i numeri partono dal numero uno e non hanno limite massimo.
+Consideriamo questo esempio:
+\begin{itemize}
+	\item \textbf{Funzione\_1} Identifica la funzione numero 1;
+	\item \textbf{Funzione\_1.1} Identifica un nuovo livello figlio del numero 1;
+	\item \textbf{Funzione\_1.1.1} Identifica un nuovo livello di annidamento gerarchicamente figlio del numero 1.1.
+\end{itemize}
+
+In corrispondenza di ogni funzione è possibile visualizzare il tempo di esecuzione.
+
+E' possibile espandere/restringere ogni gerarchia di funzioni cliccando su di essa, in questo modo, tutta la gerarchia annidata verrà visualizzata/nascosta.
+   
+
+\subparagraph {Query List} \Spazio
+Rappresenta tutte le query effettuate nel database dal sistema per fornire una risposta alla richiesta dell'utente.
+    \begin{itemize}
+	
+	\item \textbf{Numero della query:} Numero progressivo associato alla query;
+	\item \textbf{Query:} Query effettuata;
+	\item \textbf{Database:} Nome del database nel quale è stata effetuata la query;
+	\item \textbf{Execution Time:} Tempo impiegato dalla query per fornire un risultato;
+	\item \textbf{Timestamp:} Indica l'instante temporale in cui è stata effettuata la query.
+	
+\end{itemize}
+
+
+
+
+
+
+
