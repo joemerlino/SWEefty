@@ -7,7 +7,7 @@ notifications:
     template:
     - "Il *figlio di una puttana sieropositiva %{author}* ha rotto tutto il lavoro frutto di sudore e sangue del collettivo autistico _SWEefty_."
     - "%{repository_slug}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
-    on_success: never # default: always
+    on_success: always # default: always
     on_failure: always # default: always
 
 env:
@@ -67,6 +67,14 @@ script:
 - pdflatex -interaction=nonstopmode -halt-on-error PianoDiQualifica_v3.0.0.tex
 - pdflatex -interaction=nonstopmode -halt-on-error PianoDiQualifica_v3.0.0.tex
 - mv PianoDiQualifica_v3.0.0.pdf ../../Docs/RQ/Esterni
+- cd ../..
+
+# PRODUCTBASELINE
+- cd ./RQ/ProductBaseline/
+- pdflatex -interaction=nonstopmode -halt-on-error ProductBaseline_v1.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ProductBaseline_v1.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ProductBaseline_v1.0.0.tex
+- mv ProductBaseline_v1.0.0.pdf ../../Docs/RQ/Esterni
 - cd ../..
 
 # VERBALI INTERNI
