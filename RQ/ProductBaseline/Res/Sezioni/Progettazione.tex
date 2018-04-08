@@ -1,4 +1,5 @@
 \section{Componenti}
+\label{sec:Componenti}
 \subsection{Premessa}
 Il codice prodotto è stato scritto in Javascript \textcolor{red}{qui versione!}, quindi molti concetti quali classi ed interfacce non sono presenti all'interno del linguaggio. Per produrre un diagramma delle classi dunque sono state considerate \emph{ classi } sia oggetti Javascript, sia funzioni. Per quanto riguarda le interfacce che sono presenti nel diagramma delle classi \ref{diagrammaClassi}, nel codice non sono effettivamente presenti tali interfacce, ma tutte le classi che implementano tale interfaccia \emph{devono} possedere i metodi esposti da tale interfaccia.
 
@@ -10,17 +11,67 @@ Il codice prodotto è stato scritto in Javascript \textcolor{red}{qui versione!}
 \end{figure}
 
 \subsection{DataReader}
+\label{sec:DataReader}
+	\subsubsection{Diagramma}
+	
+	\subsubsection{Scopo}
+	\texttt{DataReader} è il componente del sistema che si occupa di reperire i dati da ElasticSearch. Esso utilizza il metodo \texttt{setElasticsearchInstance(elastic)} per \textcolor{red}{qualcosa} e il metodo \texttt{readData()} per \textcolor{red}{qualcosaltro}.
+
+
+
 \subsection{DataCleaner}
+\label{sec:DataCleaner}
+	\subsubsection{Diagramma}
+	
+	\subsubsection{Scopo}
+	\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Esso compie questo lavoro in due tempi: prima estraendo i dati "utili" da ElasticSearch e poi pulendoli attraverso una strategy.
+	Per estrarre i dati utili esso si avvale di un metodo, \texttt{removeMetaData(data)}, il quale si occupa di rimuovere i metadati di ElasticSearch che sono presenti quando si prelevano i dati. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazioni di monitoring. ElasticSearch infatti immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono dati e informazioni "di servizio". Il metodo rimuove questi dati.
+	Come secondo step, utilizzando il design pattern Strategy, esso si incarica di pulire i dati o per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace. Le due strategie sono rispettivamente contenute in CleanerStrategy e GraphCleaner.
+	
 \subsection{CleanerStrategy}
+\label{sec:CleanerStrategy}
+	\subsubsection{Diagramma}
+
+	\subsubsection{Scopo}
+	en do cazzo sta?
+	
+	
 \subsection{GraphCleaner}
+\label{sec:GraphCleaner}
+	\subsubsection{Diagramma}
+
+	\subsubsection{Scopo}
+	\texttt{GraphCleaner} è l'implementazione della strategia utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione della mappa topologica. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON \textcolor{red}{(specificare che sono usciti da removeMEtadata? e che contengono solo spans?)} disponibili e ha come output l'insieme di questi documenti che rappresentano chiamate a Database oppure a Server.
+	
 \subsection{StackCleaner}
+\label{sec:StackCleaner}
+	\subsubsection{Diagramma}
+	
+	\subsubsection{Scopo}
+	\texttt{StackCleaner} è l'implementazione della strategia utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione della stack trace. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON \textcolor{red}{stesse obiezioni di prima} disponibili e ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure pageload \textcolor{red}{spiegare pageload}.
+	
+
 \subsection{StackBuilder}
+\label{sec:StackBuilder}
+	\subsubsection{Diagramma}
+
+	\subsubsection{Scopo}
+	
 \subsection{GraphBuilder}
+\label{sec:GraphBuilder}
+	\subsubsection{Diagramma}
+
+	\subsubsection{Scopo}
+	\texttt{GraphBuilder} è la parte del sistema che si occupa di preparare i dati necessari per la costruzione della Mappa Topologica. In particolare utilizza i metodi \texttt{getNodes()} e \texttt{getLinks()} per riuscire a portare a termine il suo compito.\\
+	Il metodo \texttt{getNodes()} costruisce l'insieme di nodi che faranno parte della mappa topologica. Esso scorre tutti i documenti JSON preparati dal \texttt{GraphCleaner()} e a seconda della tipologia della chiamata (a Database oppure a Server) crea un candidato ad entrare nella lista e attraverso il metodo \texttt{checkIfNotPresent()} si assicura che il candidato non sia già presente nella lista che verrà ritornata.\\
+	Il metodo \texttt{getLinks()} invece costruisce l'insieme di collegamenti che ci saranno tra i nodi del grafo. Un link tra due nodi è caratterizzato dal campo \texttt{source}, il nodo che ha effettuato la chiamata, il campo \texttt{target}, quello che ha ricevuto la chiamata, il campo \texttt{type} che può essere "Database" o "Server",il campo \texttt{average\_response\_time} che contiene il tempo medio di risposta tra source e target e infine il campo \texttt{number\_of\_requests} che serve per tenere aggiornato il campo avg resp time. Ogni nodo è individuato univocamente dalla coppia \texttt{source} e \texttt{target}.\\
+	Per costruire l'insieme dei links \texttt{GraphBuilder} necessita sia della lista completa dei nodi sia dei dati puliti da \texttt{GraphCleaner}. Il metodo \texttt{getLinks()}, scorre tutti i dati e per ogni chiamata a database \textcolor{red}{DIRE CHE NON È ANCORA STATA IMPLEMENTATA LA COSA DI CHAIAMATE SERVER-SERVER?} e per ogni chiamata costruisce un candidato ad entrare nella lista. In seguito attraverso il metodo \texttt{checkIfLinkIsNotPresent()} viene controllato che la coppia source e target del candidato non sia già contenuta nella lista. Se essa non è contenuta il nuovo collegamento viene inserito, se invece è già contenuto si limita ad aggiornare i campi \texttt{average\_response\_time} e \texttt{number\_of\_requests}. \textcolor{red}{dire come è implementato aggiornamento del tempo medio magari}
+
 
 \section{Interazioni fra componenti}
-
+\label{sec:Interazioni}
 Qui diagrammi di sequenza
 
 \section{Tracciamento dei requisiti}
-
+\label{sec:Tracciamento}
 Qui swego 
