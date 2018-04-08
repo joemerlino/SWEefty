@@ -48,7 +48,7 @@ Il codice prodotto è stato scritto in Javascript \textcolor{red}{qui versione!}
 	\subsubsection{Diagramma}
 	
 	\subsubsection{Scopo}
-	\texttt{StackCleaner} è l'implementazione della strategia utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione della stack trace. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON \textcolor{red}{stesse obiezioni di prima} disponibili e ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure pageload \textcolor{red}{spiegare pageload}.
+	\texttt{StackCleaner} è l'implementazione della strategia utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione della stack trace. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON \textcolor{red}{stesse obiezioni di prima} disponibili e ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload \textcolor{red}{spiegare pageload}.
 	
 
 \subsection{StackBuilder}
@@ -56,7 +56,25 @@ Il codice prodotto è stato scritto in Javascript \textcolor{red}{qui versione!}
 	\subsubsection{Diagramma}
 
 	\subsubsection{Scopo}
-	
+	\texttt{StackBuilder} si occupa della riorganizzazione dei dati e della loro sistemazione in modo da ottenere una struttura dati ottimale per la successiva costruzione della Stack Trace.\\
+	Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP ricevute da \texttt{StackCleaner()} e ne riorganizza i dati all'interno in base alla loro tipologia. Esse possono essere di tre tipi:
+	\begin{itemize}
+		\item HTTP: insieme di metodi scatenati da un'evento generico;
+		\item HTTP + Pageload: insieme di metodi scatenati dal caricamento di una pagina web;
+		\item HTTP + JDBC + Pageload: insieme di eventi che portano all''interrogazione di un database e che provocano un successivo caricamento di una pagina.
+	\end{itemize}
+	Per ognuna di questa tipologia è costruita una struttura dati che seleziona solo i campi del JSON ricevuto da \texttt{StackCleaner()} veramente utili alla generazione della stack trace. Per ognuna deve essere presente:
+	\begin{itemize}
+		\item \texttt{type}: che riconduce ad una delle tre tipologie di trace;
+		\item \texttt{trace\_id}: numero univoco che permette l'associazione tra trace HTTP, JDBC e Pageload;
+		\item \texttt{name}: identificazione generale della richiesta;
+		\item \texttt{call\_tree}: array contenente gerarchicamente la lista dei metodi invocati dall'applicazione per compiere la richiesta;
+		\item \texttt{duration}: tempo impiegato dal sistema per lo svolgimento della richiesta, compreso il tempo dei metodi, delle query e del caricamento della pagina;
+		\item \texttt{timestamp}: data e ora dello svolgimento della richiesta;
+		\item \texttt{error}: presenza o meno di errori;
+		\item \texttt{status\_code}: tipologia di errore.
+	\end{itemize}
+	In particolare per il campo \texttt{call\_tree} avviene un'accurata manipolazione del dato attraverso i metodi \texttt{build\_tree()} e \texttt{tableTOtree()}. Al primo metodo viene  passato il dato sotto forma di stringa in cui, attraverso l'ASCII art, viene rappresentato un albero dei metodi che vengono invocati con delle informazioni particolari per ognuno di essi. Questo metodo costruisce un array bidimensionale che elenca tutti i metodi e per ognuno ne specifica i dati aggiuntivi rappresentati dall'ASCII art (come total time e self time), il grado di indentazione nell'albero, il numero di metodi figli e il numero di metodi discendenti da esso. \\ Da questa struttura il metodo \texttt{tableTOtree()} ricava un oggetto con innestati altri oggetti rappresentanti i metodi e i propri dati strutturati in maniera da rispecchiare i legami di parentela dell'ASCII art.
 \subsection{GraphBuilder}
 \label{sec:GraphBuilder}
 	\subsubsection{Diagramma}
