@@ -176,11 +176,25 @@ Lo scopo di questo processo è quello di associare ai requisiti del sistema una 
 				\item \textbf{Range ottimale:} $\geq 2$;
 				\item \textbf{Range accettato:} $\geq 0$.
 			\end{itemize}
+		    \subparagraph{Misurazioni}
+		    \begin{figure}[H]
+		    	\centering 
+		    	\includegraphics[width=0.7\textwidth]{Images/SFIN.png}
+		    	\caption{Serie storica del Structural fan-in}
+		    	\label{SFIN} 
+		    \end{figure}
 			\paragraph{Structural fan-out - SFOUT} \Spazio
 			\begin{itemize}
 				\item \textbf{Range ottimale:} 0-1;
 				\item \textbf{Range accettato:} 0-5.
 			\end{itemize}
+		    \subparagraph{Misurazioni}
+		    \begin{figure}[H]
+		    	\centering 
+		    	\includegraphics[width=0.7\textwidth]{Images/SFOUT.png}
+		    	\caption{Serie storica del Structural fan-out}
+		    	\label{SFOUT} 
+		    \end{figure}
             
 
 \subsection{System detailed design process}
@@ -197,11 +211,25 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 				\item \textbf{Range ottimale:} 1-7; 
 				\item \textbf{Range accettato:} 1-10.
 			\end{itemize}
+		    \subparagraph{Misurazioni}
+		    \begin{figure}[H]
+		    	\centering 
+		    	\includegraphics[width=0.7\textwidth]{Images/metodi.png}
+		    	\caption{Serie storica dei metodi per classe medio}
+		    	\label{metodi} 
+		    \end{figure}
 			\paragraph{Parametri per metodo} \Spazio
 			\begin{itemize}
 				\item \textbf{Range ottimale:} 0-4;
 				\item \textbf{Range accettato:} 0-8.
 			\end{itemize}
+		    \subparagraph{Misurazioni}
+		    \begin{figure}[H]
+		    	\centering 
+		    	\includegraphics[width=0.7\textwidth]{Images/parametri.png}
+		    	\caption{Serie storica dei parametri per metodo medio}
+		    	\label{parametri} 
+		    \end{figure}
 			
 	\subsection{Software construction process}
 	\label{sub:qdp2}
@@ -220,6 +248,13 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 				\item \textbf{Range ottimale:} 1-10;
 				\item \textbf{Range accettato:} 1-15.
 			\end{itemize}
+		    \subparagraph{Misurazioni}
+		    \begin{figure}[H]
+		    	\centering 
+		    	\includegraphics[width=0.7\textwidth]{Images/ciclo.png}
+		    	\caption{Serie storica della complessità ciclomatica media}
+		    	\label{ciclo} 
+		    \end{figure}
 			\paragraph{Linee di codice per linee di commento} \Spazio
 			\begin{itemize}
 				\item \textbf{Range ottimale:} $\geq30$;
@@ -273,6 +308,13 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 				\item \textbf{Range ottimale:} 120-171;
 				\item \textbf{Range accettato:} 100-171.
 			\end{itemize}
+		    \subparagraph{Misurazioni}
+		    \begin{figure}[H]
+		    	\centering 
+		    	\includegraphics[width=0.7\textwidth]{Images/indicedim.png}
+		    	\caption{Serie storica dell'indice di manutenibilità}
+		    	\label{indicedim} 
+		    \end{figure}
 
 	\subsection{Software documentation management process}
 	\label{sub:qdp3}
@@ -314,8 +356,22 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 				\item \textbf{Range ottimale:} 70\%-100\%;
 				\item \textbf{Range accettato:} 50\%-100\%.
 		    \end{itemize}
+	        \subparagraph{Misurazioni}
+	        \begin{figure}[H]
+	        	\centering 
+	        	\includegraphics[width=0.7\textwidth]{Images/branch.png}
+	        	\caption{Serie storica del branch coverage}
+	        	\label{branch} 
+	        \end{figure}
 			\paragraph{Statement coverage} \Spazio
 				\begin{itemize}
 					\item \textbf{Range ottimale:} 70\%-100\%;
 					\item \textbf{Range accettato:} 50\%-100\%.
 		    	\end{itemize}
+	    	    \subparagraph{Misurazioni}
+	    	    \begin{figure}[H]
+	    	    	\centering 
+	    	    	\includegraphics[width=0.7\textwidth]{Images/statement.png}
+	    	    	\caption{Serie storica dello statement coverage}
+	    	    	\label{statement} 
+	    	    \end{figure}
