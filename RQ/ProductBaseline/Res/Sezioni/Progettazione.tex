@@ -42,7 +42,9 @@ Il codice prodotto è stato scritto in Javascript ES6, quindi molti concetti qua
 \end{figure}
 
 \subsubsection{ElasticsearchClient} 
-\texttt{ElasticsearchClient} è il componente che si occupa di fare le chiamate API al lato server. Non è una classe vera e propria all'interno del codice, ma un \emph{Service}. \textcolor{red}{SPIEGARE COSA È UN SERVICE}. Utilizzare un service è l'unico modo per poter eseguire chiamate REST parametrizzate al lato server. I metodi da esso esposti sono: 
+\texttt{ElasticsearchClient} è il componente che si occupa di fare le chiamate API al lato server. Non è una classe vera e propria all'interno del codice, ma un \emph{Service}. 
+I Service sono funzioni, od oggetti, che possono essere passati a tutte le altri componenti di angularJs attraverso Dependency Injection, permettono di condividere codice e funzionalitá facilmente. Essi sono lazily instantiated, cioé generati solo quando un componente esprime una dipendenza verso un determinato service e realizzano il design pattern "singleton", rendendoli particolarmente efficenti ed adatti per la realizzazione di servizi come i client API, dove avere piú istanze dello stesso client non sarebbe ragionevole.
+Utilizzare un service è l'unico modo per poter eseguire chiamate REST parametrizzate al lato server. I metodi da esso esposti sono: 
 \begin{itemize} 
   \item \texttt{tracesIndices()} ritorna un array di stringhe che rappresenta gli indici contenuti nell'istanza di ElasticSearch che hanno all'interno delle traces; 
   \item \texttt{getIndex(index)} ritorna al chiamante i dati grezzi che vengono restituiti da Elasticsearch eseguendo una ricerca priva di parametri sull'indice passato come parametro, ovvero \texttt{index}. Essi comprendono oltre tutti i documenti dell'indice anche i metadati di Elasticsearch; 
@@ -153,43 +155,47 @@ AngularJs. \\Data la natura complessa che dati che devono essere rappresentati, 
 implementate delle direttive personalizzate AngularJs.
 Le direttive (\emph{directives}) sono dei marcatori di elementi del DOM che permettono di allegare
 a tali elementi e ai loro figli comportamenti specifici attraverso il complier
-HTML di AngularJs. Esse sono  caratterizzate da
+HTML di AngularJs.
+
+Esse sono  caratterizzate da
 	\begin{itemize}
-		\item nome;
-		\item parametri di configurazione;
+		\item nome
+		\item parametri di configurazione
 		\item scope:  che rappresenta una reference ai dati, siano essi array, oggetti o
-				semplici variabili, che la direttiva utilizza per generare l'html;
-		\item template html;
+				semplici variabili, che la direttiva utilizza per generare l'html
+		\item template html
 		\item funzione: che permette di rendere piú complesso il comportameto della direttiva
-					e di riempire il template hmtl con i dati ricevuti.
+					e di riempire il template hmtl con i dati ricevuti
 	\end{itemize}
 
-La vera potenza delle direttive risiede nel fatto di essere innestabili tra loro,
+La vera potenza delle direttive risiede nel fatto che sono innestabili tra loro,
 ovvero una direttiva puó, al suo interno, richiamare un'altra direttiva. Ció
 rappresenta la soluzione perfetta per i tipi di dato che trattiamo noi, in quanto
-hanno tutti una struttura ricorsiva, array di array per la maggior parte.
+hanno tutti una struttura ricorsiva (array di array per la maggior parte).
 
 Le direttive, al loro interno, oltre ad utilizzare altre direttive scritte da noi,
-utilizzano quelle native di AngularJs. Ció permette di generare l'html molto
+utilizzano quelle native di angularJs. Ció permette di generare l'html molto
 facilmente. Per esempio tra le direttive built-in piu utili fornite da angular sono:
 \begin{itemize}
-	\item \texttt{ngFor}: permette di iterare su una collezione di elementi;
-	\item \texttt{ngIf}: applicare una classe css al verificarsi di una condizione;
-	\item \texttt{ngController}: assegna un controller ad una view.
+	\item ngFor: permette di iterare su una collezione di elementi
+	\item ngIf: applicare una classe css al verificarsi di una condizione
+	\item ngController: assegna un controller ad una view
 \end{itemize}
 
-Per renderizzare la stack trace sono state create due direttive.
+Per renderizzare la nostra stack trace sono state create due direttive.
 \begin{itemize}
-	\item \texttt{branch} la quale si occpua di generare dell' html per ogni oggetto che gli viene passato,
-  		in branch viene inoltre specificata la funzione \texttt{link} che permette di gestire un caso particolare
- 	\item \texttt{tree} il cui compito è di interare sugli oggetti di un array. Per ogni elemento viene richiamata la direttiva branch.
+	\item branch la quale si occpua di generare dell' html per ogni oggetto che gli viene passato,
+  		in branch viene inoltre specificata la funzione link che permette di gestire un caso particolare
+ 	\item tree il cui compito di interare sugli oggetti di un array. Per ogni elemento iterato viene richiamata
+  		la direttiva branch.
 \end{itemize}
 
 Nel direttive vengono infine richiamate nel codice HTML semplicemente creando un
 tag con lo stesso nome della direttiva, infatti le direttive permettono di creare
-tag personalizzati che vengono poi interpretati dal parser di AngularJs.
+tag personalizzati che vengono poi interpretati dall'parser di angularJs.
 Nel nostro caso, le direttive vengono usate per popolare la tabella delle stack trace
-e per ogni trace la corrispondente sotto tabella consentendo di riutilizzare il codice. Lo scheletro della stack trace è dunque un documento html contenente delle direttive AngularJS. \textcolor{red}{qui descrivi brevemente come si relaziona lo scheletro HTML con i dati ottenuti da strackbuilder}
+e per ogni trace la corrispondente sotto tabella consentendo di riutilizzare il codice
+molto efficacemente.
 
 
 
