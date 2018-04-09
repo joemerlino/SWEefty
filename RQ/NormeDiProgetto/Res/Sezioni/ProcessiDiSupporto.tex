@@ -1,4 +1,4 @@
-\section{Processi di Supporto}
+\section{Processi di supporto}
 
 
 \subsection{Documentazione}
@@ -261,13 +261,13 @@ Per garantire la qualità del lavoro di gruppo in questa sezione vengono identif
 \paragraph{Metriche per la qualità di processo} \Spazio
 Queste metriche vengono utilizzate per mantenere sotto controllo le variabili critiche del progetto ovvero tempi e costi, e per controllare che la codifica segua alcuni principi di base. 
 
-\subparagraph{Schedule Variance} \Spazio
+\subparagraph{Schedule variance} \Spazio
 Fornisce una misura di quanto lo stato del progetto è in ritardo o in anticipo rispetto alla pianificazione delle attività.
 
 \textbf{Misurazione: }$SV = BCWP - BCWS$ dove il minuendo indica le attività svolte finora ed il sottraendo le attività che dovrebbero essere svolte finora.
 
 
-\subparagraph{Cost Variance} \Spazio
+\subparagraph{Cost variance} \Spazio
 Indica se si è speso più o meno di quanto è stato previsto.
 
  \textbf{Misurazione: }$CV = BCWS - ACWP$, il minuendo indica il costo pianificato delle attività svolte ad una certa data ed il sottraendo il costo effettivo delle attività svolte a tale data.
@@ -281,10 +281,10 @@ Indica quanti requisiti obbligatori sono stati soddisfatti.
 
 \textbf{Misurazione:} $P=100\times\frac{N_S}{N_O}$ dove $N_S$ sono i requisiti soddisfatti, $N_O$ sono i requisiti obbligatori mentre $P$ è la percentuale dei requisiti obbligatori soddisfatti.
 
-\subparagraph{Structural Fan-In - SFIN} \Spazio
+\subparagraph{Structural fan-in - SFIN} \Spazio
 Indice di utilità da massimizzare, misura il numero di componenti che utilizzano un dato modulo, un valore alto denota un alto riutilizzo del codice.
 
-\subparagraph{Structural Fan-Out - SFOUT} \Spazio
+\subparagraph{Structural fan-out - SFOUT} \Spazio
 Indice di dipendenza da minimizzare, misura quante componenti vengono utilizzate dalla componente in esame, un valore alto denota un alto accoppiamento.
 
 \subparagraph{Metodi per classe} \Spazio
@@ -300,7 +300,7 @@ Metrica software utilizzata per misurare la complessità di un programma, misura
 Misura la percentuale di linee di commento presenti all'interno del codice di un programma.
 \textbf{Misurazione:} $P=100\times\frac{N_C}{N_{SLOC}}$ dove $N_C$ è il numero di linee di commento e $N_{SLOC}$ è il numero di linee di codice prodotte.
 
-\subparagraph{Halstead Difficulty per-function} \Spazio
+\subparagraph{Halstead difficulty per-function} \Spazio
 Misura la complessità di una funzione.
 \textbf{Misurazione:} $D=\frac{N_{UOP}}{2}\times\frac{N_{OD}}{N_{UOD}}$ dove $N_{UOP}$ e i l numero di operatori distinti, $N_{OD}$ è il numero totale di operandi mentre $N_{UOD}$ è il numero di operandi distinti.
 
@@ -320,11 +320,11 @@ Questo indice da una misura di quanto il codice prodotto è manutenibile.
 L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana, per il suo calcolo vengono considerate due variabili linguistiche: la lunghezza delle parole e la lunghezza delle frasi rispetto al numero delle lettere.
 \textbf{Misurazione:} $G=89+\frac{300\times N_F-10\times N_L}{N_P}$ dove $N_F$ è il numero delle frasi, $N_L$ è il numero di lettere e $N_P$ è il numero di parole nel testo.
 
-\subparagraph{Branch Coverage}  \Spazio
+\subparagraph{Branch coverage}  \Spazio
 Misura della percentuale di rami decisionali percorsi dai test dinamici.
 \textbf{Misurazione:} $BC=\frac{R_P}{R_T}\times 100$ dove $R_P$ è il numero di rami decisionali percorsi dai test mentre $R_T$ è il numeri di rami decisionali totali presenti nel software.
 
-\subparagraph{Statement Coverage} \Spazio
+\subparagraph{Statement coverage} \Spazio
 Misura la percentuale linee di codice eseguite almeno una volta dai test dinamici.
 \textbf{Misurazione:} $SC=\frac{L_E}{L_T}\times 100$ dove $L_E$ è il numero di linee di codice eseguite almeno una volta dai test mentre $L_T$ è il numero di linee di codice totali all'interno del software.
 
