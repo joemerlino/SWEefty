@@ -29,21 +29,27 @@ Il lato client si occupa di interrogare il lato server per ottenere informazioni
 
 \label{sec:Componenti}
 \subsubsection{Rappresentazione}
-Il codice prodotto è stato scritto in Javascript ES6, quindi molti concetti quali classi ed interfacce non sono presenti all'interno del linguaggio. Per produrre un diagramma delle classi dunque sono state considerate \emph{ classi } sia oggetti Javascript, sia funzioni. Per quanto riguarda le interfacce che sono presenti nel diagramma delle classi \ref{diagrammaClassi}, nel codice non sono effettivamente presenti tali interfacce, ma tutte le classi che implementano tale interfaccia \emph{devono} possedere i metodi esposti da tale interfaccia.
+Il codice prodotto è stato scritto in Javascript ES6, quindi molti concetti quali classi ed interfacce non sono presenti all'interno del linguaggio. Per produrre un diagramma delle classi dunque sono state considerate \emph{ classi } sia oggetti Javascript, sia funzioni. Per quanto riguarda le interfacce che sono presenti nel diagramma delle classi, figura \ref{img:diagrammaClassiClient}, nel codice non sono effettivamente presenti tali interfacce, ma tutte le classi che implementano tale interfaccia \emph{devono} possedere i metodi esposti da tale interfaccia. Questo stratagemma è stato particolarmente utile nell'implementazione del componente \texttt{DataCleaner}, come descritto in \ref{sec:DataCleaner}
 
 \begin{figure}[H]
-    \label{diagrammaClassi}
     \centering
     \includegraphics[width=1\textwidth]{Images/logo.jpg}
     \caption{Diagramma delle classi dell'applicazione}
+    \label{img:diagrammaClassiClient}
 \end{figure}
 
 \subsubsection{DataReader}
 \label{sec:DataReader}
-	\subsubsection{Diagramma}
-	
-	\subsubsection{Scopo}
-	\texttt{DataReader} è il componente del sistema che si occupa di reperire i dati da ElasticSearch. Esso utilizza il metodo \texttt{setElasticsearchInstance(elastic)} per \textcolor{red}{qualcosa} e il metodo \texttt{readData()} per \textcolor{red}{qualcosaltro}.
+\texttt{DataReader} è il componente del sistema che si occupa di reperire i dati da Elasticsearch, interagendo con il lato server. Restituirà ai richiedenti le informazioni grezze, esattamente come vengono restituite da Elasticsearch. I metodi sono:
+
+\begin{itemize}
+	\item \texttt{setElasticsearchClient(client)}: permette di impostare una sorgente dei dati;
+	\item \texttt{tracesIndices()}: ritorna un array di stringhe, i quali elementi sono tutti e soli gli indici all'interno dell'istanza di Elasticsearch che hanno al loro interno delle traces. Ciò viene realizzato tramite una chiamata al lato server all'API \texttt{AllIndices} e dunque vengono tenuti solo indici che contengono nel nome la sottostringa \emph{spans};
+	\item \texttt{readIndex(index)}: ritorna al chiamante i dati grezzi che vengono restituiti da Elasticsearch eseguendo una ricerca priva di parametri sull'indice passato come parametro, ovvero \texttt{index}. Essi comprendono oltre tutti i documenti dell'indice anche i metadati di Elasticsearch;
+	\item \texttt{readData()}: ritorna al chiamante un array di dati grezzi, ognuno dei quali rappresenta il risultato di una ricerca priva di parametri su un indice. Gli indici letti sono quelli ritornati da \texttt{tracesIndices()}, ovvero tutti e soli quelli che contengono traces.
+
+
+\end{itemize}
 
 
 
