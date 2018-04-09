@@ -1,8 +1,7 @@
 
 \section{Premessa}
 Prima di proseguire con la lettura del documento è bene puntualizzare alcune cose.
-Innanzitutto va ricordato che il nostro prodotto consta di due plugin distinti che svolgono funzioni diverse. Per semplificare la rappresentazione grafica e per evitare ripetizioni essi sono stati, in questa fase di progettazione, considerati come facenti parte dello stesso sistema. Questo è reso possibile dall'alta sovrapposizione di componenti necessari al loro funzionamento. Tuttavia, nella fase finale di produzione, essi verranno completamente disaccoppiati e saranno presentati come due plugin distinti che avranno delle parti di codice in comune, che per come è progettato Kibana, dovranno essere necessariamente duplicate in ciascun plugin.\\
-Come seconda cosa va segnalato che il linguaggio di programmazione da noi usato, Javascript, è weakly typed. Questo comporta. ad esempio, poca precisione per quanto riguarda il tipaggio dei parametri passati ai metodi. Per questo, soprattutto nella rappresentazione delle classi del sistema, ci terremmo vaghi sul tipo dei parametri passati e ritornati da metodi. Tali imprecisioni verranno tuttavia chiarite nella parte di testo che riguarda ogni specifico componente. Inoltre, esserendo ElasticSearch un database non relazionale i dati da esso ritornati non hanno una struttura fissa, dunque molte volte verranno descritti semplicemente come \texttt{Array} o \texttt{Object}, chiarendo nella descrizione testuale di che tipo di aray o oggetto si tratta.
+Innanzitutto va ricordato che il nostro prodotto consta di 2 plugin distinti che svolgono funzioni diverse. Per semplificare la rappresentazione grafica e per evitare ripetizioni essi sono stati, in questa fase di progettazione, considerati come facenti parte dello stesso sistema. Questo è reso possibile dall'alta sovrapposizione di componenti necessari al loro funzionamento. Tuttavia, nella fase finale di produzione, essi verranno completamente disaccoppiati e saranno presentati come due plugin distinti che avranno delle parti in comune, che per come è progettato Kibana, dovranno essere per forza ripetutenecnecme seconda cosa va segnalato che il linguaggio di programmazione da noi usato, Javascript, è weakly typed. Questo comporta. ad esempio, poca precisione per quanto riguarda il tipaggio dei parametri passati ai metodi. Per questo, soprattutto nella fase di rappresentazione graficadelle classi del sistema, ci terremmo vaghi sul tipo dei parametri passati e ritornati da metodi. Tali imprecisioni verranno tuttavia chiarite nella parte di testo che riguarda ogni specifico componente. Inoltre, esserendo ElasticSearch un database non relazionale i dati da esso ritornati non hanno una struttura fissa, dunque molte volte verranno descritti semplicemente come \texttt{Array} o \texttt{Object}, chiarendo nella descrizione testuale di che tipo di aray o oggetto si tratta.
 
 \section{Componenti}
 
@@ -36,14 +35,14 @@ Il codice prodotto è stato scritto in Javascript ES6, quindi molti concetti qua
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{Images/logo.jpg}
+    \includegraphics[width=1\textwidth]{Images/classi.png}
     \caption{Diagramma delle classi dell'applicazione}
     \label{img:diagrammaClassiClient}
 \end{figure}
 
 \subsubsection{ElasticsearchClient} 
 \texttt{ElasticsearchClient} è il componente che si occupa di fare le chiamate API al lato server. Non è una classe vera e propria all'interno del codice, ma un \emph{Service}. 
-I Service sono funzioni, od oggetti, che possono essere passati a tutte le altri componenti di angularJs attraverso Dependency Injection, permettono di condividere codice e funzionalitá facilmente. Essi sono \emph{lazily instantiated}, cioé generati solo quando un componente esprime una dipendenza verso un determinato service e realizzano il design pattern "singleton". Permettono la realizzazione di servizi come i client API, dove avere piú istanze dello stesso client non sarebbe ragionevole.
+I Service sono funzioni, od oggetti, che possono essere passati a tutte le altri componenti di angularJs attraverso Dependency Injection, permettono di condividere codice e funzionalitá facilmente. Essi sono lazily instantiated, cioé generati solo quando un componente esprime una dipendenza verso un determinato service e realizzano il design pattern "singleton", rendendoli particolarmente efficenti ed adatti per. Perm. Perm. Permdi servizi come i client API, dove avere piú istanze dello stesso client non sarebbe ragionevole.
 Utilizzare un service è l'unico modo per poter eseguire chiamate REST parametrizzate al lato server. I metodi da esso esposti sono: 
 \begin{itemize} 
   \item \texttt{tracesIndices()} ritorna un array di stringhe che rappresenta gli indici contenuti nell'istanza di ElasticSearch che hanno all'interno delle traces; 
@@ -71,18 +70,24 @@ Osserviamo che anche se in questa rappresentazione questi metodi sono all'intern
 
 \subsubsection{DataCleaner}
 
-\textcolor{red}{AGGIORNARE METTENDO DENTRO WIPE E QUINDI COME FUNZIONA CLEAN}
-
 \label{sec:DataCleaner}
-\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Esso compie questo lavoro in due momenti: prima estraendo i dati "utili" da Elasticsearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:CleanerStrategy}.\\
-Il metodo \texttt{clean(data)} si occupa di realizzare ciò.
-Per estrarre i dati utili esso si avvale di un metodo, \texttt{removeMetaData(data)}, il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti quando si prelevano i dati. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazioni di monitoring negli indici di ElasticSearch. ElasticSearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni "di servizio". Il metodo si occupa di rimuovere questi dati e costruisce un array contenente il solo contenuto dei campi \texttt{\_source}. Il client che utilizza questa classe comunque in generale ha la necessità di ripulire ulteriormente i dati dei documenti, per esempio eliminando certi tipi di trace (ad esempio tenere solamente traces di richieste HTTP). Per poter soddisfare ogni richiesta specifica un \texttt{DataCleaner} contiene un oggetto che rispetti l'interfaccia \texttt{CleanerStrategy}. La strategy viene incaricata di raffinare ulteriormente i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace tramite il metodo \texttt{clean(data)}. \\
+\textcolor{red}{va detto che possiede una strategy?????}
+\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Esso compie questo lavoro in due momenti \textcolor{red}{porcodio la madonna sec me è meglio scrivere "tempi" come i motori a due tempi}: prima estraendo i dati "utili" da Elasticsearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:CleanerStrategy}.\\
+I suoi metodi sono:
+\begin{itemize}
+	\item \texttt{removeMetaDataFromIndex(Array)} il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti in un singolo indice che gli è passato come input sotto forma di Array. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazioni di monitoring negli indici di ElasticSearch. ElasticSearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni "di servizio". Il metodo si occupa di rimuovere questi dati e costruisce un array contenente il solo contenuto dei campi \texttt{\_source}.
+	\item \texttt{removeMetaDataFromIndices(Array)} il quale si occupa di rimuovere i metadati di ElasticSearch da un Array di indici invocando il metodo \texttt{removeMetaDataFromIndex(Array)} su ognuno dei singoli indici.
+	\item \texttt{cleanData(Array)} il quale chiama l'implementazione di clean della strategia che possiede sull'array di dati che è stato ritornato dal metodo \texttt{removeMetaDataFromIndeces(Array)}  Tale strategia è incaricata di raffinare ulteriormente i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace tramite il metodo \texttt{clean(data)}.
+	\item \texttt{cleanDataStack(Array)} il quale chiama l'implementazione di clean della strategia che possiede sull'array di dati che è stato ritornato dal metodo \texttt{removeMetaDataFromIndex(Array)}.
+	\item \texttt{setStrategy(Object)} il quale riceve in input un oggetto che implementa l'interfaccia \texttt{CleanerStrategy} e lo assegna al riferimento proprio dell'oggetto.
+	
+\end{itemize}
 Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che vengono restituiti da ElasticSearch, la classe \texttt{DataCleaner} e le classi che implementano \texttt{CleanerStrategy}. Tuttavia, i client di \texttt{DataCleaner} potranno avere accesso diretto ai dati di ElasticSearch, privi di dati amministrativi.
 
 	
 \subsubsection{CleanerStrategy}
 \label{sec:CleanerStrategy}
-
+\textcolor{red}{va lasciata???}
 \texttt{CleanerStrategy} è l'interfaccia che verrà implementata per realizzare una pulizia più raffinata dei dati di un \texttt{DataCleaner}. Espone il metodo \texttt{clean(data)}, che avrà comportamenti diversi a seconda della strategia che si desidera applicare. Dato che il prodotto è implementato in Javascript il costrutto interfaccia non è presente nel linguaggio. Per ovviare a questa mancanza tutte le classi che dovrebbero implementare questa interfaccia \emph{devono} possedere un metodo \texttt{clean(data)} che funzioni come ci si aspetti. 
 
 	
@@ -90,9 +95,7 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 \subsubsection{GraphCleaner}
 \label{sec:GraphCleaner}
 
-\texttt{GraphCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione del grafo rappresentante la mappa topologica. Essa implementa il metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili e ha come output esclusivamente l'insieme di questi documenti che rappresentano richieste di dati ai database dell'applicazione oppure a server, ovvero il sottoinsieme di quelle che serviranno per la costruzione del grafo.
-	
-\subsubsection{StackCleaner}
+\texttt{GraphCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione del grafo rappresentante la mappa topologica. Il metodo \texttt{clean(Array)}, che riceve in input un Array di indici che scontengono al loo interno i documenti JSON sottoforma di Array. Tale metodo agisce scorrendo l'array che riceve invocando il metodo \texttt{wipe(Array)} su ogni sottoarray. Il metodo \texttt{wipe(Array)}rre tutti i documenti JSON displ'insieme di questi documenti all'interno dele che rappresentano richieste di dati ai database dell'applicazione oppure ai server, ovvero il sottoinsieme di documentiquelle che serviranno effettivamente per la costruzione del grafo.      bsubsection{StackCleaner}
 \label{sec:StackCleaner}
 
 \texttt{StackCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati durante la costruzione della stack trace. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili e ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
@@ -150,10 +153,13 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 \subsection{Mappa topologica}
 
 \subsection{StackTrace}
-	Il rendering dello stack si avvale delle numerose direttive fornite da
-AngularJs. \\Data la natura complessa che dati che devono essere rappresentati, sono state
-implementate delle direttive personalizzate AngularJs.
-Le direttive (\emph{directives}) sono dei marcatori di elementi del DOM che permettono di allegare
+	Il (rendering)GLOSSARIO dello stack si avvale delle numerose direttive fornite da
+angularJs.
+
+
+Data la natura complessa che dati che devono essere rappresentati, sono state
+implementate delle direttive personalizzate angularJs.
+Le direttive (in inglese directives) sono dei marcatori di elementi del DOM che permettono di allegare
 a tali elementi e ai loro figli comportamenti specifici attraverso il complier
 HTML di AngularJs.
 
@@ -190,29 +196,18 @@ Per renderizzare la nostra stack trace sono state create due direttive.
   		la direttiva branch.
 \end{itemize}
 
-L'anello di congiunzione tra StackBuilder (la classe che genera i dati per la Stack) e le angularJs (più in specifico le direttive)
-é rappresentato dalla variabile \texttt{$\textdollar$scope.nodes}, infatti i dati generati da \texttt{StackBuilder} vengono memorizzati su tale variabile e successivamente le direttive, utilizzano \texttt{$\textdollar$scope.nodes} come fonte dati. Le direttive vengono infine richiamate nel codice HTML semplicemente creando un
+Nel direttive vengono infine richiamate nel codice HTML semplicemente creando un
 tag con lo stesso nome della direttiva, infatti le direttive permettono di creare
 tag personalizzati che vengono poi interpretati dall'parser di angularJs.
 Nel nostro caso, le direttive vengono usate per popolare la tabella delle stack trace
 e per ogni trace la corrispondente sotto tabella consentendo di riutilizzare il codice
 molto efficacemente.
 
+
+
 \section{Interazioni fra componenti}
 \label{sec:Interazioni}
-\subsection{Costruzione del grafo della mappa topologica}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{Images/DiagrammaSequenzaGraph.png}
-	\caption{Diagramma di Sequenza UML rappresentante la costruzione del grafo della mappa topologica}
-	\label{img:seqGraph}
-\end{figure}
-
-\textcolor{red}{DESCRIVIMI}
-
-\subsection{Costruzione dei dati della stacktrace}
-\textcolor{red}{QUI DESCRIVI TUTTO E METTI L IMMAGINE}
+Qui diagrammi di sequenza
 
 \section{Tracciamento dei requisiti}
 \label{sec:Tracciamento}
