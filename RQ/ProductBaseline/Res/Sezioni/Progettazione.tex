@@ -107,7 +107,7 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 
 \texttt{StackBuilder} si occupa della riorganizzazione dei dati e della loro elaborazione in modo da ottenere una struttura dati ottimale per la successiva visualizzazione della Stack Trace.\\
 Esso viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati.
-Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP ricevute dal \texttt{DataReader} e pulite dal \texttt{DataCleaner}, creato e istanziato con strategia \texttt{StackCleaner}. \texttt{GetStack()} riorganizza i dati in base alla loro tipologia che viene identificata tramite i metodi \texttt{checkPageload()} e \texttt{checkQueries()} per poter essere successivamente mostrati in modo più agevole. Le tipologie di richieste possono essere:
+Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP ricevute dal \texttt{DataReader} e pulite dal \texttt{DataCleaner}, creato e istanziato con strategia \texttt{StackCleaner} al momento della creazione dello \texttt{StackBuilder}. \texttt{GetStack()} riorganizza i dati in base alla loro tipologia che viene identificata tramite i metodi \texttt{checkPageload()} e \texttt{checkQueries()} per poter essere successivamente mostrati in modo più agevole. Le tipologie di richieste possono essere:
 	\begin{itemize}
 		\item HTTP: insieme di metodi scatenati da un evento generico;
 		\item HTTP + Pageload: insieme di metodi scatenati dal caricamento di una pagina web;
