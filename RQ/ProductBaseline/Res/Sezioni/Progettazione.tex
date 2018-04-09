@@ -55,12 +55,13 @@ Il codice prodotto è stato scritto in Javascript ES6, quindi molti concetti qua
 
 \subsubsection{DataCleaner}
 \label{sec:DataCleaner}
-	\subsubsection{Diagramma}
-	
-	\subsubsection{Scopo}
-	\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Esso compie questo lavoro in due tempi: prima estraendo i dati "utili" da ElasticSearch e poi pulendoli attraverso una strategy.\\
-	Per estrarre i dati utili esso si avvale di un metodo, \texttt{removeMetaData(data)}, il quale si occupa di rimuovere i metadati di ElasticSearch che sono presenti quando si prelevano i dati. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazioni di monitoring negli indici di ElasticSearch. ElasticSearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni "di servizio". Il metodo si occupa di rimuovere questi dati e costruisce un array contenente il solo contenuto dei campi \texttt{\_source}.\\
-	Come secondo step, utilizzando il design pattern Strategy, esso si incarica di pulire i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace. \texttt{DataCleaner} contiene infatti un riferimento ad una strategia che al momento viene implementata in CleanerStrategy e GraphCleaner, anche se in futuro ne potrebbe essere implementata una diversa per svolgere compiti diversi. Le strategie contengono il metodo \texttt{clean(data)}, invocato passando i dati puliti da \texttt{removeMetaData()}. Tutto questo avviene nel metodo \texttt{cleanData()}.
+\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Esso compie questo lavoro in due momenti: prima estraendo i dati "utili" da Elasticsearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:strategy}.\\
+Il metodo \texttt{clean(data)} si occupa di realizzare ciò.
+Per estrarre i dati utili esso si avvale di un metodo, \texttt{removeMetaData(data)}, il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti quando si prelevano i dati. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazioni di monitoring negli indici di ElasticSearch. ElasticSearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni "di servizio". Il metodo si occupa di rimuovere questi dati e costruisce un array contenente il solo contenuto dei campi \texttt{\_source}. Il client che utilizza questa classe comunque in generale ha la necessità di ripulire ulteriormente i dati dei documenti, per esempio eliminando certi tipi di trace (ad esempio tenere solamente traces di richieste HTTP). Per poter soddisfare ogni richiesta specifica un \texttt{DataCleaner} contiene un oggetto che rispetti l'interfaccia \texttt{Strategy}. 
+Come secondo step esso incarica la strategy con il quale è stato istanziato di pulire i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace. \texttt{DataCleaner} contiene infatti un riferimento ad una strategia che al momento viene implementata in \texttt{CleanerStrategy} e \texttt{GraphCleaner}, anche se in futuro ne potrebbe essere implementata una diversa per svolgere compiti diversi. Le strategie contengono il metodo \texttt{clean(data)}, invocato passando i dati puliti da \texttt{removeMetaData()}. Tutto questo avviene nel metodo \texttt{cleanData()}.
+
+\subsubsection{Strategy}
+\label{sec:strategy}
 	
 \subsubsection{CleanerStrategy}
 \label{sec:CleanerStrategy}
