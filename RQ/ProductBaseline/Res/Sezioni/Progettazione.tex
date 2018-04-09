@@ -71,8 +71,6 @@ Osserviamo che anche se in questa rappresentazione questi metodi sono all'intern
 
 \subsubsection{DataCleaner}
 
-\textcolor{red}{AGGIORNARE METTENDO DENTRO WIPE E QUINDI COME FUNZIONA CLEAN}
-
 \label{sec:DataCleaner}
 \texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Esso compie questo lavoro in due momenti: prima estraendo i dati "utili" da Elasticsearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:CleanerStrategy}.\\
 Il metodo \texttt{clean(data)} si occupa di realizzare ciò.
@@ -90,7 +88,7 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 \subsubsection{GraphCleaner}
 \label{sec:GraphCleaner}
 
-\texttt{GraphCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione del grafo rappresentante la mappa topologica. Essa implementa il metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili e ha come output esclusivamente l'insieme di questi documenti che rappresentano richieste di dati ai database dell'applicazione oppure a server, ovvero il sottoinsieme di quelle che serviranno per la costruzione del grafo.
+\texttt{GraphCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione del grafo rappresentante la mappa topologica. Il metodo \texttt{clean(Array)}, che riceve in input un Array di indici che contengono al loro interno i documenti JSON sottoforma di Array. Tale metodo agisce scorrendo l'array che riceve invocando il metodo \texttt{wipe(Array)} su ogni sottoarray. Il metodo \texttt{wipe(Array)} ha come output esclusivamente l'insieme di documenti all'interno dell'indice che rappresentano richieste di dati ai database dell'applicazione oppure ai server, ovvero il sottoinsieme di documenti che serviranno effettivamente per la costruzione del grafo.
 	
 \subsubsection{StackCleaner}
 \label{sec:StackCleaner}
@@ -150,10 +148,13 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 \subsection{Mappa topologica}
 
 \subsection{StackTrace}
-	Il rendering dello stack si avvale delle numerose direttive fornite da
-AngularJs. \\Data la natura complessa che dati che devono essere rappresentati, sono state
-implementate delle direttive personalizzate AngularJs.
-Le direttive (\emph{directives}) sono dei marcatori di elementi del DOM che permettono di allegare
+	Il (rendering)GLOSSARIO dello stack si avvale delle numerose direttive fornite da
+angularJs.
+
+
+Data la natura complessa che dati che devono essere rappresentati, sono state
+implementate delle direttive personalizzate angularJs.
+Le direttive (in inglese directives) sono dei marcatori di elementi del DOM che permettono di allegare
 a tali elementi e ai loro figli comportamenti specifici attraverso il complier
 HTML di AngularJs.
 
@@ -201,19 +202,7 @@ molto efficacemente.
 
 \section{Interazioni fra componenti}
 \label{sec:Interazioni}
-\subsection{Costruzione del grafo della mappa topologica}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{Images/DiagrammaSequenzaGraph.png}
-	\caption{Diagramma di Sequenza UML rappresentante la costruzione del grafo della mappa topologica}
-	\label{img:seqGraph}
-\end{figure}
-
-\textcolor{red}{DESCRIVIMI}
-
-\subsection{Costruzione dei dati della stacktrace}
-\textcolor{red}{QUI DESCRIVI TUTTO E METTI L IMMAGINE}
+Qui diagrammi di sequenza
 
 \section{Tracciamento dei requisiti}
 \label{sec:Tracciamento}
