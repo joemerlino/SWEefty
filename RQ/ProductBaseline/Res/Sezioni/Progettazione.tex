@@ -82,14 +82,14 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 \subsubsection{StackBuilder}
 \label{sec:StackBuilder}
 
-\texttt{StackBuilder} si occupa della riorganizzazione dei dati e della loro sistemazione in modo da ottenere una struttura dati ottimale per la successiva costruzione della Stack Trace.\\
+\texttt{StackBuilder} si occupa della riorganizzazione dei dati e della loro elaborazione in modo da ottenere una struttura dati ottimale per la successiva visualizzazione della Stack Trace.\\
 Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP ricevute da \texttt{StackCleaner()} e ne riorganizza i dati all'interno in base alla loro tipologia. Esse possono essere di tre tipi:
 	\begin{itemize}
-		\item HTTP: insieme di metodi scatenati da un'evento generico;
+		\item HTTP: insieme di metodi scatenati da un evento generico;
 		\item HTTP + Pageload: insieme di metodi scatenati dal caricamento di una pagina web;
-		\item HTTP + JDBC + Pageload: insieme di eventi che portano all''interrogazione di un database e che provocano un successivo caricamento di una pagina.
+		\item HTTP + JDBC + Pageload: insieme di eventi che portano all'interrogazione di un database e che provocano un successivo caricamento di una pagina.
 	\end{itemize}
-	Per ognuna di questa tipologia è costruita una struttura dati che seleziona solo i campi del JSON ricevuto da \texttt{StackCleaner()} veramente utili alla generazione della stack trace. Per ognuna deve essere presente:
+	Per ognuna di queste tipologie è costruita una struttura dati che seleziona solo i campi del JSON ricevuto da \texttt{StackCleaner()} veramente utili alla generazione della stack trace. Per ognuna deve essere presente:
 	\begin{itemize}
 		\item \texttt{type}: che riconduce ad una delle tre tipologie di trace;
 		\item \texttt{trace\_id}: numero univoco che permette l'associazione tra trace HTTP, JDBC e Pageload;
@@ -101,11 +101,12 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 		\item \texttt{status\_code}: tipologia di errore.
 	\end{itemize}
 	In particolare per il campo \texttt{call\_tree} avviene un'accurata manipolazione del dato attraverso i metodi \texttt{build\_tree()} e \texttt{tableTOtree()}. Al primo metodo viene  passato il dato sotto forma di stringa in cui, attraverso l'ASCII art, viene rappresentato un albero dei metodi che vengono invocati con delle informazioni particolari per ognuno di essi. Questo metodo costruisce un array bidimensionale che elenca tutti i metodi e per ognuno ne specifica i dati aggiuntivi rappresentati dall'ASCII art (come total time e self time), il grado di indentazione nell'albero, il numero di metodi figli e il numero di metodi discendenti da esso. \\ Da questa struttura il metodo \texttt{tableTOtree()} ricava un oggetto con innestati altri oggetti rappresentanti i metodi e i propri dati strutturati in maniera da rispecchiare i legami di parentela dell'ASCII art.
+
+
+	\textcolor{red}{QUI LISA DESCRIVI GLI ALTRI METODI PRESENTI}
+
 \subsubsection{GraphBuilder}
 \label{sec:GraphBuilder}
-	\subsubsection{Diagramma}
-
-	\subsubsection{Scopo}
 	\texttt{GraphBuilder} è la parte del sistema che si occupa di preparare i dati necessari per la costruzione della Mappa Topologica. In particolare utilizza i metodi \texttt{getNodes()} e \texttt{getLinks()} per riuscire a portare a termine il suo compito.\\
 	Il metodo \texttt{getNodes()} costruisce l'insieme di nodi che faranno parte della mappa topologica. Esso scorre tutti i documenti JSON preparati dal \texttt{GraphCleaner()} e a seconda della tipologia della chiamata (a Database oppure a Server) crea un candidato ad entrare nella lista e attraverso il metodo \texttt{checkIfNotPresent()} si assicura che il candidato non sia già presente nella lista che verrà ritornata.\\
 	Il metodo \texttt{getLinks()} invece costruisce l'insieme di collegamenti che ci saranno tra i nodi del grafo. Un link tra due nodi è caratterizzato dal campo \texttt{source}, il nodo che ha effettuato la chiamata, il campo \texttt{target}, quello che ha ricevuto la chiamata, il campo \texttt{type} che può essere "Database" o "Server",il campo \texttt{average\_response\_time} che contiene il tempo medio di risposta tra source e target e infine il campo \texttt{number\_of\_requests} che serve per tenere aggiornato il campo avg resp time. Ogni nodo è individuato univocamente dalla coppia \texttt{source} e \texttt{target}.\\	
