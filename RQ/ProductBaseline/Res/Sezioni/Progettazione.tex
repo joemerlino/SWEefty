@@ -1,6 +1,6 @@
 
 \section{Premessa}
-Prima di proseguire con la lettura del documento è bene puntualizzare alcune cose.\\
+Prima di proseguire con la lettura del documento è bene puntualizzare alcune cose.
 Innanzitutto va ricordato che il nostro prodotto consta di 2 plugin distinti che svolgono funzioni diverse. Per semplificare la rappresentazione grafica e per evitare ripetizioni essi sono stati, in questa fase di progettazione, considerati come facenti parte dello stesso sistema. Questo è reso possibile dall'alta sovrapposizione di componenti necessari al loro funzionamento. Tuttavia, nella fase finale di produzione, essi verranno completamente disaccoppiati e saranno presentati come due plugin distinti che avranno delle parti in comune, che per come è progettato Kibana, dovranno essere per forza ripetute.\\
 Come seconda cosa va segnalato che il linguaggio di programmazione da noi usato, Javascript, è weakly typed. Questo comporta. ad esempio, poca precisione per quanto riguarda il tipaggio dei parametri passati ai metodi. Per questo, soprattutto nella fase di rappresentazione grafica del sistema, ci terremmo vaghi sul tipo dei parametri passati e ritornati da metodi. Tali imprecisioni verranno tuttavia chiarite nella parte di testo che riguarda ogni specifico componente.
 
@@ -22,17 +22,17 @@ Nel seguente diagramma delle classi, figura \ref{img:diagrammaClassiServer}, cia
 \end{figure}
 
 \subsubsection{AllIndices}
-AllIndices è la API che si occupa di restituire al chiamante la lista di \emph{tutti} gli indici presenti all'interno della istanza di Elasticsearch collegata. La lista degli indici è un array di stringhe contenente il nome di ogni indice.
+AllIndices è la API che si occupa di restituire al chiamante la lista di \emph{tutti} gli indici presenti all'interno della istanza di Elasticsearch collegata. La lista degli indici è un array di stringhe contenente per ogni indice il proprio nome.
 
 \subsubsection{Index}
-Index è la API che espone l'interfaccia per poter leggere i dati contenuti all'interno di un indice. Nella richiesta GET deve essere specificato un parametro chiamato \texttt{index}, il cui valore rappresenta il nome dell'indice del quale si vogliono ottenere i dati. Ciò che viene ritornato al richiedente è un oggetto \emph{grezzo}, ovvero la risposta dell'istanza Elasticsearch, che oltre a contenere i dati desiderati comprende anche tutti i metadati che servono ad Elasticsearch internamente. Sarà compito del client reperire le informazioni a lui utili e scartare quelle inutili.
+Index è la API che espone l'interfaccia per poter leggere i dati contenuti all'interno di un indice. Nella richiesta GET deve essere specificato un parametro chiamato index, il cui valore rappresenta l'indice del quale si vogliono ottenere i dati. Ciò che viene ritornato al richiedente è un oggetto \emph{grezzo}, ovvero la risposta dell'istanza Elasticsearch, con tutti i metadati che Elasticsearch utilizza annessi. Sarà compito del client reperire le informazioni a lui utili
 
 \subsection{Lato Client}
 Il lato client si occupa di interrogare il lato server per ottenere informazioni grezze, elaborarle per renderle utili ed infine presentarle all'utente.
 
 \label{sec:Componenti}
 \subsubsection{Rappresentazione}
-Il codice prodotto è stato scritto in Javascript ES6, quindi molti concetti quali classi ed interfacce non sono presenti all'interno del linguaggio \textcolor{red}{spostare questa cosa in premessa?oppure ripeterla anche qui?}. Per produrre un diagramma delle classi dunque sono state considerate come \emph{ classi } sia gli oggetti Javascript che le funzioni. Per quanto riguarda le interfacce che sono presenti nel diagramma delle classi, figura \ref{img:diagrammaClassiClient}, va segnalato che esse non sono effettivamente presenti nel codice a causa della mancanza di tale funzionalità\textcolor{red}{ è termine giusto?} in JavaScript. Tutte le classi che implementano un interfaccia \emph{devono} possedere ed implementare i metodi esposti da tale interfaccia. Questo stratagemma è stato particolarmente utile nell'implementazione del componente \texttt{DataCleaner}, come descritto in \ref{sec:DataCleaner}
+Il codice prodotto è stato scritto in Javascript ES6, quindi molti concetti quali classi ed interfacce non sono presenti all'interno del linguaggio. Per produrre un diagramma delle classi dunque sono state considerate \emph{ classi } sia oggetti Javascript, sia funzioni. Per quanto riguarda le interfacce che sono presenti nel diagramma delle classi, figura \ref{img:diagrammaClassiClient}, nel codice non sono effettivamente presenti tali interfacce, ma tutte le classi che implementano tale interfaccia \emph{devono} possedere i metodi esposti da tale interfaccia. Questo stratagemma è stato particolarmente utile nell'implementazione del componente \texttt{DataCleaner}, come descritto in \ref{sec:DataCleaner}
 
 \begin{figure}[H]
     \centering
@@ -61,9 +61,10 @@ Il codice prodotto è stato scritto in Javascript ES6, quindi molti concetti qua
 \textcolor{red}{AGGIORNARE METTENDO DENTRO WIPE E QUINDI COME FUNZIONA CLEAN}
 
 \label{sec:DataCleaner}
-\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Esso compie questo lavoro in due tempi: prima estraendo i dati "utili" da ElasticSearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:CleanerStrategy}. Tale funzionalità viene soddisfatta dal metodo \texttt{clean(data)}.
-Per estrarre i dati utili esso si avvale di un metodo, \texttt{removeMetaData(data)}, il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti quando si prelevano i dati. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazione di monitoring negli indici di ElasticSearch in fase di monitoraggio. ElasticSearch infatti, immagazzina i documenti JSON nel campo \texttt{\_source} all'interno di oggetti più ampi che contengono anche altri dati ed informazioni "di servizio". Il metodo si occupa di rimuovere questi dati e costruisce un array contenente il solo contenuto dei campi \texttt{\_source}. Il client che utilizza questa classe ha, in generale, la necessità di ripulire ulteriormente i dati, per esempio eliminando certi tipi di trace (ad esempio potrà voler tenere solamente traces di richieste HTTP). Per poter soddisfare ogni richiesta specifica, \texttt{DataCleaner} contiene un oggetto che rispetta l'interfaccia \texttt{CleanerStrategy} atto a pulire. Tale oggetto, di tipo strategy\textcolor{red}{non è prorpio il suo tipo}, viene incaricato di raffinare ulteriormente i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace tramite il metodo \texttt{clean(data)}. \\
-Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che vengono restituiti da ElasticSearch, la classe \texttt{DataCleaner} e le classi che implementano \texttt{CleanerStrategy}. Tuttavia, i client di \texttt{DataCleaner} potranno avere accesso diretto ai dati di ElasticSearch, senza dover avere a che fare con i dati "amministrativi".
+\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Esso compie questo lavoro in due momenti: prima estraendo i dati "utili" da Elasticsearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:CleanerStrategy}.\\
+Il metodo \texttt{clean(data)} si occupa di realizzare ciò.
+Per estrarre i dati utili esso si avvale di un metodo, \texttt{removeMetaData(data)}, il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti quando si prelevano i dati. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazioni di monitoring negli indici di ElasticSearch. ElasticSearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni "di servizio". Il metodo si occupa di rimuovere questi dati e costruisce un array contenente il solo contenuto dei campi \texttt{\_source}. Il client che utilizza questa classe comunque in generale ha la necessità di ripulire ulteriormente i dati dei documenti, per esempio eliminando certi tipi di trace (ad esempio tenere solamente traces di richieste HTTP). Per poter soddisfare ogni richiesta specifica un \texttt{DataCleaner} contiene un oggetto che rispetti l'interfaccia \texttt{CleanerStrategy}. La strategy viene incaricata di raffinare ulteriormente i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace tramite il metodo \texttt{clean(data)}. \\
+Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che vengono restituiti da ElasticSearch, la classe \texttt{DataCleaner} e le classi che implementano \texttt{CleanerStrategy}. Tuttavia, i client di \texttt{DataCleaner} potranno avere accesso diretto ai dati di ElasticSearch, privi di dati amministrativi.
 
 	
 \subsubsection{CleanerStrategy}
@@ -76,12 +77,12 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 \subsubsection{GraphCleaner}
 \label{sec:GraphCleaner}
 
-\texttt{GraphCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione del grafo rappresentante la mappa topologica. Essa implementa il metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili ed ha come output esclusivamente l'insieme di documenti che rappresentano richieste di dati ai database dell'applicazione oppure a server, ovvero il sottoinsieme di traces che serviranno per la costruzione del grafo.
+\texttt{GraphCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione del grafo rappresentante la mappa topologica. Essa implementa il metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili e ha come output esclusivamente l'insieme di questi documenti che rappresentano richieste di dati ai database dell'applicazione oppure a server, ovvero il sottoinsieme di quelle che serviranno per la costruzione del grafo.
 	
 \subsubsection{StackCleaner}
 \label{sec:StackCleaner}
 
-\texttt{StackCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati durante la costruzione della stack trace. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili ed ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
+\texttt{StackCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati durante la costruzione della stack trace. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili e ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
 
 
 
@@ -116,26 +117,67 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 
 \subsubsection{GraphBuilder}
 \label{sec:GraphBuilder}
-	\texttt{GraphBuilder} è il componente che si occupa di costruire il grafo di nodi e archi rappresentanti la mappa topologica dell'applicazione. Esso verrà successivamente visualizzato utilizzando la libreria D3.js. \texttt{GraphBuilder} viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati di cui ha bisogno.
-	Il metodo principale è \texttt{getGraph()} che costruisce il grafo partendo dai dati letti dal \texttt{DataReader}. Quando si invoca tale metodo, viene costruito il \texttt{DataCleaner} con strategia \texttt{GraphCleaner} e i dati grezzi vengono letti e successivamente ripuliti dai relativi componenti.
-	I metodi \texttt{getNodes(Array)} e \texttt{getLinks(Array, Array)} vengono utilizzati per poter completare la costruzione del grafo.\\
-	Il metodo \texttt{getNodes(Array)} costruisce l'insieme di nodi che faranno parte della mappa topologica. Esso scorre tutti i documenti JSON preparati dal \texttt{GraphCleaner} che gli vengono passati come input ed a seconda della tipologia di chiamata (a Database oppure a Server) crea un oggetto candidato ad entrare nell'insieme dei nodi. Il fatto che tale candidato non sia già presente nell'insieme dei nodi viene garantito dal metodo \texttt{checkIfNotPresent(Object)}.
-	Il metodo \texttt{getLinks(Array, Array)} invece, costruisce l'insieme di collegamenti che ci saranno tra i nodi del grafo. Un link tra due nodi è caratterizzato dai seguenti campi:
-	\begin{itemize}
-		\item{\texttt{source}, che rappresenta il nodo che ha effettuato la chiamata sotto forma di id numerico intero;}
-		\item{\texttt{target}, che rappresenta il nodo che ha ricevuto la chiamata sotto forma di id numerico intero;}
-		\item{\texttt{type}, che può essere "Database" o "Server", per rappresentare i diversi tipi di chiamate \textcolor{red}{necessita fixerino};}
-		\item{\texttt{average\_response\_time}, che contiene il tempo medio di risposta di tutte le trace tra source e target;}
-		\item{\texttt{number\_of\_requests}, che serve per mantenere consistente il campo \texttt{average\_response\_time}.}
-	\end{itemize}
-	Ogni collegamento è individuato univocamente dalla coppia \texttt{source} e \texttt{target}.
-	Il metodo scorre tutti i documenti JSON che gli vengono passati come array e per ogni documento, che contiene la trace di una comunicazione tra due componenti dell'applicazione costruisce un oggetto candidato ad entrare nell'insieme. Il fatto che tale link candidato non sia già presente nell'insieme viene garantito dal metodo \texttt{checkIfLinkIsNotPresent(Array, Object)} che controlla che nell'array dei links non sia già presente un collegamento con gli stessi campi \texttt{source} e \texttt{target} del candidato. Se non esiste un collegamento con quei campi \texttt{source} e \texttt{target} ne viene inserito uno nuovo, altrimenti ci si limita ad aggiornare i campi \texttt{average\_response\_time} e \texttt{number\_of\_requests} tenendo conto dei nuovi dati. 
+	\texttt{GraphBuilder} è il componente che si occupa di costruire il grafo di nodi e archi rappresentanti la mappa topologica dell'applicazione. Esso verrà successivamente visualizzato utilizzando la libreria D3.js. \texttt{GraphBuilder} viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati di cui ha bisogno. Il metodo più importante è \texttt{getGraph()} che costruisce il grafo partendo dai dati letti dal \texttt{DataReader}. Quando si invoca tale metodo, viene costruito il \texttt{DataCleaner} con strategia \texttt{GraphCleaner} e i dati grezzi vengono letti e successivamente ripuliti dai relativi componenti.
+	I metodi \texttt{getNodes()} e \texttt{getLinks()} vengono utilizzati per poter completare la costruzione del grafo.\\
+	Il metodo \texttt{getNodes(data)} costruisce l'insieme di nodi che faranno parte della mappa topologica. Esso scorre tutti i documenti JSON preparati dal \texttt{GraphCleaner} e a seconda della tipologia di chiamata (a Database oppure a Server) crea un candidato ad entrare nella lista e attraverso il metodo \texttt{checkIfNotPresent} si assicura che il candidato non sia già presente nella lista che verrà ritornata.\\
+	Il metodo \texttt{getLinks(data)} invece costruisce l'insieme di collegamenti che ci saranno tra i nodi del grafo. Un link tra due nodi è caratterizzato dal campo \texttt{source}, il nodo che ha effettuato la chiamata, il campo \texttt{target}, quello che ha ricevuto la chiamata, il campo \texttt{type} che può essere "Database" o "Server". Il campo \texttt{average\_response\_time} che contiene il tempo medio di risposta tra source e target, infine il campo \texttt{number\_of\_requests} che serve per tenere aggiornato il campo avg resp time. Ogni nodo è individuato univocamente dalla coppia \texttt{source} e \texttt{target}.
+	In seguito attraverso il metodo \texttt{checkIfLinkIsNotPresent} viene controllato che la coppia source e target del candidato non sia già contenuta nella lista. Se essa non lo è, il nuovo collegamento viene inserito, se invece è già contenuto si limita ad aggiornare i campi \texttt{average\_response\_time} e \texttt{number\_of\_requests}. 
 
 \section{Visualizzazione delle informazioni}
 
 \subsection{Mappa topologica}
 
 \subsection{StackTrace}
+	Il (rendering)GLOSSARIO dello stack si avvale delle numerose direttive fornite da
+angularJs.
+
+
+Data la natura complessa che dati che devono essere rappresentati, sono state
+implementate delle direttive personalizzate angularJs.
+Le direttive (in inglese directives) sono dei marcatori di elementi del DOM che permettono di allegare
+a tali elementi e ai loro figli comportamenti specifici attraverso il complier
+HTML di AngularJs.
+
+Esse sono  caratterizzate da
+	\begin{itemize}
+		\item nome
+		\item parametri di configurazione
+		\item scope:  che rappresenta una reference ai dati, siano essi array, oggetti o
+				semplici variabili, che la direttiva utilizza per generare l'html
+		\item template html
+		\item funzione: che permette di rendere piú complesso il comportameto della direttiva
+					e di riempire il template hmtl con i dati ricevuti
+	\end{itemize}
+
+La vera potenza delle direttive risiede nel fatto che sono innestabili tra loro,
+ovvero una direttiva puó, al suo interno, richiamare un'altra direttiva. Ció
+rappresenta la soluzione perfetta per i tipi di dato che trattiamo noi, in quanto
+hanno tutti una struttura ricorsiva (array di array per la maggior parte).
+
+Le direttive, al loro interno, oltre ad utilizzare altre direttive scritte da noi,
+utilizzano quelle native di angularJs. Ció permette di generare l'html molto
+facilmente. Per esempio tra le direttive built-in piu utili fornite da angular sono:
+\begin{itemize}
+	\item ngFor: permette di iterare su una collezione di elementi
+	\item ngIf: applicare una classe css al verificarsi di una condizione
+	\item ngController: assegna un controller ad una view
+\end{itemize}
+
+Per renderizzare la nostra stack trace sono state create due direttive.
+\begin{itemize}
+	\item branch la quale si occpua di generare dell' html per ogni oggetto che gli viene passato,
+  		in branch viene inoltre specificata la funzione link che permette di gestire un caso particolare
+ 	\item tree il cui compito di interare sugli oggetti di un array. Per ogni elemento iterato viene richiamata
+  		la direttiva branch.
+\end{itemize}
+
+Nel direttive vengono infine richiamate nel codice HTML semplicemente creando un
+tag con lo stesso nome della direttiva, infatti le direttive permettono di creare
+tag personalizzati che vengono poi interpretati dall'parser di angularJs.
+Nel nostro caso, le direttive vengono usate per popolare la tabella delle stack trace
+e per ogni trace la corrispondente sotto tabella consentendo di riutilizzare il codice
+molto efficacemente.
+
 
 
 \section{Interazioni fra componenti}
