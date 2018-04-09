@@ -41,9 +41,20 @@ Il codice prodotto è stato scritto in Javascript ES6, quindi molti concetti qua
     \label{img:diagrammaClassiClient}
 \end{figure}
 
+\subsubsection{ElasticsearchClient} 
+\texttt{ElasticsearchClient} è il componente che si occupa di fare le chiamate API al lato server. Non è una classe vera e propria all'interno del codice, ma un \emph{Service}. \textcolor{red}{SPIEGARE COSA È UN SERVICE}. Utilizzare un service è l'unico modo per poter eseguire chiamate REST parametrizzate al lato server. I metodi da esso esposti sono: 
+\begin{itemize} 
+  \item \texttt{tracesIndices()} ritorna un array di stringhe che rappresenta gli indici contenuti nell'istanza di ElasticSearch che hanno all'interno delle traces; 
+  \item \texttt{getIndex(index)} ritorna al chiamante i dati grezzi che vengono restituiti da Elasticsearch eseguendo una ricerca priva di parametri sull'indice passato come parametro, ovvero \texttt{index}. Essi comprendono oltre tutti i documenti dell'indice anche i metadati di Elasticsearch; 
+  \item \texttt{readData()}: ritorna al chiamante un array di dati grezzi, ognuno dei quali rappresenta il risultato di una ricerca priva di parametri su un indice. Gli indici letti sono quelli ritornati da \texttt{tracesIndices()}, ovvero tutti e soli quelli che contengono traces. 
+\end{itemize} 
+Osserviamo che anche se in questa rappresentazione questi metodi sono all'interno di un oggetto, non avendo i diagrammi delle classi UML un costrutto per rappresentare precisamente un \emph{service}, essi non hanno una struttura ben definita e oggetti di tipo \texttt{ElasticsearchClient} chiaramente non sono istanziabili. Dunque, per interfacciarsi ad Elasticsearch si è deciso di racchiudere tutte queste funzionalità in un oggetto vero e proprio, \texttt{DataReader} (descritto nella sezione \ref{sec:DataReader}), per poter avere una più agevole interazione con i dati. 
+ 
+
 \subsubsection{DataReader}
 \label{sec:DataReader}
-\texttt{DataReader} è il componente del sistema che si occupa di reperire i dati da Elasticsearch, interagendo con il lato server. Restituirà ai richiedenti le informazioni grezze, esattamente come vengono restituite da Elasticsearch. I metodi sono:
+\texttt{DataReader} è il componente del sistema che si occupa di reperire i dati da Elasticsearch, tuttavia ciò viene fatto utilizzando il \emph{service} \texttt{ElasticsearchClient}. Sarebbe effettivamente possibile utilizzare le chiamate al \emph{service} ogni qualvolta fossero necessari dei dati, tuttavia ricordiamo che tali chiamate non vengono racchiuse all'interno di un oggetto ben strutturato, ma sono un \emph{service}. Restituirà ai richiedenti le informazioni grezze, esattamente come vengono restituite da Elasticsearch. I metodi sono: 
+ 
 
 \begin{itemize}
 	\item \texttt{setElasticsearchClient(client)}: permette di impostare una sorgente dei dati;
@@ -137,13 +148,10 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 \subsection{Mappa topologica}
 
 \subsection{StackTrace}
-	Il (rendering)GLOSSARIO dello stack si avvale delle numerose direttive fornite da
-angularJs.
-
-
-Data la natura complessa che dati che devono essere rappresentati, sono state
-implementate delle direttive personalizzate angularJs.
-Le direttive (in inglese directives) sono dei marcatori di elementi del DOM che permettono di allegare
+	Il rendering dello stack si avvale delle numerose direttive fornite da
+AngularJs. \\Data la natura complessa che dati che devono essere rappresentati, sono state
+implementate delle direttive personalizzate AngularJs.
+Le direttive (\emph{directives}) sono dei marcatori di elementi del DOM che permettono di allegare
 a tali elementi e ai loro figli comportamenti specifici attraverso il complier
 HTML di AngularJs.
 
