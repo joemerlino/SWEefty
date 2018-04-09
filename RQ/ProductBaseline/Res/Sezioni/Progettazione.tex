@@ -43,7 +43,7 @@ Il codice prodotto è stato scritto in Javascript ES6, quindi molti concetti qua
 
 \subsubsection{ElasticsearchClient} 
 \texttt{ElasticsearchClient} è il componente che si occupa di fare le chiamate API al lato server. Non è una classe vera e propria all'interno del codice, ma un \emph{Service}. 
-I Service sono funzioni, od oggetti, che possono essere passati a tutte le altri componenti di angularJs attraverso Dependency Injection, permettono di condividere codice e funzionalitá facilmente. Essi sono lazily instantiated, cioé generati solo quando un componente esprime una dipendenza verso un determinato service e realizzano il design pattern "singleton", rendendoli particolarmente efficenti ed adatti per la realizzazione di servizi come i client API, dove avere piú istanze dello stesso client non sarebbe ragionevole.
+I Service sono funzioni, od oggetti, che possono essere passati a tutte le altri componenti di angularJs attraverso Dependency Injection, permettono di condividere codice e funzionalitá facilmente. Essi sono \emph{lazily instantiated}, cioé generati solo quando un componente esprime una dipendenza verso un determinato service e realizzano il design pattern "singleton". Permettono la realizzazione di servizi come i client API, dove avere piú istanze dello stesso client non sarebbe ragionevole.
 Utilizzare un service è l'unico modo per poter eseguire chiamate REST parametrizzate al lato server. I metodi da esso esposti sono: 
 \begin{itemize} 
   \item \texttt{tracesIndices()} ritorna un array di stringhe che rappresenta gli indici contenuti nell'istanza di ElasticSearch che hanno all'interno delle traces; 
