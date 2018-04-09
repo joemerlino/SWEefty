@@ -190,10 +190,8 @@ Per renderizzare la nostra stack trace sono state create due direttive.
   		la direttiva branch.
 \end{itemize}
 
-L'anello di congiunzione tra StackBuilder (la classe che genera i dati per la Stack) e le angularJs (piu' in specifico le direttive)
-é rappresentato dalla variabile \texttt{$scope.nodes}, infatti i dati generati da StackBuilder vengono memorizzati su tale variabile e successivamente le direttive, utilizzano \texttt{$scope.nodes} come fonte dati.
-
-Nel direttive vengono infine richiamate nel codice HTML semplicemente creando un
+L'anello di congiunzione tra StackBuilder (la classe che genera i dati per la Stack) e le angularJs (più in specifico le direttive)
+é rappresentato dalla variabile \texttt{$\textdollar$scope.nodes}, infatti i dati generati da \texttt{StackBuilder} vengono memorizzati su tale variabile e successivamente le direttive, utilizzano \texttt{$\textdollar$scope.nodes} come fonte dati. Le direttive vengono infine richiamate nel codice HTML semplicemente creando un
 tag con lo stesso nome della direttiva, infatti le direttive permettono di creare
 tag personalizzati che vengono poi interpretati dall'parser di angularJs.
 Nel nostro caso, le direttive vengono usate per popolare la tabella delle stack trace
