@@ -77,13 +77,15 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 \label{sec:StackCleaner}
 
 \texttt{StackCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati durante la costruzione della stack trace. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili e ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
-	
+
+
 
 \subsubsection{StackBuilder}
 \label{sec:StackBuilder}
 
 \texttt{StackBuilder} si occupa della riorganizzazione dei dati e della loro elaborazione in modo da ottenere una struttura dati ottimale per la successiva visualizzazione della Stack Trace.\\
-Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP ricevute da \texttt{StackCleaner()} e ne riorganizza i dati all'interno in base alla loro tipologia. Esse possono essere di tre tipi:
+Esso viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati.
+Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP ricevute dal \texttt{DataReader} e pulite dal \texttt{DataCleaner}, creato e istanziato con strategia \texttt{StackCleaner}. \texttt{GetStack()} riorganizza i dati in base alla loro tipologia per poter essere successivamente mostrati in modo più agevole. Essi possono essere di tre tipi:
 	\begin{itemize}
 		\item HTTP: insieme di metodi scatenati da un evento generico;
 		\item HTTP + Pageload: insieme di metodi scatenati dal caricamento di una pagina web;
@@ -107,10 +109,18 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 
 \subsubsection{GraphBuilder}
 \label{sec:GraphBuilder}
-	\texttt{GraphBuilder} è la parte del sistema che si occupa di preparare i dati necessari per la costruzione della Mappa Topologica. In particolare utilizza i metodi \texttt{getNodes()} e \texttt{getLinks()} per riuscire a portare a termine il suo compito.\\
-	Il metodo \texttt{getNodes()} costruisce l'insieme di nodi che faranno parte della mappa topologica. Esso scorre tutti i documenti JSON preparati dal \texttt{GraphCleaner()} e a seconda della tipologia della chiamata (a Database oppure a Server) crea un candidato ad entrare nella lista e attraverso il metodo \texttt{checkIfNotPresent()} si assicura che il candidato non sia già presente nella lista che verrà ritornata.\\
-	Il metodo \texttt{getLinks()} invece costruisce l'insieme di collegamenti che ci saranno tra i nodi del grafo. Un link tra due nodi è caratterizzato dal campo \texttt{source}, il nodo che ha effettuato la chiamata, il campo \texttt{target}, quello che ha ricevuto la chiamata, il campo \texttt{type} che può essere "Database" o "Server",il campo \texttt{average\_response\_time} che contiene il tempo medio di risposta tra source e target e infine il campo \texttt{number\_of\_requests} che serve per tenere aggiornato il campo avg resp time. Ogni nodo è individuato univocamente dalla coppia \texttt{source} e \texttt{target}.\\	
-	Per costruire l'insieme dei links \texttt{GraphBuilder} necessita sia della lista completa dei nodi sia dei dati puliti da \texttt{GraphCleaner}. Il metodo \texttt{getLinks()}, scorre tutti i dati e per ogni chiamata a database \textcolor{red}{DIRE CHE NON È ANCORA STATA IMPLEMENTATA LA COSA DI CHAIAMATE SERVER-SERVER?} e per ogni chiamata costruisce un candidato ad entrare nella lista. In seguito attraverso il metodo \texttt{checkIfLinkIsNotPresent()} viene controllato che la coppia source e target del candidato non sia già contenuta nella lista. Se essa non è contenuta il nuovo collegamento viene inserito, se invece è già contenuto si limita ad aggiornare i campi \texttt{average\_response\_time} e \texttt{number\_of\_requests}. \textcolor{red}{dire come è implementato aggiornamento del tempo medio magari}
+	\texttt{GraphBuilder} è il componente che si occupa di costruire il grafo di nodi e archi rappresentanti la mappa topologica dell'applicazione. Esso verrà successivamente visualizzato utilizzando la libreria D3.js. \texttt{GraphBuilder} viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati di cui ha bisogno. \textcolor{red}{FREPPO CONTINUA DA QUI}
+	
+	In particolare utilizza i metodi \texttt{getNodes()} e \texttt{getLinks()} per riuscire a portare a termine il suo compito.\\
+	Il metodo \texttt{getNodes()} costruisce l'insieme di nodi che faranno parte della mappa topologica. Esso scorre tutti i documenti JSON preparati dal \texttt{GraphCleaner} e a seconda della tipologia della chiamata (a Database oppure a Server) crea un candidato ad entrare nella lista e attraverso il metodo \texttt{checkIfNotPresent()} si assicura che il candidato non sia già presente nella lista che verrà ritornata.\\
+	Il metodo \texttt{getLinks()} invece costruisce l'insieme di collegamenti che ci saranno tra i nodi del grafo. Un link tra due nodi è caratterizzato dal campo \texttt{source}, il nodo che ha effettuato la chiamata, il campo \texttt{target}, quello che ha ricevuto la chiamata, il campo \texttt{type} che può essere "Database" o "Server". Il campo \texttt{average\_response\_time} che contiene il tempo medio di risposta tra source e target e infine il campo \texttt{number\_of\_requests} che serve per tenere aggiornato il campo avg resp time. Ogni nodo è individuato univocamente dalla coppia \texttt{source} e \texttt{target}.\\	
+	Per costruire l'insieme dei links \texttt{GraphBuilder} necessita sia della lista completa dei nodi sia dei dati puliti da \texttt{GraphCleaner}. Il metodo \texttt{getLinks()}, scorre tutti i dati e per ogni chiamata a database e per ogni chiamata costruisce un candidato ad entrare nella lista. In seguito attraverso il metodo \texttt{checkIfLinkIsNotPresent()} viene controllato che la coppia source e target del candidato non sia già contenuta nella lista. Se essa non è contenuta il nuovo collegamento viene inserito, se invece è già contenuto si limita ad aggiornare i campi \texttt{average\_response\_time} e \texttt{number\_of\_requests}. 
+
+\section{Visualizzazione delle informazioni}
+
+\subsection{Mappa topologica}
+
+\subsection{StackTrace}
 
 
 \section{Interazioni fra componenti}
