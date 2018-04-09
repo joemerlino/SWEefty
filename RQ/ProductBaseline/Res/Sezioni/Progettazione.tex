@@ -148,7 +148,27 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 \section{Visualizzazione delle informazioni}
 
 \subsection{Mappa topologica}
-
+Il rendering della mappa topologica viene eseguito con l'ausilio della libreria grafica D3.js. \\
+In particolare, viene invocato il metodo \texttt{getGraph()} dell'oggetto \texttt{GraphBuilder} istanziato in precedenza per ottenere i dati da mostrare, che vengono salvati in una variabile locale. \\
+Successivamente si istanziano le variabili di D3.js per creare i vari oggetti presenti nella mappa come:
+\begin{itemize}
+	\item Canvas del grafo;
+	\item Schema colori;
+	\item Gestore per i comportamenti fisici del grafo;
+	\item Archi tra componenti;
+	\item Etichette degli archi rappresentanti i tempi medi e il tipo di richiesta effettuata;
+	\item Nodi del grafo rappresentanti i componenti monitorati;
+	\item Etichette con il nome identificativo dei nodi.
+\end{itemize}
+Inoltre vengono usate funzioni per la gestione di azioni come zoom, drag e click per i vari componenti della mappa come:
+\begin{itemize}
+	\item \texttt{zoomed()}: applica il metodo \texttt{d3.event.transform};
+	\item \texttt{ticked()}: attinge le coordinate di ogni oggetto al click del mouse;
+	\item \texttt{dragged()}: sposta alle coordinate \texttt{d3.event.x} e \texttt{d3.event.y} l'oggetto coinvolto nel trascinamento;
+	\item \texttt{dragstarted()}: attiva l'elemento da trascinare;
+	\item \texttt{dragended()}: rimuove la classe d'attivazione dell'oggetto a trascinamento completato.
+\end{itemize}
+Infine la colorazione degli archi viene regolata dalla funzione \texttt{getLimit()} che ritorna la soglia limite oltre alla quale il colore diventa rosso.
 \subsection{StackTrace}
 	Il rendering dello stack si avvale delle numerose direttive fornite da
 AngularJs. \\Data la natura complessa che dati che devono essere rappresentati, sono state
