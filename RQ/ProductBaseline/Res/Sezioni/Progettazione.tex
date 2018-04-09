@@ -71,12 +71,12 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 \subsubsection{GraphCleaner}
 \label{sec:GraphCleaner}
 
-\texttt{GraphCleaner} è l'implementazione della strategia utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione della mappa topologica. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON \textcolor{red}{(specificare che sono usciti da removeMEtadata? e che contengono solo spans?)} disponibili e ha come output l'insieme di questi documenti che rappresentano chiamate a Database oppure a Server.
+\texttt{GraphCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione del grafo rappresentante la mappa topologica. Essa implementa il metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili e ha come output esclusivamente l'insieme di questi documenti che rappresentano richieste di dati ai database dell'applicazione oppure a server, ovvero il sottoinsieme di quelle che serviranno per la costruzione del grafo.
 	
 \subsubsection{StackCleaner}
 \label{sec:StackCleaner}
 
-\texttt{StackCleaner} è l'implementazione della strategia utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione della stack trace. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON \textcolor{red}{stesse obiezioni di prima} disponibili e ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload \textcolor{red}{spiegare pageload}.
+\texttt{StackCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati durante la costruzione della stack trace. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili e ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
 	
 
 \subsubsection{StackBuilder}
