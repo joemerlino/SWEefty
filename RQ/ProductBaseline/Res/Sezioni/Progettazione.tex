@@ -1,7 +1,35 @@
 \section{Componenti}
+
+\subsection{PERCHÈ METTIAMO TUTTO INSIEME E DOPO COME SPLITTEREMO IN DUE}
+qui spiega.
+
+Ogni plugin per Kibana è articolato in due sezioni principali: lato client e lato server. Si presenta di seguito il dettaglio di ciasuna sezione.
+
+\subsection{Lato Server}
+Il lato server si deve occupare di interrogare il database Elasticsearch ed esporre i risultati delle query tramite API REST al lato client.
+\subsubsection{Rappresentazione}
+Nel seguente diagramma delle classi, figura \ref{img:diagrammaClassiServer}, ciascuna API viene rappresentata tramite una classe composta da un singolo metodo. Tale metodo intende rappresentare il funzionamento della API.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{Images/DiagrammaClassiServer.png}
+	\caption{Diagramma UML delle classi riguardanti il lato server}
+	\label{img:diagrammaClassiServer}
+\end{figure}
+
+\subsubsection{AllIndices}
+AllIndices è la API che si occupa di restituire al chiamante la lista di \emph{tutti} gli indici presenti all'interno della istanza di Elasticsearch collegata. La lista degli indici è un array di stringhe contenente per ogni indice il proprio nome.
+
+\subsubsection{Index}
+Index è la API che espone l'interfaccia per poter leggere i dati contenuti all'interno di un indice. Nella richiesta GET deve essere specificato un parametro chiamato index, il cui valore rappresenta l'indice del quale si vogliono ottenere i dati. Ciò che viene ritornato al richiedente è un oggetto \emph{grezzo}, ovvero la risposta dell'istanza Elasticsearch, con tutti i metadati che Elasticsearch utilizza annessi. Sarà compito del client reperire le informazioni a lui utili
+
+\subsection{Lato Client}
+Il lato client si occupa di interrogare il lato server per ottenere informazioni grezze, elaborarle per renderle utili ed infine presentarle all'utente.
+
 \label{sec:Componenti}
-\subsection{Premessa}
-Il codice prodotto è stato scritto in Javascript \textcolor{red}{qui versione!}, quindi molti concetti quali classi ed interfacce non sono presenti all'interno del linguaggio. Per produrre un diagramma delle classi dunque sono state considerate \emph{ classi } sia oggetti Javascript, sia funzioni. Per quanto riguarda le interfacce che sono presenti nel diagramma delle classi \ref{diagrammaClassi}, nel codice non sono effettivamente presenti tali interfacce, ma tutte le classi che implementano tale interfaccia \emph{devono} possedere i metodi esposti da tale interfaccia.
+\subsubsection{Rappresentazione}
+Il codice prodotto è stato scritto in Javascript ES6, quindi molti concetti quali classi ed interfacce non sono presenti all'interno del linguaggio. Per produrre un diagramma delle classi dunque sono state considerate \emph{ classi } sia oggetti Javascript, sia funzioni. Per quanto riguarda le interfacce che sono presenti nel diagramma delle classi \ref{diagrammaClassi}, nel codice non sono effettivamente presenti tali interfacce, ma tutte le classi che implementano tale interfaccia \emph{devono} possedere i metodi esposti da tale interfaccia.
 
 \begin{figure}[H]
     \label{diagrammaClassi}
@@ -10,7 +38,7 @@ Il codice prodotto è stato scritto in Javascript \textcolor{red}{qui versione!}
     \caption{Diagramma delle classi dell'applicazione}
 \end{figure}
 
-\subsection{DataReader}
+\subsubsection{DataReader}
 \label{sec:DataReader}
 	\subsubsection{Diagramma}
 	
@@ -19,7 +47,7 @@ Il codice prodotto è stato scritto in Javascript \textcolor{red}{qui versione!}
 
 
 
-\subsection{DataCleaner}
+\subsubsection{DataCleaner}
 \label{sec:DataCleaner}
 	\subsubsection{Diagramma}
 	
@@ -28,7 +56,7 @@ Il codice prodotto è stato scritto in Javascript \textcolor{red}{qui versione!}
 	Per estrarre i dati utili esso si avvale di un metodo, \texttt{removeMetaData(data)}, il quale si occupa di rimuovere i metadati di ElasticSearch che sono presenti quando si prelevano i dati. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazioni di monitoring negli indici di ElasticSearch. ElasticSearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni "di servizio". Il metodo si occupa di rimuovere questi dati e costruisce un array contenente il solo contenuto dei campi \texttt{\_source}.\\
 	Come secondo step, utilizzando il design pattern Strategy, esso si incarica di pulire i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace. \texttt{DataCleaner} contiene infatti un riferimento ad una strategia che al momento viene implementata in CleanerStrategy e GraphCleaner, anche se in futuro ne potrebbe essere implementata una diversa per svolgere compiti diversi. Le strategie contengono il metodo \texttt{clean(data)}, invocato passando i dati puliti da \texttt{removeMetaData()}. Tutto questo avviene nel metodo \texttt{cleanData()}.
 	
-\subsection{CleanerStrategy}
+\subsubsection{CleanerStrategy}
 \label{sec:CleanerStrategy}
 	\subsubsection{Diagramma}
 
@@ -36,14 +64,14 @@ Il codice prodotto è stato scritto in Javascript \textcolor{red}{qui versione!}
 	en do cazzo sta?
 	
 	
-\subsection{GraphCleaner}
+\subsubsection{GraphCleaner}
 \label{sec:GraphCleaner}
 	\subsubsection{Diagramma}
 
 	\subsubsection{Scopo}
 	\texttt{GraphCleaner} è l'implementazione della strategia utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione della mappa topologica. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON \textcolor{red}{(specificare che sono usciti da removeMEtadata? e che contengono solo spans?)} disponibili e ha come output l'insieme di questi documenti che rappresentano chiamate a Database oppure a Server.
 	
-\subsection{StackCleaner}
+\subsubsection{StackCleaner}
 \label{sec:StackCleaner}
 	\subsubsection{Diagramma}
 	
@@ -51,7 +79,7 @@ Il codice prodotto è stato scritto in Javascript \textcolor{red}{qui versione!}
 	\texttt{StackCleaner} è l'implementazione della strategia utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione della stack trace. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON \textcolor{red}{stesse obiezioni di prima} disponibili e ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload \textcolor{red}{spiegare pageload}.
 	
 
-\subsection{StackBuilder}
+\subsubsection{StackBuilder}
 \label{sec:StackBuilder}
 	\subsubsection{Diagramma}
 
@@ -75,7 +103,7 @@ Il codice prodotto è stato scritto in Javascript \textcolor{red}{qui versione!}
 		\item \texttt{status\_code}: tipologia di errore.
 	\end{itemize}
 	In particolare per il campo \texttt{call\_tree} avviene un'accurata manipolazione del dato attraverso i metodi \texttt{build\_tree()} e \texttt{tableTOtree()}. Al primo metodo viene  passato il dato sotto forma di stringa in cui, attraverso l'ASCII art, viene rappresentato un albero dei metodi che vengono invocati con delle informazioni particolari per ognuno di essi. Questo metodo costruisce un array bidimensionale che elenca tutti i metodi e per ognuno ne specifica i dati aggiuntivi rappresentati dall'ASCII art (come total time e self time), il grado di indentazione nell'albero, il numero di metodi figli e il numero di metodi discendenti da esso. \\ Da questa struttura il metodo \texttt{tableTOtree()} ricava un oggetto con innestati altri oggetti rappresentanti i metodi e i propri dati strutturati in maniera da rispecchiare i legami di parentela dell'ASCII art.
-\subsection{GraphBuilder}
+\subsubsection{GraphBuilder}
 \label{sec:GraphBuilder}
 	\subsubsection{Diagramma}
 
