@@ -19,6 +19,20 @@ Per un corretto funzionamento del plugin è necessario che sia abilitato Javascr
 \section{Manuale Sviluppatore}
 \subsection{Configurazione ambiente di lavoro}
 \paragraph{Installazione}
+Per poter installare correttamente il prodotto è necessario scaricare e configurare antecedentemente Kibana, scaricabile dal link URL \url{https://github.com/elastic/kibana/releases}.\\
+I plugin sono stati sviluppati con la versione 6.2.2 che si raccomanda anche per l'utilizzo.\\
+Una volta scaricato l'archivio compresso sarà necessario estrarre il contenuto in una cartella con nome \texttt{kibana} da raggiungere tramite l'utilizzo di un terminale.
+Prima di procedere alla configurazione di Kibana deve essere installato il framework Node.js ed il relativo gestore di pacchetti chiamato Node package manager (npm).\\
+Dalla directory corrente, dare il comando \texttt{npm install} per procedere all'installazione dei pacchetti necessari.\\
+Una volta terminato il processo, spostare le cartelle del prodotto all'interno della cartella plugins di Kibana.\\
+Raggiungere le cartelle del prodotto tramite terminale e dare il comando \texttt{npm install} per avviare l'installazione dei moduli node necessari al funzionamento dei plugin.
+Una volta terminata la configurazione, spostarsi tramite terminale nella cartella \texttt{kibana/bin} ed avviare l'eseguibile \texttt{kibana}.\\
+Dopo l'avvio, aprire una finestra di browser e navigare all'indirizzo URL \url{localhost:5601} per raggiungere la dashboard di Kibana.
+\paragraph{Configurazione ElasticSearch}
+Kibana si appoggia ad ElasticSearch per prelevare i dati da monitorare, quindi sarà necessaria un'istanza di esso che si può avere in locale o remoto configurando il file \texttt{kibana.yml} all'interno della cartella \texttt{config}, in particolare il campo \texttt{elasticsearch.url: "localhost:9200"} che dovrà essere modificato con l'indirizzo dove risiede l'istanza remota di ElasticSearch.\\
+Localmente invece, scaricare il pacchetto dal link URL \url{https://www.elastic.co/downloads/elasticsearch}, versione raccomandata 6.2.2.
+Una volta scaricato l'archivio compresso, estrarre il contenuto in una cartella locale, raggiungerla tramite terminale ed entrare nella sottocartella \texttt{bin} da dove avviare l'eseguibile \texttt{elasticsearch}.\\
+L'istanza sarà reperibile all'indirizzo URL \url{localhost:9200}.
 \subsection{Estensibilità}
 
 
