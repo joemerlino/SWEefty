@@ -38,35 +38,34 @@ HTML di AngularJs. Esse sono  caratterizzate da
 	\item parametri di configurazione;
 	\item scope:  che rappresenta una reference ai dati, siano essi array, oggetti o 
 	semplici variabili, che la direttiva utilizza per generare l'html;
-	\item template html;
-	\item funzione: che permette di rendere piú complesso il comportameto della direttiva
-	e di riempire il template hmtl con i dati ricevuti.
+	\item template HTML;
+	\item funzione: che permette di rendere più complesso il comportamento della direttiva
+	e di riempire il template HTML con i dati ricevuti.
 \end{itemize} 
 
 La vera potenza delle direttive risiede nel fatto che sono innestabili tra loro, 
-ovvero una direttiva puó, al suo interno, richiamare un'altra direttiva. Ció 
+ovvero una direttiva può, al suo interno, richiamare un'altra direttiva. Ciò 
 rappresenta la soluzione perfetta per i tipi di dato che trattiamo noi, in quanto 
 hanno tutti una struttura ricorsiva. 
 
 Le direttive, al loro interno, oltre ad utilizzare altre direttive scritte da noi, 
-utilizzano quelle native di angularJs. Ció permette di generare l'html molto 
-facilmente. Per esempio tra le direttive built-in piu utili fornite da angular sono: 
+utilizzano quelle native di angularJs. Ciò permette di generare l'HTML molto 
+facilmente. Per esempio tra le direttive built-in più utili fornite da angular sono: 
 \begin{itemize} 
 	\item \texttt{ngFor}: permette di iterare su una collezione di elementi;
-	\item \texttt{ngIf}: applicare una classe css al verificarsi di una condizione; 
+	\item \texttt{ngIf}: applicare una classe CSS al verificarsi di una condizione; 
 	\item \texttt{ngController}: assegna un controller ad una view.
 \end{itemize} 
 
 Per renderizzare la nostra stack trace sono state create due direttive. 
 \begin{itemize} 
-	\item \texttt{branch} la quale si occpua di generare dell' html per ogni oggetto che gli viene passato, 
+	\item \texttt{branch} la quale si occupa di generare dell'HTML per ogni oggetto che gli viene passato, 
 	in branch viene inoltre specificata la funzione link che permette di gestire un caso particolare;
-	\item \texttt{tree} il cui compito di interare sugli oggetti di un array. Per ogni elemento iterato viene richiamata 
+	\item \texttt{tree} il cui compito di iterare sugli oggetti di un array. Per ogni elemento iterato viene richiamata 
 	la direttiva branch. 
 \end{itemize} 
 
-L'anello di congiunzione tra StackBuilder (la classe che genera i dati per la Stack) e le angularJs (più in specifico le direttive) 
-é rappresentato dalla variabile \texttt{$\textdollar$scope.nodes}, infatti i dati generati da \texttt{StackBuilder} vengono memorizzati su tale variabile e successivamente le direttive, utilizzano \texttt{$\textdollar$scope.nodes} come fonte dati. Le direttive vengono infine richiamate nel codice HTML semplicemente creando un 
+L'anello di congiunzione tra StackBuilder (la classe che genera i dati per la Stack) e le angularJs (più in specifico le direttive) é rappresentato dalla variabile \texttt{$\textdollar$scope.nodes}, infatti i dati generati da \texttt{StackBuilder} vengono memorizzati su tale variabile e successivamente le direttive, utilizzano \texttt{$\textdollar$scope.nodes} come fonte dati. Le direttive vengono infine richiamate nel codice HTML semplicemente creando un 
 tag con lo stesso nome della direttiva, infatti le direttive permettono di creare 
 tag personalizzati che vengono poi interpretati dall'parser di angularJs. 
 Nel nostro caso, le direttive vengono usate per popolare la tabella delle stack trace 

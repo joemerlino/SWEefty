@@ -2,11 +2,11 @@
 \section{Premessa}
 \label{sec:premessa}
 Prima di proseguire con la lettura del documento è bene puntualizzare alcune cose.
-Innanzitutto va ricordato che il nostro prodotto consta di due plugin \emph{distinti} che svolgono funzioni diverse, ma che comunque interagiscono con i dati presenti sul server ElasticSearch in modo simile. Per semplificare la rappresentazione grafica e per evitare ripetizioni essi sono stati, in questa fase di progettazione, considerati come facenti parte dello stesso sistema. Questo è reso possibile dall'alta sovrapposizione di componenti necessari al loro funzionamento. Tuttavia, nella fase di produzione, essi verranno completamente disaccoppiati e saranno presentati come due plugin distinti che avranno delle parti in comune, che per come è progettato Kibana, dovranno essere per necessariamente ripetute. Va segnalato che il linguaggio di programmazione da noi usato, Javascript, è \emph{weakly typed}. Questo comporta. ad esempio, poca precisione per quanto riguarda il tipaggio dei parametri passati ai metodi. Per questo, soprattutto nella fase di rappresentazione grafica delle classi del sistema, ci terremmo talvolta vaghi sul tipo dei parametri passati e ritornati da metodi. Tali imprecisioni verranno tuttavia chiarite nella parte di testo che riguarda ogni specifico componente. Inoltre, esserendo ElasticSearch un database non relazionale i dati da esso ritornati non hanno una struttura fissa, dunque molte volte verranno descritti semplicemente come \texttt{Array} o \texttt{Object}, chiarendo nella descrizione testuale di che tipo di aray o oggetto si tratta.
+Innanzitutto va ricordato che il nostro prodotto consta di due plugin \emph{distinti} che svolgono funzioni diverse, ma che comunque interagiscono con i dati presenti sul server ElasticSearch in modo simile. Per semplificare la rappresentazione grafica e per evitare ripetizioni essi sono stati, in questa fase di progettazione, considerati come facenti parte dello stesso sistema. Questo è reso possibile dall'alta sovrapposizione di componenti necessari al loro funzionamento. Tuttavia, nella fase di produzione, essi verranno completamente disaccoppiati e saranno presentati come due plugin distinti che avranno delle parti in comune, che per come è progettato Kibana, dovranno essere per necessariamente ripetute. Va segnalato che il linguaggio di programmazione da noi usato, JavaScript, è \emph{weakly typed}. Questo comporta. ad esempio, poca precisione per quanto riguarda il tipaggio dei parametri passati ai metodi. Per questo, soprattutto nella fase di rappresentazione grafica delle classi del sistema, ci terremmo talvolta vaghi sul tipo dei parametri passati e ritornati da metodi. Tali imprecisioni verranno tuttavia chiarite nella parte di testo che riguarda ogni specifico componente. Inoltre, essendo ElasticSearch un database non relazionale i dati da esso ritornati non hanno una struttura fissa, dunque molte volte verranno descritti semplicemente come \texttt{Array} o \texttt{Object}, chiarendo nella descrizione testuale di che tipo di array o oggetto si tratta.
 
 \section{Componenti}
 
-Ogni plugin per Kibana è articolato in due sezioni principali: lato client e lato server. Si presenta di seguito il dettaglio di ciasuna sezione.
+Ogni plugin per Kibana è articolato in due sezioni principali: lato client e lato server. Si presenta di seguito il dettaglio di ciascuna sezione.
 
 \subsection{Lato Server}
 Il lato server si deve occupare di interrogare il database Elasticsearch ed esporre i risultati delle query tramite API REST al lato client.
@@ -36,7 +36,7 @@ Il lato client si occupa di interrogare il lato server per ottenere informazioni
 
 \label{sec:Componenti}
 \subsubsection{Rappresentazione}
-Il codice prodotto è stato scritto in Javascript ES6, quindi molti concetti quali classi ed interfacce non sono presenti all'interno del linguaggio. Per produrre un diagramma delle classi dunque sono state considerate \emph{ classi } sia oggetti Javascript, sia funzioni e talvolta costrutti più complessi. Tali stratagemmi verranno comunque chiariti nella descrizione testuale di ciascun componente. Per quanto riguarda le interfacce che sono presenti nel diagramma delle classi, figura \ref{img:diagrammaClassiClient}, nel codice non sono effettivamente presenti tali interfacce, ma tutte le classi che implementano tale interfaccia \emph{devono} possedere i metodi esposti da tale interfaccia. Questo stratagemma è stato particolarmente utile nell'implementazione del componente \texttt{DataCleaner}, come descritto in \ref{sec:DataCleaner}.
+Il codice prodotto è stato scritto in JavaScript ES6, quindi molti concetti quali classi ed interfacce non sono presenti all'interno del linguaggio. Per produrre un diagramma delle classi dunque sono state considerate \emph{ classi } sia oggetti Javascript, sia funzioni e talvolta costrutti più complessi. Tali stratagemmi verranno comunque chiariti nella descrizione testuale di ciascun componente. Per quanto riguarda le interfacce che sono presenti nel diagramma delle classi, figura \ref{img:diagrammaClassiClient}, nel codice non sono effettivamente presenti tali interfacce, ma tutte le classi che implementano tale interfaccia \emph{devono} possedere i metodi esposti da tale interfaccia. Questo stratagemma è stato particolarmente utile nell'implementazione del componente \texttt{DataCleaner}, come descritto in \ref{sec:DataCleaner}.
 
 \begin{figure}[H]
     \centering
@@ -76,11 +76,11 @@ Osserviamo che anche se in questa rappresentazione questi metodi sono all'intern
 \subsubsection{DataCleaner}
 
 \label{sec:DataCleaner}
-\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Esso compie questo lavoro in due tempi: prima estraendo i dati "utili" da Elasticsearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:CleanerStrategy}.\\
+\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da Elasticsearch. Esso compie questo lavoro in due tempi: prima estraendo i dati "utili" da Elasticsearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:CleanerStrategy}.\\
 I suoi metodi sono:
 \begin{itemize}
-	\item \texttt{removeMetaDataFromIndex(Array)} il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti in un singolo indice che gli è passato come input sotto forma di Array. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazioni di monitoring negli indici di ElasticSearch. ElasticSearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni "di servizio". Il metodo si occupa di rimuovere questi dati e costruisce un array contenente il solo contenuto dei campi \texttt{\_source}.
-	\item \texttt{removeMetaDataFromIndices(Array)} il quale si occupa di rimuovere i metadati di ElasticSearch da un Array di indici invocando il metodo \texttt{removeMetaDataFromIndex(Array)} su ognuno dei singoli indici.
+	\item \texttt{removeMetaDataFromIndex(Array)} il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti in un singolo indice che gli è passato come input sotto forma di Array. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazione di monitoring negli indici di Elasticsearch. Elasticsearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni "di servizio". Il metodo si occupa di rimuovere questi dati e costruisce un array contenente il solo contenuto dei campi \texttt{\_source}.
+	\item \texttt{removeMetaDataFromIndices(Array)} il quale si occupa di rimuovere i metadati di Elasticsearch da un Array di indici invocando il metodo \texttt{removeMetaDataFromIndex(Array)} su ognuno dei singoli indici.
 	\item \texttt{cleanData(Array)} il quale chiama l'implementazione di clean della strategia che possiede sull'array di dati che è stato ritornato dal metodo \texttt{removeMetaDataFromIndeces(Array)}  Tale strategia è incaricata di raffinare ulteriormente i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace tramite il metodo \texttt{clean(data)}.
 	\item \texttt{cleanDataStack(Array)} il quale chiama l'implementazione di clean della strategia che possiede sull'array di dati che è stato ritornato dal metodo \texttt{removeMetaDataFromIndex(Array)}.
 	\item \texttt{setStrategy(Object)} il quale riceve in input un oggetto che implementa l'interfaccia \texttt{CleanerStrategy} e lo assegna al riferimento proprio dell'oggetto.
@@ -101,7 +101,7 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 \texttt{GraphCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione del grafo rappresentante la mappa topologica. Esso dispone dei seguenti metodi:
 \begin{itemize}
 	\item \texttt{wipe(Array)} che riceve come input un Array che contiene i documenti JSON di un indice. Esso scorre tale Array e ritorna un Array contenente l'insieme di documenti all'interno dell'indice che rappresentano richieste di dati ai database dell'applicazione oppure ai server, ovvero il sottoinsieme di documenti che serviranno effettivamente per la costruzione del grafo;
-	\item \texttt{clean(Array)} che riceve come imput un Array di indici che contengono al loro interno i documenti JSON sottoforma di Array. Tale metodo agisce scorrendo l'array che riceve invocando il metodo \texttt{wipe(Array)} su ogni sottoarray.
+	\item \texttt{clean(Array)} che riceve come imput un Array di indici che contengono al loro interno i documenti JSON sotto forma di Array. Tale metodo agisce scorrendo l'array che riceve invocando il metodo \texttt{wipe(Array)} su ogni sottoarray.
 \end{itemize}
 
 \subsubsection{StackCleaner}
@@ -148,7 +148,7 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 
 \subsubsection{Graph}
 \label{sec:Graph}
-	\texttt{Graph} è il tipo di dato che rappresenta il grafo della mappa topologica dell'applicazione. Esso contiene due Array, uno chiamato \texttt{Nodes} e uno chiamato \texttt{Links}.
+	\texttt{Graph} è il tipo di dato che rappresenta il grafo della mappa topologica dell'applicazione. Esso contiene due Array, uno chiamato \texttt{Nodes} e uno \texttt{Links}.
 	\label{sec:Nodes}
 	L'Array di \texttt{Nodes} contiene degli oggetti, detti \texttt{Node} rappresentanti i nodi della mappa che contengono i seguenti campi:
 	\begin{itemize}
@@ -171,7 +171,7 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 		\item{\texttt{checkIfNodeIsNotPresent(Object)} controlla se l'oggetto che gli viene passato, che è assunto essere un \texttt{Node} risulta già essere presente nell'Array \texttt{Nodes} attraverso un controllo sul campo \texttt{name}; }
 		\item{\texttt{checkIfLinkIsNotPresent(Object)} controlla se l'oggetto che gli viene passato, che è assunto essere un \texttt{Link} risulta già essere presente nell'Array \texttt{Links} attraverso un controllo sulla coppia di campi \texttt{source} e \texttt{target}; }
 		\item{\texttt{getIdOfNode(String)} scorre l'Array \texttt{Nodes} finchè non trova un \texttt{Node} con campo \texttt{name} uguale a quello passatogli come parametro; }
-		\item{\texttt{getIndexOfSameLink(Object)} scorre l'Array \texttt{Links} finchè non trova un \texttt{Link} con campi \texttt{source} e \texttt{target} uguali a a quelli dell'oggeto che gli è passato, che è assunto essere un \texttt{Link};}
+		\item{\texttt{getIndexOfSameLink(Object)} scorre l'Array \texttt{Links} finchè non trova un \texttt{Link} con campi \texttt{source} e \texttt{target} uguali a a quelli dell'oggetto che gli è passato, che è assunto essere un \texttt{Link};}
 		\item{\texttt{addNode(Object)} aggiunge l'oggetto passatogli, che è assunto essere un \texttt{Node} all'Array \texttt{Nodes}, se esso non è già presente;}
 		\item{\texttt{addLink(Object)} aggiunge l'oggetto passatogli, che è assunto essere un \texttt{Link} all'Array \texttt{Links}, se esso non è già presente.}					
 	\end{itemize}
@@ -187,5 +187,5 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 				
 		\item{\texttt{buildLinks(Array)} il quale riceve in input l'Array di \texttt{Nodes} dell'applicazione e un Array di richieste HTTP e a Database e costruisce nell'istanza di \texttt{Graph} i Links che rispettano la struttura definita in \ref{sec:Links}. Il metodo scorre tutti i documenti JSON che gli vengono passati come Array e per ogni documento, che contiene la trace di una comunicazione tra due componenti dell'applicazione costruisce un oggetto candidato ad entrare nell'insieme. Il fatto che tale \texttt{Link} candidato non sia già presente nell'insieme viene garantito dal metodo \texttt{checkIfLinkIsNotPresent(Array, Object)} che controlla che nell'Array dei links non sia già presente un collegamento con gli stessi campi \texttt{source} e \texttt{target} del candidato; }
 
-		\item{\texttt{getGraph()} il quale ritorna un oggetto di tipo \texttt{Graph} secondo la struttura definita in \ref{sec:Graph} costruendo i due Array attribuendo loro l'outuput dei metodi \texttt{buildNodes()} e \texttt{buildLinks()}.  }
+		\item{\texttt{getGraph()} il quale ritorna un oggetto di tipo \texttt{Graph} secondo la struttura definita in \ref{sec:Graph} costruendo i due Array attribuendo loro l'output dei metodi \texttt{buildNodes()} e \texttt{buildLinks()}.  }
 	\end{itemize}
