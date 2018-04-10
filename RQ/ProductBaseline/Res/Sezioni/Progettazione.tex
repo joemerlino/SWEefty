@@ -180,9 +180,9 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 		
 		\item{\texttt{getLinks(Array,Array)} il quale riceve in input l'Array di \texttt{Nodes} dell'applicazione e un Array di richieste HTTP e a Database ed ha come ouput un array di Links che rispettano la struttura definita in \ref{sec:Links}. Il metodo scorre tutti i documenti JSON che gli vengono passati come Array e per ogni documento, che contiene la trace di una comunicazione tra due componenti dell'applicazione costruisce un oggetto candidato ad entrare nell'insieme. Il fatto che tale \texttt{Link} candidato non sia già presente nell'insieme viene garantito dal metodo \texttt{checkIfLinkIsNotPresent(Array, Object)} che controlla che nell'Array dei links non sia già presente un collegamento con gli stessi campi \texttt{source} e \texttt{target} del candidato. }
 		
-		\item{\texttt{getNodes(Array)} il quale riceve un Array di richieste HTTP e a Database ed ha come output un Array di Nodes che rispettano la struttura descritta in \ref{sec:Nodes}. Esso agisce in maniera analoga a \texttt{getLinks(Array,Array)} scorrendo tutte le richieste che gli vengono passate e costruendo un candidato ad entrare nell'insieme dei \texttt{Nodes}. L'unicità del candidato viene garantita dal metodo \texttt{checkIfNodeIsNotPresent(Array,Object)}.;}
+		\item{\texttt{getNodes(Array)} il quale riceve un Array di richieste HTTP e a Database ed ha come output un Array di Nodes che rispettano la struttura descritta in \ref{sec:Nodes}. Esso agisce in maniera analoga a \texttt{getLinks(Array,Array)} scorrendo tutte le richieste che gli vengono passate e costruendo un candidato ad entrare nell'insieme dei \texttt{Nodes}. L'unicità del candidato viene garantita dal metodo \texttt{checkIfNodeIsNotPresent(Array,Object)};}
 		
-		\item{\texttt{getGraph()} il quale ritorna un oggetto di tipo \texttt{Graph} secondo la struttura definita in \ref{sec:Graph} costruendo i due Array attribuendo loro l'outuput dei metodi \texttt{getNodes()} e \texttt{getLinks()}  }
+		\item{\texttt{getGraph()} il quale ritorna un oggetto di tipo \texttt{Graph} secondo la struttura definita in \ref{sec:Graph} costruendo i due Array attribuendo loro l'outuput dei metodi \texttt{getNodes()} e \texttt{getLinks()}.  }
 	\end{itemize}
 
 
