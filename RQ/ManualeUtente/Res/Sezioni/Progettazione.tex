@@ -18,8 +18,20 @@ Per un funzionamento corretto del plugin è necessario che sia abilitato Javascr
 \subsection{Mappa Topologica}
 \label{sec:mtopologica}
 \subsubsection{Interfaccia}
-Questo plugin si presenta come una mappa nella quale vengono rappresentati i nodi di cui è composto il sistema.
-I nodi vengono disegnati graficamente con due icone a seconda del tipo di componente che rappresenta. I componenti server sono costituiti da un'icona circolare di colore rosso, mentre i componenti database sono costituiti dall'icona che rappresenta un cluster di database di colore blu e nero. Ogni nodo è affiancato dal nome del componente.
+Questo plugin si presenta come una mappa nella quale vengono visualizzati i nodi di cui è composto il sistema. 
+I nodi vengono disegnati graficamente in modo diverso a seconda del tipo di componente che rappresentano, ad esempio i server sono rappresentati con un'icona circolare di colore rosso, mentre i database sono rappresentati da un cilindro di colore blu e nero. Ogni nodo è affiancato dal nome del componente. 
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=0.08\textwidth]{Images/server.png}
+	\caption{icona utilizzata per rappresentare i server}
+	\label{server} 
+\end{figure}
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=0.08\textwidth]{Images/database.png}
+	\caption{icona utilizzata per rappresentare i database}
+	\label{database} 
+\end{figure}
 
 \subsubsection{Funzionalità}
     \paragraph {Drag and Drop} \Spazio
@@ -39,15 +51,15 @@ Per effettuare questa operazione è necessario:
 
 \begin{enumerate}
 	
-	\item Portare il cursore del mouse nel punto in cui si vuole effettuare l'operazione di zoom, all'interno del perimetro della mappa, evidenziato mediante una linea di colore grigio;
+	\item Portare il cursore del mouse nel punto della mappa in cui si vuole effettuare l'operazione di zoom;
 	\item Muovere la rotellina del mouse in avanti se si intende ingrandire, all'indietro se si intede rimpicciolire. Nel caso non si disponga della rotellina sul mouse, utilizzare le funzionalità presenti nella tastiera per effettuare lo zoom.
 	
 \end{enumerate}
 
 \paragraph{Tempo di risposta} \Spazio
-Questà funzionalità permette di visualizzare il tempo media di risposta impiegato per effettuare richieste tra due nodi del sistema.
+Questa funzionalità permette di visualizzare il tempo medio di risposta impiegato per effettuare richieste tra due nodi del sistema.
 E' possibile visualizzarlo in corrispondenza della linea che collega due componenti.
-Nel caso in cui il numero sia colorato di rosso, significa che il tempo medio di risposta è superiore rispetto ad una soglia standard definita.
+Se il numero è colorato in rosso, significa che il tempo medio di risposta è superiore rispetto ad una soglia standard definita.
 
 
 
@@ -55,7 +67,7 @@ Nel caso in cui il numero sia colorato di rosso, significa che il tempo medio di
 \subsection{Stack Trace}
 \label{sec:strace}
 \subsubsection{Interfaccia}
-Questo plugin è rappresentanto mediante una tabella nella quale sono presenti tutte le richieste effettuate dal sistema. Per ogni richiesta si possono visualizzare diverse informazioni, nello specifico:
+Questo plugin è rappresentanto mediante una lista nella quale sono presenti tutte le richieste effettuate dal sistema. Per ogni richiesta si possono visualizzare diverse informazioni, nello specifico:
    
     \begin{itemize}
     	
