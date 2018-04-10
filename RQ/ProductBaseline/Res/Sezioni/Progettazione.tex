@@ -58,13 +58,13 @@ Osserviamo che anche se in questa rappresentazione questi metodi sono all'intern
 
 \subsubsection{DataReader}
 \label{sec:DataReader}
-\texttt{DataReader} è il componente del sistema che si occupa di reperire i dati da Elasticsearch, tuttavia ciò viene fatto utilizzando il \emph{service} \texttt{ElasticsearchClient}. Sarebbe effettivamente possibile utilizzare le chiamate al \emph{service} ogni qualvolta fossero necessari dei dati, tuttavia ricordiamo che tali chiamate non vengono racchiuse all'interno di un oggetto ben strutturato, ma sono un \emph{service}. Restituirà ai richiedenti le informazioni grezze, esattamente come vengono restituite da Elasticsearch. I metodi sono: 
+\texttt{DataReader} è il componente del sistema che si occupa di reperire i dati da Elasticsearch, ciò viene fatto utilizzando il \emph{service} \texttt{ElasticsearchClient}. Sarebbe effettivamente possibile utilizzare le chiamate al \emph{service} ogni qualvolta fossero necessari dei dati, tuttavia ricordiamo che tali chiamate non vengono racchiuse all'interno di un oggetto ben strutturato, ma sono un \emph{service}. Restituirà ai richiedenti le informazioni grezze, esattamente come vengono restituite da Elasticsearch. I metodi sono: 
  
 
 \begin{itemize}
 	\item \texttt{setElasticsearchClient(client)}: permette di impostare una sorgente dei dati;
 	\item \texttt{tracesIndices()}: ritorna un array di stringhe, i quali elementi sono tutti e soli gli indici all'interno dell'istanza di Elasticsearch che hanno al loro interno delle traces. Ciò viene realizzato tramite una chiamata al lato server all'API \texttt{AllIndices} e dunque vengono tenuti solo indici che contengono nel nome la sottostringa \emph{spans};
-	\item \texttt{readIndex(index)}: ritorna al chiamante i dati grezzi che vengono restituiti da Elasticsearch eseguendo una ricerca priva di parametri sull'indice passato come parametro, ovvero \texttt{index}. Essi comprendono oltre tutti i documenti dell'indice anche i metadati di Elasticsearch;
+	\item \texttt{readIndex(index)}: ritorna al chiamante i dati grezzi che vengono restituiti da Elasticsearch eseguendo una ricerca priva di parametri sull'indice passato come parametro, ovvero \texttt{index}. Essi comprendono oltre tutti i documenti dell'indice anche i dati amministrativi di Elasticsearch;
 	\item \texttt{readData(indices)}: ritorna al chiamante un array di dati grezzi, ognuno dei quali rappresenta il risultato di una ricerca priva di parametri su un indice. Gli indici letti sono quelli passati tramite parametro.
 
 
@@ -105,7 +105,7 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 	\item \texttt{clean(Array) che riceve come imput un Array di indici che contengono al loro interno i documenti JSON sottoforma di Array. Tale metodo agisce scorrendo l'array che riceve invocando il metodo \texttt{wipe(Array)} su ogni sottoarray. }
 \end{itemize}
 
-\subsection{StackCleaner}
+\subsubsection{StackCleaner}
 \label{sec:StackCleaner}
 
 \texttt{StackCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati durante la costruzione della stack trace. Essa dispone del metodo \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili e ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
