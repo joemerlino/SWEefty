@@ -75,23 +75,21 @@ Osserviamo che anche se in questa rappresentazione questi metodi sono all'intern
 \subsubsection{DataCleaner}
 
 \label{sec:DataCleaner}
-\textcolor{red}{va detto che possiede una strategy?????}
-\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Esso compie questo lavoro in due momenti \textcolor{red}{porcodio la madonna sec me è meglio scrivere "tempi" come i motori a due tempi}: prima estraendo i dati "utili" da Elasticsearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:CleanerStrategy}.\\
-I suoi metodi sono:
+\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Diversi client possono avere diverse richieste riguardo la pulizia dei dati: alcuni possono essere interessati solo a richieste HTTP, piuttosto che jdbc. Per poter servire tali richieste un \texttt{DataCleaner} possiede al suo interno un \texttt{CleanerStrategy}, interfaccia che permette di affinare la pulizia dei dati ad-hoc.
+I metodi di \texttt{DataCleaner} sono:
 \begin{itemize}
-	\item \texttt{removeMetaDataFromIndex(Array)} il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti in un singolo indice che gli è passato come input sotto forma di Array. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazioni di monitoring negli indici di ElasticSearch. ElasticSearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni "di servizio". Il metodo si occupa di rimuovere questi dati e costruisce un array contenente il solo contenuto dei campi \texttt{\_source}.
-	\item \texttt{removeMetaDataFromIndices(Array)} il quale si occupa di rimuovere i metadati di ElasticSearch da un Array di indici invocando il metodo \texttt{removeMetaDataFromIndex(Array)} su ognuno dei singoli indici.
-	\item \texttt{cleanData(Array)} il quale chiama l'implementazione di clean della strategia che possiede sull'array di dati che è stato ritornato dal metodo \texttt{removeMetaDataFromIndeces(Array)}  Tale strategia è incaricata di raffinare ulteriormente i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace tramite il metodo \texttt{clean(data)}.
+	\item \texttt{removeMetaDataFromIndex(Array)} il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti in un singolo indice che gli è passato come input sotto forma di Array. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazioni di monitoring negli indici di ElasticSearch. ElasticSearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni amministrative. Il metodo si occupa di rimuovere questi dati e costruisce un array contenente il solo contenuto dei campi \texttt{\_source};
+	\item \texttt{removeMetaDataFromIndices(Array)} il quale si occupa di rimuovere i metadati di ElasticSearch da un Array di indici invocando il metodo \texttt{removeMetaDataFromIndex(Array)} su ognuno dei singoli indici;
+	\item \texttt{cleanData(Array)} il quale chiama l'implementazione di clean della strategia che possiede sull'array di dati che è stato ritornato dal metodo \texttt{removeMetaDataFromIndeces(Array)}  Tale strategia è incaricata di raffinare ulteriormente i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace tramite il metodo \texttt{clean(data)};
 	\item \texttt{cleanDataStack(Array)} il quale chiama l'implementazione di clean della strategia che possiede sull'array di dati che è stato ritornato dal metodo \texttt{removeMetaDataFromIndex(Array)}.
-	\item \texttt{setStrategy(Object)} il quale riceve in input un oggetto che implementa l'interfaccia \texttt{CleanerStrategy} e lo assegna al riferimento proprio dell'oggetto.
+	\item \texttt{setStrategy(CleanerStrategy)} il quale riceve in input un oggetto che implementa l'interfaccia \texttt{CleanerStrategy} e lo assegna al riferimento proprio dell'oggetto.
 	
 \end{itemize}
-Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che vengono restituiti da ElasticSearch, la classe \texttt{DataCleaner} e le classi che implementano \texttt{CleanerStrategy}. Tuttavia, i client di \texttt{DataCleaner} potranno avere accesso diretto ai dati di ElasticSearch, privi di dati amministrativi.
+Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che vengono restituiti da ElasticSearch, la classe \texttt{DataCleaner} e le classi che implementano \texttt{CleanerStrategy}. Tuttavia, i client di \texttt{DataCleaner} potranno avere accesso diretto ai dati di ElasticSearch, privi di dati amministrativi e ripuliti delle informazioni non utili.
 
 	
 \subsubsection{CleanerStrategy}
 \label{sec:CleanerStrategy}
-\textcolor{red}{va lasciata???}
 \texttt{CleanerStrategy} è l'interfaccia che verrà implementata per realizzare una pulizia più raffinata dei dati di un \texttt{DataCleaner}. Espone il metodo \texttt{clean(data)}, che avrà comportamenti diversi a seconda della strategia che si desidera applicare. Dato che il prodotto è implementato in Javascript il costrutto interfaccia non è presente nel linguaggio. Per ovviare a questa mancanza tutte le classi che dovrebbero implementare questa interfaccia \emph{devono} possedere un metodo \texttt{clean(data)} che funzioni come ci si aspetti. 
 
 	
@@ -101,8 +99,8 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 
 \texttt{GraphCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione del grafo rappresentante la mappa topologica. Esso dispone dei seguenti metodi:
 \begin{itemize}
-	\item \texttt{wipe(Array)} che riceve come input un Array che contiene i documenti JSON di un indice. Esso scorre tale Array e ritorna un Array contenente l'insieme di documenti all'interno dell'indice che rappresentano richieste di dati ai database dell'applicazione oppure ai server, ovvero il sottoinsieme di documenti che serviranno effettivamente per la costruzione del grafo.
-	\item \texttt{clean(Array) che riceve come imput un Array di indici che contengono al loro interno i documenti JSON sottoforma di Array. Tale metodo agisce scorrendo l'array che riceve invocando il metodo \texttt{wipe(Array)} su ogni sottoarray. }
+	\item \texttt{wipe(Array)}: che riceve come input un Array che contiene i documenti JSON di un indice. Esso scorre tale Array e ritorna un Array contenente l'insieme di documenti all'interno dell'indice che rappresentano richieste di dati ai database dell'applicazione oppure ai server, ovvero il sottoinsieme di documenti che serviranno effettivamente per la costruzione del grafo;
+	\item \texttt{clean(Array)}: che riceve come input un Array di indici che contengono al loro interno i documenti JSON sottoforma di Array. Tale metodo agisce scorrendo l'array che riceve invocando il metodo \texttt{wipe(Array)} su ogni sottoarray. 
 \end{itemize}
 
 \subsubsection{StackCleaner}

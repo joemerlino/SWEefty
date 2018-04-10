@@ -2,8 +2,8 @@
 
 \subsection{Mappa topologica}
 Il rendering della mappa topologica viene eseguito con l'ausilio della libreria grafica D3.js. \\
-In particolare, viene invocato il metodo \texttt{getGraph()} dell'oggetto \texttt{GraphBuilder} istanziato in precedenza per ottenere i dati da mostrare, che vengono salvati in una variabile locale. \\
-Successivamente si istanziano le variabili di D3.js per creare i vari oggetti presenti nella mappa come:
+In particolare, viene invocato il metodo \texttt{getGraph()} dell'oggetto \texttt{GraphBuilder} istanziato in precedenza per ottenere i dati da mostrare, che vengono salvati in una variabile locale di tipo \texttt{Graph}. \\
+Successivamente si istanziano le variabili di D3.js per creare i vari oggetti presenti nella mappa:
 \begin{itemize}
 	\item Canvas del grafo;
 	\item Schema colori;
@@ -22,47 +22,45 @@ Inoltre vengono usate funzioni per la gestione di azioni come zoom, drag e click
 	\item \texttt{dragended()}: rimuove la classe d'attivazione dell'oggetto a trascinamento completato.
 \end{itemize}
 
-Infine la colorazione degli archi viene regolata dalla funzione \texttt{getLimit()} che ritorna la soglia limite oltre alla quale il colore diventa rosso.
+Infine la colorazione degli archi viene regolata dalla funzione \texttt{getLimit()} che ritorna la soglia limite oltre alla quale il colore diventa rosso. 
 
 
 \subsection{StackTrace} 
-Il rendering dello stack si avvale delle numerose direttive fornite da 
+Il rendering dello stack si avvale delle numerose \emph{direttive} fornite da 
 AngularJs. \\Data la natura complessa che dati che devono essere rappresentati, sono state 
 implementate delle direttive personalizzate AngularJs. 
 Le direttive (\emph{directives}) sono dei marcatori di elementi del DOM che permettono di allegare 
 a tali elementi e ai loro figli comportamenti specifici attraverso il complier 
-HTML di AngularJs. 
-
-Esse sono  caratterizzate da 
+HTML di AngularJs. Esse sono  caratterizzate da 
 \begin{itemize} 
-	\item nome 
-	\item parametri di configurazione 
+	\item nome;
+	\item parametri di configurazione;
 	\item scope:  che rappresenta una reference ai dati, siano essi array, oggetti o 
-	semplici variabili, che la direttiva utilizza per generare l'html 
-	\item template html 
-	\item funzione: che permette di rendere piú complesso il comportameto della direttiva 
-	e di riempire il template hmtl con i dati ricevuti 
+	semplici variabili, che la direttiva utilizza per generare l'html;
+	\item template html;
+	\item funzione: che permette di rendere piú complesso il comportameto della direttiva
+	e di riempire il template hmtl con i dati ricevuti.
 \end{itemize} 
 
 La vera potenza delle direttive risiede nel fatto che sono innestabili tra loro, 
 ovvero una direttiva puó, al suo interno, richiamare un'altra direttiva. Ció 
 rappresenta la soluzione perfetta per i tipi di dato che trattiamo noi, in quanto 
-hanno tutti una struttura ricorsiva (array di array per la maggior parte). 
+hanno tutti una struttura ricorsiva. 
 
 Le direttive, al loro interno, oltre ad utilizzare altre direttive scritte da noi, 
 utilizzano quelle native di angularJs. Ció permette di generare l'html molto 
 facilmente. Per esempio tra le direttive built-in piu utili fornite da angular sono: 
 \begin{itemize} 
-	\item ngFor: permette di iterare su una collezione di elementi 
-	\item ngIf: applicare una classe css al verificarsi di una condizione 
-	\item ngController: assegna un controller ad una view 
+	\item \texttt{ngFor}: permette di iterare su una collezione di elementi;
+	\item \texttt{ngIf}: applicare una classe css al verificarsi di una condizione; 
+	\item \texttt{ngController}: assegna un controller ad una view.
 \end{itemize} 
 
 Per renderizzare la nostra stack trace sono state create due direttive. 
 \begin{itemize} 
-	\item branch la quale si occpua di generare dell' html per ogni oggetto che gli viene passato, 
-	in branch viene inoltre specificata la funzione link che permette di gestire un caso particolare 
-	\item tree il cui compito di interare sugli oggetti di un array. Per ogni elemento iterato viene richiamata 
+	\item \texttt{branch} la quale si occpua di generare dell' html per ogni oggetto che gli viene passato, 
+	in branch viene inoltre specificata la funzione link che permette di gestire un caso particolare;
+	\item \texttt{tree} il cui compito di interare sugli oggetti di un array. Per ogni elemento iterato viene richiamata 
 	la direttiva branch. 
 \end{itemize} 
 
@@ -71,4 +69,4 @@ L'anello di congiunzione tra StackBuilder (la classe che genera i dati per la St
 tag con lo stesso nome della direttiva, infatti le direttive permettono di creare 
 tag personalizzati che vengono poi interpretati dall'parser di angularJs. 
 Nel nostro caso, le direttive vengono usate per popolare la tabella delle stack trace 
-e per ogni trace la corrispondente sotto tabella consentendo di riutilizzare il codice 
+e per ogni trace la corrispondente sotto tabella consentendo di riutilizzare il codice.
