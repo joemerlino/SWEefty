@@ -113,34 +113,39 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 	\item \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili ed ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
 \end{itemize}
 
+\subsubsection{Trace}
+\label{sec:Trace}
+\texttt{Trace} rappresenta una richiesta che viene fatta al sistema contenente solo i dati veramente utili alla successiva costruzione della Stack Trace. Questi sono:
+\begin{itemize}
+	\item \texttt{type}: che riconduce ad una delle tipologie di trace;
+	\item \texttt{trace\_id}: numero univoco che permette l'associazione tra trace HTTP, JDBC e Pageload;
+	\item \texttt{name}: identificazione generale della richiesta;
+	\item \texttt{call\_tree}: array contenente gerarchicamente la lista dei metodi invocati dall'applicazione per compiere la richiesta;
+	\item \texttt{duration}: tempo impiegato dal sistema per lo svolgimento della richiesta, compreso il tempo dei metodi, delle query e del caricamento della pagina;
+	\item \texttt{timestamp}: data e ora dello svolgimento della richiesta;
+	\item \texttt{error}: presenza o meno di errori;
+	\item \texttt{status\_code}: tipologia di errore;
+	\item \texttt{DBrequest}: (opzionale) array contenente le query con cui è stato interrogato il database.
+\end{itemize}
+ La tipologia delle trace viene identificata tramite i metodi \texttt{checkPageload()} e \texttt{checkQueries()} e queste possono essere:
+	\begin{itemize}
+	\item HTTP: insieme di metodi scatenati da un evento generico;
+	\item HTTP + Pageload: insieme di metodi scatenati dal caricamento di una pagina web;
+	\item HTTP + JDBC + Pageload: insieme di eventi che portano all'interrogazione di un database e che provocano un successivo caricamento di una pagina.
+	\end{itemize}
+Inoltre i dati vengono calcolati in base alla tipologia della trace tramite  \texttt{setPageload()} e  \texttt{setQueries()} che utilizzano determinate funzioni per la manipolazione dei dati:
+\begin{itemize}
+	\item Per il campo \texttt{call\_tree} avviene un'accurata manipolazione attraverso il metodo \texttt{build\_tree()} per passare da un tipo stringa ad una gerarchia di oggetti.
+	Al metodo \texttt{build\_tree()} viene passato il dato sotto forma di stringa in cui, attraverso l'ASCII art, viene rappresentato un albero dei metodi che vengono invocati con delle informazioni particolari per ognuno di essi. Questo utilizza a sua volta il metodo \texttt{more\_data()} per costruire un array bidimensionale che elenca tutti i metodi e per ognuno ne specifica i dati aggiuntivi rappresentati dall'ASCII art (come total time e self time), il grado di indentazione nell'albero, il numero di metodi figli e il numero di metodi discendenti da esso. \\ Da questa struttura il metodo \texttt{tableToTree()} ricava un oggetto con innestati altri oggetti rappresentanti i metodi e i propri dati strutturati in maniera da rispecchiare i legami di parentela dell'ASCII art.
+	\item 	Il metodo \texttt{change\_duration} permette di far variare il tempo di esecuzione delle richieste in base alla tipologia in quanto per ognuna bisognerà considerare più parametri per calcolare i millisecondi impiegati.
+\end{itemize}
 
 \subsubsection{StackBuilder}
 \label{sec:StackBuilder}
 
-\texttt{StackBuilder} si occupa della riorganizzazione dei dati e della loro elaborazione in modo da ottenere una struttura dati ottimale per la successiva visualizzazione della Stack Trace.\\
+\texttt{StackBuilder} si occupa della creazione della struttura della stack trace per la sua successiva visualizzazione.
 Esso viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati.
-Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP ricevute dal \texttt{DataReader} e pulite dal \texttt{DataCleaner}, creato e istanziato con strategia \texttt{StackCleaner}. \texttt{GetStack()} riorganizza i dati in base alla loro tipologia che viene identificata tramite i metodi \texttt{checkPageload()} e \texttt{checkQueries()} per poter essere successivamente mostrati in modo più agevole. Le tipologie di richieste possono essere:
-	\begin{itemize}
-		\item HTTP: insieme di metodi scatenati da un evento generico;
-		\item HTTP + Pageload: insieme di metodi scatenati dal caricamento di una pagina web;
-		\item HTTP + JDBC + Pageload: insieme di eventi che portano all'interrogazione di un database e che provocano un successivo caricamento di una pagina.
-	\end{itemize}
-	Per ognuna di queste è costruita una struttura dati che seleziona solo i campi del JSON ricevuto da \texttt{StackCleaner()} veramente utili alla generazione della stack trace.
-	In particolare i dati che devono essere presenti in tutte le tre tipologie  sono:
-	\begin{itemize}
-		\item \texttt{type}: che riconduce ad una delle tre tipologie di trace;
-		\item \texttt{trace\_id}: numero univoco che permette l'associazione tra trace HTTP, JDBC e Pageload;
-		\item \texttt{name}: identificazione generale della richiesta;
-		\item \texttt{call\_tree}: array contenente gerarchicamente la lista dei metodi invocati dall'applicazione per compiere la richiesta;
-		\item \texttt{duration}: tempo impiegato dal sistema per lo svolgimento della richiesta, compreso il tempo dei metodi, delle query e del caricamento della pagina;
-		\item \texttt{timestamp}: data e ora dello svolgimento della richiesta;
-		\item \texttt{error}: presenza o meno di errori;
-		\item \texttt{status\_code}: tipologia di errore.
-	\end{itemize}
-	Questi dati vengono ulteriormente manipolati per essere visualizzati in maniera conveniente nella Stack Trace.  \\
-	Il metodo \texttt{change\_duration} permette di far variare il tempo di esecuzione delle richieste in base alla tipologia in quanto per ognuna bisognerà considerare più parametri per calcolare i millisecondi impiegati.\\
-	Per il campo \texttt{call\_tree} avviene un'accurata manipolazione attraverso il metodo \texttt{build\_tree()} per passare da un tipo stringa ad una gerarchia di oggetti.
-	 Al metodo \texttt{build\_tree()} viene passato il dato sotto forma di stringa in cui, attraverso l'ASCII art, viene rappresentato un albero dei metodi che vengono invocati con delle informazioni particolari per ognuno di essi. Questo utilizza a sua volta il metodo \texttt{more\_data()} per costruire un array bidimensionale che elenca tutti i metodi e per ognuno ne specifica i dati aggiuntivi rappresentati dall'ASCII art (come total time e self time), il grado di indentazione nell'albero, il numero di metodi figli e il numero di metodi discendenti da esso. \\ Da questa struttura il metodo \texttt{tableToTree()} ricava un oggetto con innestati altri oggetti rappresentanti i metodi e i propri dati strutturati in maniera da rispecchiare i legami di parentela dell'ASCII art.
+Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP ricevute dal \texttt{DataReader} e pulite dal \texttt{DataCleaner}, creato e istanziato con strategia \texttt{StackCleaner}, creando delle \texttt{Trace} da ogni richiesta con dati grezzi.
 
 \subsection{Graph}
 \label{sec:Graph}
