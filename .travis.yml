@@ -93,7 +93,12 @@ script:
 - pdflatex -interaction=nonstopmode -halt-on-error VI_2018-01-31.tex
 - pdflatex -interaction=nonstopmode -halt-on-error VI_2018-01-31.tex
 - pdflatex -interaction=nonstopmode -halt-on-error VI_2018-01-31.tex
-- mv VI_2018-01-31.pdf ../../../Docs/RQ/Interni/Verbali
+# 
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2018-03-20.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2018-03-20.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VI_2018-03-20.tex
+- mv VI_2018-03-20.pdf ../../../Docs/RQ/Interni/Verbali
+- mv VI_2018-03-20.pdf ../../../Docs/RQ/Interni/Verbali
 
 - cd ../../..
 
