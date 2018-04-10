@@ -99,7 +99,7 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 
 \texttt{GraphCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione del grafo rappresentante la mappa topologica. Esso dispone dei seguenti metodi:
 \begin{itemize}
-	\item \texttt{wipe(Array)} che riceve come input un Array che contiene i documenti JSON di un indice. Esso scorre tale Array e ritorna un Array contenente l'insieme di documenti all'interno dell'indice che rappresentano richieste di dati ai database dell'applicazione oppure ai server, ovvero il sottoinsieme di documenti che serviranno effettivamente per la costruzione del grafo.
+	\item \texttt{wipe(Array)} che riceve come input un Array che contiene i documenti JSON di un indice. Esso scorre tale Array e ritorna un Array contenente l'insieme di documenti all'interno dell'indice che rappresentano richieste di dati ai database dell'applicazione oppure ai server, ovvero il sottoinsieme di documenti che serviranno effettivamente per la costruzione del grafo;
 	\item \texttt{clean(Array)} che riceve come imput un Array di indici che contengono al loro interno i documenti JSON sottoforma di Array. Tale metodo agisce scorrendo l'array che riceve invocando il metodo \texttt{wipe(Array)} su ogni sottoarray.
 \end{itemize}
 
@@ -180,7 +180,7 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 	\texttt{GraphBuilder} è il componente che si occupa di costruire il grafo di nodi e archi rappresentanti la mappa topologica dell'applicazione, secondo la struttura descritta in \ref{sec:Graph}. Esso verrà successivamente visualizzato utilizzando la libreria D3.js. \texttt{GraphBuilder} viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati di cui ha bisogno.
 	I metodi della classe sono:
 	\begin{itemize}
-		\item{\texttt{setDataReader(DataReader)}, il quale attribuisce l'istanza di \texttt{DataReader} che gli viene passata al suo riferimento \textcolor{red}{sistema qui zio frocis}; }
+		\item{\texttt{setDataReader(DataReader)}, il quale permette di impostare una diversa fonte di dati; }
 		
 		\item{\texttt{getLinks(Array,Array)} il quale riceve in input l'Array di \texttt{Nodes} dell'applicazione e un Array di richieste HTTP e a Database ed ha come ouput un array di Links che rispettano la struttura definita in \ref{sec:Links}. Il metodo scorre tutti i documenti JSON che gli vengono passati come Array e per ogni documento, che contiene la trace di una comunicazione tra due componenti dell'applicazione costruisce un oggetto candidato ad entrare nell'insieme. Il fatto che tale \texttt{Link} candidato non sia già presente nell'insieme viene garantito dal metodo \texttt{checkIfLinkIsNotPresent(Array, Object)} che controlla che nell'Array dei links non sia già presente un collegamento con gli stessi campi \texttt{source} e \texttt{target} del candidato. }
 		
