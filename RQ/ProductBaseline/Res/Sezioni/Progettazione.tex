@@ -75,8 +75,7 @@ Osserviamo che anche se in questa rappresentazione questi metodi sono all'intern
 \subsubsection{DataCleaner}
 
 \label{sec:DataCleaner}
-\textcolor{red}{va detto che possiede una strategy????? non è una strategy!!}
-\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Esso compie questo lavoro in due momenti \textcolor{red}{porcodio la madonna sec me è meglio scrivere "tempi" come i motori a due tempi}: prima estraendo i dati "utili" da Elasticsearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:CleanerStrategy}.\\
+\texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da ElasticSearch. Esso compie questo lavoro in due tempi: prima estraendo i dati "utili" da Elasticsearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:CleanerStrategy}.\\
 I suoi metodi sono:
 \begin{itemize}
 	\item \texttt{removeMetaDataFromIndex(Array)} il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti in un singolo indice che gli è passato come input sotto forma di Array. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazioni di monitoring negli indici di ElasticSearch. ElasticSearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni "di servizio". Il metodo si occupa di rimuovere questi dati e costruisce un array contenente il solo contenuto dei campi \texttt{\_source}.
@@ -91,7 +90,6 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 	
 \subsubsection{CleanerStrategy}
 \label{sec:CleanerStrategy}
-\textcolor{red}{va lasciata???}
 \texttt{CleanerStrategy} è l'interfaccia che verrà implementata per realizzare una pulizia più raffinata dei dati di un \texttt{DataCleaner}. Espone il metodo \texttt{clean(data)}, che avrà comportamenti diversi a seconda della strategia che si desidera applicare. Dato che il prodotto è implementato in Javascript il costrutto interfaccia non è presente nel linguaggio. Per ovviare a questa mancanza tutte le classi che dovrebbero implementare questa interfaccia \emph{devono} possedere un metodo \texttt{clean(data)} che funzioni come ci si aspetti. 
 
 	
@@ -166,6 +164,7 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 		\item{\texttt{average\_response\_time}, che contiene il tempo medio di risposta di tutte le trace tra source e target;}
 		\item{\texttt{number\_of\_requests}, che serve per mantenere consistente il campo \texttt{average\_response\_time}.}
 	\end{itemize}
+	Esso è individuato univocamente dalla coppia di campi \texttt{source} e \texttt{target}.
 	Il tipo di dato \texttt{Graph} contiene i seguenti metodi:
 	\begin{itemize}
 		\item{\texttt{checkIfNodeIsNotPresent(Object)} controlla se l'oggetto che gli viene passato, che è assunto essere un \texttt{Node} risulta già essere presente nell'Array \texttt{Nodes} attraverso un controllo sul campo \texttt{name}; }
@@ -189,11 +188,3 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 		
 		\item{\texttt{getGraph()} il quale ritorna un oggetto di tipo \texttt{Graph} secondo la struttura definita in \ref{sec:Graph} costruendo i due Array attribuendo loro l'outuput dei metodi \texttt{getNodes()} e \texttt{getLinks()}.  }
 	\end{itemize}
-
-
-	
-
-	Ogni collegamento è individuato univocamente dalla coppia \texttt{source} e \texttt{target}.
-	Il metodo scorre tutti i documenti JSON che gli vengono passati come array e per ogni documento, che contiene la trace di una comunicazione tra due componenti dell'applicazione costruisce un oggetto candidato ad entrare nell'insieme. Il fatto che tale link candidato non sia già presente nell'insieme viene garantito dal metodo \texttt{checkIfLinkIsNotPresent(Array, Object)} che controlla che nell'array dei links non sia già presente un collegamento con gli stessi campi \texttt{source} e \texttt{target} del candidato. Se non esiste un collegamento con quei campi \texttt{source} e \texttt{target} ne viene inserito uno nuovo, altrimenti ci si limita ad aggiornare i campi \texttt{average\_response\_time} e \texttt{number\_of\_requests} tenendo conto dei nuovi dati. 
-
-
