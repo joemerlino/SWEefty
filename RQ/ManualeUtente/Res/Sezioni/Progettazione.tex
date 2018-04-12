@@ -1,23 +1,23 @@
 \newpage
 \section{Requisiti di sistema}
-Il progetto Havana si presenta come una coppia di plugin per Kibana. Per questo motivo è necessario predisporre di Kibana correttamente installata e configurata con Elasticsearch.
+Il progetto Havana si presenta come una coppia di plugin per Kibana. Per questo motivo è necessario predisporre di Kibana correttamente installata e configurata con \gl{Elasticsearch}.
 \\ Si garantisce una corretta visualizzazione e interazione con i plugin con Kibana v.6.
 \subsection{Browser Supportati}
 
 Di seguito viene fornito un breve elenco delle versioni minime dei browser sui quali il funzionamento dei nostri plugin è garantito:
 \begin{itemize}
 	
-	\item Google Chrome v.55
-	\item Mozilla Firefox v.50
-	\item Safari v.10
-	\item Internet Explorer v.11
+	\item \gl{Google Chrome} v.55
+	\item \gl{Mozilla Firefox} v.50
+	\item \gl{Safari} v.10
+	\item \gl{Internet Explorer} v.11
 	
 \end{itemize}
 
-Per un corretto funzionamento dei plugin è necessario che sia abilitato JavaScript.
+Per un corretto funzionamento dei plugin è necessario che sia abilitato \gl{JavaScript}.
 
 \section{Installazione del plugin}
-Utilizzare il seguente comando per installare i plugin:
+Utilizzare il seguente comando per installare i plugin posizionati in un determinato \gl{URL}:
 \begin{lstlisting}
  $ bin / kibana-plugin install < URL pacchetto>
 \end{lstlisting}
@@ -44,8 +44,8 @@ Questo plugin si presenta come una mappa nella quale vengono visualizzati i nodi
 I nodi vengono disegnati graficamente in maniera diversa a seconda della tipologia di componente che rappresentano ed ognuno viene affiancato dal nominativo. 
 \\ I componenti che vengono visualizzati possono essere:
 \begin{itemize}
-	\item \emph{server}, rappresentati attraverso un'icona circolare di colore rosso;
-	\item \emph{database}, rappresentati da un cilindro di colore blu e nero;
+	\item \emph{\gl{server}}, rappresentati attraverso un'icona circolare di colore rosso;
+	\item \emph{\gl{database}}, rappresentati da un cilindro di colore blu e nero;
 \end{itemize}
 \begin{figure}[H]
 	\centering 
@@ -127,7 +127,7 @@ Questo plugin rappresenta la lista di tutte le richieste effettuate dagli utenti
 \subsubsection {Dettaglio richiesta}
 Questa funzionalità permette di raggiungere un maggiore grado di dettaglio rispetto alle informazioni inizialmente rappresentate sulla tabella nella riga corrispondente alla richiesta di nostro interesse.
 Per visualizzare maggiori informazioni riguardo una richiesta, l'utente deve cliccare sulla riga corrispondente.
-\\Nell'estensione che appare è possibile, mediante il pulsante "switch", navigare nel \emph{Call Tree} o nella \emph{Query List} a seconda delle necessità.
+\\Nell'estensione che appare è possibile, mediante il pulsante "switch", navigare nel \gl{Call Tree} o nella \gl{Query List} a seconda delle necessità.
 
 \paragraph {Call Tree} \Spazio
 \begin{figure}[H]
@@ -161,7 +161,58 @@ Rappresenta tutte le query effettuate nel database dal sistema per fornire una r
 
 
 
+\newpage
+\appendix
+\section{Glossario}
+\lettera{C}
 
+\parola{Call tree}{Albero delle chiamate, rappresenta l'insieme delle chiamate a funzioni o funzionalità del sistema eseguite da un programma.}
 
+\parola{Cluster}{Insieme di computer connessi tra loro tramite una rete telematica. Lo scopo di un cluster è quello di distribuire una elaborazione molto complessa tra i vari computer.}
 
+\lettera{D}
+
+\parola{Database}{Archivio di dati strutturato in modo da razionalizzare la gestione e l'aggiornamento delle informazioni e da permettere lo svolgimento di ricerche complesse.}
+
+\lettera{E}
+
+\parola{Elastic Search}{Motore di ricerca open-source. Dispone di API molto estensive ed elaborate. Può effettuare ricerche in maniera molto perfomante.}
+
+\lettera{I}
+\parola{Internet Explorer}{Browser web grafico proprietario sviluppato da Microsoft e incluso in Microsoft Windows a partire dal 1995.}
+
+\lettera{J}
+
+\parola{JavaScript}{Linguaggio di scripting utilizzato principalmente per applicazioni web.}
+
+\lettera{K}
+
+\parola{Kibana}{Framework open source per la visualizzazione dei dati salvati su Elasticsearch.}
+
+\lettera{M}
+
+\parola{Mappa topologica}{Visualizzazione sotto forma di grafo dei componenti di un'applicazione in cui i componenti come server e database sono i nodi e le interazioni fra essi, ovvero le richieste fatte da un componente ad un altro (come richieste HTTP o queries), sono gli archi.}
+
+\parola{Mozilla Firefox}{Web browser libero e multipiattaforma, mantenuto da Mozilla Foundation.}
+
+\lettera{P}
+\parola{Plugin}{Programma non autonomo che interagisce con un altro programma per ampliare o estendere le funzionalità originarie.}  
+
+\parola{Prodotto}{Indica il risultato di un'attività, sia esso un documento, del codice sorgente o un qualsiasi risultato verificabile che possa essere offerto per soddisfare un bisogno o un’esigenza.}  
+
+\parola{Progetto}{Insieme di attività e compiti che prevedono il raggiungimento di determinati obiettivi con specifiche fissate. Sono definite date di inizio e fine durante la quale si può predisporre di limitate risorse che vengono consumate nello svolgersi delle attività. }  
+
+\lettera{S}
+
+\parola{Safari}{Web browser multipiattaforma, sviluppato e mantenuto da Apple.}
+
+\parola{Stack Trace}{Lista di un insieme di traces prese in esame.}
+
+\lettera{T}
+
+\parola{Trace}{Struttura dati che rappresenta una singola richiesta effettuata fra due componenti di una applicazione monitorata oppure fra un utente esterno e un componente dell'applicazione. Viene solitamente memorizzata in un database per successiva analisi.}
+
+\lettera{U}
+
+\parola{URL}{\emph{Uniforme Resource Locator}, indirizzo simoboli per riferirsi ad una risorsa in rete.}
 
