@@ -129,6 +129,7 @@ SWEefty terrà sotto costante controllo tutti i rischi individuati, come specifi
 		\item \textbf{Range accettato: }0 - 4.
 	\end{itemize}
     \subparagraph{Misurazioni}
+    nonostante qualche ritardo nella stesura della \textit{Product Baseline} il gruppo è riuscito a recuperare e a consegnare tutti i documenti nei tempi previsti. 
     \begin{figure}[H]
     	\centering 
     	\includegraphics[width=0.7\textwidth]{Images/rischiNI.png}
@@ -153,12 +154,14 @@ I requisiti vengono tracciati utilizzando lo strumento SWEgo.
 	\item \textbf{Range accettato:} 100\%.
 \end{itemize}
 \subparagraph{Misurazioni}
+Il gruppo in entrata alla \emph{Revisione di Qualifica} è riuscito a soddisfare quasi tutti i requisiti obbligatori previsti dal documento \textit{Analisi dei Requisiti v 2.0.0}.
 \begin{figure}[H]
 	\centering 
 	\includegraphics[width=0.7\textwidth]{Images/obbl.png}
 	\caption{Serie storica dei requisiti obbligatori soddisfatti}
 	\label{obbl} 
 \end{figure}
+
 
 \subsection{System architectural design process}
 Lo scopo di questo processo è quello di associare ai requisiti del sistema una o più componenti del sistema.
@@ -177,6 +180,7 @@ Lo scopo di questo processo è quello di associare ai requisiti del sistema una 
 				\item \textbf{Range accettato:} $\geq 0$.
 			\end{itemize}
 		    \subparagraph{Misurazioni}
+		    Questo indice va massimizzato, visto però il numero limitato di componenti è difficile ottenere un valore alto.
 		    \begin{figure}[H]
 		    	\centering 
 		    	\includegraphics[width=0.7\textwidth]{Images/SFIN.png}
@@ -189,12 +193,14 @@ Lo scopo di questo processo è quello di associare ai requisiti del sistema una 
 				\item \textbf{Range accettato:} 0-5.
 			\end{itemize}
 		    \subparagraph{Misurazioni}
+		     Questo indice va minimizzato, il gruppo è sempre riuscito a mantenere il suo valore nel range ottimale.
 		    \begin{figure}[H]
 		    	\centering 
 		    	\includegraphics[width=0.7\textwidth]{Images/SFOUT.png}
 		    	\caption{Serie storica del Structural fan-out}
 		    	\label{SFOUT} 
 		    \end{figure}
+	       
             
 
 \subsection{System detailed design process}
@@ -212,18 +218,21 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 				\item \textbf{Range accettato:} 1-10.
 			\end{itemize}
 		    \subparagraph{Misurazioni}
+		    il gruppo è sempre riuscito a mantenere questo valore nel range ottimale grazie alla progettazione di classi non troppo complesse.
 		    \begin{figure}[H]
 		    	\centering 
 		    	\includegraphics[width=0.7\textwidth]{Images/metodi.png}
 		    	\caption{Serie storica dei metodi per classe medio}
 		    	\label{metodi} 
 		    \end{figure}
+	        
 			\paragraph{Parametri per metodo} \Spazio
 			\begin{itemize}
 				\item \textbf{Range ottimale:} 0-4;
 				\item \textbf{Range accettato:} 0-8.
 			\end{itemize}
 		    \subparagraph{Misurazioni}
+		    I metodi che sono stati creati non superano i tre parametri perciò il risultato medio è sempre stato nel range ottimale.
 		    \begin{figure}[H]
 		    	\centering 
 		    	\includegraphics[width=0.7\textwidth]{Images/parametri.png}
@@ -249,24 +258,28 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 				\item \textbf{Range accettato:} 1-15.
 			\end{itemize}
 		    \subparagraph{Misurazioni}
+		    Dopo una iniziale fuoriuscita dal range di accettazione dovuto alla scarsa conoscenza di Kibana il gruppo è riuscito a riportare questo valore nel range ottimale.
 		    \begin{figure}[H]
 		    	\centering 
 		    	\includegraphics[width=0.7\textwidth]{Images/ciclo.png}
 		    	\caption{Serie storica della complessità ciclomatica media}
 		    	\label{ciclo} 
 		    \end{figure}
+	        
 			\paragraph{Linee di codice per linee di commento} \Spazio
 			\begin{itemize}
 				\item \textbf{Range ottimale:} $\geq30$;
 				\item \textbf{Range accettato:} $\geq25$.
 			\end{itemize}
 		    \subparagraph{Misurazioni}
+		     Dopo una iniziale carenza di linee di commento il gruppo si è impegnato per portare questo valore in un range accettabile.
 		    \begin{figure}[H]
 		   	\centering 
 		    	\includegraphics[width=0.7\textwidth]{Images/comm.png}
 		    	\caption{Serie storica delle linee di codice per linee di commento}
 		    	\label{comm} 
 		    \end{figure}
+	        
 			\paragraph{Halstead difficulty per-function} \Spazio
 			\begin{itemize}
 				\item \textbf{Range ottimale:} 0-15;
@@ -334,12 +347,14 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 				\item \textbf{Range accettato:} 40-100.
 			\end{itemize}
             \subparagraph{Misurazioni}
+            Il gruppo è sempre riuscito a mantenere questo indice all'interno del range ottimale.
             \begin{figure}[H]
             	\centering 
             	\includegraphics[width=0.7\textwidth]{Images/Gulpease.png}
             	\caption{Serie storica dell'indice di gulpease medio}
             	\label{gul} 
             \end{figure}
+            
 	\subsection{Software verification process}
 	Lo scopo del processo è di verificare che tutte le componenti del sistema soddisfino completamente i requisiti ad esse correlate.
 		\subsubsection{Obiettivi}
@@ -356,7 +371,9 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 				\item \textbf{Range ottimale:} 70\%-100\%;
 				\item \textbf{Range accettato:} 50\%-100\%.
 		    \end{itemize}
+	        
 	        \subparagraph{Misurazioni}
+	        I test dinamici in questo momento percorrono la maggior parte dei rami decisionali presenti. 
 	        \begin{figure}[H]
 	        	\centering 
 	        	\includegraphics[width=0.7\textwidth]{Images/branch.png}
@@ -369,9 +386,11 @@ Lo scopo del processo è fornire una progettazione di dettaglio del prodotto che
 					\item \textbf{Range accettato:} 50\%-100\%.
 		    	\end{itemize}
 	    	    \subparagraph{Misurazioni}
+	    	    La maggior parte del codice viene eseguito dai test dinamici presenti.
 	    	    \begin{figure}[H]
 	    	    	\centering 
 	    	    	\includegraphics[width=0.7\textwidth]{Images/statement.png}
 	    	    	\caption{Serie storica dello statement coverage}
 	    	    	\label{statement} 
 	    	    \end{figure}
+    	        
