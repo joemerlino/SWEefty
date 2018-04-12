@@ -1,7 +1,10 @@
+\newpage
 \section{Requisiti di sistema}
+Il progetto Havana si presenta come una coppia di plugin per Kibana. Per questo motivo è necessario predisporre di Kibana correttamente installata e configurata con Elasticsearch.
+\\ Si garantisce una corretta visualizzazione e interazione con i plugin con Kibana v.6.
 \subsection{Browser Supportati}
 
-Di seguito viene fornito un breve elenco delle versioni minime dei browser sui quali il funzionamento del nostro plugin è garantito:
+Di seguito viene fornito un breve elenco delle versioni minime dei browser sui quali il funzionamento dei nostri plugin è garantito:
 \begin{itemize}
 	
 	\item Google Chrome v.55
@@ -11,30 +14,66 @@ Di seguito viene fornito un breve elenco delle versioni minime dei browser sui q
 	
 \end{itemize}
 
-Per un funzionamento corretto del plugin è necessario che sia abilitato Javascript.
+Per un corretto funzionamento dei plugin è necessario che sia abilitato JavaScript.
 
+\section{Installazione del plugin}
+Utilizzare il seguente comando per installare i plugin:
+\begin{lstlisting}
+ $ bin / kibana-plugin install < URL pacchetto>
+\end{lstlisting}
 
-\section{Manuale Utente}
-\subsection{Mappa Topologica}
+Per l'installazione dei plugin su una directory a scelta utilizzare l'opzione \texttt{-d} o \texttt{--plugin-dir} e dopo il comando \texttt{install} specificare una directory per i plugin, come nell'esempio seguente:
+\begin{lstlisting}
+ $ bin / kibana-plugin install file: ///some/local/path/my-plugin.zip -d path / to / directory 
+\end{lstlisting}
+
+Una volta completata l'installazione è possibile navigare tra tutti i plugin installati nella lista presente nel menù a sinistra di Kibana.
+
+\newpage
+\section{Mappa Topologica}
 \label{sec:mtopologica}
-\subsubsection{Interfaccia}
-Questo plugin si presenta come una mappa nella quale vengono visualizzati i nodi di cui è composto il sistema. 
-I nodi vengono disegnati graficamente in modo diverso a seconda del tipo di componente che rappresentano, ad esempio i server sono rappresentati con un'icona circolare di colore rosso, mentre i database sono rappresentati da un cilindro di colore blu e nero. Ogni nodo è affiancato dal nome del componente. 
+\subsection{Interfaccia}
+
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=1\textwidth]{Images/mappa}
+	\caption{Visualizzazione del plugin Mappa Topologica}
+\end{figure}
+
+Questo plugin si presenta come una mappa nella quale vengono visualizzati i nodi hardware di cui è composto il sistema dell'applicazione monitorata. 
+I nodi vengono disegnati graficamente in maniera diversa a seconda della tipologia di componente che rappresentano ed ognuno viene affiancato dal nominativo. 
+\\ I componenti che vengono visualizzati possono essere:
+\begin{itemize}
+	\item \emph{server}, rappresentati attraverso un'icona circolare di colore rosso;
+	\item \emph{database}, rappresentati da un cilindro di colore blu e nero;
+\end{itemize}
 \begin{figure}[H]
 	\centering 
 	\includegraphics[width=0.08\textwidth]{Images/server.png}
-	\caption{icona utilizzata per rappresentare i server}
+	\caption{Icona utilizzata per rappresentare i server}
 	\label{server} 
 \end{figure}
 \begin{figure}[H]
 	\centering 
 	\includegraphics[width=0.08\textwidth]{Images/database.png}
-	\caption{icona utilizzata per rappresentare i database}
+	\caption{Icona utilizzata per rappresentare i database}
 	\label{database} 
 \end{figure}
 
-\subsubsection{Funzionalità}
-    \paragraph {Drag and Drop} \Spazio
+I componenti che interagiscono tra di loro sono collegati attraverso un arco che specifica  particolari informazioni:
+\begin{itemize}
+	\item etichetta con la tipologia dell'interazione;
+	\item tempo medio di risposta.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=0.5\textwidth]{Images/componenti}
+	\caption{Esempio interazione tra due componenti}
+\end{figure}
+
+\subsection{Funzionalità}
+    \subsubsection {Drag and Drop} 
 Questa funzionalità permette di spostare i nodi della mappa nella posizione desiderata purchè sia all'interno dell'area del plugin il cui perimetro è evidenziato da un rettangolo di colore grigio.
 Per spostare un nodo è necessario: 
 \begin{enumerate}
@@ -45,7 +84,7 @@ Per spostare un nodo è necessario:
 	
 \end{enumerate}
 
-\paragraph{Zoom} \Spazio
+\subsubsection{Zoom}
 Questà funzionalità permette all'utente di effettuare le operazioni di ingrandimento e rimpicciolimento delle dimensioni di visualizzazione della mappa. In particolare, è possibile ingrandire una specifica area della mappa.
 Per effettuare questa operazione è necessario:
 
@@ -56,7 +95,7 @@ Per effettuare questa operazione è necessario:
 	
 \end{enumerate}
 
-\paragraph{Tempo di risposta} \Spazio
+\subsubsection{Tempo di risposta}
 Questa funzionalità permette di visualizzare il tempo medio di risposta impiegato per effettuare richieste tra due nodi del sistema.
 E' possibile visualizzarlo in corrispondenza della linea che collega due componenti.
 Se il numero è colorato in rosso, significa che il tempo medio di risposta è superiore rispetto ad una soglia standard definita.
@@ -64,45 +103,59 @@ Se il numero è colorato in rosso, significa che il tempo medio di risposta è s
 
 
 
-\subsection{Stack Trace}
+\section{Stack Trace}
 \label{sec:strace}
-\subsubsection{Interfaccia}
-Questo plugin è rappresentanto mediante una lista nella quale sono presenti tutte le richieste effettuate dal sistema. Per ogni richiesta si possono visualizzare diverse informazioni, nello specifico:
+\subsection{Interfaccia}
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=1\textwidth]{Images/stack}
+	\caption{Visualizzazione del plugin Stack Trace}
+\end{figure}
+Questo plugin rappresenta la lista di tutte le richieste effettuate dagli utenti al sistema dell'applicazione monitorata. Le richieste sono rappresentate in ordine cronologico decrescente e in più, per ogni richiesta, si possono visualizzare diverse informazioni.\\ Nello specifico:
    
     \begin{itemize}
     	
-    	\item \textbf{Numero della richiesta:} Numero progressivo associato alla richiesta;
-    	\item \textbf{Richiesta:} Nome della richiesta;
-    	\item \textbf{Execution Time:} Tempo totale di esecuzione della richiesta;
-    	\item \textbf{Timestamp:} Indica l'istante temporale in cui è stata effettuata la richiesta;
-    	\item \textbf{Errore:} Indica se durante l'esecuzione della richiesta si è presentato qualche errore.
+    	\item \textbf{Numero della richiesta:} numero progressivo associato alla richiesta;
+    	\item \textbf{Richiesta:} nome della richiesta e tipologia;
+    	\item \textbf{Execution Time:} tempo totale di esecuzione della richiesta;
+    	\item \textbf{Timestamp:} indica l'istante temporale in cui è stata effettuata la richiesta;
+    	\item \textbf{Errore:} indica se durante l'esecuzione della richiesta si è presentato qualche errore.
     	
     	\end{itemize}
 
-\subsubsection{Funzionalità}
-\paragraph {Dettaglio richiesta} \Spazio
+\subsection{Funzionalità}
+\subsubsection {Dettaglio richiesta}
 Questa funzionalità permette di raggiungere un maggiore grado di dettaglio rispetto alle informazioni inizialmente rappresentate sulla tabella nella riga corrispondente alla richiesta di nostro interesse.
 Per visualizzare maggiori informazioni riguardo una richiesta, l'utente deve cliccare sulla riga corrispondente.
-Nel popup che appare è possibile, mediante il pulsante "switch", navigare nella \emph{Call Tree} o nella \emph{Query List} a seconda delle necessità.
+\\Nell'estensione che appare è possibile, mediante il pulsante "switch", navigare nel \emph{Call Tree} o nella \emph{Query List} a seconda delle necessità.
 
-\subparagraph {Call Tree} \Spazio
-Rappresenta tutte le funzioni chiamate dal sistema per effettuare la richiesta dell'utente.
-Ogni funzione è stata disegnata in modo identanto così da riuscire a visualizzare la gerarchia di annidamento per ogni metodo padre.
-E' possibile espandere/restringere ogni gerarchia di funzioni cliccando su di essa, in questo modo, tutta la gerarchia annidata verrà visualizzata/nascosta.
+\paragraph {Call Tree} \Spazio
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=1\textwidth]{Images/calltree}
+	\caption{Visualizzazione del calltree di una richiesta}
+\end{figure}
+Il call tree rappresenta tutte le funzioni chiamate dal sistema per effettuare la richiesta dell'utente al sistema.
+Ogni funzione è stata raffigurata in maniera indentata rispetto al padre così da riuscire a comprendere facilmente la gerarchia di annidamento.\\
+E' possibile inoltre espandere/restringere ogni gerarchia di funzioni cliccando su di essa. In questo modo, tutta la gerarchia annidata verrà visualizzata/nascosta.
 
-In corrispondenza di ogni funzione è possibile visualizzare il tempo di esecuzione.
+In corrispondenza di ogni funzione è possibile visualizzare il tempo di \emph{Self execution time} e il \emph{Total execution time}
+\\
 
-   
-
-\subparagraph {Query List} \Spazio
+\paragraph {Query List} \Spazio
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=1\textwidth]{Images/querylist}
+	\caption{Visualizzazione delle query associate ad una richiesta}
+\end{figure}
 Rappresenta tutte le query effettuate nel database dal sistema per fornire una risposta alla richiesta dell'utente.
     \begin{itemize}
 	
-	\item \textbf{Numero della query:} Numero progressivo associato alla query;
-	\item \textbf{Query:} Query effettuata;
-	\item \textbf{Database:} Nome del database nel quale è stata effetuata la query;
-	\item \textbf{Execution Time:} Tempo impiegato dalla query per fornire un risultato;
-	\item \textbf{Timestamp:} Indica l'instante temporale in cui è stata effettuata la query.
+	\item \textbf{Numero della query:} numero progressivo associato alla query;
+	\item \textbf{Query:} testo della query effettuata;
+	\item \textbf{Database:} nome del database nel quale è stata effetuata la query;
+	\item \textbf{Execution Time:} tempo impiegato dalla query per fornire un risultato;
+	\item \textbf{Timestamp:} indica l'instante temporale in cui è stata effettuata la query.
 	
 \end{itemize}
 
