@@ -162,11 +162,8 @@ backgroundcolor=\color{lbcolor},
 }
 
 \newcommand{\lettera}[1]{
-	\invisiblesection{#1}
-	\begin{center}
-		{\Huge #1}\\
-	\end{center}
-	\vspace{0.2cm}
+		\section*{\centering{\Huge #1}}
+	%\vspace{0.2cm}
 }
 
 \newcommand\invisiblesection[1]{%
@@ -182,8 +179,8 @@ backgroundcolor=\color{lbcolor},
 }
 
 \newcommand{\parola}[2]{
-	\invisiblesubsection{#1}
-	\textbf{\large{#1}} \\
+	\subsection*{\large #1}
+	\vspace*{-0.5cm}
 	\indent #2 
-	\vspace{0.3cm}
+	\vspace{-0.3cm}
 }
