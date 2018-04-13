@@ -133,8 +133,15 @@
 		
 	        
 		    
-			\subparagraph{UML} \Spazio
-			I diagrammi \gl{UML} devono essere realizzati usando la versione del linguaggio \textit{v2.0}
+			\subparagraph{UML}
+			\label{sec:UML} \Spazio
+			I diagrammi \gl{UML} devono essere realizzati usando la versione del linguaggio \textit{v2.0}. Essi forniscono una rappresentazione chiara e compatta dell'intera struttura dell'applicazione che si andrà a realizzare. In particolare i diagrammi che saranno realizzati potranno essere:
+			\begin{itemize}
+				\item \emph{Diagrammi degli usecase}: \textcolor{red}{fare};
+				\item \textbf{Diagrammi delle classi:} illustrano una collezione di elementi dichiarativi di un modello come classi e tipi, assieme ai loro contenuti e alle loro relazioni;
+				\item \textbf{Diagrammi di sequenza:} descrivono una determinata sequenza di interazioni fra i componenti del sistema;
+				\item{Diagrammi delle attività:} descrivono le relazioni che legano un insieme di attività. Non necessariamente si riferiscono a componenti del sistema.
+			\end{itemize}
 			
 			
 		\paragraph{Progettazione}
@@ -150,13 +157,25 @@
 				\item effettuare modifiche senza che la struttura del software già costruita debba essere messa nuovamente in discussione;
 				\item soddisfare i requisiti di qualità fissati dal \gl{committente}.
 			\end{itemize}
+
+
+
+			\subparagraph{Gestione del materiale di progettazione}
+			\label{sec:gestioneMaterialeProgettazione}
+			\Spazio
+			Per poter produrre una documentazione valida i \emph{Progettisti} dovranno produrre un insieme di diagrammi UML, in particolare si tratterà di \emph{diagrammi delle calssi} e \emph{diagrammi di sequenza}. Possiamo distinguere due fasi di maturazione di un diagramma:
+			
+			
+			\begin{enumerate}
+				\item \textbf{In fase di sviluppo}: durante questa fase i \emph{Progettisti} lavorano attivamente sul diagramma che dunque ha una natura mutevole. Non trattandosi di un prodotto ufficiale o completo il diagramma, prodotto con il programma StarUML descritto in \ref{sec:StarUML}, deve essere salvato nella cartella all'interno dello spazio Dropbox denominata \texttt{UMLDiagrams}. I diagrammi delle classi vanni inseriti in una sottocartella denominata \texttt{Classes}, mentre quelli di sequenza vanno inseriti in una sottocartella chiamata \texttt{Sequences}. Il formato con il quale sono salvati i diagrammi è necessario permetta di modificarli in un secondo momento, dunque è opportuno che sia quello nativo di StarUML: \texttt{.mdj}.
+				\item \textbf{Completato}: un diagramma che si trovi in questa fase può considerarsi completato. Esso è un prodotto completo ed ufficiale. Esso farà parte di un documento tecnico e dunque dovrà essere inserito all'interno di esso. Il formato naturale per salvare un diagramma \emph{completato} è sottoforma di immagine non modificabile, dunque \texttt{.png}. Tale immagine deve essere inserita all'interno della cartella del documento tecnico nella sottocartella \texttt{Images/UML}. Il nome con cui si salva tale immagine deve rendere chiaro ciò che il diagramma intende descrivere. Ad esempio un diagramma delle classi che descriva i componenti del lato backend dell'applicazione dovrebbe chiamarsi \texttt{backend.png}.
+			\end{enumerate}
 		
 		
 			\subparagraph{Technology baseline}
 			\label{sec:tec}
 			\Spazio
 			Per la Revisione di Progettazione il progettista è tenuto a presentare e discutere in forma agile le scelte tecnologiche effettuate in finestre di opportunità che precedono la revisione: presenta le tecnologie, i \gl{framework} e le librerie selezionate per lo sviluppo del prodotto e ne dimostra l'adeguatezza e il grado di integrazione tramite un \textit{Proof of Concept} che sviluppa alcuni dei requisiti principali del progetto. Il \textit{PoC}, ovvero un prototipo eseguibile che dimostra ciò che il gruppo ha intenzione di realizzare, può rappresentare un punto di partenza per il progetto finale o soltanto un prototipo usa e getta.\\
-			\textcolor{red}{---- Norme PoC?-----}\\
 			Lo scopo delle attività che portano allo sviluppo della \textit{Technology Baseline} è permettere ai componenti del gruppo di prendere dimestichezza con le tecnologie che verranno utilizzate per lo sviluppo del software e permettere una migliore progettazione architetturale.
 
 			\subparagraph{Product baseline}
@@ -164,9 +183,9 @@
 			\Spazio
 			Per la Revisione di Qualifica, invece, il progettista è tenuto a presentare e discutere le scelte architetturali prese per il prodotto finale e dimostrando la coerenza con quanto scelto precedentemente nella \textit{Technology Baseline}.\\
 			Per rappresentare al meglio le scelte prese si presenta un \emph{allegato tecnico} contenente:
+			\textcolor{red}{da controllare qui sotto}
 				\begin{itemize}
-					\item \textbf{Diagrammi UML:}
-					essi forniscono una rappresentazione molto chiara e compatta dell'intera struttura dell'applicazione che si andrà ad analizzare. In particolare devono essere realizzati i seguenti diagrammi:
+					\item \textbf{Diagrammi UML:} descritti in \ref{sec:UML}. Devono essere presenti in particolare \emph{diagrammi delle classi} e \emph{diagrammi di sequenza}.
 					\begin{itemize}
 						\item \textbf{Diagrammi delle classi:} illustrano una collezione di elementi dichiarativi di un modello come classi e tipi, assieme ai loro contenuti e alle loro relazioni;
 						\item \textbf{Diagrammi di sequenza:} descrivono una determinata sequenza di azioni dove tutte le scelte sono già effettuate. In pratica nel diagramma non compaiono scelte né flussi alternativi.
