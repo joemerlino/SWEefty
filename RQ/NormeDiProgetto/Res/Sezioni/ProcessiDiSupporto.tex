@@ -300,22 +300,6 @@ Metrica software utilizzata per misurare la complessità di un programma, misura
 Misura la percentuale di linee di commento presenti all'interno del codice di un programma.
 \textbf{Misurazione:} $P=100\times\frac{N_C}{N_{SLOC}}$ dove $N_C$ è il numero di linee di commento e $N_{SLOC}$ è il numero di linee di codice prodotte.
 
-\subparagraph{Halstead difficulty per-function} \Spazio
-Misura la complessità di una funzione.
-\textbf{Misurazione:} $D=\frac{N_{UOP}}{2}\times\frac{N_{OD}}{N_{UOD}}$ dove $N_{UOP}$ e i l numero di operatori distinti, $N_{OD}$ è il numero totale di operandi mentre $N_{UOD}$ è il numero di operandi distinti.
-
-\subparagraph{Halstead Volume per-function} \Spazio
-Misura la dimensione dell'implementazione di un algoritmo basandosi sul numero di operazioni eseguite e sugli operandi di una funzione.
-\textbf{Misurazione:} $V=(N_{OP} + N_{OD})\times log_2(N_{UOP} + N_{UOD})$  dove $N_{OP}$ è il numero totale di operatori, $N_{OD}$ è il numero totale di operandi, $N_{UOP}$ è il numero di operatori distinti e $N_{UOD}$ è il numero di operandi distinti.
-	
-\subparagraph{Halstead Effort per-function} \Spazio
-Rappresenta il costo necessario a scrivere il codice di una funzione.
-\textbf{Misurazione:} $E=D\times V$ dove $D$ è l'Halstead Difficulty e $V$ è l' Halstead Volume per-function.
-	
-\subparagraph{Indice di manutenibilità}  \Spazio
-Questo indice da una misura di quanto il codice prodotto è manutenibile.
-\textbf{Misurazione}:$MI=171-3.42\times ln(E)-0.23\times ln(C)-16.2\times ln(LOC)$ dove $E$  l'Halstead Effort medio per modulo, $C$ è la complessità ciclomatica media per modulo mentre LOC è il numero medio di linee di codice per modulo.
-
 \subparagraph{Indice Gulpease} \Spazio
 L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana, per il suo calcolo vengono considerate due variabili linguistiche: la lunghezza delle parole e la lunghezza delle frasi rispetto al numero delle lettere.
 \textbf{Misurazione:} $G=89+\frac{300\times N_F-10\times N_L}{N_P}$ dove $N_F$ è il numero delle frasi, $N_L$ è il numero di lettere e $N_P$ è il numero di parole nel testo.
