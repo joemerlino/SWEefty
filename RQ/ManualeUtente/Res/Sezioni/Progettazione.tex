@@ -1,7 +1,7 @@
 \newpage
 \section{Requisiti di sistema}
-Il progetto Havana si presenta come una coppia di plugin per Kibana. Per questo motivo è necessario predisporre di Kibana correttamente installata e configurata con \gl{Elasticsearch}.
-\\ Si garantisce una corretta visualizzazione e interazione con i plugin con Kibana v.6.
+Il progetto Havana si presenta come una coppia di plugin per Kibana. Per questo motivo è necessario predisporre di Kibana correttamente installato e configurato con \gl{Elasticsearch}.
+\\ Si garantisce una corretta visualizzazione e interazione con i plugin installati sulla versione 6 di Kibana.
 \subsection{Browser Supportati}
 
 Di seguito viene fornito un breve elenco delle versioni minime dei browser sui quali il funzionamento dei nostri plugin è garantito:
@@ -16,15 +16,12 @@ Di seguito viene fornito un breve elenco delle versioni minime dei browser sui q
 
 Per un corretto funzionamento dei plugin è necessario che sia abilitato \gl{JavaScript}.
 
-\section{Installazione del plugin}
-Utilizzare il seguente comando per installare i plugin posizionati in un determinato \gl{URL}:
-\begin{lstlisting}
- $ bin / kibana-plugin install < URL pacchetto>
-\end{lstlisting}
 
-Per l'installazione dei plugin su una \gl{directory} a scelta utilizzare l'opzione \texttt{-d} o \texttt{--plugin-dir} e dopo il comando \texttt{install} specificare una directory per i plugin, come nell'esempio seguente:
+\section{Installazione}
+Per prima cosa bisogna provvedere a scaricare i plugin. Questi si possono scaricare da \href{https://github.com/joemerlino/HavanaPlugin}{https://github.com/joemerlino/HavanaPlugin} cliccando sul pulsante verde "Clone or download" e poi su "Download ZIP".
+Per l'installazione dei plugin in una \gl{directory} a scelta utilizzare il comando \texttt{install} con l'opzione \texttt{-d} o \texttt{--plugin-dir}  specificando una directory per i plugin, come nell'esempio seguente:
 \begin{lstlisting}
- $ bin / kibana-plugin install file: ///some/local/path/my-plugin.zip -d path / to / directory 
+ $ bin /kibana-plugin install file:///some/local/path/my-plugin.zip -d path/to/directory 
 \end{lstlisting}
 
 Una volta completata l'installazione è possibile navigare tra tutti i plugin installati nella lista presente nel menù a sinistra di Kibana.
@@ -40,12 +37,12 @@ Una volta completata l'installazione è possibile navigare tra tutti i plugin in
 	\caption{Visualizzazione del plugin Mappa Topologica}
 \end{figure}
 
-Questo plugin si presenta come una mappa nella quale vengono visualizzati i nodi \gl{hardware} di cui è composto il sistema dell'applicazione monitorata. 
-I nodi vengono disegnati graficamente in maniera diversa a seconda della tipologia di componente che rappresentano ed ognuno viene affiancato dal nominativo. 
+Questo plugin si presenta come una mappa nella quale vengono visualizzati i nodi \gl{hardware} che compongono l'applicazione monitorata.
+I nodi vengono rappresentati graficamente in maniera diversa a seconda della tipologia di componente che essi rappresentano ed ognuno viene affiancato dal suo nominativo.
 \\ I componenti che vengono visualizzati possono essere:
 \begin{itemize}
-	\item \emph{\gl{server}}, rappresentati attraverso un'icona circolare di colore rosso;
-	\item \emph{\gl{database}}, rappresentati da un cilindro di colore blu e nero;
+	\item \emph{\gl{Server}}, rappresentati attraverso un'icona circolare di colore rosso;
+	\item \emph{\gl{Database}}, rappresentati da un cilindro di colore blu e nero;
 \end{itemize}
 \begin{figure}[H]
 	\centering 
@@ -60,7 +57,7 @@ I nodi vengono disegnati graficamente in maniera diversa a seconda della tipolog
 	\label{database} 
 \end{figure}
 
-I componenti che interagiscono tra di loro sono collegati attraverso un arco che specifica  particolari informazioni:
+I componenti che interagiscono tra di loro sono collegati attraverso un arco che specifica particolari informazioni:
 \begin{itemize}
 	\item etichetta con la tipologia dell'interazione;
 	\item tempo medio di risposta.
@@ -73,34 +70,28 @@ I componenti che interagiscono tra di loro sono collegati attraverso un arco che
 \end{figure}
 
 \subsection{Funzionalità}
-    \subsubsection {Drag and Drop} 
+	\subsubsection {Drag and Drop} 
 Questa funzionalità permette di spostare i nodi della mappa nella posizione desiderata purchè sia all'interno dell'area del plugin il cui perimetro è evidenziato da un rettangolo di colore grigio.
 Per spostare un nodo è necessario: 
 \begin{enumerate}
-	
 	\item Portare il cursore del mouse sopra al nodo che si intende muovere;
 	\item Cliccare e tenere premuto sul nodo;
 	\item Spostare il nodo nella posizione desiderata.
-	
 \end{enumerate}
+
 
 \subsubsection{Zoom}
 Questà funzionalità permette all'utente di effettuare le operazioni di ingrandimento e rimpicciolimento delle dimensioni di visualizzazione della mappa. In particolare, è possibile ingrandire una specifica area della mappa.
 Per effettuare questa operazione è necessario:
-
 \begin{enumerate}
-	
 	\item Portare il cursore del mouse nel punto della mappa in cui si vuole effettuare l'operazione di zoom;
 	\item Muovere la rotellina del mouse in avanti se si intende ingrandire, all'indietro se si intede rimpicciolire. Nel caso non si disponga della rotellina sul mouse, utilizzare le funzionalità presenti nella tastiera per effettuare lo zoom.
-	
 \end{enumerate}
 
 \subsubsection{Tempo di risposta}
 Questa funzionalità permette di visualizzare il tempo medio di risposta impiegato per effettuare richieste tra due nodi del sistema.
 E' possibile visualizzarlo in corrispondenza della linea che collega due componenti.
 Se il numero è colorato in rosso, significa che il tempo medio di risposta è superiore rispetto ad una soglia standard definita.
-
-
 
 
 \section{Stack Trace}
@@ -139,7 +130,7 @@ Il call tree rappresenta tutte le funzioni chiamate dal sistema per effettuare l
 Ogni funzione è stata raffigurata in maniera indentata rispetto al padre così da riuscire a comprendere facilmente la gerarchia di annidamento.\\
 E' possibile inoltre espandere/restringere ogni gerarchia di funzioni cliccando su di essa. In questo modo, tutta la gerarchia annidata verrà visualizzata/nascosta.
 
-In corrispondenza di ogni funzione è possibile visualizzare il tempo di \emph{Self execution time} e il \emph{Total execution time}
+In corrispondenza di ogni funzione è possibile visualizzare il \emph{Self execution time} e il \emph{Total execution time}
 \\
 
 \paragraph {Query List} \Spazio
