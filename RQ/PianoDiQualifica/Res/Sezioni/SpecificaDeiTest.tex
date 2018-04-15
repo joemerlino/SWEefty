@@ -430,10 +430,98 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
     \end{longtable}
 	
 	\subsubsection{Test di integrazione}
-	Lo scopo di questa tipologia di test è di verificare le componenti di sistema. Più	precisamente, l’obiettivo è di testare il funzionamento dei vari \gl{package} prodotti, sia singolarmente che nel loro insieme, questi test verranno implementati assieme durante la progettazione architetturale.
+	Lo scopo di questa tipologia di test è di verificare le componenti di sistema. Più	precisamente, l’obiettivo è di testare il funzionamento dei vari \gl{package} prodotti, sia singolarmente che nel loro insieme.
+	
+	\begin{longtable}{|c|H|c|}
+		\hline
+		\textbf{Id Test} & \textbf{Descrizione} & \textbf{Stato}\\
+		\hline
+		\endhead
+		TI1 & Test di integrazione tra il lato client e il lato server & \textcolor{green}{Superato} \\ \hline
+		TI2 & Viene verificato che la strategia GraphCleaner funzioni correttamente all'interno di dataCleaner & \textcolor{green}{Superato} \\ \hline
+		TI3 & Viene verificato che la strategia StackCleaner funzioni correttamente all'interno di dataCleaner & \textcolor{green}{Superato} \\ \hline
+		TI4 & Viene verificata l'integrazione tra DataReader e GraphBuilder & \textcolor{green}{Superato} \\ \hline
+		TI5 & Viene verificato che il servizio ElasticsearchClient funzioni correttamente all'interno di DataReader & \textcolor{green}{Superato}  \\ \hline
+		TI6 & Viene verificata l'integrazione tra DataReader e StackBuilder & \textcolor{green}{Superato}  \\ \hline
+				
+	\end{longtable}
+    \newcolumntype{U}{>{\centering\arraybackslash}m{10cm}}
+    \begin{longtable}{|c|U|}
+    	\hline
+    	\textbf{Id Test} & \textbf{Componente}\\
+    	\hline
+    	\endhead
+    	TI1 & Havana \\ \hline
+    	TI2 & Client \\ \hline
+    	TI3 & Client \\ \hline
+    	TI4 & Client \\ \hline
+    	TI5 & Client \\ \hline
+    	TI6 & Client \\ \hline
+    \end{longtable}
 	
 	\subsubsection{Test di unità}
-	Lo scopo di questa tipologia di test è di verificare la più piccola parte di lavoro prodotta da un programmatore. Questo significa tendenzialmente verificare i metodi e le funzioni scritte, questi test verranno implementati durante la progettazione architetturale.
+	Lo scopo di questa tipologia di test è di verificare la più piccola parte di lavoro prodotta da un programmatore. Questo significa tendenzialmente verificare i metodi e le funzioni scritte.
+	
+	\begin{longtable}{|c|H|c|}
+		\hline
+		\textbf{Id Test} & \textbf{Descrizione} & \textbf{Stato}\\
+		\hline
+		\endhead
+		TU1 & Viene verificato che i dati vengano letti correttamente da \emph{Elasticsearch} & \textcolor{green}{Superato} \\ \hline
+		TU2 & Viene verificato che la sorgente dei dati venga impostata correttamente & \textcolor{green}{Superato} \\ \hline
+		TU3 & Viene verificato che i dati ottenuti da \emph{Elasticsearch} siano solo quelli contenenti delle trace & \textcolor{green}{Superato} \\ \hline
+		TU4 & Viene verificato che i metadati vengano rimossi correttamente da un indice & \textcolor{green}{Superato} \\ \hline
+		TU5 & Viene verificato che i metadati vengano rimossi correttamente da un array di indici & \textcolor{green}{Superato} \\ \hline
+		TU6 & Viene verificato che i dati utili per la costruzione della mappa topologica vengano puliti correttamente  & \textcolor{green}{Superato} \\ \hline
+		TU7 & Viene verificato che i dati utili per la costruzione della stack trace vengano puliti correttamente & \textcolor{green}{Superato} \\ \hline
+		TU8 & Viene verificato che la strategia di pulizia dei dati venga impostata correttamente & \textcolor{green}{Superato} \\ \hline
+		TU9 & Viene verificato che la tipologia delle trace venga identificata correttamente & \textcolor{green}{Superato} \\ \hline
+		TU10 & Viene verificato che i call tree vengano trasformati correttamente da stringa ad una gerarchia di oggetti & \textcolor{green}{Superato} \\ \hline
+		TU11 & Viene verificato che i tempi di esecuzione delle chiamate siano corretti & \textcolor{green}{Superato} \\ \hline
+		TU12 & Viene verificato che non possano essere inseriti due nodi uguali nella mappa topologica & \textcolor{green}{Superato} \\ \hline
+		TU13 & Viene verificato che non possano essere inseriti due archi uguali nella mappa topologica & \textcolor{green}{Superato} \\ \hline
+		TU14 & Viene verificato che sia possibile ottenere correttamente l'id di un nodo & \textcolor{green}{Superato} \\ \hline
+		TU15 & viene verificato che sia possibile ottenere correttamente il link cercato & \textcolor{green}{Superato} \\ \hline
+		TU16 & Viene verificato che i nodi vengano aggiunti correttamente alla mappa & \textcolor{green}{Superato} \\ \hline
+		TU17 & Viene verificato che gli archi vengano aggiunti correttamente alla mappa & \textcolor{green}{Superato} \\ \hline
+		TU18 & Viene verificato che i nodi della mappa vengano costruiti correttamente dato un array di richieste HTTP e a database & \textcolor{green}{Superato} \\ \hline
+		TU19 & viene verificato che gli archi della mappa vengano costruiti correttamente dato un array di JSON & \textcolor{green}{Superato} \\ \hline
+		
+		
+	\end{longtable}
+    
+    \paragraph{Tracciamento test di unità-metodi}
+    
+    \normalsize
+    \begin{longtable}{|c|U|}
+    	\hline
+    	\textbf{Id Test} & \textbf{Metodo}\\
+    	\hline
+    	\endhead
+    	TU1 & Client::dataReader::readData()\newline
+    	 Client::dataReader::readIndex() \\ \hline 
+    	TU2 & Client::dataReader::setElasticsearchInstance() \\ \hline
+    	TU3 & Client::dataReader::tracesIndices() \\ \hline
+    	TU4 & Client::dataCleaner::removeMetaDataFromIndex() \\ \hline
+    	TU5 & Client::dataCleaner::removeMetaDataFromIndices()\\ \hline
+    	TU6 & Client::GraphCleaner::clean() \\ \hline
+    	TU7 & Client::StackCleaner::Data()\\ \hline
+    	TU8 & Client::dataCleaner::setStrategy()\\ \hline
+    	TU9 & Client::stackBuilder::checkPageload()\newline 
+    	Client::stackBuilder::checkQueries() \\ \hline
+    	TU10 & Client::stackBuilder::build\_tree() \newline
+    	Client::stackBuilder::more\_data() \newline
+    	Client::stackBuilder::tableToTree() \\ \hline
+    	TU11 & Client::StackBuilder::changeDuration()\\ \hline
+    	TU12 & Client::GraphBuilder::checkIfNodeIsNotPresent() \\ \hline
+    	TU13 & Client::GraphBuilder::checkIfLinkIsNotPresent() \\ \hline
+    	TU14 & Client::GraphBuilder::getIdOfNode() \\ \hline
+    	TU15 & Client::GraphBuilder::getIndexOfSameLink() \\ \hline
+    	TU16 & Client::GraphBuilder::getNodes() \\ \hline
+    	TU17 & Client::GraphBuilder::getLinks() \\ \hline
+    	TU18 & Client::GraphBuilder::getNodes() \\ \hline
+    	TU19 & Client::GraphBuilder::getLinks() \\ \hline
+    \end{longtable}
 		
 		
 	
