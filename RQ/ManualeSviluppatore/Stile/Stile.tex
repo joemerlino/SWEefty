@@ -160,3 +160,27 @@ backgroundcolor=\color{lbcolor},
   commentstyle=\color{orange},
   stringstyle=\color{red}
 }
+
+\newcommand{\lettera}[1]{
+	\section*{\centering{\Huge #1}}
+	%\vspace{0.2cm}
+}
+
+\newcommand\invisiblesection[1]{%
+	\refstepcounter{section}
+	\addcontentsline{toc}{section}{\protect\numberline{}#1}%
+	\sectionmark{#1}
+}
+
+\newcommand\invisiblesubsection[1]{%
+	\refstepcounter{subsection}%
+	\addcontentsline{toc}{subsection}{\protect\numberline{}#1}%
+	\sectionmark{#1}
+}
+
+\newcommand{\parola}[2]{
+	\subsection*{\large #1}
+	\vspace*{-0.5cm}
+	\indent #2 
+	\vspace{-0.3cm}
+}

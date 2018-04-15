@@ -16,10 +16,9 @@ Per un corretto funzionamento del plugin è necessario che sia abilitato Javascr
 
 
 
-\section{Manuale Sviluppatore}
-\subsection{Configurazione ambiente di lavoro}
-\paragraph{Installazione}
-Per poter installare correttamente il prodotto è necessario scaricare e configurare antecedentemente Kibana, scaricabile dal link URL \url{https://github.com/elastic/kibana/releases}.\\
+\section{Configurazione ambiente di lavoro}
+\subsection{Installazione di Kibana}
+Per poter installare correttamente il prodotto è necessario scaricare e configurare antecedentemente Kibana, reperibile dal link URL \url{https://github.com/elastic/kibana/releases}.\\
 I plugin sono stati sviluppati con la versione 6.2.2 che si raccomanda anche per l'utilizzo.\\
 Una volta scaricato l'archivio compresso sarà necessario estrarre il contenuto in una cartella con nome \texttt{kibana} da raggiungere tramite l'utilizzo di un terminale.
 Prima di procedere alla configurazione di Kibana deve essere installato il framework Node.js ed il relativo gestore di pacchetti chiamato Node package manager (npm).\\
@@ -28,15 +27,141 @@ Una volta terminato il processo, spostare le cartelle del prodotto all'interno d
 Raggiungere le cartelle del prodotto tramite terminale e dare il comando \texttt{npm install} per avviare l'installazione dei moduli node necessari al funzionamento dei plugin.
 Una volta terminata la configurazione, spostarsi tramite terminale nella cartella \texttt{kibana/bin} ed avviare l'eseguibile \texttt{kibana}.\\
 Dopo l'avvio, aprire una finestra di browser e navigare all'indirizzo URL \url{localhost:5601} per raggiungere la dashboard di Kibana.
-\paragraph{Configurazione ElasticSearch}
+\subsection{Installazione dei plugin}
+Per prima cosa bisogna provvedere a scaricare i plugin. Questi si possono scaricare da \href{https://github.com/joemerlino/HavanaPlugin}{https://github.com/joemerlino/HavanaPlugin} cliccando sul pulsante verde "Clone or download" e poi su "Download ZIP".
+Per l'installazione dei plugin in una \gl{directory} a scelta utilizzare il comando \texttt{install} con l'opzione \texttt{-d} o \texttt{--plugin-dir}  specificando una directory per i plugin, come nell'esempio seguente:
+\begin{lstlisting}
+$ bin /kibana-plugin install file:///some/local/path/my-plugin.zip -d path/to/directory 
+\end{lstlisting}
+Una volta completata l'installazione è possibile navigare tra tutti i plugin installati nella lista presente nel menù a sinistra di Kibana.
+\subsection{Configurazione di ElasticSearch}
 Kibana si appoggia ad ElasticSearch per prelevare i dati da monitorare, quindi sarà necessaria un'istanza di esso che si può avere in locale o remoto configurando il file \texttt{kibana.yml} all'interno della cartella \texttt{config}, in particolare il campo \texttt{elasticsearch.url: "localhost:9200"} che dovrà essere modificato con l'indirizzo dove risiede l'istanza remota di ElasticSearch.\\
 Localmente invece, scaricare il pacchetto dal link URL \url{https://www.elastic.co/downloads/elasticsearch}, versione raccomandata 6.2.2.
 Una volta scaricato l'archivio compresso, estrarre il contenuto in una cartella locale, raggiungerla tramite terminale ed entrare nella sottocartella \texttt{bin} da dove avviare l'eseguibile \texttt{elasticsearch}.\\
 L'istanza sarà reperibile all'indirizzo URL \url{localhost:9200}.
-\subsection{Estensibilità}
+\newpage
+\section{Estensibilità}
+\subsection{Modifica delle funzionalità presenti}
+\paragraph{Mappa topologica} \mbox{}\\
+\newline
+Per poter cambiare gli aspetti di visualizzazione della mappa topologica è necessario modificare il file \texttt{app.js} presente nella cartella \texttt{plugin} ove è possibile trovare le seguenti variabili usate dalla libreria d3.js per comporre gli elementi del grafo:
+\begin{itemize}
+	\item \texttt{svg}: Canvas del grafo;
+	\item \texttt{color}: Schema colori;
+	\item \texttt{simulation}: Gestore per i comportamenti fisici del grafo;
+	\item \texttt{link}: Archi tra componenti;
+	\item \texttt{linkLabel}: Etichette degli archi rappresentanti i tempi medi;
+	\item \texttt{connectionLabel}: Etichette degli archi rappresentanti il tipo di richiesta effettuata;
+	\item \texttt{node}: Nodi del grafo rappresentanti i componenti monitorati;
+	\item \texttt{nodelabels}: Etichette con il nome identificativo dei nodi.
+\end{itemize}
+Ad esempio modificando l'attributo \texttt{style} della variabile \texttt{link} si possono aggiungere ulteriori colorazioni condizionate per gli archi tra i componenti, mentre editando l'attributo \texttt{xlink:href} della variabile \texttt{node} si possono introdurre nuove icone per nuovi componenti monitorati. \\
+Per immettere ulteriori icone, copiare i file svg nella directory dedicata \texttt{public/res/img} ed importarle poi con il seguente codice:
+\begin{lstlisting}
+import exampleSvg from "plugins/plugin-havana/res/img/example.svg";
+\end{lstlisting}
+nel file \texttt{app.js}.\\
+Inoltre sono a disposizione funzioni come \texttt{getLimit()} che ritorna la soglia limite oltre la quale il tempo di risposta è da considerarsi critico comportando quindi la colorazione rossa dell'arco interessato. 
+Si è prestabilito un valore di ritorno pari a 3000ms che può essere modificato a seconda delle necessità anche introducendo algoritmi per un calcolo dinamico della soglia limite. \\
+Infine sono disponibili le funzioni per la gestione di azioni come zoom, drag e click per i vari componenti della mappa:
+\begin{itemize}
+	\item \texttt{zoomed()}: applica il metodo \texttt{d3.event.transform};
+	\item \texttt{ticked()}: posiziona ogni oggetto alle coordinate x ed y nel canvas;
+	\item \texttt{dragged()}: sposta alle coordinate \texttt{d3.event.x} e \texttt{d3.event.y} l'oggetto coinvolto nel trascinamento;
+	\item \texttt{dragstarted()}: attiva l'elemento da trascinare;
+	\item \texttt{dragended()}: rimuove la classe d'attivazione dell'oggetto a trascinamento completato.
+\end{itemize}
+Modificando ad esempio l'attributo x ed y di \texttt{nodelabels} all'interno della funzione \texttt{ticked} è possibile spostare il posizionamento dell'etichetta rappresentante l'identificativo del nodo rispetto all'icona del nodo stesso.\\
+
+\paragraph{Stack trace} \mbox{}\\
+\newline
+Per poter cambiare gli aspetti di visualizzazione della stack trace è necessario modificare il file \texttt{index.html} presente nella cartella \texttt{plugin/templates}.\\
+Oltre alle modifiche apportabili al codice HTML e CSS, è possibile cambiare il comportamento di alcune funzioni Javascript che regolano l'espansione e la compressione di una riga della stack trace o lo switch tra la visualizzazione di un call tree e le query ad esso associate.\\
+Inoltre nel file \texttt{app.js} presente nella cartella \texttt{plugin} sono presenti due direttive Angular per la gestione della stack trace, in particolare:
+\begin{lstlisting}
+.directive("tree", function() {..})
+\end{lstlisting}
+e
+\begin{lstlisting}
+.directive("branch", function($compile) {...})
+\end{lstlisting}
+(LISA O ALBERTO PER SPIEGARLE)
+\subsection{Sviluppo di nuove funzionalità}
+Per poter sviluppare nuove modalità di visualizzazione dei dati è possibile avvalersi delle classi \texttt{DataReader} e \texttt{DataCleaner} già presenti all'interno della cartella \texttt{public/components} dei plugin, creando quindi in questa directory una classe \texttt{Builder} per strutturare le informazioni da passare al frontend dell'applicazione secondo una nuova strategia da creare nella sottocartella \texttt{strategies}.\\
+Lo sviluppo del frontend può essere eseguito modificando adeguadatamente alle esigenze i file:
+\begin{itemize}
+	\item \texttt{app.js} presente nella cartella \texttt{public} dei plugin;
+	\item \texttt{index.html} presente nella cartella \texttt{public/templates}.
+\end{itemize}
+Nel primo file sarà necessario importare la classe \texttt{Builder} e la relativa strategia prodotta:
+\begin{lstlisting}
+let ExampleBuilder = require("./components/exampleBuilder");
+let ExampleCleaner = require("./components/strategies/examplecleaner");
+\end{lstlisting}
+per poter poi istanziare i relativi oggetti necessari allo sviluppo del frontend.
+\newpage
+\appendix
+\section{Glossario}
+\lettera{C}
+
+\parola{Call tree}{Albero delle chiamate, rappresenta l'insieme delle chiamate a funzioni o funzionalità del sistema eseguite da un programma.}
+
+\parola{Cluster}{Insieme di computer connessi tra loro tramite una rete telematica. Lo scopo di un cluster è quello di distribuire una elaborazione molto complessa tra i vari computer.}
 
 
+\lettera{D}
 
+\parola{Database}{Archivio di dati strutturato in modo da razionalizzare la gestione e l'aggiornamento delle informazioni e da permettere lo svolgimento di ricerche complesse.}
+
+\parola{Directory}{Entità del file system che elenca altre entità, tipicamente file e altre directory, e che permette di organizzarle in una struttura ad albero.}
+
+\lettera{E}
+
+\parola{Elastic Search}{Motore di ricerca open-source. Dispone di API molto estensive ed elaborate. Può effettuare ricerche in maniera molto perfomante.}
+
+\lettera{G}
+\parola{Google Chrome}{Google Chrome è un browser web sviluppato da Google, basato sul motore di rendering Blink.}
+
+\lettera{H}
+\parola {Hardware}{Insieme delle componenti fisiche, non modificabili, di un sistema di elaborazione dati.}
+
+\lettera{I}
+\parola{Internet Explorer}{Browser web grafico proprietario sviluppato da Microsoft e incluso in Microsoft Windows a partire dal 1995.}
+
+\lettera{J}
+
+\parola{JavaScript}{Linguaggio di scripting utilizzato principalmente per applicazioni web.}
+
+\lettera{K}
+
+\parola{Kibana}{Framework open source per la visualizzazione dei dati salvati su Elasticsearch.}
+
+\lettera{M}
+
+\parola{Mappa topologica}{Visualizzazione sotto forma di grafo dei componenti di un'applicazione in cui i componenti come server e database sono i nodi e le interazioni fra essi, ovvero le richieste fatte da un componente ad un altro (come richieste HTTP o queries), sono gli archi.}
+
+\parola{Mozilla Firefox}{Web browser libero e multipiattaforma, mantenuto da Mozilla Foundation.}
+
+\lettera{P}
+\parola{Plugin}{Programma non autonomo che interagisce con un altro programma per ampliare o estendere le funzionalità originarie.}  
+
+\parola{Prodotto}{Indica il risultato di un'attività, sia esso un documento, del codice sorgente o un qualsiasi risultato verificabile che possa essere offerto per soddisfare un bisogno o un’esigenza.}  
+
+\parola{Progetto}{Insieme di attività e compiti che prevedono il raggiungimento di determinati obiettivi con specifiche fissate. Sono definite date di inizio e fine durante la quale si può predisporre di limitate risorse che vengono consumate nello svolgersi delle attività. }  
+
+\lettera{S}
+
+\parola{Safari}{Web browser multipiattaforma, sviluppato e mantenuto da Apple.}
+
+\parola{Stack Trace}{Lista di un insieme di traces prese in esame.}
+
+\lettera{T}
+
+\parola{Trace}{Struttura dati che rappresenta una singola richiesta effettuata fra due componenti di una applicazione monitorata oppure fra un utente esterno e un componente dell'applicazione. Viene solitamente memorizzata in un database per successiva analisi.}
+
+\lettera{U}
+
+\parola{URL}{\emph{Uniforme Resource Locator}, indirizzo simoboli per riferirsi ad una risorsa in rete.}
 
 
 
