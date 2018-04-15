@@ -29,13 +29,21 @@ script:
 - mkdir Docs/RQ/Esterni
 - mkdir Docs/RQ/Esterni/Verbali
 
+# LETTERA DI PRESENTAZIONE
+- cd ./RQ/LetteraDiPresentazione/
+- pdflatex -interaction=nonstopmode -halt-on-error LetteraDiPresentazione.tex
+- pdflatex -interaction=nonstopmode -halt-on-error LetteraDiPresentazione.tex
+- pdflatex -interaction=nonstopmode -halt-on-error LetteraDiPresentazione.tex
+- mv LetteraDiPresentazione.pdf ../../Docs/RQ
+- cd ../..
+
 # ANALISI DEI REQUISITI
-#- cd ./RQ/AnalisiDeiRequisiti/
-#- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
-#- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
-#- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
-#- mv AnalisiDeiRequisiti_v3.0.0.pdf ../../Docs/RQ/Esterni
-#- cd ../..
+- cd ./RQ/AnalisiDeiRequisiti/
+- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
+- mv AnalisiDeiRequisiti_v3.0.0.pdf ../../Docs/RQ/Esterni
+- cd ../..
 
 # GLOSSARIO
 - cd ./RQ/Glossario/
