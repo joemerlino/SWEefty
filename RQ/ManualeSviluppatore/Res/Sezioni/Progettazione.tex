@@ -17,6 +17,7 @@ Per un corretto funzionamento del plugin è necessario che sia abilitato Javascr
 
 
 \section{Configurazione ambiente di lavoro}
+\label{sec:configurazione}
 \subsection{Installazione di Kibana}
 Per poter installare correttamente il prodotto è necessario scaricare e configurare antecedentemente Kibana, reperibile dal link URL \url{https://github.com/elastic/kibana/releases}.\\
 I plugin sono stati sviluppati con la versione 6.2.2 che si raccomanda anche per l'utilizzo.\\
@@ -28,7 +29,7 @@ Raggiungere le cartelle del prodotto tramite terminale e dare il comando \texttt
 Una volta terminata la configurazione, spostarsi tramite terminale nella cartella \texttt{kibana/bin} ed avviare l'eseguibile \texttt{kibana}.\\
 Dopo l'avvio, aprire una finestra di browser e navigare all'indirizzo URL \url{localhost:5601} per raggiungere la dashboard di Kibana.
 \subsection{Installazione dei plugin}
-Per prima cosa bisogna provvedere a scaricare i plugin. Questi si possono scaricare da \href{https://github.com/joemerlino/HavanaPlugin}{https://github.com/joemerlino/HavanaPlugin} cliccando sul pulsante verde "Clone or download" e poi su "Download ZIP".
+Per prima cosa bisogna provvedere a scaricare i plugin. Questi si possono scaricare da \href{https://github.com/SWEeftyTeam/Havana}{https://github.com/SWEeftyTeam/Havana} cliccando sul pulsante verde "Clone or download" e poi su "Download ZIP".
 Per l'installazione dei plugin in una \gl{directory} a scelta utilizzare il comando \texttt{install} con l'opzione \texttt{-d} o \texttt{--plugin-dir}  specificando una directory per i plugin, come nell'esempio seguente:
 \begin{lstlisting}
 $ bin /kibana-plugin install file:///some/local/path/my-plugin.zip -d path/to/directory 
@@ -42,8 +43,8 @@ L'istanza sarà reperibile all'indirizzo URL \url{localhost:9200}.
 \newpage
 \section{Estensibilità}
 \subsection{Modifica delle funzionalità presenti}
-\paragraph{Mappa topologica} \mbox{}\\
-\newline
+\subsubsection{Mappa topologica}
+\label{sec:graph}
 Per poter cambiare gli aspetti di visualizzazione della mappa topologica è necessario modificare il file \texttt{app.js} presente nella cartella \texttt{plugin} ove è possibile trovare le seguenti variabili usate dalla libreria d3.js per comporre gli elementi del grafo:
 \begin{itemize}
 	\item \texttt{svg}: Canvas del grafo;
@@ -73,8 +74,8 @@ Infine sono disponibili le funzioni per la gestione di azioni come zoom, drag e 
 \end{itemize}
 Modificando ad esempio l'attributo x ed y di \texttt{nodelabels} all'interno della funzione \texttt{ticked} è possibile spostare il posizionamento dell'etichetta rappresentante l'identificativo del nodo rispetto all'icona del nodo stesso.\\
 
-\paragraph{Stack trace} \mbox{}\\
-\newline
+\subsubsection{Stack trace}
+\label{sec:stack}
 Per poter cambiare gli aspetti di visualizzazione della stack trace è necessario modificare il file \texttt{index.html} presente nella cartella \texttt{plugin/templates}.\\
 Oltre alle modifiche apportabili al codice HTML e CSS, è possibile cambiare il comportamento di alcune funzioni Javascript che regolano l'espansione e la compressione di una riga della stack trace o lo switch tra la visualizzazione di un call tree e le query ad esso associate.\\
 Inoltre nel file \texttt{app.js} presente nella cartella \texttt{plugin} sono presenti due direttive Angular per la gestione della stack trace, in particolare:
@@ -87,6 +88,7 @@ e
 \end{lstlisting}
 (LISA O ALBERTO PER SPIEGARLE)
 \subsection{Sviluppo di nuove funzionalità}
+\label{sec:nuovefunzionalita}
 Per poter sviluppare nuove modalità di visualizzazione dei dati è possibile avvalersi delle classi \texttt{DataReader} e \texttt{DataCleaner} già presenti all'interno della cartella \texttt{public/components} dei plugin, creando quindi in questa directory una classe \texttt{Builder} per strutturare le informazioni da passare al frontend dell'applicazione secondo una nuova strategia da creare nella sottocartella \texttt{strategies}.\\
 Lo sviluppo del frontend può essere eseguito modificando adeguadatamente alle esigenze i file:
 \begin{itemize}
