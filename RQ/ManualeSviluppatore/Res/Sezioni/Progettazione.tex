@@ -11,7 +11,7 @@ Di seguito viene fornito un breve elenco delle versioni minime dei browser sui q
 	
 \end{itemize}
 
-Per un corretto funzionamento del plugin è necessario che sia abilitato Javascript
+Per un corretto funzionamento del plugin è necessario che sia abilitato Javascript.
 
 
 
@@ -23,20 +23,16 @@ Per poter installare correttamente il prodotto è necessario scaricare e configu
 I plugin sono stati sviluppati con la versione 6.2.2 che si raccomanda anche per l'utilizzo.\\
 Una volta scaricato l'archivio compresso sarà necessario estrarre il contenuto in una cartella con nome \texttt{kibana} da raggiungere tramite l'utilizzo di un terminale.
 Prima di procedere alla configurazione di Kibana deve essere installato il framework Node.js ed il relativo gestore di pacchetti chiamato Node package manager (npm).\\
-Dalla directory corrente, dare il comando \texttt{npm install} per procedere all'installazione dei pacchetti necessari.\\
-Una volta terminato il processo, spostare le cartelle del prodotto all'interno della cartella plugins di Kibana.\\
-Raggiungere le cartelle del prodotto tramite terminale e dare il comando \texttt{npm install} per avviare l'installazione dei moduli node necessari al funzionamento dei plugin.
+Dalla directory corrente, dare il comando \texttt{npm install} per procedere all'installazione dei pacchetti necessari al funzionamento di Kibana.\\
 Una volta terminata la configurazione, spostarsi tramite terminale nella cartella \texttt{kibana/bin} ed avviare l'eseguibile \texttt{kibana}.\\
 Dopo l'avvio, aprire una finestra di browser e navigare all'indirizzo URL \url{localhost:5601} per raggiungere la dashboard di Kibana.
 \subsection{Installazione dei plugin}
 Per prima cosa bisogna provvedere a scaricare i plugin. Questi si possono scaricare da \href{https://github.com/SWEeftyTeam/Havana}{https://github.com/SWEeftyTeam/Havana} cliccando sul pulsante verde "Clone or download" e poi su "Download ZIP".
-Per l'installazione dei plugin in una \gl{directory} a scelta utilizzare il comando \texttt{install} con l'opzione \texttt{-d} o \texttt{--plugin-dir}  specificando una directory per i plugin, come nell'esempio seguente:
-\begin{lstlisting}
-$ bin /kibana-plugin install file:///some/local/path/my-plugin.zip -d path/to/directory 
-\end{lstlisting}
-Una volta completata l'installazione è possibile navigare tra tutti i plugin installati nella lista presente nel menù a sinistra di Kibana.
-\subsection{Configurazione di ElasticSearch}
-Kibana si appoggia ad ElasticSearch per prelevare i dati da monitorare, quindi sarà necessaria un'istanza di esso che si può avviare in locale o remoto configurando il file \texttt{kibana.yml} all'interno della cartella \texttt{config}. In particolare il campo \texttt{elasticsearch.url: "localhost:9200"} dovrà essere modificato con l'indirizzo dove è eseguita l'istanza remota di ElasticSearch.\\
+Per l'installazione, estrarre dall'archivio compresso le cartelle dei plugin e spostarli nella stessa \gl{directory} in cui si trova la cartella \texttt{kibana}.\\
+Aprire una finestra di terminale, navigare all'interno della cartella del plugin di cui si vuole effettuare lo sviluppo e utilizzare il comando \texttt{npm install} per avviare l'installazione dei moduli node necessari al funzionamento del plugin.
+Una volta completata l'installazione, per avviare Kibana in modalità sviluppo con il plugin desiderato dare il comando \texttt{npm start} dalla directory corrente.
+\subsection{Configurazione di Elasticsearch}
+Kibana si appoggia ad Elasticsearch per prelevare i dati da monitorare, quindi sarà necessaria un'istanza di esso che si può avere in locale o remoto configurando il file \texttt{kibana.yml} all'interno della cartella \texttt{config}, in particolare il campo \texttt{elasticsearch.url: "localhost:9200"} che dovrà essere modificato con l'indirizzo dove risiede l'istanza remota di Elasticsearch.\\
 Localmente invece, scaricare il pacchetto dal link URL \url{https://www.elastic.co/downloads/elasticsearch}, versione raccomandata 6.2.2.
 Una volta scaricato l'archivio compresso, estrarre il contenuto in una cartella locale, raggiungerla tramite terminale ed entrare nella sottocartella \texttt{bin} da dove avviare l'eseguibile \texttt{elasticsearch}.\\
 L'istanza sarà interrogabile all'indirizzo URL \url{localhost:9200}.
@@ -45,7 +41,7 @@ L'istanza sarà interrogabile all'indirizzo URL \url{localhost:9200}.
 \subsection{Modifica delle funzionalità presenti}
 \subsubsection{Mappa topologica}
 \label{sec:graph}
-Per poter cambiare gli aspetti di visualizzazione della mappa topologica è necessario modificare il file \texttt{app.js} presente nella cartella \texttt{plugin} ove è possibile trovare le seguenti variabili usate dalla libreria d3.js per comporre gli elementi del grafo:
+Per poter cambiare gli aspetti di visualizzazione della mappa topologica è necessario modificare il file \texttt{d3functions.js} presente nella cartella \texttt{public/d3utilities} ove è possibile trovare le seguenti variabili usate dalla libreria d3.js per comporre gli elementi del grafo:
 \begin{itemize}
 	\item \texttt{svg}: Canvas del grafo;
 	\item \texttt{color}: Schema colori;
@@ -77,7 +73,7 @@ Modificando ad esempio l'attributo x ed y di \texttt{nodelabels} all'interno del
 \subsubsection{Stack trace}
 \label{sec:stack}
 Per poter cambiare gli aspetti di visualizzazione della stack trace è necessario modificare il file \texttt{index.html} presente nella cartella \texttt{plugin/templates}.\\
-Oltre alle modifiche apportabili al codice HTML e CSS, è possibile cambiare il comportamento di alcune funzioni JavaScript che regolano l'espansione e la compressione di una riga della stack trace o lo switch tra la visualizzazione di un call tree e le query ad esso associate.\\
+Oltre alle modifiche apportabili al codice HTML e CSS, è possibile cambiare il comportamento di alcune funzioni Javascript che regolano l'espansione e la compressione di una riga della stack trace o lo switch tra la visualizzazione di un call tree e le query ad esso associate.\\
 Attraverso delle direttive AngularJs è possibile sfruttare in maniera ottimale i dati provenienti da \$scope.nodes che rappresenta un array contenente tutte le trace di nostro interesse.\\
 Inoltre nel file \texttt{app.js} presente nella cartella \texttt{plugin} sono state implementate delle direttive personalizzate AngularJs per la gestione del call tree di ogni trace, che sono:
 \begin{lstlisting}
