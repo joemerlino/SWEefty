@@ -87,17 +87,17 @@ script:
 
 # MANUALE UTENTE
 - cd ./RQ/ManualeUtente/
-- pdflatex -interaction=nonstopmode -halt-on-error ManualeUtente_v1.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error ManualeUtente_v1.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error ManualeUtente_v1.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ManualeUtente_v0.5.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ManualeUtente_v0.5.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ManualeUtente_v0.5.0.tex
 - mv ManualeUtente_v1.0.0.pdf ../../Docs/RQ/Esterni
 - cd ../..
 
 # MANUALE SVILUPPATORE
 - cd ./RQ/ManualeSviluppatore/
-- pdflatex -interaction=nonstopmode -halt-on-error ManualeSviluppatore_v1.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error ManualeSviluppatore_v1.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error ManualeSviluppatore_v1.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ManualeSviluppatore_v0.7.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ManualeSviluppatore_v0.7.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ManualeSviluppatore_v0.7.0.tex
 - mv ManualeSviluppatore_v1.0.0.pdf ../../Docs/RQ/Esterni
 - cd ../..
 
