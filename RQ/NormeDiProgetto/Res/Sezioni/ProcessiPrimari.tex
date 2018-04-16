@@ -167,8 +167,8 @@
 			
 			
 			\begin{enumerate}
-				\item \textbf{In fase di sviluppo}: durante questa fase i \emph{Progettisti} lavorano attivamente sul diagramma che dunque ha una natura mutevole. Non trattandosi di un prodotto ufficiale o completo il diagramma, prodotto con il programma StarUML descritto in \ref{sec:StarUML}, deve essere salvato nella cartella all'interno dello spazio Dropbox denominata \texttt{UMLDiagrams}. I diagrammi delle classi vanni inseriti in una sottocartella denominata \texttt{Classes}, mentre quelli di sequenza vanno inseriti in una sottocartella chiamata \texttt{Sequences}. Il formato con il quale sono salvati i diagrammi è necessario permetta di modificarli in un secondo momento, dunque è opportuno che sia quello nativo di StarUML: \texttt{.mdj}.
-				\item \textbf{Completato}: un diagramma che si trovi in questa fase può considerarsi completato. Esso è un prodotto completo ed ufficiale. Esso farà parte di un documento tecnico e dunque dovrà essere inserito all'interno di esso. Il formato naturale per salvare un diagramma \emph{completato} è sottoforma di immagine non modificabile, dunque \texttt{.png}. Tale immagine deve essere inserita all'interno della cartella del documento tecnico nella sottocartella \texttt{Images/UML}. Il nome con cui si salva tale immagine deve rendere chiaro ciò che il diagramma intende descrivere. Ad esempio un diagramma delle classi che descriva i componenti del lato backend dell'applicazione dovrebbe chiamarsi \texttt{backend.png}.
+				\item \textbf{In fase di sviluppo}: durante questa fase i \emph{Progettisti} lavorano attivamente sul diagramma che dunque ha una natura mutevole. Non trattandosi di un prodotto ufficiale o completo il diagramma, prodotto con il programma StarUML descritto in \ref{sec:StarUML}, deve essere salvato nella cartella all'interno dello spazio Dropbox denominata \texttt{UMLDiagrams}. I diagrammi delle classi vanno inseriti in una sottocartella denominata \texttt{Classes}, mentre quelli di sequenza vanno inseriti in una sottocartella chiamata \texttt{Sequences}. Il formato con il quale sono salvati i diagrammi è necessario permetta di modificarli in un secondo momento, dunque è opportuno che sia quello nativo di StarUML: \texttt{.mdj}.
+				\item \textbf{Completato}: un diagramma che si trovi in questa fase può considerarsi completato. Esso è un prodotto completo ed ufficiale. Farà parte di un documento tecnico e dunque dovrà essere inserito all'interno di esso. Il formato naturale per salvare un diagramma \emph{completato} è sottoforma di immagine non modificabile, dunque di estensione \texttt{.png}. Tale immagine deve essere inserita all'interno della cartella del documento tecnico nella sottocartella \texttt{Images/UML}. Il nome con cui si salva tale immagine deve rendere chiaro ciò che il diagramma intende descrivere. Ad esempio un diagramma delle classi che descriva i componenti del lato backend dell'applicazione dovrebbe chiamarsi \texttt{backend.png}.
 			\end{enumerate}
 		
 		
@@ -187,16 +187,16 @@
 					\item \textbf{Diagrammi UML:} descritti in \ref{sec:UML}. Devono essere presenti in particolare \emph{diagrammi delle classi} e \emph{diagrammi di sequenza}.
 					I diagrammi UML sono realizzati tramite il programma StarUML descritto nella sezione \ref{sec:StarUML};
 					\item \textbf{\gl{Design Pattern}:}
-					devono essere descritti i design pattern adottati all'interno dell'architettura del prodotto tramite descrizione e diagramma.
+					devono essere descritti i design pattern adottati all'interno dell'architettura del prodotto tramite descrizione e relativo diagramma.
 				\end{itemize}
 		   Una volta svolta un'attenta analisi dell'architettura è compito del progettista definire:
 		   \begin{itemize}
 		   	\item \textbf{Tracciamento delle componenti:}
 		   	ogni requisito deve riferirsi al componente che lo soddisfa. Per fare ciò si utilizzerà SWEgo, un'applicazione web (descritta nella sezione \ref{sec:SWEgo}) utile nel tracciamento Use Case - Requisiti e nella generazione automatica dei diagrammi dei Casi d'Uso;
 		   	\item \textbf{Test di integrazione:}
-		   	i \emph{Progettisti} devono definire delle classi di verifica per verificare che i componenti del sistema funzionino nella maniera prevista;	
+		   	i \emph{Progettisti} devono definire dei test per verificare che le unità del sistema si integrino nel modo previsto;
 		   	\item \textbf{Test di unità:}
-		   	i \emph{Progettisti} devono definire i test di unità necessari per verificare che i componenti del sistema funzionino nel modo previsto.
+		   	i \emph{Progettisti} devono definire i test di unità necessari per verificare che le unità del sistema funzionino nel modo previsto.
 		   \end{itemize}
 		
 		\paragraph{Codifica}
@@ -399,13 +399,12 @@ if (condizione && condizione && isEven()) { /*  */}
 	\subparagraph{Plugins}
 	\label{sec:plugins}
 	\Spazio
-	Per sviluppare il prodotto il gruppo si avvarrà di una serie di plugin integrati nell'IDE. Essi sono stati selezionati appositamente per facilitare la produzione del \emph{prodotto}. Essi sono:
+	Per sviluppare il prodotto il gruppo si avvale di una serie di plugin integrati nell'IDE. Essi sono stati selezionati appositamente per facilitare la produzione del \emph{prodotto}. Essi sono:
 	
 	\begin{itemize}
 		\item \textbf{REST client}: Permette di eseguire chiamate \gl{REST} all'interno dell'ambiente \emph{Atom}, velocizzando il processo di \emph{testing} di esse per uno sviluppatore; 
 		\item \textbf{Elasticsearch-client}: Permette di interrogare un database Elasticsearch all'interno di \emph{Atom}, senza dover utilizzare Kibana per ottenere una comunicazione semplice con esso; 
-		\item \textbf{json-converter}: permette di convertire dati presentati in vari formati in json, ovvero il formato utilizzato da Javascript per la rappresentazione degli stessi. 
-		
+		\item \textbf{json-converter}: permette di convertire dati disponibili in alcuni formati (e.g. csv, yaml) in json, ovvero il formato utilizzato da Javascript per la rappresentazione degli stessi. 
 	\end{itemize}
 
 	Inoltre, ciascun membro del gruppo può avvalersi di ulteriori plugin che ritenga utili per la realizzazione del prodotto.
