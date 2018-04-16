@@ -36,10 +36,10 @@ $ bin /kibana-plugin install file:///some/local/path/my-plugin.zip -d path/to/di
 \end{lstlisting}
 Una volta completata l'installazione è possibile navigare tra tutti i plugin installati nella lista presente nel menù a sinistra di Kibana.
 \subsection{Configurazione di ElasticSearch}
-Kibana si appoggia ad ElasticSearch per prelevare i dati da monitorare, quindi sarà necessaria un'istanza di esso che si può avere in locale o remoto configurando il file \texttt{kibana.yml} all'interno della cartella \texttt{config}, in particolare il campo \texttt{elasticsearch.url: "localhost:9200"} che dovrà essere modificato con l'indirizzo dove risiede l'istanza remota di ElasticSearch.\\
+Kibana si appoggia ad ElasticSearch per prelevare i dati da monitorare, quindi sarà necessaria un'istanza di esso che si può avviare in locale o remoto configurando il file \texttt{kibana.yml} all'interno della cartella \texttt{config}. In particolare il campo \texttt{elasticsearch.url: "localhost:9200"} dovrà essere modificato con l'indirizzo dove è eseguita l'istanza remota di ElasticSearch.\\
 Localmente invece, scaricare il pacchetto dal link URL \url{https://www.elastic.co/downloads/elasticsearch}, versione raccomandata 6.2.2.
 Una volta scaricato l'archivio compresso, estrarre il contenuto in una cartella locale, raggiungerla tramite terminale ed entrare nella sottocartella \texttt{bin} da dove avviare l'eseguibile \texttt{elasticsearch}.\\
-L'istanza sarà reperibile all'indirizzo URL \url{localhost:9200}.
+L'istanza sarà interrogabile all'indirizzo URL \url{localhost:9200}.
 \newpage
 \section{Estensibilità}
 \subsection{Modifica delle funzionalità presenti}
@@ -57,7 +57,7 @@ Per poter cambiare gli aspetti di visualizzazione della mappa topologica è nece
 	\item \texttt{nodelabels}: Etichette con il nome identificativo dei nodi.
 \end{itemize}
 Ad esempio modificando l'attributo \texttt{style} della variabile \texttt{link} si possono aggiungere ulteriori colorazioni condizionate per gli archi tra i componenti, mentre editando l'attributo \texttt{xlink:href} della variabile \texttt{node} si possono introdurre nuove icone per nuovi componenti monitorati. \\
-Per immettere ulteriori icone, copiare i file svg nella directory dedicata \texttt{public/res/img} ed importarle poi con il seguente codice:
+Per immettere ulteriori icone, copiare i file \texttt{.svg} nella directory dedicata \texttt{public/res/img} ed importarle poi con il seguente codice:
 \begin{lstlisting}
 import exampleSvg from "plugins/plugin-havana/res/img/example.svg";
 \end{lstlisting}
