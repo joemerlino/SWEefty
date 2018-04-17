@@ -79,10 +79,10 @@ script:
 
 # PRODUCTBASELINE
 - cd ./RA/ProductBaseline/
-- pdflatex -interaction=nonstopmode -halt-on-error ProductBaseline_v1.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error ProductBaseline_v1.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error ProductBaseline_v1.0.0.tex
-- mv ProductBaseline_v1.0.0.pdf ../../Docs/RA/Esterni
+- pdflatex -interaction=nonstopmode -halt-on-error ProductBaseline_v2.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ProductBaseline_v2.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ProductBaseline_v2.0.0.tex
+- mv ProductBaseline_v2.0.0.pdf ../../Docs/RA/Esterni
 - cd ../..
 
 # MANUALE UTENTE
