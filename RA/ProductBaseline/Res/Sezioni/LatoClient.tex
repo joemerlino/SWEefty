@@ -3,8 +3,7 @@
 Il lato client si occupa di interrogare il lato server per ottenere informazioni grezze, elaborarle per renderle utili ed infine presentarle all'utente.
 
 \label{sec:Componenti}
-\subsubsection{Rappresentazione}
-Il codice prodotto è stato scritto in JavaScript ES6, quindi molti concetti quali classi ed interfacce non sono presenti all'interno del linguaggio. Per produrre un diagramma delle classi dunque sono state considerate \emph{ classi } sia oggetti Javascript, sia funzioni e talvolta costrutti più complessi. Tali stratagemmi verranno comunque chiariti nella descrizione testuale di ciascun componente. Per quanto riguarda le interfacce che sono presenti nel diagramma delle classi, figura \ref{img:diagrammaClassiClient}, nel codice non sono effettivamente presenti tali interfacce, ma tutte le classi che implementano tale interfaccia \emph{devono} possedere i metodi esposti da tale interfaccia. Questo stratagemma è stato particolarmente utile nell'implementazione del componente \texttt{DataCleaner}, come descritto in \ref{sec:DataCleaner}.
+
 
 \begin{figure}[H]
     \centering
@@ -13,9 +12,14 @@ Il codice prodotto è stato scritto in JavaScript ES6, quindi molti concetti qua
     \label{img:diagrammaClassiClient}
 \end{figure}
 
+\subsubsection{Generalità}
+\textcolor{red}{DESCRIVI UNA OVERVIEW DEL SISTEMA VISTO CHE A CARDINA FACEVA CAGARE CIÒ}
+
 \subsubsection{Componenti} 
 Si descrivono di seugito brevemente i componenti del lato client.
+
 \paragraph{ElasticsearchIndexResult} \Spazio
+\label{sec:elasticsearchIndexResult}
 Rappresenta il risultato \emph{grezzo} di una risposta del database Elasticsearch ad un client che esegua una query \texttt{\_search} su un determinato \emph{indice}. Il suo contenuto è quello presentato da \ref{sec:shards} a \ref{sec:RequestJdbc}, come si può vedere dalla figura \ref{img:diagrammaClassiClient}.
 
 \paragraph{Shards} \Spazio
@@ -196,7 +200,7 @@ I componenti adibiti alla costruzione di oggetti complessi come \texttt{Graph} e
 \paragraph{Builder} \Spazio
 \label{sec:patternBuilder}
 I dati rappresentati dal plugin hanno una natura complessa. La mappa topologica deve rappresentare un grafo delle componenti dell'applicazione, mentre la stack trace un array di traces con una forma descritta nella Figura \ref{img:diagrammaClassiClient}. Per tenere separati l'algoritmo di creazione di un oggetto complesso dalle parti di cui lo stesso è composto e dal modo con cui esse sono assemblate si è deciso di applicare in due sezioni differenti il pattern \texttt{Builder}: per la creazione di un \texttt{Graph} e per la creazione di una \texttt{StackTrace}. Le costruzioni di essi sono dirette rispettivamente da un \texttt{GraphBuilderDirector} e un \texttt{StackBuilderDirector}, che ordinano a \texttt{GraphBuilder} e \texttt{StackBuilder} come assemblare le parti. 
-Si presenta in Figura \ref{img:builderGraph} il diagramma di sequenza che descrive le interazioni fra i vari componenti che concorrono alla creazione di un oggetto \texttt{Graph}
+Si presenta in Figura \ref{img:builderGraph} il diagramma di sequenza che descrive le interazioni fra i vari componenti che concorrono alla creazione di un oggetto \texttt{Graph}, seguendo il pattern \emph{Builder}.
 
 
 \begin{figure}[h]
@@ -206,11 +210,18 @@ Si presenta in Figura \ref{img:builderGraph} il diagramma di sequenza che descri
 	\label{img:builderGraph}
 \end{figure}
 
+\paragraph{MVVM} \Spazio
+\textcolor{red}{QUI CI VA IL MVVM QUANDO SAPRÒ COME RAPPRESENTARLO ALL'INTERNO DI DEL DIAGRAMMA DELLE CLASSI}
 
+\subsubsection{Interazioni}
+Si presentano di seguito alcuni diagrammi di sequenza che chiariscono le interazioni fra i vari compoenti del sistema
 
-
-
-
+\paragraph{BuildNodes}
+\paragraph{BuildLink}
+\paragraph{LISA}
+\textcolor{red}{LISA METTI QUI I DIAGRAMMI DI SEQUENZA SIGNIFICATIVI PER LA TUA PROGETTAZIONE}
+\paragraph{LISA}
+\textcolor{red}{LISA METTI QUI I DIAGRAMMI DI SEQUENZA SIGNIFICATIVI PER LA TUA PROGETTAZIONE}
 
 
 

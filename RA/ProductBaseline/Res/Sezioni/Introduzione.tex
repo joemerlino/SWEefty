@@ -1,28 +1,34 @@
 \section{Introduzione}
 \label{sec:intro}
-	\subsection{Scopo del documento}
-	Lo scopo di questo documento è di riportare dettagliatamente tutte le scelte progettuali che SWEefty ha deciso di adottare durante lo sviluppo del prodotto.
-	
-	\subsection{Scopo del prodotto}
-	Il prodotto che SWEefty è tenuto a realizzare consiste in una coppia di plugin per Kibana che devono fornire due funzionalità fondamentali:
-	\begin{itemize}
-		\item \textbf{Visualizzazione mappa topologica del sistema:} il plugin deve visualizzare in maniera chiara ed intuitiva come le componenti del sistema interagiscono tra di loro, con annesse informazioni utili;
-		\item \textbf{Visualizzazione della stack trace:} vengono visualizzate sotto forma di lista le interazioni fra i componenti e le richieste HTTP effettuate ai server. Per ogni trace della lista inoltre verrà visualizzata la rispettiva call tree e le query effettuate ai database.
-	\end{itemize}
+\subsection{Scopo del documento}
+Lo scopo di questo documento è di riportare dettagliatamente tutte le scelte progettuali che SWEefty ha deciso di adottare durante lo sviluppo del prodotto.
 
-	% \subsection{Glossario}
-	% Volendo evitare incomprensioni  ed equivoci per rendere la lettura del documento più semplice e chiara viene allegato il \emph{Glossario v3.0.0} nel quale sono contenute le definizioni dei termini tecnici, dei vocaboli ambigui, degli acronimi e delle abbreviazioni. Questi termini sono evidenziati nel presente documento con una g al pedice (esempio: $Glossario_{g}$).
-	\subsection{Riferimenti}
-		\subsubsection{Normativi}
-			\begin{itemize}
-				\item \textbf{Norme di Progetto:} \emph{Norme di Progetto v3.0.0}.
-				\item \textbf{Analisi dei Requisiti:} \emph{Analisi dei Requisiti v2.0.0}.
-			\end{itemize}
+\subsection{Scopo del prodotto}
+Il prodotto che SWEefty è tenuto a realizzare consiste in una coppia di plugin per Kibana che devono fornire due funzionalità fondamentali:
+\begin{itemize}
+	\item \textbf{Visualizzazione mappa topologica del sistema:} il plugin deve visualizzare in maniera chiara ed intuitiva come le componenti del sistema interagiscono tra di loro, con annesse informazioni utili;
+	\item \textbf{Visualizzazione della stack trace:} vengono visualizzate sotto forma di lista le interazioni fra i componenti e le richieste HTTP effettuate ai server. Per ogni trace della lista inoltre verrà visualizzata la rispettiva call tree e le query effettuate ai database.
+\end{itemize}
 
-		\subsubsection{Tecnici} 
-			\begin{itemize}
-				\item \textbf{Kibana:} \href{https://www.elastic.co/guide/en/kibana/6.1/index.html}{https://www.elastic.co/guide/en/kibana/6.1/index.html}(ultima consultazione effettuata in data 2018-04-09)
-				\item \textbf{Elasticsearch:} \href{https://www.elastic.co/guide/index.html}{https://www.elastic.co/guide/index.html}(ultima consultazione effettuata in data 2018-04-09)
-				\item \textbf{AngularJS:} \href{https://docs.angularjs.org/guide}{https://docs.angularjs.org/guide}(ultima consultazione effettuata in data 2018-04-09)
-				\item \textbf{JavaScript:} \href{https://developer.mozilla.org/bm/docs/Web/JavaScript/Guide}{https://developer.mozilla.org/bm/docs/Web/JavaScript/Guide}(ultima consultazione effettuata in data 2018-04-09)
-			\end{itemize}
+% \subsection{Glossario}
+% Volendo evitare incomprensioni  ed equivoci per rendere la lettura del documento più semplice e chiara viene allegato il \emph{Glossario v3.0.0} nel quale sono contenute le definizioni dei termini tecnici, dei vocaboli ambigui, degli acronimi e delle abbreviazioni. Questi termini sono evidenziati nel presente documento con una g al pedice (esempio: $Glossario_{g}$).
+\subsection{Riferimenti}
+\subsubsection{Normativi}
+\begin{itemize}
+	\item \textbf{Norme di Progetto:} \emph{Norme di Progetto v3.0.0}.
+	\item \textbf{Analisi dei Requisiti:} \emph{Analisi dei Requisiti v2.0.0}.
+\end{itemize}
+
+\subsubsection{Tecnici}
+\begin{itemize}
+	\item \textbf{Kibana:} \href{https://www.elastic.co/guide/en/kibana/6.1/index.html}{https://www.elastic.co/guide/en/kibana/6.1/index.html}(ultima consultazione effettuata in data 2018-04-09)
+	\item \textbf{Elasticsearch:} \href{https://www.elastic.co/guide/index.html}{https://www.elastic.co/guide/index.html}(ultima consultazione effettuata in data 2018-04-09)
+	\item \textbf{AngularJS:} \href{https://docs.angularjs.org/guide}{https://docs.angularjs.org/guide}(ultima consultazione effettuata in data 2018-04-09)
+	\item \textbf{JavaScript:} \href{https://developer.mozilla.org/bm/docs/Web/JavaScript/Guide}{https://developer.mozilla.org/bm/docs/Web/JavaScript/Guide}(ultima consultazione effettuata in data 2018-04-09)
+\end{itemize}
+
+\subsection{Premessa}
+\label{sec:premessa}
+Prima di proseguire con la lettura del documento è bene puntualizzare alcune cose.
+Innanzitutto va ricordato che il nostro prodotto consta di due plugin \emph{distinti} che svolgono funzioni diverse, ma che comunque interagiscono con i dati presenti sul server Elasticsearch in modo simile. Per semplificare la rappresentazione grafica e per evitare ripetizioni essi sono stati, in questa fase di progettazione, considerati come facenti parte dello stesso sistema. Questo è reso possibile dall'alta sovrapposizione di componenti necessari al loro funzionamento. Tuttavia, nella fase di produzione, essi verranno completamente disaccoppiati e saranno presentati come due plugin distinti che avranno delle parti in comune, che per come è progettato Kibana, dovranno essere per necessariamente ripetute. 
+Il codice prodotto è stato scritto in JavaScript ES6, quindi molti concetti quali classi ed interfacce non sono presenti all'interno del linguaggio. Per produrre un diagramma delle classi dunque sono state considerate \emph{ classi } sia oggetti Javascript, sia funzioni e talvolta costrutti più complessi. Tali stratagemmi verranno comunque chiariti nella descrizione testuale di ciascun componente. Per quanto riguarda le interfacce che sono presenti nel diagramma delle classi, figura \ref{img:diagrammaClassiClient}, nel codice non sono effettivamente presenti tali interfacce, ma tutte le classi che implementano tale interfaccia \emph{devono} possedere i metodi esposti dall'interfaccia implementata. 
