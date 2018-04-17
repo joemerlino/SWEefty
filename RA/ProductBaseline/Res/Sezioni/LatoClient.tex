@@ -147,7 +147,7 @@ Ciascun \texttt{Link} è individuato univocamente dalla coppia di campi dati \te
 \paragraph{GraphBuilderDirector} \Spazio
 È il componente che si occupa di condurre il processo di costruzione di un grafo. Implementa il \emph{pattern} \emph{Builder}, come descritto in \textcolor{red}{QUI METTI IL RIFERIMENTO}. Consta dei metodi:
 \begin{itemize}
-	\item \texttt{constructor(dataSource:DataReader): void} che costruisce il \texttt{GraphBuilderDirector} con una sorgente dei dati associata. Istanzia anche un \texttt{DataCleaner} con strategia \texttt{GraphCleanerStrategy}; 
+	\item \texttt{constructor(dataSource:DataReader, builder: GraphBuilder): void} che costruisce il \texttt{GraphBuilderDirector} con una sorgente dei dati associata e una istanza di \texttt{GraphBuilder}. Istanzia anche un \texttt{DataCleaner} con strategia \texttt{GraphCleanerStrategy}; 
 	\item \texttt{setDataReader(dataSource:DataReader): void} che imposta la sorgente dei dati; 
 	\item \texttt{constructGraph(): void}: che si occupa di condurra la costruzioni delle parti dell'oggetto \texttt{Graph} tramite \texttt{GraphBuilder}.
 \end{itemize}
@@ -176,6 +176,35 @@ Ciascun \texttt{Link} è individuato univocamente dalla coppia di campi dati \te
 
 
 
+% - DESIGN PATTERNS -
+
+\subsubsection{Design patterns}
+Si presentano di seguito i \emph{design pattern} implementati nella progettazione del lato client.
+
+\paragraph{Strategy} \Spazio
+\label{sec:patternStrategy}
+I componenti adibiti alla costruzione di oggetti complessi come \texttt{Graph} e \texttt{StackTrace} necessitano di un array di \texttt{Request}, che rappresentano i dati che dovranno essere elaborati. Le \texttt{Request} lette dal componente \texttt{DataReader} sono quelle presenti all'interno dell'istanza di Elasticsearch e dunque è possibile che alcune di esse non siano necessarie. Ad esempio, per la costruzione di un \texttt{Graph} le \texttt{Request} di tipo \texttt{RequestPageload} non saranno necessarie e dovranno dunque essere eliminate. Si presenta dunque la necessità di avere un componente che in base all'implementazione utilizzata modifichi il comportamento dell'algoritmo utilizzato. Si è scelto quindi di implementare il pattern \emph{Strategy} per la realizzazione di \texttt{CleanerStrategy}, che permette dunque di pulire i dati di Elasticsearch in base alla strategia istanziata. Una rappresentazione della progettazione è riportata in Figura \ref{img:strategy}.
+
+% QUESTA IMMAGINE DEVE RAPPRESENTARE DATACLEANER, CLEANERSTRATEGY E SOTTOCLASSI
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{Images/logo.jpg}
+	\caption{Utilizzo del pattern Strategy}
+	\label{img:strategy}
+\end{figure}
+ 
+\paragraph{Builder} \Spazio
+\label{sec:patternBuilder}
+I dati rappresentati dal plugin hanno una natura complessa. La mappa topologica deve rappresentare un grafo delle componenti dell'applicazione, mentre la stack trace un array di traces con una forma descritta nella Figura \ref{img:diagrammaClassiClient}. Per tenere separati l'algoritmo di creazione di un oggetto complesso dalle parti di cui lo stesso è composto e dal modo con cui esse sono assemblate si è deciso di applicare in due sezioni differenti il pattern \texttt{Builder}: per la creazione di un \texttt{Graph} e per la creazione di una \texttt{StackTrace}. Le costruzioni di essi sono dirette rispettivamente da un \texttt{GraphBuilderDirector} e un \texttt{StackBuilderDirector}, che ordinano a \texttt{GraphBuilder} e \texttt{StackBuilder} come assemblare le parti. 
+Si presenta in Figura \ref{img:builderGraph} il diagramma di sequenza che descrive le interazioni fra i vari componenti che concorrono alla creazione di un oggetto \texttt{Graph}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{Images/builderGraphSequence.png}
+	\caption{Diagramma di sequenza che mostra come un client possa ottenere un oggetto \texttt{Graph}}
+	\label{img:builderGraph}
+\end{figure}
 
 
 
