@@ -39,7 +39,7 @@ Rappresenta una \emph{entry} dell'array \texttt{hits}. É composto da informazio
 Inoltre c'è un campo dati \texttt{\_source} che contiene al suo interno il documento vero e proprio.
 
 \paragraph{Request} \Spazio
-Rappresenta il contenuto vero e proprio del documenti salvati sull'istanza di Elasticsearch. Essendo Elasticsearch un database non relazionale non è possibile conoscere a priori la struttura di tale documento, ma nell'applicazione che andremo a descrivere con i plugin i documenti possono avere tre differenti formati, descritti nelle sezioni: \ref{sec:requestHTTP}, \ref{sec:requestPageload} e \ref{sec:RequestJdbc}.
+Rappresenta il contenuto vero e proprio del documenti salvati sull'istanza di Elasticsearch. Essendo Elasticsearch un database non relazionale non è possibile conoscere a priori la struttura di tale documento, ma nell'applicazione che andremo a descrivere con i plugin i documenti possono avere tre differenti formati, descritti nelle sezioni: \ref{sec:requestHTTP}, \ref{sec:requestPageload} e \ref{sec:RequestJdbc}. La tipologia di \texttt{Request} è riconoscibile da un campo dati all'interno del documento: il campo \texttt{type}.
 \paragraph{RequestHTTP} \Spazio
 \label{sec:requestHTTP}
 \textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}
