@@ -13,16 +13,39 @@ Il codice prodotto è stato scritto in JavaScript ES6, quindi molti concetti qua
     \label{img:diagrammaClassiClient}
 \end{figure}
 
-\subsubsection{Componenti} \Spazio
+\subsubsection{Componenti} 
+Si descrivono di seugito brevemente i componenti del lato client.
 \paragraph{ElasticsearchIndexResult} \Spazio
+Rappresenta il risultato \emph{grezzo} di una risposta del database Elasticsearch ad un client che esegua una query \texttt{\_search} su un determinato \emph{indice}. Il suo contenuto è quello presentato da \ref{sec:shards} a \ref{sec:RequestJdbc}, come si può vedere dalla figura \ref{img:diagrammaClassiClient}.
+
 \paragraph{Shards} \Spazio
+\label{sec:shards}
+Rappresenta il campo dati \texttt{\_shards} all'interno di una risposta di Elasticsearch. Sostanzialmente indica il numero di shards all'interno dell'indice, quanti sono stati letti, quanti sono stati ignorati e se ci sono stati dei fallimenti della lettura degli shards. Per una descrizione più esaustiva si rimanda alla documentazione ufficiale di Elasticsearch: \textcolor{red}{QUI METTI UN LINK A SHARDS}.
+
 \paragraph{Hits} \Spazio
+Rappresenta il campo dati di una risposta di Elasticsearch contenente i documenti ritornati dal database e informazioni amministrative. Esse sono contenute nei campi \texttt{total}, che indica il numero di documenti ritornati nella risposta, e \texttt{max\_score}. I documenti ritornati sono contenuti nell'array \texttt{hits}.
+
 \paragraph{ElasticsearchDocument} \Spazio
+Rappresenta una \emph{entry} dell'array \texttt{hits}. É composto da informazioni amministrative quali:
+\begin{itemize}
+	\item \texttt{\_index}, che indica a che indice appartiene il documento;
+	\item \texttt{\_type}, che indica che type ha il documento;
+	\item \texttt{\_id}, che indica l'id del documento all'interno di Elasticsearch; 
+	\item \texttt{\_score}, che indica la rilevanza del documento.
+\end{itemize}
+Inoltre c'è un campo dati \texttt{\_source} che contiene al suo interno il documento vero e proprio.
+
 \paragraph{Request} \Spazio
-Rappresenta il contenuto vero e proprio del documenti salvato sull'istanza di Elasticsearch. Essendo Elasticsearch un database non relazionale non è possibile conoscere a priori la struttura di tale documento, dunque il suo contenuto viene qui rappresentato tramite un attributo pubblico chiamato content, di tipo JSON con struttura variabile.
-\paragraph{RequestHTTP}
-\paragraph{RequestPageload}
-\paragraph{RequestJdbc}
+Rappresenta il contenuto vero e proprio del documenti salvati sull'istanza di Elasticsearch. Essendo Elasticsearch un database non relazionale non è possibile conoscere a priori la struttura di tale documento, ma nell'applicazione che andremo a descrivere con i plugin i documenti possono avere tre differenti formati, descritti nelle sezioni: \ref{sec:requestHTTP}, \ref{sec:requestPageload} e \ref{sec:RequestJdbc}.
+\paragraph{RequestHTTP} \Spazio
+\label{sec:requestHTTP}
+\textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}
+\paragraph{RequestPageload}\Spazio
+\label{sec:requestPageload}
+\textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}
+\paragraph{RequestJdbc}\Spazio
+\label{sec:RequestJdbc}
+\textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}
 
 \paragraph{ElasticsearchClient} \Spazio
 \texttt{ElasticsearchClient} è il componente che si occupa di eseguire le chiamate API al lato server. Non è una classe vera e propria all'interno del codice, ma un \emph{Service}. 
@@ -122,21 +145,23 @@ Rappresenta un collegamento tra due nodi dell'applicazione monitorata. Consta de
 Ciascun \texttt{Link} è individuato univocamente dalla coppia di campi dati \texttt{source} e \texttt{target}.
 
 \paragraph{GraphBuilderDirector} \Spazio
+È il componente che si occupa di condurre il processo di costruzione di un grafo. Implementa il \emph{pattern} \emph{Builder}, come descritto in \textcolor{red}{QUI METTI IL RIFERIMENTO}. Consta dei metodi:
+\begin{itemize}
+	\item \texttt{constructor(dataSource:DataReader): void} che costruisce il \texttt{GraphBuilderDirector} con una sorgente dei dati associata. Istanzia anche un \texttt{DataCleaner} con strategia \texttt{GraphCleanerStrategy}; 
+	\item \texttt{setDataReader(dataSource:DataReader): void} che imposta la sorgente dei dati; 
+	\item \texttt{constructGraph(): void}: che si occupa di condurra la costruzioni delle parti dell'oggetto \texttt{Graph} tramite \texttt{GraphBuilder}.
+\end{itemize}
 
 \paragraph{GraphBuilder} \Spazio
 \label{sec:GraphBuilder}
-	\texttt{GraphBuilder} è il componente che si occupa di costruire il grafo di nodi e archi rappresentanti la mappa topologica dell'applicazione, secondo la struttura descritta in \ref{sec:Graph}. Esso verrà successivamente visualizzato utilizzando la libreria D3.js. \texttt{GraphBuilder} viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati di cui ha bisogno.
-	I metodi della classe sono:
+	\texttt{GraphBuilder} è il componente che si occupa di costruire il grafo di nodi e archi rappresentanti la mappa topologica dell'applicazione, secondo la struttura descritta in \ref{sec:Graph}. Esso verrà successivamente visualizzato utilizzando la libreria D3.js. I metodi della classe sono:
 	\begin{itemize}
-		\item{\texttt{setDataReader(DataReader)}, il quale permette di impostare una diversa fonte di dati; }
-		
-		\item{\texttt{buildNodes(Array)} il quale riceve un Array di richieste HTTP e a Database ed ha costruisce i nodi dell'oggetto \texttt{Graph}, rispettando la struttura descritta in \ref{sec:Nodes}. Esso agisce in maniera analoga a \texttt{buildLinks(Array,Array)} scorrendo tutte le richieste che gli vengono passate e costruendo un candidato ad entrare nell'insieme dei \texttt{Nodes}. L'unicità del candidato viene garantita dal metodo \texttt{checkIfNodeIsNotPresent(Array,Object)};}
+		\item \texttt{buildNodes(traces:Array<Request>): void} il quale riceve un Array di \texttt{Request} e  costruisce i nodi dell'oggetto \texttt{Graph};
 				
-		\item{\texttt{buildLinks(Array)} il quale riceve in input l'Array di \texttt{Nodes} dell'applicazione e un Array di richieste HTTP e a Database e costruisce nell'istanza di \texttt{Graph} i Links che rispettano la struttura definita in \ref{sec:Links}. Il metodo scorre tutti i documenti JSON che gli vengono passati come Array e per ogni documento, che contiene la trace di una comunicazione tra due componenti dell'applicazione costruisce un oggetto candidato ad entrare nell'insieme. Il fatto che tale \texttt{Link} candidato non sia già presente nell'insieme viene garantito dal metodo \texttt{checkIfLinkIsNotPresent(Array, Object)} che controlla che nell'Array dei links non sia già presente un collegamento con gli stessi campi \texttt{source} e \texttt{target} del candidato; }
+		\item\texttt{buildLinks(traces:Array<Request>): void} il quale riceve in input l'Array di \texttt{Nodes} dell'applicazione e un Array di richieste HTTP e a Database e costruisce nell'istanza di \texttt{Graph} i \texttt{Links} . Il metodo scorre tutti i documenti JSON che gli vengono passati come Array e per ogni documento, che contiene la trace di una comunicazione tra due componenti dell'applicazione costruisce un oggetto candidato ad entrare nell'insieme. Il fatto che tale \texttt{Link} candidato non sia già presente nell'insieme viene garantito dal metodo \texttt{checkIfLinkIsNotPresent} che controlla che nell'Array dei links non sia già presente un collegamento con gli stessi campi \texttt{source} e \texttt{target} del candidato; 
 
-		\item{\texttt{getGraph()} il quale ritorna un oggetto di tipo \texttt{Graph} secondo la struttura definita in \ref{sec:Graph} costruendo i due Array attribuendo loro l'output dei metodi \texttt{buildNodes()} e \texttt{buildLinks()}.  }
+		\item{\texttt{getGraph(): Graph} il quale ritorna l'oggetto di tipo \texttt{Graph} costruito.  }
 	\end{itemize}
-
 
 \paragraph{StackTrace} \Spazio
 \textcolor{red}{QUI LISA DESCRIVI A DOVERE}
