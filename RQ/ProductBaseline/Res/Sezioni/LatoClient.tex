@@ -32,7 +32,7 @@ Utilizzare un service è l'unico modo per poter eseguire chiamate REST parametri
 \end{itemize} 
 Osserviamo che anche se in questa rappresentazione questi metodi sono all'interno di un oggetto, non avendo i diagrammi delle classi UML un costrutto per rappresentare precisamente un \emph{Service}, essi non hanno una struttura ben definita e oggetti di tipo \texttt{ElasticsearchClient} chiaramente non sono istanziabili direttamente dal client. Dunque, per interfacciarsi ad Elasticsearch si è deciso di racchiudere tutte queste funzionalità in un oggetto vero e proprio, \texttt{DataReader} (descritto nella sezione \ref{sec:DataReader}), per poter avere una più agevole interazione con i dati. 
 
-\paragraph{DataReader}
+\paragraph{DataReader} \Spazio
 \label{sec:DataReader}
 \texttt{DataReader} è il componente del sistema che si occupa di reperire i dati da Elasticsearch, ciò viene fatto utilizzando il \emph{Service} \texttt{ElasticsearchClient}. Sarebbe effettivamente possibile utilizzare le chiamate al \emph{Service} ogni qualvolta fossero necessari dei dati, tuttavia ricordiamo che tali chiamate non vengono racchiuse all'interno di un oggetto ben strutturato. DataReader restituirà ai richiedenti le informazioni grezze i tipo \texttt{ElasticsearchIndexResult}, esattamente come vengono restituite da Elasticsearch. I metodi sono:  
 
@@ -46,7 +46,7 @@ Osserviamo che anche se in questa rappresentazione questi metodi sono all'intern
 
 
 
-\paragraph{DataCleaner}
+\paragraph{DataCleaner}\Spazio
 
 \label{sec:DataCleaner}
 \texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da Elasticsearch. Esso compie questo lavoro in due momenti: prima estraendo i dati utili (ovvero i documenti veri e propri) da Elasticsearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:CleanerStrategy}.\\
@@ -65,62 +65,28 @@ I suoi metodi sono:
 
 Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che vengono restituiti da ElasticSearch, la classe \texttt{DataCleaner} e le classi che implementano \texttt{CleanerStrategy}. Tuttavia, i client di \texttt{DataCleaner} potranno avere accesso diretto ai dati di ElasticSearch, privi di dati amministrativi.
 	
-\paragraph{CleanerStrategy}
+\paragraph{CleanerStrategy}\Spazio
 \label{sec:CleanerStrategy}
-\texttt{CleanerStrategy} è l'interfaccia che verrà implementata per realizzare una pulizia più raffinata dei dati di un \texttt{DataCleaner}. Espone il metodo \texttt{clean(data)}, che avrà comportamenti diversi a seconda della strategia che si desidera applicare. Dato che il prodotto è implementato in Javascript il costrutto interfaccia non è presente nel linguaggio. Per ovviare a questa mancanza tutte le classi che dovrebbero implementare questa interfaccia \emph{devono} possedere un metodo \texttt{clean(data)} che funzioni come ci si aspetti. 
-
+\texttt{CleanerStrategy} è l'interfaccia che verrà implementata per realizzare una pulizia più raffinata dei dati di un \texttt{DataCleaner}. Espone il metodo \texttt{clean(data)}, che avrà comportamenti diversi a seconda della strategia che si desidera applicare. Dato che il prodotto è implementato in Javascript il costrutto interfaccia non è presente nel linguaggio. Per ovviare a questa mancanza tutte le classi che dovrebbero implementare questa interfaccia \emph{devono} possedere un metodo \texttt{clean(data)} che funzioni come ci si aspetti. Questa interfaccia implementa il design pattern \emph{Strategy}, come descritto in \textcolor{red}{QUI DAI IL RIFERIMENTO, LO DEVI ANCORA SCRIVERE}.
 	
 	
-\paragraph{GraphCleaner}
+\paragraph{GraphCleanerStrategy}\Spazio
 \label{sec:GraphCleaner}
 
 \texttt{GraphCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione del grafo rappresentante la mappa topologica. Esso dispone dei seguenti metodi:
 \begin{itemize}
-	\item \texttt{wipe(Array)} che riceve come input un Array che contiene i documenti JSON di un indice. Esso scorre tale Array e ritorna un Array contenente l'insieme di documenti all'interno dell'indice che rappresentano richieste di dati ai database dell'applicazione oppure ai server, ovvero il sottoinsieme di documenti che serviranno effettivamente per la costruzione del grafo;
-	\item \texttt{clean(Array)} che riceve come input un Array di indici che contengono al loro interno i documenti JSON sotto forma di Array. Tale metodo agisce scorrendo l'array che riceve invocando il metodo \texttt{wipe(Array)} su ogni sottoarray.
+	\item \texttt{clean(traces:Array<RawTrace>): Array<RawTrace>} che riceve come input un Array di indici che contengono al loro interno i documenti JSON sotto forma di Array. Tale metodo agisce scorrendo l'array rimuovendo i documenti inutili alla costruzione del grafo.
 \end{itemize}
 
-\paragraph{StackCleaner}
+\paragraph{StackCleanerStrategy} \Spazio
 \label{sec:StackCleaner}
 
 \texttt{StackCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati durante la costruzione della stack trace. Essa dispone del metodo
 \begin{itemize}
-	\item \texttt{clean(data)} il quale scorre tutti i documenti JSON disponibili ed ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
+	\item \texttt{clean(traces:Array<RawTrace>): Array<RawTrace>} il quale scorre tutti i documenti JSON disponibili ed ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
 \end{itemize}
 
-\paragraph{Trace}
-\label{sec:Trace}
-\texttt{Trace} rappresenta una richiesta che viene fatta al sistema contenente solo i dati veramente utili alla successiva costruzione della Stack Trace. Questi sono:
-\begin{itemize}
-	\item \texttt{type}: che riconduce ad una delle tipologie di trace;
-	\item \texttt{trace\_id}: numero univoco che permette l'associazione tra trace HTTP, JDBC e Pageload;
-	\item \texttt{name}: identificazione generale della richiesta;
-	\item \texttt{call\_tree}: array contenente gerarchicamente la lista dei metodi invocati dall'applicazione per compiere la richiesta;
-	\item \texttt{duration}: tempo impiegato dal sistema per lo svolgimento della richiesta, compreso il tempo dei metodi, delle query e del caricamento della pagina;
-	\item \texttt{timestamp}: data e ora dello svolgimento della richiesta;
-	\item \texttt{error}: presenza o meno di errori;
-	\item \texttt{status\_code}: tipologia di errore;
-	\item \texttt{DBrequest}: (opzionale) array contenente le query con cui è stato interrogato il database.
-\end{itemize}
- La tipologia delle trace viene identificata tramite i metodi \texttt{checkPageload()} e \texttt{checkQueries()} e queste possono essere:
-	\begin{itemize}
-	\item HTTP: insieme di metodi scatenati da un evento generico;
-	\item HTTP + Pageload: insieme di metodi scatenati dal caricamento di una pagina web;
-	\item HTTP + JDBC + Pageload: insieme di eventi che portano all'interrogazione di un database e che provocano un successivo caricamento di una pagina.
-	\end{itemize}
-Inoltre i dati vengono calcolati in base alla tipologia della trace tramite  \texttt{setPageload()} e  \texttt{setQueries()} che utilizzano determinate funzioni per la manipolazione dei dati:
-\begin{itemize}
-	\item Per il campo \texttt{call\_tree} avviene un'accurata manipolazione attraverso il metodo \texttt{build\_tree()} per passare da un tipo stringa ad una gerarchia di oggetti.
-	Al metodo \texttt{build\_tree()} viene passato il dato sotto forma di stringa in cui, attraverso l'ASCII art, viene rappresentato un albero dei metodi che vengono invocati con delle informazioni particolari per ognuno di essi. Questo utilizza a sua volta il metodo \texttt{more\_data()} per costruire un array bidimensionale che elenca tutti i metodi e per ognuno ne specifica i dati aggiuntivi rappresentati dall'ASCII art (come total time e self time), il grado di indentazione nell'albero, il numero di metodi figli e il numero di metodi discendenti da esso. \\ Da questa struttura il metodo \texttt{tableToTree()} ricava un oggetto con innestati altri oggetti rappresentanti i metodi e i propri dati strutturati in maniera da rispecchiare i legami di parentela dell'ASCII art.
-	\item 	Il metodo \texttt{change\_duration} permette di far variare il tempo di esecuzione delle richieste in base alla tipologia in quanto per ognuna bisognerà considerare più parametri per calcolare i millisecondi impiegati.
-\end{itemize}
 
-\paragraph{StackBuilder}
-\label{sec:StackBuilder}
-
-\texttt{StackBuilder} si occupa della creazione della struttura della stack trace per la sua successiva visualizzazione.
-Esso viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati.
-Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP ricevute dal \texttt{DataReader} e pulite dal \texttt{DataCleaner}, creato e istanziato con strategia \texttt{StackCleaner}, creando delle \texttt{Trace} da ogni richiesta con dati grezzi.
 
 \paragraph{Graph}
 \label{sec:Graph}
@@ -165,3 +131,57 @@ Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP
 
 		\item{\texttt{getGraph()} il quale ritorna un oggetto di tipo \texttt{Graph} secondo la struttura definita in \ref{sec:Graph} costruendo i due Array attribuendo loro l'output dei metodi \texttt{buildNodes()} e \texttt{buildLinks()}.  }
 	\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	\paragraph{Trace}
+\label{sec:Trace}
+\textcolor{red}{QUI WIPA}
+\texttt{Trace} rappresenta una richiesta che viene fatta al sistema contenente solo i dati veramente utili alla successiva costruzione della Stack Trace. Questi sono:
+\begin{itemize}
+	\item \texttt{type}: che riconduce ad una delle tipologie di trace;
+	\item \texttt{trace\_id}: numero univoco che permette l'associazione tra trace HTTP, JDBC e Pageload;
+	\item \texttt{name}: identificazione generale della richiesta;
+	\item \texttt{call\_tree}: array contenente gerarchicamente la lista dei metodi invocati dall'applicazione per compiere la richiesta;
+	\item \texttt{duration}: tempo impiegato dal sistema per lo svolgimento della richiesta, compreso il tempo dei metodi, delle query e del caricamento della pagina;
+	\item \texttt{timestamp}: data e ora dello svolgimento della richiesta;
+	\item \texttt{error}: presenza o meno di errori;
+	\item \texttt{status\_code}: tipologia di errore;
+	\item \texttt{DBrequest}: (opzionale) array contenente le query con cui è stato interrogato il database.
+\end{itemize}
+ La tipologia delle trace viene identificata tramite i metodi \texttt{checkPageload()} e \texttt{checkQueries()} e queste possono essere:
+	\begin{itemize}
+	\item HTTP: insieme di metodi scatenati da un evento generico;
+	\item HTTP + Pageload: insieme di metodi scatenati dal caricamento di una pagina web;
+	\item HTTP + JDBC + Pageload: insieme di eventi che portano all'interrogazione di un database e che provocano un successivo caricamento di una pagina.
+	\end{itemize}
+Inoltre i dati vengono calcolati in base alla tipologia della trace tramite  \texttt{setPageload()} e  \texttt{setQueries()} che utilizzano determinate funzioni per la manipolazione dei dati:
+\begin{itemize}
+	\item Per il campo \texttt{call\_tree} avviene un'accurata manipolazione attraverso il metodo \texttt{build\_tree()} per passare da un tipo stringa ad una gerarchia di oggetti.
+	Al metodo \texttt{build\_tree()} viene passato il dato sotto forma di stringa in cui, attraverso l'ASCII art, viene rappresentato un albero dei metodi che vengono invocati con delle informazioni particolari per ognuno di essi. Questo utilizza a sua volta il metodo \texttt{more\_data()} per costruire un array bidimensionale che elenca tutti i metodi e per ognuno ne specifica i dati aggiuntivi rappresentati dall'ASCII art (come total time e self time), il grado di indentazione nell'albero, il numero di metodi figli e il numero di metodi discendenti da esso. \\ Da questa struttura il metodo \texttt{tableToTree()} ricava un oggetto con innestati altri oggetti rappresentanti i metodi e i propri dati strutturati in maniera da rispecchiare i legami di parentela dell'ASCII art.
+	\item 	Il metodo \texttt{change\_duration} permette di far variare il tempo di esecuzione delle richieste in base alla tipologia in quanto per ognuna bisognerà considerare più parametri per calcolare i millisecondi impiegati.
+\end{itemize}
+
+\paragraph{StackBuilder}
+\label{sec:StackBuilder}
+
+\texttt{StackBuilder} si occupa della creazione della struttura della stack trace per la sua successiva visualizzazione.
+Esso viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati.
+Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP ricevute dal \texttt{DataReader} e pulite dal \texttt{DataCleaner}, creato e istanziato con strategia \texttt{StackCleaner}, creando delle \texttt{Trace} da ogni richiesta con dati grezzi.
