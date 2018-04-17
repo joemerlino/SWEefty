@@ -18,8 +18,11 @@ Il codice prodotto è stato scritto in JavaScript ES6, quindi molti concetti qua
 \paragraph{Shards} \Spazio
 \paragraph{Hits} \Spazio
 \paragraph{ElasticsearchDocument} \Spazio
-\paragraph{RawTrace} \Spazio
+\paragraph{Request} \Spazio
 Rappresenta il contenuto vero e proprio del documenti salvato sull'istanza di Elasticsearch. Essendo Elasticsearch un database non relazionale non è possibile conoscere a priori la struttura di tale documento, dunque il suo contenuto viene qui rappresentato tramite un attributo pubblico chiamato content, di tipo JSON con struttura variabile.
+\paragraph{RequestHTTP}
+\paragraph{RequestPageload}
+\paragraph{RequestJdbc}
 
 \paragraph{ElasticsearchClient} \Spazio
 \texttt{ElasticsearchClient} è il componente che si occupa di eseguire le chiamate API al lato server. Non è una classe vera e propria all'interno del codice, ma un \emph{Service}. 
@@ -47,7 +50,6 @@ Osserviamo che anche se in questa rappresentazione questi metodi sono all'intern
 
 
 \paragraph{DataCleaner}\Spazio
-
 \label{sec:DataCleaner}
 \texttt{DataCleaner} è il componente del sistema che si occupa di pulire i dati grezzi che sono stati reperiti da Elasticsearch. Esso compie questo lavoro in due momenti: prima estraendo i dati utili (ovvero i documenti veri e propri) da Elasticsearch e poi pulendoli attraverso una \emph{strategy}, descritta in \ref{sec:CleanerStrategy}.\\
 I suoi metodi sono:
@@ -56,11 +58,11 @@ I suoi metodi sono:
 	\item  \texttt{constructor(strategy:CleanerStrategy): void} costruisce il \texttt{DataCleaner} con una specifica strategia di pulizia;
 	\item \texttt{setStrategy(in strategy:CleanerStrategy): void} il quale riceve in input un oggetto che implementa l'interfaccia \texttt{CleanerStrategy} e lo assegna al riferimento proprio dell'oggetto;
 
-	\item \texttt{cleanData(in elasticsearchIndicesResults:Array<ElasticsearchIndexResult>): Array<RawTrace>} il quale prima rimuove i metadati (chiamando il suo metodo \texttt{removeMetaDataFromIndices}) di Elasticsearch dal parametro in input e successivamente chiama l'implementazione di \texttt{clean} della strategia che possiede al suo interno.  Tale strategia è incaricata di raffinare ulteriormente i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace tramite il metodo \texttt{clean};
+	\item \texttt{cleanData(in elasticsearchIndicesResults:Array<ElasticsearchIndexResult>): Array<Request>} il quale prima rimuove i metadati (chiamando il suo metodo \texttt{removeMetaDataFromIndices}) di Elasticsearch dal parametro in input e successivamente chiama l'implementazione di \texttt{clean} della strategia che possiede al suo interno.  Tale strategia è incaricata di raffinare ulteriormente i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace tramite il metodo \texttt{clean};
 
-	\item \texttt{removeMetadataFromIndices(elasticsearchIndicesResults:Array<ElasticsearchIndexResult>): Array<RawTrace>}  si occupa di rimuovere i metadati di Elasticsearch da un Array di indici invocando il metodo \texttt{removeMetaDataFromIndex} su ognuno dei singoli indici. Viene ritornato un array di \texttt{RawTrace} che rappresenta le traces lette dai vari indici in un singolo array;
+	\item \texttt{removeMetadataFromIndices(elasticsearchIndicesResults:Array<ElasticsearchIndexResult>): Array<Request>}  si occupa di rimuovere i metadati di Elasticsearch da un Array di indici invocando il metodo \texttt{removeMetaDataFromIndex} su ognuno dei singoli indici. Viene ritornato un array di \texttt{Request} che rappresenta le traces lette dai vari indici in un singolo array;
 
-	\item \texttt{removeMetadataFromIndex(elasticsearchIndexResult:ElasticsearchIndexResult): Array<RawTrace>} il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti in un \emph{singolo} indice. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazione di monitoring negli indici di Elasticsearch. Elasticsearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni amministrative. Il metodo si occupa di rimuovere questi dati e restituire un array contenente i documenti di un indice;
+	\item \texttt{removeMetadataFromIndex(elasticsearchIndexResult:ElasticsearchIndexResult): Array<Request>} il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti in un \emph{singolo} indice. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazione di monitoring negli indici di Elasticsearch. Elasticsearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni amministrative. Il metodo si occupa di rimuovere questi dati e restituire un array contenente i documenti di un indice;
 \end{itemize}
 
 Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che vengono restituiti da ElasticSearch, la classe \texttt{DataCleaner} e le classi che implementano \texttt{CleanerStrategy}. Tuttavia, i client di \texttt{DataCleaner} potranno avere accesso diretto ai dati di ElasticSearch, privi di dati amministrativi.
@@ -72,53 +74,56 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 	
 \paragraph{GraphCleanerStrategy}\Spazio
 \label{sec:GraphCleaner}
-
 \texttt{GraphCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati per la costruzione del grafo rappresentante la mappa topologica. Esso dispone dei seguenti metodi:
 \begin{itemize}
-	\item \texttt{clean(traces:Array<RawTrace>): Array<RawTrace>} che riceve come input un Array di indici che contengono al loro interno i documenti JSON sotto forma di Array. Tale metodo agisce scorrendo l'array rimuovendo i documenti inutili alla costruzione del grafo.
+	\item \texttt{clean(traces:Array<Request>): Array<Request>} che riceve come input un Array di indici che contengono al loro interno i documenti JSON sotto forma di Array. Tale metodo agisce scorrendo l'array rimuovendo i documenti inutili alla costruzione del grafo.
 \end{itemize}
 
 \paragraph{StackCleanerStrategy} \Spazio
 \label{sec:StackCleaner}
-
 \texttt{StackCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati durante la costruzione della stack trace. Essa dispone del metodo
 \begin{itemize}
-	\item \texttt{clean(traces:Array<RawTrace>): Array<RawTrace>} il quale scorre tutti i documenti JSON disponibili ed ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
+	\item \texttt{clean(traces:Array<Request>): Array<Request>} il quale scorre tutti i documenti JSON disponibili ed ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
 \end{itemize}
 
 
 
-\paragraph{Graph}
+\paragraph{Graph} \Spazio
 \label{sec:Graph}
-	\texttt{Graph} è il tipo di dato che rappresenta il grafo della mappa topologica dell'applicazione. Esso contiene due Array, uno chiamato \texttt{Nodes} e uno \texttt{Links}.
-	\label{sec:Nodes}
-	L'Array di \texttt{Nodes} contiene degli oggetti, detti \texttt{Node} rappresentanti i nodi della mappa che contengono i seguenti campi:
-	\begin{itemize}
-		\item \texttt{id}, contiene un id numerico intero univoco che individua un nodo;
-		\item \texttt{name}, contiene il nome del nodo che verrà visualizzato nella mappa. Anche esso è univoco;
-		\item \texttt{type}, contiene la tipologia del nodo, che potrà essere ad esempio Server oppure Database.
-	\end{itemize}
-	\label{sec:Links}
-	L'Array di \texttt{Links} contiene oggetti che rappresentano la di comunicazione tra due \texttt{Node} e contengono i seguenti campi:
-	\begin{itemize}
-		\item{\texttt{source}, che rappresenta il nodo che ha effettuato la chiamata sotto forma di id numerico intero;}
-		\item{\texttt{target}, che rappresenta il nodo che ha ricevuto la chiamata sotto forma di id numerico intero;}
-		\item{\texttt{type}, che può essere "Database" o "HTTP", per rappresentare i diversi tipi di comunicazione;}
-		\item{\texttt{average\_response\_time}, che contiene il tempo medio di risposta di tutte le trace tra source e target;}
-		\item{\texttt{number\_of\_requests}, che serve per mantenere consistente il campo \texttt{average\_response\_time}.}
-	\end{itemize}
-	Esso è individuato univocamente dalla coppia di campi \texttt{source} e \texttt{target}.
+	\texttt{Graph} è il tipo di dato che rappresenta il grafo della mappa topologica dell'applicazione. Esso contiene due Array, uno di \texttt{Nodes} e uno di \texttt{Links}.
 	Il tipo di dato \texttt{Graph} contiene i seguenti metodi:
 	\begin{itemize}
-		\item{\texttt{checkIfNodeIsNotPresent(Object)} controlla se l'oggetto che gli viene passato, che è assunto essere un \texttt{Node} risulta già essere presente nell'Array \texttt{Nodes} attraverso un controllo sul campo \texttt{name}; }
-		\item{\texttt{checkIfLinkIsNotPresent(Object)} controlla se l'oggetto che gli viene passato, che è assunto essere un \texttt{Link} risulta già essere presente nell'Array \texttt{Links} attraverso un controllo sulla coppia di campi \texttt{source} e \texttt{target}; }
-		\item{\texttt{getIdOfNode(String)} scorre l'Array \texttt{Nodes} finchè non trova un \texttt{Node} con campo \texttt{name} uguale a quello passatogli come parametro; }
-		\item{\texttt{getIndexOfSameLink(Object)} scorre l'Array \texttt{Links} finchè non trova un \texttt{Link} con campi \texttt{source} e \texttt{target} uguali a a quelli dell'oggetto che gli è passato, che è assunto essere un \texttt{Link};}
-		\item{\texttt{addNode(Object)} aggiunge l'oggetto passatogli, che è assunto essere un \texttt{Node} all'Array \texttt{Nodes}, se esso non è già presente;}
-		\item{\texttt{addLink(Object)} aggiunge l'oggetto passatogli, che è assunto essere un \texttt{Link} all'Array \texttt{Links}, se esso non è già presente.}					
+		\item{\texttt{checkIfNodeIsNotPresent(node:Node): boolean} controlla se l'oggetto che gli viene passato, che è  un \texttt{Node} risulta già essere presente nell'Array \texttt{nodes}; }
+		\item{\texttt{checkIfLinkIsNotPresent(link:Link): boolean} controlla se l'oggetto che gli viene passato, che è un \texttt{Link} risulta già essere presente nell'Array \texttt{links}; }
+		\item{\texttt{addNode(node:Node): void} aggiunge l'oggetto passatogli, se esso non è già presente;}
+		\item{\texttt{addLink(link:Link): void} aggiunge l'oggetto passatogli, se esso non è già presente.}	
+
+		\item{\texttt{getIdOfNode(nodeName:String): int;} scorre l'Array \texttt{Nodes} finchè non trova un \texttt{Node} con campo \texttt{name} uguale a quello passatogli come parametro, ritorna l'\texttt{id} di tale nodo; }
+		\item{\texttt{getIndexOfSameLink(sourceId:int, targetId:int): Link} scorre l'Array \texttt{Links} finchè non trova un \texttt{Link} con campi \texttt{source} e \texttt{target} uguali a quelli passati per parametro e in tal caso ritorna tale \texttt{Link};}				
 	\end{itemize}
 
-\paragraph{GraphBuilder}
+\paragraph{Node} \Spazio
+Rappresenta un nodo all'interno dell'applicazione monitorata. Consta dei campi dati: 
+\begin{itemize}
+	\item \texttt{id}, contiene un id numerico intero univoco che individua un nodo;
+	\item \texttt{name}, contiene il nome del nodo. Anche esso è univoco;
+	\item \texttt{type}, contiene la tipologia del nodo, che potrà essere \texttt{Server} oppure \texttt{Database}.
+\end{itemize}
+
+\paragraph{Link}\Spazio
+Rappresenta un collegamento tra due nodi dell'applicazione monitorata. Consta dei campi dati:
+\begin{itemize}
+	\item{\texttt{source}, che rappresenta il nodo che ha effettuato la chiamata sotto forma di id numerico intero;}
+	\item{\texttt{target}, che rappresenta il nodo che ha ricevuto la chiamata sotto forma di id numerico intero;}
+	\item{\texttt{type}, che può essere \texttt{Database} o \texttt{HTTP}, per rappresentare i diversi tipi di comunicazione;}
+	\item{\texttt{avgResponseTime}, che contiene il tempo medio di risposta di tutte le trace tra source e target;}
+	\item{\texttt{numberOfRequests}, che indica quante richieste rappresenta un Link.}
+\end{itemize}
+Ciascun \texttt{Link} è individuato univocamente dalla coppia di campi dati \texttt{source} e \texttt{target}.
+
+\paragraph{GraphBuilderDirector} \Spazio
+
+\paragraph{GraphBuilder} \Spazio
 \label{sec:GraphBuilder}
 	\texttt{GraphBuilder} è il componente che si occupa di costruire il grafo di nodi e archi rappresentanti la mappa topologica dell'applicazione, secondo la struttura descritta in \ref{sec:Graph}. Esso verrà successivamente visualizzato utilizzando la libreria D3.js. \texttt{GraphBuilder} viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati di cui ha bisogno.
 	I metodi della classe sono:
@@ -133,6 +138,16 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 	\end{itemize}
 
 
+\paragraph{StackTrace} \Spazio
+\textcolor{red}{QUI LISA DESCRIVI A DOVERE}
+\paragraph{Trace} \Spazio
+\textcolor{red}{QUI LISA DESCRIVI A DOVERE}
+\paragraph{CallTree} \Spazio
+\textcolor{red}{QUI LISA DESCRIVI A DOVERE}
+\paragraph{StackBuilderDirector} \Spazio
+\textcolor{red}{QUI LISA DESCRIVI A DOVERE}
+\paragraph{StackBuilder} \Spazio
+\textcolor{red}{QUI LISA DESCRIVI A DOVERE}
 
 
 
@@ -151,37 +166,40 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 
 
 
-	\paragraph{Trace}
-\label{sec:Trace}
-\textcolor{red}{QUI WIPA}
-\texttt{Trace} rappresenta una richiesta che viene fatta al sistema contenente solo i dati veramente utili alla successiva costruzione della Stack Trace. Questi sono:
-\begin{itemize}
-	\item \texttt{type}: che riconduce ad una delle tipologie di trace;
-	\item \texttt{trace\_id}: numero univoco che permette l'associazione tra trace HTTP, JDBC e Pageload;
-	\item \texttt{name}: identificazione generale della richiesta;
-	\item \texttt{call\_tree}: array contenente gerarchicamente la lista dei metodi invocati dall'applicazione per compiere la richiesta;
-	\item \texttt{duration}: tempo impiegato dal sistema per lo svolgimento della richiesta, compreso il tempo dei metodi, delle query e del caricamento della pagina;
-	\item \texttt{timestamp}: data e ora dello svolgimento della richiesta;
-	\item \texttt{error}: presenza o meno di errori;
-	\item \texttt{status\_code}: tipologia di errore;
-	\item \texttt{DBrequest}: (opzionale) array contenente le query con cui è stato interrogato il database.
-\end{itemize}
- La tipologia delle trace viene identificata tramite i metodi \texttt{checkPageload()} e \texttt{checkQueries()} e queste possono essere:
-	\begin{itemize}
-	\item HTTP: insieme di metodi scatenati da un evento generico;
-	\item HTTP + Pageload: insieme di metodi scatenati dal caricamento di una pagina web;
-	\item HTTP + JDBC + Pageload: insieme di eventi che portano all'interrogazione di un database e che provocano un successivo caricamento di una pagina.
-	\end{itemize}
-Inoltre i dati vengono calcolati in base alla tipologia della trace tramite  \texttt{setPageload()} e  \texttt{setQueries()} che utilizzano determinate funzioni per la manipolazione dei dati:
-\begin{itemize}
-	\item Per il campo \texttt{call\_tree} avviene un'accurata manipolazione attraverso il metodo \texttt{build\_tree()} per passare da un tipo stringa ad una gerarchia di oggetti.
-	Al metodo \texttt{build\_tree()} viene passato il dato sotto forma di stringa in cui, attraverso l'ASCII art, viene rappresentato un albero dei metodi che vengono invocati con delle informazioni particolari per ognuno di essi. Questo utilizza a sua volta il metodo \texttt{more\_data()} per costruire un array bidimensionale che elenca tutti i metodi e per ognuno ne specifica i dati aggiuntivi rappresentati dall'ASCII art (come total time e self time), il grado di indentazione nell'albero, il numero di metodi figli e il numero di metodi discendenti da esso. \\ Da questa struttura il metodo \texttt{tableToTree()} ricava un oggetto con innestati altri oggetti rappresentanti i metodi e i propri dati strutturati in maniera da rispecchiare i legami di parentela dell'ASCII art.
-	\item 	Il metodo \texttt{change\_duration} permette di far variare il tempo di esecuzione delle richieste in base alla tipologia in quanto per ognuna bisognerà considerare più parametri per calcolare i millisecondi impiegati.
-\end{itemize}
 
-\paragraph{StackBuilder}
-\label{sec:StackBuilder}
 
-\texttt{StackBuilder} si occupa della creazione della struttura della stack trace per la sua successiva visualizzazione.
-Esso viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati.
-Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP ricevute dal \texttt{DataReader} e pulite dal \texttt{DataCleaner}, creato e istanziato con strategia \texttt{StackCleaner}, creando delle \texttt{Trace} da ogni richiesta con dati grezzi.
+
+% 	\paragraph{Trace}
+% \label{sec:Trace}
+% \textcolor{red}{QUI WIPA}
+% \texttt{Trace} rappresenta una richiesta che viene fatta al sistema contenente solo i dati veramente utili alla successiva costruzione della Stack Trace. Questi sono:
+% \begin{itemize}
+% 	\item \texttt{type}: che riconduce ad una delle tipologie di trace;
+% 	\item \texttt{trace\_id}: numero univoco che permette l'associazione tra trace HTTP, JDBC e Pageload;
+% 	\item \texttt{name}: identificazione generale della richiesta;
+% 	\item \texttt{call\_tree}: array contenente gerarchicamente la lista dei metodi invocati dall'applicazione per compiere la richiesta;
+% 	\item \texttt{duration}: tempo impiegato dal sistema per lo svolgimento della richiesta, compreso il tempo dei metodi, delle query e del caricamento della pagina;
+% 	\item \texttt{timestamp}: data e ora dello svolgimento della richiesta;
+% 	\item \texttt{error}: presenza o meno di errori;
+% 	\item \texttt{status\_code}: tipologia di errore;
+% 	\item \texttt{DBrequest}: (opzionale) array contenente le query con cui è stato interrogato il database.
+% \end{itemize}
+%  La tipologia delle trace viene identificata tramite i metodi \texttt{checkPageload()} e \texttt{checkQueries()} e queste possono essere:
+% 	\begin{itemize}
+% 	\item HTTP: insieme di metodi scatenati da un evento generico;
+% 	\item HTTP + Pageload: insieme di metodi scatenati dal caricamento di una pagina web;
+% 	\item HTTP + JDBC + Pageload: insieme di eventi che portano all'interrogazione di un database e che provocano un successivo caricamento di una pagina.
+% 	\end{itemize}
+% Inoltre i dati vengono calcolati in base alla tipologia della trace tramite  \texttt{setPageload()} e  \texttt{setQueries()} che utilizzano determinate funzioni per la manipolazione dei dati:
+% \begin{itemize}
+% 	\item Per il campo \texttt{call\_tree} avviene un'accurata manipolazione attraverso il metodo \texttt{build\_tree()} per passare da un tipo stringa ad una gerarchia di oggetti.
+% 	Al metodo \texttt{build\_tree()} viene passato il dato sotto forma di stringa in cui, attraverso l'ASCII art, viene rappresentato un albero dei metodi che vengono invocati con delle informazioni particolari per ognuno di essi. Questo utilizza a sua volta il metodo \texttt{more\_data()} per costruire un array bidimensionale che elenca tutti i metodi e per ognuno ne specifica i dati aggiuntivi rappresentati dall'ASCII art (come total time e self time), il grado di indentazione nell'albero, il numero di metodi figli e il numero di metodi discendenti da esso. \\ Da questa struttura il metodo \texttt{tableToTree()} ricava un oggetto con innestati altri oggetti rappresentanti i metodi e i propri dati strutturati in maniera da rispecchiare i legami di parentela dell'ASCII art.
+% 	\item 	Il metodo \texttt{change\_duration} permette di far variare il tempo di esecuzione delle richieste in base alla tipologia in quanto per ognuna bisognerà considerare più parametri per calcolare i millisecondi impiegati.
+% \end{itemize}
+
+% \paragraph{StackBuilder}
+% \label{sec:StackBuilder}
+
+% \texttt{StackBuilder} si occupa della creazione della struttura della stack trace per la sua successiva visualizzazione.
+% Esso viene istanziato con un oggetto \texttt{DataReader} per poter ottenere i dati.
+% Il metodo principale è \texttt{getStack()} che controlla tutte le chiamate HTTP ricevute dal \texttt{DataReader} e pulite dal \texttt{DataCleaner}, creato e istanziato con strategia \texttt{StackCleaner}, creando delle \texttt{Trace} da ogni richiesta con dati grezzi.
