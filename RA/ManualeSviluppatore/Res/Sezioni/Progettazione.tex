@@ -1,0 +1,108 @@
+\section{Requisiti di sistema}
+\subsection{Browser Supportati}
+
+Di seguito viene fornito un breve elenco delle versioni minime dei browser sui quali il funzionamento del nostro plugin è garantito:
+\begin{itemize}
+	
+	\item Google Chrome v.55
+	\item Mozilla Firefox v.50
+	\item Safari v.10
+	\item Internet Explorer v.11
+	
+\end{itemize}
+
+Per un corretto funzionamento del plugin è necessario che sia abilitato Javascript.
+
+
+
+
+\section{Configurazione ambiente di lavoro}
+\label{sec:configurazione}
+\subsection{Installazione di Kibana}
+Per poter installare correttamente il prodotto è necessario scaricare e configurare antecedentemente Kibana, reperibile dal link URL \url{https://github.com/elastic/kibana/releases}.\\
+I plugin sono stati sviluppati con la versione 6.2.2 che si raccomanda anche per l'utilizzo.\\
+Una volta scaricato l'archivio compresso sarà necessario estrarre il contenuto in una cartella con nome \texttt{kibana} da raggiungere tramite l'utilizzo di un terminale.
+Prima di procedere alla configurazione di Kibana deve essere installato il framework Node.js ed il relativo gestore di pacchetti chiamato Node package manager (npm).\\
+Dalla directory corrente, dare il comando \texttt{npm install} per procedere all'installazione dei pacchetti necessari al funzionamento di Kibana.\\
+Una volta terminata la configurazione, spostarsi tramite terminale nella cartella \texttt{kibana/bin} ed avviare l'eseguibile \texttt{kibana}.\\
+Dopo l'avvio, aprire una finestra di browser e navigare all'indirizzo URL \url{localhost:5601} per raggiungere la dashboard di Kibana.
+\subsection{Installazione dei plugin}
+Per prima cosa bisogna provvedere a scaricare i plugin. Questi si possono scaricare da \href{https://github.com/SWEeftyTeam/Havana}{https://github.com/SWEeftyTeam/Havana} cliccando sul pulsante verde "Clone or download" e poi su "Download ZIP".
+Per l'installazione, estrarre dall'archivio compresso le cartelle dei plugin e spostarli nella stessa \gl{directory} in cui si trova la cartella \texttt{kibana}.\\
+Aprire una finestra di terminale, navigare all'interno della cartella del plugin di cui si vuole effettuare lo sviluppo e utilizzare il comando \texttt{npm install} per avviare l'installazione dei moduli node necessari al funzionamento del plugin.
+Una volta completata l'installazione, per avviare Kibana in modalità sviluppo con il plugin desiderato dare il comando \texttt{npm start} dalla directory corrente.
+\subsection{Configurazione di Elasticsearch}
+Kibana si appoggia ad Elasticsearch per prelevare i dati da monitorare, quindi sarà necessaria un'istanza di esso che si può avere in locale o remoto configurando il file \texttt{kibana.yml} all'interno della cartella \texttt{config}, in particolare il campo \texttt{elasticsearch.url: "localhost:9200"} che dovrà essere modificato con l'indirizzo dove risiede l'istanza remota di Elasticsearch.\\
+Localmente invece, scaricare il pacchetto dal link URL \url{https://www.elastic.co/downloads/elasticsearch}, versione raccomandata 6.2.2.
+Una volta scaricato l'archivio compresso, estrarre il contenuto in una cartella locale, raggiungerla tramite terminale ed entrare nella sottocartella \texttt{bin} da dove avviare l'eseguibile \texttt{elasticsearch}.\\
+L'istanza sarà interrogabile all'indirizzo URL \url{localhost:9200}.
+\newpage
+\section{Estensibilità}
+\subsection{Modifica delle funzionalità presenti}
+\subsubsection{Mappa topologica}
+\label{sec:graph}
+Per poter cambiare gli aspetti di visualizzazione della mappa topologica è necessario modificare il file \texttt{d3functions.js} presente nella cartella \texttt{public/d3utilities} ove è possibile trovare le seguenti variabili usate dalla libreria d3.js per comporre gli elementi del grafo:
+\begin{itemize}
+	\item \texttt{svg}: Canvas del grafo;
+	\item \texttt{color}: Schema colori;
+	\item \texttt{simulation}: Gestore per i comportamenti fisici del grafo;
+	\item \texttt{link}: Archi tra componenti;
+	\item \texttt{linkLabel}: Etichette degli archi rappresentanti i tempi medi;
+	\item \texttt{connectionLabel}: Etichette degli archi rappresentanti il tipo di richiesta effettuata;
+	\item \texttt{node}: Nodi del grafo rappresentanti i componenti monitorati;
+	\item \texttt{nodelabels}: Etichette con il nome identificativo dei nodi.
+\end{itemize}
+Ad esempio modificando l'attributo \texttt{style} della variabile \texttt{link} si possono aggiungere ulteriori colorazioni condizionate per gli archi tra i componenti, mentre editando l'attributo \texttt{xlink:href} della variabile \texttt{node} si possono introdurre nuove icone per nuovi componenti monitorati. \\
+Per immettere ulteriori icone, copiare i file \texttt{.svg} nella directory dedicata \texttt{public/res/img} ed importarle poi con il seguente codice:
+\begin{lstlisting}
+import exampleSvg from "plugins/plugin-havana/res/img/example.svg";
+\end{lstlisting}
+nel file \texttt{app.js}.\\
+Inoltre sono a disposizione funzioni come \texttt{getLimit()} che ritorna la soglia limite oltre la quale il tempo di risposta è da considerarsi critico comportando quindi la colorazione rossa dell'arco interessato. 
+Si è prestabilito un valore di ritorno pari a 3000ms che può essere modificato a seconda delle necessità anche introducendo algoritmi per un calcolo dinamico della soglia limite. \\
+Infine sono disponibili le funzioni per la gestione di azioni come zoom, drag e click per i vari componenti della mappa:
+\begin{itemize}
+	\item \texttt{zoomed()}: applica il metodo \texttt{d3.event.transform};
+	\item \texttt{ticked()}: posiziona ogni oggetto alle coordinate x ed y nel canvas;
+	\item \texttt{dragged()}: sposta alle coordinate \texttt{d3.event.x} e \texttt{d3.event.y} l'oggetto coinvolto nel trascinamento;
+	\item \texttt{dragstarted()}: attiva l'elemento da trascinare;
+	\item \texttt{dragended()}: rimuove la classe d'attivazione dell'oggetto a trascinamento completato.
+\end{itemize}
+Modificando ad esempio l'attributo x ed y di \texttt{nodelabels} all'interno della funzione \texttt{ticked} è possibile spostare il posizionamento dell'etichetta rappresentante l'identificativo del nodo rispetto all'icona del nodo stesso.\\
+
+\subsubsection{Stack trace}
+\label{sec:stack}
+Per poter cambiare gli aspetti di visualizzazione della stack trace è necessario modificare il file \texttt{index.html} presente nella cartella \texttt{plugin/templates}.\\
+Oltre alle modifiche apportabili al codice HTML e CSS, è possibile cambiare il comportamento di alcune funzioni Javascript che regolano l'espansione e la compressione di una riga della stack trace o lo switch tra la visualizzazione di un call tree e le query ad esso associate.\\
+Attraverso delle direttive AngularJs è possibile sfruttare in maniera ottimale i dati provenienti da \$scope.nodes che rappresenta un array contenente tutte le trace di nostro interesse.\\
+Inoltre nel file \texttt{app.js} presente nella cartella \texttt{plugin} sono state implementate delle direttive personalizzate AngularJs per la gestione del call tree di ogni trace, che sono:
+\begin{lstlisting}
+.directive("tree", function() {..})
+\end{lstlisting}
+e
+\begin{lstlisting}
+.directive("branch", function($compile) {...})
+\end{lstlisting}
+Queste due direttive funzionano in modo innestabile tra loro permettendo di visualizzare i vari metodi appartenenti ad un call tree seguendo la struttura gerarchica con cui sono stati salvati nella variabile \$scope.nodes.calltree.
+
+
+\subsection{Sviluppo di nuove funzionalità}
+\label{sec:nuovefunzionalita}
+Per poter sviluppare nuove modalità di visualizzazione dei dati è possibile avvalersi delle classi \texttt{DataReader} e \texttt{DataCleaner} già presenti all'interno della cartella \texttt{public/components} dei plugin, creando quindi in questa directory una classe \texttt{Builder} per strutturare le informazioni da passare al frontend dell'applicazione secondo una nuova strategia da creare nella sottocartella \texttt{strategies}.\\
+Lo sviluppo del frontend può essere eseguito modificando adeguadatamente alle esigenze i file:
+\begin{itemize}
+	\item \texttt{app.js} presente nella cartella \texttt{public} dei plugin;
+	\item \texttt{index.html} presente nella cartella \texttt{public/templates}.
+\end{itemize}
+Nel primo file sarà necessario importare la classe \texttt{Builder} e la relativa strategia prodotta:
+\begin{lstlisting}
+let ExampleBuilder = require("./components/exampleBuilder");
+let ExampleCleaner = require("./components/strategies/examplecleaner");
+\end{lstlisting}
+per poter poi istanziare i relativi oggetti necessari allo sviluppo del frontend.
+
+
+
+
+
+

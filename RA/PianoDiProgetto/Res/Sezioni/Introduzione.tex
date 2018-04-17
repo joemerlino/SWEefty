@@ -1,0 +1,56 @@
+
+\section{Introduzione}
+	\subsection{Scopo del documento}
+	Questo documento specifica la strategia che SWEefty adotterà per portare a termine il \gl{progetto}.
+	Nel documento verrà illustrato come SWEefty ha organizzato le attività, l'utilizzo delle risorse e la gestione dei rischi.
+	Inoltre viene presentato il consuntivo delle risorse utilizzate durante lo svolgimento del progetto.
+	
+	\subsection{Scopo del prodotto}
+Il \gl{prodotto} che SWEefty è tenuto a realizzare consiste in una coppia di \gl{plugin} per \gl{Kibana} che devono fornire due funzionalità fondamentali:
+\begin{itemize}
+	\item \textbf{Visualizzazione \gl{mappa topologica} del sistema:} il plugin deve visualizzare in maniera chiara ed intuitiva come le componenti del sistema interagiscono tra di loro, con annesse informazioni utili;
+	\item \textbf{Visualizzazione della \gl{stack trace}:} vengono visualizzate sotto forma di lista le interazioni fra i componenti e le richieste HTTP effettuate ai \gl{server}. Per ogni trace della lista inoltre verrà visualizzata la rispettiva \gl{call tree} e le query effettuate ai \gl{database}.
+\end{itemize}
+
+\subsection{Glossario}
+Volendo evitare incomprensioni  ed equivoci per rendere la lettura del documento più semplice e chiara viene allegato il \emph{Glossario v3.0.0} nel quale sono contenute le definizioni dei termini tecnici, dei vocaboli ambigui, degli acronimi e delle abbreviazioni. Questi termini sono evidenziati nel presente documento con una g al pedice (esempio: $Glossario_{g}$).
+	
+	\subsection{Riferimenti}
+			\subsubsection{Normativi}
+			\begin{itemize}
+				\item \textbf{Norme di Progetto:} \emph{Norme di Progetto v3.0.0}
+			\end{itemize}
+			\subsubsection{Informativi}
+			\begin{itemize}
+				\item \textbf{Software Engineering - Ian Sommerville - 9th Edition 2010}:  Part 4: Software \gl{management};
+				\item \textbf{Regolamento di Organigramma}: \par
+				\url{http://www.math.unipd.it/~tullio/IS-1/2017/Progetto/RO.html} (ultima consultazione effettuata in data 2018-01-04)
+			\end{itemize}
+			
+	\subsection{Scadenze}
+	\label{scadenze}
+	SWEefty ha deciso di rispettare le seguenti scadenze:
+	\begin{itemize}
+		\item \textbf{RR:} 2018-01-26;
+		\item \textbf{RP:} 2018-03-19;
+		\item \textbf{RQ:} 2018-04-23;
+		\item \textbf{RA:} 2018-05-15.
+	\end{itemize}
+	\subsection{Ciclo di vita}	
+	Il modello che SWEefty adotta è quello incrementale. Questo modello si fonda sulla sull'esecuzione di un ciclo composto da queste fasi:
+	\begin{itemize}
+		\item Pianificazione;
+		\item Analisi dei requisiti;
+		\item Progetto;
+		\item Implementazione;
+		\item Prove;
+		\item Valutazione.
+	\end{itemize}
+	Questo ciclo può essere ripetuto più volte, fino al conseguimento di un prodotto soddisfacente. Le motivazioni che hanno spinto il gruppo a scegliere questo modello di sviluppo sono:
+	\begin{itemize}
+		\item Avendo una visione completa del prodotto da costruire, grazie alla possibilità di poter intervistare approfonditamente il \gl{proponente}, il \gl{modello incrementale} è particolarmente adatto;
+		\item Riduce il rischio di fallimento, ed è una proprietà fondamentale data la nostra inesperienza in progetti informatici;
+		\item I requisiti utente sono trattati e classificati in base alla loro importanza strategica, quindi le funzionalità più importanti vengono implementate per prime;
+		\item Prevede rilasci multipli e successivi e ciascuno realizza un incremento di funzionalità. Ciò permette di sottoporre continuamente al proponente un prototipo con le funzionalità implementate fino a quel momento così da poter ricevere una valutazione in corso d'\gl{Opera} e poter identificare immediatamente eventuali modifiche da fare;
+		\item Prevede la scomposizione dei processi in attività, rendendo più facile la loro gestione e parallelizzazione. In questo modo le risorse vengono utilizzate in modo più efficiente.
+	\end{itemize}
