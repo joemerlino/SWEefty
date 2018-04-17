@@ -1,8 +1,6 @@
 
 \subsection{Lato Client}
-Il lato client si occupa di interrogare il lato server per ottenere informazioni grezze, elaborarle per renderle utili ed infine presentarle all'utente.
 
-\label{sec:Componenti}
 
 
 \begin{figure}[H]
@@ -13,9 +11,10 @@ Il lato client si occupa di interrogare il lato server per ottenere informazioni
 \end{figure}
 
 \subsubsection{Generalità}
-\textcolor{red}{DESCRIVI UNA OVERVIEW DEL SISTEMA VISTO CHE A CARDINA FACEVA CAGARE CIÒ}
+Il lato client si occupa di interrogare il lato server per ottenere informazioni grezze, elaborarle per renderle utili ed infine presentarle all'utente. \texttt{DataReader} si occupa di fornire ai client dati letti dal database Elasticsearch, mentre \texttt{DataCleaner} rimuove da i dati grezzi di tipo \texttt{ElasticsearchIndexResult} le informazioni amministrative, lasciando solamente i documenti veri e propri. Essi vengono elaborati da una coppia di \texttt{Builder} per creare dati che abbiano una interfaccia idonea ad essere mostrata all'utente finale. I dati costruiti sono di tipo \texttt{Graph} per la mappa topologica e di tipo \texttt{StackTrace} per la stack trace. I dati del grafo vengono mostrati all'interno di un \emph{canvas} tramite la libreria grafica D3.js, mentre i dati della stack trace vengono mostrati da Angular, in un template HTML. 
 
 \subsubsection{Componenti} 
+\label{sec:Componenti}
 Si descrivono di seugito brevemente i componenti del lato client.
 
 \paragraph{ElasticsearchIndexResult} \Spazio
@@ -53,7 +52,7 @@ Rappresenta il contenuto vero e proprio del documenti salvati sull'istanza di El
 
 \paragraph{ElasticsearchClient} \Spazio
 \texttt{ElasticsearchClient} è il componente che si occupa di eseguire le chiamate API al lato server. Non è una classe vera e propria all'interno del codice, ma un \emph{Service}. 
-I Service sono funzioni, od oggetti, che possono essere passati a tutte le altri componenti di angularJs attraverso \emph{Dependency Injection}, permettono di condividere codice e funzionalità facilmente. Essi sono \emph{lazily instantiated}, cioè generati solo quando un componente esprime una dipendenza verso un determinato service e realizzano il design pattern \emph{singleton}. Permettono la realizzazione di servizi come i client API, dove avere piú istanze dello stesso client non sarebbe ragionevole. 
+I Service sono funzioni, od oggetti, che possono essere passati a tutte le altri componenti di angularJs attraverso \emph{Dependency Injection}, permettono di condividere codice e funzionalità facilmente. Essi sono \emph{lazily instantiated}, cioè generati solo quando un componente esprime una dipendenza verso un determinato service. Permettono la realizzazione di servizi come i client API, dove avere piú istanze dello stesso client non sarebbe ragionevole. 
 Utilizzare un service è l'unico modo per poter eseguire chiamate REST parametrizzate al lato server. Ciascun metodo qui presentato nasconde in realtà una chiamata GET all'opportuno componente lato server. I metodi da esso esposti sono: 
 \begin{itemize} 
   \item \texttt{tracesIndices(): Array<String>} ritorna un array di stringhe che rappresenta gli indici contenuti nell'istanza di ElasticSearch che hanno all'interno delle traces, ovvero i dati utili al plugin; 
@@ -203,7 +202,7 @@ I dati rappresentati dal plugin hanno una natura complessa. La mappa topologica 
 Si presenta in Figura \ref{img:builderGraph} il diagramma di sequenza che descrive le interazioni fra i vari componenti che concorrono alla creazione di un oggetto \texttt{Graph}, seguendo il pattern \emph{Builder}.
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Images/builderGraphSequence.png}
 	\caption{Diagramma di sequenza che mostra come un client possa ottenere un oggetto \texttt{Graph}}
@@ -217,7 +216,9 @@ Si presenta in Figura \ref{img:builderGraph} il diagramma di sequenza che descri
 Si presentano di seguito alcuni diagrammi di sequenza che chiariscono le interazioni fra i vari compoenti del sistema
 
 \paragraph{BuildNodes}
+\textcolor{red}{PAOLO DIAGRAMMA QUI}
 \paragraph{BuildLink}
+\textcolor{red}{PAOLO DIAGRAMMA QUI}
 \paragraph{LISA}
 \textcolor{red}{LISA METTI QUI I DIAGRAMMI DI SEQUENZA SIGNIFICATIVI PER LA TUA PROGETTAZIONE}
 \paragraph{LISA}
