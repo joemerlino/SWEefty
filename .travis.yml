@@ -7,7 +7,7 @@ notifications:
     template:
     - "Il *figlio di una puttana sieropositiva %{author}* ha rotto tutto il lavoro frutto di sudore e sangue del collettivo autistico _SWEefty_."
     - "%{repository_slug}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
-    #on_success: always # default: always
+    on_success: never # default: always
     on_failure: always # default: always
 
 env:
