@@ -39,26 +39,26 @@ script:
 
 # ANALISI DEI REQUISITI
 - cd ./RA/AnalisiDeiRequisiti/
-- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v3.0.0.tex
-- mv AnalisiDeiRequisiti_v3.0.0.pdf ../../Docs/RA/Esterni
+- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v4.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v4.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error AnalisiDeiRequisiti_v4.0.0.tex
+- mv AnalisiDeiRequisiti_v4.0.0.pdf ../../Docs/RA/Esterni
 - cd ../..
 
 # GLOSSARIO
 - cd ./RA/Glossario/
-- pdflatex -interaction=nonstopmode -halt-on-error Glossario_v3.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error Glossario_v3.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error Glossario_v3.0.0.tex
-- mv Glossario_v3.0.0.pdf ../../Docs/RA/Esterni
+- pdflatex -interaction=nonstopmode -halt-on-error Glossario_v4.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error Glossario_v4.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error Glossario_v4.0.0.tex
+- mv Glossario_v4.0.0.pdf ../../Docs/RA/Esterni
 - cd ../..
 
 # NORME DI PROGETTO
 - cd ./RA/NormeDiProgetto/
-- pdflatex -interaction=nonstopmode -halt-on-error NormeDiProgetto_v3.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error NormeDiProgetto_v3.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error NormeDiProgetto_v3.0.0.tex
-- mv NormeDiProgetto_v3.0.0.pdf ../../Docs/RA/Interni
+- pdflatex -interaction=nonstopmode -halt-on-error NormeDiProgetto_v4.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error NormeDiProgetto_v4.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error NormeDiProgetto_v4.0.0.tex
+- mv NormeDiProgetto_v4.0.0.pdf ../../Docs/RA/Interni
 - cd ../..
 
 # PIANO DI PROGETTO
@@ -71,10 +71,10 @@ script:
 
 # PIANO DI QUALIFICA
 - cd ./RA/PianoDiQualifica/
-- pdflatex -interaction=nonstopmode -halt-on-error PianoDiQualifica_v3.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error PianoDiQualifica_v3.0.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error PianoDiQualifica_v3.0.0.tex
-- mv PianoDiQualifica_v3.0.0.pdf ../../Docs/RA/Esterni
+- pdflatex -interaction=nonstopmode -halt-on-error PianoDiQualifica_v4.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error PianoDiQualifica_v4.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error PianoDiQualifica_v4.0.0.tex
+- mv PianoDiQualifica_v4.0.0.pdf ../../Docs/RA/Esterni
 - cd ../..
 
 # PRODUCTBASELINE
@@ -87,18 +87,18 @@ script:
 
 # MANUALE UTENTE
 - cd ./RA/ManualeUtente/
-- pdflatex -interaction=nonstopmode -halt-on-error ManualeUtente_v0.5.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error ManualeUtente_v0.5.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error ManualeUtente_v0.5.0.tex
-- mv ManualeUtente_v0.5.0.pdf ../../Docs/RA/Esterni
+- pdflatex -interaction=nonstopmode -halt-on-error ManualeUtente_v1.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ManualeUtente_v1.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ManualeUtente_v1.0.0.tex
+- mv ManualeUtente_v1.0.0.pdf ../../Docs/RA/Esterni
 - cd ../..
 
 # MANUALE SVILUPPATORE
 - cd ./RA/ManualeSviluppatore/
-- pdflatex -interaction=nonstopmode -halt-on-error ManualeSviluppatore_v0.7.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error ManualeSviluppatore_v0.7.0.tex
-- pdflatex -interaction=nonstopmode -halt-on-error ManualeSviluppatore_v0.7.0.tex
-- mv ManualeSviluppatore_v0.7.0.pdf ../../Docs/RA/Esterni
+- pdflatex -interaction=nonstopmode -halt-on-error ManualeSviluppatore_v1.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ManualeSviluppatore_v1.0.0.tex
+- pdflatex -interaction=nonstopmode -halt-on-error ManualeSviluppatore_v1.0.0.tex
+- mv ManualeSviluppatore_v1.0.0.pdf ../../Docs/RA/Esterni
 - cd ../..
 
 # VERBALI INTERNI
