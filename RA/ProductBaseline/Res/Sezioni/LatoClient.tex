@@ -134,15 +134,54 @@ Ciascun \texttt{Link} è individuato univocamente dalla coppia di campi dati \te
 	\end{itemize}
 
 \paragraph{StackTrace} \Spazio
-\textcolor{red}{QUI LISA DESCRIVI A DOVERE}
+Un oggetto \texttt{StackTrace} rappresenta la lista delle richieste alla applicazione monitorata con una struttura significativa per la futura visualizzazione. Essa contiene un array di oggetti \texttt{Trace}.
+
 \paragraph{Trace} \Spazio
-\textcolor{red}{QUI LISA DESCRIVI A DOVERE}
+Tramite l'oggetto \texttt{Trace} viene modellata una singola richiesta in maniera tale da ottenere solamente i dati utili alla visualizzazione. Questi dati sono ottenuti dai metodi che implementa:
+\begin{itemize}
+	\item \texttt{checkPageload(pageload:Array<RequestPageload>): void} il quale, se trova una \texttt{RequestPageload} associata alla \texttt{RequestHTTP} principale, modifica il campo dati \texttt{duration} in base alle due \texttt{Request} ;
+	\item \texttt{checkPageload(pageload:Array<RequestPageload>): void} il quale, se trova almeno una \texttt{RequestDB} associata alla \texttt{RequestHTTP} principale, modifica il campo dati \texttt{duration} in base alle \texttt{Request} e implementa il campo dati il campo dati \texttt{queries} ;
+	\item \texttt{changeDuration(time:int): void} che viene utilizzato per modificare il campo dati \texttt{duration}.
+\end{itemize} 
+
 \paragraph{CallTree} \Spazio
-\textcolor{red}{QUI LISA DESCRIVI A DOVERE}
+Questo componente rappresenta un albero delle chiamate che vengono scatenate da una richiesta. Si compone dei metodi:
+\begin{itemize}
+	\item \texttt{constructor(asciiCalltree:String): void} costruttore che assembla un oggetto \texttt{CallTree} a partire da una stringa di caratteri;
+	\item more\_data(): void che si occupa della costruzione di una tabella contenente i dati grezzi ricavati dalla stringa ASCII;
+	\item \texttt{tableToTree(): CallTree} che costruisce il \texttt{CallTree} a partire dalla tabella creata.
+\end{itemize}
+
+\paragraph{Function} \Spazio
+Il componente \texttt{Function} rappresenta un metodo che viene eseguito in seguito ad una richiesta all'applicazione monitorata. In esso è presente anche il campo \texttt{sons} di tipo \texttt{Function} che racchiude le funzioni richiamate dalla funzione principale.
+
+\paragraph{Query} \Spazio
+Questo componente rappresenta una query fatta ad un particolare database durante una richiesta all'applicazione monitorata. Sono presenti i capi dato:
+\begin{itemize}
+	\item \texttt{text: String},  testo completo della query eseguita;
+	\item \texttt{database: String}, nome del database interrogato;
+	\item \texttt{duration: int}, durata totale dell'operazione in ms;
+	\item \texttt{timestamp: String}, orario e data di inizio operazione.
+\end{itemize}
+È presente un costruttore, \texttt{constructor( ID:String): void}, che si occupa di istanziazione dell'oggetto \texttt{Query} e del settaggio dei suoi campi dato l'ID di una \texttt{RequestDB}.
+
 \paragraph{StackBuilderDirector} \Spazio
-\textcolor{red}{QUI LISA DESCRIVI A DOVERE}
+È il componente che si occupa di condurre il processo di costruzione di una stack trace. Implementa il \emph{pattern} \emph{Builder}, come descritto in \ref{sec:patternBuilder}. 
+I metodi che sono implementati in esso sono:
+\begin{itemize}
+	\item \texttt{constructor(dataSource:DataReader, builder: StackBuilder): void} che costruisce il \texttt{StackBuilderDirector} con una sorgente dei dati associata e una istanza di \texttt{StackBuilder}. Istanzia anche un \texttt{DataCleaner} con strategia \texttt{StackCleanerStrategy}; 
+	\item \texttt{setDataReader(dataSource:DataReader): void} che imposta la sorgente dei dati; 
+	\item \texttt{constructStack(): void}: che si occupa di condurre la costruzione delle parti dell'oggetto \texttt{StackTrace} tramite \texttt{StackBuilder}.
+	\item \texttt{divideRequest(requests: Array<Request>): void} che si occupa di suddividere  gli oggetti di tipo \texttt{Request} in base ai sottotipi della classe, costruendo così i campi dati \texttt{HTTP} di tipo \texttt{Array<RequestHTTP>}, \texttt{Pageload} di tipo \texttt{Array<RequestPageload>} e \texttt{DB} di tipo \texttt{Array<RequestDB>}.
+\end{itemize}
+
 \paragraph{StackBuilder} \Spazio
-\textcolor{red}{QUI LISA DESCRIVI A DOVERE}
+Questo componente si occupa della costruzione effettiva di tutte le componenti di una StackTrace. Per fare ciò utilizza i seguenti metodi:
+\begin{itemize}
+	\item \texttt{buildTraces(HTTP:Array<RequestHTTP>, Pageload:Array<RequestPageload>, DB:Array<RequestDB>): void} che costruisce una \texttt{StackTrace} a partire dai tre array di sottotipi di \texttt{Request};
+	\item \texttt{buildTrace(RequestHTTP, Pageload:Array<RequestPageload>, DB:Array<RequestDB>, in index:String): void} che ricevendo un oggetto \texttt{RequestHTTP} e i due array di \texttt{RequestPageload} e \texttt{RequestDB} costruisce un oggetto \texttt{Trace};
+	\item \texttt{getStack(): StackTrace} con la quale ritorna il campo dati di tipo \texttt{StackTrace} una volta costruito.
+\end{itemize}
 
 
 
