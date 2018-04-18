@@ -1,10 +1,10 @@
 \subsection{Dati}
 
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{Images/logo.jpg}
-    \caption{Diagramma delle classi UML che rappresenta i dati che vengono restituiti da Elasticsearch}
+    \includegraphics[width=1\textwidth]{Images/classiDati.png}
+    \caption{Diagramma delle classi UML che rappresenta la struttura di una risposta di Elasticsearch}
     \label{img:dati}
 \end{figure}
 
@@ -41,13 +41,15 @@ Inoltre c'è un campo dati \texttt{\_source} che contiene al suo interno il docu
 Rappresenta il contenuto vero e proprio dei documenti salvati sull'istanza di Elasticsearch. Essendo Elasticsearch un database non relazionale non è possibile conoscere a priori la struttura di tale documento, ma nell'applicazione che andremo a descrivere con i plugin i documenti possono avere tre differenti formati, descritti nelle sezioni: \ref{sec:requestHTTP}, \ref{sec:requestPageload} e \ref{sec:RequestDB}. Il fatto che un documento possa avere una di queste tre forme è rappresentato in Figura \ref{img:dati} tramite un'interfaccia. La tipologia di \texttt{Request} è riconoscibile da un campo dati all'interno del documento: il campo \texttt{type}. 
 \paragraph{RequestHTTP} \Spazio
 \label{sec:requestHTTP}
-Rappresenta.....
-\textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}
+Rappresenta il tracciamento di una richiesta di tipo HTTP eseguita all'applicazione monitorata da un browser.
+\textcolor{red}{DESCRIVERE I CAMPI DATI}
+
 \paragraph{RequestPageload}\Spazio
 \label{sec:requestPageload}
-Rappresenta.....
+Rappresenta il tracciamento di una richiesta di caricamento di una pagina \textcolor{red}{QUI LISA SCRIVI TU QUALCOSA PERCHÈ NON SO DI CHE SI TRATTI}
 \textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}
+
 \paragraph{RequestDB}\Spazio
 \label{sec:RequestDB}
-Rappresenta.....
+Rappresenta il tracciamento di una richiesta che è stata eseguita su un database all'interno dell'applicazione monitorata. 
 \textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}
