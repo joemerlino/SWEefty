@@ -1,0 +1,53 @@
+\subsection{Dati}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Images/logo.jpg}
+    \caption{Diagramma delle classi UML che rappresenta i dati che vengono restituiti da Elasticsearch}
+    \label{img:dati}
+\end{figure}
+
+\subsubsection{Generalità}
+Sia il lato server che il lato client devono elaborare ed utilizzare dati presenti all'interno del database Elasticsearch. In questa sezione viene esplicitata la forma che essi hanno.
+
+\subsubsection{Rappresentazione}
+Quello che viene restituito come risposta ad una interrogazione ad Elasticsearch è un documento in formato JSON. Le classi in Figura \ref{img:dati} sono una rappresentazione di tale documento JSON, che dunque non ha metodi ed ha tutti gli attributi pubblici.
+
+\subsubsection{Componenti}
+
+\paragraph{ElasticsearchIndexResult} \Spazio
+\label{sec:elasticsearchIndexResult}
+Rappresenta il risultato \emph{grezzo} di una risposta del database Elasticsearch ad un client che esegua una query \texttt{\_search} su un determinato \emph{indice}. Il suo contenuto è quello presentato da \ref{sec:shards} a \ref{sec:RequestDB}, come si può vedere dalla figura \ref{img:dati}.
+
+\paragraph{Shards} \Spazio
+\label{sec:shards}
+Rappresenta il campo dati \texttt{\_shards} all'interno di una risposta di Elasticsearch. Sostanzialmente indica il numero di shards all'interno dell'indice, quanti sono stati letti, quanti sono stati ignorati e se ci sono stati dei fallimenti della lettura degli shards. Per una descrizione più esaustiva si rimanda alla \href{https://www.elastic.co/guide/en/elasticsearch/guide/current/replica-shards.html}{documentazione ufficiale di Elasticsearch}.
+
+\paragraph{Hits} \Spazio
+Rappresenta il campo dati di una risposta di Elasticsearch contenente i documenti ritornati dal database e informazioni amministrative. Esse sono contenute nei campi \texttt{total}, che indica il numero di documenti ritornati nella risposta, e \texttt{max\_score}. I documenti ritornati sono contenuti nell'array \texttt{hits}.
+
+\paragraph{ElasticsearchDocument} \Spazio
+Rappresenta una \emph{entry} dell'array \texttt{hits}. É composto da informazioni amministrative quali:
+\begin{itemize}
+	\item \texttt{\_index}, che indica a che indice appartiene il documento;
+	\item \texttt{\_type}, che indica che type ha il documento;
+	\item \texttt{\_id}, che indica l'id del documento all'interno di Elasticsearch; 
+	\item \texttt{\_score}, che indica la rilevanza del documento.
+\end{itemize}
+Inoltre c'è un campo dati \texttt{\_source} che contiene al suo interno il documento vero e proprio.
+
+\paragraph{Request} \Spazio
+Rappresenta il contenuto vero e proprio dei documenti salvati sull'istanza di Elasticsearch. Essendo Elasticsearch un database non relazionale non è possibile conoscere a priori la struttura di tale documento, ma nell'applicazione che andremo a descrivere con i plugin i documenti possono avere tre differenti formati, descritti nelle sezioni: \ref{sec:requestHTTP}, \ref{sec:requestPageload} e \ref{sec:RequestDB}. Il fatto che un documento possa avere una di queste tre forme è rappresentato in Figura \ref{img:dati} tramite un'interfaccia. La tipologia di \texttt{Request} è riconoscibile da un campo dati all'interno del documento: il campo \texttt{type}. 
+\paragraph{RequestHTTP} \Spazio
+\label{sec:requestHTTP}
+Rappresenta.....
+\textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}
+\paragraph{RequestPageload}\Spazio
+\label{sec:requestPageload}
+Rappresenta.....
+\textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}
+\paragraph{RequestDB}\Spazio
+\label{sec:RequestDB}
+Rappresenta.....
+\textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}

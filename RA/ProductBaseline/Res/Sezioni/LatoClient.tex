@@ -5,7 +5,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{Images/classi.png}
+    \includegraphics[width=1\textwidth]{Images/logo.jpg}
     \caption{Diagramma delle classi client-side dell'applicazione}
     \label{img:diagrammaClassiClient}
 \end{figure}
@@ -16,39 +16,6 @@ Il lato client si occupa di interrogare il lato server per ottenere informazioni
 \subsubsection{Componenti} 
 \label{sec:Componenti}
 Si descrivono di seugito brevemente i componenti del lato client.
-
-\paragraph{ElasticsearchIndexResult} \Spazio
-\label{sec:elasticsearchIndexResult}
-Rappresenta il risultato \emph{grezzo} di una risposta del database Elasticsearch ad un client che esegua una query \texttt{\_search} su un determinato \emph{indice}. Il suo contenuto è quello presentato da \ref{sec:shards} a \ref{sec:RequestJdbc}, come si può vedere dalla figura \ref{img:diagrammaClassiClient}.
-
-\paragraph{Shards} \Spazio
-\label{sec:shards}
-Rappresenta il campo dati \texttt{\_shards} all'interno di una risposta di Elasticsearch. Sostanzialmente indica il numero di shards all'interno dell'indice, quanti sono stati letti, quanti sono stati ignorati e se ci sono stati dei fallimenti della lettura degli shards. Per una descrizione più esaustiva si rimanda alla documentazione ufficiale di Elasticsearch: \textcolor{red}{QUI METTI UN LINK A SHARDS}.
-
-\paragraph{Hits} \Spazio
-Rappresenta il campo dati di una risposta di Elasticsearch contenente i documenti ritornati dal database e informazioni amministrative. Esse sono contenute nei campi \texttt{total}, che indica il numero di documenti ritornati nella risposta, e \texttt{max\_score}. I documenti ritornati sono contenuti nell'array \texttt{hits}.
-
-\paragraph{ElasticsearchDocument} \Spazio
-Rappresenta una \emph{entry} dell'array \texttt{hits}. É composto da informazioni amministrative quali:
-\begin{itemize}
-	\item \texttt{\_index}, che indica a che indice appartiene il documento;
-	\item \texttt{\_type}, che indica che type ha il documento;
-	\item \texttt{\_id}, che indica l'id del documento all'interno di Elasticsearch; 
-	\item \texttt{\_score}, che indica la rilevanza del documento.
-\end{itemize}
-Inoltre c'è un campo dati \texttt{\_source} che contiene al suo interno il documento vero e proprio.
-
-\paragraph{Request} \Spazio
-Rappresenta il contenuto vero e proprio del documenti salvati sull'istanza di Elasticsearch. Essendo Elasticsearch un database non relazionale non è possibile conoscere a priori la struttura di tale documento, ma nell'applicazione che andremo a descrivere con i plugin i documenti possono avere tre differenti formati, descritti nelle sezioni: \ref{sec:requestHTTP}, \ref{sec:requestPageload} e \ref{sec:RequestJdbc}. La tipologia di \texttt{Request} è riconoscibile da un campo dati all'interno del documento: il campo \texttt{type}.
-\paragraph{RequestHTTP} \Spazio
-\label{sec:requestHTTP}
-\textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}
-\paragraph{RequestPageload}\Spazio
-\label{sec:requestPageload}
-\textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}
-\paragraph{RequestJdbc}\Spazio
-\label{sec:RequestJdbc}
-\textcolor{red}{DESCRIZIONE DEI CAMPI DATI DELLA RICHIESTA E COSA RAPPRESENTA}
 
 \paragraph{ElasticsearchClient} \Spazio
 \texttt{ElasticsearchClient} è il componente che si occupa di eseguire le chiamate API al lato server. Non è una classe vera e propria all'interno del codice, ma un \emph{Service}. 
@@ -84,9 +51,9 @@ I suoi metodi sono:
 	\item  \texttt{constructor(strategy:CleanerStrategy): void} costruisce il \texttt{DataCleaner} con una specifica strategia di pulizia;
 	\item \texttt{setStrategy(in strategy:CleanerStrategy): void} il quale riceve in input un oggetto che implementa l'interfaccia \texttt{CleanerStrategy} e lo assegna al riferimento proprio dell'oggetto;
 
-	\item \texttt{cleanData(in elasticsearchIndicesResults:Array<ElasticsearchIndexResult>): Array<Request>} il quale prima rimuove i metadati (chiamando il suo metodo \texttt{removeMetaDataFromIndices}) di Elasticsearch dal parametro in input e successivamente chiama l'implementazione di \texttt{clean} della strategia che possiede al suo interno.  Tale strategia è incaricata di raffinare ulteriormente i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace tramite il metodo \texttt{clean};
+	\item \texttt{cleanData(in elasticsearchIndicesResults:Array<ElasticsearchIndexResult>): Array<Request>} il quale prima rimuove i metadati (chiamando il suo metodo \\ \texttt{ removeMetaDataFromIndices }) di Elasticsearch dal parametro in input e successivamente chiama l'implementazione di \texttt{clean} della strategia che possiede al suo interno.  Tale strategia è incaricata di raffinare ulteriormente i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace tramite il metodo \texttt{clean};
 
-	\item \texttt{removeMetadataFromIndices(elasticsearchIndicesResults:Array<ElasticsearchIndexResult>): Array<Request>}  si occupa di rimuovere i metadati di Elasticsearch da un Array di indici invocando il metodo \texttt{removeMetaDataFromIndex} su ognuno dei singoli indici. Viene ritornato un array di \texttt{Request} che rappresenta le traces lette dai vari indici in un singolo array;
+	\item \texttt{removeMetadataFromIndices(elasticsearchIndicesResults: \\Array<ElasticsearchIndexResult>): Array<Request>}  si occupa di rimuovere i metadati di Elasticsearch da un Array di indici invocando il metodo \texttt{removeMetaDataFromIndex} su ognuno dei singoli indici. Viene ritornato un array di \texttt{Request} che rappresenta le traces lette dai vari indici in un singolo array;
 
 	\item \texttt{removeMetadataFromIndex(elasticsearchIndexResult:ElasticsearchIndexResult): Array<Request>} il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti in un \emph{singolo} indice. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazione di monitoring negli indici di Elasticsearch. Elasticsearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni amministrative. Il metodo si occupa di rimuovere questi dati e restituire un array contenente i documenti di un indice;
 \end{itemize}
@@ -95,7 +62,7 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 	
 \paragraph{CleanerStrategy}\Spazio
 \label{sec:CleanerStrategy}
-\texttt{CleanerStrategy} è l'interfaccia che verrà implementata per realizzare una pulizia più raffinata dei dati di un \texttt{DataCleaner}. Espone il metodo \texttt{clean(data)}, che avrà comportamenti diversi a seconda della strategia che si desidera applicare. Dato che il prodotto è implementato in Javascript il costrutto interfaccia non è presente nel linguaggio. Per ovviare a questa mancanza tutte le classi che dovrebbero implementare questa interfaccia \emph{devono} possedere un metodo \texttt{clean(data)} che funzioni come ci si aspetti. Questa interfaccia implementa il design pattern \emph{Strategy}, come descritto in \textcolor{red}{QUI DAI IL RIFERIMENTO, LO DEVI ANCORA SCRIVERE}.
+\texttt{CleanerStrategy} è l'interfaccia che verrà implementata per realizzare una pulizia più raffinata dei dati di un \texttt{DataCleaner}. Espone il metodo \texttt{clean(data)}, che avrà comportamenti diversi a seconda della strategia che si desidera applicare. Dato che il prodotto è implementato in Javascript il costrutto interfaccia non è presente nel linguaggio. Per ovviare a questa mancanza tutte le classi che dovrebbero implementare questa interfaccia \emph{devono} possedere un metodo \texttt{clean(data)} che funzioni come ci si aspetti. Questa interfaccia implementa il design pattern \emph{Strategy}, come descritto in \ref{sec:patternStrategy}.
 	
 	
 \paragraph{GraphCleanerStrategy}\Spazio
@@ -109,7 +76,7 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 \label{sec:StackCleaner}
 \texttt{StackCleaner} è l'implementazione di \texttt{CleanerStrategy} utilizzata da \texttt{DataCleaner} per pulire i dati che dovranno essere utilizzati durante la costruzione della stack trace. Essa dispone del metodo
 \begin{itemize}
-	\item \texttt{clean(traces:Array<Request>): Array<Request>} il quale scorre tutti i documenti JSON disponibili ed ha come output l'insieme di documenti che rappresentano chiamate HTTP, JDBC oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
+	\item \texttt{clean(traces:Array<Request>): Array<Request>} il quale scorre tutti i documenti JSON disponibili ed ha come output l'insieme di documenti che rappresentano chiamate HTTP, DB oppure Pageload, ovvero tutte e sole quelle necessarie per la costruzione dei dati strutturati della stack trace.
 \end{itemize}
 
 
@@ -148,7 +115,7 @@ Rappresenta un collegamento tra due nodi dell'applicazione monitorata. Consta de
 Ciascun \texttt{Link} è individuato univocamente dalla coppia di campi dati \texttt{source} e \texttt{target}.
 
 \paragraph{GraphBuilderDirector} \Spazio
-È il componente che si occupa di condurre il processo di costruzione di un grafo. Implementa il \emph{pattern} \emph{Builder}, come descritto in \textcolor{red}{QUI METTI IL RIFERIMENTO}. Consta dei metodi:
+È il componente che si occupa di condurre il processo di costruzione di un grafo. Implementa il \emph{pattern} \emph{Builder}, come descritto in \ref{sec:patternBuilder}. Consta dei metodi:
 \begin{itemize}
 	\item \texttt{constructor(dataSource:DataReader, builder: GraphBuilder): void} che costruisce il \texttt{GraphBuilderDirector} con una sorgente dei dati associata e una istanza di \texttt{GraphBuilder}. Istanzia anche un \texttt{DataCleaner} con strategia \texttt{GraphCleanerStrategy}; 
 	\item \texttt{setDataReader(dataSource:DataReader): void} che imposta la sorgente dei dati; 
