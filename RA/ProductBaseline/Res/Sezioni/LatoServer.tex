@@ -19,9 +19,21 @@ Nel seguente diagramma delle classi, figura \ref{img:diagrammaClassiServer}, le 
 \subsubsection{Componenti}
 
 \paragraph{ConfigOptions} \Spazio
-È il componente che si occupa di dare una configurazione al lato server. Esso contiene i parametri impostabili dal gestore del plugin per configurare il lato server. Consta di un campo dati, la costante \texttt{MAX\_DOCUMENTS\_NUMBER}. Essa rappresenta il numero massimo di documenti che in una singola lettura vengono restituiti al chiamante. Questo limite è fondamentale poichè i documenti contenuti in un indice possono essere un numero \emph{molto} grande e se non si limita la quantità di dati restituiti il server potrebbe anche andare in stato di errore. La costante è impostata al momento della creazione dell'oggetto \texttt{ConfigOptions}. I metodi sono: 
+È il componente che  contiene i parametri impostabili dal gestore del plugin per configurare il lato server. Consta di alcuni campi dati:
+
 \begin{itemize}
-	\item \texttt{getMaxDocumentsNumber(): int} che ritorna la costante appena descritta \texttt{MAX\_DOCUMENTS\_NUMBER}.
+	\item \texttt{MAX\_DOCUMENTS\_NUMBER: int} rappresenta il numero massimo di documenti che in una singola lettura vengono restituiti al chiamante. Questo limite è fondamentale poichè i documenti contenuti in un indice possono essere un numero \emph{molto} grande e se non si limita la quantità di dati restituiti il server potrebbe anche andare in stato di errore;
+	
+	\item \texttt{ELASTICSEARCH\_HOST\_IP: String} rappresenta l'indirizzo ip ospitante l'istanza di Elasticsearch;
+
+	\item \texttt{ELASTICSEARCH\_HOST\_PORT: int} rappresenta la porta sulla quale è attiva l'istanza di Elasticsearch;
+\end{itemize} 
+Tutte le costanti vengono impostate al momento della creazione dell'oggetto \texttt{ConfigOptions}. I metodi sono: 
+\begin{itemize}
+	\item \texttt{getMaxDocumentsNumber(): int} che ritorna la costante appena descritta \texttt{MAX\_DOCUMENTS\_NUMBER};
+	\item \texttt{getElasticsearchHostIp(): String} che ritorna la stringa rappresentante l'indirizzo ip del server di Elasticsearch, salvata nella corrispondente costante;
+	\item \texttt{getElasticsearchHostPort(): int} ritorna la porta sul quale è aperto il database Elasticsearch, salvata nella corrispondente costante; 
+	\item \texttt{getElasticsearchHost(): String} ritorna la rappresentazione come stringa della combinazione dell'ip e della porta del database Elastisearch nella forma \texttt{'ip:porta'}, utilizzabile dalle route per collegarsi al database.
 \end{itemize}
 
 \paragraph{AllIndices} \Spazio
