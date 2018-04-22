@@ -202,7 +202,7 @@ Si presentano di seguito i \emph{design pattern} implementati nella progettazion
 I componenti adibiti alla costruzione di oggetti complessi come \texttt{Graph} e \texttt{StackTrace} necessitano di un array di \texttt{Request}, che rappresentano i dati che dovranno essere elaborati. Le \texttt{Request} lette dal componente \texttt{DataReader} sono quelle presenti all'interno dell'istanza di Elasticsearch e dunque è possibile che alcune di esse non siano necessarie. Ad esempio, per la costruzione di un \texttt{Graph} le \texttt{Request} di tipo \texttt{RequestPageload} non saranno necessarie e dovranno dunque essere eliminate. Si presenta dunque la necessità di avere un componente che in base all'implementazione utilizzata modifichi il comportamento dell'algoritmo utilizzato. Si è scelto quindi di implementare il pattern \emph{Strategy} per la realizzazione di \texttt{CleanerStrategy}, che permette dunque di pulire i dati di Elasticsearch in base alla strategia istanziata. Una rappresentazione della progettazione è riportata in Figura \ref{img:strategy}.
 
 % QUESTA IMMAGINE DEVE RAPPRESENTARE DATACLEANER, CLEANERSTRATEGY E SOTTOCLASSI
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Images/patternStrategy.png}
 	\caption{Utilizzo del pattern Strategy}
@@ -229,7 +229,7 @@ Si presenta in Figura \ref{img:builderGraph} il diagramma di sequenza che descri
 Si presentano di seguito alcuni diagrammi di sequenza che chiariscono le interazioni fra i vari compoenti del sistema
 
 \paragraph{BuildNodes} \Spazio
-Si presenta di seguito il diagramma di sequenza che illustra il comportamento del metodo buildNodes all'interno della classe GraphBuilder.
+Si presenta di seguito il diagramma di sequenza che illustra il comportamento del metodo \texttt{buildNodes} all'interno della classe \texttt{GraphBuilder}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Images/SequenceBuildNodes.png}
@@ -238,7 +238,7 @@ Si presenta di seguito il diagramma di sequenza che illustra il comportamento de
 \end{figure}
 
 \paragraph{BuildLink} \Spazio
-Si presenta di seguito il diagramma di sequenza che illustra il comportamento del metodo buildLinks all'interno della classe GraphBuilder.
+Si presenta di seguito il diagramma di sequenza che illustra il comportamento del metodo \texttt{buildLinks} all'interno della classe \texttt{GraphBuilder}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Images/SequenceBuildLinks.png}
