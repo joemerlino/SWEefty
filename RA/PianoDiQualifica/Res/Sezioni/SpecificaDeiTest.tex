@@ -441,9 +441,9 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
 		TI1 & Test di integrazione tra il lato client e il lato server & \textcolor{green}{Superato} \\ \hline
 		TI2 & Viene verificato che la strategia GraphCleaner funzioni correttamente all'interno di dataCleaner & \textcolor{green}{Superato} \\ \hline
 		TI3 & Viene verificato che la strategia StackCleaner funzioni correttamente all'interno di dataCleaner & \textcolor{green}{Superato} \\ \hline
-		TI4 & Viene verificata l'integrazione tra DataReader e GraphBuilder & \textcolor{green}{Superato} \\ \hline
+		TI4 & Viene verificata l'integrazione tra DataReader e GraphBuilderDirector & \textcolor{green}{Superato} \\ \hline
 		TI5 & Viene verificato che il servizio ElasticsearchClient funzioni correttamente all'interno di DataReader & \textcolor{green}{Superato}  \\ \hline
-		TI6 & Viene verificata l'integrazione tra DataReader e StackBuilder & \textcolor{green}{Superato}  \\ \hline
+		TI6 & Viene verificata l'integrazione tra DataReader e StackBuilderDirector & \textcolor{green}{Superato}  \\ \hline
 				
 	\end{longtable}
     \newcolumntype{U}{>{\centering\arraybackslash}m{10cm}}
@@ -488,6 +488,9 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
 		TU17 & Viene verificato che gli archi vengano aggiunti correttamente alla mappa & \textcolor{green}{Superato} \\ \hline
 		TU18 & Viene verificato che i nodi della mappa vengano costruiti correttamente dato un array di richieste HTTP e a database & \textcolor{green}{Superato} \\ \hline
 		TU19 & viene verificato che gli archi della mappa vengano costruiti correttamente dato un array di JSON & \textcolor{green}{Superato} \\ \hline
+		TU20 & viene verificato che i nodi del grafo vengano costruiti correttamente & \textcolor{green}{Superato} \\ \hline
+		TU21 & viene verificato che le trace vengano costruite correttamente & \textcolor{green}{Superato} \\ \hline
+		TU22 & viene verificato che il server ritorni l'indice richiesto con limite e tipo corretti  & \textcolor{green}{Superato} \\ \hline
 		
 		
 	\end{longtable}
@@ -506,23 +509,26 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
     	TU3 & Client::dataReader::tracesIndices() \\ \hline
     	TU4 & Client::dataCleaner::removeMetaDataFromIndex() \\ \hline
     	TU5 & Client::dataCleaner::removeMetaDataFromIndices()\\ \hline
-    	TU6 & Client::GraphCleaner::clean() \\ \hline
-    	TU7 & Client::StackCleaner::Data()\\ \hline
+    	TU6 & Client::GraphCleanerStrategy::clean() \\ \hline
+    	TU7 & Client::StackCleanerStrategy::Clean()\\ \hline
     	TU8 & Client::dataCleaner::setStrategy()\\ \hline
-    	TU9 & Client::stackBuilder::checkPageload()\newline 
-    	Client::stackBuilder::checkQueries() \\ \hline
-    	TU10 & Client::stackBuilder::build\_tree() \newline
-    	Client::stackBuilder::more\_data() \newline
-    	Client::stackBuilder::tableToTree() \\ \hline
-    	TU11 & Client::StackBuilder::changeDuration()\\ \hline
-    	TU12 & Client::GraphBuilder::checkIfNodeIsNotPresent() \\ \hline
-    	TU13 & Client::GraphBuilder::checkIfLinkIsNotPresent() \\ \hline
-    	TU14 & Client::GraphBuilder::getIdOfNode() \\ \hline
-    	TU15 & Client::GraphBuilder::getIndexOfSameLink() \\ \hline
-    	TU16 & Client::GraphBuilder::getNodes() \\ \hline
-    	TU17 & Client::GraphBuilder::getLinks() \\ \hline
-    	TU18 & Client::GraphBuilder::getNodes() \\ \hline
-    	TU19 & Client::GraphBuilder::getLinks() \\ \hline
+    	TU9 & Client::Trace::checkPageload()\newline 
+    	Client::Trace::checkQueries() \\ \hline
+    	TU10 & Client::CallTree::constructor() \newline
+    	Client::CallTree::more\_data() \newline
+    	Client::CallTree::tableToTree() \\ \hline
+    	TU11 & Client::Trace::changeDuration()\\ \hline
+    	TU12 & Client::Graph::checkIfNodeIsNotPresent() \\ \hline
+    	TU13 & Client::Graph::checkIfLinkIsNotPresent() \\ \hline
+    	TU14 & Client::Graph::getIdOfNode() \\ \hline
+    	TU15 & Client::Graph::getIndexOfSameLink() \\ \hline
+    	TU16 & Client::Graph::addNode() \\ \hline
+    	TU17 & Client::Graph::addLink() \\ \hline
+    	TU18 & Client::Graph::addNode() \\ \hline
+    	TU19 & Client::Graph::addLink() \\ \hline
+    	TU20 & Client::GraphBuilder::buildNodes() \\ \hline
+    	TU21 & Client::StackBuilder::buildTrace() \\ \hline
+    	TU21 & Server::Index::Index() \\ \hline
     \end{longtable}
 		
 		
