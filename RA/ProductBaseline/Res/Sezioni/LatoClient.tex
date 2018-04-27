@@ -190,6 +190,23 @@ Questo componente si occupa della costruzione effettiva di tutte le componenti d
 	\item \texttt{getStack(): StackTrace} con la quale ritorna il campo dati di tipo \texttt{StackTrace} una volta costruito.
 \end{itemize}
 
+\paragraph{GraphScope} \Spazio
+Questo componente rappresenta la variabile \texttt{\$scope} di Angular sulla quale viene eseguito il \emph{two way data biding}. Al suo interno ha una struttura a grafo che rappresenta la mappa topologica. Questo scope viene condiviso sia dal \texttt{GraphController} che dal \texttt{GraphView}, il primo la crea mentre il secondo la utilizza per mostrare i dati all'utente.
+
+\paragraph{StackScope} \Spazio
+Questo componente rappresenta la variabile \texttt{\$scope} di Angular sulla quale viene eseguito il \emph{two way data biding}. Al suo interno ha una struttura a stack trace che rappresenta la lista delle traces. Questo scope viene condiviso sia dallo \texttt{StackController} che dal \texttt{StackView}, il primo la crea mentre il secondo la utilizza per mostrare i dati all'utente.
+
+\paragraph{GraphView} \Spazio
+Questa classe rappresenta in realtà il file \texttt{html} all'interno del quale verrà mostrata la mappa topologica. Esso è un template che utilizzando Angular esegue il \emph{two way data biding} con \texttt{GraphScope}. All'interno di un \texttt{canvas} grazie l'utilizzo della libreria grafica \emph{D3.js} la mappa viene mostrata all'utente.
+
+\paragraph{StackView} \Spazio
+Questa classe rappresenta in realtà il file \texttt{html} all'interno del quale verrà mostrata la stack trace. Esso è un template che utilizzando Angular esegue il \emph{two way data biding} con \texttt{StackScope}. Il template ha una struttura a tabella che grazie all'uso di direttive Angular mostra all'utente una tabella nella quale ogni riga rappresenta una \texttt{Request}.
+
+\paragraph{GraphController} \Spazio
+Questo componente rappresenta il \emph{controller} della vista. Permette di realizzare il pattern \emph{MVVM}, utilizzato da Angular. Esso al momento dell'istanziazione costruisce un \texttt{DataReader}, un \texttt{GraphBuilder} e un \texttt{GraphBuilderDirector}. Utilizza questi elementi per la creazione di un oggetto \texttt{Graph} che viene dunque inserito all'interno dello \texttt{\$scope}: esso verrà quindi visualizzato all'interno della vista \texttt{GraphView}.
+
+\paragraph{StackController} \Spazio
+Questo componente rappresenta il \emph{controller} della vista. Esso al momento dell'istanziazione costruisce un \texttt{DataReader}, uno \texttt{StackBuilder} e un \texttt{StackBuilderDirector}. Utilizza questi elementi per la creazione di un oggetto \texttt{Stack} che viene dunque inserito all'interno dello \texttt{\$scope}: esso verrà quindi visualizzato all'interno della vista \texttt{StackView}.
 
 
 % - DESIGN PATTERNS -
@@ -222,8 +239,9 @@ Si presenta in Figura \ref{img:builderGraph} il diagramma di sequenza che descri
 	\label{img:builderGraph}
 \end{figure}
 
-\paragraph{MVVM} \Spazio
-\textcolor{red}{QUI CI VA IL MVVM QUANDO SAPRÒ COME RAPPRESENTARLO ALL'INTERNO DI DEL DIAGRAMMA DELLE CLASSI}
+% \paragraph{MVVM} \Spazio
+% \label{sec:mvvm}
+% Il pattern \emph{MVVM} viene utilizzato in quanto è stato utilizzato il \emph{framework} Angular. Questo pattern permette di avere dei dati costantemente aggiornati nelle viste e nel modello grazie al \emph{two way data biding} degli stessi. Il componente \emph{model} è costituito dai \emph{Service} utilizzati, ovvero nella nostra rappresentazione \texttt{ElasticsearchClient}. In esso sono contenuti i dati. Le \emph{View} sono due: una per la stack trace e una per la mappa topologica. Esse eseguono il \texttt{data biding} rispetto alla rispettiva \texttt{\$scope} che permette di visualizzare i cambiamenti all'interno dei dati senza dover ricaricare la vista.
 
 \subsubsection{Interazioni}
 Si presentano di seguito alcuni diagrammi di sequenza che chiariscono le interazioni fra i vari compoenti del sistema

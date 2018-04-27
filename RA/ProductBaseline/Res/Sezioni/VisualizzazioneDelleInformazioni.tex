@@ -1,10 +1,8 @@
 \section{Visualizzazione delle informazioni}
 \label{sec:visInfo}
-
+Si descrive di seguito come avviene la visualizzazione delle informazioni per i due plugin. 
 \subsection{Mappa topologica}
-Il rendering della mappa topologica viene eseguito con l'ausilio della libreria grafica D3.js. \\
-In particolare, viene invocato il metodo \texttt{getGraph()} dell'oggetto \texttt{GraphBuilder} istanziato in precedenza per ottenere i dati da mostrare, che vengono salvati in una variabile locale di tipo \texttt{Graph}. \\
-Successivamente si istanziano le variabili di D3.js per creare i vari oggetti presenti nella mappa:
+Il rendering della mappa topologica viene eseguito con l'ausilio della libreria grafica D3.js. Si istanziano le variabili di D3.js per creare i vari oggetti presenti nella mappa:
 \begin{itemize}
 	\item Canvas del grafo;
 	\item Schema colori;
