@@ -143,6 +143,11 @@ script:
 - pdflatex -interaction=nonstopmode -halt-on-error VE_2018-03-09.tex
 - pdflatex -interaction=nonstopmode -halt-on-error VE_2018-03-09.tex
 - mv VE_2018-03-09.pdf ../../../Docs/RA/Esterni/Verbali
+# 
+- pdflatex -interaction=nonstopmode -halt-on-error VE_2018-04-19.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VE_2018-04-19.tex
+- pdflatex -interaction=nonstopmode -halt-on-error VE_2018-04-19.tex
+- mv VE_2018-04-19.pdf ../../../Docs/RA/Esterni/Verbali
 #
 - cd ../../..
 
