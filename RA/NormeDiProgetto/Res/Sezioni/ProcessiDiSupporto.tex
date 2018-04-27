@@ -1,4 +1,5 @@
 \section{Processi di supporto}
+\label{sec:supporto}
 
 
 \subsection{Documentazione}
@@ -6,7 +7,8 @@
 \subsubsection{Scopo}
 L'attività di documentazione consiste nella redazione di documenti durante tutto il ciclo di vita del prodotto software. Il gruppo si impegna a rispettare ed applicare le norme e gli strumenti adottati, con l'obiettivo di garantire una stesura senza ambiguità di una documentazione valida, coerente e conforme a delle precise regole. 
 
-\subsection{Attività}
+\subsubsection{Attività}
+\label{sec:attivitaDocumentazione}
 
 \paragraph{Stesura} \Spazio 
 I documenti vengono redatti secondo le norme definite nella sezione \ref{struttura} 
@@ -378,18 +380,19 @@ dove:
 I test di regressione devono essere fatti ogni volta che viene fatta una modifica a una componente software, consistono nel rifare i test di unità e integrazione necessari per accertarsi che tale modifica non causi errori nella componente in cui è stata fatta o in parti del software collegate.
 Un buon incapsulamento limita il numero di test da effettuare in questa fase.
 \subsubsection{Strumenti}
-\paragraph{Verifica ortografica} \Spazio
-Viene utilizzato \gl{GNU Aspell}, uno spell checker open source in grado di gestire più dizionari contemporaneamente che segnala gli errori all'interno di un documento mentre durante la scrittura viene utilizzato il controllo ortografico integrato in TeXstudio che segnala le parole errate sottolineandole in rosso.
-\paragraph{Analisi statica} \Spazio
-Per l'analisi statica del codice \gl{JavaScript} viene utilizzato SonarJS, modulo di SonarQube in grado di rilevare bug e problemi di sicurezza, è inoltre disponibile su vari IDE come Eclipse e IntelliJ.
-\paragraph{Analisi dinamica} \Spazio
-Per l'analisi dinamica vengono utilizzati i seguenti software:
-\begin{itemize}
-	\item  \textbf{Jest}: piattaforma per l'esecuzione di test su codice JavaScript, comodo per la sua semplicità di utilizzo.
-	\item \textbf{Travis CI}: software usato per l' \gl{integrazione continua}, una volta sincronizzato con la repository GitHub è in grado di eseguire automaticamente i test di integrazione, creati creati appositamente, su ogni commit in modo che si possa eseguire il comando \gl{push} solo su codice che compila ed ha passato i test.
-\end{itemize}
-\paragraph{Metriche} \Spazio
-Per il calcolo delle metriche viene utilizzato SonarQube, software che permette di stabilire un grado di qualità che tutto il gruppo deve rispettare (come si vede in figura \ref{qualità}), inoltre permette di visualizzare grafici per controllare la qualità del progetto nel periodo di sviluppo (come si vede in figura \ref{graficobello}).
+\label{sec:strumentiVerifica}
+\paragraph{GNU Aspell} \Spazio
+Per la \emph{verifica ortografica} viene utilizzato \gl{GNU Aspell}, uno spell checker open source in grado di gestire più dizionari contemporaneamente che segnala gli errori all'interno di un documento mentre durante la scrittura viene utilizzato il controllo ortografico integrato in TeXstudio che segnala le parole errate sottolineandole in rosso.
+\paragraph{SonarJS} \Spazio
+Per l'\emph{analisi statica} del codice \gl{JavaScript} viene utilizzato SonarJS, modulo di SonarQube in grado di rilevare bug e problemi di sicurezza, è inoltre disponibile su vari IDE come Eclipse e IntelliJ.
+\paragraph{Jest} \Spazio
+Per l'\emph{analisi dinamica} del codice viene utilizzato Jest, piattaforma per l'esecuzione di test su codice JavaScript, comodo per la sua semplicità di utilizzo.
+
+\paragraph{Travis CI} \Spazio
+Per supportare l' \gl{integrazione continua} viene utilizzato Travis CI. Una volta sincronizzato con la repository GitHub è in grado di eseguire automaticamente i test di integrazione, creati creati appositamente, su ogni commit in modo che si possa eseguire il comando \gl{push} solo su codice che compila ed ha passato i test.
+
+\paragraph{SonarQube} \Spazio
+Per il \emph{calcolo} delle metriche viene utilizzato SonarQube, software che permette di stabilire un grado di qualità che tutto il gruppo deve rispettare (come si vede in figura \ref{qualità}), inoltre permette di visualizzare grafici per controllare la qualità del progetto nel periodo di sviluppo (come si vede in figura \ref{graficobello}).
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.9\textwidth]{images/enforce-quality-gate.png}
@@ -411,7 +414,7 @@ Il processo di validazione ha lo scopo di determinare se il prodotto realizzato 
 \paragraph{Analisi dinamica} \Spazio
 Il \textit{verificatore} ha il compito di rieseguire i test per la verifica per controllare che non vi siano errori non rilevati precedentemente, eseguire i test validazione per accertarsi che il prodotto sia conforme alle attese e comunicare i risultati ottenuti al \textit{project manager} che deciderà se eseguire ulteriori test.
 \subsubsection{Test}
-\subparagraph{Test di sistema} \Spazio
+\paragraph{Test di sistema} \Spazio
 I test di sistema validano il prodotto software ovvero si accertano che rispettino i requisiti concordati, vengono effettuati quando si ritiene che il prodotto abbia raggiunto una versione definitiva.\newline
 I test di sistema saranno descritti nel modo seguente: \Spazio
 \centerline{\textbf{TS}[ImportanzaRequisito][TipoRequisito][idRequisito]}
@@ -435,7 +438,7 @@ dove:
 	
 	\item \textbf{IdRequisito:} può assumere un valore gerarchico che identifica il singolo requisito.
 \end{itemize}
-\subparagraph{Test di accettazione} \Spazio
+\paragraph{Test di accettazione} \Spazio
 Consiste nel collaudo del software in presenza del proponente, se questo test ha esito positivo il prodotto può essere rilasciato.\newline
 	I test di validazione saranno organizzati nel modo seguente:\Spazio
 
