@@ -60,7 +60,7 @@ I suoi metodi sono:
 
 	\item \texttt{cleanData(in elasticsearchIndicesResults:Array<ElasticsearchIndexResult>): Array<Request>} il quale prima rimuove i metadati (chiamando il suo metodo \\ \texttt{ removeMetaDataFromIndices }) di Elasticsearch dal parametro in input e successivamente chiama l'implementazione di \texttt{clean} della strategia che possiede al suo interno.  Tale strategia è incaricata di raffinare ulteriormente i dati per la costruzione della Mappa Topologica oppure per la costruzione dello Stack Trace tramite il metodo \texttt{clean};
 
-	\item \texttt{removeMetadataFromIndices(elasticsearchIndicesResults: \\Array<ElasticsearchIndexResult>): Array<Request>}  si occupa di rimuovere i metadati di Elasticsearch da un Array di indici invocando il metodo \texttt{removeMetaDataFromIndex} su ognuno dei singoli indici. Viene ritornato un array di \texttt{Request} che rappresenta le traces lette dai vari indici in un singolo array;
+	\item \texttt{removeMetadataFromIndices(elasticsearchIndicesResults: \\Array<ElasticsearchIndexResult>): Array<Request>}  si occupa di rimuovere i metadati di Elasticsearch da un Array di indici invocando il metodo\\ \texttt{removeMetaDataFromIndex} su ognuno dei singoli indici. Viene ritornato un array di \texttt{Request} che rappresenta le traces lette dai vari indici in un singolo array;
 
 	\item \texttt{removeMetadataFromIndex(elasticsearchIndexResult:ElasticsearchIndexResult): Array<Request>} il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti in un \emph{singolo} indice. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazione di monitoring negli indici di Elasticsearch. Elasticsearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni amministrative. Il metodo si occupa di rimuovere questi dati e restituire un array contenente i documenti di un indice;
 \end{itemize}
@@ -146,7 +146,7 @@ Un oggetto \texttt{StackTrace} rappresenta la lista delle richieste alla applica
 \paragraph{Trace} \Spazio
 Tramite l'oggetto \texttt{Trace} viene modellata una singola richiesta in maniera tale da ottenere solamente i dati utili alla visualizzazione. Questi dati sono ottenuti dai metodi che implementa:
 \begin{itemize}
-	\item \texttt{checkPageload(pageload:Array<RequestPageload>): void} il quale, se trova una \texttt{RequestPageload} associata alla \texttt{RequestHTTP} principale, modifica il campo dati \texttt{duration} in base alle due \texttt{Request} ;
+	\item \texttt{checkPageload(pageload:Array<RequestPageload>): void} il quale, se trova una \texttt{RequestPageload} associata alla \texttt{RequestHTTP} principale, modifica il campo dati\\ \texttt{duration} in base alle due \texttt{Request} ;
 	\item \texttt{checkPageload(pageload:Array<RequestPageload>): void} il quale, se trova almeno una \texttt{RequestDB} associata alla \texttt{RequestHTTP} principale, modifica il campo dati \texttt{duration} in base alle \texttt{Request} e implementa il campo dati il campo dati \texttt{queries} ;
 	\item \texttt{changeDuration(time:int): void} che viene utilizzato per modificare il campo dati \texttt{duration}.
 \end{itemize} 
@@ -185,8 +185,8 @@ I metodi che sono implementati in esso sono:
 \paragraph{StackBuilder} \Spazio
 Questo componente si occupa della costruzione effettiva di tutte le componenti di una StackTrace. Per fare ciò utilizza i seguenti metodi:
 \begin{itemize}
-	\item \texttt{buildTraces(HTTP:Array<RequestHTTP>, Pageload:Array<RequestPageload>, DB:Array<RequestDB>): void} che costruisce una \texttt{StackTrace} a partire dai tre array di sottotipi di \texttt{Request};
-	\item \texttt{buildTrace(RequestHTTP, Pageload:Array<RequestPageload>, DB:Array<RequestDB>, in index:String): void} che ricevendo un oggetto \texttt{RequestHTTP} e i due array di \texttt{RequestPageload} e \texttt{RequestDB} costruisce un oggetto \texttt{Trace};
+	\item \texttt{buildTraces(HTTP:Array<RequestHTTP>, Pageload:Array<RequestPageload>,\\ DB:Array<RequestDB>): void} che costruisce una \texttt{StackTrace} a partire dai tre array di sottotipi di \texttt{Request};
+	\item \texttt{buildTrace(RequestHTTP, Pageload:Array<RequestPageload>,\\ DB:Array<RequestDB>, in index:String): void} che ricevendo un oggetto\\ \texttt{RequestHTTP} e i due array di \texttt{RequestPageload} e \texttt{RequestDB} costruisce un oggetto \texttt{Trace};
 	\item \texttt{getStack(): StackTrace} con la quale ritorna il campo dati di tipo \texttt{StackTrace} una volta costruito.
 \end{itemize}
 
