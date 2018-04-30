@@ -444,6 +444,9 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
 		TI4 & Viene verificata l'integrazione tra DataReader e GraphBuilderDirector & \textcolor{green}{Superato} \\ \hline
 		TI5 & Viene verificato che il servizio ElasticsearchClient funzioni correttamente all'interno di DataReader & \textcolor{green}{Superato}  \\ \hline
 		TI6 & Viene verificata l'integrazione tra DataReader e StackBuilderDirector & \textcolor{green}{Superato}  \\ \hline
+		TI7 & Viene verificata l'integrazione tra GraphBuilderDirector e GraphBuilder & \textcolor{green}{Superato} \\ \hline
+		TI8 & Viene verificata l'integrazione tra StackBuilderDirector e StackBuilder & \textcolor{green}{Superato} \\ \hline
+		
 				
 	\end{longtable}
     \newcolumntype{U}{>{\centering\arraybackslash}m{10cm}}
@@ -477,7 +480,7 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
 		TU6 & Viene verificato che i dati utili per la costruzione della mappa topologica vengano puliti correttamente  & \textcolor{green}{Superato} \\ \hline
 		TU7 & Viene verificato che i dati utili per la costruzione della stack trace vengano puliti correttamente & \textcolor{green}{Superato} \\ \hline
 		TU8 & Viene verificato che la strategia di pulizia dei dati venga impostata correttamente & \textcolor{green}{Superato} \\ \hline
-		TU9 & Viene verificato che la tipologia delle trace venga identificata correttamente & Non implementato \\ \hline
+		TU9 & Viene verificato che i campi dati di una trace vengano modificati correttamente se la trace è associata a una richiesta di tipo pageload oppure di tipo database & Non implementato \\ \hline
 		TU10 & Viene verificato che i call tree vengano trasformati correttamente da stringa ad una gerarchia di oggetti & \textcolor{green}{Superato} \\ \hline
 		TU11 & Viene verificato che i tempi di esecuzione delle chiamate siano corretti & \textcolor{green}{Superato} \\ \hline
 		TU12 & Viene verificato che non possano essere inseriti due nodi uguali nella mappa topologica & Non implementato \\ \hline
@@ -491,6 +494,11 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
 		TU20 & viene verificato che i nodi del grafo vengano costruiti correttamente & \textcolor{green}{Superato} \\ \hline
 		TU21 & viene verificato che le trace vengano costruite correttamente & \textcolor{green}{Superato} \\ \hline
 		TU22 & viene verificato che il server ritorni l'indice richiesto con limite e tipo corretti  & \textcolor{green}{Superato} \\ \hline
+		TU23 & viene verificato che le richieste vengano suddivise correttamente in base al campo type & \textcolor{green}{Superato} \\ \hline
+		TU24 & viene verificato che le singole trace vengano create correttamente & \textcolor{green}{Superato} \\ \hline
+		TU25 & viene verificato che venga creato correttamente un oggetto StackTrace & \textcolor{green}{Superato} \\ \hline
+		TU26 & viene verificato che dato un array di richieste vengano costruiti correttamente i Links & \textcolor{green}{Superato} \\ \hline
+		TU27 & viene verificato che l'oggetto GraphBuilderDirector venga costruito correttamente & \textcolor{green}{Superato} \\ \hline
 		
 		
 	\end{longtable}
@@ -528,7 +536,12 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
     	TU19 & Client::Graph::addLink() \\ \hline
     	TU20 & Client::GraphBuilder::buildNodes() \\ \hline
     	TU21 & Client::StackBuilder::buildTrace() \\ \hline
-    	TU21 & Server::Index::Index() \\ \hline
+    	TU22 & Server::Index::Index() \\ \hline
+    	TU23 & Client::StackBuilderDirector::divideRequest() \\ \hline
+    	TU24 & Client::StackBuilder::buildTrace() \\ \hline
+    	TU25 & Client::StackBuilder::buildTraces() \\ \hline
+    	TU26 & Client::GraphBuilder::buildLinks() \\ \hline
+    	TU27 & Client::GraphBuilderDirector::constructor() \\ \hline
     \end{longtable}
 		
 		
