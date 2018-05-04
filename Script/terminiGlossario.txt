@@ -29,6 +29,7 @@ database
 design Pattern
 diagramma di Gantt
 diagramma di robustezza
+directory
 driver
 Dropbox
 D3.js
@@ -47,10 +48,11 @@ frontend
 git
 GitHub
 Gitkraken
-GNU Aspell
 Google Chrome
 Google Cloud Platform
 Google SQL
+GNU Aspell
+hardware
 hosting
 HTML
 IDE
@@ -62,7 +64,7 @@ Javascript
 JSON
 Kibana
 Logstash
-major features
+major feature
 major improvement
 management
 mappa topologica
@@ -89,7 +91,9 @@ progetto
 proponente
 push
 React
+REST
 runtime environment
+Safari
 SCSS
 server
 Simple Poll
@@ -103,7 +107,6 @@ stack trace
 standup
 stub
 task
-tasks
 Telegram
 TexStudio
 Ticket
