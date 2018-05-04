@@ -11,7 +11,7 @@
 \end{figure}
 
 \subsubsection{Generalità}
-Il lato client si occupa di interrogare il lato server per ottenere informazioni grezze, elaborarle per renderle utili ed infine presentarle all'utente. \texttt{DataReader} si occupa di fornire ai client dati letti dal database Elasticsearch, mentre \texttt{DataCleaner} rimuove da i dati grezzi di tipo \texttt{ElasticsearchIndexResult} le informazioni amministrative, lasciando solamente i documenti veri e propri. Essi vengono elaborati da una coppia di \texttt{Builder} per creare dati che abbiano una interfaccia idonea ad essere mostrata all'utente finale. I dati costruiti sono di tipo \texttt{Graph} per la mappa topologica e di tipo \texttt{StackTrace} per la stack trace. I dati del grafo vengono mostrati all'interno di un \emph{canvas} tramite la libreria grafica D3.js, mentre i dati della stack trace vengono mostrati da Angular, in un template HTML. 
+Il lato client si occupa di interrogare il lato server per ottenere informazioni grezze, elaborarle per renderle utili ed infine presentarle all'utente. \texttt{DataReader} si occupa di fornire ai client dati letti dal database Elasticsearch, mentre \texttt{DataCleaner} rimuove da i dati grezzi di tipo \texttt{ElasticsearchIndexResult} le informazioni amministrative, lasciando solamente i documenti veri e propri. Essi vengono elaborati da una coppia di \texttt{Builder} per creare dati che abbiano una interfaccia idonea ad essere mostrata all'utente finale. I dati costruiti sono di tipo \texttt{Graph} per la mappa topologica e di tipo \texttt{StackTrace} per la stack trace. I dati del grafo vengono mostrati all'interno di un \emph{canvas} tramite la libreria grafica \gl{D3.js}, mentre i dati della stack trace vengono mostrati da Angular, in un template \gl{HTML}. 
 
 \subsubsection{Componenti} 
 \label{sec:Componenti}
@@ -20,7 +20,7 @@ Si descrivono di seugito brevemente i componenti del lato client.
 \paragraph{ElasticsearchClient} \Spazio
 \label{sec:elasticsearchClient}
 \texttt{ElasticsearchClient} è il componente che si occupa di eseguire le chiamate API al lato server. Non è una classe vera e propria all'interno del codice, ma un \emph{Service}. 
-I Service sono funzioni, od oggetti, che possono essere passati a tutte le altri componenti di angularJs attraverso \emph{Dependency Injection}, permettono di condividere codice e funzionalità facilmente. Essi sono \emph{lazily instantiated}, cioè generati solo quando un componente esprime una dipendenza verso un determinato service. Permettono la realizzazione di servizi come i client API, dove avere piú istanze dello stesso client non sarebbe ragionevole. 
+I Service sono funzioni, od oggetti, che possono essere passati a tutte le altri componenti di \gl{AngularJS} attraverso \emph{Dependency Injection}, permettono di condividere codice e funzionalità facilmente. Essi sono \emph{lazily instantiated}, cioè generati solo quando un componente esprime una dipendenza verso un determinato service. Permettono la realizzazione di servizi come i client API, dove avere piú istanze dello stesso client non sarebbe ragionevole. 
 Utilizzare un service è l'unico modo per poter eseguire chiamate REST parametrizzate al lato server. Ciascun metodo qui presentato nasconde in realtà una chiamata GET all'opportuno componente lato server. 
 Il tipo di ritorno dei \texttt{Services} è una \texttt{Promise} di un qualche altro tipo. Questo significa che la risposta \emph{non è sincrona}, ovvero bisgnerà attendere che il lato server risponda per utilizzare la \texttt{Promise}. Ciò viene fatto utilizzando il metodo \texttt{then} sulla \texttt{Promise}. Nel blocco del metodo dovrà essere specificato il comportamento da eseguire sulla risposta della \texttt{Promise} eseguita. Per una descrizione più dettagliata si rimanda alla documentazione di Mozzilla: \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise}{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise} .
 
@@ -69,7 +69,7 @@ Risulta chiaro che esiste dunque una dipendenza fra la struttura dei dati che ve
 	
 \paragraph{CleanerStrategy}\Spazio
 \label{sec:CleanerStrategy}
-\texttt{CleanerStrategy} è l'interfaccia che verrà implementata per realizzare una pulizia più raffinata dei dati di un \texttt{DataCleaner}. Espone il metodo \texttt{clean(data)}, che avrà comportamenti diversi a seconda della strategia che si desidera applicare. Dato che il prodotto è implementato in Javascript il costrutto interfaccia non è presente nel linguaggio. Per ovviare a questa mancanza tutte le classi che dovrebbero implementare questa interfaccia \emph{devono} possedere un metodo \texttt{clean(data)} che funzioni come ci si aspetti. Questa interfaccia implementa il design pattern \emph{Strategy}, come descritto in \ref{sec:patternStrategy}.
+\texttt{CleanerStrategy} è l'interfaccia che verrà implementata per realizzare una pulizia più raffinata dei dati di un \texttt{DataCleaner}. Espone il metodo \texttt{clean(data)}, che avrà comportamenti diversi a seconda della strategia che si desidera applicare. Dato che il prodotto è implementato in Javascript il costrutto interfaccia non è presente nel linguaggio. Per ovviare a questa mancanza tutte le classi che dovrebbero implementare questa interfaccia \emph{devono} possedere un metodo \texttt{clean(data)} che funzioni come ci si aspetti. Questa interfaccia implementa il \gl{design Pattern} \emph{Strategy}, come descritto in \ref{sec:patternStrategy}.
 	
 	
 \paragraph{GraphCleanerStrategy}\Spazio
@@ -122,7 +122,7 @@ Rappresenta un collegamento tra due nodi dell'applicazione monitorata. Consta de
 Ciascun \texttt{Link} è individuato univocamente dalla coppia di campi dati \texttt{source} e \texttt{target}.
 
 \paragraph{GraphBuilderDirector} \Spazio
-È il componente che si occupa di condurre il processo di costruzione di un grafo. Implementa il \emph{pattern} \emph{Builder}, come descritto in \ref{sec:patternBuilder}. Consta dei metodi:
+È il componente che si occupa di condurre il \gl{processo} di costruzione di un grafo. Implementa il \emph{pattern} \emph{Builder}, come descritto in \ref{sec:patternBuilder}. Consta dei metodi:
 \begin{itemize}
 	\item \texttt{constructor(dataSource:DataReader, builder: GraphBuilder): void} che costruisce il \texttt{GraphBuilderDirector} con una sorgente dei dati associata e una istanza di \texttt{GraphBuilder}. Istanzia anche un \texttt{DataCleaner} con strategia \texttt{GraphCleanerStrategy}; 
 	\item \texttt{setDataReader(dataSource:DataReader): void} che imposta la sorgente dei dati; 
@@ -197,7 +197,7 @@ Questo componente rappresenta la variabile \texttt{\$scope} di Angular sulla qua
 Questo componente rappresenta la variabile \texttt{\$scope} di Angular sulla quale viene eseguito il \emph{two way data biding}. Al suo interno ha una struttura a stack trace che rappresenta la lista delle traces. Questo scope viene condiviso sia dallo \texttt{StackController} che dal \texttt{StackView}, il primo la crea mentre il secondo la utilizza per mostrare i dati all'utente.
 
 \paragraph{GraphView} \Spazio
-Questa classe rappresenta in realtà il file \texttt{html} all'interno del quale verrà mostrata la mappa topologica. Esso è un template che utilizzando Angular esegue il \emph{two way data biding} con \texttt{GraphScope}. All'interno di un \texttt{canvas} grazie l'utilizzo della libreria grafica \emph{D3.js} la mappa viene mostrata all'utente.
+Questa classe rappresenta in realtà il \gl{file} \texttt{html} all'interno del quale verrà mostrata la mappa topologica. Esso è un template che utilizzando Angular esegue il \emph{two way data biding} con \texttt{GraphScope}. All'interno di un \texttt{canvas} grazie l'utilizzo della libreria grafica \emph{D3.js} la mappa viene mostrata all'utente.
 
 \paragraph{StackView} \Spazio
 Questa classe rappresenta in realtà il file \texttt{html} all'interno del quale verrà mostrata la stack trace. Esso è un template che utilizzando Angular esegue il \emph{two way data biding} con \texttt{StackScope}. Il template ha una struttura a tabella che grazie all'uso di direttive Angular mostra all'utente una tabella nella quale ogni riga rappresenta una \texttt{Request}.
@@ -241,7 +241,7 @@ Si presenta in Figura \ref{img:builderGraph} il diagramma di sequenza che descri
 
 % \paragraph{MVVM} \Spazio
 % \label{sec:mvvm}
-% Il pattern \emph{MVVM} viene utilizzato in quanto è stato utilizzato il \emph{framework} Angular. Questo pattern permette di avere dei dati costantemente aggiornati nelle viste e nel modello grazie al \emph{two way data biding} degli stessi. Il componente \emph{model} è costituito dai \emph{Service} utilizzati, ovvero nella nostra rappresentazione \texttt{ElasticsearchClient}. In esso sono contenuti i dati. Le \emph{View} sono due: una per la stack trace e una per la mappa topologica. Esse eseguono il \texttt{data biding} rispetto alla rispettiva \texttt{\$scope} che permette di visualizzare i cambiamenti all'interno dei dati senza dover ricaricare la vista.
+% Il pattern \emph{MVVM} viene utilizzato in quanto è stato utilizzato il \emph{\gl{framework}} Angular. Questo pattern permette di avere dei dati costantemente aggiornati nelle viste e nel modello grazie al \emph{two way data biding} degli stessi. Il componente \emph{model} è costituito dai \emph{Service} utilizzati, ovvero nella nostra rappresentazione \texttt{ElasticsearchClient}. In esso sono contenuti i dati. Le \emph{View} sono due: una per la stack trace e una per la mappa topologica. Esse eseguono il \texttt{data biding} rispetto alla rispettiva \texttt{\$scope} che permette di visualizzare i cambiamenti all'interno dei dati senza dover ricaricare la vista.
 
 \subsubsection{Interazioni}
 Si presentano di seguito alcuni diagrammi di sequenza che chiariscono le interazioni fra i vari compoenti del sistema
