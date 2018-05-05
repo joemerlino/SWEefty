@@ -260,33 +260,27 @@ backgroundcolor=\color{lbcolor},
 		
 	
 	\subsection{Argomenti affrontati}
-    Nel corso della riunione effettuata mediante Skype, è stato mostrato all'azienda lo stato dei plugin. Inoltre, sono state discusse varie problematiche emerse durante lo sviluppo del software.
+    Nel corso della riunione Skype è stato mostrato all'azienda lo stato dei plugin e sono state discusse alcune problematiche emerse durante lo sviluppo del software.
     
 
  
-	 Sono stati illustrati alla proponente i vari incrementi effettuati riguardanti la stack trace e il plugin della mappa topologica. 
-	I due plugin attualmente si presentano in un'unica pagina ma in seguito verranno divisi.
-	Il proponente come prima cosa chiede se la mappa topologica è interagibile e se nel caso vi siano più nodi del sistema, rispetto a quelli attualmente visibili, vengono visualizzati nella mappa.
-	Per questo motivo viene mostrato che è possibile effettuare delle operazioni nella mappa interagendo direttamente con essa.
-	Nello specifico è possibile ingrandire e rimpicciolire la mappa, spostare ciascun nodo visualizzato e spostare interamente la mappa.
-	Inoltre, la mappa è dinamica dunque nel caso venissero aggiunti nodi al sistema, importando appositi documenti in ElasticSearch, il plugin è in grado di mapparli. 
-	In seguito viene spiegato al proponente che il tempo media di risposta che viene visualizzato nella linea che unisce due nodi del sistema è anch'esso dinamico e viene calcolato in un modo specifico.
+	Nello specifico sono stati illustrati al proponente i vari incrementi effettuati alla stack trace e alla mappa topologica, i due plugin si presentano in un'unica pagina ma in seguito verranno divisi.\newline
+	Il proponente come prima cosa chiede se si può interagire con la mappa topologica e se nel caso vi siano più nodi nel sistema, rispetto a quelli presenti, questi vengano visualizzati nella mappa.
+	Viene quindi mostrato che è possibile ingrandire e rimpicciolire la mappa, spostare ciascun nodo visualizzato e spostare interamente la mappa
+	Inoltre viene chiarito al proponente che la mappa è dinamica dunque nel caso venissero aggiunti nodi al sistema, importando appositi documenti in ElasticSearch, questi verranno visualizzati. 
+	In seguito viene spiegato al proponente che il tempo medio di risposta che viene visualizzato nella linea che unisce due nodi del sistema è anch'esso dinamico e viene calcolato in un modo specifico.
 	
-	Successivamente il team si confronta con il proponente riguardo la rappresentazione di un cluster del sistema all'interno della mappa topologica in quanto risulta essere un requisito obbligatorio ancora da implementare. Il team, infatti, non riesce a capire quale tipo di documenti deve prelevare dal database per rappresentare questo tipo di nodo.
+	Successivamente viene portato alla luce un problema riguardante la visualizzazione dei server cluster all'interno della mappa topologica, infatti il gruppo non riesce a capire quali sono i dati da utilizzare per rappresentare questo tipo di nodo.
 	Assieme al proponente si è cercato di sviscerare il problema andando effettivamente a controllare i vari documenti presenti all'interno di ElasticSearch effettuando delle query.   
-	In seguito ad una verifica accurata del proponente è emerso che non è presente alcuna informazione che riporti ad un nodo che rappresenti un cluster all'interno del sistema, in quanto il sistema che si sta monitorando attualmente registra solo chiamate da client a server e non vi sono cluster.
+	In seguito ad una verifica accurata del proponente è emerso che non è presente alcuna informazione riguardante i server cluster all'interno del sistema, in quanto il sistema che si sta monitorando attualmente registra solo chiamate da client a server e non vi sono cluster.
 	Per questo motivo si è deciso \textbf{01/VE\_2018-04-19} di spostare il requisito riguardo questo funzionalità da obbligatorio a desiderabile.
 	
 	Il proponente in seguito chiede al team di poter visionare lo stato e il funzionamento del secondo plugin: la stack trace.
-	Viene illustrata la stack trace che si presenta come una tabella, dove ogni riga rappresenta una specifica richiesta al server dal client. Ogni richiesta ha un nome, un tempo di esecuzione e indica se durante l'esecuzione si è presentato un errore. Cliccando su ogni richiesta, vi è la possibile di aprire un popup nel quale è visibile un dettaglio di informazioni specifiche della trace. 
-	Nello specifico vi è il call tree, se presente, con il self time e total time di ogni funzione. Si può accedere anche alla query list dove sono indicate tutte le query effettuate nel database al fine di fornire una risposta al client.
-	Il proponente chiede se i dati di ogni richiesta sono relativi ad un solo documento memorizzato nel database oppure da un raggruppamento di documenti.
-	Per questo motivo viene spiegato che le richieste HTTP risultano essere singole, quelle di PAGE LOAD sono la combinazione tra una richiesta HTTP e quelle con lo stesso trace id che permette di aggiungere la durata di caricamento della pagina.
-	Mentre per le richiste JDBC vengono aggiunte le trace con lo stesso child span riportato nelle richieste HTTP e di PAGE LOAD.
-	Dunque a seconda del tipo di richiesta, ogni riga ha informazioni provenienti da diversi documenti.
+	Viene illustrata la stack trace che si presenta come una tabella dove ogni riga rappresenta una specifica richiesta effettuata da un utente al sistema dell'applicazione monitorata. Ogni richiesta ha un nome, un tempo di esecuzione e indica se durante l'esecuzione si è presentato un errore. Cliccando su ogni richiesta viene visualizzata una estensione della trace nella quale sono visibili informazioni più dettagliate. 
+	Nello specifico vengono visualizzate informazioni riguardanti il call tree ovvero l'insieme di tutte le funzioni chiamate dal sistema per gestire la richiesta dell'utente, per ogni funzione viene visualizzato il self time e total time. Si può visualizzare anche la query list dove sono indicate tutte le query effettuate nel database per fornire una risposta alla richiesta dell'utente, per ogni query viene visualizzato il nome del database a cui è stata fatta la richiesta, il tempo di esecuzione e uno timestamp.
+	Il proponente chiede come sono stati ottenuti i dati relativi ad ogni trace,viene dunque spiegato che i JSON memorizzati su Elasticsearch che contengono le varie informazioni ottenute dall’interazione dell’utente con l’applicazione monitorata possono essere di tre tipi: HTTP, PAGELOAD e JDBC. Tutte le trace costruite contengono dati di un JSON con type “HTTP”. A queste possono essere aggiunti dei dati dai JSON con type “pageload” e “JDBC” se il campo “id” risulta uguale.
 	
-	Il proponente risulta essere soddisfatta del lavoro svolto finora e
-	dopo un confronto si è deciso di procedere nel seguente modo:
+	Il proponente risulta essere soddisfatto del lavoro svolto finora e dopo un confronto si è deciso di procedere nel seguente modo:
 	    \begin{itemize}
 	    \item { \textbf{02/VE\_2018-04-19} Il team dovrà inviare al proponente degli screenshot inerenti al lavoro svolto; }
 	    \item { \textbf{03/VE\_2018-04-19} Il team dovrà inviare al proponente una mail presentando il link alla repository github che contiene il codice del prodotto. }	
