@@ -1,14 +1,11 @@
-
 \subsection{Lato Server}
-
-
+\label{sec:latoServer}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Images/DiagrammaClassiServer.png}
 	\caption{Diagramma UML delle classi riguardanti il lato server}
 	\label{img:diagrammaClassiServer}
 \end{figure}
-
 \subsubsection{Generalità}
 Il lato server si deve occupare di interrogare il database Elasticsearch ed esporre i risultati delle query tramite API REST al lato client. Le funzioni che il lato server può compiere sono \emph{volutamente}  poche e basilari. La scelta progettuale di spostare sul lato client tutta la parte di elaborazione del dato è stata dettata da necessità tecniche: il lato server di un plugin di Kibana viene eseguito all'interno di un'istanza del server Kibana. Spesso essi sono installati su server AWS con una limitata capacità di calcolo, molte volte 2GB di memoria RAM. Per questo motivo se avessimo eseguito elaborazioni complicate e impegnative su tali macchine ci sarebbe stato il rischio che con l'aumentare dell'utenza il servizio sarebbe potuto essere lento.
 
