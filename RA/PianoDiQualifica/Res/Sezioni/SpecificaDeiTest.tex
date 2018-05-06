@@ -272,10 +272,10 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
     	TS1F1.3.2&Viene verificato che sia possibile visualizzare vicino ad ogni componente dell'applicazione monitorata un identificativo per tale entità.&\textcolor{green}{Superato} \\ \hline
     	TS1F1.4&Viene verificato ch l'utente possa riposizionare i componenti all'interno della mappa topologica.&\textcolor{green}{Superato} \\ \hline
     	TS2F1.4.1&Viene verificato che sia possibile riposizionare ogni componente della mappa trascinando con il puntatore.&\textcolor{green}{Superato} \\ \hline
-    	TS2F1.4.2&Viene verificato che sia possibile riposizionare automaticamente i componenti all'interno della mappa.&\textcolor{red}{Non Superato} \\ \hline
+    	TS2F1.4.2&Viene verificato che sia possibile riposizionare automaticamente i componenti all'interno della mappa.&\textcolor{green}{Superato} \\ \hline
     	TS0F1.5&Viene verificato che sia possibile visualizzare ciascun insieme di richieste fra due componenti della mappa topologica sotto forma di arco tra i due.&\textcolor{green}{Superato} \\ \hline
     	TS2F1.5.1&Viene verificato che il colore degli archi cambi in base al tempo medio di un insieme di richieste fra due componenti dell'applicazione monitorata.&\textcolor{green}{Superato} \\ \hline
-    	TS2F1.5.1.1&Viene verificato che se il tempo di esecuzione medio di un insieme di richieste fra due componenti dell'applicazione monitorata sale oltre i 3 secondi l'arco che li unisce diventi rosso.&\textcolor{red}{Non Superato} \\ \hline
+    	TS2F1.5.1.1&Viene verificato che se il tempo di esecuzione medio di un insieme di richieste fra due componenti dell'applicazione monitorata sale oltre i 3 secondi l'arco che li unisce diventi rosso.&\textcolor{green}{Superato} \\ \hline
     	TS2F1.5.1.2&Viene verificato che se il tempo di esecuzione medio di un
     	insieme di richieste fra due componenti dell'applicazione monitorata è inferiore o uguale a 3 secondi l'arco che li unisce sia nero.&\textcolor{green}{Superato} \\ \hline
     	TS0F1.5.2&Viene verificato che sia possibile visualizzare gli archi in base al tipo di richiesta eseguita fra due componenti della mappa topologica.&\textcolor{green}{Superato} \\ \hline
@@ -285,12 +285,12 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
     	TS1F1.6.1&Viene verificato che sia possibile visualizzare il tempo medio di risposta di un insieme di richieste fra due componenti dell'applicazione monitorata.&\textcolor{green}{Superato} \\ \hline
     	TS1F1.6.2&Viene verificato che sia possibile visualizzare sotto forma di etichetta il tipo dell'insieme di richieste fatte fra due componenti.&\textcolor{green}{Superato} \\ \hline
     	TS1F1.6..2.1&Viene verificato che sia possibile visualizzare delle etichette con la scritta "DB" sugli archi che presentano delle richieste fra server e database.&\textcolor{green}{Superato} \\ \hline
-    	TS1F1.6.2.2&Viene verificato che sia possibile visualizzare delle etichette con la scritta "HTTP" sugli archi che rappresentano delle richieste HTTP fra server e server.&\textcolor{red}{Non Superato} \\ \hline
+    	TS1F1.6.2.2&Viene verificato che sia possibile visualizzare delle etichette con la scritta "HTTP" sugli archi che rappresentano delle richieste HTTP fra server e server.&\textcolor{green}{Superato} \\ \hline
     	TS2F1.7&Viene verificato che sia possibile ridimensionare la grandezza della mappa topologica.&\textcolor{green}{Superato} \\ \hline
     	TS2F1.7.1&Viene verificato che sia possibile ingrandire i componenti della mappa topologica.&\textcolor{green}{Superato} \\ \hline
     	TS2F1.7.2&Viene verificato che sia possibile restringere la dimensione dei componenti della mappa.&\textcolor{green}{Superato} \\ \hline
-    	TS2F1.7.3&Viene verificato che sia possibile visualizzare la mappa topologica in modalità a schermo intero.&\textcolor{red}{Non Superato} \\ \hline
-    	TS1F1.8&Viene verificato che nel caso in cui ci sia un errore nel caricamento dei dati della mappa topologica venga visualizzato un messaggio d'errore. &\textcolor{red}{Non Superato} \\ \hline
+    	TS2F1.7.3&Viene verificato che sia possibile visualizzare la mappa topologica in modalità a schermo intero.&\textcolor{green}{Superato} \\ \hline
+    	TS1F1.8&Viene verificato che nel caso in cui ci sia un errore nel caricamento dei dati della mappa topologica venga visualizzato un messaggio d'errore. &\textcolor{green}{Superato} \\ \hline
     	TS0F2&Viene verificato che sia possibile visualizzare una lista delle trace dell'applicazione monitorata.&\textcolor{green}{Superato} \\ \hline
     	TS0F2.1&Viene verificato che sia possibile visualizzare i dettagli relativi ad ogni singola trace.&\textcolor{green}{Superato} \\ \hline
     	TS1F2.1.1&Viene verificato che sia possibile visualizzare ogni voce nella lista delle trace associata ad un numero univoco incrementale.&\textcolor{green}{Superato} \\ \hline
@@ -298,16 +298,16 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
     	TS1F2.1.3&Viene verificato che sia possibile visualizzare data e orario del momento in cui è iniziata l'esecuzione di ogni trace. &\textcolor{green}{Superato} \\ \hline
     	TS1F2.1.4&Viene verificato che sia possibile visualizzare il tempo di esecuzione di ogni trace. &\textcolor{green}{Superato} \\ \hline
     	TS1F2.1.5&Viene verificato che sia possibile visualizzare il codice di stato della richiesta HTTP corrispondente ad ogni singola trace della lista.&\textcolor{green}{Superato} \\ \hline
-    	TS1F2.1.5.1&Viene verificato che sia possibile visualizzare il dettaglio dell'errore avvenuto in forma testuale. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F2.2&Viene verificato che sia possibile riordinare la lista delle trace. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F2.2.1&Viene verificato che sia possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F2.2.1.1&Viene verificato che sia possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione in modo crescente. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F2.2.1.2&Viene verificato che sia possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione in modo decrescente. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F2.2.2&Viene verificato che sia possibile riordinare la lista delle trace in base al tempo di esecuzione. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F2.2.2.1&Viene verificato che sia possibile riordinare la lista delle trace in base al tempo di esecuzione in modo crescente. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F2.2.2.2&Viene verificato che sia possibile riordinare la lista delle trace in base al tempo di esecuzione in modo decrescente. &\textcolor{red}{Non Superato} \\ \hline
+    	TS1F2.1.5.1&Viene verificato che sia possibile visualizzare il dettaglio dell'errore avvenuto in forma testuale. &\textcolor{green}{Superato} \\ \hline
+    	TS1F2.2&Viene verificato che sia possibile riordinare la lista delle trace. &\textcolor{green}{Superato} \\ \hline
+    	TS1F2.2.1&Viene verificato che sia possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione. &\textcolor{green}{Superato} \\ \hline
+    	TS1F2.2.1.1&Viene verificato che sia possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione in modo crescente. &\textcolor{green}{Superato} \\ \hline
+    	TS1F2.2.1.2&Viene verificato che sia possibile riordinare la lista delle trace in base all'ordine cronologico di esecuzione in modo decrescente. &\textcolor{green}{Superato} \\ \hline
+    	TS1F2.2.2&Viene verificato che sia possibile riordinare la lista delle trace in base al tempo di esecuzione. &\textcolor{green}{Superato} \\ \hline
+    	TS1F2.2.2.1&Viene verificato che sia possibile riordinare la lista delle trace in base al tempo di esecuzione in modo crescente. &\textcolor{green}{Superato} \\ \hline
+    	TS1F2.2.2.2&Viene verificato che sia possibile riordinare la lista delle trace in base al tempo di esecuzione in modo decrescente. &\textcolor{green}{Superato} \\ \hline
     	TS0F2.3&Viene verificato che la lista delle trace sia caricata in ordine decrescente rispetto all'ordine cronologico di esecuzione. &\textcolor{green}{Superato} \\ \hline
-    	TS1F2.4&Viene verificato che sia visualizzato un messaggio di errore nel caso in cui ci sia un errore nel caricamento dei dati della lista delle trace.&\textcolor{red}{Non Superato} \\ \hline
+    	TS1F2.4&Viene verificato che sia visualizzato un messaggio di errore nel caso in cui ci sia un errore nel caricamento dei dati della lista delle trace.&\textcolor{green}{Superato} \\ \hline
     	TS0F3&Viene verificato che sia possibile visualizzare il call tree di ogni trace. &\textcolor{green}{Superato} \\ \hline
     	TS0F3.1&Viene verificato che sia possibile visualizzare dei dettagli riguardati ogni singolo metodo. &\textcolor{green}{Superato} \\ \hline
     	TS0F3.1.1&Viene verificato che sia possibile, per ogni metodo invocato, visualizzarne il nome. &\textcolor{green}{Superato} \\ \hline
@@ -326,13 +326,13 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
     	TS1F4.1.3&Viene verificato che sia possibile visualizzare l'identificativo del database interrogato da ogni query.&\textcolor{green}{Superato} \\ \hline
     	TS1F4.1.4&Viene verificato che sia possibile visualizzare data e orario del momento in cui è iniziata l' esecuzione di ogni query.&\textcolor{green}{Superato} \\ \hline
     	TS1F4.1.5&Viene verificato che sia possibile visualizzare il tempo di esecuzione di ogni query. &\textcolor{green}{Superato} \\ \hline
-    	TS1F4.2&Viene verificato che sia possibile riordinare la lista delle query relativa ad una singola trace. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F4.2.1&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F4.2.1.1&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione in modo crescente. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F4.2.1.2&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione in modo decrescente. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F4.2.2&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F4.2.2.1&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione in modo crescente. &\textcolor{red}{Non Superato} \\ \hline
-    	TS1F4.2.2.2&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione in modo decrescente. &\textcolor{red}{Non Superato} \\ \hline
+    	TS1F4.2&Viene verificato che sia possibile riordinare la lista delle query relativa ad una singola trace. &\textcolor{green}{Superato} \\ \hline
+    	TS1F4.2.1&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione. &\textcolor{green}{Superato} \\ \hline
+    	TS1F4.2.1.1&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione in modo crescente. &\textcolor{green}{Superato} \\ \hline
+    	TS1F4.2.1.2&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base all'ordine cronologico di esecuzione in modo decrescente. &\textcolor{green}{Superato} \\ \hline
+    	TS1F4.2.2&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione. &\textcolor{green}{Superato} \\ \hline
+    	TS1F4.2.2.1&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione in modo crescente. &\textcolor{green}{Superato} \\ \hline
+    	TS1F4.2.2.2&Viene verificato che sia possibile riordinare la lista delle query di una singola trace in base al tempo di esecuzione in modo decrescente. &\textcolor{green}{Superato} \\ \hline
     	TS1F4.3&Viene verificato che la lista delle query di una singola trace sia caricata in ordine decrescente rispetto all'ordine cronologico di esecuzione. &\textcolor{green}{Superato} \\ \hline
     	
     	TS0V3&Viene verificato che il prodotto sia compatibile con il browser Google Chrome v. 55.x.  &Non implementato \\ \hline
@@ -340,6 +340,14 @@ Per produrre software di qualità, il gruppo SWEefty definirà dei test per assi
     	TS0V5&Viene verificato che il prodotto sia compatibile con il browser Safari v. 10.x.&Non implementato \\ \hline
     	TS0V6&Viene verificato che il prodotto sia compatibile con il browser Internet Explorer v. 11.x.&Non implementato \\ \hline
     \end{longtable}
+
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=0.6\textwidth]{Images/TS.png}
+\caption{Sintesi della percentuale di test di sistema superati}
+\label{TS} 
+\end{figure}
     
     \paragraph{Tracciamento} \Spazio
     
