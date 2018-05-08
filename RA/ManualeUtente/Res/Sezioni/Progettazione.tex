@@ -16,16 +16,6 @@ Di seguito viene fornito un breve elenco delle versioni minime dei browser sui q
 
 Per un corretto funzionamento dei plugin è necessario che sia abilitato \gl{JavaScript}.
 
-
-\section{Installazione}
-Per prima cosa bisogna provvedere a scaricare i plugin. Questi si possono scaricare da \href{https://github.com/SWEeftyTeam/Havana}{https://github.com/SWEeftyTeam/Havana} cliccando sul pulsante verde "Clone or download" e poi su "Download ZIP".
-Per l'installazione dei plugin in una \gl{directory} a scelta utilizzare il comando \texttt{install} con l'opzione \texttt{-d} o \texttt{--plugin-dir}  specificando una directory per i plugin, come nell'esempio seguente:
-\begin{lstlisting}
- $ bin /kibana-plugin install file:///some/local/path/my-plugin.zip -d path/to/directory 
-\end{lstlisting}
-
-Una volta completata l'installazione è possibile navigare tra tutti i plugin installati nella lista presente nel menù a sinistra di Kibana.
-
 \newpage
 \section{Mappa Topologica}
 \label{sec:mtopologica}
@@ -87,12 +77,27 @@ Per effettuare questa operazione è necessario:
 	\item Portare il cursore del mouse nel punto della mappa in cui si vuole effettuare l'operazione di zoom;
 	\item Muovere la rotellina del mouse in avanti se si intende ingrandire, all'indietro se si intende rimpicciolire. Nel caso non si disponga della rotellina sul mouse, utilizzare le funzionalità presenti nella tastiera per effettuare lo zoom.
 \end{enumerate}
+Inoltre è possibile ripristinare la posizione e lo zoom iniziali della mappa premendo sul pulsante dedicato come illustrato.
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=1\textwidth]{Images/zoom}
+	\caption{Pulsante dedicato al ripristino dello zoom}
+\end{figure}
+
+\subsubsection{Ingrandimento fullscreen}
+\label{sec:zoom}
+Per facilitare la visualizzazione e manipolazione di mappe particolarmente complesse ed articolate, è stata implementata la funzionalità di ingrandimento fullscreen dell'intera area. Per attivare tale modalità è sufficiente premere sul pulsante dedicato e per disattivarla si può procedere nuovamente tramite il pulsante o premendo il tasto esc della tastiera.
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=1\textwidth]{Images/fullscreen}
+	\caption{Pulsante dedicato all'attivazione e disattivazione della modalità fullscreen}
+\end{figure}
+
 
 \subsubsection{Tempo di risposta}
 Questa funzionalità permette di visualizzare il tempo medio di risposta impiegato per effettuare richieste tra due nodi del sistema.
 E' possibile visualizzarlo in corrispondenza della linea che collega due componenti.
 Se il numero è colorato in rosso, significa che il tempo medio di risposta è superiore rispetto ad una soglia standard definita.
-
 
 \section{Stack Trace}
 \label{sec:strace}
@@ -150,8 +155,25 @@ Rappresenta tutte le query effettuate nel database dal sistema per fornire una r
 	
 \end{itemize}
 
+\subsubsection{Ordinamento}
+\label{sec:sort}
+Per facilitare la consultazione della tabella, è inoltre possibile ordinare gli elementi in base al tempo di esecuzione o all'orario di attivazione premendo le rispettive aree di intestazione della tabella.
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=1\textwidth]{Images/sort}
+	\caption{Campi ordinabili per facilitare la consultazione tabellare}
+\end{figure}
+
 \section {Segnalazione errori}
-Se vengono riscontrati errori o problematiche di vario genere si prega di segnalare l'avvenuto all'indirizzo e-mail sweeftyteam@gmail.com specificando la tipologia della problematica oppure di aprire una segnalazione nell'apposita sezione \gl{\emph{Issues}} della \gl{repository} \gl{GitHub} associata al prodotto Havana.
+\label{sec:mail}
+Se vengono riscontrati errori o problematiche di vario genere si prega di segnalarli nell'apposita sezione \gl{\emph{Issues}} della \gl{repository} \gl{GitHub} associata al prodotto Havana, oppure all'indirizzo e-mail sweeftyteam@gmail.com inserendo come oggetto \textbf{Bug report Havana} e seguendo il seguente template per il corpo della mail:
+ \begin{itemize}
+	\item \textbf{ElasticSearch version:} versione installata di ElasticSearch;
+	\item \textbf{Kibana version:} versione installata di Kibana;
+	\item \textbf{Plugin name:} nome del plugin Havana avente il problema;
+	\item \textbf{Plugin version:} versione del plugin avente il problema;
+	\item \textbf{Bug report:} piccolo riassunto dove è richiesto di evidenziare i passi per poter riprodurre il problema.
+\end{itemize}
 
 
 
