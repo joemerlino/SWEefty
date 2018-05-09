@@ -4,14 +4,14 @@
 Di seguito viene fornito un breve elenco delle versioni minime dei browser sui quali il funzionamento del nostro plugin è garantito:
 \begin{itemize}
 	
-	\item Google Chrome v.55
-	\item Mozilla Firefox v.50
-	\item Safari v.10
-	\item Internet Explorer v.11
+	\item \gl{Google Chrome} v.55
+	\item \gl{Mozilla Firefox} v.50
+	\item \gl{Safari} v.10
+	\item \gl{Internet Explorer} v.11
 	
 \end{itemize}
 
-Per un corretto funzionamento del plugin è necessario che sia abilitato Javascript.
+Per un corretto funzionamento del plugin è necessario che sia abilitato \gl{Javascript}.
 
 
 
@@ -19,13 +19,13 @@ Per un corretto funzionamento del plugin è necessario che sia abilitato Javascr
 \section{Configurazione ambiente di lavoro}
 \label{sec:configurazione}
 \subsection{Installazione di Kibana}
-Per poter installare correttamente il prodotto è necessario scaricare e configurare antecedentemente Kibana, reperibile dal link URL \url{https://github.com/elastic/kibana/releases}.\\
+Per poter installare correttamente il prodotto è necessario scaricare e configurare antecedentemente Kibana, reperibile dal link \gl{URL} \url{https://github.com/elastic/kibana/releases}.\\
 I plugin sono stati sviluppati con la versione 6.2.2 che si raccomanda anche per l'utilizzo.\\
 Una volta scaricato l'archivio compresso sarà necessario estrarre il contenuto in una cartella con nome \texttt{kibana} da raggiungere tramite l'utilizzo di un terminale.
-Prima di procedere alla configurazione di Kibana deve essere installato il framework Node.js ed il relativo gestore di pacchetti chiamato Node package manager (npm).\\
+Prima di procedere alla configurazione di Kibana deve essere installato il \gl{framework} \gl{Node.js} ed il relativo gestore di pacchetti chiamato Node \gl{package} manager (npm).\\
 Dalla directory corrente, dare il comando \texttt{npm install} per procedere all'installazione dei pacchetti necessari al funzionamento di Kibana.\\
 Una volta terminata la configurazione, spostarsi tramite terminale nella cartella \texttt{kibana/bin} ed avviare l'eseguibile \texttt{kibana}.\\
-Dopo l'avvio, aprire una finestra di browser e navigare all'indirizzo URL \url{localhost:5601} per raggiungere la dashboard di Kibana.
+Dopo l'avvio, aprire una finestra di browser e navigare all'indirizzo URL \url{localhost:5601} per raggiungere la \gl{dashboard} di Kibana.
 \subsection{Installazione dei plugin per lo sviluppo}
 Per prima cosa bisogna provvedere a scaricare i plugin. Questi si possono scaricare da \href{https://github.com/SWEeftyTeam/Havana}{https://github.com/SWEeftyTeam/Havana} cliccando sul pulsante verde "Clone or download" e poi su "Download ZIP".
 Per l'installazione, estrarre dall'archivio compresso le cartelle dei plugin come illustrato in figura:
@@ -47,7 +47,7 @@ Una volta completata l'installazione, per avviare Kibana in modalità sviluppo c
 Per prima cosa bisogna provvedere a scaricare i plugin. Questi si possono scaricare da \href{https://github.com/SWEeftyTeam/Havana}{https://github.com/SWEeftyTeam/Havana} cliccando sul pulsante verde "Clone or download" e poi su "Download ZIP".
 Per l'installazione dei plugin in una \gl{directory} a scelta utilizzare il comando \texttt{install} con l'opzione \texttt{-d} o \texttt{--plugin-dir}  specificando una directory per i plugin, come nell'esempio seguente:
 \begin{lstlisting}
-$ bin /kibana-plugin install file:///some/local/path/my-plugin.zip -d path/to/directory 
+$ bin /kibana-plugin install \gl{file}:///some/local/path/my-plugin.zip -d path/to/directory 
 \end{lstlisting}
 Una volta completata l'installazione è possibile navigare tra tutti i plugin installati nella lista presente nel menù a sinistra di Kibana.
 \begin{figure}[H]
@@ -65,7 +65,7 @@ L'istanza sarà interrogabile all'indirizzo URL \url{localhost:9200}.
 \subsection{Modifica delle funzionalità presenti}
 \subsubsection{Mappa topologica}
 \label{sec:graph}
-Per poter cambiare gli aspetti di visualizzazione della mappa topologica è necessario modificare il file \texttt{d3functions.js} presente nella cartella \texttt{public/d3utilities} ove è possibile trovare le seguenti variabili usate dalla libreria d3.js per comporre gli elementi del grafo:
+Per poter cambiare gli aspetti di visualizzazione della mappa topologica è necessario modificare il file \texttt{d3functions.js} presente nella cartella \texttt{public/d3utilities} ove è possibile trovare le seguenti variabili usate dalla libreria \gl{D3.js} per comporre gli elementi del grafo:
 \begin{itemize}
 	\item \texttt{svg}: Canvas del grafo;
 	\item \texttt{color}: Schema colori;
@@ -95,9 +95,9 @@ Modificando ad esempio l'attributo x ed y di \texttt{nodelabels} all'interno del
 
 \subsubsection{Stack trace}
 \label{sec:stack}
-Per poter cambiare gli aspetti di visualizzazione della stack trace è necessario modificare il file \texttt{index.html} presente nella cartella \texttt{plugin/templates}.\\
-Oltre alle modifiche apportabili al codice HTML e CSS, è possibile cambiare il comportamento di alcune funzioni Javascript che regolano l'espansione e la compressione di una riga della stack trace o lo switch tra la visualizzazione di un call tree e le query ad esso associate.\\
-Attraverso delle direttive AngularJs è possibile sfruttare in maniera ottimale i dati provenienti da \$scope.nodes che rappresenta un array contenente tutte le trace di nostro interesse.\\
+Per poter cambiare gli aspetti di visualizzazione della stack trace è necessario modificare il file \texttt{index.\gl{HTML}} presente nella cartella \texttt{plugin/templates}.\\
+Oltre alle modifiche apportabili al codice HTML e \gl{CSS}, è possibile cambiare il comportamento di alcune funzioni Javascript che regolano l'espansione e la compressione di una riga della stack trace o lo switch tra la visualizzazione di un call tree e le query ad esso associate.\\
+Attraverso delle direttive \gl{AngularJS} è possibile sfruttare in maniera ottimale i dati provenienti da \$scope.nodes che rappresenta un array contenente tutte le trace di nostro interesse.\\
 Inoltre nel file \texttt{app.js} presente nella cartella \texttt{plugin} sono state implementate delle direttive personalizzate AngularJs per la gestione del call tree di ogni trace, che sono:
 \begin{lstlisting}
 .directive("tree", function() {..})
@@ -114,7 +114,7 @@ Ogni plugin per Kibana è articolato in due sezioni principali: lato client e la
 
 \paragraph{ElasticsearchClient} \Spazio
 \texttt{ElasticsearchClient} è il componente che si occupa di eseguire le chiamate API al lato server. Non è una classe vera e propria all'interno del codice, ma un \emph{Service}. 
-I Service sono funzioni, od oggetti, che possono essere passati a tutte le altri componenti di \gl{AngularJS} attraverso \emph{Dependency Injection}, permettono di condividere codice e funzionalità facilmente. Essi sono \emph{lazily instantiated}, cioè generati solo quando un componente esprime una dipendenza verso un determinato service. Permettono la realizzazione di servizi come i client API, dove avere piú istanze dello stesso client non sarebbe ragionevole. 
+I Service sono funzioni, od oggetti, che possono essere passati a tutte le altri componenti di AngularJS attraverso \emph{Dependency Injection}, permettono di condividere codice e funzionalità facilmente. Essi sono \emph{lazily instantiated}, cioè generati solo quando un componente esprime una dipendenza verso un determinato service. Permettono la realizzazione di servizi come i client API, dove avere piú istanze dello stesso client non sarebbe ragionevole. 
 Utilizzare un service è l'unico modo per poter eseguire chiamate REST parametrizzate al lato server. Ciascun metodo qui presentato nasconde in realtà una chiamata GET all'opportuno componente lato server. 
 Il tipo di ritorno dei \texttt{Services} è una \texttt{Promise} di un qualche altro tipo. Questo significa che la risposta \emph{non è sincrona}, ovvero bisgnerà attendere che il lato server risponda per utilizzare la \texttt{Promise}. Ciò viene fatto utilizzando il metodo \texttt{then} sulla \texttt{Promise}. Nel blocco del metodo dovrà essere specificato il comportamento da eseguire sulla risposta della \texttt{Promise} eseguita. Per una descrizione più dettagliata si rimanda alla documentazione di Mozzilla: \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise}{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise} .
 
@@ -152,13 +152,13 @@ I suoi metodi sono:
 	
 	\item \texttt{removeMetadataFromIndices(elasticsearchIndicesResults: \\Array<ElasticsearchIndexResult>): Array<Request>}  si occupa di rimuovere i metadati di Elasticsearch da un Array di indici invocando il metodo\\ \texttt{removeMetaDataFromIndex} su ognuno dei singoli indici. Viene ritornato un array di \texttt{Request} che rappresenta le traces lette dai vari indici in un singolo array;
 	
-	\item \texttt{removeMetadataFromIndex(elasticsearchIndexResult:ElasticsearchIndexResult): Array<Request>} il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti in un \emph{singolo} indice. Questo metodo ritorna un array contenente i documenti JSON così come essi sono stati inseriti dall'applicazione di monitoring negli indici di Elasticsearch. Elasticsearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni amministrative. Il metodo si occupa di rimuovere questi dati e restituire un array contenente i documenti di un indice.
+	\item \texttt{removeMetadataFromIndex(elasticsearchIndexResult:ElasticsearchIndexResult): Array<Request>} il quale si occupa di rimuovere i metadati di Elasticsearch che sono presenti in un \emph{singolo} indice. Questo metodo ritorna un array contenente i documenti \gl{JSON} così come essi sono stati inseriti dall'applicazione di monitoring negli indici di Elasticsearch. Elasticsearch, infatti, immagazzina i documenti JSON nel campo \texttt{\_source} il quale è inserito in oggetti che contengono altri dati ed informazioni amministrative. Il metodo si occupa di rimuovere questi dati e restituire un array contenente i documenti di un indice.
 \end{itemize}
 
 
 \subsection{Sviluppo di nuove funzionalità}
 \label{sec:nuovefunzionalita}
-Per poter sviluppare nuove modalità di visualizzazione dei dati è possibile avvalersi delle classi \texttt{DataReader} e \texttt{DataCleaner} già presenti all'interno della cartella \texttt{public/components} dei plugin, creando quindi in questa directory una classe \texttt{Builder} per strutturare le informazioni da passare al frontend dell'applicazione secondo una nuova strategia da creare nella sottocartella \texttt{strategies}.\\
+Per poter sviluppare nuove modalità di visualizzazione dei dati è possibile avvalersi delle classi \texttt{DataReader} e \texttt{DataCleaner} già presenti all'interno della cartella \texttt{public/components} dei plugin, creando quindi in questa directory una classe \texttt{Builder} per strutturare le informazioni da passare al \gl{frontend} dell'applicazione secondo una nuova strategia da creare nella sottocartella \texttt{strategies}.\\
 Lo sviluppo del frontend può essere eseguito modificando adeguadatamente alle esigenze i file:
 \begin{itemize}
 	\item \texttt{app.js} presente nella cartella \texttt{public} dei plugin;
@@ -173,13 +173,26 @@ let ExampleCleaner = require("./components/strategies/examplecleaner");
 per poter poi istanziare i relativi oggetti necessari allo sviluppo del frontend.
 
 
+
 \newpage
 \appendix
 \section{Glossario}
+
+\lettera{A}
+
+\parola{AngularJS}{Framework front-end open-source scritto in Javascript, creato e manutenuto da Google. È di tipo MVC (Model View Controller) nato per sopperrire alle difficoltà che si incontrano quando si sviluppano web app.}
+
+\parola{Architettura}{Organizzazione fondamentale di un sistema, definita dai suoi componenti, dalle relazioni reciproche tra i componenti e con l'ambiente, e i principi che ne governano la progettazione e l'evoluzione.}
+
+\lettera{B}
+
+\parola{Backend}{Parte dell'architettura non visibile dall'utente, generalmente si occupa di elaborare i dati ricevuti in input dall'utente. }
+
 \lettera{C}
 
 \parola{Call tree}{Albero delle chiamate, rappresenta l'insieme delle chiamate a funzioni o funzionalità del sistema eseguite da un programma.}
 
+\parola{CSS}{Linguaggio usato per definire la formattazione di documenti HTML, XHTML e XML ad esempio i siti web e relative pagine web.}
 
 \lettera{D}
 
@@ -187,9 +200,16 @@ per poter poi istanziare i relativi oggetti necessari allo sviluppo del frontend
 
 \parola{Directory}{Entità del file system che elenca altre entità, tipicamente file e altre directory, e che permette di organizzarle in una struttura ad albero.}
 
+\parola{D3.js}{Libreria JavaScript per creare visualizzazioni dinamiche ed interattive, partendo dati organizzati, visibili attraverso un comune browser.}
+
 \lettera{E}
 
 \parola{Elasticsearch}{Motore di ricerca open-source. Dispone di API molto estensive ed elaborate. Può effettuare ricerche in maniera molto performante.}
+
+\lettera{F}
+\parola{Framework}{Architettura logica di supporto (spesso un’implementazione logica di un particolare design pattern) su cui un software può essere costruito per facilitarne lo sviluppo da parte del programmatore.}
+
+\parola{Frontend}{Parte di un software che un utente può vedere e con il quale può interagire.}
 
 \lettera{G}
 \parola{GitHub}{Servizio web di hosting per progetti software che utilizzano Git come sistema di versionamento.}
@@ -199,6 +219,8 @@ per poter poi istanziare i relativi oggetti necessari allo sviluppo del frontend
 \lettera{H}
 \parola {Hardware}{Insieme delle componenti fisiche, non modificabili, di un sistema di elaborazione dati.}
 
+\parola{HTML (Hypertext Markup Language)}{Linguaggio standardizzato per la definizione della struttura logica di una pagina web.}
+
 \lettera{I}
 \parola{Internet Explorer}{Browser web grafico proprietario sviluppato da Microsoft e incluso in Microsoft Windows a partire dal 1995.}
 \parola{Issues}{Sistema di gestione di problemi di un progetto su Github.}
@@ -206,6 +228,8 @@ per poter poi istanziare i relativi oggetti necessari allo sviluppo del frontend
 \lettera{J}
 
 \parola{JavaScript}{Linguaggio di scripting utilizzato principalmente per applicazioni web.}
+
+\parola{JSON (JavaScript Object Notation)}{Formato di file standard che utilizza un testo comprensibile dall'uomo per trasmettere dati costituiti da coppie valore-attributo.}
 
 \lettera{K}
 
@@ -216,6 +240,9 @@ per poter poi istanziare i relativi oggetti necessari allo sviluppo del frontend
 \parola{Mappa topologica}{Visualizzazione sotto forma di grafo dei componenti di un'applicazione in cui i componenti come server e database sono i nodi e le interazioni fra essi, ovvero le richieste fatte da un componente ad un altro (come richieste HTTP o queries), sono gli archi.}
 
 \parola{Mozilla Firefox}{Web browser libero e multipiattaforma, mantenuto da Mozilla Foundation.}
+
+\lettera{N}
+\parola{Node.js}{Runtime Javascript costruito sul motore JavaScript V8 di Chrome. Molti dei suoi moduli base sono scritti in Javascript, e gli sviluppatori possono scrivere nuovi moduli in Javascript. }  
 
 \lettera{P}
 \parola{Plugin}{Programma non autonomo che interagisce con un altro programma per ampliare o estendere le funzionalità originarie.}  
@@ -231,12 +258,16 @@ per poter poi istanziare i relativi oggetti necessari allo sviluppo del frontend
 
 \parola{Safari}{Web browser multipiattaforma, sviluppato e mantenuto da Apple.}
 
+\parola{Server}{Componente o sottosistema informatico di elaborazione e gestione del traffico di informazioni che fornisce, a livello logico e fisico, un qualunque tipo di servizio ad altre componenti.}
+
 \parola{Stack Trace}{Lista di un insieme di traces prese in esame.}
 
 \lettera{T}
 
 \parola{Trace}{Struttura dati che rappresenta una singola richiesta effettuata fra due componenti di una applicazione monitorata oppure fra un utente esterno e un componente dell'applicazione. Viene solitamente memorizzata in un database per successiva analisi.}
 
+lettera{U}
+\parola{URL}{\emph{Uniforme Resource Locator}, indirizzo simoboli per riferirsi ad una risorsa in rete.}
 
 
 
