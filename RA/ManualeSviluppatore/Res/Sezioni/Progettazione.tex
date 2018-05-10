@@ -95,8 +95,8 @@ Modificando ad esempio l'attributo x ed y di \texttt{nodelabels} all'interno del
 
 \subsubsection{Stack trace}
 \label{sec:stack}
-Per poter cambiare gli aspetti di visualizzazione della stack trace è necessario modificare il file \texttt{index.\gl{HTML}} presente nella cartella \texttt{plugin/templates}.\\
-Oltre alle modifiche apportabili al codice HTML e \gl{CSS}, è possibile cambiare il comportamento di alcune funzioni Javascript che regolano l'espansione e la compressione di una riga della stack trace o lo switch tra la visualizzazione di un call tree e le query ad esso associate.\\
+Per poter cambiare gli aspetti di visualizzazione della stack trace è necessario modificare il file \texttt{index.html} presente nella cartella \texttt{plugin/templates}.\\
+Oltre alle modifiche apportabili al codice \gl{HTML} e \gl{CSS}, è possibile cambiare il comportamento di alcune funzioni Javascript che regolano l'espansione e la compressione di una riga della stack trace o lo switch tra la visualizzazione di un call tree e le query ad esso associate.\\
 Attraverso delle direttive \gl{AngularJS} è possibile sfruttare in maniera ottimale i dati provenienti da \$scope.nodes che rappresenta un array contenente tutte le trace di nostro interesse.\\
 Inoltre nel file \texttt{app.js} presente nella cartella \texttt{plugin} sono state implementate delle direttive personalizzate AngularJs per la gestione del call tree di ogni trace, che sono:
 \begin{lstlisting}
@@ -116,11 +116,11 @@ Ogni plugin per Kibana è articolato in due sezioni principali: lato client e la
 \texttt{ElasticsearchClient} è il componente che si occupa di eseguire le chiamate API al lato server. Non è una classe vera e propria all'interno del codice, ma un \emph{Service}. 
 I Service sono funzioni, od oggetti, che possono essere passati a tutte le altri componenti di AngularJS attraverso \emph{Dependency Injection}, permettono di condividere codice e funzionalità facilmente. Essi sono \emph{lazily instantiated}, cioè generati solo quando un componente esprime una dipendenza verso un determinato service. Permettono la realizzazione di servizi come i client API, dove avere piú istanze dello stesso client non sarebbe ragionevole. 
 Utilizzare un service è l'unico modo per poter eseguire chiamate REST parametrizzate al lato server. Ciascun metodo qui presentato nasconde in realtà una chiamata GET all'opportuno componente lato server. 
-Il tipo di ritorno dei \texttt{Services} è una \texttt{Promise} di un qualche altro tipo. Questo significa che la risposta \emph{non è sincrona}, ovvero bisgnerà attendere che il lato server risponda per utilizzare la \texttt{Promise}. Ciò viene fatto utilizzando il metodo \texttt{then} sulla \texttt{Promise}. Nel blocco del metodo dovrà essere specificato il comportamento da eseguire sulla risposta della \texttt{Promise} eseguita. Per una descrizione più dettagliata si rimanda alla documentazione di Mozzilla: \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise}{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise} .
+Il tipo di ritorno dei \texttt{Services} è una \texttt{Promise} di un qualche altro tipo. Questo significa che la risposta \emph{non è sincrona}, ovvero bisognerà attendere che il lato server risponda per utilizzare la \texttt{Promise}. Ciò viene fatto utilizzando il metodo \texttt{then} sulla \texttt{Promise}. Nel blocco del metodo dovrà essere specificato il comportamento da eseguire sulla risposta della \texttt{Promise} eseguita. Per una descrizione più dettagliata si rimanda alla documentazione di Mozilla: \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise}{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise} .
 
 I metodi esposti da \texttt{ElasticsearchClient} sono: 
 \begin{itemize} 
-	\item \texttt{tracesIndices(): Promise<Array<String>>} ritorna un array di stringhe che rappresenta gli indici contenuti nell'istanza di ElasticSearch che hanno all'interno delle traces, ovvero i dati utili al plugin; 
+	\item \texttt{tracesIndices(): Promise<Array<String>>} ritorna un array di stringhe che rappresenta gli indici contenuti nell'istanza di Elasticsearch che hanno all'interno delle traces, ovvero i dati utili al plugin; 
 	\item \texttt{getIndex(index:String): Promise<ElasticsearchIndexResult>} ritorna al chiamante i dati grezzi che vengono restituiti da Elasticsearch eseguendo una ricerca priva di parametri sull'indice passato come parametro, ovvero \texttt{index}. Essi comprendono, oltre tutti i documenti dell'indice, anche i metadati di Elasticsearch dato che sono di tipo \texttt{ElasticsearchIndexResult}. È anche possibile specificare un numero massimo di documenti ritornati al chiamante o una particolare tipologia letta nel database di tipo \texttt{server} o \texttt{database}; 
 	\item \texttt{getData(indices:Array<String>): Promise<Array<ElasticsearchIndexResult>>}: ritorna al chiamante un array di dati grezzi, ognuno dei quali rappresenta il risultato di una ricerca priva di parametri su un indice. Gli indici letti sono quelli ritornati da \texttt{tracesIndices()}, ovvero tutti e soli quelli che contengono traces. 
 \end{itemize} 
@@ -159,7 +159,7 @@ I suoi metodi sono:
 \subsection{Sviluppo di nuove funzionalità}
 \label{sec:nuovefunzionalita}
 Per poter sviluppare nuove modalità di visualizzazione dei dati è possibile avvalersi delle classi \texttt{DataReader} e \texttt{DataCleaner} già presenti all'interno della cartella \texttt{public/components} dei plugin, creando quindi in questa directory una classe \texttt{Builder} per strutturare le informazioni da passare al \gl{frontend} dell'applicazione secondo una nuova strategia da creare nella sottocartella \texttt{strategies}.\\
-Lo sviluppo del frontend può essere eseguito modificando adeguadatamente alle esigenze i file:
+Lo sviluppo del front end può essere eseguito modificando adeguadatamente alle esigenze i file:
 \begin{itemize}
 	\item \texttt{app.js} presente nella cartella \texttt{public} dei plugin;
 	\item \texttt{d3functions.js} presente nella cartella \texttt{public/d3utilities} del plugin relativo alla mappa topologica;
@@ -170,7 +170,7 @@ Nel primo file sarà necessario importare la classe \texttt{Builder} e la relati
 let ExampleBuilder = require("./components/exampleBuilder");
 let ExampleCleaner = require("./components/strategies/examplecleaner");
 \end{lstlisting}
-per poter poi istanziare i relativi oggetti necessari allo sviluppo del frontend.
+per poter poi istanziare i relativi oggetti necessari allo sviluppo del front end.
 
 
 
